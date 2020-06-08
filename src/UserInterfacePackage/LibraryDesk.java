@@ -3,6 +3,7 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import InfoDisplay.BookInformationFX;
 import JavFX.FXThirdWindow;
 import JavFX.FxSecondWindow;
 import LibraryFunctionality.ReadingRoom;
@@ -58,6 +59,20 @@ public class LibraryDesk extends Application {
         setStyle(addBook);
 
 
+        Button bookInformation = new Button("Book Information");
+        bookInformation.setTranslateX(500);
+        bookInformation.setTranslateY(280);
+        bookInformation.setOnAction(actionEvent -> {
+            BookInformationFX bookInformationFX = new BookInformationFX();
+            try {
+                bookInformationFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        setStyle(bookInformation);
+        bookInformation.setPrefSize(350, 80);
 
 Button removeBook = new Button("Remove Book");
 
@@ -140,7 +155,7 @@ Button removeBook = new Button("Remove Book");
         Image image = new Image("libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,readingRoom);
+        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,bookInformation,readingRoom);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

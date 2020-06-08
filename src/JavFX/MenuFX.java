@@ -27,15 +27,13 @@ public class MenuFX extends Application {
 
 
         Button bookApplications = new Button("Tool Applications");
-        Button bookInformation = new Button("Book Information");
         Button processImplementation = new Button("Process Implementation");
         Button processValidation = new Button("Process Validation");
 
 
         bookApplications.setTranslateX(500);
         bookApplications.setTranslateY(380);
-        bookInformation.setTranslateX(500);
-        bookInformation.setTranslateY(180);
+
         processImplementation.setTranslateX(500);
         processImplementation.setTranslateY(280);
         processValidation.setTranslateX(500);
@@ -55,15 +53,6 @@ public class MenuFX extends Application {
 
         });
 
-        bookInformation.setOnAction(actionEvent -> {
-            BookInformationFX bookInformationFX = new BookInformationFX();
-            try {
-                bookInformationFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
         processImplementation.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
             try {
@@ -88,12 +77,9 @@ public class MenuFX extends Application {
 
 
         setStyle(bookApplications);
-        setStyle(bookInformation);
         setStyle(processImplementation);
         setStyle(processValidation);
 
-
-        bookInformation.setPrefSize(350, 80);
         bookApplications.setPrefSize(350, 80);
         processImplementation.setPrefSize(350, 80);
         processValidation.setPrefSize(350, 80);
@@ -132,7 +118,7 @@ public class MenuFX extends Application {
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,bookApplications,
-                processImplementation,bookInformation,
+                processImplementation,
                 processValidation,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
