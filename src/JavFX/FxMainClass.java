@@ -40,13 +40,6 @@ public class FxMainClass extends Application {
 
         welcome.setOnAction(actionEvent -> {
 
-                  /*  LineChartFX bookInformationFX = new LineChartFX();
-                    try {
-                        bookInformationFX.startTyping(stage);
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }*/
-
           FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
                 fxSecondWindow.start(stage);
@@ -74,7 +67,7 @@ public class FxMainClass extends Application {
 
 
 
-        Image background = new Image("libraryBackground20.jpg");
+        Image background = new Image("LibraryBackground17.jpg");
         Canvas canvas = new Canvas(1400, 770);
 
 

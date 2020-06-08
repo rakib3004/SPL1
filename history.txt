@@ -19284,3 +19284,7 @@ ChooseType	Mon 08.06.2020 at 08:28:29 PM
 FxSecondWindow	Mon 08.06.2020 at 08:28:33 PM
 ChooseType	Mon 08.06.2020 at 08:28:49 PM
 FxSecondWindow	Mon 08.06.2020 at 08:28:53 PM
+FxMainClass	Mon 08.06.2020 at 07:15:35 PM
+FxSecondWindow	Mon 08.06.2020 at 07:16:54 PM
+FxMainClass	Mon 08.06.2020 at 07:18:12 PM
+FxMainClass	Mon 08.06.2020 at 07:19:22 PM
