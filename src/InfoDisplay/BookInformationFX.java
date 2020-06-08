@@ -9,6 +9,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import UserInterfacePackage.LibraryDesk;
 import javafx.animation.KeyFrame;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -116,11 +117,11 @@ public class BookInformationFX extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            LibraryDesk libraryDesk = new LibraryDesk();
 
             try {
 
-                menuFX.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
