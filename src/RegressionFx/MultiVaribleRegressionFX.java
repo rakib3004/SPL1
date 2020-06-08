@@ -1,7 +1,6 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
-import JavFX.FxMainClass;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;

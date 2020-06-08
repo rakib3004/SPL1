@@ -1,7 +1,5 @@
 package ObjectOriented;
 
-import JavFX.FxMainClass;
-
 public class BookData {
     public  String SerialNo;
 

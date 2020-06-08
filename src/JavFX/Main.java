@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class FxMainClass extends Application {
+public class Main extends Application {
 
 
     @Override

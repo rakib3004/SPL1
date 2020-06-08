@@ -5,32 +5,13 @@ import ProjectDescription.About;
 import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.Group;
 import javafx.scene.Group;
 
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import java.awt.*;
-import java.util.Scanner;
-
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class FxSecondWindow extends Application {
 
@@ -99,9 +80,9 @@ public class FxSecondWindow extends Application {
 
 
         back.setOnAction(actionEvent -> {
-FxMainClass fxMainClass = new FxMainClass();
+Main main = new Main();
             try {
-                fxMainClass.start(primaryStage);
+                main.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

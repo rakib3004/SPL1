@@ -2,7 +2,6 @@ package VisualRepresentation;
 
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
-import JavFX.FxMainClass;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;

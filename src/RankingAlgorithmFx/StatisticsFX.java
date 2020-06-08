@@ -1,7 +1,6 @@
 package RankingAlgorithmFx;
 
 import FilePackage.DateTimeWriter;
-import JavFX.FxMainClass;
 import JavFX.MenuFX;
 import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
