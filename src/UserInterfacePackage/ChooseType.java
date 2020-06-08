@@ -58,91 +58,6 @@ public class ChooseType extends Application {
 
 
 
-        Button writerWise = new Button("Writer Wise");
-
-        writerWise.setTranslateX(400);
-        writerWise.setTranslateY(200);
-        writerWise.setOnAction(actionEvent -> {
-
-            try {
-
-                WriterWiseFX writerWiseFX = new WriterWiseFX();
-                writerWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        writerWise.setPrefSize(230, 80);
-        setStyle(writerWise);
-
-
-Button classWise = new Button("Class Wise");
-
-        classWise.setTranslateX(400);
-        classWise.setTranslateY(300);
-        classWise.setOnAction(actionEvent -> {
-
-            try {
-                TypeWiseFX typeWiseFX = new TypeWiseFX();
-                typeWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        classWise.setPrefSize(230, 80);
-        setStyle(classWise);
-
-
-        Button selfWise = new Button("Self Wise");
-
-        selfWise.setTranslateX(700);
-        selfWise.setTranslateY(200);
-        selfWise.setOnAction(actionEvent -> {
-
-            try {
-
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
-                selfWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        selfWise.setPrefSize(230, 80);
-        setStyle(selfWise);
-
-
-Button timeWise = new Button("Time Wise");
-
-        timeWise.setTranslateX(700);
-        timeWise.setTranslateY(300);
-        timeWise.setOnAction(actionEvent -> {
-
-            try {
-
-
-                TimeWiseFX timeWiseFX = new TimeWiseFX();
-                timeWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        timeWise.setPrefSize(230, 80);
-        setStyle(timeWise);
-
-
-
 Button removeBook = new Button("Remove Book");
 
         removeBook.setTranslateX(550);
@@ -224,8 +139,7 @@ Button removeBook = new Button("Remove Book");
         Image image = new Image("libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,addBook,exit,back,writerWise,
-                classWise,selfWise,timeWise,removeBook,readingRoom);
+        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,readingRoom);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
