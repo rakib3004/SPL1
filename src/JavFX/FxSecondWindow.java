@@ -1,6 +1,7 @@
 package JavFX;
 
 import FilePackage.DateTimeWriter;
+import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
 import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
@@ -47,9 +48,9 @@ public class FxSecondWindow extends Application {
 
         administrationMood.setOnAction(actionEvent -> {
 
-            MenuFX menuFX = new MenuFX();
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
-                menuFX.start(primaryStage);
+                fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -58,9 +59,9 @@ public class FxSecondWindow extends Application {
 
             readersMood.setOnAction(actionEvent -> {
 
-            ChooseType chooseType = new ChooseType();
+            ReadingRoom readingRoom = new ReadingRoom();
             try {
-                chooseType.start(primaryStage);
+                readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
