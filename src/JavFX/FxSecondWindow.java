@@ -24,18 +24,18 @@ public class FxSecondWindow extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
-        Button adminSection = new Button("Admin Section");
-        Button userSection = new Button("User Section");
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
 
 
-        userSection.setTranslateX(530);
-        userSection.setTranslateY(200);
-        adminSection.setTranslateX(530);
-        adminSection.setTranslateY(300);
+        readersMood.setTranslateX(530);
+        readersMood.setTranslateY(200);
+        administrationMood.setTranslateX(530);
+        administrationMood.setTranslateY(300);
         about.setTranslateX(530);
         about.setTranslateY(400);
 
@@ -45,7 +45,7 @@ public class FxSecondWindow extends Application {
         exit.setTranslateY(650);
 
 
-        adminSection.setOnAction(actionEvent -> {
+        administrationMood.setOnAction(actionEvent -> {
 
             MenuFX menuFX = new MenuFX();
             try {
@@ -56,7 +56,7 @@ public class FxSecondWindow extends Application {
 
         });
 
-            userSection.setOnAction(actionEvent -> {
+            readersMood.setOnAction(actionEvent -> {
 
             ChooseType chooseType = new ChooseType();
             try {
@@ -94,14 +94,14 @@ Main main = new Main();
 
 
         });
-        setStyle(adminSection);
-        setStyle(userSection);
+        setStyle(administrationMood);
+        setStyle(readersMood);
         setStyle(exit);
         setStyle(back);
         setStyle(about);
 
-        adminSection.setPrefSize(280, 80);
-        userSection.setPrefSize(280, 80);
+        administrationMood.setPrefSize(280, 80);
+        readersMood.setPrefSize(280, 80);
         about.setPrefSize(280,80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
@@ -110,8 +110,8 @@ Main main = new Main();
         Image image = new Image("libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,adminSection,exit,
-                back,userSection,about);
+        group.getChildren().addAll(canvas,administrationMood,exit,
+                back,readersMood,about);
 
 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 graphicsContext.drawImage(image,0,0);
