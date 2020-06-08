@@ -23,15 +23,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LibraryDesk extends Application {
-    PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
-
-    int numberOfBooks;
-    Processing processing = new Processing();
-    BookNumber bookNumber = new BookNumber();
-
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -81,45 +72,15 @@ Button removeBook = new Button("Remove Book");
         removeBook.setOnAction(actionEvent -> {
 
             try {
-
-
                 RemoveBookFX removeBookFX = new RemoveBookFX();
                 removeBookFX.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         removeBook.setPrefSize(270, 80);
         setStyle(removeBook);
-
-
-        Button readingRoom = new Button("Reading Room");
-
-        readingRoom.setTranslateX(550);
-        readingRoom.setTranslateY(500);
-        readingRoom.setOnAction(actionEvent -> {
-
-            try {
-
-
-                ReadingRoom readingRoom1 = new ReadingRoom();
-                readingRoom1.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        readingRoom.setPrefSize(275, 80);
-        setStyle(readingRoom);
-
-
-
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -155,7 +116,7 @@ Button removeBook = new Button("Remove Book");
         Image image = new Image("libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,bookInformation,readingRoom);
+        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,bookInformation);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
