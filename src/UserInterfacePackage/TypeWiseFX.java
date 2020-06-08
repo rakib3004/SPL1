@@ -74,10 +74,10 @@ int iterator;
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            LibraryDesk libraryDesk = new LibraryDesk();
 
             try {
-                chooseType.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -32,7 +32,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class TimeWiseFX extends Application {
@@ -80,10 +79,10 @@ int iterator;
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            LibraryDesk libraryDesk = new LibraryDesk();
 
             try {
-                chooseType.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

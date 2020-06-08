@@ -9,9 +9,7 @@ import Methods.PrioritySort;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import TableViewPackage.Book;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -51,9 +49,9 @@ int positionLocator=85;
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);        back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                chooseType.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

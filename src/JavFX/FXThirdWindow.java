@@ -2,7 +2,7 @@ package JavFX;
 
 import FilePackage.DateTimeWriter;
 import ProjectDescription.About;
-import UserInterfacePackage.ChooseType;
+import UserInterfacePackage.LibraryDesk;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -57,9 +57,9 @@ public class FXThirdWindow extends Application {
 
         librarianMood.setOnAction(actionEvent -> {
 
-            ChooseType chooseType = new ChooseType();
+            LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                chooseType.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

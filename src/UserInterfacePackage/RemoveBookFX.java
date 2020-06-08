@@ -5,7 +5,6 @@ import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
@@ -17,8 +16,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -33,7 +30,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.TreeMap;
 
 public class RemoveBookFX extends Application {
@@ -110,10 +106,10 @@ else{
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            ChooseType chooseType = new ChooseType();
+            LibraryDesk libraryDesk = new LibraryDesk();
 
             try {
-                chooseType.start(primaryStage);
+                libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

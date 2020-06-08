@@ -10,10 +10,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import PageRankAlgorithm.PageRankCalculation;
-import RankingAlgorithmFx.StatisticsFX;
 import TableViewPackage.Book;
-import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -35,7 +32,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class SelfWiseFX extends Application {
@@ -80,10 +76,10 @@ int iterator;
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-        ChooseType chooseType = new ChooseType();
+        LibraryDesk libraryDesk = new LibraryDesk();
 
         try {
-            chooseType.start(primaryStage);
+            libraryDesk.start(primaryStage);
         } catch (Exception exception) {
             exception.printStackTrace();
         }

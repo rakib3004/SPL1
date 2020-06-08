@@ -3,7 +3,6 @@ package JavFX;
 import FilePackage.DateTimeWriter;
 import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
-import UserInterfacePackage.ChooseType;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

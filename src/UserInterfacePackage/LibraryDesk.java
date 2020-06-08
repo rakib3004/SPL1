@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ChooseType extends Application {
+public class LibraryDesk extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 
