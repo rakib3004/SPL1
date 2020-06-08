@@ -165,9 +165,6 @@ public class ReadingRoom extends Application {
 */
 
 
-
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {

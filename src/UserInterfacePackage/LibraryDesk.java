@@ -3,6 +3,7 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
 import JavFX.FxSecondWindow;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
@@ -108,10 +109,10 @@ Button removeBook = new Button("Remove Book");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
 
             try {
-                fxSecondWindow.start(primaryStage);
+                fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
