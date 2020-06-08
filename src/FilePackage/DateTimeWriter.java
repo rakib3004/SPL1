@@ -15,10 +15,10 @@ public class DateTimeWriter {
 String FILENAME,string;
         FILENAME = "history.txt";
 
-        string =  className+"\t";
+     string =  className+"\t";
         string = string+ ft.format(dNow)+"\n";
 
-     BufferedWriter out = null;
+    /* BufferedWriter out = null;
             try {
                 out = new BufferedWriter(
                         new FileWriter(FILENAME, true));
@@ -30,14 +30,14 @@ String FILENAME,string;
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-     /*   try {
+            }*/
+        try {
             FileWriter fileWriter=new FileWriter(FILENAME);
             fileWriter.write(string);
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
     }
 }
