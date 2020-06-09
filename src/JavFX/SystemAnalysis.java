@@ -3,7 +3,6 @@ package JavFX;
 import CrossValidationProcess.CrossValidationFX;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
-import InfoDisplay.BookInformationFX;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -14,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class AuthorSystem extends Application {
+public class SystemAnalysis extends Application {
 
 
 
@@ -26,9 +25,13 @@ public class AuthorSystem extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
+        Button bookApplications = new Button("Tool Applications");
         Button processImplementation = new Button("Process Implementation");
         Button processValidation = new Button("Process Validation");
 
+
+        bookApplications.setTranslateX(450);
+        bookApplications.setTranslateY(350);
 
         processImplementation.setTranslateX(450);
         processImplementation.setTranslateY(250);
@@ -36,6 +39,18 @@ public class AuthorSystem extends Application {
         processValidation.setTranslateY(450);
 
 
+        bookApplications.setOnAction(actionEvent -> {
+
+            BookApplication bookApplication = new BookApplication();
+
+            try {
+
+                bookApplication.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
 
         processImplementation.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
@@ -48,7 +63,7 @@ public class AuthorSystem extends Application {
 
         });
 
- processValidation.setOnAction(actionEvent -> {
+        processValidation.setOnAction(actionEvent -> {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
             try {
 
@@ -60,10 +75,11 @@ public class AuthorSystem extends Application {
         });
 
 
+        setStyle(bookApplications);
         setStyle(processImplementation);
         setStyle(processValidation);
 
-
+        bookApplications.setPrefSize(350, 80);
         processImplementation.setPrefSize(350, 80);
         processValidation.setPrefSize(350, 80);
 
@@ -100,7 +116,8 @@ public class AuthorSystem extends Application {
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,processImplementation,
+        group.getChildren().addAll(canvas,bookApplications,
+                processImplementation,
                 processValidation,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -115,7 +132,7 @@ public class AuthorSystem extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
-            }
+    }
 
     public Button setStyle( Button button)
     {
