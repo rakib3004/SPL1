@@ -25,13 +25,13 @@ public class SystemAnalysis extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
-        Button bookApplications = new Button("Tool Applications");
-        Button processImplementation = new Button("Process Implementation");
-        Button processValidation = new Button("Process Validation");
+        Button sevenValueApplications = new Button("SevenValue Applications");
+        Button processImplementation = new Button("BookWeight Analysis");
+        Button processValidation = new Button("ProcessValue Plotting");
 
 
-        bookApplications.setTranslateX(450);
-        bookApplications.setTranslateY(350);
+        sevenValueApplications.setTranslateX(450);
+        sevenValueApplications.setTranslateY(350);
 
         processImplementation.setTranslateX(450);
         processImplementation.setTranslateY(250);
@@ -39,7 +39,7 @@ public class SystemAnalysis extends Application {
         processValidation.setTranslateY(450);
 
 
-        bookApplications.setOnAction(actionEvent -> {
+        sevenValueApplications.setOnAction(actionEvent -> {
 
             BookApplication bookApplication = new BookApplication();
 
@@ -75,11 +75,11 @@ public class SystemAnalysis extends Application {
         });
 
 
-        setStyle(bookApplications);
+        setStyle(sevenValueApplications);
         setStyle(processImplementation);
         setStyle(processValidation);
 
-        bookApplications.setPrefSize(350, 80);
+        sevenValueApplications.setPrefSize(350, 80);
         processImplementation.setPrefSize(350, 80);
         processValidation.setPrefSize(350, 80);
 
@@ -116,7 +116,7 @@ public class SystemAnalysis extends Application {
         Image image = new Image("libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,bookApplications,
+        group.getChildren().addAll(canvas,sevenValueApplications,
                 processImplementation,
                 processValidation,exit,back);
 

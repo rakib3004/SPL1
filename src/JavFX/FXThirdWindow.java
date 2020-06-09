@@ -68,9 +68,9 @@ public class FXThirdWindow extends Application {
 
         systemAnalysis.setOnAction(actionEvent -> {
 
-            About about1 = new About();
+            SystemAnalysis systemAnalysis1 = new SystemAnalysis();
             try {
-                about1.start(primaryStage);
+                systemAnalysis1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
