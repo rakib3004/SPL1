@@ -3,7 +3,7 @@ package InfoDisplay;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.MenuFX;
+import JavFX.AuthorSystem;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -73,10 +73,10 @@ public class BookNumberDisplayFX extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            AuthorSystem authorSystem = new AuthorSystem();
 
             try {
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -4,7 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import DataComparing.CodeValidationShowing;
 import FilePackage.DateTimeWriter;
-import JavFX.MenuFX;
+import JavFX.AuthorSystem;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -17,8 +17,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import java.util.Collection;
 
 public class CrossValidationFX extends Application {
 
@@ -47,11 +45,11 @@ public class CrossValidationFX extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            AuthorSystem authorSystem = new AuthorSystem();
 
 
             try {
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

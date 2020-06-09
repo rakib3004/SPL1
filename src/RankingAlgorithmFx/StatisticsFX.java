@@ -1,7 +1,7 @@
 package RankingAlgorithmFx;
 
 import FilePackage.DateTimeWriter;
-import JavFX.MenuFX;
+import JavFX.AuthorSystem;
 import RegressionFx.MultiVaribleRegressionFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -85,10 +85,10 @@ try {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            AuthorSystem authorSystem = new AuthorSystem();
 
         try {
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

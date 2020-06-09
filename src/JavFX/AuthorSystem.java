@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class MenuFX extends Application {
+public class AuthorSystem extends Application {
 
 
 

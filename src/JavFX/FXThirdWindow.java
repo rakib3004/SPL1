@@ -46,9 +46,9 @@ public class FXThirdWindow extends Application {
 
         authorsMood.setOnAction(actionEvent -> {
 
-            MenuFX menuFX = new MenuFX();
+            AuthorSystem authorSystem = new AuthorSystem();
             try {
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

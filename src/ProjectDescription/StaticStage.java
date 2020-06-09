@@ -1,9 +1,6 @@
 package ProjectDescription;
 
-import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingObserVation;
 import FilePackage.DateTimeWriter;
-import JavFX.MenuFX;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;

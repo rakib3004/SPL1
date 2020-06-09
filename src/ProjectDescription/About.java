@@ -1,10 +1,7 @@
 package ProjectDescription;
 
-import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingObserVation;
-import DataComparing.CodeValidationShowing;
 import FilePackage.DateTimeWriter;
-import JavFX.MenuFX;
+import JavFX.AuthorSystem;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -33,11 +30,11 @@ public class About extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            MenuFX menuFX = new MenuFX();
+            AuthorSystem authorSystem = new AuthorSystem();
 
 
             try {
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

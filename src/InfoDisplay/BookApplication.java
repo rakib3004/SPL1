@@ -2,7 +2,7 @@ package InfoDisplay;
 
 import FilePackage.DateTimeWriter;
 import SimpleRegression.DoublyLinearRegression;
-import JavFX.MenuFX;
+import JavFX.AuthorSystem;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
@@ -71,11 +71,11 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
         
         back.setOnAction(actionEvent -> {
-MenuFX menuFX = new MenuFX();
+AuthorSystem authorSystem = new AuthorSystem();
 
 try {
 
-                menuFX.start(primaryStage);
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
