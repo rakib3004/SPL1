@@ -3,6 +3,7 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -76,14 +77,14 @@ int iterator;
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-        LibraryDesk libraryDesk = new LibraryDesk();
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
 
-        try {
-            libraryDesk.start(primaryStage);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-    });
+        });
         exit.setOnAction(actionEvent -> {
         System.exit(0);
     });

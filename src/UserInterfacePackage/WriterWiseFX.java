@@ -3,6 +3,7 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -79,10 +80,9 @@ public class WriterWiseFX extends Application {
 
         
         back.setOnAction(actionEvent -> {
-            LibraryDesk libraryDesk = new LibraryDesk();
-
+            ReadingRoom readingRoom = new ReadingRoom();
             try {
-                libraryDesk.start(primaryStage);
+                readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

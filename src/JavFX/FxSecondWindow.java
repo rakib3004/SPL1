@@ -100,14 +100,14 @@ Main main = new Main();
         setStyle(back);
         setStyle(about);
 
-        administrationMood.setPrefSize(280, 80);
-        readersMood.setPrefSize(280, 80);
-        about.setPrefSize(280,80);
+        administrationMood.setPrefSize(320, 80);
+        readersMood.setPrefSize(320, 80);
+        about.setPrefSize(320,80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground2.jpg");
+        Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,administrationMood,exit,
