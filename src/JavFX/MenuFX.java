@@ -93,9 +93,9 @@ public class MenuFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
-                fxSecondWindow.start(primaryStage);
+                fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
