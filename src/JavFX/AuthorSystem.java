@@ -31,9 +31,9 @@ public class AuthorSystem extends Application {
 
 
         processImplementation.setTranslateX(450);
-        processImplementation.setTranslateY(250);
+        processImplementation.setTranslateY(300);
         processValidation.setTranslateX(450);
-        processValidation.setTranslateY(450);
+        processValidation.setTranslateY(400);
 
 
 

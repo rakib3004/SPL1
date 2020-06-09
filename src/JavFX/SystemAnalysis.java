@@ -1,6 +1,8 @@
 package JavFX;
 
+import CrossValidationProcess.CombinedTrainingSet;
 import CrossValidationProcess.CrossValidationFX;
+import CrossValidationProcess.CrossValidationVisualization;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import RankingAlgorithmFx.StatisticsFX;
@@ -12,6 +14,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class SystemAnalysis extends Application {
 
@@ -26,17 +30,17 @@ public class SystemAnalysis extends Application {
 
 
         Button sevenValueApplications = new Button("SevenValue Applications");
-        Button processImplementation = new Button("BookWeight Analysis");
-        Button processValidation = new Button("ProcessValue Plotting");
+        Button bookWeightAnalysis = new Button("BookWeight Analysis");
+        Button processValuePlotting = new Button("ProcessValue Plotting");
 
 
         sevenValueApplications.setTranslateX(450);
         sevenValueApplications.setTranslateY(350);
 
-        processImplementation.setTranslateX(450);
-        processImplementation.setTranslateY(250);
-        processValidation.setTranslateX(450);
-        processValidation.setTranslateY(450);
+        bookWeightAnalysis.setTranslateX(450);
+        bookWeightAnalysis.setTranslateY(250);
+        processValuePlotting.setTranslateX(450);
+        processValuePlotting.setTranslateY(450);
 
 
         sevenValueApplications.setOnAction(actionEvent -> {
@@ -52,36 +56,34 @@ public class SystemAnalysis extends Application {
 
         });
 
-        processImplementation.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
+        bookWeightAnalysis.setOnAction(actionEvent -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
 
-                statisticsFX.start(primaryStage);
+                crossValidationVisualization.startLineChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
 
-        processValidation.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+        processValuePlotting.setOnAction(actionEvent -> {
             try {
-
-                crossValidationFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
+                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                combinedTrainingSet.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
         });
 
 
         setStyle(sevenValueApplications);
-        setStyle(processImplementation);
-        setStyle(processValidation);
+        setStyle(bookWeightAnalysis);
+        setStyle(processValuePlotting);
 
         sevenValueApplications.setPrefSize(350, 80);
-        processImplementation.setPrefSize(350, 80);
-        processValidation.setPrefSize(350, 80);
+        bookWeightAnalysis.setPrefSize(350, 80);
+        processValuePlotting.setPrefSize(350, 80);
 
 
 
@@ -117,8 +119,8 @@ public class SystemAnalysis extends Application {
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,sevenValueApplications,
-                processImplementation,
-                processValidation,exit,back);
+                bookWeightAnalysis,
+                processValuePlotting,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

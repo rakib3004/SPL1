@@ -153,13 +153,10 @@ public class CombinedTrainingSet extends Application {
         ScatterChart.setTranslateX(10);
         ScatterChart.setTranslateY(25);
         ScatterChart.setPrefSize(1350, 700);
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterView = new MenuItem("Scatter View");
         MenuItem lineChartView = new MenuItem("LineChart View");
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
-
 
 
         scatterView.setOnAction((event) -> {
