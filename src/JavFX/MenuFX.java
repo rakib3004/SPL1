@@ -31,13 +31,13 @@ public class MenuFX extends Application {
         Button processValidation = new Button("Process Validation");
 
 
-        bookApplications.setTranslateX(500);
-        bookApplications.setTranslateY(380);
+        bookApplications.setTranslateX(450);
+        bookApplications.setTranslateY(350);
 
-        processImplementation.setTranslateX(500);
-        processImplementation.setTranslateY(280);
-        processValidation.setTranslateX(500);
-        processValidation.setTranslateY(480);
+        processImplementation.setTranslateX(450);
+        processImplementation.setTranslateY(250);
+        processValidation.setTranslateX(450);
+        processValidation.setTranslateY(450);
 
 
         bookApplications.setOnAction(actionEvent -> {
@@ -133,8 +133,7 @@ public class MenuFX extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
-
-    }
+            }
 
     public Button setStyle( Button button)
     {

@@ -24,11 +24,11 @@ public class MultiVaribleRegressionFX extends Application {
         Button threeVariableRegression = new Button("Three Variable Regression");
         Button fourVariableRegression = new Button("Four Variable Regression");
         twoVariableRegression.setTranslateX(500);
-        twoVariableRegression.setTranslateY(250);
+        twoVariableRegression.setTranslateY(450);
         threeVariableRegression.setTranslateX(500);
         threeVariableRegression.setTranslateY(350);
         fourVariableRegression.setTranslateX(500);
-        fourVariableRegression.setTranslateY(450);
+        fourVariableRegression.setTranslateY(250);
 
 
         twoVariableRegression.setOnAction(actionEvent -> {
