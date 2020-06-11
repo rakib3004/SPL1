@@ -83,18 +83,6 @@ MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-      /*  HBox hBox = new HBox();
-        hBox.getChildren().addAll(exit,menu,back);
-
-    //    hBox.setSpacing(60);*/
-
-
-
-      /*  VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(vBox2,group);
-
-        vBox3.setMaxSize(850, 650);
-        vBox3.setSpacing(5);*/
 
         Scene scene1 = new Scene(group,1500,950);
 

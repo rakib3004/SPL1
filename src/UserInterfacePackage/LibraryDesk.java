@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class LibraryDesk extends Application {
@@ -113,7 +114,7 @@ Button removeBook = new Button("Remove Book");
 
 
 
-        Image image = new Image("libraryBackground23.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,addBook,exit,back,removeBook,bookInformation);

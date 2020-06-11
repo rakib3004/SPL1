@@ -6,34 +6,20 @@ import FilePackage.DateTimeWriter;
 import JavFX.FxSecondWindow;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.ReverseSorting;
-import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import TableViewPackage.Book;
 import UserInterfacePackage.*;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
 
 public class ReadingRoom extends Application {
 
@@ -105,7 +91,7 @@ public class ReadingRoom extends Application {
 
             try {
 
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
+                RemoveBookFX.SelfWiseFX selfWiseFX = new RemoveBookFX.SelfWiseFX();
                 selfWiseFX.start(primaryStage);
             }
 

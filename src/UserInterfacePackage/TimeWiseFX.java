@@ -30,6 +30,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -237,7 +238,7 @@ int iterator;
         yearSection.setPrefSize(200, 50);
 
 
-        Image image = new Image("libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,yearSection);
@@ -342,7 +343,7 @@ int iterator;
 
 
 
-        Image image = new Image("libraryBackground14.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
