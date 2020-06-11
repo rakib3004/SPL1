@@ -17,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.awt.*;
+import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,7 +37,7 @@ public class Main extends Application {
         welcome.setTranslateX(350);
         welcome.setTranslateY(440);
         setStyle(welcome);
-        FileInputStream fileInputStream = new FileInputStream("src/Images/rectangle.png");
+        FileInputStream fileInputStream = new FileInputStream("src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
         welcome.setGraphic(new ImageView(image));
 
@@ -72,7 +73,7 @@ public class Main extends Application {
 
 
 
-        Image background = new Image("LibraryBackground24.png");
+        Image background = new Image("Images"+ File.separator +"LibraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
 

@@ -17,6 +17,8 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class GenericsOfBookFX extends Application {
 
 
@@ -114,7 +116,7 @@ public class GenericsOfBookFX extends Application {
 
 
 
-        Image image = new Image("libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
