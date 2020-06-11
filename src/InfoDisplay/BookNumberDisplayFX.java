@@ -33,6 +33,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 
 public class BookNumberDisplayFX extends Application {
@@ -202,7 +203,7 @@ public class BookNumberDisplayFX extends Application {
 
         Group semiGroup = new Group();;
         semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
-        String string = "libraryBackground9.jpg";
+        String string ="Images"+ File.separator + "libraryBackground9.jpg";
 
         Image image = new Image(string);
         Canvas canvas = new Canvas(1500,950);

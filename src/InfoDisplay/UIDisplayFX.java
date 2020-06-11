@@ -17,6 +17,8 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class UIDisplayFX extends Application {
 
 ScatterChartFX scatterChartFX = new ScatterChartFX();
@@ -119,7 +121,7 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-        Image image = new Image("libraryBackground3.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
@@ -230,7 +232,7 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-        Image image = new Image("libraryBackground20.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground20.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
@@ -338,9 +340,10 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setPrefSize(275, 80);
 
-        Image image = new Image("libraryBackground21.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground21.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
+
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
 
@@ -448,7 +451,7 @@ BookApplication bookApplication = new BookApplication();
 
          stackedAreaChart.setPrefSize(275, 80);
 
-         Image image = new Image("libraryBackground17.jpg");
+         Image image = new Image("Images"+ File.separator +"libraryBackground17.jpg");
          Canvas canvas = new Canvas(1500,950);
          Group group = new Group();
          group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
