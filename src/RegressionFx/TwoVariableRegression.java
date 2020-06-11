@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 public class TwoVariableRegression extends Application {
 
@@ -75,7 +76,7 @@ MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground7.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground7.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,Start,exit,back);

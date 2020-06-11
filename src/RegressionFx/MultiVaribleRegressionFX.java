@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class MultiVaribleRegressionFX extends Application {
 
 
@@ -110,7 +112,7 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
 
 
 
-        Image image = new Image("libraryBackground5.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,twoVariableRegression,fourVariableRegression,
