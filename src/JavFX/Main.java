@@ -14,8 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.awt.*;
+import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -31,9 +33,12 @@ public class Main extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(480);
-        welcome.setTranslateY(300);
+        welcome.setTranslateX(350);
+        welcome.setTranslateY(440);
         setStyle(welcome);
+        FileInputStream fileInputStream = new FileInputStream("src/Images/rectangle.png");
+        Image image = new Image(fileInputStream);
+        welcome.setGraphic(new ImageView(image));
 
 
         welcome.setPrefSize(400, 100);
@@ -67,7 +72,7 @@ public class Main extends Application {
 
 
 
-        Image background = new Image("LibraryBackground17.jpg");
+        Image background = new Image("LibraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
 
@@ -82,7 +87,7 @@ public class Main extends Application {
 
 
 
-        Scene scene = new Scene(root,1400,780);
+        Scene scene = new Scene(root,1400,770);
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();
