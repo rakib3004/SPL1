@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class FXThirdWindow extends Application {
 
 
@@ -107,7 +109,7 @@ public class FXThirdWindow extends Application {
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground2.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,authorsMood,exit,

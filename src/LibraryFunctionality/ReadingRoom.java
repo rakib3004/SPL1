@@ -29,6 +29,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -139,32 +140,6 @@ public class ReadingRoom extends Application {
         setStyle(timeWise);
 
 
-
-/*
-
-        Button readingRoom = new Button("Reading Room");
-
-        readingRoom.setTranslateX(550);
-        readingRoom.setTranslateY(500);
-        readingRoom.setOnAction(actionEvent -> {
-
-            try {
-
-
-                ReadingRoom readingRoom1 = new ReadingRoom();
-                readingRoom1.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        readingRoom.setPrefSize(275, 80);
-        setStyle(readingRoom);
-*/
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -196,7 +171,7 @@ public class ReadingRoom extends Application {
 
 
 
-        Image image = new Image("libraryBackground23.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,writerWise,

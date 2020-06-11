@@ -13,6 +13,8 @@ import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class FxSecondWindow extends Application {
 
 
@@ -107,7 +109,7 @@ Main main = new Main();
         exit.setPrefSize(200, 80);
 
 
-        Image image = new Image("libraryBackground9.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,administrationMood,exit,

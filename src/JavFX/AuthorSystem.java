@@ -14,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class AuthorSystem extends Application {
 
 
@@ -97,7 +99,7 @@ public class AuthorSystem extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("libraryBackground3.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
