@@ -22,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class TrainingTestingComparison extends Application {
@@ -149,7 +150,7 @@ public class TrainingTestingComparison extends Application {
         stackedAreaChartComperison.setPrefSize(350, 80);
 
 
-        Image image = new Image("libraryBackground9.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChartComperison,

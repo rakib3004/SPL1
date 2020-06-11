@@ -256,3 +256,10 @@ Main	Thu 11.06.2020 at 05:29:36 PM
 Main	Thu 11.06.2020 at 05:41:08 PM
 FxSecondWindow	Thu 11.06.2020 at 05:42:01 PM
 FxSecondWindow	Thu 11.06.2020 at 05:42:01 PM
+CombinedTrainingSet	Thu 11.06.2020 at 06:21:25 PM
+Processing	Thu 11.06.2020 at 06:21:26 PM
+DataParsing	Thu 11.06.2020 at 06:21:26 PM
+BookNumber	Thu 11.06.2020 at 06:21:26 PM
+MultipleLinearRegression	Thu 11.06.2020 at 06:21:26 PM
+Matrix	Thu 11.06.2020 at 06:21:26 PM
+CalculateWeight	Thu 11.06.2020 at 06:21:26 PM
