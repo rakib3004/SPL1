@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class Phase1 extends Application {
 
     @Override
@@ -54,7 +56,7 @@ public class Phase1 extends Application {
         next.setPrefSize(200, 80);
 
 
-        Image image = new Image("Slide3.jpg");
+        Image image = new Image("Images"+ File.separator +"Slide3.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,next,back);
@@ -118,7 +120,7 @@ public class Phase1 extends Application {
         next.setPrefSize(200, 80);
 
 
-        Image image = new Image("Slide4.jpg");
+        Image image = new Image("Images"+ File.separator +"Slide4.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,next,back);
@@ -180,7 +182,7 @@ public class Phase1 extends Application {
         next.setPrefSize(200, 80);
 
 
-        Image image = new Image("Slide5.jpg");
+        Image image = new Image("Images"+ File.separator +"Slide5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,next,back);

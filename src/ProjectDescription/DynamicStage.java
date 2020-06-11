@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
+
 public class DynamicStage extends Application {
     Timeline time = new Timeline();
     int numberOfBooks;
@@ -111,7 +113,7 @@ public class DynamicStage extends Application {
                             if(timeSec%4==1){
 
 
-                                Image image = new Image("Slide2.jpg");
+                                Image image = new Image("Images"+ File.separator +"Slide2.jpg");
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
                                 group.getChildren().addAll(canvas,exit,back,bookNameText);
@@ -131,7 +133,7 @@ public class DynamicStage extends Application {
                             else  if(timeSec%4==2){
 
 
-                                Image image = new Image("Slide3.jpg");
+                                Image image = new Image("Images"+ File.separator +"Slide3.jpg");
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
                                 group.getChildren().addAll(canvas,exit,back,bookNameText);
@@ -151,7 +153,7 @@ public class DynamicStage extends Application {
                             }  else  if(timeSec%4==3){
 
 
-                                Image image = new Image("Slide4.jpg");
+                                Image image = new Image("Images"+ File.separator +"Slide4.jpg");
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
                                 group.getChildren().addAll(canvas,exit,back,bookNameText);
@@ -171,7 +173,7 @@ public class DynamicStage extends Application {
                             }   else  if(timeSec%4==0){
 
 
-                                Image image = new Image("Slide5.jpg");
+                                Image image = new Image("Images"+ File.separator +"Slide5.jpg");
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
                                 group.getChildren().addAll(canvas,exit,back,bookNameText);

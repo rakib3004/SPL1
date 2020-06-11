@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class StaticStage extends Application {
 
 
@@ -56,7 +58,7 @@ public class StaticStage extends Application {
         next.setPrefSize(200, 80);
 
 
-        Image image = new Image("Slide2.jpg");
+        Image image = new Image("Images"+ File.separator +"Slide2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,next,back);
