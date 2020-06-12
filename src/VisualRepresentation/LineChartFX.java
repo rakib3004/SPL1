@@ -22,6 +22,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -473,7 +474,7 @@ double []  year2017Books = new double[7];
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -961,7 +962,7 @@ double []  year2017Books = new double[7];
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -1349,7 +1350,7 @@ double []  year2017Books = new double[7];
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -1793,7 +1794,7 @@ double []  year2017Books = new double[7];
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,

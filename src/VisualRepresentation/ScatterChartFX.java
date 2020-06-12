@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -471,7 +472,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -953,7 +954,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -1333,7 +1334,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
@@ -1770,7 +1771,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,

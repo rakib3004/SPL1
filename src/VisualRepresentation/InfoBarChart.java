@@ -18,6 +18,7 @@ import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class InfoBarChart extends Application {
@@ -254,7 +255,7 @@ public class InfoBarChart extends Application {
          // vBox3.setSpacing(5);
 
 
-         Image background = new Image("libraryBackground4.jpg");
+         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
                  BackgroundRepeat.NO_REPEAT,
@@ -465,7 +466,7 @@ public class InfoBarChart extends Application {
          // vBox3.setSpacing(5);
 
 
-         Image background = new Image("libraryBackground4.jpg");
+         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
                  BackgroundRepeat.NO_REPEAT,
@@ -733,7 +734,7 @@ public class InfoBarChart extends Application {
          // vBox3.setSpacing(5);
 
 
-         Image background = new Image("libraryBackground4.jpg");
+         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
                  BackgroundRepeat.NO_REPEAT,
@@ -955,7 +956,7 @@ public class InfoBarChart extends Application {
          // vBox3.setSpacing(5);
 
 
-         Image background = new Image("libraryBackground4.jpg");
+         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
                  BackgroundRepeat.NO_REPEAT,
@@ -1165,7 +1166,7 @@ public class InfoBarChart extends Application {
         // vBox3.setSpacing(5);
 
 
-        Image background = new Image("libraryBackground4.jpg");
+        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
