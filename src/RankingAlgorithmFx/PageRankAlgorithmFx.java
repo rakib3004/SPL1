@@ -50,14 +50,11 @@ public class PageRankAlgorithmFx extends Application {
         tableView.setOnAction(actionEvent -> {
             PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
             try {
-
                 pra_tableViewFX.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         setStyle(tableView);
         tableView.setPrefSize(200,80);
@@ -69,26 +66,18 @@ public class PageRankAlgorithmFx extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         consoleView.setOnAction(actionEvent -> {
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
-
             try {
-
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
 pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
                 System.exit(0);
-
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
         back.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
 
@@ -99,17 +88,9 @@ pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
             }
 
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
-
-
-
-
         setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
@@ -121,7 +102,7 @@ pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,consoleView,exit,back,tableView);
+        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

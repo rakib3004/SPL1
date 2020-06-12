@@ -7,6 +7,7 @@ import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import TableViewPackage.AHP_Chart_View;
 import TableViewPackage.AHP_TableViewFX;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
@@ -57,6 +58,24 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         setStyle(tableView);
         tableView.setPrefSize(200,80);
 
+
+        Button graphView = new Button("Graph View");
+        graphView.setTranslateX(550);
+        graphView.setTranslateY(500);
+        graphView.setOnAction(actionEvent -> {
+            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+            try {
+
+                ahp_chart_view.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        setStyle(graphView);
+        graphView.setPrefSize(200,80);
 
 
 
@@ -125,7 +144,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,consoleView,exit,back,tableView);
+        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -101,7 +101,7 @@ public class FourVariableRegression extends Application {
         Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, tableView, exit, back,consoleView);
+        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
