@@ -2,6 +2,7 @@ package RegressionFx;
 
 import FilePackage.DateTimeWriter;
 import TableViewPackage.AHP_Chart_View;
+import TableViewPackage.MLR_Chart_View;
 import TableViewPackage.MLR_TableViewFX;
 import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
@@ -102,10 +103,10 @@ public class FourVariableRegression extends Application {
         graphView.setTranslateX(570);
         graphView.setTranslateY(500);
         graphView.setOnAction(actionEvent -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+            MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
             try {
 
-                ahp_chart_view.start(primaryStage);
+                mlr_chart_view.start(primaryStage);
             }
 
             catch (Exception exception) {

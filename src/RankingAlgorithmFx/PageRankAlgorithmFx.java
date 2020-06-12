@@ -10,6 +10,7 @@ import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import RegressionFx.MultiVaribleRegressionFX;
 import TableViewPackage.AHP_Chart_View;
+import TableViewPackage.PRA_Chart_View;
 import TableViewPackage.PRA_TableViewFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -104,10 +105,10 @@ pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
         graphView.setTranslateX(550);
         graphView.setTranslateY(500);
         graphView.setOnAction(actionEvent -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
 
-                ahp_chart_view.start(primaryStage);
+                pra_chart_view.start(primaryStage);
             }
 
             catch (Exception exception) {

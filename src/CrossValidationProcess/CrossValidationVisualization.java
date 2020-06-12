@@ -331,7 +331,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         primaryStage.show();
 
     }
-    public void startLineChart(Stage primaryStage) throws IOException {
+    public void  startLineChart(Stage primaryStage) throws IOException {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
