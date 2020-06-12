@@ -205,7 +205,7 @@ public void finish(Stage primaryStage){
 
 
 
-        Image image = new Image("libraryBackground22.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet);

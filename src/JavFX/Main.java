@@ -34,15 +34,15 @@ public class Main extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(350);
-        welcome.setTranslateY(440);
+        welcome.setTranslateX(345);
+        welcome.setTranslateY(450);
         setStyle(welcome);
         FileInputStream fileInputStream = new FileInputStream("src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
         welcome.setGraphic(new ImageView(image));
 
 
-        welcome.setPrefSize(400, 100);
+        welcome.setPrefSize(340, 100);
 
         welcome.setOnAction(actionEvent -> {
 
