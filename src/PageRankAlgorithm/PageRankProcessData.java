@@ -53,6 +53,12 @@ int iterator1=0;
         fileReader.close();
         return pageRankArray;
     }
+    public void printPageRankAlgorithmDataView(PriorityData [] priorityData, int numberOfBooks){
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            System.out.println(priorityData[iterator].getPRAweight());
+        }
+    }
 
     }
 

@@ -22,9 +22,9 @@ weightSum[iterator] = weightSum[iterator]+ (pageRankMatrix[iterator][jterator]*p
 
             }
         }
-            for(iterator=0;iterator<numberOfBooks;iterator++){
+         /*   for(iterator=0;iterator<numberOfBooks;iterator++){
             System.out.println(weightSum[iterator]);
-        }
+        }*/
         pageWeight =weightSum;
         return pageWeight;
     }

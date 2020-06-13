@@ -105,7 +105,7 @@ else{
 
             priorityData[iterator].setPRAweight(pageWeight[iterator]);
             priorityData[iterator].setBorrowPriority(temporaryBorrowCount[iterator]);
-            System.out.println(priorityData[iterator].getPRAweight());
+//            System.out.println(priorityData[iterator].getPRAweight());
         }
 
         return priorityData;

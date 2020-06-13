@@ -8,6 +8,7 @@ import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.MultiVaribleRegressionFX;
 import TableViewPackage.AHP_Chart_View;
 import TableViewPackage.PRA_Chart_View;
@@ -73,8 +74,10 @@ public class PageRankAlgorithmFx extends Application {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
-                System.exit(0);
+                //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+                PageRankProcessData pageRankProcessData = new PageRankProcessData();
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
             }
             catch (Exception exception) {
                 exception.printStackTrace();
