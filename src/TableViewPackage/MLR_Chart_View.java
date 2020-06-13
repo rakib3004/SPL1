@@ -17,10 +17,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
@@ -263,7 +260,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         numberAxis.setLabel("Numbers of Book");
 
 
-        LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        ScatterChart scatterChart = new ScatterChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
 
@@ -282,11 +279,11 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         }
 
 
-        lineChart.getData().add(series1);
+        scatterChart.getData().add(series1);
 
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        scatterChart.setTranslateX(10);
+        scatterChart.setTranslateY(25);
+        scatterChart.setPrefSize(1350, 700);
 
 
         ContextMenu contextMenu = new ContextMenu();
@@ -327,12 +324,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+        scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
 
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
             }
         });
 
@@ -340,7 +337,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
+        group.getChildren().addAll(canvas, scatterChart, exit, back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
@@ -403,7 +400,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         numberAxis.setLabel("Numbers of Book");
 
 
-        LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
 
@@ -422,11 +419,11 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         }
 
 
-        lineChart.getData().add(series1);
+        stackedAreaChart.getData().add(series1);
 
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        stackedAreaChart.setTranslateX(10);
+        stackedAreaChart.setTranslateY(25);
+        stackedAreaChart.setPrefSize(1350, 700);
 
 
         ContextMenu contextMenu = new ContextMenu();
@@ -466,12 +463,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+        stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
 
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
@@ -479,7 +476,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
+        group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);

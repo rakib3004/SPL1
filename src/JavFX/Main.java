@@ -73,7 +73,7 @@ public class Main extends Application {
 
 
 
-        Image background = new Image("Images"+ File.separator +"LibraryBackground24.png");
+        Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
 
