@@ -151,12 +151,9 @@ public class AHP_Chart_View extends Application {
             }
 
         });
-
-
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
