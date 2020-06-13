@@ -11,12 +11,18 @@ import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.FourVariableRegression;
+import TableViewPackage.Book;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -163,10 +169,44 @@ public class CombinedScatterChart extends Application {
         scatterChart2.setTranslateY(350);
         scatterChart2.setPrefSize(650, 300);
 
+        MenuItem multiVariableRegression = new MenuItem("MultiVariable Regression");
+        multiVariableRegression.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+
+
+            } });
+
+
+
+        MenuItem analyticHierarchy = new MenuItem("Analytic Hierarchy");
+
+        analyticHierarchy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+            }
+        });
+
+        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
+        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+
+            }
+        });
+
+
+        MenuButton selectOtherChart = new MenuButton("Select OtherChart");
+        selectOtherChart.getItems().addAll( multiVariableRegression, analyticHierarchy, pageRankAlgorithm);
+
+
+        selectOtherChart.setTranslateX(650);
+        selectOtherChart.setTranslateY(320);
+        selectOtherChart.setPrefSize(150, 35);
+
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, scatterChart, scatterChart1, scatterChart2, exit, back);
+        group.getChildren().addAll(canvas, scatterChart, scatterChart1, scatterChart2, exit, back,selectOtherChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
