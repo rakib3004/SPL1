@@ -264,7 +264,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         mlr_process.setOnAction((event) -> {
             try {
                 MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.start(primaryStage);
+                mlr_chart_view.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -274,7 +274,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         ahp_process.setOnAction((event) -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
-                ahp_chart_view.start(primaryStage);
+                ahp_chart_view.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -282,7 +282,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         pra_process.setOnAction((event) -> {
             PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
-                pra_chart_view.start(primaryStage);
+                pra_chart_view.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -404,17 +404,16 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         mlr_process.setOnAction((event) -> {
             try {
                 MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.start(primaryStage);
+                mlr_chart_view.startStackedAreaChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         });
-
         ahp_process.setOnAction((event) -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
-                ahp_chart_view.start(primaryStage);
+                ahp_chart_view.startStackedAreaChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -422,7 +421,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         pra_process.setOnAction((event) -> {
             PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
-                pra_chart_view.start(primaryStage);
+                pra_chart_view.startStackedAreaChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }

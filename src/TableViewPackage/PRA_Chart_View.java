@@ -257,36 +257,37 @@ public class PRA_Chart_View extends Application {
 
 
 
-        mlr_process.setOnAction((event) -> {
-            try {
-                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+      mlr_process.setOnAction((event) -> {
+          try {
+              MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+              mlr_chart_view.startScatterChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
 
-        });
+      });
 
-        ahp_process.setOnAction((event) -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
-            try {
-                ahp_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        pra_process.setOnAction((event) -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-            try {
-                pra_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+      ahp_process.setOnAction((event) -> {
+          AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+          try {
+              ahp_chart_view.startScatterChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      });
+      pra_process.setOnAction((event) -> {
+          PRA_Chart_View pra_chart_view = new PRA_Chart_View();
+          try {
+              pra_chart_view.startScatterChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
 
-        });
+      });
 
 
-        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
+
+      contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
         scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
@@ -395,34 +396,32 @@ public class PRA_Chart_View extends Application {
         MenuItem pra_process = new MenuItem("PRA Process");
 
 
+      mlr_process.setOnAction((event) -> {
+          try {
+              MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+              mlr_chart_view.startStackedAreaChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
 
-        mlr_process.setOnAction((event) -> {
-            try {
-                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+      });
+      ahp_process.setOnAction((event) -> {
+          AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+          try {
+              ahp_chart_view.startStackedAreaChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      });
+      pra_process.setOnAction((event) -> {
+          PRA_Chart_View pra_chart_view = new PRA_Chart_View();
+          try {
+              pra_chart_view.startStackedAreaChart(primaryStage);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
 
-        });
-
-        ahp_process.setOnAction((event) -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
-            try {
-                ahp_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        pra_process.setOnAction((event) -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-            try {
-                pra_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        });
+      });
 
 
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
