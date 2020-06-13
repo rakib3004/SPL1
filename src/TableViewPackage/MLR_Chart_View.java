@@ -141,9 +141,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         pra_process.setOnAction((event) -> {
-            PRA_Chart_View crossValidationVisualization = new PRA_Chart_View();
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
-                crossValidationVisualization.start(primaryStage);
+                pra_chart_view.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -280,9 +280,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         pra_process.setOnAction((event) -> {
-            PRA_Chart_View crossValidationVisualization = new PRA_Chart_View();
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
-                crossValidationVisualization.start(primaryStage);
+                pra_chart_view.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -420,9 +420,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         pra_process.setOnAction((event) -> {
-            PRA_Chart_View crossValidationVisualization = new PRA_Chart_View();
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
-                crossValidationVisualization.start(primaryStage);
+                pra_chart_view.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
