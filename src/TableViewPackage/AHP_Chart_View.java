@@ -1,5 +1,7 @@
 package TableViewPackage;
 
+import AHPalgorithm.AHPcalculation;
+import AHPalgorithm.AHPprocessImplementation;
 import CrossValidationProcess.CombinedTrainingSet;
 import CrossValidationProcess.CrossValidationVisualization;
 import FilePackage.DateTimeWriter;
@@ -36,6 +38,10 @@ public class AHP_Chart_View extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
+    AHPcalculation ahPcalculation = new AHPcalculation();
+    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -77,8 +83,8 @@ public class AHP_Chart_View extends Application {
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-
+        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
@@ -100,7 +106,7 @@ public class AHP_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
 
         }
 

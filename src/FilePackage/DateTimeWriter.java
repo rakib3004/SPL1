@@ -19,7 +19,7 @@ String FILENAME,string;
         string = string+ ft.format(dNow)+"\n";
 
      BufferedWriter out = null;
-            try {
+         /*   try {
                 out = new BufferedWriter(
                         new FileWriter(FILENAME, true));
             } catch (IOException e) {
@@ -30,14 +30,14 @@ String FILENAME,string;
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-      /*  try {
+            }*/
+        try {
             FileWriter fileWriter=new FileWriter(FILENAME);
             fileWriter.write(string);
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
     }
 }
