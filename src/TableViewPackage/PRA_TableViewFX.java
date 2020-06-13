@@ -7,6 +7,7 @@ import Methods.ReverseSorting;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import PageRankAlgorithm.PageRankProcessData;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -218,7 +219,9 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
         genericAlgo =soring.sortingPRAmethods(priorityData,numberOfBooks);
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){

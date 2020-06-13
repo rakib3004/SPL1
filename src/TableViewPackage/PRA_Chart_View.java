@@ -9,6 +9,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import PageRankAlgorithm.PageRankProcessData;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -76,8 +77,12 @@ public class PRA_Chart_View extends Application {
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
+/*
         priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+*/
 
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
