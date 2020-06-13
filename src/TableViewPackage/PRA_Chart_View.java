@@ -102,7 +102,7 @@ public class PRA_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
 
         }
 

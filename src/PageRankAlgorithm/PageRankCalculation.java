@@ -1,7 +1,12 @@
 package PageRankAlgorithm;
 
 import FilePackage.DateTimeWriter;
+import MainPackage.BookNumber;
+import MainPackage.Processing;
+import Methods.ReverseSorting;
 import ObjectOriented.PriorityData;
+
+import java.io.IOException;
 
 public class PageRankCalculation {
 double linkValue;
@@ -10,6 +15,8 @@ PageRankLink pageRankLink = new PageRankLink();
 CheckPageLink checkPageLink = new CheckPageLink();
     int iterator,jterator;
     double  [] temporaryBorrowCount = new double[2000];
+    int numberOfBooks;
+    ReverseSorting soring = new ReverseSorting();
 
 PageRankMatrixCalculation pageRankMatrixCalculation = new PageRankMatrixCalculation();
     public PriorityData[]  pageRankCalculationMethods(PriorityData[] priorityData, int numberOfBooks) {
@@ -90,21 +97,35 @@ else{
 
 
         int processingCounter = 0;
-        for (processingCounter = 1; processingCounter <=1; processingCounter++) {
 
 
         pageWeight = pageRankMatrixCalculation.pageRankMatrixCalculationMethods(pageWeight, pageRankMatrix, numberOfBooks);
-
-
-        }
 
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
             priorityData[iterator].setPRAweight(pageWeight[iterator]);
             priorityData[iterator].setBorrowPriority(temporaryBorrowCount[iterator]);
-
+            System.out.println(priorityData[iterator].getPRAweight());
         }
 
         return priorityData;
+    }
+
+
+    public static void main(String[] args) throws IOException {
+
+        Processing processing = new Processing();
+        BookNumber bookNumber = new BookNumber();
+        PageRankCalculation pageRankCalculation = new PageRankCalculation();
+         PriorityData [] priorityData;
+        priorityData = processing.fileReaderMethods();
+        int   numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+            System.out.println(priorityData[iterator].getPRAweight());
+        }
+
     }
 }

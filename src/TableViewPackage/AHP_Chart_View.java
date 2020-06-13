@@ -119,34 +119,34 @@ public class AHP_Chart_View extends Application {
 
 
         ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
+        MenuItem mlr_process = new MenuItem("MLR Process");
+        MenuItem ahp_process = new MenuItem("AHP Process");
+        MenuItem pra_process = new MenuItem("PRA Process");
 
 
 
-        scatterView.setOnAction((event) -> {
+        mlr_process.setOnAction((event) -> {
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+                mlr_chart_view.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         });
 
-        lineChartView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+        ahp_process.setOnAction((event) -> {
+            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
-                crossValidationVisualization.startLineChart(primaryStage);
+                ahp_chart_view.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        stackedAreaView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+        pra_process.setOnAction((event) -> {
+            PRA_Chart_View crossValidationVisualization = new PRA_Chart_View();
             try {
-                crossValidationVisualization.startStackedArea(primaryStage);
+                crossValidationVisualization.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -154,7 +154,7 @@ public class AHP_Chart_View extends Application {
         });
 
 
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
+        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
