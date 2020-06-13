@@ -10,6 +10,7 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -57,13 +58,14 @@ public class AHP_Chart_View extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
 
             try {
-                crossValidationVisualization.start(primaryStage);
+                analyticHierarchyAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
 
         });
 

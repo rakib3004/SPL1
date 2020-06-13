@@ -10,6 +10,7 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import RegressionFx.FourVariableRegression;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -54,10 +55,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
 
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-
+            FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
-                crossValidationVisualization.start(primaryStage);
+                fourVariableRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

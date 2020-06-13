@@ -9,6 +9,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
+import RankingAlgorithmFx.PageRankAlgorithmFx;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -53,10 +54,9 @@ public class PRA_Chart_View extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-
+            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
             try {
-                crossValidationVisualization.start(primaryStage);
+                pageRankAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
