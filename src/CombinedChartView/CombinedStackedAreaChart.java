@@ -12,11 +12,15 @@ import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.FourVariableRegression;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -162,11 +166,56 @@ public class CombinedStackedAreaChart extends Application {
         stackedAreaChart2.setTranslateX(700);
         stackedAreaChart2.setTranslateY(350);
         stackedAreaChart2.setPrefSize(650, 300);
+        MenuItem scatterChart3 = new MenuItem("Scatter Chart");
+        scatterChart3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                CombinedScatterChart combinedScatterChart = new CombinedScatterChart();
+                try {
+                    combinedScatterChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } });
+        MenuItem lineChart3 = new MenuItem("Line Chart");
+
+        lineChart3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CombinedLineChart combinedLineChart = new CombinedLineChart();
+                try {
+                    combinedLineChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+        MenuItem stackedAreaChart3 = new MenuItem("StackedArea Chart");
+        stackedAreaChart3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
+                try {
+                    combinedStackedAreaChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        MenuButton selectOtherChart = new MenuButton("Select OtherChart");
+        selectOtherChart.getItems().addAll( scatterChart3, lineChart3, stackedAreaChart3);
+
+
+        selectOtherChart.setTranslateX(650);
+        selectOtherChart.setTranslateY(320);
+        selectOtherChart.setPrefSize(150, 35);
 
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart, stackedAreaChart1, stackedAreaChart2, exit, back);
+        group.getChildren().addAll(canvas, stackedAreaChart, stackedAreaChart1, stackedAreaChart2, exit, back,selectOtherChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);

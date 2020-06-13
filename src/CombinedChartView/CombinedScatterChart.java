@@ -169,34 +169,46 @@ public class CombinedScatterChart extends Application {
         scatterChart2.setTranslateY(350);
         scatterChart2.setPrefSize(650, 300);
 
-        MenuItem multiVariableRegression = new MenuItem("MultiVariable Regression");
-        multiVariableRegression.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem scatterChart3 = new MenuItem("Scatter Chart");
+        scatterChart3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
-
-
+                CombinedScatterChart combinedScatterChart = new CombinedScatterChart();
+                try {
+                    combinedScatterChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             } });
+        MenuItem lineChart3 = new MenuItem("Line Chart");
 
-
-
-        MenuItem analyticHierarchy = new MenuItem("Analytic Hierarchy");
-
-        analyticHierarchy.setOnAction(new EventHandler<ActionEvent>() {
+        lineChart3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                CombinedLineChart combinedLineChart = new CombinedLineChart();
+                try {
+                    combinedLineChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
             }
         });
 
-        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
-        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem stackedAreaChart3 = new MenuItem("StackedArea Chart");
+        stackedAreaChart3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
+                CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
+                try {
+                    combinedStackedAreaChart.start(primaryStage);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
 
         MenuButton selectOtherChart = new MenuButton("Select OtherChart");
-        selectOtherChart.getItems().addAll( multiVariableRegression, analyticHierarchy, pageRankAlgorithm);
+        selectOtherChart.getItems().addAll( scatterChart3, lineChart3, stackedAreaChart3);
 
 
         selectOtherChart.setTranslateX(650);
