@@ -1,5 +1,8 @@
 package JavFX;
 
+import CombinedChartView.CombinedLineChart;
+import CombinedChartView.CombinedScatterChart;
+import CombinedChartView.CombinedStackedAreaChart;
 import CrossValidationProcess.CombinedTrainingSet;
 import CrossValidationProcess.CrossValidationFX;
 import CrossValidationProcess.CrossValidationVisualization;
@@ -30,36 +33,32 @@ public class SystemAnalysis extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
-        Button sevenValueApplications = new Button("SevenValue Applications");
-        Button bookWeightAnalysis = new Button("BookWeight Analysis");
+        Button processValueAreaChart = new Button("ProcessValue AreaChart");
+        Button processValueLineArt = new Button("ProcessValue LineArt");
         Button processValuePlotting = new Button("ProcessValue Plotting");
 
 
-            sevenValueApplications.setTranslateX(100);
-        sevenValueApplications.setTranslateY(100);
-        bookWeightAnalysis.setTranslateX(460);
-        bookWeightAnalysis.setTranslateY(100);
+        processValueAreaChart.setTranslateX(100);
+        processValueAreaChart.setTranslateY(100);
+        processValueLineArt.setTranslateX(460);
+        processValueLineArt.setTranslateY(100);
         processValuePlotting.setTranslateX(820);
         processValuePlotting.setTranslateY(100);
 
-        sevenValueApplications.setOnAction(actionEvent -> {
-
-            BookApplication bookApplication = new BookApplication();
-
+        processValueAreaChart.setOnAction(actionEvent -> {
+            CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
             try {
-
-                bookApplication.start(primaryStage);
+                combinedStackedAreaChart.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
-        bookWeightAnalysis.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+        processValueLineArt.setOnAction(actionEvent -> {
+            CombinedLineChart crossValidationVisualization = new CombinedLineChart();
             try {
 
-                crossValidationVisualization.startLineChart(primaryStage);
+                crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -67,21 +66,21 @@ public class SystemAnalysis extends Application {
         });
 
         processValuePlotting.setOnAction(actionEvent -> {
+            CombinedScatterChart combinedScatterChart = new CombinedScatterChart();
+
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+                combinedScatterChart.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
-
-        setStyle(sevenValueApplications);
-        setStyle(bookWeightAnalysis);
+        setStyle(processValueAreaChart);
+        setStyle(processValueLineArt);
         setStyle(processValuePlotting);
 
-        sevenValueApplications.setPrefSize(350, 80);
-        bookWeightAnalysis.setPrefSize(350, 80);
+        processValueAreaChart.setPrefSize(350, 80);
+        processValueLineArt.setPrefSize(350, 80);
         processValuePlotting.setPrefSize(350, 80);
 
 
@@ -117,8 +116,8 @@ public class SystemAnalysis extends Application {
         Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,sevenValueApplications,
-                bookWeightAnalysis,
+        group.getChildren().addAll(canvas,processValueAreaChart,
+                processValueLineArt,
                 processValuePlotting,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();

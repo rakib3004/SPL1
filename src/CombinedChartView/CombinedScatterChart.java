@@ -3,6 +3,7 @@ package CombinedChartView;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.SystemAnalysis;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -56,9 +57,9 @@ public class CombinedScatterChart extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            FourVariableRegression fourVariableRegression = new FourVariableRegression();
+            SystemAnalysis systemAnalysis = new SystemAnalysis();
             try {
-                fourVariableRegression.start(primaryStage);
+                systemAnalysis.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
