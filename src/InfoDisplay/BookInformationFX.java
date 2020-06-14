@@ -87,40 +87,34 @@ public class BookInformationFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        typesOfBook.setTranslateX(500);
+        typesOfBook.setTranslateX(100);
         typesOfBook.setTranslateY(100);
-        demandsOfBook.setTranslateX(500);
-        demandsOfBook.setTranslateY(200);
+        demandsOfBook.setTranslateX(460);
+        demandsOfBook.setTranslateY(100);
+        genericsOfBook.setTranslateX(820);
+        genericsOfBook.setTranslateY(100);
 
-        genericsOfBook.setTranslateX(500);
-        genericsOfBook.setTranslateY(300);
-        classesOfBooks.setTranslateX(500);
-        classesOfBooks.setTranslateY(400);
-
-        borrowCountOfBook.setTranslateX(500);
-        borrowCountOfBook.setTranslateY(500);
-        numberDisplay.setTranslateX(500);
-        numberDisplay.setTranslateY(600);
-
-
+        classesOfBooks.setTranslateX(100);
+        classesOfBooks.setTranslateY(250);
+        borrowCountOfBook.setTranslateX(460);
+        borrowCountOfBook.setTranslateY(250);
+        numberDisplay.setTranslateX(820);
+        numberDisplay.setTranslateY(250);
 
         back.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
 
             try {
-
                 libraryDesk.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
+
         typesOfBook.setOnAction(actionEvent -> {
             try {
         typesOfBookFX.start(primaryStage);
@@ -146,7 +140,6 @@ demandsOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         classesOfBooks.setOnAction(actionEvent -> {
@@ -155,7 +148,6 @@ classesOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
 
@@ -167,7 +159,6 @@ borrrowCountOfBookFX.start(primaryStage);
             }
 
         });
-
         numberDisplay.setOnAction(actionEvent -> {
             BookNumberDisplayFX bookNumberDisplayFX = new BookNumberDisplayFX();
             try {
@@ -176,10 +167,7 @@ borrrowCountOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
 
         //    setStyle(Start);
         setStyle(exit);
@@ -198,16 +186,14 @@ borrrowCountOfBookFX.start(primaryStage);
         back.setPrefSize(270, 80);
         exit.setPrefSize(270, 80);
 
-        demandsOfBook.setPrefSize(333, 80);
-        typesOfBook.setPrefSize(333, 80);
+        demandsOfBook.setPrefSize(350, 80);
+        typesOfBook.setPrefSize(350, 80);
 
-        classesOfBooks.setPrefSize(333, 80);
-        genericsOfBook.setPrefSize(333, 80);
+        classesOfBooks.setPrefSize(350, 80);
+        genericsOfBook.setPrefSize(350, 80);
 
-         borrowCountOfBook.setPrefSize(333, 80);
-        numberDisplay.setPrefSize(333, 80);
-
-
+         borrowCountOfBook.setPrefSize(350, 80);
+        numberDisplay.setPrefSize(350, 80);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -216,14 +202,10 @@ borrrowCountOfBookFX.start(primaryStage);
         group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
         group.getChildren().addAll(borrowCountOfBook,numberDisplay);
 
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);

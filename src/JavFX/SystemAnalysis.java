@@ -35,14 +35,12 @@ public class SystemAnalysis extends Application {
         Button processValuePlotting = new Button("ProcessValue Plotting");
 
 
-        sevenValueApplications.setTranslateX(450);
-        sevenValueApplications.setTranslateY(350);
-
-        bookWeightAnalysis.setTranslateX(450);
-        bookWeightAnalysis.setTranslateY(250);
-        processValuePlotting.setTranslateX(450);
-        processValuePlotting.setTranslateY(450);
-
+            sevenValueApplications.setTranslateX(100);
+        sevenValueApplications.setTranslateY(100);
+        bookWeightAnalysis.setTranslateX(460);
+        bookWeightAnalysis.setTranslateY(100);
+        processValuePlotting.setTranslateX(820);
+        processValuePlotting.setTranslateY(100);
 
         sevenValueApplications.setOnAction(actionEvent -> {
 
@@ -116,7 +114,7 @@ public class SystemAnalysis extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground3.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,sevenValueApplications,
