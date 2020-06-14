@@ -33,12 +33,12 @@ public class FXThirdWindow extends Application {
 
 
 
-        librarianMood.setTranslateX(530);
+        librarianMood.setTranslateX(200);
         librarianMood.setTranslateY(200);
         authorsMood.setTranslateX(530);
-        authorsMood.setTranslateY(300);
-        systemAnalysis.setTranslateX(530);
-        systemAnalysis.setTranslateY(400);
+        authorsMood.setTranslateY(200);
+        systemAnalysis.setTranslateX(860);
+        systemAnalysis.setTranslateY(200);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -102,9 +102,9 @@ public class FXThirdWindow extends Application {
         setStyle(back);
         setStyle(systemAnalysis);
 
-        authorsMood.setPrefSize(280, 80);
-        librarianMood.setPrefSize(280, 80);
-        systemAnalysis.setPrefSize(280,80);
+        authorsMood.setPrefSize(320, 80);
+        librarianMood.setPrefSize(320, 80);
+        systemAnalysis.setPrefSize(320,80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 

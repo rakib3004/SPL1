@@ -34,12 +34,12 @@ public class FxSecondWindow extends Application {
 
 
 
-        readersMood.setTranslateX(530);
+        readersMood.setTranslateX(200);
         readersMood.setTranslateY(200);
         administrationMood.setTranslateX(530);
-        administrationMood.setTranslateY(300);
-        about.setTranslateX(530);
-        about.setTranslateY(400);
+        administrationMood.setTranslateY(200);
+        about.setTranslateX(860);
+        about.setTranslateY(200);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
