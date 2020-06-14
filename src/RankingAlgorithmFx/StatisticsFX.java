@@ -27,12 +27,12 @@ public class StatisticsFX extends Application {
         Button multiVariableRegression = new Button("MultiVariable Regression");
         Button analyticHierarchy = new Button("Analytic Hierarchy Process");
         Button pageRankAlgorithm = new Button("Page Rank Algorithm");
-        multiVariableRegression.setTranslateX(500);
-        multiVariableRegression.setTranslateY(250);
+        multiVariableRegression.setTranslateX(140);
+        multiVariableRegression.setTranslateY(150);
         analyticHierarchy.setTranslateX(500);
-        analyticHierarchy.setTranslateY(350);
-        pageRankAlgorithm.setTranslateX(500);
-        pageRankAlgorithm.setTranslateY(450);
+        analyticHierarchy.setTranslateY(150);
+        pageRankAlgorithm.setTranslateX(860);
+        pageRankAlgorithm.setTranslateY(150);
 
         multiVariableRegression.setOnAction(actionEvent -> {
 
@@ -108,8 +108,6 @@ try {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground4.jpg");
         Canvas canvas = new Canvas(1400,800);
         Group group = new Group();
@@ -118,12 +116,7 @@ try {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
-
         Scene scene1 = new Scene(group,1400,800);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
