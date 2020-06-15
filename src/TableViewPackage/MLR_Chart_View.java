@@ -77,9 +77,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button scatterChartView = new Button("ScatterChart View");
         Button stackedAreaChartView = new Button("StackedAreaChart View");
-        scatterChartView.setTranslateX(0);
+        scatterChartView.setTranslateX(30);
         scatterChartView.setTranslateY(0);
-        stackedAreaChartView.setTranslateX(1100);
+        stackedAreaChartView.setTranslateX(1170);
         stackedAreaChartView.setTranslateY(0);
 
 
@@ -102,12 +102,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
 
 
-        setStyle2(stackedAreaChartView);
-        setStyle2(scatterChartView);
-
-
-        scatterChartView.setPrefSize(200, 80);
-        stackedAreaChartView.setPrefSize(200, 80);
+        scatterChartView.setPrefSize(160, 40);
+        stackedAreaChartView.setPrefSize(160, 40);
 
 
         priorityData = processing.fileReaderMethods();
