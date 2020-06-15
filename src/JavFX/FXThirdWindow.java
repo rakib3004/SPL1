@@ -35,11 +35,11 @@ public class FXThirdWindow extends Application {
 
 
         librarianMood.setTranslateX(200);
-        librarianMood.setTranslateY(100);
+        librarianMood.setTranslateY(50);
         authorsMood.setTranslateX(530);
-        authorsMood.setTranslateY(100);
+        authorsMood.setTranslateY(50);
         systemAnalysis.setTranslateX(860);
-        systemAnalysis.setTranslateY(100);
+        systemAnalysis.setTranslateY(50);
 
         back.setTranslateX(0);
         back.setTranslateY(650);

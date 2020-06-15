@@ -34,7 +34,7 @@ public class LibraryDesk extends Application {
 
         Button addBook = new Button("Add Book");
         addBook.setTranslateX(160);
-        addBook.setTranslateY(100);
+        addBook.setTranslateY(50);
 
         addBook.setOnAction(actionEvent -> {
 
@@ -54,7 +54,7 @@ public class LibraryDesk extends Application {
 
         Button bookInformation = new Button("Book Information");
         bookInformation.setTranslateX(520);
-        bookInformation.setTranslateY(100);
+        bookInformation.setTranslateY(50);
         bookInformation.setOnAction(actionEvent -> {
             BookInformationFX bookInformationFX = new BookInformationFX();
             try {
@@ -70,7 +70,7 @@ public class LibraryDesk extends Application {
 Button removeBook = new Button("Remove Book");
 
         removeBook.setTranslateX(880);
-        removeBook.setTranslateY(100);
+        removeBook.setTranslateY(50);
         removeBook.setOnAction(actionEvent -> {
 
             try {

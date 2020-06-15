@@ -47,7 +47,7 @@ public class ReadingRoom extends Application {
         Button writerWise = new Button("Writer Wise");
 
         writerWise.setTranslateX(230);
-        writerWise.setTranslateY(20);
+        writerWise.setTranslateY(50);
         writerWise.setOnAction(actionEvent -> {
 
             try {
@@ -68,7 +68,7 @@ public class ReadingRoom extends Application {
         Button classWise = new Button("Class Wise");
 
         classWise.setTranslateX(640);
-        classWise.setTranslateY(20);
+        classWise.setTranslateY(50);
         classWise.setOnAction(actionEvent -> {
 
             try {
@@ -88,7 +88,7 @@ public class ReadingRoom extends Application {
         Button selfWise = new Button("Self Wise");
 
         selfWise.setTranslateX(230);
-        selfWise.setTranslateY(110);
+        selfWise.setTranslateY(140);
         selfWise.setOnAction(actionEvent -> {
 
             try {
@@ -109,7 +109,7 @@ public class ReadingRoom extends Application {
         Button timeWise = new Button("Time Wise");
 
         timeWise.setTranslateX(640);
-        timeWise.setTranslateY(110);
+        timeWise.setTranslateY(140);
         timeWise.setOnAction(actionEvent -> {
 
             try {
