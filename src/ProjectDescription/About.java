@@ -2,6 +2,7 @@ package ProjectDescription;
 
 import FilePackage.DateTimeWriter;
 import JavFX.AuthorSystem;
+import JavFX.FxSecondWindow;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -32,11 +33,9 @@ public class About extends Application {
 
 
         back.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
-
-
+            FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
-                authorSystem.start(primaryStage);
+                fxSecondWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

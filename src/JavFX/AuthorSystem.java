@@ -4,6 +4,8 @@ import CrossValidationProcess.CrossValidationFX;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
+import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -32,10 +34,10 @@ public class AuthorSystem extends Application {
         Button processValidation = new Button("Process Validation");
 
 
-        processImplementation.setTranslateX(450);
-        processImplementation.setTranslateY(300);
-        processValidation.setTranslateX(450);
-        processValidation.setTranslateY(400);
+        processImplementation.setTranslateX(210);
+        processImplementation.setTranslateY(20);
+        processValidation.setTranslateX(640);
+        processValidation.setTranslateY(20);
 
 
 
@@ -66,8 +68,8 @@ public class AuthorSystem extends Application {
         setStyle(processValidation);
 
 
-        processImplementation.setPrefSize(350, 80);
-        processValidation.setPrefSize(350, 80);
+        processImplementation.setPrefSize(420, 80);
+        processValidation.setPrefSize(420, 80);
 
 
 
@@ -99,11 +101,67 @@ public class AuthorSystem extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground3.jpg");
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+
+
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+
+        Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
-                processValidation,exit,back);
+                processValidation,exit,back
+                ,readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
