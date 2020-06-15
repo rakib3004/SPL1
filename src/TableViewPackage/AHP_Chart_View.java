@@ -162,10 +162,41 @@ public class AHP_Chart_View extends Application {
         });
 
 
-        //  Image image = new Image("libraryBackground9.jpg");
+
+        Button scatterChartView = new Button("ScatterChart View");
+        Button stackedAreaChartView = new Button("StackedAreaChart View");
+        scatterChartView.setTranslateX(30);
+        scatterChartView.setTranslateY(0);
+        stackedAreaChartView.setTranslateX(1170);
+        stackedAreaChartView.setTranslateY(0);
+
+
+        scatterChartView.setOnAction(actionEvent -> {
+            try {
+                startScatterChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        stackedAreaChartView.setOnAction(actionEvent -> {
+            try {
+                startStackedAreaChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+        scatterChartView.setPrefSize(160, 40);
+        stackedAreaChartView.setPrefSize(160, 40);
+
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
+        group.getChildren().addAll(canvas, lineChart, exit, back
+                , stackedAreaChartView, scatterChartView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
