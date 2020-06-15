@@ -114,11 +114,11 @@ public class FXThirdWindow extends Application {
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
 
-        readersMood.setTranslateX(30);
+        readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(30);
+        administrationMood.setTranslateX(20);
         administrationMood.setTranslateY(320);
-        about.setTranslateX(30);
+        about.setTranslateX(20);
         about.setTranslateY(380);
 
 
