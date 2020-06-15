@@ -32,7 +32,7 @@ public class LibraryDesk extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button addBook = new Button("Add Book");
-        addBook.setTranslateX(550);
+        addBook.setTranslateX(160);
         addBook.setTranslateY(100);
 
         addBook.setOnAction(actionEvent -> {
@@ -47,13 +47,13 @@ public class LibraryDesk extends Application {
             }
 
         });
-        addBook.setPrefSize(230, 80);
+        addBook.setPrefSize(350, 80);
         setStyle(addBook);
 
 
         Button bookInformation = new Button("Book Information");
-        bookInformation.setTranslateX(500);
-        bookInformation.setTranslateY(280);
+        bookInformation.setTranslateX(520);
+        bookInformation.setTranslateY(100);
         bookInformation.setOnAction(actionEvent -> {
             BookInformationFX bookInformationFX = new BookInformationFX();
             try {
@@ -68,8 +68,8 @@ public class LibraryDesk extends Application {
 
 Button removeBook = new Button("Remove Book");
 
-        removeBook.setTranslateX(550);
-        removeBook.setTranslateY(400);
+        removeBook.setTranslateX(880);
+        removeBook.setTranslateY(100);
         removeBook.setOnAction(actionEvent -> {
 
             try {
@@ -80,7 +80,7 @@ Button removeBook = new Button("Remove Book");
                 exception.printStackTrace();
             }
         });
-        removeBook.setPrefSize(270, 80);
+        removeBook.setPrefSize(350, 80);
         setStyle(removeBook);
 
         Button back = new Button("Back");

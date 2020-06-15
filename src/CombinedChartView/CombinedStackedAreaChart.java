@@ -52,33 +52,21 @@ public class CombinedStackedAreaChart extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             SystemAnalysis systemAnalysis = new SystemAnalysis();
             try {
                 systemAnalysis.start(primaryStage);
             } catch (Exception exception) {
-
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(160, 50);
         exit.setPrefSize(160, 50);
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -98,15 +86,11 @@ public class CombinedStackedAreaChart extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-
         }
-
         stackedAreaChart.getData().add(series1);
         stackedAreaChart.setTranslateX(10);
         stackedAreaChart.setTranslateY(25);
         stackedAreaChart.setPrefSize(1250, 300);
-
-
         ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
         priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData, numberOfBooks);
         CategoryAxis categoryAxis1 = new CategoryAxis();
@@ -114,13 +98,9 @@ public class CombinedStackedAreaChart extends Application {
 
         NumberAxis numberAxis1 = new NumberAxis();
         numberAxis1.setLabel("Numbers of Book");
-
-
         StackedAreaChart stackedAreaChart1 = new StackedAreaChart(categoryAxis1, numberAxis1);
 
         XYChart.Series series2 = new XYChart.Series();
-
-
         series2.setName("Analytic Hierarchy Process");
 
 
@@ -130,8 +110,6 @@ public class CombinedStackedAreaChart extends Application {
             series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
 
         }
-
-
         stackedAreaChart1.getData().add(series2);
 
         stackedAreaChart1.setTranslateX(10);
