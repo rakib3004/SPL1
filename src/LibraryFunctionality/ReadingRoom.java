@@ -46,8 +46,8 @@ public class ReadingRoom extends Application {
 
         Button writerWise = new Button("Writer Wise");
 
-        writerWise.setTranslateX(250);
-        writerWise.setTranslateY(150);
+        writerWise.setTranslateX(230);
+        writerWise.setTranslateY(20);
         writerWise.setOnAction(actionEvent -> {
 
             try {
@@ -61,14 +61,14 @@ public class ReadingRoom extends Application {
             }
 
         });
-        writerWise.setPrefSize(240, 80);
+        writerWise.setPrefSize(400, 80);
         setStyle(writerWise);
 
 
         Button classWise = new Button("Class Wise");
 
-        classWise.setTranslateX(500);
-        classWise.setTranslateY(150);
+        classWise.setTranslateX(640);
+        classWise.setTranslateY(20);
         classWise.setOnAction(actionEvent -> {
 
             try {
@@ -81,14 +81,14 @@ public class ReadingRoom extends Application {
             }
 
         });
-        classWise.setPrefSize(230, 80);
+        classWise.setPrefSize(400, 80);
         setStyle(classWise);
 
 
         Button selfWise = new Button("Self Wise");
 
-        selfWise.setTranslateX(250);
-        selfWise.setTranslateY(300);
+        selfWise.setTranslateX(230);
+        selfWise.setTranslateY(110);
         selfWise.setOnAction(actionEvent -> {
 
             try {
@@ -102,14 +102,14 @@ public class ReadingRoom extends Application {
             }
 
         });
-        selfWise.setPrefSize(230, 80);
+        selfWise.setPrefSize(400, 80);
         setStyle(selfWise);
 
 
         Button timeWise = new Button("Time Wise");
 
-        timeWise.setTranslateX(500);
-        timeWise.setTranslateY(300);
+        timeWise.setTranslateX(640);
+        timeWise.setTranslateY(110);
         timeWise.setOnAction(actionEvent -> {
 
             try {
@@ -124,7 +124,7 @@ public class ReadingRoom extends Application {
             }
 
         });
-        timeWise.setPrefSize(230, 80);
+        timeWise.setPrefSize(400, 80);
         setStyle(timeWise);
 
 
