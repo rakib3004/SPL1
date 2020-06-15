@@ -174,7 +174,8 @@ public class SystemAnalysis extends Application {
         Group group = new Group();
         group.getChildren().addAll(canvas,processValueAreaChart,
                 processValueLineArt,
-                processValuePlotting,exit,back);
+                processValuePlotting,exit,back
+                ,readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

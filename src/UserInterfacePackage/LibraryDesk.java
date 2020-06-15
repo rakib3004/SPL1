@@ -174,7 +174,9 @@ Button removeBook = new Button("Remove Book");
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,addBook,exit,back,removeBook,bookInformation);
+        group.getChildren().addAll(canvas,addBook,exit,
+                back,removeBook,bookInformation
+                ,readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

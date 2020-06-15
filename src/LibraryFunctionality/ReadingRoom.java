@@ -3,11 +3,13 @@ package LibraryFunctionality;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
 import JavFX.FxSecondWindow;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import ProjectDescription.About;
 import UserInterfacePackage.*;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -44,8 +46,8 @@ public class ReadingRoom extends Application {
 
         Button writerWise = new Button("Writer Wise");
 
-        writerWise.setTranslateX(400);
-        writerWise.setTranslateY(200);
+        writerWise.setTranslateX(250);
+        writerWise.setTranslateY(150);
         writerWise.setOnAction(actionEvent -> {
 
             try {
@@ -59,14 +61,14 @@ public class ReadingRoom extends Application {
             }
 
         });
-        writerWise.setPrefSize(230, 80);
+        writerWise.setPrefSize(240, 80);
         setStyle(writerWise);
 
 
         Button classWise = new Button("Class Wise");
 
-        classWise.setTranslateX(400);
-        classWise.setTranslateY(300);
+        classWise.setTranslateX(500);
+        classWise.setTranslateY(150);
         classWise.setOnAction(actionEvent -> {
 
             try {
@@ -85,8 +87,8 @@ public class ReadingRoom extends Application {
 
         Button selfWise = new Button("Self Wise");
 
-        selfWise.setTranslateX(700);
-        selfWise.setTranslateY(200);
+        selfWise.setTranslateX(250);
+        selfWise.setTranslateY(300);
         selfWise.setOnAction(actionEvent -> {
 
             try {
@@ -106,7 +108,7 @@ public class ReadingRoom extends Application {
 
         Button timeWise = new Button("Time Wise");
 
-        timeWise.setTranslateX(700);
+        timeWise.setTranslateX(500);
         timeWise.setTranslateY(300);
         timeWise.setOnAction(actionEvent -> {
 
@@ -157,11 +159,68 @@ public class ReadingRoom extends Application {
 
 
 
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+
+
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+
+
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,writerWise,
-                classWise,selfWise,timeWise);
+        group.getChildren().addAll(canvas,exit,back,
+                writerWise,classWise,selfWise,
+                timeWise ,readersMood,
+                administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
