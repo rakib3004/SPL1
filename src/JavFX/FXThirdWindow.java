@@ -1,6 +1,7 @@
 package JavFX;
 
 import FilePackage.DateTimeWriter;
+import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
 import UserInterfacePackage.LibraryDesk;
 import javafx.application.Application;
@@ -109,11 +110,66 @@ public class FXThirdWindow extends Application {
         exit.setPrefSize(200, 80);
 
 
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(30);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(30);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(30);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+
+
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+
+
         Image image = new Image("Images"+ File.separator +"libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,authorsMood,exit,
-                back,librarianMood,systemAnalysis);
+                back,librarianMood,systemAnalysis,readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
