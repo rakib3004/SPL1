@@ -495,12 +495,37 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
+        Button scatterChartView = new Button("ScatterChart View");
+        Button lineChartView = new Button("LineChart View");
+        scatterChartView.setTranslateX(30);
+        scatterChartView.setTranslateY(0);
+        lineChartView.setTranslateX(1170);
+        lineChartView.setTranslateY(0);
 
+
+        scatterChartView.setOnAction(actionEvent -> {
+            try {
+                startScatterChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        lineChartView.setOnAction(actionEvent -> {
+            try {
+                startStackedAreaChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
 
         //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
+        group.getChildren().addAll(canvas, stackedAreaChart, exit, back
+        ,scatterChartView,lineChartView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
