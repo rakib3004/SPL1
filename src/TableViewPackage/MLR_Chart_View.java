@@ -514,7 +514,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         lineChartView.setOnAction(actionEvent -> {
             try {
-                startStackedAreaChart(primaryStage);
+                start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

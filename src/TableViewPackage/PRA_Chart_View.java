@@ -328,15 +328,11 @@ public class PRA_Chart_View extends Application {
           }
 
       });
-
-
-
       //  Image image = new Image("libraryBackground9.jpg");
       Canvas canvas = new Canvas(1500, 950);
       Group group = new Group();
       group.getChildren().addAll(canvas, scatterChart,
               exit, back,lineChartView,stackedAreaChartView);
-
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
@@ -400,7 +396,7 @@ public class PRA_Chart_View extends Application {
         numberAxis.setLabel("Numbers of Book");
 
 
-        StackedAreaChart lineChart = new StackedAreaChart(categoryAxis, numberAxis);
+        StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
 
@@ -414,25 +410,20 @@ public class PRA_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator),
+                    priorityData[iterator].getPRAweight()));
+       }
+        stackedAreaChart.getData().add(series1);
 
-        }
-
-
-        lineChart.getData().add(series1);
-
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
-
-
+        stackedAreaChart.setTranslateX(10);
+        stackedAreaChart.setTranslateY(25);
+        stackedAreaChart.setPrefSize(1350, 700);
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
 
-
-      mlr_process.setOnAction((event) -> {
+        mlr_process.setOnAction((event) -> {
           try {
               MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
               mlr_chart_view.startStackedAreaChart(primaryStage);
@@ -462,22 +453,21 @@ public class PRA_Chart_View extends Application {
 
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
 
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+        stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
 
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
       Button scatterChartView = new Button("ScatterChart View");
-      Button stackedAreaChartView = new Button("StackedAreaChart View");
+      Button lineChartView = new Button("LineChart View");
       scatterChartView.setTranslateX(30);
       scatterChartView.setTranslateY(0);
-      stackedAreaChartView.setTranslateX(1170);
-      stackedAreaChartView.setTranslateY(0);
+      lineChartView.setTranslateX(1170);
+      lineChartView.setTranslateY(0);
 
 
       scatterChartView.setOnAction(actionEvent -> {
@@ -489,28 +479,20 @@ public class PRA_Chart_View extends Application {
 
       });
 
-      stackedAreaChartView.setOnAction(actionEvent -> {
+      lineChartView.setOnAction(actionEvent -> {
           try {
-              startStackedAreaChart(primaryStage);
+              start(primaryStage);
           } catch (Exception exception) {
               exception.printStackTrace();
           }
 
       });
 
-
-      scatterChartView.setPrefSize(160, 40);
-      stackedAreaChartView.setPrefSize(160, 40);
-
-
-
       //  Image image = new Image("libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart
-                , stackedAreaChartView, scatterChartView
-                , exit, back);
-
+      Canvas canvas = new Canvas(1500, 950);
+      Group group = new Group();
+      group.getChildren().addAll(canvas, stackedAreaChart, exit, back
+              ,scatterChartView,lineChartView);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
 
