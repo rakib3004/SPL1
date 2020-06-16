@@ -337,12 +337,40 @@ public class AHP_Chart_View extends Application {
                 contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
             }
         });
+     Button lineChartView = new Button("LineChart View");
+     Button stackedAreaChartView = new Button("StackedAreaChart View");
+     lineChartView.setTranslateX(30);
+     lineChartView.setTranslateY(0);
+     stackedAreaChartView.setTranslateX(1170);
+     stackedAreaChartView.setTranslateY(0);
 
 
-        //  Image image = new Image("libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, scatterChart, exit, back);
+     lineChartView.setOnAction(actionEvent -> {
+         try {
+             startScatterChart(primaryStage);
+         } catch (Exception exception) {
+             exception.printStackTrace();
+         }
+
+     });
+
+     stackedAreaChartView.setOnAction(actionEvent -> {
+         try {
+             startStackedAreaChart(primaryStage);
+         } catch (Exception exception) {
+             exception.printStackTrace();
+         }
+
+     });
+
+
+
+     //  Image image = new Image("libraryBackground9.jpg");
+     Canvas canvas = new Canvas(1500, 950);
+     Group group = new Group();
+     group.getChildren().addAll(canvas, scatterChart,
+             exit, back,lineChartView,stackedAreaChartView);
+
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         // graphicsContext.drawImage(image,0,0);
