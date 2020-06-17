@@ -55,7 +55,7 @@ public class TestingSet extends Application {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
 
             try {
-                crossValidationFX.start(primaryStage);
+                crossValidationFX.finish(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -66,21 +66,10 @@ public class TestingSet extends Application {
 
         });
 
-
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
-
-
-
-
 
         Button testingSetResults = new Button("TestingSet Results");
         Button trainingTestingCompersion = new Button("TrainingTesting Compersion");

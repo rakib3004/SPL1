@@ -1,5 +1,6 @@
 package JavFX;
 
+import CrossValidationProcess.TrainingMethodology;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import LibraryFunctionality.ReadingRoom;
@@ -198,43 +199,28 @@ public class Main extends Application {
         MenuItem crossValidationView = new MenuItem("Cross ValidationView");
         crossValidationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                LibraryDesk libraryDesk = new LibraryDesk();
-                try {
-                    {
-                        libraryDesk.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                TrainingMethodology trainingMethodology = new TrainingMethodology();
+                {
+                    trainingMethodology.start(stage);
                 }
-
             }
         });
 
-
-
         MenuButton bootOperation2 = new MenuButton("Boot Operation2");
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,bookInformationView,crossValidationView);
-
 
         bootOperation2.setTranslateX(833);
         bootOperation2.setTranslateY(514.5);
         bootOperation2.setPrefSize(150, 25);
 
-
         Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
-
-
 
         Group root = new Group();
         root.getChildren().addAll(canvas, welcome,exit,bootOperation1,bootOperation2);
 
-
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(background,0,0);
-
-
-
 
         Scene scene = new Scene(root,1400,770);
         stage.setScene(scene);
