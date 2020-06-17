@@ -2,23 +2,33 @@ package JavFX;
 
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
+import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.StatisticsFX;
+import TableViewPackage.Book;
+import UserInterfacePackage.LibraryDesk;
 import VisualRepresentation.LineChartFX;
 import javafx.application.Application;
 
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.control.MenuItem;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -73,13 +83,160 @@ public class Main extends Application {
 
 
 
+
+
+        MenuItem readingRoomView = new MenuItem("Reading RoomView");
+
+        readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    {
+                        readingRoom.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        MenuItem libraryDeskView = new MenuItem("Library DeskView");
+        libraryDeskView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                LibraryDesk libraryDesk = new LibraryDesk();
+                try {
+                    {
+                        libraryDesk.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+           MenuItem statisticsView = new MenuItem("Statistics View");
+
+        statisticsView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    {
+                        readingRoom.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        MenuItem fourVariableRegressionView = new MenuItem("FourVariable RegressionView");
+        fourVariableRegressionView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                LibraryDesk libraryDesk = new LibraryDesk();
+                try {
+                    {
+                        libraryDesk.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+
+
+        MenuButton bootOperation1 = new MenuButton("Boot Operation1");
+        bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,statisticsView,fourVariableRegressionView);
+
+
+        bootOperation1.setTranslateX(850);
+        bootOperation1.setTranslateY(500);
+        bootOperation1.setPrefSize(150, 25);
+
+        MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
+
+        analyticHierarchyProcessView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    {
+                        readingRoom.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        MenuItem pageRankAlgorithmView = new MenuItem("PageRank AlgorithmView");
+        pageRankAlgorithmView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                LibraryDesk libraryDesk = new LibraryDesk();
+                try {
+                    {
+                        libraryDesk.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+           MenuItem bookInformationView = new MenuItem("Book InformationView");
+
+        bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    {
+                        readingRoom.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        MenuItem crossValidationView = new MenuItem("Cross ValidationView");
+        crossValidationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                LibraryDesk libraryDesk = new LibraryDesk();
+                try {
+                    {
+                        libraryDesk.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+
+
+        MenuButton bootOperation2 = new MenuButton("Boot Operation2");
+        bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,bookInformationView,crossValidationView);
+
+
+        bootOperation2.setTranslateX(600);
+        bootOperation2.setTranslateY(500);
+        bootOperation2.setPrefSize(150, 25);
+
+
         Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
 
 
         Group root = new Group();
-        root.getChildren().addAll(canvas, welcome,exit);
+        root.getChildren().addAll(canvas, welcome,exit,bootOperation1,bootOperation2);
 
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
