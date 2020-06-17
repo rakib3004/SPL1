@@ -47,7 +47,8 @@ public class Main extends Application {
         welcome.setTranslateX(345);
         welcome.setTranslateY(450);
         setStyle(welcome);
-        FileInputStream fileInputStream = new FileInputStream("src"+ File.separator +"Images"+ File.separator +"power.png");
+        FileInputStream fileInputStream = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
         welcome.setGraphic(new ImageView(image));
 
@@ -147,15 +148,8 @@ public class Main extends Application {
             }
         });
 
-
-
         MenuButton bootOperation1 = new MenuButton("Boot Operation1");
         bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,statisticsView,fourVariableRegressionView);
-
-
-        bootOperation1.setTranslateX(850);
-        bootOperation1.setTranslateY(500);
-        bootOperation1.setPrefSize(150, 25);
 
         MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
 
@@ -225,8 +219,13 @@ public class Main extends Application {
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,bookInformationView,crossValidationView);
 
 
-        bootOperation2.setTranslateX(600);
-        bootOperation2.setTranslateY(500);
+
+        bootOperation1.setTranslateX(1125);
+        bootOperation1.setTranslateY(518);
+        bootOperation1.setPrefSize(150, 25);
+
+        bootOperation2.setTranslateX(833);
+        bootOperation2.setTranslateY(514.5);
         bootOperation2.setPrefSize(150, 25);
 
 
