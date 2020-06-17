@@ -157,13 +157,12 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
 
         });
         fullTrainingSet.setOnAction((event) -> {
+            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                combinedTrainingSet.startCombined(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
-
         });
 
 

@@ -81,9 +81,9 @@ public class TrainingObserVation extends Application {
 
 
         trainingMethodology.setOnAction(actionEvent -> {
-            TrainingMethodology trainingSetClassFX = new TrainingMethodology();
+            TrainingMethodology trainingMethodology1 = new TrainingMethodology();
             try {
-                trainingSetClassFX.start(primaryStage);
+                trainingMethodology1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

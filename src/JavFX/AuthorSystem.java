@@ -28,50 +28,36 @@ public class AuthorSystem extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
         Button processImplementation = new Button("Process Implementation");
         Button processValidation = new Button("Process Validation");
-
 
         processImplementation.setTranslateX(210);
         processImplementation.setTranslateY(50);
         processValidation.setTranslateX(640);
         processValidation.setTranslateY(50);
-
-
-
         processImplementation.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
             try {
-
                 statisticsFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
- processValidation.setOnAction(actionEvent -> {
+         processValidation.setOnAction(actionEvent -> {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
             try {
-
                 crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
 
         setStyle(processImplementation);
         setStyle(processValidation);
 
-
         processImplementation.setPrefSize(420, 80);
         processValidation.setPrefSize(420, 80);
-
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -90,17 +76,13 @@ public class AuthorSystem extends Application {
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
 
         setStyle(exit);
         setStyle(back);
 
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
@@ -118,9 +100,6 @@ public class AuthorSystem extends Application {
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
-
-
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -129,32 +108,25 @@ public class AuthorSystem extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         readersMood.setOnAction(actionEvent -> {
-
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -165,16 +137,12 @@ public class AuthorSystem extends Application {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
             }
 
     public Button setStyle( Button button)

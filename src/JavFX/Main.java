@@ -3,7 +3,10 @@ package JavFX;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import LibraryFunctionality.ReadingRoom;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
+import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
+import RegressionFx.FourVariableRegression;
 import TableViewPackage.Book;
 import UserInterfacePackage.LibraryDesk;
 import VisualRepresentation.LineChartFX;
@@ -83,9 +86,6 @@ public class Main extends Application {
         exit.setPrefSize(200, 80);
 
 
-
-
-
         MenuItem readingRoomView = new MenuItem("Reading RoomView");
 
         readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
@@ -121,13 +121,9 @@ public class Main extends Application {
 
         statisticsView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                ReadingRoom readingRoom = new ReadingRoom();
-                try {
-                    {
-                        readingRoom.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                StatisticsFX statisticsFX = new StatisticsFX();
+                {
+                    statisticsFX.start(stage);
                 }
             }
         });
@@ -136,10 +132,10 @@ public class Main extends Application {
         MenuItem fourVariableRegressionView = new MenuItem("FourVariable RegressionView");
         fourVariableRegressionView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                LibraryDesk libraryDesk = new LibraryDesk();
+                FourVariableRegression fourVariableRegression = new FourVariableRegression();
                 try {
                     {
-                        libraryDesk.start(stage);
+                        fourVariableRegression.start(stage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -151,14 +147,19 @@ public class Main extends Application {
         MenuButton bootOperation1 = new MenuButton("Boot Operation1");
         bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,statisticsView,fourVariableRegressionView);
 
+        bootOperation1.setTranslateX(1125);
+        bootOperation1.setTranslateY(518);
+        bootOperation1.setPrefSize(150, 25);
+
+
         MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
 
         analyticHierarchyProcessView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                ReadingRoom readingRoom = new ReadingRoom();
+                AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
                 try {
                     {
-                        readingRoom.start(stage);
+                        analyticHierarchyAlgorithmFx.start(stage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -170,10 +171,10 @@ public class Main extends Application {
         MenuItem pageRankAlgorithmView = new MenuItem("PageRank AlgorithmView");
         pageRankAlgorithmView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                LibraryDesk libraryDesk = new LibraryDesk();
+                PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
                 try {
                     {
-                        libraryDesk.start(stage);
+                        pageRankAlgorithmFx.start(stage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -186,13 +187,9 @@ public class Main extends Application {
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                ReadingRoom readingRoom = new ReadingRoom();
-                try {
-                    {
-                        readingRoom.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                BookInformationFX bookInformationFX = new BookInformationFX();
+                {
+                    bookInformationFX.start(stage);
                 }
             }
         });
@@ -218,11 +215,6 @@ public class Main extends Application {
         MenuButton bootOperation2 = new MenuButton("Boot Operation2");
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,bookInformationView,crossValidationView);
 
-
-
-        bootOperation1.setTranslateX(1125);
-        bootOperation1.setTranslateY(518);
-        bootOperation1.setPrefSize(150, 25);
 
         bootOperation2.setTranslateX(833);
         bootOperation2.setTranslateY(514.5);
