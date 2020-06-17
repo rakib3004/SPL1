@@ -4,10 +4,13 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import ProjectDescription.About;
 import UserInterfacePackage.LibraryDesk;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -195,12 +198,59 @@ borrrowCountOfBookFX.start(primaryStage);
          borrowCountOfBook.setPrefSize(350, 80);
         numberDisplay.setPrefSize(350, 80);
 
+
         Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,typesOfBook);
         group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
         group.getChildren().addAll(borrowCountOfBook,numberDisplay);
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        group.getChildren().addAll(readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

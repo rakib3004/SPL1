@@ -206,8 +206,19 @@ public class Main extends Application {
             }
         });
 
+        MenuItem systemAnalysisView = new MenuItem("System AnalysisView");
+        systemAnalysisView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                {
+                    systemAnalysis.start(stage);
+                }
+            }
+        });
+
         MenuButton bootOperation2 = new MenuButton("Boot Operation2");
-        bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,bookInformationView,crossValidationView);
+        bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,
+                bookInformationView,crossValidationView,systemAnalysisView);
 
         bootOperation2.setTranslateX(833);
         bootOperation2.setTranslateY(514.5);

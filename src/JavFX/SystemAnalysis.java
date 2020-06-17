@@ -41,11 +41,11 @@ public class SystemAnalysis extends Application {
 
 
         processValueAreaChart.setTranslateX(100);
-        processValueAreaChart.setTranslateY(100);
+        processValueAreaChart.setTranslateY(50);
         processValueLineArt.setTranslateX(460);
-        processValueLineArt.setTranslateY(100);
+        processValueLineArt.setTranslateY(50);
         processValuePlotting.setTranslateX(820);
-        processValuePlotting.setTranslateY(100);
+        processValuePlotting.setTranslateY(50);
 
         processValueAreaChart.setOnAction(actionEvent -> {
             CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
@@ -176,6 +176,7 @@ public class SystemAnalysis extends Application {
                 processValueLineArt,
                 processValuePlotting,exit,back
                 ,readersMood,administrationMood,about);
+
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

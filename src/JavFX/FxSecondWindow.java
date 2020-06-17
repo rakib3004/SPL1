@@ -105,6 +105,8 @@ Main main = new Main();
         administrationMood.setPrefSize(320, 80);
         readersMood.setPrefSize(320, 80);
         about.setPrefSize(320,80);
+
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
