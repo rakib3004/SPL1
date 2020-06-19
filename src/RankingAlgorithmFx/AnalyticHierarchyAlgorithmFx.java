@@ -44,8 +44,8 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button tableView = new Button("Table View");
-        tableView.setTranslateX(550);
-        tableView.setTranslateY(300);
+        tableView.setTranslateX(140);
+        tableView.setTranslateY(50);
         tableView.setOnAction(actionEvent -> {
             AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
             try {
@@ -59,12 +59,12 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
         });
         setStyle(tableView);
-        tableView.setPrefSize(200,80);
+        tableView.setPrefSize(350,80);
 
 
         Button graphView = new Button("Graph View");
-        graphView.setTranslateX(550);
-        graphView.setTranslateY(500);
+        graphView.setTranslateX(500);
+        graphView.setTranslateY(50);
         graphView.setOnAction(actionEvent -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
@@ -78,14 +78,14 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
         });
         setStyle(graphView);
-        graphView.setPrefSize(200,80);
+        graphView.setPrefSize(350,80);
 
 
 
         Button consoleView = new Button("Console View");
 
-        consoleView.setTranslateX(550);
-        consoleView.setTranslateY(400);
+        consoleView.setTranslateX(860);
+        consoleView.setTranslateY(50);
         consoleView.setOnAction(actionEvent -> {
 
             try {
@@ -105,7 +105,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
             }
 
         });
-        consoleView.setPrefSize(200, 80);
+        consoleView.setPrefSize(350, 80);
         setStyle(consoleView);
 
 

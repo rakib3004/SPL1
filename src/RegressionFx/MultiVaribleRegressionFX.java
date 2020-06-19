@@ -111,21 +111,13 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
-
         });
-
 
         setStyle(exit);
         setStyle(back);
 
-
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);

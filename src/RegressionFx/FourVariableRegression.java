@@ -38,10 +38,10 @@ public class FourVariableRegression extends Application {
         Button tableView = new Button("Table View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        tableView.setTranslateX(570);
-        tableView.setTranslateY(300);
-        consoleView.setTranslateX(570);
-        consoleView.setTranslateY(400);
+        tableView.setTranslateX(860);
+        tableView.setTranslateY(50);
+        consoleView.setTranslateX(140);
+        consoleView.setTranslateY(50);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -87,14 +87,14 @@ public class FourVariableRegression extends Application {
         setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
-        tableView.setPrefSize(200, 80);
-        consoleView.setPrefSize(200, 80);
+        tableView.setPrefSize(350, 80);
+        consoleView.setPrefSize(350, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         Button graphView = new Button("Graph View");
-        graphView.setTranslateX(570);
-        graphView.setTranslateY(500);
+        graphView.setTranslateX(500);
+        graphView.setTranslateY(50);
         graphView.setOnAction(actionEvent -> {
             MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
             try {
@@ -107,7 +107,7 @@ public class FourVariableRegression extends Application {
             }
         });
         setStyle(graphView);
-        graphView.setPrefSize(200,80);
+        graphView.setPrefSize(350,80);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500, 950);
