@@ -1,6 +1,9 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
+import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import RankingAlgorithmFx.StatisticsFX;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -25,12 +28,12 @@ public class MultiVaribleRegressionFX extends Application {
         Button twoVariableRegression = new Button("Two Variable Regression");
         Button threeVariableRegression = new Button("Three Variable Regression");
         Button fourVariableRegression = new Button("Four Variable Regression");
-        twoVariableRegression.setTranslateX(500);
-        twoVariableRegression.setTranslateY(450);
-        threeVariableRegression.setTranslateX(500);
-        threeVariableRegression.setTranslateY(350);
-        fourVariableRegression.setTranslateX(500);
-        fourVariableRegression.setTranslateY(250);
+        twoVariableRegression.setTranslateX(50);
+        twoVariableRegression.setTranslateY(20);
+        threeVariableRegression.setTranslateX(50);
+        threeVariableRegression.setTranslateY(380);
+        fourVariableRegression.setTranslateX(50);
+        fourVariableRegression.setTranslateY(740);
 
 
         twoVariableRegression.setOnAction(actionEvent -> {
@@ -71,9 +74,9 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         setStyle(fourVariableRegression);
 
 
-        twoVariableRegression.setPrefSize(500, 80);
-        threeVariableRegression.setPrefSize(500, 80);
-        fourVariableRegression.setPrefSize(500, 80);
+        twoVariableRegression.setPrefSize(350, 80);
+        threeVariableRegression.setPrefSize(350, 80);
+        fourVariableRegression.setPrefSize(350, 80);
 
 
 
@@ -117,6 +120,53 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         Group group = new Group();
         group.getChildren().addAll(canvas,twoVariableRegression,fourVariableRegression,
                 threeVariableRegression,exit,back);
+
+
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        about.setOnAction(actionEvent -> {
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        group.getChildren().addAll(readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
