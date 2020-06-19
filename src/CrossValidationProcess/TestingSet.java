@@ -75,16 +75,12 @@ public class TestingSet extends Application {
         Button trainingTestingCompersion = new Button("TrainingTesting Compersion");
         Button codeValidationSet = new Button("CodeValidation Set");
 
-
         testingSetResults.setTranslateX(500);
         testingSetResults.setTranslateY(250);
         trainingTestingCompersion.setTranslateX(500);
         codeValidationSet.setTranslateX(500);
         codeValidationSet.setTranslateY(350);
         trainingTestingCompersion.setTranslateY(450);
-
-
-
         testingSetResults.setOnAction(actionEvent -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
@@ -112,7 +108,6 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
 
         setStyle(testingSetResults);
         setStyle(trainingTestingCompersion);
