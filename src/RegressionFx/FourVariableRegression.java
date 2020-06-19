@@ -1,6 +1,9 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
+import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import TableViewPackage.AHP_Chart_View;
 import TableViewPackage.MLR_Chart_View;
 import TableViewPackage.MLR_TableViewFX;
@@ -26,8 +29,6 @@ public class FourVariableRegression extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -45,25 +46,19 @@ public class FourVariableRegression extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         tableView.setOnAction(actionEvent -> {
-
             try {
 
                 MLR_TableViewFX MLRTableViewFX = new MLR_TableViewFX();
 
                 MLRTableViewFX.start(primaryStage);
-
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
+
         consoleView.setOnAction(actionEvent -> {
-
             try {
-
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
                 priorityData =     multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -81,7 +76,6 @@ public class FourVariableRegression extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -89,7 +83,6 @@ public class FourVariableRegression extends Application {
 
 
         });
-
         setStyle(tableView);
         setStyle(consoleView);
         setStyle(exit);
@@ -112,17 +105,59 @@ public class FourVariableRegression extends Application {
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         setStyle(graphView);
         graphView.setPrefSize(200,80);
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        about.setOnAction(actionEvent -> {
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        group.getChildren().addAll(readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
