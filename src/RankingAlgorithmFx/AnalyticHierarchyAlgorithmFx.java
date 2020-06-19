@@ -3,10 +3,13 @@ package RankingAlgorithmFx;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.FXThirdWindow;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import ProjectDescription.About;
 import TableViewPackage.AHP_Chart_View;
 import TableViewPackage.AHP_TableViewFX;
 import TableViewPackage.PRA_TableViewFX;
@@ -146,20 +149,56 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         Group group = new Group();
         group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
 
+
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        about.setOnAction(actionEvent -> {
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        group.getChildren().addAll(readersMood,administrationMood,about);
+
+
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-      /*  HBox hBox = new HBox();
-        hBox.getChildren().addAll(exit,menu,back);
-
-    //    hBox.setSpacing(60);*/
-
-
-
-      /*  VBox vBox3 = new VBox();
-        vBox3.getChildren().addAll(vBox2,group);
-
-        vBox3.setMaxSize(850, 650);
-        vBox3.setSpacing(5);*/
 
         Scene scene1 = new Scene(group,1500,950);
 
