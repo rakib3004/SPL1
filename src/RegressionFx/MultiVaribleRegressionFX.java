@@ -35,6 +35,18 @@ public class MultiVaribleRegressionFX extends Application {
         fourVariableRegression.setTranslateX(50);
         fourVariableRegression.setTranslateY(740);
 
+double temp;
+       temp= twoVariableRegression.getTranslateX();
+        twoVariableRegression.setTranslateX(twoVariableRegression.getTranslateY());
+        twoVariableRegression.setTranslateY(temp);
+
+        temp=      threeVariableRegression.getTranslateX();
+        threeVariableRegression.setTranslateX(threeVariableRegression.getTranslateY());
+        threeVariableRegression.setTranslateY(temp);
+
+        temp=     fourVariableRegression.getTranslateX();
+        fourVariableRegression.setTranslateX(fourVariableRegression.getTranslateY());
+        fourVariableRegression.setTranslateY(temp);
 
         twoVariableRegression.setOnAction(actionEvent -> {
 

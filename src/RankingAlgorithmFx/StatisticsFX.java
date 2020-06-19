@@ -31,11 +31,11 @@ public class StatisticsFX extends Application {
         Button analyticHierarchy = new Button("Analytic Hierarchy Process");
         Button pageRankAlgorithm = new Button("Page Rank Algorithm");
         multiVariableRegression.setTranslateX(140);
-        multiVariableRegression.setTranslateY(150);
+        multiVariableRegression.setTranslateY(50);
         analyticHierarchy.setTranslateX(500);
-        analyticHierarchy.setTranslateY(150);
+        analyticHierarchy.setTranslateY(50);
         pageRankAlgorithm.setTranslateX(860);
-        pageRankAlgorithm.setTranslateY(150);
+        pageRankAlgorithm.setTranslateY(50);
 
         multiVariableRegression.setOnAction(actionEvent -> {
 
