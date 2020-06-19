@@ -51,8 +51,8 @@ public class PageRankAlgorithmFx extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button tableView = new Button("Table View");
-        tableView.setTranslateX(550);
-        tableView.setTranslateY(300);
+        tableView.setTranslateX(860);
+        tableView.setTranslateY(50);
         tableView.setOnAction(actionEvent -> {
             PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
             try {
@@ -63,10 +63,10 @@ public class PageRankAlgorithmFx extends Application {
             }
         });
         setStyle(tableView);
-        tableView.setPrefSize(200,80);
+        tableView.setPrefSize(350,80);
 
-        consoleView.setTranslateX(550);
-        consoleView.setTranslateY(400);
+        consoleView.setTranslateX(140);
+        consoleView.setTranslateY(50);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -108,8 +108,8 @@ public class PageRankAlgorithmFx extends Application {
         exit.setPrefSize(200, 80);
 
         Button graphView = new Button("Graph View");
-        graphView.setTranslateX(550);
-        graphView.setTranslateY(500);
+        graphView.setTranslateX(500);
+        graphView.setTranslateY(50);
         graphView.setOnAction(actionEvent -> {
             PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {

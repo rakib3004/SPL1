@@ -5,10 +5,13 @@ import AHPalgorithm.AHPprocessImplementation;
 import DataComparing.CodeValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.AuthorSystem;
+import JavFX.FXThirdWindow;
+import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import ProjectDescription.About;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -49,13 +52,11 @@ public class CrossValidationFX extends Application {
         back.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
 
-
             try {
                 authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -63,28 +64,20 @@ public class CrossValidationFX extends Application {
 
         });
 
-
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         Button dataComparing = new Button("Data Comparing");
         Button dataPlotting = new Button("Data Plotting");
 
-
-
         dataComparing.setTranslateX(500);
         dataComparing.setTranslateY(250);
         dataPlotting.setTranslateX(500);
         dataPlotting.setTranslateY(350);
 
-
         dataComparing.setOnAction(actionEvent -> {
-
             // new process which we processed today......................................................................
             CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
             try {
@@ -92,17 +85,11 @@ public class CrossValidationFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
-
         });
 
         dataPlotting.setOnAction(actionEvent -> {
                 finish(primaryStage);
-
         });
-
-
         setStyle(dataComparing);
         setStyle(dataPlotting);
 
@@ -115,6 +102,51 @@ public class CrossValidationFX extends Application {
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,dataComparing,dataPlotting);
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        about.setOnAction(actionEvent -> {
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        group.getChildren().addAll(readersMood,administrationMood,about);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -142,39 +174,24 @@ public void finish(Stage primaryStage){
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
            start(primaryStage);
-
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Button trainingSet = new Button("Training Set");
         Button testingSet = new Button("Testing Set");
-
-
 
         trainingSet.setTranslateX(500);
         trainingSet.setTranslateY(250);
         testingSet.setTranslateX(500);
         testingSet.setTranslateY(350);
-
 
         trainingSet.setOnAction(actionEvent -> {
         TrainingObserVation trainingObserVation = new TrainingObserVation();
@@ -183,7 +200,6 @@ public void finish(Stage primaryStage){
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         testingSet.setOnAction(actionEvent -> {
@@ -196,26 +212,65 @@ public void finish(Stage primaryStage){
             }
         });
 
-
         setStyle(trainingSet);
         setStyle(testingSet);
 
         trainingSet.setPrefSize(350, 80);
         testingSet.setPrefSize(350, 80);
 
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet);
 
+    Button administrationMood = new Button("Administration Mood");
+    Button readersMood = new Button("Readers Mood");
+    Button about = new Button("About");
+
+    readersMood.setTranslateX(20);
+    readersMood.setTranslateY(260);
+    administrationMood.setTranslateX(20);
+    administrationMood.setTranslateY(320);
+    about.setTranslateX(20);
+    about.setTranslateY(380);
+
+
+    administrationMood.setPrefSize(160, 30);
+    readersMood.setPrefSize(160, 30);
+    about.setPrefSize(160,30);
+
+    administrationMood.setOnAction(actionEvent -> {
+
+        FXThirdWindow fxThirdWindow = new FXThirdWindow();
+        try {
+            fxThirdWindow.start(primaryStage);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    });
+
+    readersMood.setOnAction(actionEvent -> {
+        ReadingRoom readingRoom = new ReadingRoom();
+        try {
+            readingRoom.start(primaryStage);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    });
+
+    about.setOnAction(actionEvent -> {
+        About about1 = new About();
+        try {
+            about1.start(primaryStage);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    });
+    group.getChildren().addAll(readersMood,administrationMood,about);
+
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
