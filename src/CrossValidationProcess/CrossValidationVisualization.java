@@ -130,9 +130,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         setStyle(codeValidationLineChart);
 
 
-        codeValidationScatter.setPrefSize(350, 80);
-        codeValidationStackedArea.setPrefSize(380, 80);
-        codeValidationLineChart.setPrefSize(350, 80);
+        codeValidationScatter.setPrefSize(400, 80);
+        codeValidationStackedArea.setPrefSize(400, 80);
+        codeValidationLineChart.setPrefSize(400, 80);
 
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
