@@ -48,7 +48,7 @@ public class Main extends Application {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
+        dateTimeWriter.dateTimeWriterInitialMethods(className);
 
         Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(345);
