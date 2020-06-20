@@ -42,6 +42,135 @@ public class ReadingRoom extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
+        Button automaticSystem = new Button("Automatic System");
+        automaticSystem.setOnAction(actionEvent -> {
+            try {
+                automaticSystem(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        setStyle(automaticSystem);
+        automaticSystem.setPrefSize(400,80);
+        automaticSystem.setTranslateX(240);
+        automaticSystem.setTranslateY(50);
+
+        Button manualSystem = new Button("Manual System");
+        manualSystem.setOnAction(actionEvent -> {
+            try {
+                manualSystem(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        setStyle(manualSystem);
+        manualSystem.setPrefSize(400,80);
+        manualSystem.setTranslateX(650);
+        manualSystem.setTranslateY(50);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setOnAction(actionEvent -> {
+            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+
+            try {
+                fxSecondWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+        setStyle(exit);
+        setStyle(back);
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+        Canvas canvas = new Canvas(1500,950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit,back,
+          readersMood,administrationMood,about);
+        group.getChildren().addAll(automaticSystem,manualSystem);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image,0,0);
+
+        Scene scene1 = new Scene(group,1500,950);
+
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+    }
+    public void manualSystem(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+
 
 
         Button writerWise = new Button("Writer Wise");
@@ -131,10 +260,202 @@ public class ReadingRoom extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            try {
+             start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+
+
+        });
+        setStyle(exit);
+        setStyle(back);
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+
+
+
+        Button administrationMood = new Button("Administration Mood");
+        Button readersMood = new Button("Readers Mood");
+        Button about = new Button("About");
+
+        readersMood.setTranslateX(20);
+        readersMood.setTranslateY(260);
+        administrationMood.setTranslateX(20);
+        administrationMood.setTranslateY(320);
+        about.setTranslateX(20);
+        about.setTranslateY(380);
+
+
+        administrationMood.setPrefSize(160, 30);
+        readersMood.setPrefSize(160, 30);
+        about.setPrefSize(160,30);
+
+
+
+
+        administrationMood.setOnAction(actionEvent -> {
+
+            FXThirdWindow fxThirdWindow = new FXThirdWindow();
+            try {
+                fxThirdWindow.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        readersMood.setOnAction(actionEvent -> {
+
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+        about.setOnAction(actionEvent -> {
+
+            About about1 = new About();
+            try {
+                about1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+
+
+
+
+        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+        Canvas canvas = new Canvas(1500,950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit,back,
+                writerWise,classWise,selfWise,
+                timeWise ,readersMood,
+                administrationMood,about);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image,0,0);
+
+        Scene scene1 = new Scene(group,1500,950);
+
+
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+    }    public void automaticSystem(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+
+
+
+        Button writerWise = new Button("Writer Wise");
+
+        writerWise.setTranslateX(230);
+        writerWise.setTranslateY(50);
+        writerWise.setOnAction(actionEvent -> {
 
             try {
-                fxSecondWindow.start(primaryStage);
+
+                WriterWiseFX writerWiseFX = new WriterWiseFX();
+                writerWiseFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        writerWise.setPrefSize(400, 80);
+        setStyle(writerWise);
+
+
+        Button classWise = new Button("Class Wise");
+
+        classWise.setTranslateX(640);
+        classWise.setTranslateY(50);
+        classWise.setOnAction(actionEvent -> {
+
+            try {
+                TypeWiseFX typeWiseFX = new TypeWiseFX();
+                typeWiseFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        classWise.setPrefSize(400, 80);
+        setStyle(classWise);
+
+
+        Button selfWise = new Button("Self Wise");
+
+        selfWise.setTranslateX(230);
+        selfWise.setTranslateY(140);
+        selfWise.setOnAction(actionEvent -> {
+
+            try {
+
+                RemoveBookFX.SelfWiseFX selfWiseFX = new RemoveBookFX.SelfWiseFX();
+                selfWiseFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        selfWise.setPrefSize(400, 80);
+        setStyle(selfWise);
+
+
+        Button timeWise = new Button("Time Wise");
+
+        timeWise.setTranslateX(640);
+        timeWise.setTranslateY(140);
+        timeWise.setOnAction(actionEvent -> {
+
+            try {
+
+
+                TimeWiseFX timeWiseFX = new TimeWiseFX();
+                timeWiseFX.start(primaryStage);
+            }
+
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        });
+        timeWise.setPrefSize(400, 80);
+        setStyle(timeWise);
+
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setOnAction(actionEvent -> {
+            try {
+              start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
