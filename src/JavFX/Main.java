@@ -1,5 +1,8 @@
 package JavFX;
 
+import CrossValidationProcess.CrossValidationFX;
+import CrossValidationProcess.CrossValidationVisualization;
+import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingMethodology;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
@@ -144,9 +147,31 @@ public class Main extends Application {
 
             }
         });
+ MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
+        cvVisualizationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+                {
+                    crossValidationVisualization.start(stage);
+                }
+
+            }
+        });
+ MenuItem testingSetView = new MenuItem("Testing SetView");
+        testingSetView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TestingSet testingSet = new TestingSet();
+                {
+                    testingSet.start(stage);
+                }
+
+            }
+        });
 
         MenuButton bootOperation1 = new MenuButton("Boot Operation1");
-        bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,statisticsView,fourVariableRegressionView);
+        bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,
+                statisticsView,fourVariableRegressionView,
+                cvVisualizationView,testingSetView);
 
         bootOperation1.setTranslateX(1125);
         bootOperation1.setTranslateY(518);
@@ -216,9 +241,30 @@ public class Main extends Application {
             }
         });
 
+        MenuItem processValidationView = new MenuItem("Process ValidationView");
+        processValidationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CrossValidationFX crossValidationFX = new CrossValidationFX();
+                {
+                    crossValidationFX.start(stage);
+                }
+            }
+        });
+
+        MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
+        trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TrainingMethodology trainingMethodology = new TrainingMethodology();
+                {
+                    trainingMethodology.start(stage);
+                }
+            }
+        });
+
         MenuButton bootOperation2 = new MenuButton("Boot Operation2");
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,
-                bookInformationView,crossValidationView,systemAnalysisView);
+                bookInformationView,crossValidationView,systemAnalysisView,
+                processValidationView,trainingMethodologyView);
 
         bootOperation2.setTranslateX(833);
         bootOperation2.setTranslateY(514.5);
