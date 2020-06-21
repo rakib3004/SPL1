@@ -12,14 +12,18 @@ import ObjectOriented.PriorityData;
 import ProjectDescription.About;
 import UserInterfacePackage.*;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -171,91 +175,45 @@ public class ReadingRoom extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
 
+        CheckBox logIn = new CheckBox("Log In");
+        CheckBox signUp = new CheckBox("Sign Up");
+
+        logIn.setAllowIndeterminate(true);
+        logIn.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            public void changed(ObservableValue<? extends Boolean> ov, final
+            Boolean value, final Boolean newValue) {
+                if(newValue != null && newValue) {
+                    JOptionPane.showMessageDialog(null,
+                            "Please LOG IN");
+                } } });
+        signUp.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            public void changed(ObservableValue<? extends Boolean> ov,
+                                final Boolean value, final Boolean newValue) {
+                if(newValue != null && newValue) {
+                    JOptionPane.showMessageDialog(null,
+                            "Please SIGN UP");
+                } } });
 
 
-        Button writerWise = new Button("Writer Wise");
-
-        writerWise.setTranslateX(230);
-        writerWise.setTranslateY(50);
-        writerWise.setOnAction(actionEvent -> {
-
-            try {
-
-                WriterWiseFX writerWiseFX = new WriterWiseFX();
-                writerWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
+        logIn.indeterminateProperty().addListener(new ChangeListener<Boolean>()
+        { public void changed(ObservableValue<? extends Boolean> ov,
+                                                                                                       final Boolean value, final Boolean newValue)
+        { if(newValue != null && newValue) {  JOptionPane.showMessageDialog(null,
+                "LET'S START");
+        } }
         });
-        writerWise.setPrefSize(400, 80);
-        setStyle(writerWise);
 
+        logIn.setTranslateX(300);
+        logIn.setTranslateY(100);
+          signUp.setTranslateX(510);
+          signUp.setTranslateY(100);
+                logIn.setPrefSize(150,50);
+                signUp.setPrefSize(150,50);
+                setStyle(logIn);
+                setStyle(signUp);
 
-        Button classWise = new Button("Class Wise");
-
-        classWise.setTranslateX(640);
-        classWise.setTranslateY(50);
-        classWise.setOnAction(actionEvent -> {
-
-            try {
-                TypeWiseFX typeWiseFX = new TypeWiseFX();
-                typeWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        classWise.setPrefSize(400, 80);
-        setStyle(classWise);
-
-
-        Button selfWise = new Button("Self Wise");
-
-        selfWise.setTranslateX(230);
-        selfWise.setTranslateY(140);
-        selfWise.setOnAction(actionEvent -> {
-
-            try {
-
-                RemoveBookFX.SelfWiseFX selfWiseFX = new RemoveBookFX.SelfWiseFX();
-                selfWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        selfWise.setPrefSize(400, 80);
-        setStyle(selfWise);
-
-
-        Button timeWise = new Button("Time Wise");
-
-        timeWise.setTranslateX(640);
-        timeWise.setTranslateY(140);
-        timeWise.setOnAction(actionEvent -> {
-
-            try {
-
-
-                TimeWiseFX timeWiseFX = new TimeWiseFX();
-                timeWiseFX.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        timeWise.setPrefSize(400, 80);
-        setStyle(timeWise);
-
+                Label label = new Label("");
+                label.setTextFill(Color.rgb(0,255,255));
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -344,10 +302,11 @@ public class ReadingRoom extends Application {
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,
-                writerWise,classWise,selfWise,
-                timeWise ,readersMood,
+        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(readersMood,
                 administrationMood,about);
+        group.getChildren().addAll(logIn,signUp);
+
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -568,5 +527,20 @@ public class ReadingRoom extends Application {
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
         return  button;
+    }
+    public CheckBox setStyle( CheckBox checkBox)
+    {
+        checkBox.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color: \n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 1.4em;");
+        return  checkBox;
     }
 }
