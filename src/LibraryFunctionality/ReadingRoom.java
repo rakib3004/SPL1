@@ -202,12 +202,13 @@ logIn.setOnAction(actionEvent -> {
 
     Label label1 = new Label("Insert Your Name & ID");
 
-    Button enter = new Button("Enter");
+    Button enter = new Button("----Enter----");
 
             enter.setPrefSize(160, 40);
 
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
+
             gridPane.setAlignment(Pos.CENTER);
 
 
@@ -218,7 +219,7 @@ logIn.setOnAction(actionEvent -> {
     label.setTranslateY(20);
     label.setPrefSize(250,65);
 
-
+    gridPane.setVgap(10);
     gridPane.addRow(0,label);
     gridPane.addRow(5,  label1);
     gridPane.addRow(6, firstNameLbl, firstNameFld);
@@ -239,8 +240,51 @@ logIn.setOnAction(actionEvent -> {
     enter.setOnAction(actionEvent1 -> {
            });
         });
+
+
    signUp.setOnAction(actionEvent -> {
-       label.setText("Please SIGN UP");
+       TextField firstNameFld = new TextField();
+       Label firstNameLbl = new Label("_Name:");
+       firstNameLbl.setLabelFor(firstNameFld);
+       firstNameLbl.setMnemonicParsing(true);
+
+RadioButton radioButtonCollege = new RadioButton("School/College");
+RadioButton radioButtonUniversity = new RadioButton("University");
+
+       Label label1 = new Label("Insert Your Name & Institute");
+
+       Button enter = new Button("----Enter----");
+
+       enter.setPrefSize(160, 40);
+
+       Stage infoStage = new Stage();
+       GridPane gridPane = new GridPane();
+       gridPane.setAlignment(Pos.CENTER);
+
+
+       // Add the Labels and Fields to the GridPane
+
+       label.setText("SIGN UP");
+       label.setTranslateX(100);
+       label.setTranslateY(20);
+       label.setPrefSize(250,65);
+
+       gridPane.setVgap(10);
+       gridPane.addRow(0,label);
+       gridPane.addRow(5,  label1);
+       gridPane.addRow(6, firstNameLbl, firstNameFld);
+       gridPane.addRow(7, radioButtonCollege, radioButtonUniversity);
+       gridPane.addRow(8,enter);
+
+       gridPane.setMaxSize(980, 650);
+
+       //  setStyle2(analysis);
+       // VELO.add(Ve,3,10,1,1);
+
+       Scene S = new Scene(gridPane, 700, 400);
+       infoStage.setTitle("Login");
+       infoStage.setScene(S);
+       infoStage.show();
 
    });
 
