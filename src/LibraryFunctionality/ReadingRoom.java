@@ -177,11 +177,6 @@ public class ReadingRoom extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label("");
-        label.setTextFill(Color.rgb(0,255,255));
-        label.setTranslateX(300);
-        label.setTranslateY(180);
-        label.setPrefSize(250,65);
-
 
 
         CheckBox logIn = new CheckBox("Log In");
@@ -189,7 +184,6 @@ public class ReadingRoom extends Application {
 
 logIn.setOnAction(actionEvent -> {
 
-            label.setText("Please LOG IN");
     TextField firstNameFld = new TextField();
     TextField lastNameFld = new TextField();
 
@@ -206,8 +200,7 @@ logIn.setOnAction(actionEvent -> {
 // Set mnemonic parsing to the Label
     lastNameLbl.setMnemonicParsing(true);
 
-
-
+    Label label1 = new Label("Insert Your Name & ID");
 
     Button enter = new Button("Enter");
 
@@ -216,20 +209,29 @@ logIn.setOnAction(actionEvent -> {
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
-            gridPane.add(label, 1, 1, 5, 5);
-            gridPane.add(enter, 4, 6, 1, 1);
-    // Add the Labels and Fields to the GridPane
-    gridPane.addRow(0, firstNameLbl, firstNameFld);
-    gridPane.addRow(0, lastNameLbl, lastNameFld);
 
-// Set the Size of the GridPane
+
+    // Add the Labels and Fields to the GridPane
+
+    label.setText("LOG IN");
+    label.setTranslateX(100);
+    label.setTranslateY(20);
+    label.setPrefSize(250,65);
+
+
+    gridPane.addRow(0,label);
+    gridPane.addRow(5,  label1);
+    gridPane.addRow(6, firstNameLbl, firstNameFld);
+    gridPane.addRow(7, lastNameLbl, lastNameFld);
+    gridPane.addRow(8,enter);
+
     gridPane.setMaxSize(980, 650);
 
     //  setStyle2(analysis);
 
             // VELO.add(Ve,3,10,1,1);
             Scene S = new Scene(gridPane, 700, 400);
-            infoStage.setTitle("Add Book");
+            infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
 
