@@ -10,10 +10,14 @@ import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import ProjectDescription.About;
+import TableViewPackage.Book;
 import UserInterfacePackage.*;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -265,7 +269,6 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
-
        label.setText("SIGN UP");
        label.setTranslateX(100);
        label.setTranslateY(20);
@@ -279,10 +282,110 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        gridPane.addRow(3, radioButtonCollege, radioButtonUniversity);
        gridPane.addRow(10,enter);
 
+
+
+       MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
+       humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent e) {
+
+           } });
+
+       MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
+
+       muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+       MenuItem rokibHasan = new MenuItem("Rokib Hasan");
+       rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+       MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
+       emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
+
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+
+       MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
+       kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           } });
+
+       MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
+       kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+       MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
+       sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+
+
+       MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
+       rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           } });
+
+
+       MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
+       sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+
+       MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
+       samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+
+       MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
+
+       emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+
+       MenuItem others = new MenuItem("Others");
+       others.setOnAction(new EventHandler<ActionEvent>() {
+           @Override public void handle(ActionEvent e) {
+
+           }
+       });
+
+       MenuButton writerMenu = new MenuButton("Choose The Writer");
+       writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
+               kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
+               samareshMajumdar, emdadiyaPustokaloy,others);
+       Label favouriteWriter = new Label("Favourite Writer");
+       favouriteWriter.setLabelFor(writerMenu);
+       gridPane.addRow(6,favouriteWriter,writerMenu);
+
        var ref = new Object() {
            int gridPaneCounter = 0;
        };
-
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
 if(ref.gridPaneCounter ==0){
@@ -293,6 +396,7 @@ if(ref.gridPaneCounter ==0){
     classNo.setMnemonicParsing(true);
     gridPane.addRow(4, classNo, textFieldClassNo);
     ref.gridPaneCounter =1;
+
 }
 else{
     infoStage.close();
