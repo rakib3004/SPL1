@@ -178,9 +178,12 @@ public class ReadingRoom extends Application {
 
         Label label = new Label("");
 
+        RadioButton logIn = new RadioButton("Log In");
+        RadioButton signUp = new RadioButton("Sign Up");
+        ToggleGroup toggleGroupMain = new ToggleGroup();
+        logIn.setToggleGroup(toggleGroupMain);
+        signUp.setToggleGroup(toggleGroupMain);
 
-        CheckBox logIn = new CheckBox("Log In");
-        CheckBox signUp = new CheckBox("Sign Up");
 
 logIn.setOnAction(actionEvent -> {
 
@@ -221,10 +224,10 @@ logIn.setOnAction(actionEvent -> {
 
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
-    gridPane.addRow(5,  label1);
-    gridPane.addRow(6, firstNameLbl, firstNameFld);
-    gridPane.addRow(7, lastNameLbl, lastNameFld);
-    gridPane.addRow(8,enter);
+    gridPane.addRow(1,  label1);
+    gridPane.addRow(2, firstNameLbl, firstNameFld);
+    gridPane.addRow(3, lastNameLbl, lastNameFld);
+    gridPane.addRow(4,enter);
 
     gridPane.setMaxSize(980, 650);
 
@@ -248,8 +251,13 @@ logIn.setOnAction(actionEvent -> {
        firstNameLbl.setLabelFor(firstNameFld);
        firstNameLbl.setMnemonicParsing(true);
 
+       ToggleGroup toggleGroup = new ToggleGroup();
+
 RadioButton radioButtonCollege = new RadioButton("School/College");
 RadioButton radioButtonUniversity = new RadioButton("University");
+
+radioButtonCollege.setToggleGroup(toggleGroup);
+radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label label1 = new Label("Insert Your Name & Institute");
 
@@ -271,15 +279,14 @@ RadioButton radioButtonUniversity = new RadioButton("University");
 
        gridPane.setVgap(10);
        gridPane.addRow(0,label);
-       gridPane.addRow(5,  label1);
-       gridPane.addRow(6, firstNameLbl, firstNameFld);
-       gridPane.addRow(7, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(8,enter);
+       gridPane.addRow(1,  label1);
+       gridPane.addRow(2, firstNameLbl, firstNameFld);
+       gridPane.addRow(3, radioButtonCollege, radioButtonUniversity);
+       gridPane.addRow(4,enter);
+
+
 
        gridPane.setMaxSize(980, 650);
-
-       //  setStyle2(analysis);
-       // VELO.add(Ve,3,10,1,1);
 
        Scene S = new Scene(gridPane, 700, 400);
        infoStage.setTitle("Login");
@@ -605,9 +612,9 @@ RadioButton radioButtonUniversity = new RadioButton("University");
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-    public CheckBox setStyle( CheckBox checkBox)
+    public RadioButton setStyle( RadioButton radioButton)
     {
-        checkBox.setStyle("-fx-padding: 8 15 15 15;\n" +
+        radioButton.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
                 "    -fx-background-color: \n" +
@@ -618,7 +625,7 @@ RadioButton radioButtonUniversity = new RadioButton("University");
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 1.4em;");
-        return  checkBox;
+        return  radioButton;
     }
     public Label setStyle( Label label)
     {
