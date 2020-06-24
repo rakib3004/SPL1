@@ -260,30 +260,32 @@ radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label label1 = new Label("Insert Your Name & Institute");
-
        Button enter = new Button("----Enter----");
-
        enter.setPrefSize(160, 40);
-
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
-
-
-       // Add the Labels and Fields to the GridPane
 
        label.setText("SIGN UP");
        label.setTranslateX(100);
        label.setTranslateY(20);
        label.setPrefSize(250,65);
 
+
        gridPane.setVgap(10);
        gridPane.addRow(0,label);
        gridPane.addRow(1,  label1);
        gridPane.addRow(2, firstNameLbl, firstNameFld);
        gridPane.addRow(3, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(4,enter);
+       gridPane.addRow(10,enter);
+       radioButtonCollege.setOnAction(actionEvent1 -> {
+           TextField textFieldDepartment = new TextField();
+           Label departmentName = new Label("Department Name :");
+           departmentName.setLabelFor(textFieldDepartment);
+           departmentName.setMnemonicParsing(true);
+           gridPane.addRow(4, departmentName, textFieldDepartment);
 
+       });
 
 
        gridPane.setMaxSize(980, 650);
