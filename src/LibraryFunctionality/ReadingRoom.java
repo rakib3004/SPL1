@@ -441,6 +441,14 @@ else{
        infoStage.setScene(S);
        infoStage.show();
 
+
+       enter.setOnAction(actionEvent1 -> {
+
+           String addReaderName;
+           String addInstitute;
+           String addfavouriteWriter;
+       });
+
    });
 
 
