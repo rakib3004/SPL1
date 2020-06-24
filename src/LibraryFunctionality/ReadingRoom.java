@@ -327,7 +327,7 @@ logIn.setOnAction(actionEvent -> {
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
+      //  primaryStage.setFullScreen(true);
         primaryStage.show();
     }    public void automaticSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
