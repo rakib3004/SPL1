@@ -278,13 +278,38 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        gridPane.addRow(2, firstNameLbl, firstNameFld);
        gridPane.addRow(3, radioButtonCollege, radioButtonUniversity);
        gridPane.addRow(10,enter);
-       radioButtonCollege.setOnAction(actionEvent1 -> {
-           TextField textFieldDepartment = new TextField();
-           Label departmentName = new Label("Department Name :");
-           departmentName.setLabelFor(textFieldDepartment);
-           departmentName.setMnemonicParsing(true);
-           gridPane.addRow(4, departmentName, textFieldDepartment);
 
+       var ref = new Object() {
+           int gridPaneCounter = 0;
+       };
+
+       radioButtonCollege.setOnAction(actionEvent1 -> {
+         //  gridPane.getChildren().remove(6);
+if(ref.gridPaneCounter ==0){
+
+    TextField textFieldClassNo = new TextField();
+    Label classNo = new Label("Class No :");
+    classNo.setLabelFor(textFieldClassNo);
+    classNo.setMnemonicParsing(true);
+    gridPane.addRow(4, classNo, textFieldClassNo);
+    ref.gridPaneCounter =1;
+}
+else{
+    infoStage.close();
+}
+       });
+       radioButtonUniversity.setOnAction(actionEvent1 -> {
+if(ref.gridPaneCounter==0){
+    TextField textFieldDepartment = new TextField();
+    Label departmentName = new Label("Department Name :");
+    departmentName.setLabelFor(textFieldDepartment);
+    departmentName.setMnemonicParsing(true);
+    gridPane.addRow(4, departmentName, textFieldDepartment);
+ref.gridPaneCounter=1;
+}
+else{
+    infoStage.close();
+}
        });
 
 
