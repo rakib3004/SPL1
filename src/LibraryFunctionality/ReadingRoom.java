@@ -190,8 +190,26 @@ public class ReadingRoom extends Application {
 logIn.setOnAction(actionEvent -> {
 
             label.setText("Please LOG IN");
+    TextField firstNameFld = new TextField();
+    TextField lastNameFld = new TextField();
 
-            Button enter = new Button("Enter");
+// Create the Labels
+    Label firstNameLbl = new Label("_Name:");
+    Label lastNameLbl = new Label("_User ID:");
+
+// Bind the Label to the according Field
+    firstNameLbl.setLabelFor(firstNameFld);
+// Set mnemonic parsing to the Label
+    firstNameLbl.setMnemonicParsing(true);
+// Bind the Label to the according Field
+    lastNameLbl.setLabelFor(lastNameFld);
+// Set mnemonic parsing to the Label
+    lastNameLbl.setMnemonicParsing(true);
+
+
+
+
+    Button enter = new Button("Enter");
 
             enter.setPrefSize(160, 40);
 
@@ -200,21 +218,25 @@ logIn.setOnAction(actionEvent -> {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.add(label, 1, 1, 5, 5);
             gridPane.add(enter, 4, 6, 1, 1);
-            //  setStyle2(analysis);
+    // Add the Labels and Fields to the GridPane
+    gridPane.addRow(0, firstNameLbl, firstNameFld);
+    gridPane.addRow(0, lastNameLbl, lastNameFld);
+
+// Set the Size of the GridPane
+    gridPane.setMaxSize(980, 650);
+
+    //  setStyle2(analysis);
 
             // VELO.add(Ve,3,10,1,1);
             Scene S = new Scene(gridPane, 700, 400);
             infoStage.setTitle("Add Book");
             infoStage.setScene(S);
             infoStage.show();
-            enter.setOnAction(actionEvent1 -> {
 
 
-            });
-
+    enter.setOnAction(actionEvent1 -> {
+           });
         });
-
-
    signUp.setOnAction(actionEvent -> {
        label.setText("Please SIGN UP");
 
@@ -327,14 +349,12 @@ logIn.setOnAction(actionEvent -> {
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
-      //  primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(false);
         primaryStage.show();
     }    public void automaticSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
 
 
         Button writerWise = new Button("Writer Wise");
