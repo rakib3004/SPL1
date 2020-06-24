@@ -14,12 +14,14 @@ import UserInterfacePackage.*;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -174,34 +176,50 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
+        Label label = new Label("");
+        label.setTextFill(Color.rgb(0,255,255));
+        label.setTranslateX(300);
+        label.setTranslateY(180);
+        label.setPrefSize(250,65);
+
+
 
         CheckBox logIn = new CheckBox("Log In");
         CheckBox signUp = new CheckBox("Sign Up");
 
-        logIn.setAllowIndeterminate(true);
-        logIn.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            public void changed(ObservableValue<? extends Boolean> ov, final
-            Boolean value, final Boolean newValue) {
-                if(newValue != null && newValue) {
-                    JOptionPane.showMessageDialog(null,
-                            "Please LOG IN");
-                } } });
-        signUp.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            public void changed(ObservableValue<? extends Boolean> ov,
-                                final Boolean value, final Boolean newValue) {
-                if(newValue != null && newValue) {
-                    JOptionPane.showMessageDialog(null,
-                            "Please SIGN UP");
-                } } });
+logIn.setOnAction(actionEvent -> {
+
+            label.setText("Please LOG IN");
+
+            Button enter = new Button("Enter");
+
+            enter.setPrefSize(160, 40);
+
+            Stage infoStage = new Stage();
+            GridPane gridPane = new GridPane();
+            gridPane.setAlignment(Pos.CENTER);
+            gridPane.add(label, 1, 1, 5, 5);
+            gridPane.add(enter, 4, 6, 1, 1);
+            //  setStyle2(analysis);
+
+            // VELO.add(Ve,3,10,1,1);
+            Scene S = new Scene(gridPane, 700, 400);
+            infoStage.setTitle("Add Book");
+            infoStage.setScene(S);
+            infoStage.show();
+            enter.setOnAction(actionEvent1 -> {
 
 
-        logIn.indeterminateProperty().addListener(new ChangeListener<Boolean>()
-        { public void changed(ObservableValue<? extends Boolean> ov,
-                                                                                                       final Boolean value, final Boolean newValue)
-        { if(newValue != null && newValue) {  JOptionPane.showMessageDialog(null,
-                "LET'S START");
-        } }
+            });
+
         });
+
+
+   signUp.setOnAction(actionEvent -> {
+       label.setText("Please SIGN UP");
+
+   });
+
 
         logIn.setTranslateX(300);
         logIn.setTranslateY(100);
@@ -211,9 +229,6 @@ public class ReadingRoom extends Application {
                 signUp.setPrefSize(150,50);
                 setStyle(logIn);
                 setStyle(signUp);
-
-                Label label = new Label("");
-                label.setTextFill(Color.rgb(0,255,255));
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -293,11 +308,7 @@ public class ReadingRoom extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -305,7 +316,7 @@ public class ReadingRoom extends Application {
         group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll(readersMood,
                 administrationMood,about);
-        group.getChildren().addAll(logIn,signUp);
+        group.getChildren().addAll(logIn,signUp,label);
 
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -542,5 +553,20 @@ public class ReadingRoom extends Application {
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 1.4em;");
         return  checkBox;
+    }
+    public Label setStyle( Label label)
+    {
+        label.setStyle("-fx-padding: 8 15 15 15;\n" +
+                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
+                "    -fx-background-radius: 8;\n" +
+                "    -fx-background-color: \n" +
+                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
+                "        #8d9092,\n" +
+                "        #717375,\n" +
+                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
+                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
+                "    -fx-font-weight: bold;\n" +
+                "    -fx-font-size: 1.4em;");
+        return  label;
     }
 }
