@@ -234,10 +234,8 @@ int iterator;
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
 
                 showInfo(primaryStage,labelName,data);
           }
@@ -251,27 +249,16 @@ int iterator;
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("11")) {
-
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
-
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
                 showInfo(primaryStage,labelName,data);
           }
         });
-        
-
 
         MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
         kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {

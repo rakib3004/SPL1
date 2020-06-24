@@ -381,7 +381,24 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
                samareshMajumdar, emdadiyaPustokaloy,others);
        Label favouriteWriter = new Label("Favourite Writer");
        favouriteWriter.setLabelFor(writerMenu);
-       gridPane.addRow(6,favouriteWriter,writerMenu);
+       gridPane.addRow(7,favouriteWriter,writerMenu);
+
+       CheckBox uponnash =new CheckBox("Uponnash");
+       CheckBox kobita =new CheckBox("Kobita");
+       CheckBox rochonaboli =new CheckBox("Rochonaboli");
+       CheckBox religion =new CheckBox("Religion");
+       CheckBox biggan =new CheckBox("Biggan");
+       CheckBox scienceFiction =new CheckBox("Science Fiction");
+       CheckBox shishuShahitto =new CheckBox("Shishu Shahitto");
+       CheckBox kisoreUponnash =new CheckBox("Kisore Uponnash");
+       CheckBox biography =new CheckBox("Biography");
+       CheckBox gobesona =new CheckBox("Gobesona");
+       CheckBox onubad =new CheckBox("Onubad");
+       CheckBox others1 =new CheckBox("Others");
+
+       gridPane.addRow(4,uponnash,kobita,rochonaboli,religion);
+       gridPane.addRow(5,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
+       gridPane.addRow(6,biography,gobesona,onubad,others1);
 
        var ref = new Object() {
            int gridPaneCounter = 0;
