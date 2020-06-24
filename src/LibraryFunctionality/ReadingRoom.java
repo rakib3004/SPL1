@@ -180,6 +180,8 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
+
+
         Label label = new Label("");
 
         RadioButton logIn = new RadioButton("Log In");
@@ -250,13 +252,21 @@ logIn.setOnAction(actionEvent -> {
 
 
    signUp.setOnAction(actionEvent -> {
-       TextField firstNameFld = new TextField();
-       Label firstNameLbl = new Label("_Name:");
-       firstNameLbl.setLabelFor(firstNameFld);
-       firstNameLbl.setMnemonicParsing(true);
+       String addReaderName;
+       String addInstituteName;
+       String addFavouriteWriter;
+
+       TextField readerTextField = new TextField();
+       Label readerName = new Label("_Name:");
+       readerName.setLabelFor(readerTextField);
+       readerName.setMnemonicParsing(true);
+       TextField instituteTextField = new TextField();
+       Label instituteName = new Label("_Institute Name:");
+       instituteName.setLabelFor(instituteTextField);
+       instituteName.setMnemonicParsing(true);
+
 
        ToggleGroup toggleGroup = new ToggleGroup();
-
 RadioButton radioButtonCollege = new RadioButton("School/College");
 RadioButton radioButtonUniversity = new RadioButton("University");
 
@@ -278,9 +288,10 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        gridPane.setVgap(10);
        gridPane.addRow(0,label);
        gridPane.addRow(1,  label1);
-       gridPane.addRow(2, firstNameLbl, firstNameFld);
-       gridPane.addRow(3, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(10,enter);
+       gridPane.addRow(2, readerName, readerTextField);
+       gridPane.addRow(3, instituteName, instituteTextField);
+       gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
+       gridPane.addRow(11,enter);
 
 
 
@@ -381,7 +392,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
                samareshMajumdar, emdadiyaPustokaloy,others);
        Label favouriteWriter = new Label("Favourite Writer");
        favouriteWriter.setLabelFor(writerMenu);
-       gridPane.addRow(7,favouriteWriter,writerMenu);
+       gridPane.addRow(8,favouriteWriter,writerMenu);
 
        CheckBox uponnash =new CheckBox("Uponnash");
        CheckBox kobita =new CheckBox("Kobita");
@@ -396,9 +407,9 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        CheckBox onubad =new CheckBox("Onubad");
        CheckBox others1 =new CheckBox("Others");
 
-       gridPane.addRow(4,uponnash,kobita,rochonaboli,religion);
-       gridPane.addRow(5,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
-       gridPane.addRow(6,biography,gobesona,onubad,others1);
+       gridPane.addRow(5,uponnash,kobita,rochonaboli,religion);
+       gridPane.addRow(6,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
+       gridPane.addRow(7,biography,gobesona,onubad,others1);
 
        var ref = new Object() {
            int gridPaneCounter = 0;
@@ -444,9 +455,8 @@ else{
 
        enter.setOnAction(actionEvent1 -> {
 
-           String addReaderName;
-           String addInstitute;
-           String addfavouriteWriter;
+           addReaderName = readerTextField.getText();
+           addInstituteName = radioButtonCollege.getText();
        });
 
    });
