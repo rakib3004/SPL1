@@ -179,6 +179,8 @@ public class ReadingRoom extends Application {
     String addFavouriteWriter;
     String [] addFavouriteBookType = new String[12];
     int typeNumber=0;
+    String userName;
+    String userID;
     public void manualSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -200,18 +202,12 @@ logIn.setOnAction(actionEvent -> {
     TextField firstNameFld = new TextField();
     TextField lastNameFld = new TextField();
 
-// Create the Labels
-    Label firstNameLbl = new Label("_Name:");
-    Label lastNameLbl = new Label("_User ID:");
-
-// Bind the Label to the according Field
-    firstNameLbl.setLabelFor(firstNameFld);
-// Set mnemonic parsing to the Label
-    firstNameLbl.setMnemonicParsing(true);
-// Bind the Label to the according Field
-    lastNameLbl.setLabelFor(lastNameFld);
-// Set mnemonic parsing to the Label
-    lastNameLbl.setMnemonicParsing(true);
+    Label userNameTextField = new Label("_Name:");
+    Label userIdTextField = new Label("_User ID:");
+    userNameTextField.setLabelFor(firstNameFld);
+    userNameTextField.setMnemonicParsing(true);
+    userIdTextField.setLabelFor(lastNameFld);
+    userIdTextField.setMnemonicParsing(true);
 
     Label label1 = new Label("Insert Your Name & ID");
 
@@ -224,9 +220,6 @@ logIn.setOnAction(actionEvent -> {
 
             gridPane.setAlignment(Pos.CENTER);
 
-
-    // Add the Labels and Fields to the GridPane
-
     label.setText("LOG IN");
     label.setTranslateX(100);
     label.setTranslateY(20);
@@ -235,15 +228,13 @@ logIn.setOnAction(actionEvent -> {
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
     gridPane.addRow(1,  label1);
-    gridPane.addRow(2, firstNameLbl, firstNameFld);
-    gridPane.addRow(3, lastNameLbl, lastNameFld);
+    gridPane.addRow(2, userNameTextField, firstNameFld);
+    gridPane.addRow(3, userIdTextField, lastNameFld);
     gridPane.addRow(4,enter);
 
     gridPane.setMaxSize(980, 650);
 
-    //  setStyle2(analysis);
 
-            // VELO.add(Ve,3,10,1,1);
             Scene S = new Scene(gridPane, 700, 400);
             infoStage.setTitle("Login");
             infoStage.setScene(S);
@@ -251,7 +242,14 @@ logIn.setOnAction(actionEvent -> {
 
 
     enter.setOnAction(actionEvent1 -> {
+userName = userNameTextField.getText();
+userID = userIdTextField.getText();
+AccountManagement accountManagement = new AccountManagement();
 
+boolean isFound = accountManagement.accountManagementLogInMethods(userName,userID);
+if(isFound==true){
+    accountManagement.accountManagementFindRecommendedBookList(userName,userID);
+}
            });
         });
 
