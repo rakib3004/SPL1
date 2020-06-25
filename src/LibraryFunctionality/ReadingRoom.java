@@ -276,8 +276,8 @@ radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label label1 = new Label("Insert Your Name & Institute");
-       Button button = new Button("----Enter----");
-       button.setPrefSize(160, 40);
+       Button enterButton = new Button("----Enter----");
+       enterButton.setPrefSize(160, 40);
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
@@ -288,12 +288,12 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
 
 Label label2 =new Label();
        gridPane.setVgap(10);
-       gridPane.addRow(0,label2,label);
+       gridPane.addRow(0,label);
        gridPane.addRow(1,  label1);
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(12,label2,button);
+       gridPane.addRow(12,label2,enterButton);
 
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
@@ -521,7 +521,7 @@ else{
        infoStage.setScene(S);
        infoStage.show();
 
-       button.setOnAction(actionEvent1 -> {
+       enterButton.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=uponnash.getText();
            typeNumber++;
            String addReaderName;
@@ -529,6 +529,14 @@ else{
            addReaderName = readerTextField.getText();
            addInstituteName = instituteTextField.getText();
            System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
+
+           String [] infoDataArray = new String[3];
+
+           infoDataArray[0] = addReaderName;
+           infoDataArray[1]=addInstituteName;
+           infoDataArray[2]=addFavouriteWriter;
+           AccountManagement accountManagement = new AccountManagement();
+           accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType);
        });
    });
 
@@ -603,7 +611,7 @@ else{
 
             About about1 = new About();
             try {
-                about1.start(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
