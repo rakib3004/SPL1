@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.lang.reflect.Parameter;
 
 public class AccountManagement {
-    public void accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
+    String textUserID;
+    public String accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
 
         String FILENAME = infoDataArray[0];
 
@@ -34,12 +35,19 @@ public class AccountManagement {
                 int intMembers = Integer.parseInt(stringMemebers);
                 intMembers++;
                 int userID = 1000+intMembers;
-                String textUserID = Integer.toString(userID);
+                textUserID = Integer.toString(userID);
 
 
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
+                    fileWriter.write(intMembers);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -64,12 +72,19 @@ public class AccountManagement {
                 int intMembers = Integer.parseInt(stringMemebers);
                 intMembers++;
                 int userID = 1000+intMembers;
-                String textUserID = Integer.toString(userID);
+                textUserID = Integer.toString(userID);
 
 
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
+                    fileWriter.write(intMembers);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -94,7 +109,7 @@ File fileA = new File(FILENAME_COUNT);
             int intMembers = Integer.parseInt(stringMemebers);
             intMembers++;
             int userID = 1000+intMembers;
-            String textUserID = Integer.toString(userID);
+            textUserID = Integer.toString(userID);
 
 
             try {
@@ -105,8 +120,17 @@ File fileA = new File(FILENAME_COUNT);
                 e.printStackTrace();
             }
 
+             try {
+     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
+                fileWriter.write(intMembers);
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
         }
+        return textUserID;
     }
 
 }
