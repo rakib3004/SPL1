@@ -19,9 +19,61 @@ public class AccountManagement {
                 FILENAME = FILENAME+"9";
                 File file2 = new File("UserProfile"+File.separator+FILENAME);
                 file2.createNewFile();
+                String FILENAME_COUNT = "LibraryMemberCount.txt";
+                File fileA = new File(FILENAME_COUNT);
+                FileReader fileReader = new FileReader(fileA);
+                char [] libraryMembers = new char[10];
+                fileReader.read(libraryMembers);
+                String  stringMemebers="";
+                int countIterator=0;
+                for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
+                    stringMemebers = stringMemebers+libraryMembers[countIterator];
+
+                }
+                stringMemebers = stringMemebers.trim();
+                int intMembers = Integer.parseInt(stringMemebers);
+                intMembers++;
+                int userID = 1000+intMembers;
+                String textUserID = Integer.toString(userID);
+
+
+                try {
+                    FileWriter fileWriter=new FileWriter(FILENAME);
+                    fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             }
             else{
                 file1.createNewFile();
+                String FILENAME_COUNT = "LibraryMemberCount.txt";
+                File fileA = new File(FILENAME_COUNT);
+                FileReader fileReader = new FileReader(fileA);
+                char [] libraryMembers = new char[10];
+                fileReader.read(libraryMembers);
+                String  stringMemebers="";
+                int countIterator=0;
+                for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
+                    stringMemebers = stringMemebers+libraryMembers[countIterator];
+
+                }
+                stringMemebers = stringMemebers.trim();
+                int intMembers = Integer.parseInt(stringMemebers);
+                intMembers++;
+                int userID = 1000+intMembers;
+                String textUserID = Integer.toString(userID);
+
+
+                try {
+                    FileWriter fileWriter=new FileWriter(FILENAME);
+                    fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }
         }
