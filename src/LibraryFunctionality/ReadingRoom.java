@@ -175,6 +175,8 @@ public class ReadingRoom extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
+    String addFavouriteWriter;
     public void manualSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -252,9 +254,6 @@ logIn.setOnAction(actionEvent -> {
 
 
    signUp.setOnAction(actionEvent -> {
-       String addReaderName;
-       String addInstituteName;
-       String addFavouriteWriter;
 
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
@@ -274,8 +273,8 @@ radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label label1 = new Label("Insert Your Name & Institute");
-       Button enter = new Button("----Enter----");
-       enter.setPrefSize(160, 40);
+       Button button = new Button("----Enter----");
+       button.setPrefSize(160, 40);
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
@@ -291,14 +290,15 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(11,enter);
+       gridPane.addRow(11,button);
 
 
-
-       MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
+       
+            MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent e) {
+addFavouriteWriter = humayonAhmed.getText();
 
            } });
 
@@ -306,6 +306,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
 
        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = muhammadJafarIqbal.getText();
 
            }
        });
@@ -313,6 +314,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem rokibHasan = new MenuItem("Rokib Hasan");
        rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = rokibHasan.getText();
 
            }
        });
@@ -320,6 +322,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
 
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = emdadulHaqueMilon.getText();
 
            }
        });
@@ -328,12 +331,14 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
        kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = kaziNazrulIslam.getText();
 
            } });
 
        MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
        kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = kaziAnwarHossain.getText();
 
            }
        });
@@ -341,6 +346,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
        sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = sharatChandraChattropadhay.getText();
 
            }
        });
@@ -350,6 +356,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = rabindranathTagore.getText();
 
            } });
 
@@ -357,6 +364,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
        sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = sunilGangoPaddahay.getText();
 
            }
        });
@@ -365,6 +373,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
        samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = samareshMajumdar.getText();
 
            }
        });
@@ -374,6 +383,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
 
        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
+addFavouriteWriter = emdadiyaPustokaloy.getText();
 
            }
        });
@@ -382,7 +392,7 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        MenuItem others = new MenuItem("Others");
        others.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
-
+addFavouriteWriter = others.getText();
            }
        });
 
@@ -453,10 +463,13 @@ else{
        infoStage.show();
 
 
-       enter.setOnAction(actionEvent1 -> {
-
+       button.setOnAction(actionEvent1 -> {
+           String addReaderName;
+           String addInstituteName;
            addReaderName = readerTextField.getText();
-           addInstituteName = radioButtonCollege.getText();
+           addInstituteName = instituteTextField.getText();
+           System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
+
        });
 
    });
