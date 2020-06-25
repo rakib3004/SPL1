@@ -278,6 +278,8 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        Label label1 = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
+
+
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
@@ -294,6 +296,12 @@ Label label2 =new Label();
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
        gridPane.addRow(12,label2,enterButton);
+
+       Button cancel = new Button("Cancel");
+       cancel.setPrefSize(160, 40);
+       cancel.setOnAction(actionEvent1 -> {
+           infoStage.close();
+       });
 
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
@@ -535,8 +543,16 @@ else{
            infoDataArray[0] = addReaderName;
            infoDataArray[1]=addInstituteName;
            infoDataArray[2]=addFavouriteWriter;
+           String textUserID = "0000";
            AccountManagement accountManagement = new AccountManagement();
-           accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType);
+           try {
+             textUserID=  accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+           JOptionPane.showMessageDialog(null,
+                   "Your Account is successfully Created"+"\n"+
+                   "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
        });
    });
 
