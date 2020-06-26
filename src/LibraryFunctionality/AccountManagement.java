@@ -94,23 +94,23 @@ public class AccountManagement {
         }
         else {*/
             file.createNewFile();
-String FILENAME_COUNT ="LibraryFunctionality"+File.separator+"LibraryMemberCount.txt";
+String FILENAME_COUNT ="LibraryMemberCount.txt";
 File fileA = new File(FILENAME_COUNT);
             FileReader fileReader = new FileReader(fileA);
             char [] libraryMembers = new char[10];
             fileReader.read(libraryMembers);
-            String  stringMemebers="";
+            String  stringMembers="";
             int countIterator=0;
             for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
-                stringMemebers = stringMemebers+libraryMembers[countIterator];
+                stringMembers = stringMembers+libraryMembers[countIterator];
 
             }
-            stringMemebers = stringMemebers.trim();
-            int intMembers = Integer.parseInt(stringMemebers);
+            stringMembers = stringMembers.trim();
+            int intMembers = Integer.parseInt(stringMembers);
             intMembers++;
             int userID = 1000+intMembers;
             textUserID = Integer.toString(userID);
-
+String membersString = Integer.toString(intMembers);
 
             try {
                 FileWriter fileWriter=new FileWriter(FILENAME);
@@ -122,7 +122,7 @@ File fileA = new File(FILENAME_COUNT);
 
              try {
      FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
-                fileWriter.write(intMembers);
+                fileWriter.write(membersString);
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();

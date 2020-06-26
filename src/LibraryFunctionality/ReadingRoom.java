@@ -173,7 +173,7 @@ public class ReadingRoom extends Application {
     }
 
     String addFavouriteWriter;
-    String [] addFavouriteBookType = new String[12];
+    String [] addFavouriteBookType = new String[150];
     int typeNumber=0;
     String userName;
     String userID;
