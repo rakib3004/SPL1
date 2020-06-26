@@ -9,10 +9,10 @@ String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
         File file = new File("UserProfile" +File.separator+(FILENAME+".txt"));
-        if(file.exists()){
+        if(file.exists()==false){
             FILENAME = userNameTemplate +"2";
             File file1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
-            if(file1.exists()){
+            if(file1.exists()==false){
                 FILENAME = userNameTemplate+"3";
                 File file2 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
                 file2.createNewFile();
@@ -42,6 +42,23 @@ String userNameTemplate = infoDataArray[0];
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
                     fileWriter.write(intMembers);
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                FILENAME = userNameTemplate+"3ChoiceList.txt";
+                File fileA3 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+                fileA3.createNewFile();
+                int iterator;
+                String choiceListDescription;
+                choiceListDescription = infoDataArray[2];
+                for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
+                    choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
+                }
+
+                try{
+                    FileWriter fileWriter = new FileWriter(fileA3);
+                    fileWriter.write(choiceListDescription);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -80,6 +97,7 @@ String userNameTemplate = infoDataArray[0];
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
             }
         }
         else {
