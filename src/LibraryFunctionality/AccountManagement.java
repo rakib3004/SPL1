@@ -112,7 +112,7 @@ File fileA = new File(FILENAME_COUNT);
 String membersString = Integer.toString(intMembers);
 
             try {
-                FileWriter fileWriter=new FileWriter(FILENAME);
+                FileWriter fileWriter=new FileWriter(file);
                 fileWriter.write(infoDataArray[0]+"\t"+textUserID);
                 fileWriter.close();
             } catch (IOException e) {
