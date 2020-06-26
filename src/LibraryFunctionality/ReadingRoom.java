@@ -297,6 +297,8 @@ radioButtonUniversity.setToggleGroup(toggleGroup);
        label.setPrefSize(250,65);
 
 Label label2 =new Label();
+Label label3 =new Label();
+Label label4 =new Label();
        Button cancel = new Button("----Cancel----");
        cancel.setPrefSize(160, 40);
        cancel.setOnAction(actionEvent1 -> {
@@ -309,7 +311,7 @@ Label label2 =new Label();
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(12,cancel,enterButton);
+       gridPane.addRow(12,label3,label4,cancel,enterButton);
 
 
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
