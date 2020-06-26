@@ -12,7 +12,7 @@ public class AccountManagement {
 
         String FILENAME = infoDataArray[0]+".txt";
 
-        File file = new File(/*"UserProfile"+File.separator+*/FILENAME);
+        File file = new File("UserProfile"+File.separator+FILENAME);
         /*if(file.exists()){
             FILENAME = FILENAME +"2";
             File file1 = new File("UserProfile"+File.separator+(FILENAME+".txt"));
