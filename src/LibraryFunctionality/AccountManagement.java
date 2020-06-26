@@ -5,30 +5,30 @@ import java.io.*;
 public class AccountManagement {
     String textUserID;
     public String accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
-
+String userNameTemplate = infoDataArray[0];
         String FILENAME = infoDataArray[0]+".txt";
 String workingDirectory = System.getProperty("user.dir");
         File file = new File("UserProfile" +File.separator+FILENAME);
-        /*if(file.exists()){
-            FILENAME = FILENAME +"2";
-            File file1 = new File("LibraryFunctionality.UserProfile"+File.separator+(FILENAME+".txt"));
+        if(file.exists()){
+            FILENAME = userNameTemplate +"2";
+            File file1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
             if(file1.exists()){
-                FILENAME = FILENAME+"9";
-                File file2 = new File("LibraryFunctionality.UserProfile"+File.separator+(FILENAME+".txt"));
+                FILENAME = userNameTemplate+"3";
+                File file2 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
                 file2.createNewFile();
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
                 char [] libraryMembers = new char[10];
                 fileReader.read(libraryMembers);
-                String  stringMemebers="";
+                String  stringMembers="";
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
-                    stringMemebers = stringMemebers+libraryMembers[countIterator];
+                    stringMembers = stringMembers+libraryMembers[countIterator];
 
                 }
-                stringMemebers = stringMemebers.trim();
-                int intMembers = Integer.parseInt(stringMemebers);
+                stringMembers = stringMembers.trim();
+                int intMembers = Integer.parseInt(stringMembers);
                 intMembers++;
                 int userID = 1000+intMembers;
                 textUserID = Integer.toString(userID);
@@ -58,14 +58,14 @@ String workingDirectory = System.getProperty("user.dir");
                 FileReader fileReader = new FileReader(fileA);
                 char [] libraryMembers = new char[10];
                 fileReader.read(libraryMembers);
-                String  stringMemebers="";
+                String  stringMembers="";
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
-                    stringMemebers = stringMemebers+libraryMembers[countIterator];
+                    stringMembers = stringMembers+libraryMembers[countIterator];
 
                 }
-                stringMemebers = stringMemebers.trim();
-                int intMembers = Integer.parseInt(stringMemebers);
+                stringMembers = stringMembers.trim();
+                int intMembers = Integer.parseInt(stringMembers);
                 intMembers++;
                 int userID = 1000+intMembers;
                 textUserID = Integer.toString(userID);
@@ -88,7 +88,7 @@ String workingDirectory = System.getProperty("user.dir");
 
             }
         }
-        else {*/
+        else {
             file.createNewFile();
 String FILENAME_COUNT ="LibraryMemberCount.txt";
 File fileA = new File(FILENAME_COUNT);
@@ -125,7 +125,7 @@ String membersString = Integer.toString(intMembers);
             }
 
 
-        //}
+        }
         return textUserID;
     }
     public boolean accountManagementLogInMethods(String userName,String userID) throws IOException {
