@@ -138,6 +138,10 @@ String membersString = Integer.toString(intMembers);
         if(file.exists()){
             FileReader fileReader = new FileReader(file);
             fileReader.read(getUserInfoArray);
+            System.out.println("Yesssssssssssssss");
+        }
+        else {
+            System.out.println("Noooooooooooooo");
         }
         String  findUserName, findUserID;
         findUserName="";
