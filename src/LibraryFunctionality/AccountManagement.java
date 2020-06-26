@@ -4,21 +4,20 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Parameter;
 
 public class AccountManagement {
     String textUserID;
     public String accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
 
         String FILENAME = infoDataArray[0]+".txt";
-
-        File file = new File("UserProfile"+File.separator+FILENAME);
+String workingDirectory = System.getProperty("user.dir");
+        File file = new File("UserProfile" +File.separator+FILENAME);
         /*if(file.exists()){
             FILENAME = FILENAME +"2";
-            File file1 = new File("UserProfile"+File.separator+(FILENAME+".txt"));
+            File file1 = new File("LibraryFunctionality.UserProfile"+File.separator+(FILENAME+".txt"));
             if(file1.exists()){
                 FILENAME = FILENAME+"9";
-                File file2 = new File("UserProfile"+File.separator+(FILENAME+".txt"));
+                File file2 = new File("LibraryFunctionality.UserProfile"+File.separator+(FILENAME+".txt"));
                 file2.createNewFile();
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
