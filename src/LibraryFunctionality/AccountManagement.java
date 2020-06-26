@@ -1,9 +1,6 @@
 package LibraryFunctionality;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class AccountManagement {
     String textUserID;
@@ -131,10 +128,41 @@ String membersString = Integer.toString(intMembers);
         //}
         return textUserID;
     }
-    public boolean accountManagementLogInMethods(String userName,String userID){
+    public boolean accountManagementLogInMethods(String userName,String userID) throws IOException {
 
         boolean isFound = false;
-        isFound =true;
+        File file = new File("UserProfile" +File.separator+userName+".txt");
+        char []getUserInfoArray = new char[100];
+
+        if(file.exists()){
+            FileReader fileReader = new FileReader(file);
+            fileReader.read(getUserInfoArray);
+        }
+        String  findUserName, findUserID;
+        findUserName="";
+        findUserID="";
+
+        int countIterator=0;
+        boolean isFindTab = false;
+        for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
+            if(getUserInfoArray[countIterator]!='\t'){
+                isFindTab = true;
+                continue;
+            }
+            if(isFindTab){
+                findUserID = findUserID+getUserInfoArray[countIterator];
+            }
+            else{
+                findUserName = findUserName+getUserInfoArray[countIterator];
+            }
+        }
+        findUserName = findUserName.trim();
+        findUserID = findUserID.trim();
+
+        if(findUserName.contains(userName)&&findUserID.equals(userID)){
+            isFound =true;
+        }
+
         return isFound;
 
     }

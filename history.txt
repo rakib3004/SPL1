@@ -1,6 +1,4 @@
-Main	Fri 26.06.2020 at 03:07:20 PM
-FxSecondWindow	Fri 26.06.2020 at 03:07:22 PM
-ReadingRoom	Fri 26.06.2020 at 03:07:23 PM
-ReadingRoom	Fri 26.06.2020 at 03:07:25 PM
-ReadingRoom	Fri 26.06.2020 at 03:07:48 PM
-ReadingRoom	Fri 26.06.2020 at 03:07:49 PM
+Main	Fri 26.06.2020 at 04:45:53 PM
+FxSecondWindow	Fri 26.06.2020 at 04:46:04 PM
+ReadingRoom	Fri 26.06.2020 at 04:46:06 PM
+ReadingRoom	Fri 26.06.2020 at 04:46:09 PM
