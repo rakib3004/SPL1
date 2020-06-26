@@ -242,11 +242,25 @@ userName = userNameTextField.getText();
 userID = userIdTextField.getText();
 AccountManagement accountManagement = new AccountManagement();
 
-boolean isFound = accountManagement.accountManagementLogInMethods(userName,userID);
-if(isFound==true){
-    accountManagement.accountManagementFindRecommendedBookList(userName,userID);
-}
-           });
+        boolean isFound = false;
+        try {
+            isFound = accountManagement.accountManagementLogInMethods(userName,userID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(isFound==true){
+            JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
+
+            accountManagement.accountManagementFindRecommendedBookList(userName,userID);
+
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Sorry!! Your Account Does not exists");
+
+        }
+
+
+    });
         });
 
 
