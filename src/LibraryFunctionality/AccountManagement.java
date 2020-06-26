@@ -131,8 +131,10 @@ String membersString = Integer.toString(intMembers);
     public boolean accountManagementLogInMethods(String userName,String userID) throws IOException {
 
         boolean isFound = false;
+        userName = userName.trim();
         String FILENAME = userName+".txt";
-        File file = new File("UserProfile" +File.separator+userName);
+
+        File file = new File("UserProfile" +File.separator+FILENAME);
         char []getUserInfoArray = new char[100];
 
         if(file.exists()){
@@ -150,24 +152,23 @@ String membersString = Integer.toString(intMembers);
         int countIterator=0;
         boolean isFindTab = false;
         for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
-            if(getUserInfoArray[countIterator]!='\t'){
+            if(getUserInfoArray[countIterator]=='\t'){
                 isFindTab = true;
                 continue;
             }
             if(isFindTab==true){
+
                 findUserID = findUserID+getUserInfoArray[countIterator];
-                System.out.println(findUserID);
             }
             else{
                 findUserName = findUserName+getUserInfoArray[countIterator];
-                System.out.println(findUserID);
-
             }
         }
+
         findUserName = findUserName.trim();
         findUserID = findUserID.trim();
-        System.out.println(userName+" ----> "+findUserName);
-        System.out.println(userID+" ----> "+findUserID);
+        System.out.println(userName+"---->"+findUserName);
+        System.out.println(userID+"---->"+findUserID);
 
         if(findUserName.equals(userName)&&findUserID.equals(userID)){
             isFound =true;

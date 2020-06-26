@@ -173,7 +173,7 @@ public class ReadingRoom extends Application {
     }
 
     String addFavouriteWriter;
-    String [] addFavouriteBookType = new String[150];
+    String [] addFavouriteBookType = new String[12];
     int typeNumber=0;
     String userName;
     String userID;
@@ -206,14 +206,12 @@ logIn.setOnAction(actionEvent -> {
     userIdTextField.setMnemonicParsing(true);
 
     Label label1 = new Label("Insert Your Name & ID");
-
     Button enter = new Button("----Enter----");
 
             enter.setPrefSize(160, 40);
 
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
-
             gridPane.setAlignment(Pos.CENTER);
 
     label.setText("LOG IN");
@@ -221,22 +219,19 @@ logIn.setOnAction(actionEvent -> {
     label.setTranslateY(20);
     label.setPrefSize(250,65);
 
+    Label label2 = new Label();
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
     gridPane.addRow(1,  label1);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
-    gridPane.addRow(4,enter);
-
+    gridPane.addRow(4,label2,enter);
     gridPane.setMaxSize(980, 650);
-
 
             Scene S = new Scene(gridPane, 700, 400);
             infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
-
-
     enter.setOnAction(actionEvent1 -> {
 userName = getUserName.getText();
 userID = getUserID.getText();
@@ -244,7 +239,6 @@ userName = userName.trim();
 userID =userID.trim();
 
 AccountManagement accountManagement = new AccountManagement();
-
         boolean isFound = false;
         try {
             isFound = accountManagement.accountManagementLogInMethods(userName,userID);
@@ -253,22 +247,15 @@ AccountManagement accountManagement = new AccountManagement();
         }
         if(isFound==true){
             JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
-
             accountManagement.accountManagementFindRecommendedBookList(userName,userID);
-
         }
         else{
             JOptionPane.showMessageDialog(null,"Sorry!! Your Account Does not exists");
-
         }
-
-
     });
         });
 
-
    signUp.setOnAction(actionEvent -> {
-
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
        readerName.setLabelFor(readerTextField);
@@ -278,19 +265,15 @@ AccountManagement accountManagement = new AccountManagement();
        instituteName.setLabelFor(instituteTextField);
        instituteName.setMnemonicParsing(true);
 
-
        ToggleGroup toggleGroup = new ToggleGroup();
 RadioButton radioButtonCollege = new RadioButton("School/College");
 RadioButton radioButtonUniversity = new RadioButton("University");
-
 radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label label1 = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
-
-
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
@@ -307,7 +290,6 @@ Label label4 =new Label();
        cancel.setOnAction(actionEvent1 -> {
            infoStage.close();
        });
-
        gridPane.setVgap(10);
        gridPane.addRow(0,label2,label);
        gridPane.addRow(1,  label1);
@@ -315,62 +297,46 @@ Label label4 =new Label();
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
        gridPane.addRow(12,label3,label4,cancel,enterButton);
-
-
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent e) {
 addFavouriteWriter = humayonAhmed.getText();
-
            } });
 
        MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
-
        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = muhammadJafarIqbal.getText();
-
            }
        });
-
        MenuItem rokibHasan = new MenuItem("Rokib Hasan");
        rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = rokibHasan.getText();
-
            }
        });
        MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
        emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
-
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = emdadulHaqueMilon.getText();
-
            }
        });
-
-
        MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
        kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = kaziNazrulIslam.getText();
-
            } });
-
        MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
        kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = kaziAnwarHossain.getText();
-
            }
        });
-
        MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
        sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = sharatChandraChattropadhay.getText();
-
            }
        });
        
@@ -378,15 +344,12 @@ addFavouriteWriter = sharatChandraChattropadhay.getText();
        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = rabindranathTagore.getText();
-
            } });
-
 
        MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
        sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = sunilGangoPaddahay.getText();
-
            }
        });
 
@@ -395,7 +358,6 @@ addFavouriteWriter = sunilGangoPaddahay.getText();
        samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = samareshMajumdar.getText();
-
            }
        });
 
@@ -404,7 +366,6 @@ addFavouriteWriter = samareshMajumdar.getText();
        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = emdadiyaPustokaloy.getText();
-
            }
        });
 
@@ -515,7 +476,6 @@ if(ref.gridPaneCounter ==0){
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
     ref.gridPaneCounter =1;
-
 }
 else{
     infoStage.close();
@@ -537,12 +497,10 @@ else{
 }
        });
        gridPane.setMaxSize(980, 650);
-
        Scene S = new Scene(gridPane, 700, 400);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
-
        enterButton.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=uponnash.getText();
            typeNumber++;
@@ -564,9 +522,22 @@ else{
            } catch (IOException e) {
                e.printStackTrace();
            }
-           JOptionPane.showMessageDialog(null,
-                   "Your Account is successfully Created"+"\n"+
-                   "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
+           if(textUserID=="0000"){
+               JOptionPane.showMessageDialog(null,
+                       "Your Account is not Created !!!");
+           }
+           else{
+               JOptionPane.showMessageDialog(null,
+                       "Your Account is successfully Created"+"\n"+
+                               "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
+           }
+
+           int iterator;
+           for(iterator=0;iterator<12;iterator++){
+               addFavouriteBookType[iterator]="";
+           }
+           typeNumber=0;
+
        });
    });
 
@@ -587,7 +558,6 @@ else{
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -664,7 +634,8 @@ else{
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(false);
         primaryStage.show();
-    }    public void automaticSystem(Stage primaryStage) throws IOException {
+    }
+    public void automaticSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -739,21 +710,15 @@ else{
         timeWise.setOnAction(actionEvent -> {
 
             try {
-
-
                 TimeWiseFX timeWiseFX = new TimeWiseFX();
                 timeWiseFX.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         timeWise.setPrefSize(400, 80);
         setStyle(timeWise);
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -762,17 +727,12 @@ else{
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -780,8 +740,6 @@ else{
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
 
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
@@ -794,13 +752,9 @@ else{
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
-
-
 
         administrationMood.setOnAction(actionEvent -> {
 
