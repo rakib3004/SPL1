@@ -134,7 +134,6 @@ public class ReadingRoom extends Application {
             }
 
         });
-
         readersMood.setOnAction(actionEvent -> {
 
             ReadingRoom readingRoom = new ReadingRoom();
@@ -154,10 +153,7 @@ public class ReadingRoom extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();

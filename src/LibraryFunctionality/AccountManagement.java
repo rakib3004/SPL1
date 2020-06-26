@@ -12,8 +12,8 @@ public class AccountManagement {
 
         String FILENAME = infoDataArray[0]+".txt";
 
-        File file = new File("UserProfile"+File.separator+FILENAME);
-        if(file.exists()){
+        File file = new File(/*"UserProfile"+File.separator+*/FILENAME);
+        /*if(file.exists()){
             FILENAME = FILENAME +"2";
             File file1 = new File("UserProfile"+File.separator+(FILENAME+".txt"));
             if(file1.exists()){
@@ -92,9 +92,9 @@ public class AccountManagement {
 
             }
         }
-        else {
+        else {*/
             file.createNewFile();
-String FILENAME_COUNT = "LibraryMemberCount.txt";
+String FILENAME_COUNT ="LibraryFunctionality"+File.separator+"LibraryMemberCount.txt";
 File fileA = new File(FILENAME_COUNT);
             FileReader fileReader = new FileReader(fileA);
             char [] libraryMembers = new char[10];
@@ -129,7 +129,7 @@ File fileA = new File(FILENAME_COUNT);
             }
 
 
-        }
+        //}
         return textUserID;
     }
     public boolean accountManagementLogInMethods(String userName,String userID){
