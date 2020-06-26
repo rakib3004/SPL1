@@ -6,9 +6,9 @@ public class AccountManagement {
     String textUserID;
     public String accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
 String userNameTemplate = infoDataArray[0];
-        String FILENAME = infoDataArray[0]+".txt";
-String workingDirectory = System.getProperty("user.dir");
-        File file = new File("UserProfile" +File.separator+FILENAME);
+        String FILENAME = userNameTemplate;
+
+        File file = new File("UserProfile" +File.separator+(FILENAME+".txt"));
         if(file.exists()){
             FILENAME = userNameTemplate +"2";
             File file1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
@@ -32,8 +32,6 @@ String workingDirectory = System.getProperty("user.dir");
                 intMembers++;
                 int userID = 1000+intMembers;
                 textUserID = Integer.toString(userID);
-
-
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID);
@@ -48,8 +46,6 @@ String workingDirectory = System.getProperty("user.dir");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-
             }
             else{
                 file1.createNewFile();
@@ -70,7 +66,6 @@ String workingDirectory = System.getProperty("user.dir");
                 int userID = 1000+intMembers;
                 textUserID = Integer.toString(userID);
 
-
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID);
@@ -85,7 +80,6 @@ String workingDirectory = System.getProperty("user.dir");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         }
         else {
@@ -116,14 +110,30 @@ String membersString = Integer.toString(intMembers);
                 e.printStackTrace();
             }
 
-             try {
+            try {
      FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
                 fileWriter.write(membersString);
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+FILENAME = userNameTemplate+"ChoiceList.txt";
+            File fileA1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+            fileA1.createNewFile();
+            int iterator;
+            String choiceListDescription;
+            choiceListDescription = infoDataArray[2];
+            for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
+                choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
+            }
 
+            try{
+                FileWriter fileWriter = new FileWriter(fileA1);
+                fileWriter.write(choiceListDescription);
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return textUserID;
@@ -136,14 +146,11 @@ String membersString = Integer.toString(intMembers);
 
         File file = new File("UserProfile" +File.separator+FILENAME);
         char []getUserInfoArray = new char[100];
-
         if(file.exists()){
             FileReader fileReader = new FileReader(file);
             fileReader.read(getUserInfoArray);
-            System.out.println("Yesssssssssssssss");
         }
         else {
-            System.out.println("Noooooooooooooo");
         }
         String  findUserName, findUserID;
         findUserName="";
@@ -178,8 +185,6 @@ String membersString = Integer.toString(intMembers);
 
     }
 public void accountManagementFindRecommendedBookList(String userName,String userID){
-
-
     }
 
 }
