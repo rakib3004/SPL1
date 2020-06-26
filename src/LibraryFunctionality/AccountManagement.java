@@ -158,8 +158,10 @@ String membersString = Integer.toString(intMembers);
         }
         findUserName = findUserName.trim();
         findUserID = findUserID.trim();
+        System.out.println(userName+" ----> "+findUserName);
+        System.out.println(userID+" ----> "+findUserID);
 
-        if(findUserName.contains(userName)&&findUserID.equals(userID)){
+        if(findUserName.equals(userName)&&findUserID.equals(userID)){
             isFound =true;
         }
 
