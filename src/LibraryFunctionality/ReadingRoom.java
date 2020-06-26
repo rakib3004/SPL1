@@ -195,14 +195,14 @@ public class ReadingRoom extends Application {
 
 logIn.setOnAction(actionEvent -> {
 
-    TextField firstNameFld = new TextField();
-    TextField lastNameFld = new TextField();
+    TextField getUserName = new TextField();
+    TextField getUserID = new TextField();
 
     Label userNameTextField = new Label("_Name:");
     Label userIdTextField = new Label("_User ID:");
-    userNameTextField.setLabelFor(firstNameFld);
+    userNameTextField.setLabelFor(getUserName);
     userNameTextField.setMnemonicParsing(true);
-    userIdTextField.setLabelFor(lastNameFld);
+    userIdTextField.setLabelFor(getUserID);
     userIdTextField.setMnemonicParsing(true);
 
     Label label1 = new Label("Insert Your Name & ID");
@@ -224,8 +224,8 @@ logIn.setOnAction(actionEvent -> {
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
     gridPane.addRow(1,  label1);
-    gridPane.addRow(2, userNameTextField, firstNameFld);
-    gridPane.addRow(3, userIdTextField, lastNameFld);
+    gridPane.addRow(2, userNameTextField, getUserName);
+    gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(4,enter);
 
     gridPane.setMaxSize(980, 650);
@@ -238,8 +238,11 @@ logIn.setOnAction(actionEvent -> {
 
 
     enter.setOnAction(actionEvent1 -> {
-userName = userNameTextField.getText();
-userID = userIdTextField.getText();
+userName = getUserName.getText();
+userID = getUserID.getText();
+userName = userName.trim();
+userID =userID.trim();
+
 AccountManagement accountManagement = new AccountManagement();
 
         boolean isFound = false;

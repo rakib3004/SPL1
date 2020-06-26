@@ -131,7 +131,8 @@ String membersString = Integer.toString(intMembers);
     public boolean accountManagementLogInMethods(String userName,String userID) throws IOException {
 
         boolean isFound = false;
-        File file = new File("UserProfile" +File.separator+userName+".txt");
+        String FILENAME = userName+".txt";
+        File file = new File("UserProfile" +File.separator+userName);
         char []getUserInfoArray = new char[100];
 
         if(file.exists()){
@@ -149,11 +150,14 @@ String membersString = Integer.toString(intMembers);
                 isFindTab = true;
                 continue;
             }
-            if(isFindTab){
+            if(isFindTab==true){
                 findUserID = findUserID+getUserInfoArray[countIterator];
+                System.out.println(findUserID);
             }
             else{
                 findUserName = findUserName+getUserInfoArray[countIterator];
+                System.out.println(findUserID);
+
             }
         }
         findUserName = findUserName.trim();
