@@ -10,13 +10,13 @@ public class AccountManagement {
 String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
-        File file = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+        File file = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
         if(file.exists()){
             FILENAME = userNameTemplate +"2";
-            File file1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+            File file1 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
             if(file1.exists()){
                 FILENAME = userNameTemplate+"3";
-                File file2 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+                File file2 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
                 file2.createNewFile();
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
@@ -49,7 +49,7 @@ String userNameTemplate = infoDataArray[0];
                     e.printStackTrace();
                 }
                 FILENAME = userNameTemplate+"3ChoiceList.txt";
-                File fileA3 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+                File fileA3 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
                 fileA3.createNewFile();
                 int iterator;
                 String choiceListDescription;
@@ -100,7 +100,7 @@ String userNameTemplate = infoDataArray[0];
                     e.printStackTrace();
                 }
                 FILENAME = userNameTemplate+"2ChoiceList.txt";
-                File fileA2 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+                File fileA2 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
                 fileA2.createNewFile();
                 int iterator;
                 String choiceListDescription;
@@ -153,7 +153,7 @@ String membersString = Integer.toString(intMembers);
                 e.printStackTrace();
             }
 FILENAME = userNameTemplate+"ChoiceList.txt";
-            File fileA1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
+            File fileA1 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
             fileA1.createNewFile();
             int iterator;
             String choiceListDescription;
@@ -179,42 +179,44 @@ iterator=0;
         userName = userName.trim();
         String FILENAME = userName+".txt";
 
-        File file = new File("UserProfile" +File.separator+FILENAME);
+        File file = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
         char []getUserInfoArray = new char[100];
         if(file.exists()){
             FileReader fileReader = new FileReader(file);
             fileReader.read(getUserInfoArray);
+            String  findUserName, findUserID;
+            findUserName="";
+            findUserID="";
+
+            int countIterator=0;
+            boolean isFindTab = false;
+            for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
+                if(getUserInfoArray[countIterator]=='\t'){
+                    isFindTab = true;
+                    continue;
+                }
+                if(isFindTab==true){
+
+                    findUserID = findUserID+getUserInfoArray[countIterator];
+                }
+                else{
+                    findUserName = findUserName+getUserInfoArray[countIterator];
+                }
+            }
+
+            findUserName = findUserName.trim();
+            findUserID = findUserID.trim();
+            System.out.println(userName+"---->"+findUserName);
+            System.out.println(userID+"---->"+findUserID);
+
+            if(findUserName.contains(userName)&&findUserID.equals(userID)){
+                isFound =true;
+            }
         }
         else {
-        }
-        String  findUserName, findUserID;
-        findUserName="";
-        findUserID="";
 
-        int countIterator=0;
-        boolean isFindTab = false;
-        for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
-            if(getUserInfoArray[countIterator]=='\t'){
-                isFindTab = true;
-                continue;
-            }
-            if(isFindTab==true){
-
-                findUserID = findUserID+getUserInfoArray[countIterator];
-            }
-            else{
-                findUserName = findUserName+getUserInfoArray[countIterator];
-            }
         }
 
-        findUserName = findUserName.trim();
-        findUserID = findUserID.trim();
-        System.out.println(userName+"---->"+findUserName);
-        System.out.println(userID+"---->"+findUserID);
-
-        if(findUserName.contains(userName)&&findUserID.equals(userID)){
-            isFound =true;
-        }
 
         return isFound;
 
