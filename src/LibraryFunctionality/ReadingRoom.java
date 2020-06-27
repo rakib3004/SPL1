@@ -388,83 +388,83 @@ addFavouriteWriter = others.getText();
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=uponnash.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox kobita =new CheckBox("Kobita");
        kobita.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kobita.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox rochonaboli =new CheckBox("Rochonaboli");
        rochonaboli.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=rochonaboli.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox religion =new CheckBox("Religion");
        religion.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=religion.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox biggan =new CheckBox("Biggan");
        biggan.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biggan.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox scienceFiction =new CheckBox("Science Fiction");
        scienceFiction.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=scienceFiction.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox shishuShahitto =new CheckBox("Shishu Shahitto");
        shishuShahitto.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=shishuShahitto.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox kisoreUponnash =new CheckBox("Kisore Uponnash");
        kisoreUponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kisoreUponnash.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox biography =new CheckBox("Biography");
        biography.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biography.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox gobesona =new CheckBox("Gobesona");
        gobesona.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=gobesona.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox onubad =new CheckBox("Onubad");
        onubad.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=onubad.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
            
        });
        CheckBox others1 =new CheckBox("Others");
        others1.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=others1.getText();
-           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
 
        });
