@@ -4,6 +4,7 @@ import java.io.*;
 
 public class AccountManagement {
     String textUserID;
+    String  stringMembers;
     public String accountManagementMethods(String [] infoDataArray ,
                                            String [] addFavouriteBookType,
                                            String userChoiceList) throws IOException {
@@ -23,7 +24,6 @@ String userNameTemplate = infoDataArray[0];
                 FileReader fileReader = new FileReader(fileA);
                 char [] libraryMembers = new char[10];
                 fileReader.read(libraryMembers);
-                String  stringMembers="";
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                     stringMembers = stringMembers+libraryMembers[countIterator];
@@ -41,9 +41,11 @@ String userNameTemplate = infoDataArray[0];
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                String membersString = Integer.toString(intMembers);
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
-                    fileWriter.write(intMembers);
+                    fileWriter.write(membersString);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -73,7 +75,7 @@ String userNameTemplate = infoDataArray[0];
                 FileReader fileReader = new FileReader(fileA);
                 char [] libraryMembers = new char[10];
                 fileReader.read(libraryMembers);
-                String  stringMembers="";
+
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                     stringMembers = stringMembers+libraryMembers[countIterator];
@@ -92,9 +94,11 @@ String userNameTemplate = infoDataArray[0];
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                String membersString = Integer.toString(intMembers);
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
-                    fileWriter.write(intMembers);
+                    fileWriter.write(membersString);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -125,7 +129,6 @@ File fileA = new File(FILENAME_COUNT);
             FileReader fileReader = new FileReader(fileA);
             char [] libraryMembers = new char[10];
             fileReader.read(libraryMembers);
-            String  stringMembers="";
             int countIterator=0;
             for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                 stringMembers = stringMembers+libraryMembers[countIterator];
@@ -135,7 +138,6 @@ File fileA = new File(FILENAME_COUNT);
             intMembers++;
             int userID = 1000+intMembers;
             textUserID = Integer.toString(userID);
-String membersString = Integer.toString(intMembers);
 
             try {
                 FileWriter fileWriter=new FileWriter(file);
@@ -145,6 +147,8 @@ String membersString = Integer.toString(intMembers);
                 e.printStackTrace();
             }
 
+
+            String membersString = Integer.toString(intMembers);
             try {
      FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
                 fileWriter.write(membersString);
