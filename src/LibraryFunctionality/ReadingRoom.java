@@ -44,7 +44,7 @@ public class ReadingRoom extends Application {
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
+String userChoiceLst="";
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -388,71 +388,83 @@ addFavouriteWriter = others.getText();
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=uponnash.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
        });
        CheckBox kobita =new CheckBox("Kobita");
        kobita.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kobita.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox rochonaboli =new CheckBox("Rochonaboli");
        rochonaboli.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=rochonaboli.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox religion =new CheckBox("Religion");
        religion.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=religion.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox biggan =new CheckBox("Biggan");
        biggan.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biggan.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox scienceFiction =new CheckBox("Science Fiction");
        scienceFiction.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=scienceFiction.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox shishuShahitto =new CheckBox("Shishu Shahitto");
        shishuShahitto.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=shishuShahitto.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox kisoreUponnash =new CheckBox("Kisore Uponnash");
        kisoreUponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kisoreUponnash.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox biography =new CheckBox("Biography");
        biography.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biography.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox gobesona =new CheckBox("Gobesona");
        gobesona.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=gobesona.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox onubad =new CheckBox("Onubad");
        onubad.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=onubad.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
            
        });
        CheckBox others1 =new CheckBox("Others");
        others1.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=others1.getText();
+           userChoiceLst = userChoiceLst + addFavouriteBookType[typeNumber];
            typeNumber++;
 
        });
@@ -465,8 +477,6 @@ addFavouriteWriter = others.getText();
            int gridPaneCounter = 0;
        };
        radioButtonCollege.setOnAction(actionEvent1 -> {
-           addFavouriteBookType[typeNumber]=uponnash.getText();
-           typeNumber++;
          //  gridPane.getChildren().remove(6);
 if(ref.gridPaneCounter ==0){
 
@@ -482,8 +492,6 @@ else{
 }
        });
        radioButtonUniversity.setOnAction(actionEvent1 -> {
-           addFavouriteBookType[typeNumber]=uponnash.getText();
-           typeNumber++;
 if(ref.gridPaneCounter==0){
     TextField textFieldDepartment = new TextField();
     Label departmentName = new Label("Department Name :");
@@ -502,8 +510,6 @@ else{
        infoStage.setScene(S);
        infoStage.show();
        enterButton.setOnAction(actionEvent1 -> {
-           addFavouriteBookType[typeNumber]=uponnash.getText();
-           typeNumber++;
            String addReaderName;
            String addInstituteName;
            addReaderName = readerTextField.getText();
@@ -518,7 +524,7 @@ else{
            String textUserID = "0000";
            AccountManagement accountManagement = new AccountManagement();
            try {
-             textUserID=  accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType);
+             textUserID=  accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType,userChoiceLst);
            } catch (IOException e) {
                e.printStackTrace();
            }

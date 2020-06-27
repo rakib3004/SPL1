@@ -4,7 +4,9 @@ import java.io.*;
 
 public class AccountManagement {
     String textUserID;
-    public String accountManagementMethods(String [] infoDataArray , String [] addFavouriteBookType) throws IOException {
+    public String accountManagementMethods(String [] infoDataArray ,
+                                           String [] addFavouriteBookType,
+                                           String userChoiceList) throws IOException {
 String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
@@ -52,13 +54,13 @@ String userNameTemplate = infoDataArray[0];
                 int iterator;
                 String choiceListDescription;
                 choiceListDescription = infoDataArray[2];
-                for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
+               /* for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
                     choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
-                }
+                }*/
 
                 try{
                     FileWriter fileWriter = new FileWriter(fileA3);
-                    fileWriter.write(choiceListDescription);
+                    fileWriter.write(userChoiceList);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -157,13 +159,13 @@ FILENAME = userNameTemplate+"ChoiceList.txt";
             int iterator;
             String choiceListDescription;
             choiceListDescription = infoDataArray[2];
-            for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
+         /*   for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
                 choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
-            }
-
+            }*/
+iterator=0;
             try{
                 FileWriter fileWriter = new FileWriter(fileA1);
-                fileWriter.write(choiceListDescription);
+                fileWriter.write(userChoiceList);
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
