@@ -105,13 +105,13 @@ String userNameTemplate = infoDataArray[0];
                 int iterator;
                 String choiceListDescription;
                 choiceListDescription = infoDataArray[2];
-                for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
+               /* for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
                     choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
                 }
-
+*/
                 try{
                     FileWriter fileWriter = new FileWriter(fileA2);
-                    fileWriter.write(choiceListDescription);
+                    fileWriter.write(userChoiceList);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -129,7 +129,6 @@ File fileA = new File(FILENAME_COUNT);
             int countIterator=0;
             for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                 stringMembers = stringMembers+libraryMembers[countIterator];
-
             }
             stringMembers = stringMembers.trim();
             int intMembers = Integer.parseInt(stringMembers);
