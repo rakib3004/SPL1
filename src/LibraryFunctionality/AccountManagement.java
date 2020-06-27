@@ -6,7 +6,7 @@ public class AccountManagement {
     String textUserID;
     String  stringMembers;
     public String accountManagementMethods(String [] infoDataArray ,
-                                           String [] addFavouriteBookType,
+
                                            String userChoiceList) throws IOException {
 String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
@@ -51,7 +51,7 @@ String userNameTemplate = infoDataArray[0];
                     e.printStackTrace();
                 }
                 FILENAME = userNameTemplate+"3ChoiceList.txt";
-                File fileA3 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+                File fileA3 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA3.createNewFile();
                 int iterator;
                 String choiceListDescription;
@@ -104,7 +104,7 @@ String userNameTemplate = infoDataArray[0];
                     e.printStackTrace();
                 }
                 FILENAME = userNameTemplate+"2ChoiceList.txt";
-                File fileA2 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+                File fileA2 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA2.createNewFile();
                 int iterator;
                 String choiceListDescription;
@@ -157,7 +157,7 @@ File fileA = new File(FILENAME_COUNT);
                 e.printStackTrace();
             }
 FILENAME = userNameTemplate+"ChoiceList.txt";
-            File fileA1 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+            File fileA1 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
             fileA1.createNewFile();
             int iterator;
             String choiceListDescription;

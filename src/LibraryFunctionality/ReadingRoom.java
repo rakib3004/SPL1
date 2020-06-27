@@ -524,7 +524,7 @@ else{
            String textUserID = "0000";
            AccountManagement accountManagement = new AccountManagement();
            try {
-             textUserID=  accountManagement.accountManagementMethods(infoDataArray,addFavouriteBookType,userChoiceLst);
+             textUserID=  accountManagement.accountManagementMethods(infoDataArray,userChoiceLst);
            } catch (IOException e) {
                e.printStackTrace();
            }
@@ -537,13 +537,11 @@ else{
                        "Your Account is successfully Created"+"\n"+
                                "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
            }
-
            int iterator;
            for(iterator=0;iterator<12;iterator++){
-               addFavouriteBookType[iterator]="";
+               addFavouriteBookType[iterator]=null;
            }
            typeNumber=0;
-
        });
    });
 
