@@ -245,12 +245,45 @@ iterator=0;
                     isFound =true;
                 }
                 else{
+                    FILENAME = userName+"3.txt";
+                    File file3 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+                    fileReader = new FileReader(file3);
+                    fileReader.read(getUserInfoArray);
+                    findUserName="";
+                    findUserID="";
 
+                    countIterator=0;
+                    isFindTab = false;
+                    for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
+                        if(getUserInfoArray[countIterator]=='\t'){
+                            isFindTab = true;
+                            continue;
+                        }
+                        if(isFindTab==true){
+
+                            findUserID = findUserID+getUserInfoArray[countIterator];
+                        }
+                        else{
+                            findUserName = findUserName+getUserInfoArray[countIterator];
+                        }
+                    }
+
+                    findUserName = findUserName.trim();
+                    findUserID = findUserID.trim();
+                    System.out.println(userName+"---->"+findUserName);
+                    System.out.println(userID+"---->"+findUserID);
+
+                    if(findUserName.contains(userName)&&findUserID.equals(userID)){
+                        isFound =true;
+                    }
+                    else{
+                        isFound =false;
+
+                    }
                 }
             }
 
         }
-
 
         return isFound;
 
