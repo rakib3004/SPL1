@@ -9,10 +9,10 @@ String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
         File file = new File("UserProfile" +File.separator+(FILENAME+".txt"));
-        if(file.exists()==false){
+        if(file.exists()){
             FILENAME = userNameTemplate +"2";
             File file1 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
-            if(file1.exists()==false){
+            if(file1.exists()){
                 FILENAME = userNameTemplate+"3";
                 File file2 = new File("UserProfile" +File.separator+(FILENAME+".txt"));
                 file2.createNewFile();
