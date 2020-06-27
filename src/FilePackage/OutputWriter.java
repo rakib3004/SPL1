@@ -24,7 +24,7 @@ public class OutputWriter {
         }
 
 
-        String FILENAME = "New Output5.txt";
+        String FILENAME = "RegressionData.txt";
 
         try {
 

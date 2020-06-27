@@ -212,7 +212,7 @@ iterator=0;
         System.out.println(userName+"---->"+findUserName);
         System.out.println(userID+"---->"+findUserID);
 
-        if(findUserName.equals(userName)&&findUserID.equals(userID)){
+        if(findUserName.contains(userName)&&findUserID.equals(userID)){
             isFound =true;
         }
 
