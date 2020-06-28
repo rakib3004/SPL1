@@ -518,7 +518,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                String addInstituteName;
                addReaderName = readerTextField.getText();
                addInstituteName = instituteTextField.getText();
-               System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
 
                String [] infoDataArray = new String[4];
 
@@ -526,6 +525,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                infoDataArray[1]=addInstituteName;
                infoDataArray[2]=stringStudyLevel;
                infoDataArray[3]=educationLevel;
+               System.out.println(addReaderName+"\t"+addInstituteName+"\t"+educationLevel+"\t"+stringStudyLevel);
 
                userChoiceList = userChoiceList +addFavouriteWriter;
                String textUserID = "0000";
