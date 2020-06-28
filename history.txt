@@ -16,3 +16,7 @@ FXThirdWindow	Sun 28.06.2020 at 03:36:55 PM
 LibraryDesk	Sun 28.06.2020 at 03:37:00 PM
 FXThirdWindow	Sun 28.06.2020 at 03:37:06 PM
 AuthorSystem	Sun 28.06.2020 at 03:37:07 PM
+ReadingRoom	Sun 28.06.2020 at 03:51:50 PM
+ReadingRoom	Sun 28.06.2020 at 03:51:53 PM
+ReadingRoom	Sun 28.06.2020 at 04:04:05 PM
+ReadingRoom	Sun 28.06.2020 at 04:04:08 PM

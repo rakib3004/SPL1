@@ -174,6 +174,8 @@ public class ReadingRoom extends Application {
     String userID;
     String stringStudyLevel="";
     String educationLevel = "";
+    TextField textFieldClassNo = new TextField();
+    TextField textFieldDepartment = new TextField();
     public void manualSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -477,13 +479,12 @@ addFavouriteWriter = others.getText();
          //  gridPane.getChildren().remove(6);
 if(ref.gridPaneCounter ==0){
 
-    TextField textFieldClassNo = new TextField();
+
     Label classNo = new Label("Class No :");
     classNo.setLabelFor(textFieldClassNo);
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
     ref.gridPaneCounter =1;
-    stringStudyLevel = textFieldClassNo.getText();
     educationLevel = "Secondary";
 }
 else{
@@ -492,13 +493,12 @@ else{
        });
        radioButtonUniversity.setOnAction(actionEvent1 -> {
 if(ref.gridPaneCounter==0){
-    TextField textFieldDepartment = new TextField();
     Label departmentName = new Label("Department Name :");
     departmentName.setLabelFor(textFieldDepartment);
     departmentName.setMnemonicParsing(true);
     gridPane.addRow(5, departmentName, textFieldDepartment);
 ref.gridPaneCounter=1;
-    stringStudyLevel = textFieldDepartment.getText();
+
     educationLevel = "Higher";
 }
 else{
@@ -518,7 +518,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                String addInstituteName;
                addReaderName = readerTextField.getText();
                addInstituteName = instituteTextField.getText();
+               stringStudyLevel = textFieldClassNo.getText();
+               if(stringStudyLevel.equals("")){
+                   stringStudyLevel = textFieldDepartment.getText();
 
+               }
                String [] infoDataArray = new String[4];
 
                infoDataArray[0] = addReaderName;
@@ -542,7 +546,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                else{
                    JOptionPane.showMessageDialog(null,
                            "Your Account is successfully Created"+"\n"+
-                                   "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
+                                   "Name : "+addReaderName+"\n"+"User  ID : "+textUserID);
                }
                int iterator;
                for(iterator=0;iterator<12;iterator++){
