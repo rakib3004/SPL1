@@ -247,7 +247,7 @@ AccountManagement accountManagement = new AccountManagement();
         if(isFound==true){
             JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
             try {
-                accountManagement.accountManagementFindRecommendedBookList(userName,userID);
+                accountManagement.accountManagementGetRecommendedBookList(userName,userID);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -539,7 +539,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
                try {
-                   textUserID=  accountManagement.accountManagementMethods(infoDataArray, userChoiceList);
+                   textUserID=  accountManagement.accountManagementSignUpMethods(infoDataArray, userChoiceList);
                } catch (IOException e) {
                    e.printStackTrace();
                }

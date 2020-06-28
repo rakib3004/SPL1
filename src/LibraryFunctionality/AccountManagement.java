@@ -6,9 +6,9 @@ public class AccountManagement {
     String textUserID;
     String  stringMembers="";
     char [] libraryMembers = new char[10];
-    public String accountManagementMethods(String [] infoDataArray ,
+    public String accountManagementSignUpMethods(String [] infoDataArray ,
 
-                                           String userChoiceList) throws IOException {
+                                                 String userChoiceList) throws IOException {
 String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
@@ -297,62 +297,31 @@ iterator=0;
         return isFound;
 
     }
-public void accountManagementFindRecommendedBookList(String userName,String userID) throws IOException {
-    boolean isFound = false;
-    userName = userName.trim();
-    String FILENAME = userName+".txt";
+    public File accountManagementGetFileName(String userName, String userID) throws IOException {
+        boolean isFound = false;
+        userName = userName.trim();
+        String FILENAME = userName+".txt";
+        File fileObject = null;
 
-    File file = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
-    char []getUserInfoArray = new char[100];
-    if(file.exists()){
-        FileReader fileReader = new FileReader(file);
-        fileReader.read(getUserInfoArray);
-        String  findUserName, findUserID;
-        findUserName="";
-        findUserID="";
-
-        int countIterator=0;
-        boolean isFindTab = false;
-        boolean getID=false;
-        for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
-            if(getUserInfoArray[countIterator]=='\t'&&isFindTab==false){
-                isFindTab = true;
-                continue;
-            }
-            else if(getUserInfoArray[countIterator]=='\t'&&isFindTab==true){
-                break;
-            }
-            if(isFindTab==true){
-
-                findUserID = findUserID+getUserInfoArray[countIterator];
-            }
-            else{
-                findUserName = findUserName+getUserInfoArray[countIterator];
-            }
-        }
-
-        findUserName = findUserName.trim();
-        findUserID = findUserID.trim();
-        System.out.println(userName+"---->"+findUserName);
-        System.out.println(userID+"---->"+findUserID);
-
-        if(findUserName.contains(userName)&&findUserID.equals(userID)){
-            isFound =true;
-        }
-        else {
-            FILENAME = userName+"2.txt";
-            File file2 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
-            fileReader = new FileReader(file2);
+        File file = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+        char []getUserInfoArray = new char[100];
+        if(file.exists()){
+            FileReader fileReader = new FileReader(file);
             fileReader.read(getUserInfoArray);
+            String  findUserName, findUserID;
             findUserName="";
             findUserID="";
 
-            countIterator=0;
-            isFindTab = false;
+            int countIterator=0;
+            boolean isFindTab = false;
+            boolean getID=false;
             for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
-                if(getUserInfoArray[countIterator]=='\t'){
+                if(getUserInfoArray[countIterator]=='\t'&&isFindTab==false){
                     isFindTab = true;
                     continue;
+                }
+                else if(getUserInfoArray[countIterator]=='\t'&&isFindTab==true){
+                    break;
                 }
                 if(isFindTab==true){
 
@@ -365,21 +334,21 @@ public void accountManagementFindRecommendedBookList(String userName,String user
 
             findUserName = findUserName.trim();
             findUserID = findUserID.trim();
-            System.out.println(userName+"---->"+findUserName);
-            System.out.println(userID+"---->"+findUserID);
+            System.out.println(userName+"--2-->"+findUserName);
+            System.out.println(userID+"--2-->"+findUserID);
 
             if(findUserName.contains(userName)&&findUserID.equals(userID)){
                 isFound =true;
+                fileObject = file;
             }
-            else{
-                FILENAME = userName+"3.txt";
-                File file3 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
-                fileReader = new FileReader(file3);
+            else {
+                FILENAME = userName+"2.txt";
+                File file2 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+                fileReader = new FileReader(file2);
                 fileReader.read(getUserInfoArray);
                 findUserName="";
                 findUserID="";
 
-                countIterator=0;
                 isFindTab = false;
                 for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
                     if(getUserInfoArray[countIterator]=='\t'){
@@ -397,20 +366,58 @@ public void accountManagementFindRecommendedBookList(String userName,String user
 
                 findUserName = findUserName.trim();
                 findUserID = findUserID.trim();
-                System.out.println(userName+"---->"+findUserName);
-                System.out.println(userID+"---->"+findUserID);
+                System.out.println(userName+"--2-->"+findUserName);
+                System.out.println(userID+"--2-->"+findUserID);
 
                 if(findUserName.contains(userName)&&findUserID.equals(userID)){
                     isFound =true;
+                    fileObject = file2;
                 }
                 else{
-                    isFound =false;
+                    FILENAME = userName+"3.txt";
+                    File file3 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+                    fileReader = new FileReader(file3);
+                    fileReader.read(getUserInfoArray);
+                    findUserName="";
+                    findUserID="";
 
+                    countIterator=0;
+                    isFindTab = false;
+                    for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
+                        if(getUserInfoArray[countIterator]=='\t'){
+                            isFindTab = true;
+                            continue;
+                        }
+                        if(isFindTab==true){
+
+                            findUserID = findUserID+getUserInfoArray[countIterator];
+                        }
+                        else{
+                            findUserName = findUserName+getUserInfoArray[countIterator];
+                        }
+                    }
+
+                    findUserName = findUserName.trim();
+                    findUserID = findUserID.trim();
+                    System.out.println(userName+"--2-->"+findUserName);
+                    System.out.println(userID+"--2-->"+findUserID);
+
+                    if(findUserName.contains(userName)&&findUserID.equals(userID)){
+                        isFound =true;
+                        fileObject = file3;
+                    }
+                    else{
+                        isFound =false;
+                        fileObject = null;
+                    }
                 }
             }
-        }
 
+        }
+        return fileObject;
     }
+public void accountManagementGetRecommendedBookList(String userName, String userID) throws IOException {
+ File file=  accountManagementGetFileName(userName,userID);
     }
 
 }
