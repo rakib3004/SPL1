@@ -297,13 +297,15 @@ iterator=0;
         return isFound;
 
     }
-    public File accountManagementGetFileName(String userName, String userID) throws IOException {
+    public File[] accountManagementGetFileName(String userName, String userID) throws IOException {
         boolean isFound = false;
         userName = userName.trim();
         String FILENAME = userName+".txt";
-        File fileObject = null;
+        String FILENAME2 = userName+"ChoiceList.txt";
+        File [] fileObject = new File[2];
 
         File file = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+        File fileA = new File("src"+File.separator+"UserChoiceList" +File.separator+FILENAME2);
         char []getUserInfoArray = new char[100];
         if(file.exists()){
             FileReader fileReader = new FileReader(file);
@@ -339,11 +341,15 @@ iterator=0;
 
             if(findUserName.contains(userName)&&findUserID.equals(userID)){
                 isFound =true;
-                fileObject = file;
+                fileObject[0] = file;
+                fileObject[1] = fileA;
             }
             else {
                 FILENAME = userName+"2.txt";
+                FILENAME2 = userName+"2ChoiceList.txt";
                 File file2 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+                File fileA2 = new File("src"+File.separator+"UserChoiceList" +File.separator+FILENAME2);
+
                 fileReader = new FileReader(file2);
                 fileReader.read(getUserInfoArray);
                 findUserName="";
@@ -371,11 +377,15 @@ iterator=0;
 
                 if(findUserName.contains(userName)&&findUserID.equals(userID)){
                     isFound =true;
-                    fileObject = file2;
+                    fileObject[0] = file2;
+                    fileObject[1] = fileA2;
                 }
                 else{
                     FILENAME = userName+"3.txt";
+                    FILENAME2 = userName+"3ChoiceList.txt";
                     File file3 = new File("src"+File.separator+"UserProfile" +File.separator+FILENAME);
+                    File fileA3 = new File("src"+File.separator+"UserChoiceList" +File.separator+FILENAME2);
+
                     fileReader = new FileReader(file3);
                     fileReader.read(getUserInfoArray);
                     findUserName="";
@@ -404,11 +414,13 @@ iterator=0;
 
                     if(findUserName.contains(userName)&&findUserID.equals(userID)){
                         isFound =true;
-                        fileObject = file3;
+                        fileObject[0] = file3;
+                        fileObject[1] = fileA3;
                     }
                     else{
                         isFound =false;
-                        fileObject = null;
+                        fileObject[0] = null;
+                        fileObject[1] = null;
                     }
                 }
             }
@@ -417,7 +429,8 @@ iterator=0;
         return fileObject;
     }
 public void accountManagementGetRecommendedBookList(String userName, String userID) throws IOException {
- File file=  accountManagementGetFileName(userName,userID);
+ File[] file=  accountManagementGetFileName(userName,userID);
+
     }
 
 }
