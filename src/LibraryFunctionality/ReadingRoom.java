@@ -172,7 +172,7 @@ String userChoiceLst="\t";
         primaryStage.show();
     }
 
-    String addFavouriteWriter;
+    String addFavouriteWriter="";
     String [] addFavouriteBookType = new String[12];
     int typeNumber=0;
     String userName;
@@ -510,39 +510,44 @@ else{
        infoStage.setScene(S);
        infoStage.show();
        enterButton.setOnAction(actionEvent1 -> {
-           String addReaderName;
-           String addInstituteName;
-           addReaderName = readerTextField.getText();
-           addInstituteName = instituteTextField.getText();
-           System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
+           if(addFavouriteWriter.equals("")){
+JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
+           }else{
+               String addReaderName;
+               String addInstituteName;
+               addReaderName = readerTextField.getText();
+               addInstituteName = instituteTextField.getText();
+               System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
 
-           String [] infoDataArray = new String[3];
+               String [] infoDataArray = new String[3];
 
-           infoDataArray[0] = addReaderName;
-           infoDataArray[1]=addInstituteName;
-           infoDataArray[2]=addFavouriteWriter;
-           String textUserID = "0000";
-           AccountManagement accountManagement = new AccountManagement();
-           try {
-             textUserID=  accountManagement.accountManagementMethods(infoDataArray,userChoiceLst);
-           } catch (IOException e) {
-               e.printStackTrace();
+               infoDataArray[0] = addReaderName;
+               infoDataArray[1]=addInstituteName;
+               infoDataArray[2]=addFavouriteWriter;
+               String textUserID = "0000";
+               AccountManagement accountManagement = new AccountManagement();
+               try {
+                   textUserID=  accountManagement.accountManagementMethods(infoDataArray,userChoiceLst);
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+               if(textUserID=="0000"){
+                   JOptionPane.showMessageDialog(null,
+                           "Your Account is not Created !!!");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null,
+                           "Your Account is successfully Created"+"\n"+
+                                   "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
+               }
+               int iterator;
+               for(iterator=0;iterator<12;iterator++){
+                   addFavouriteBookType[iterator]=null;
+               }
+               typeNumber=0;
+
            }
-           if(textUserID=="0000"){
-               JOptionPane.showMessageDialog(null,
-                       "Your Account is not Created !!!");
-           }
-           else{
-               JOptionPane.showMessageDialog(null,
-                       "Your Account is successfully Created"+"\n"+
-                               "Name : "+addReaderName+"\n"+"User ID : "+textUserID);
-           }
-           int iterator;
-           for(iterator=0;iterator<12;iterator++){
-               addFavouriteBookType[iterator]=null;
-           }
-           typeNumber=0;
-       });
+           });
    });
 
    logIn.setTranslateX(300);
