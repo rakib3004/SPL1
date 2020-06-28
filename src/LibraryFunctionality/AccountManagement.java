@@ -4,7 +4,8 @@ import java.io.*;
 
 public class AccountManagement {
     String textUserID;
-    String  stringMembers;
+    String  stringMembers="";
+    char [] libraryMembers = new char[10];
     public String accountManagementMethods(String [] infoDataArray ,
 
                                            String userChoiceList) throws IOException {
@@ -22,7 +23,7 @@ String userNameTemplate = infoDataArray[0];
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
-                char [] libraryMembers = new char[10];
+                
                 fileReader.read(libraryMembers);
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
@@ -73,7 +74,7 @@ String userNameTemplate = infoDataArray[0];
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
-                char [] libraryMembers = new char[10];
+                
                 fileReader.read(libraryMembers);
 
                 int countIterator=0;
@@ -127,7 +128,7 @@ String userNameTemplate = infoDataArray[0];
 String FILENAME_COUNT ="LibraryMemberCount.txt";
 File fileA = new File(FILENAME_COUNT);
             FileReader fileReader = new FileReader(fileA);
-            char [] libraryMembers = new char[10];
+            
             fileReader.read(libraryMembers);
             int countIterator=0;
             for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
