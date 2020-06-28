@@ -44,7 +44,7 @@ public class ReadingRoom extends Application {
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-String userChoiceLst="\t";
+String userChoiceLst="";
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -177,6 +177,8 @@ String userChoiceLst="\t";
     int typeNumber=0;
     String userName;
     String userID;
+    String stringStudyLevel="";
+    String educationLevel = "";
     public void manualSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -486,6 +488,8 @@ if(ref.gridPaneCounter ==0){
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
     ref.gridPaneCounter =1;
+    stringStudyLevel = textFieldClassNo.getText();
+    educationLevel = "Secondary";
 }
 else{
     infoStage.close();
@@ -499,6 +503,8 @@ if(ref.gridPaneCounter==0){
     departmentName.setMnemonicParsing(true);
     gridPane.addRow(5, departmentName, textFieldDepartment);
 ref.gridPaneCounter=1;
+    stringStudyLevel = textFieldDepartment.getText();
+    educationLevel = "Higher";
 }
 else{
     infoStage.close();
@@ -519,11 +525,14 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                addInstituteName = instituteTextField.getText();
                System.out.println(addReaderName+"\t"+addInstituteName+"\t"+addFavouriteWriter);
 
-               String [] infoDataArray = new String[3];
+               String [] infoDataArray = new String[4];
 
                infoDataArray[0] = addReaderName;
                infoDataArray[1]=addInstituteName;
-               infoDataArray[2]=addFavouriteWriter;
+               infoDataArray[2]=stringStudyLevel;
+               infoDataArray[3]=educationLevel;
+
+               userChoiceLst = userChoiceLst+addFavouriteWriter;
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
                try {
