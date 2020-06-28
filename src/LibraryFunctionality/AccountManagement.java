@@ -37,7 +37,7 @@ String userNameTemplate = infoDataArray[0];
                 textUserID = Integer.toString(userID);
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
-                    fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -90,7 +90,7 @@ String userNameTemplate = infoDataArray[0];
 
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
-                    fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                    fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -142,7 +142,7 @@ File fileA = new File(FILENAME_COUNT);
 
             try {
                 FileWriter fileWriter=new FileWriter(file);
-                fileWriter.write(infoDataArray[0]+"\t"+textUserID);
+                fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -195,10 +195,14 @@ iterator=0;
 
             int countIterator=0;
             boolean isFindTab = false;
+            boolean getID=false;
             for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
-                if(getUserInfoArray[countIterator]=='\t'){
+                if(getUserInfoArray[countIterator]=='\t'&&isFindTab==false){
                     isFindTab = true;
                     continue;
+                }
+                else if(getUserInfoArray[countIterator]=='\t'&&isFindTab==true){
+                   break;
                 }
                 if(isFindTab==true){
 
