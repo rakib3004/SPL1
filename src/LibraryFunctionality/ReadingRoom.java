@@ -246,7 +246,11 @@ AccountManagement accountManagement = new AccountManagement();
         }
         if(isFound==true){
             JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
-            accountManagement.accountManagementFindRecommendedBookList(userName,userID);
+            try {
+                accountManagement.accountManagementFindRecommendedBookList(userName,userID);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else{
             JOptionPane.showMessageDialog(null,"Sorry!! Your Account Does not exists");
