@@ -97,7 +97,7 @@ public class UserChoiceTableData extends Application {
         exit.setPrefSize(200, 80);
 
 
-        MenuItem uponnash = new MenuItem("Uponnash");
+        /*MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -150,9 +150,9 @@ public class UserChoiceTableData extends Application {
 
                 showInfo(primaryStage,labelName,data);
             }
-        });
+        });*/
 
-        MenuItem rochonaboli = new MenuItem("Rochonaboli");
+      /*  MenuItem rochonaboli = new MenuItem("Rochonaboli");
         rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
 
@@ -217,15 +217,17 @@ public class UserChoiceTableData extends Application {
 
                 showInfo(primaryStage,labelName,data);
             } });
-
+*/
         MenuItem sciFi = new MenuItem("Sci Fi");
         sciFi.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
 
-                labelName="Top Books of  "+sciFi.getText();
+                labelName="Jion's Choice List";
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")) {
+                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
+                            priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")
+                            ||priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -235,11 +237,19 @@ public class UserChoiceTableData extends Application {
                     }
                 }
 
-                showInfo(primaryStage,labelName,data);
+
             }
         });
+Button show = new Button("Show");
+show.setOnAction(actionEvent -> {
+    showInfo(primaryStage,labelName,data);
+});
+setStyle(show);
+show.setPrefSize(200,100);
+show.setTranslateX(500);
+show.setTranslateY(500);
 
-        MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
+       /* MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
 
@@ -308,8 +318,8 @@ public class UserChoiceTableData extends Application {
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
 
-                labelName="Top Books of  "+gobesona.getText();
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                labelName="Top Books of  "+gobesona.getText();*/
+                /*for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
 
@@ -324,10 +334,10 @@ public class UserChoiceTableData extends Application {
                 }
 
 
-                showInfo(primaryStage,labelName,data);
-            }
+                showInfo(primaryStage,labelName,data);*/
+         /* }
         });
-        MenuItem onubad = new MenuItem("Onubad");
+       MenuItem onubad = new MenuItem("Onubad");
 
         onubad.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
@@ -373,25 +383,25 @@ public class UserChoiceTableData extends Application {
                 }
 
 
-                showInfo(primaryStage,labelName,data);
+        showInfo(primaryStage,labelName,data);
             }
         });
 
         MenuButton bookType = new MenuButton("Choose Your Type");
-        bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
-                biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
-                gobesona, onubad,others);
+        bookType.getItems().addAll( uponnash, onubad,others,rochonaboli, religion,
+                biggan,  shishuShahitto, kisoreUponnash,biography,
+                kobita, sciFi,  gobesona);
 
 
         bookType.setTranslateX(500);
         bookType.setTranslateY(350);
-        bookType.setPrefSize(200, 50);
+        bookType.setPrefSize(200, 50);*/
 
 
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,bookType);
+        group.getChildren().addAll(canvas,exit,back,show/*,bookType*/);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
@@ -480,13 +490,13 @@ public class UserChoiceTableData extends Application {
 
 
         // Status message text
-        actionStatus = new Text();
-        actionStatus.setFill(Color.FIREBRICK);
+      //  actionStatus = new Text();
+       // actionStatus.setFill(Color.FIREBRICK);
 
 
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
-        actionStatus.setText(book.toString());
+        //actionStatus.setText(book.toString());
 
 
 
