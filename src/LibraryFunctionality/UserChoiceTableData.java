@@ -96,17 +96,12 @@ public class UserChoiceTableData extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
-        MenuItem sciFi = new MenuItem("Sci Fi");
-        sciFi.setOnAction(new EventHandler<ActionEvent>() {
-            @Override  public void handle(ActionEvent e) {
-
                 labelName="Jion's Choice List";
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")
-                            ||priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
+                            ||priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")||priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -116,9 +111,6 @@ public class UserChoiceTableData extends Application {
                     }
                 }
 
-
-            }
-        });
 Button show = new Button("Show");
 show.setOnAction(actionEvent -> {
     showInfo(primaryStage,labelName,data);
@@ -126,7 +118,7 @@ show.setOnAction(actionEvent -> {
 setStyle(show);
 show.setPrefSize(200,100);
 show.setTranslateX(500);
-show.setTranslateY(500);
+show.setTranslateY(250);
 
 
 
@@ -156,8 +148,8 @@ show.setTranslateY(500);
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label();
-        label.setPrefSize(500,45);
-        label.setTranslateX(450);
+        label.setPrefSize(350,45);
+        label.setTranslateX(425);
         label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
