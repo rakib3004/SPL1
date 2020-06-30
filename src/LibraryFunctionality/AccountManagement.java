@@ -1,5 +1,7 @@
 package LibraryFunctionality;
 
+import FilePackage.DateTimeWriter;
+
 import java.io.*;
 
 public class AccountManagement {
@@ -9,7 +11,12 @@ public class AccountManagement {
     public String accountManagementSignUpMethods(String [] infoDataArray ,
 
                                                  String userChoiceList) throws IOException {
-String userNameTemplate = infoDataArray[0];
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
         File file = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
@@ -180,6 +187,10 @@ iterator=0;
     }
     public boolean accountManagementLogInMethods(String userName,String userID) throws IOException {
 
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         boolean isFound = false;
         userName = userName.trim();
         String FILENAME = userName+".txt";
@@ -298,6 +309,10 @@ iterator=0;
 
     }
     public File[] accountManagementGetFileName(String userName, String userID) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         boolean isFound = false;
         userName = userName.trim();
         String FILENAME = userName+".txt";
@@ -429,7 +444,12 @@ iterator=0;
         return fileObject;
     }
 public void accountManagementGetRecommendedBookList(String userName, String userID) throws IOException {
+    String  className = this.getClass().getSimpleName();
+    DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    dateTimeWriter.dateTimeWriterMethods(className);
+
  File[] file=  accountManagementGetFileName(userName,userID);
+UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
 
     }
 

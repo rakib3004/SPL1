@@ -248,6 +248,8 @@ AccountManagement accountManagement = new AccountManagement();
             JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
             try {
                 accountManagement.accountManagementGetRecommendedBookList(userName,userID);
+                UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
+                userChoiceTableData.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -97,8 +97,6 @@ int iterator;
         exit.setPrefSize(200, 80);
 
 
-
-
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override
