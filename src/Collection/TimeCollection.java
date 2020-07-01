@@ -23,11 +23,6 @@ public class TimeCollection {
             monthID.add(priorityData[iterator1].bookData.bookId.substring(3,6));
 
         }
-
-
-
-
-
         int number=0;
         int writerCount=0;
         Iterator<String> iterator = monthID.iterator();
@@ -41,10 +36,7 @@ public class TimeCollection {
             writerCount++;
 
             List<Double> list = new ArrayList<>();
-
-
-
-            System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
+   System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
                     System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
@@ -55,19 +47,12 @@ public class TimeCollection {
 
                 }
 
-            }
-
-
-            double summation=0.0;
+            } double summation=0.0;
             int sizeB = list.size();
             if(sizeB>7){
 
                 medianCalculation.medianCalculationMethods(list);
-
-
             }
-
-
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
@@ -75,7 +60,6 @@ public class TimeCollection {
 
                     //   System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
                 }
-
             }
             double mean = summation/number;
 
@@ -88,7 +72,6 @@ public class TimeCollection {
 
                     standard_deviation = standard_deviation + ((mean-priorityData[iterator1].MLRweight)*
                             (mean-priorityData[iterator1].MLRweight));
-
                 }
 
             }
@@ -96,9 +79,6 @@ public class TimeCollection {
             standard_deviation = standard_deviation/(number-1);
             standard_deviation = Math.sqrt(standard_deviation);
             System.out.println("Mean : "+mean+"    "+"Standard Deviation : "+standard_deviation);
-
-
-
         }
 
     } public void timeCollectionAHPMethods(PriorityData[] priorityData, int numberOfBooks){
@@ -115,11 +95,6 @@ public class TimeCollection {
             monthID.add(priorityData[iterator1].bookData.bookId.substring(3,6));
 
         }
-
-
-
-
-
         int number=0;
         int writerCount=0;
         Iterator<String> iterator = monthID.iterator();
@@ -133,9 +108,6 @@ public class TimeCollection {
             writerCount++;
 
             List<Double> list = new ArrayList<>();
-
-
-
             System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
@@ -146,19 +118,12 @@ public class TimeCollection {
                     count++;
 
                 }
-
             }
-
-
             double summation=0.0;
             int sizeB = list.size();
             if(sizeB>7){
-
                 medianCalculation.medianCalculationMethods(list);
-
-
             }
-
 
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
