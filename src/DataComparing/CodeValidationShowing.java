@@ -83,9 +83,15 @@ int iterator;
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
+        Button CV_Output = new Button("CV Output");
+CV_Output.setTranslateX(560);
+CV_Output.setTranslateY(685);
+CV_Output.setPrefSize(150,50);
+CV_Output.setOnAction(actionEvent -> {
 
-
-        // Books label
+});
+setStyle(CV_Output);
+        // Books
         Label label = new Label("Cross Validation Results");
         label.setTextFill(DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
@@ -109,7 +115,7 @@ int iterator;
         TableColumn typeName = new TableColumn("Calculated Value");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-   TableColumn bookId = new TableColumn("Book ID");
+        TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
 
