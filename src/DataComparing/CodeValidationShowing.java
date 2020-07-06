@@ -99,9 +99,6 @@ setStyle(CV_Output);
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
 
-
-
-
         table = new TableView();
         data = getInitialTableData();
         table.setItems(data);
@@ -175,9 +172,6 @@ setStyle(CV_Output);
         List list = new ArrayList();
 
 
-
-
-
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
@@ -198,7 +192,7 @@ setStyle(CV_Output);
                     Double.toString(crossValidationData[jterator].calculatedValue),
                     Double.toString(crossValidationData[jterator].estimatedData)));
 
-              System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
+         //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
                 jterator++;
         }
         }
@@ -214,7 +208,11 @@ setStyle(CV_Output);
                // String string = Double.toString(crossValidationData[jterator].estimatedData);
            //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
 
-                System.out.println(Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100);
+               double aData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100;
+               double bData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100;
+               aData = 100.00-aData;
+               bData = 100.00-bData;
+               System.out.println("Perspective 1 :"+aData+"\t"+"Perspective 1 :"+bData);
                 jterator++;
             }
         }

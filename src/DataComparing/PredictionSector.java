@@ -3,7 +3,6 @@ package DataComparing;
 import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-
 public class PredictionSector {
     PriorityData[] priorityData,priorityDataCV;
     TestingSector testingSector  = new TestingSector();
@@ -11,8 +10,6 @@ public class PredictionSector {
     AHPcriteriaWeight ahPcriteriaWeight;
     public PriorityData [] predictionSectorMethods(double [] priceGroupWeight,double [] timeGroupWeight,
                                         double [] countGroupWeight,double [] typeGroupWeight){
-
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -23,39 +20,7 @@ public class PredictionSector {
                 timeGroupWeight[2],timeGroupWeight[3],timeGroupWeight[4],typeGroupWeight[0],
                 typeGroupWeight[1],typeGroupWeight[2],typeGroupWeight[3],typeGroupWeight[4],typeGroupWeight[5]);
 
-
-int iterator;
-        System.out.println("priceGroupWeight :");
-
-        for(iterator=0;iterator<3;iterator++){
-
-            System.out.println(priceGroupWeight[iterator]);
-        }
-
-                System.out.println("timeGroupWeight :");
-
-        for(iterator=0;iterator<5;iterator++){
-
-            System.out.println(timeGroupWeight[iterator]);
-        }
-
-                System.out.println("countGroupWeight :");
-
-        for(iterator=0;iterator<4;iterator++){
-
-            System.out.println(countGroupWeight[iterator]);
-        }
-
-                System.out.println("typeGroupWeight :");
-
-        for(iterator=0;iterator<6;iterator++){
-
-            System.out.println(typeGroupWeight[iterator]);
-        }
-
-
 priorityDataCV = testingSector.testingSectorMethods(ahPcriteriaWeight);
         return priorityDataCV;
-
     }
 }

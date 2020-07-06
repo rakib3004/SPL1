@@ -58,7 +58,7 @@ public class TrainingSector {
         double [] typeGroupWeight;
         typeGroupWeight = new double[6];
 
-        //doubl   e [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
+        //double [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
 
         try {
             priorityData = processing.fileReaderMethods();
@@ -255,8 +255,6 @@ int jterator=0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-
-//                System.out.println(priorityData[iterator].getMLRweight()+"\t"+codeValidationList[jterator]);
 
                 crossValidationData[jterator] = new CrossValidationData(priorityData[iterator].getMLRweight(),codeValidationList[jterator]);
                 jterator++;

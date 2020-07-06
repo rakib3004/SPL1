@@ -51,7 +51,7 @@ public class TestingSector {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-                System.out.println(priorityData[iterator].getMLRweight());
+             // System.out.println(priorityData[iterator].getMLRweight());
 
                 if (Integer.parseInt(priorityData[iterator].bookData.bookPrice) <= 180) {
                     //System.out.println(iterator + ":::: 180 er niche dam");
