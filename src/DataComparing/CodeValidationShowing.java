@@ -182,9 +182,8 @@ setStyle(CV_Output);
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods();
+        calculateCVResults(crossValidationData);
         int jterator=0;
-
-
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
@@ -196,9 +195,6 @@ setStyle(CV_Output);
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
             list.add(new TableData(priorityData[iterator].bookData.bookName,
                     priorityData[iterator].bookData.writerName,
-/*
-                    priorityData[iterator].bookData.typeName,
-*/
                     Double.toString(crossValidationData[jterator].calculatedValue),
                     Double.toString(crossValidationData[jterator].estimatedData)));
 
@@ -210,7 +206,19 @@ setStyle(CV_Output);
 
         return data;
     }
+    public void calculateCVResults(CrossValidationData[] crossValidationData){
+        int jterator=0;
+        for(iterator=0;iterator<numberOfBooks;iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                String string = Double.toString(crossValidationData[jterator].estimatedData);
 
+
+                System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
+                jterator++;
+            }
+        }
+    }
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
