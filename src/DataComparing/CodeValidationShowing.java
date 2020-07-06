@@ -97,8 +97,8 @@ CV_Output.setOnAction(actionEvent -> {
     }
     CrossValidationData[] crossValidationData;
     crossValidationData= trainingSector.trainingSectorMethods();
-    calculateCVResults(crossValidationData,priorityData);
-    JOptionPane.showMessageDialog(null,"Great Done!!!!");
+   double accuracyOfCV =  calculateCVResults(crossValidationData,priorityData);
+   JOptionPane.showMessageDialog(null,accuracyOfCV+"%");
 });
 setStyle(CV_Output);
         // Books
@@ -199,22 +199,23 @@ setStyle(CV_Output);
 
         return data;
     }
-    public void calculateCVResults(CrossValidationData[] crossValidationData,PriorityData [] priorityData){
+    public double calculateCVResults(CrossValidationData[] crossValidationData,PriorityData [] priorityData){
         int jterator=0;
+        double rmsValue=0.0;
+        double rmsSquareDifference=0.0;
+        double rmsSquareValue=0.0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-               // String string = Double.toString(crossValidationData[jterator].estimatedData);
-           //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
+             rmsSquareValue= (crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData);
+                rmsSquareDifference = rmsSquareDifference+(rmsSquareValue*rmsSquareValue);
 
-               double aData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100;
-               double bData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].calculatedValue)*100;
-               aData = 100.00-aData;
-               bData = 100.00-bData;
-               System.out.println("Perspective 1 :"+aData+"\t"+"Perspective 1 :"+bData);
                 jterator++;
             }
         }
+        rmsValue = Math.sqrt(rmsSquareDifference/jterator);
+double accuracyOfCV = 100.00-rmsValue;
+return accuracyOfCV;
     }
     public Button setStyle( Button button)
     {
