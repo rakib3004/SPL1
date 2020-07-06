@@ -182,7 +182,7 @@ setStyle(CV_Output);
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods();
-        calculateCVResults(crossValidationData);
+        calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -206,15 +206,15 @@ setStyle(CV_Output);
 
         return data;
     }
-    public void calculateCVResults(CrossValidationData[] crossValidationData){
+    public void calculateCVResults(CrossValidationData[] crossValidationData,PriorityData [] priorityData){
         int jterator=0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-                String string = Double.toString(crossValidationData[jterator].estimatedData);
+               // String string = Double.toString(crossValidationData[jterator].estimatedData);
+           //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
 
-
-                System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
+                System.out.println(Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100);
                 jterator++;
             }
         }
