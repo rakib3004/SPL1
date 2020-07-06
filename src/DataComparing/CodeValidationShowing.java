@@ -29,6 +29,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +89,16 @@ CV_Output.setTranslateX(560);
 CV_Output.setTranslateY(685);
 CV_Output.setPrefSize(150,50);
 CV_Output.setOnAction(actionEvent -> {
-
+    TrainingSector trainingSector = new TrainingSector();
+    try {
+        priorityDataCV = processing.fileReaderMethods();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    CrossValidationData[] crossValidationData;
+    crossValidationData= trainingSector.trainingSectorMethods();
+    calculateCVResults(crossValidationData,priorityData);
+    JOptionPane.showMessageDialog(null,"Great Done!!!!");
 });
 setStyle(CV_Output);
         // Books
@@ -115,15 +125,8 @@ setStyle(CV_Output);
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
-
-
         TableColumn bookWeight = new TableColumn("Estimated Value");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
-
-      /*  TableColumn bookWeightCV = new TableColumn("Book WeightCV");
-        bookWeight.setCellValueFactory(new PropertyValueFactory("estimate"));*/
-
-
 
         table.getColumns().setAll(bookName,writerName,typeName, bookWeight/*,bookWeightCV*/);
         table.setPrefWidth(1440);
@@ -137,25 +140,22 @@ setStyle(CV_Output);
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
-
         HBox hBox = new HBox();
         hBox.getChildren().add(table);
         VBox vBox = new VBox();   
         vBox.getChildren().addAll(hb,hBox);
         Group group = new Group();
-        group.getChildren().addAll(vBox,exit,back);
+        group.getChildren().addAll(vBox,exit,back,CV_Output);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-        // Select the first row
         table.getSelectionModel().select(0);
         TableData tableData = (TableData) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(tableData.toString());
 
-    } // start()
+    }
 
     private class RowSelectChangeListener implements ChangeListener {
 
@@ -171,12 +171,11 @@ setStyle(CV_Output);
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
 
-
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods();
-        calculateCVResults(crossValidationData,priorityData);
+ //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -209,7 +208,7 @@ setStyle(CV_Output);
            //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
 
                double aData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100;
-               double bData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].estimatedData)*100;
+               double bData =Math.abs(crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData)/(crossValidationData[jterator].calculatedValue)*100;
                aData = 100.00-aData;
                bData = 100.00-bData;
                System.out.println("Perspective 1 :"+aData+"\t"+"Perspective 1 :"+bData);
