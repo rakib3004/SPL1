@@ -14,6 +14,9 @@ public class AHPprocessImplementation {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         int iterator1;
+
+        //set AHP Priority according to there borrow priority
+
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             if (priorityData[iterator1].borrowPriority <= 10) {
                 //System.out.println(iterator1 + ":::: 10 er niche");
@@ -34,6 +37,7 @@ public class AHPprocessImplementation {
             }
         }
 
+        //set AHP Priority according to there type priority
 
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("01")) {
@@ -49,35 +53,29 @@ public class AHPprocessImplementation {
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.kobitaType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("13")) {
                 //System.out.println(iterator1 + ":::: Biggan");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.scienceFictionType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("14")) {
                 //System.out.println(iterator1 + ":::: Gobeshona");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.scienceFictionType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("06")) {
                 //System.out.println(iterator1 + ":::: Science Fiction");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.scienceFictionType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("10")) {
                 //System.out.println(iterator1 + ":::: Kisore Uponnash");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.kisorUponnashType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("11")) {
                 //System.out.println(iterator1 + ":::: Shishu Shahitto");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.kisorUponnashType;
             } else if (priorityData[iterator1].bookData.bookId.substring(0, 2).equals("04")) {
                 //System.out.println(iterator1 + ":::: Religion");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.religionType;
             } else {
                 //System.out.println(iterator1 + ":::: Othres");
-
                 priorityData[iterator1].bookPriority = ahPcriteriaWeight.othersType;
             }
         }
         try {
+            //set AHP Priority according to there price priority
 
             for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
                 if (Integer.parseInt(priorityData[iterator1].bookData.bookPrice) <= 180) {
@@ -93,6 +91,8 @@ public class AHPprocessImplementation {
             }
         } catch (Exception exception) {
         }
+        //set AHP Priority according to there time priority
+
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             if (priorityData[iterator1].timePriority <= 4.00) {
                 //System.out.println(iterator1 + "::::latest book");
@@ -111,7 +111,7 @@ public class AHPprocessImplementation {
                 priorityData[iterator1].timePriority = ahPcriteriaWeight.oldestBook;
             }
         }
-
+        //calculate all sub criteria's priority for getting all object value
         double newPriorityValue;
         for (iterator1 = 0; iterator1 < numberOfBooks; iterator1++) {
             newPriorityValue = priorityData[iterator1].bookPriority +
@@ -124,6 +124,7 @@ public class AHPprocessImplementation {
             priorityData[iterator1].setAHPweight(newPriorityValue);
             //System.out.println(priorityData[iterator1].bookData.bookName+"\t"+newPriorityValue);
         }
+        //print all books AHP methods books value
         for(iterator1=0;iterator1<numberOfBooks;iterator1++){
 
             System.out.println("Book Name : "+priorityData[iterator1].bookData.bookName+"\t"+
