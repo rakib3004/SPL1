@@ -27,8 +27,7 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
                 monthCriterAHPMatrix[iterator][jterator] = (monthCounter[iterator]/monthCounter[jterator]);
             }
         }
-
-
+        // new methodology for analytical hierarchy process to calculate sub criteria by issuing book by category
         // add new methodology for analytical hierarchy process
         monthCriterAHPMatrix[0][1]=1.35;
         monthCriterAHPMatrix[0][2]=2.6;
@@ -41,25 +40,16 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
         monthCriterAHPMatrix[2][4]=3.9;
         monthCriterAHPMatrix[3][4]=1.47;
 
-
-
         for (iterator = 0; iterator < 5; iterator++) {
             for (jterator = iterator + 1; jterator < 5; jterator++) {
-
-
                 monthCriterAHPMatrix[jterator][iterator] = Math.pow(monthCriterAHPMatrix[iterator][jterator], -1);
 
             }
         }
         for (iterator = 0; iterator < 5; iterator++) {
 
-
             monthCriterAHPMatrix[iterator][iterator] = (1);
-
-
         }
-
-
         double[] summationMatrix = new double[5];
 
         for (iterator = 0; iterator < 5; iterator++) {
@@ -68,7 +58,6 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
                 summationMatrix[iterator] = summationMatrix[iterator] + monthCriterAHPMatrix[iterator][jterator];
             }
         }
-
         for (iterator = 0; iterator < 5; iterator++) {
             for (jterator = 0; jterator < 5; jterator++) {
 
@@ -79,22 +68,18 @@ monthCounter = ahpSubCriteriaProcess.monthCriteriaCalculationMethods(priorityDat
 
         for (iterator = 0; iterator < 5; iterator++) {
             for (jterator = 0; jterator < 5; jterator++) {
-
                 monthWeightMatrix[iterator] = monthWeightMatrix[iterator] + monthCriterAHPMatrix[jterator][iterator];
 
             }
             monthWeightMatrix[iterator] = monthWeightMatrix[iterator] / 5;
         }
-
         for (iterator = 0; iterator < 5; iterator++) {
 
             monthWeightMatrix[iterator] =  monthWeightMatrix[iterator]*criteria;;
         }
 
-
          ahPcriteriaWeight = new AHPcriteriaWeight(monthWeightMatrix[0],monthWeightMatrix[1],
                 monthWeightMatrix[2],monthWeightMatrix[3],monthWeightMatrix[4]);
-
 
         System.out.println(ahPcriteriaWeight.latestBook+"---------->  ahPcriteriaWeight.latestBook");
         System.out.println(ahPcriteriaWeight.newlyBook+"---------->  ahPcriteriaWeight.newlyBook");
