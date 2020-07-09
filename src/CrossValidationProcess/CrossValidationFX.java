@@ -27,7 +27,6 @@ public class CrossValidationFX extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -46,19 +45,14 @@ public class CrossValidationFX extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
-
             try {
                 authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
@@ -76,7 +70,6 @@ public class CrossValidationFX extends Application {
         dataComparing.setTranslateY(250);
         dataPlotting.setTranslateX(500);
         dataPlotting.setTranslateY(350);
-
         dataComparing.setOnAction(actionEvent -> {
             // new process which we processed today......................................................................
             CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
@@ -96,8 +89,6 @@ public class CrossValidationFX extends Application {
         dataComparing.setPrefSize(350, 80);
         dataPlotting.setPrefSize(350, 80);
 
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -114,7 +105,6 @@ public class CrossValidationFX extends Application {
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
@@ -128,7 +118,6 @@ public class CrossValidationFX extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -151,19 +140,14 @@ public class CrossValidationFX extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
-
 public void finish(Stage primaryStage){
-
     String  className = this.getClass().getSimpleName();
     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
     dateTimeWriter.dateTimeWriterMethods(className);
@@ -180,14 +164,12 @@ public void finish(Stage primaryStage){
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         Button trainingSet = new Button("Training Set");
         Button testingSet = new Button("Testing Set");
-
         trainingSet.setTranslateX(500);
         trainingSet.setTranslateY(250);
         testingSet.setTranslateX(500);
@@ -201,7 +183,6 @@ public void finish(Stage primaryStage){
                 exception.printStackTrace();
             }
         });
-
         testingSet.setOnAction(actionEvent -> {
 
             TestingSet testingSet1 = new TestingSet();
@@ -234,7 +215,6 @@ public void finish(Stage primaryStage){
     about.setTranslateX(20);
     about.setTranslateY(380);
 
-
     administrationMood.setPrefSize(160, 30);
     readersMood.setPrefSize(160, 30);
     about.setPrefSize(160,30);
@@ -248,7 +228,6 @@ public void finish(Stage primaryStage){
             exception.printStackTrace();
         }
     });
-
     readersMood.setOnAction(actionEvent -> {
         ReadingRoom readingRoom = new ReadingRoom();
         try {
@@ -271,15 +250,11 @@ public void finish(Stage primaryStage){
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
