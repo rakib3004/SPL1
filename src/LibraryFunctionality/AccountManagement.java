@@ -9,13 +9,11 @@ public class AccountManagement {
     String  stringMembers="";
     char [] libraryMembers = new char[10];
     public String accountManagementSignUpMethods(String [] infoDataArray ,
-
                                                  String userChoiceList) throws IOException {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
@@ -35,7 +33,6 @@ public class AccountManagement {
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                     stringMembers = stringMembers+libraryMembers[countIterator];
-
                 }
                 stringMembers = stringMembers.trim();
                 int intMembers = Integer.parseInt(stringMembers);
@@ -49,7 +46,6 @@ public class AccountManagement {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 String membersString = Integer.toString(intMembers);
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
@@ -61,13 +57,6 @@ public class AccountManagement {
                 FILENAME = userNameTemplate+"3ChoiceList.txt";
                 File fileA3 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA3.createNewFile();
-                int iterator;
-                String choiceListDescription;
-                choiceListDescription = infoDataArray[2];
-               /* for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
-                    choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
-                }*/
-
                 try{
                     FileWriter fileWriter = new FileWriter(fileA3);
                     fileWriter.write(userChoiceList);
@@ -81,9 +70,7 @@ public class AccountManagement {
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
-                
                 fileReader.read(libraryMembers);
-
                 int countIterator=0;
                 for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
                     stringMembers = stringMembers+libraryMembers[countIterator];
@@ -102,7 +89,6 @@ public class AccountManagement {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 String membersString = Integer.toString(intMembers);
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME_COUNT);
@@ -114,13 +100,6 @@ public class AccountManagement {
                 FILENAME = userNameTemplate+"2ChoiceList.txt";
                 File fileA2 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA2.createNewFile();
-                int iterator;
-                String choiceListDescription;
-                choiceListDescription = infoDataArray[2];
-               /* for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
-                    choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
-                }
-*/
                 try{
                     FileWriter fileWriter = new FileWriter(fileA2);
                     fileWriter.write(userChoiceList);
@@ -146,7 +125,6 @@ File fileA = new File(FILENAME_COUNT);
             intMembers++;
             int userID = 1000+intMembers;
             textUserID = Integer.toString(userID);
-
             try {
                 FileWriter fileWriter=new FileWriter(file);
                 fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
@@ -154,7 +132,6 @@ File fileA = new File(FILENAME_COUNT);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
 
             String membersString = Integer.toString(intMembers);
             try {
@@ -167,14 +144,7 @@ File fileA = new File(FILENAME_COUNT);
 FILENAME = userNameTemplate+"ChoiceList.txt";
             File fileA1 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
             fileA1.createNewFile();
-            int iterator;
-            String choiceListDescription;
-            choiceListDescription = infoDataArray[2];
-         /*   for(iterator=0;addFavouriteBookType[iterator]!=null;iterator++){
-                choiceListDescription = choiceListDescription+"\t"+addFavouriteBookType[iterator];
-            }*/
-iterator=0;
-            try{
+                 try{
                 FileWriter fileWriter = new FileWriter(fileA1);
                 fileWriter.write(userChoiceList);
                 fileWriter.close();
@@ -255,7 +225,6 @@ iterator=0;
                         findUserName = findUserName+getUserInfoArray[countIterator];
                     }
                 }
-
                 findUserName = findUserName.trim();
                 findUserID = findUserID.trim();
                 System.out.println(userName+"---->"+findUserName);
@@ -271,7 +240,6 @@ iterator=0;
                     fileReader.read(getUserInfoArray);
                     findUserName="";
                     findUserID="";
-
                     countIterator=0;
                     isFindTab = false;
                     for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
@@ -287,7 +255,6 @@ iterator=0;
                             findUserName = findUserName+getUserInfoArray[countIterator];
                         }
                     }
-
                     findUserName = findUserName.trim();
                     findUserID = findUserID.trim();
                     System.out.println(userName+"---->"+findUserName);
@@ -298,11 +265,9 @@ iterator=0;
                     }
                     else{
                         isFound =false;
-
                     }
                 }
             }
-
         }
 
         return isFound;
@@ -312,7 +277,6 @@ iterator=0;
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         boolean isFound = false;
         userName = userName.trim();
         String FILENAME = userName+".txt";
@@ -328,7 +292,6 @@ iterator=0;
             String  findUserName, findUserID;
             findUserName="";
             findUserID="";
-
             int countIterator=0;
             boolean isFindTab = false;
             boolean getID=false;
@@ -405,7 +368,6 @@ iterator=0;
                     fileReader.read(getUserInfoArray);
                     findUserName="";
                     findUserID="";
-
                     countIterator=0;
                     isFindTab = false;
                     for(countIterator=0;getUserInfoArray[countIterator]!='\0';countIterator++){
@@ -447,7 +409,6 @@ public void accountManagementGetRecommendedBookList(String userName, String user
     String  className = this.getClass().getSimpleName();
     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
     dateTimeWriter.dateTimeWriterMethods(className);
-
  File[] file=  accountManagementGetFileName(userName,userID);
 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
 

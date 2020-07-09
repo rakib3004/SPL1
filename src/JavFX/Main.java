@@ -42,7 +42,6 @@ import java.util.Scanner;
 
 public class Main extends Application {
 
-
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -59,7 +58,6 @@ public class Main extends Application {
         Image image = new Image(fileInputStream);
         welcome.setGraphic(new ImageView(image));
 
-
         welcome.setPrefSize(340, 100);
 
         welcome.setOnAction(actionEvent -> {
@@ -70,26 +68,18 @@ public class Main extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         Button exit = new Button("Exit");
-
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
-
         exit.setPrefSize(200, 80);
 
-
         MenuItem readingRoomView = new MenuItem("Reading RoomView");
-
         readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 ReadingRoom readingRoom = new ReadingRoom();
@@ -102,8 +92,6 @@ public class Main extends Application {
                 }
             }
         });
-
-
         MenuItem libraryDeskView = new MenuItem("Library DeskView");
         libraryDeskView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -115,10 +103,8 @@ public class Main extends Application {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
             }
         });
-
            MenuItem statisticsView = new MenuItem("Statistics View");
 
         statisticsView.setOnAction(new EventHandler<ActionEvent>() {
@@ -129,8 +115,6 @@ public class Main extends Application {
                 }
             }
         });
-
-
         MenuItem fourVariableRegressionView = new MenuItem("FourVariable RegressionView");
         fourVariableRegressionView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -142,7 +126,6 @@ public class Main extends Application {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
             }
         });
  MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
@@ -152,7 +135,6 @@ public class Main extends Application {
                 {
                     crossValidationVisualization.start(stage);
                 }
-
             }
         });
  MenuItem testingSetView = new MenuItem("Testing SetView");
@@ -162,10 +144,8 @@ public class Main extends Application {
                 {
                     testingSet.start(stage);
                 }
-
             }
         });
-
         MenuButton bootOperation1 = new MenuButton("Boot Operation1");
         bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,
                 statisticsView,fourVariableRegressionView,
@@ -174,8 +154,6 @@ public class Main extends Application {
         bootOperation1.setTranslateX(1125);
         bootOperation1.setTranslateY(518);
         bootOperation1.setPrefSize(150, 25);
-
-
         MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
 
         analyticHierarchyProcessView.setOnAction(new EventHandler<ActionEvent>() {
@@ -190,8 +168,6 @@ public class Main extends Application {
                 }
             }
         });
-
-
         MenuItem pageRankAlgorithmView = new MenuItem("PageRank AlgorithmView");
         pageRankAlgorithmView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -203,10 +179,8 @@ public class Main extends Application {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
             }
         });
-
            MenuItem bookInformationView = new MenuItem("Book InformationView");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
@@ -217,8 +191,6 @@ public class Main extends Application {
                 }
             }
         });
-
-
         MenuItem crossValidationView = new MenuItem("Cross ValidationView");
         crossValidationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -228,7 +200,6 @@ public class Main extends Application {
                 }
             }
         });
-
         MenuItem systemAnalysisView = new MenuItem("System AnalysisView");
         systemAnalysisView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -238,7 +209,6 @@ public class Main extends Application {
                 }
             }
         });
-
         MenuItem processValidationView = new MenuItem("Process ValidationView");
         processValidationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -248,7 +218,6 @@ public class Main extends Application {
                 }
             }
         });
-
         MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
         trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -258,12 +227,10 @@ public class Main extends Application {
                 }
             }
         });
-
         MenuButton bootOperation2 = new MenuButton("Boot Operation2");
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,
                 bookInformationView,crossValidationView,systemAnalysisView,
                 processValidationView,trainingMethodologyView);
-
         bootOperation2.setTranslateX(833);
         bootOperation2.setTranslateY(514.5);
         bootOperation2.setPrefSize(150, 25);
@@ -276,12 +243,10 @@ public class Main extends Application {
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(background,0,0);
-
         Scene scene = new Scene(root,1400,770);
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();
-
     }
 
     public Button setStyle( Button button)
@@ -300,12 +265,7 @@ public class Main extends Application {
         return  button;
     }
 
-    
-
     public static void main(String[] args) {
-
         Application.launch(args);
     }
-
-
 }
