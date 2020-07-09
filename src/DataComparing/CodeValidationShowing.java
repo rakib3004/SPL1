@@ -37,13 +37,11 @@ import java.util.List;
 import static javafx.scene.paint.Color.DARKBLUE;
 
 public class CodeValidationShowing extends Application {
-
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
     PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
-
 int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
@@ -51,11 +49,10 @@ int iterator;
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
     PrioritySort prioritySort = new PrioritySort();
-
     @Override
     public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         primaryStage.setTitle("Table View Example 1");
         Button back = new Button("Back");
@@ -63,52 +60,46 @@ int iterator;
         back.setOnAction(actionEvent -> {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
             try {
-
                 crossValidationFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
         setStyle(exit);
         setStyle(back);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
         Button CV_Output = new Button("CV Output");
-CV_Output.setTranslateX(560);
-CV_Output.setTranslateY(685);
-CV_Output.setPrefSize(150,50);
-CV_Output.setOnAction(actionEvent -> {
-    TrainingSector trainingSector = new TrainingSector();
-    try {
-        priorityDataCV = processing.fileReaderMethods();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    CrossValidationData[] crossValidationData;
-    crossValidationData= trainingSector.trainingSectorMethods();
-   double accuracyOfCV =  calculateCVResults(crossValidationData,priorityData);
-   JOptionPane.showMessageDialog(null,accuracyOfCV+"%");
-});
-setStyle(CV_Output);
-        // Books
+        CV_Output.setTranslateX(560);
+        CV_Output.setTranslateY(685);
+        CV_Output.setPrefSize(150, 50);
+        CV_Output.setOnAction(actionEvent -> {
+            TrainingSector trainingSector = new TrainingSector();
+            try {
+                priorityDataCV = processing.fileReaderMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            CrossValidationData[] crossValidationData;
+            crossValidationData = trainingSector.trainingSectorMethods();
+            double accuracyOfCV = calculateCVResults(crossValidationData, priorityData);
+            JOptionPane.showMessageDialog(null, accuracyOfCV + "%");
+        });
+        setStyle(CV_Output);
         Label label = new Label("Cross Validation Results");
         label.setTextFill(DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
         HBox hb = new HBox();
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
-
         table = new TableView();
         data = getInitialTableData();
         table.setItems(data);
@@ -128,24 +119,22 @@ setStyle(CV_Output);
         TableColumn bookWeight = new TableColumn("Estimated Value");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
 
-        table.getColumns().setAll(bookName,writerName,typeName, bookWeight/*,bookWeightCV*/);
+        table.getColumns().setAll(bookName, writerName, typeName, bookWeight/*,bookWeightCV*/);
         table.setPrefWidth(1440);
         table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new CodeValidationShowing.RowSelectChangeListener());
-
-        // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
         HBox hBox = new HBox();
         hBox.getChildren().add(table);
-        VBox vBox = new VBox();   
-        vBox.getChildren().addAll(hb,hBox);
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(hb, hBox);
         Group group = new Group();
-        group.getChildren().addAll(vBox,exit,back,CV_Output);
+        group.getChildren().addAll(vBox, exit, back, CV_Output);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -154,14 +143,11 @@ setStyle(CV_Output);
         table.getSelectionModel().select(0);
         TableData tableData = (TableData) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(tableData.toString());
-
     }
 
     private class RowSelectChangeListener implements ChangeListener {
-
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-
         }
     }
 
@@ -170,7 +156,6 @@ setStyle(CV_Output);
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
-
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
@@ -180,7 +165,6 @@ setStyle(CV_Output);
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
  jterator=0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
@@ -190,9 +174,7 @@ setStyle(CV_Output);
                     priorityData[iterator].bookData.writerName,
                     Double.toString(crossValidationData[jterator].calculatedValue),
                     Double.toString(crossValidationData[jterator].estimatedData)));
-
-         //     System.out.println( crossValidationData[jterator].calculatedValue+"\t"+crossValidationData[jterator].estimatedData);
-                jterator++;
+             jterator++;
         }
         }
         ObservableList data = FXCollections.observableList(list);
@@ -209,7 +191,6 @@ setStyle(CV_Output);
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
              rmsSquareValue= (crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData);
                 rmsSquareDifference = rmsSquareDifference+(rmsSquareValue*rmsSquareValue);
-
                 jterator++;
             }
         }
@@ -232,8 +213,6 @@ return accuracyOfCV;
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-
-
     public  class TableData {
         public SimpleStringProperty bookName;
         public SimpleStringProperty writerName;
@@ -246,13 +225,7 @@ return accuracyOfCV;
             writerName = new SimpleStringProperty(s2);
             typeName = new SimpleStringProperty(s4);
             bookWeight = new SimpleStringProperty(s5);
-/*
-            estimate = new SimpleStringProperty(s6);
-*/
-
         }
-
-
         public TableData(SimpleStringProperty bookName,
                     SimpleStringProperty writerName,
                     SimpleStringProperty typeName,
@@ -262,11 +235,7 @@ return accuracyOfCV;
             this.writerName = writerName;
             this.typeName = typeName;
             this.bookWeight = bookWeight;
-/*
-            this.estimate = estimate;
-*/
         }
-
 
        public String getEstimate() {
             return estimate.get();
@@ -280,8 +249,6 @@ return accuracyOfCV;
             this.estimate.set(s);
         }
 
-
-
         public String getTypeName() {
             return typeName.get();
         }
@@ -294,8 +261,6 @@ return accuracyOfCV;
             this.typeName.set(s);
         }
 
-
-
         public String getBookWeight() {
             return bookWeight.get();
         }
@@ -307,7 +272,6 @@ return accuracyOfCV;
         public void setBookWeight(String s) {
             this.bookWeight.set(s);
         }
-
 
         public String getBookName() {
 
@@ -327,12 +291,8 @@ return accuracyOfCV;
             writerName.set(s);
         }
 
-
-
-
         @Override
         public String toString() {
-
             return (bookName.get() + ", by " + writerName.get());
         }
     }
