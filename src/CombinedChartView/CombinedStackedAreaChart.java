@@ -29,7 +29,6 @@ import java.io.IOException;
 public class CombinedStackedAreaChart extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
@@ -38,7 +37,6 @@ public class CombinedStackedAreaChart extends Application {
     PageRankCalculation pageRankCalculation = new PageRankCalculation();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -76,7 +74,6 @@ public class CombinedStackedAreaChart extends Application {
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        
 
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
 
@@ -95,7 +92,6 @@ public class CombinedStackedAreaChart extends Application {
         priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData, numberOfBooks);
         CategoryAxis categoryAxis1 = new CategoryAxis();
         categoryAxis1.setLabel("Book Class Category");
-
         NumberAxis numberAxis1 = new NumberAxis();
         numberAxis1.setLabel("Numbers of Book");
         StackedAreaChart stackedAreaChart1 = new StackedAreaChart(categoryAxis1, numberAxis1);
@@ -103,12 +99,9 @@ public class CombinedStackedAreaChart extends Application {
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("Analytic Hierarchy Process");
 
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
             positionIndicator++;
             series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
-
         }
         stackedAreaChart1.getData().add(series2);
 
@@ -122,27 +115,18 @@ public class CombinedStackedAreaChart extends Application {
 
         NumberAxis numberAxis2 = new NumberAxis();
         numberAxis2.setLabel("Numbers of Book");
-
-
         StackedAreaChart stackedAreaChart2 = new StackedAreaChart(categoryAxis2, numberAxis2);
 
         XYChart.Series series3 = new XYChart.Series();
 
-
         series3.setName("Page Rank Algorithm");
 
-
-        //   series1.setName("Training Set 1 ");
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
+       for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
-
         }
 
-
         stackedAreaChart2.getData().add(series3);
-
         stackedAreaChart2.setTranslateX(700);
         stackedAreaChart2.setTranslateY(350);
         stackedAreaChart2.setPrefSize(650, 300);
