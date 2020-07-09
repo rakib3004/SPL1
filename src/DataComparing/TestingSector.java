@@ -15,27 +15,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestingSector {
-
     PriorityData[] priorityData,priorityDataCV,priorityData2;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList(); 
-
     int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     public PriorityData [] testingSectorMethods(AHPcriteriaWeight ahPcriteriaWeight) {
-
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         try {
             priorityData = processing.fileReaderMethods();
             priorityDataCV = processing.fileReaderMethods();
@@ -44,7 +38,6 @@ public class TestingSector {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
         priorityData2 = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
@@ -52,7 +45,6 @@ public class TestingSector {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
              // System.out.println(priorityData[iterator].getMLRweight());
-
                 if (Integer.parseInt(priorityData[iterator].bookData.bookPrice) <= 180) {
                     //System.out.println(iterator + ":::: 180 er niche dam");
                     priorityData[iterator].pricePriority = ahPcriteriaWeight.lowPrice;
@@ -63,11 +55,8 @@ public class TestingSector {
                     //System.out.println(iterator + ":::: Besi dam");
                     priorityData[iterator].pricePriority = ahPcriteriaWeight.highPrice;
                 }
-
             }
         }
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
@@ -87,19 +76,14 @@ public class TestingSector {
                     //System.out.println(iterator + "::::oldest book");
                     priorityData[iterator].timePriority = ahPcriteriaWeight.oldestBook;
                 }
-
-
             }
         }
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
 
                 if (priorityData[iterator].borrowPriority <= 10) {
                     //System.out.println(iterator + ":::: 10 er niche");
-
                     priorityData[iterator].borrowPriority = ahPcriteriaWeight.lowlyDemand;
                 } else if (priorityData[iterator].borrowPriority <= 20) {
                     //System.out.println(iterator + ":::: 20 er niche");
@@ -114,11 +98,8 @@ public class TestingSector {
 
                     priorityData[iterator].borrowPriority = ahPcriteriaWeight.highlyDemand;
                 }
-
             }
         }
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
@@ -163,26 +144,19 @@ public class TestingSector {
 
                     priorityData[iterator].bookPriority = ahPcriteriaWeight.othersType;
                 }
-
             }
-
         }
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
 
-                priorityData[iterator].setMLRweight(.25*(priorityData[iterator].pricePriority +
+                priorityData[iterator].setMLRweight(.25 * (priorityData[iterator].pricePriority +
                         priorityData[iterator].timePriority + priorityData[iterator].borrowPriority +
-                        priorityData[iterator].timePriority)); ;
+                        priorityData[iterator].timePriority));
 
+            }
         }
-        }
-
-
-
         return priorityData;
-
     }
-
 }

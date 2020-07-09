@@ -10,7 +10,6 @@ public class DateTimeWriter {
 
     int classCounter=0;
     public void dateTimeWriterInitialMethods(String className){
-
         Date dNow = new Date( );
         SimpleDateFormat ft =
                 new SimpleDateFormat("E dd.MM.yyyy 'at' hh:mm:ss a");
@@ -55,8 +54,6 @@ String FILENAME,string,COUNTER_FILE;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
     public void dateTimeWriterMethods(String className){
         Date dNow = new Date( );
@@ -65,7 +62,6 @@ String FILENAME,string,COUNTER_FILE;
 
 String FILENAME,string;
         FILENAME = "history.txt";
-
      string =  className+"\t";
         string = string+ ft.format(dNow)+"\n";
 
@@ -102,7 +98,5 @@ String FILENAME,string;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
