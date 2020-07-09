@@ -25,7 +25,6 @@ public class TrainingMethodology extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -45,9 +44,6 @@ public class TrainingMethodology extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
             TrainingObserVation trainingObserVation = new TrainingObserVation();
             try {
@@ -55,21 +51,13 @@ public class TrainingMethodology extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -80,23 +68,18 @@ public class TrainingMethodology extends Application {
         Button trainingSet4 = new Button("Training Set 4");
         Button trainingSetAll = new Button("Training Set All");
 
-
         trainingSet1.setTranslateX(500);
         trainingSet1.setTranslateY(200);
         trainingSet2.setTranslateX(500);
         trainingSet2.setTranslateY(300);
-
         trainingSet3.setTranslateX(500);
         trainingSet3.setTranslateY(400);
         trainingSet4.setTranslateX(500);
         trainingSet4.setTranslateY(500);
         trainingSetAll.setTranslateX(500);
         trainingSetAll.setTranslateY(600);
-
-
         trainingSet1.setOnAction(actionEvent -> {
-
-TrainingSet1 trainingSet11 = new TrainingSet1();
+            TrainingSet1 trainingSet11 = new TrainingSet1();
             try {
                 trainingSet11.start(primaryStage);
             } catch (Exception exception) {
@@ -120,7 +103,6 @@ trainingSet3.setOnAction(actionEvent -> {
                 exception.printStackTrace();
             }
         });
-
         trainingSet4.setOnAction(actionEvent -> {
             TrainingSet4 trainingSet41 = new TrainingSet4();
             try {
@@ -137,21 +119,16 @@ trainingSetAll.setOnAction(actionEvent -> {
                 exception.printStackTrace();
             }
         });
-
-
         setStyle(trainingSet1);
         setStyle(trainingSet2);
         setStyle(trainingSet3);
         setStyle(trainingSet4);
         setStyle(trainingSetAll);
-
-
-        trainingSet1.setPrefSize(350,80);
+       trainingSet1.setPrefSize(350,80);
         trainingSet2.setPrefSize(350,80);
         trainingSet3.setPrefSize(350,80);
         trainingSet4.setPrefSize(350,80);
         trainingSetAll.setPrefSize(350,80);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -169,7 +146,6 @@ trainingSetAll.setOnAction(actionEvent -> {
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
@@ -183,7 +159,6 @@ trainingSetAll.setOnAction(actionEvent -> {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -192,7 +167,6 @@ trainingSetAll.setOnAction(actionEvent -> {
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -205,16 +179,11 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
 
     public Button setStyle(Button button)
@@ -232,5 +201,4 @@ trainingSetAll.setOnAction(actionEvent -> {
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-
 }

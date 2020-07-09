@@ -35,9 +35,7 @@ public class TestingSet extends Application {
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
-
-    @Override
+        @Override
     public void start(Stage primaryStage){
 
         String  className = this.getClass().getSimpleName();
@@ -46,38 +44,30 @@ public class TestingSet extends Application {
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         back.setOnAction(actionEvent -> {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
-
             try {
                 crossValidationFX.finish(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
 
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Button testingSetResults = new Button("TestingSet Results");
         Button trainingTestingCompersion = new Button("TrainingTesting Compersion");
         Button codeValidationSet = new Button("CodeValidation Set");
-
         testingSetResults.setTranslateX(500);
         testingSetResults.setTranslateY(250);
         trainingTestingCompersion.setTranslateX(500);
@@ -92,7 +82,6 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
         trainingTestingCompersion.setOnAction(actionEvent -> {
 
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
@@ -102,7 +91,6 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
         codeValidationSet.setOnAction(actionEvent -> {
             CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
             try {
@@ -111,16 +99,12 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
         setStyle(testingSetResults);
         setStyle(trainingTestingCompersion);
         setStyle(codeValidationSet);
-
-
         testingSetResults.setPrefSize(350, 80);
         trainingTestingCompersion.setPrefSize(380, 80);
         codeValidationSet.setPrefSize(350, 80);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -131,19 +115,15 @@ public class TestingSet extends Application {
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
-
         readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
         administrationMood.setTranslateX(20);
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -153,7 +133,6 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -162,7 +141,6 @@ public class TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -175,19 +153,13 @@ public class TestingSet extends Application {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
-
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
