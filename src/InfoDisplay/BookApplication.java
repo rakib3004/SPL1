@@ -21,8 +21,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class BookApplication extends Application {
-
-    PriorityData[] priorityData;
+   PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -30,30 +29,19 @@ public class BookApplication extends Application {
 UIDisplayFX uiDisplayFX = new UIDisplayFX();
     @Override
     public void start(Stage primaryStage) {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
         Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
-
-
-
-      //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button typeBased = new Button("Type Based");
         Button timeBased = new Button("Time Based");
         Button borrowBased = new Button("Borrow Based");
         Button priceBased = new Button("Price Based");
-
-
-      //  Start.setTranslateX(500);
-      //  Start.setTranslateY(400);
-
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -70,24 +58,16 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         priceBased.setTranslateX(500);
         priceBased.setTranslateY(500);
 
-
-        
         back.setOnAction(actionEvent -> {
 AuthorSystem authorSystem = new AuthorSystem();
-
 try {
-
                 authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
 typeBased.setOnAction(actionEvent -> {
             try {
@@ -96,9 +76,7 @@ uiDisplayFX.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         borrowBased.setOnAction(actionEvent -> {
             try {
                 uiDisplayFX.borrowStatistics(primaryStage);
@@ -106,9 +84,7 @@ uiDisplayFX.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
 
 timeBased.setOnAction(actionEvent -> {
     try {
@@ -117,22 +93,15 @@ timeBased.setOnAction(actionEvent -> {
     } catch (Exception exception) {
         exception.printStackTrace();
     }
-
 });
-
         priceBased.setOnAction(actionEvent -> {
             try {
                 uiDisplayFX.priceStatistics(primaryStage);
-
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
-
-
-    //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
@@ -142,36 +111,27 @@ timeBased.setOnAction(actionEvent -> {
        setStyle(borrowBased);
         setStyle(priceBased);
 
-      //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
          timeBased.setPrefSize(200, 80);
         typeBased.setPrefSize(200, 80);
-
          priceBased.setPrefSize(200, 80);
         borrowBased.setPrefSize(200, 80);
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);
 
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
     public Button setStyle( Button button)
     {

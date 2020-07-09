@@ -51,8 +51,6 @@ public class BookNumberDisplayFX extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
 
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage) {
 
@@ -63,19 +61,14 @@ public class BookNumberDisplayFX extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
         Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 8);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
-
             try {
                 authorSystem.start(primaryStage);
             } catch (Exception exception) {
@@ -85,21 +78,16 @@ public class BookNumberDisplayFX extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         try {
             numberOfBooks = bookNumber.bookNumberFindingMethods();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
         Label BookNumbers = new Label((numberOfBooks/6)+" Books" );
         BookNumbers.setAlignment(Pos.CENTER);
         setStyle1(BookNumbers);
@@ -113,9 +101,6 @@ public class BookNumberDisplayFX extends Application {
         BookNumbers.setTextFill(Color.BLACK);
         BookNumbers.setScaleX(6);
         BookNumbers.setScaleY(3.4);
-
-
-
 
         Label WriterNumbers = new Label((writerCounter/6)+" Writers " );
         WriterNumbers.setAlignment(Pos.CENTER);
@@ -133,8 +118,6 @@ public class BookNumberDisplayFX extends Application {
         WriterNumbers.setScaleX(6);
         WriterNumbers.setScaleY(3.4);
 
-
-
         Label YearsNumbers = new Label( (yearCounter /6)+" Years " );
         YearsNumbers.setAlignment(Pos.CENTER);
         setStyle3(YearsNumbers);
@@ -148,9 +131,6 @@ public class BookNumberDisplayFX extends Application {
         YearsNumbers.setTextFill(Color.BLACK);
         YearsNumbers.setScaleX(6);
         YearsNumbers.setScaleY(3.4);
-
-
-
         Label TypeNumbers = new Label((typeCounter/6)+" types");
         TypeNumbers.setAlignment(Pos.CENTER);
         setStyle4(TypeNumbers);
@@ -167,13 +147,9 @@ public class BookNumberDisplayFX extends Application {
 
         PathTransition pt = new PathTransition();
         pt.setDuration(Duration.seconds(6));
-        // pt.setNode(ball);
-//        pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
         pt.setCycleCount(1);
         pt.setAutoReverse(false);
         pt.play();
-
-
 
         time = new Timeline();
         time.setCycleCount(6);
@@ -197,10 +173,7 @@ public class BookNumberDisplayFX extends Application {
                             }
                         })
         );
-
         time.play();
-
-
         Group semiGroup = new Group();;
         semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
         String string ="Images"+ File.separator + "libraryBackground9.jpg";
@@ -210,14 +183,9 @@ public class BookNumberDisplayFX extends Application {
         Group group = new Group();
         group.getChildren().addAll(canvas,semiGroup,exit,back);
 
-
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");

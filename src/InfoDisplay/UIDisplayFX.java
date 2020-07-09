@@ -27,7 +27,6 @@ StackedAreaFX stackedAreaFX = new StackedAreaFX();
     @Override
     public void start(Stage primaryStage) {
     }
-
     public void typeStatistics(Stage typeStatisticsStage) {
 
         String  className = this.getClass().getSimpleName();
@@ -44,7 +43,6 @@ StackedAreaFX stackedAreaFX = new StackedAreaFX();
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -54,7 +52,6 @@ StackedAreaFX stackedAreaFX = new StackedAreaFX();
         scatterChart.setTranslateY(200);
         lineChart.setTranslateX(500);
         lineChart.setTranslateY(300);
-
         stackedAreaChart.setTranslateX(500);
         stackedAreaChart.setTranslateY(400);
 
@@ -65,7 +62,6 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -80,7 +76,6 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         stackedAreaChart.setOnAction(actionEvent -> {
@@ -90,20 +85,15 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         lineChart.setOnAction(actionEvent -> {
             try {
                 lineChartFX.startTyping(typeStatisticsStage);
-
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
-
-        //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
@@ -112,7 +102,6 @@ BookApplication bookApplication = new BookApplication();
 
         setStyle(stackedAreaChart);
 
-        //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -126,13 +115,10 @@ BookApplication bookApplication = new BookApplication();
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
 
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         typeStatisticsStage.setScene(scene1);
         typeStatisticsStage.setTitle("Books Statistics");
@@ -145,20 +131,11 @@ BookApplication bookApplication = new BookApplication();
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
-
-        //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
-
-        //  Start.setTranslateX(500);
-        //  Start.setTranslateY(400);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -181,7 +158,6 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -213,8 +189,6 @@ BookApplication bookApplication = new BookApplication();
                 exception.printStackTrace();
             }
         });
-
-        //    setStyle(Start);
         setStyle(exit);
         setStyle(back);
 
@@ -222,8 +196,6 @@ BookApplication bookApplication = new BookApplication();
         setStyle(scatterChart);
 
         setStyle(stackedAreaChart);
-
-        //  Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -236,7 +208,6 @@ BookApplication bookApplication = new BookApplication();
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
@@ -253,18 +224,11 @@ BookApplication bookApplication = new BookApplication();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
-        //  Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -276,8 +240,6 @@ BookApplication bookApplication = new BookApplication();
         lineChart.setTranslateY(300);
         stackedAreaChart.setTranslateX(500);
         stackedAreaChart.setTranslateY(400);
-
-
         back.setOnAction(actionEvent -> {
             BookApplication bookApplication = new BookApplication();
             try {
@@ -285,7 +247,6 @@ BookApplication bookApplication = new BookApplication();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
