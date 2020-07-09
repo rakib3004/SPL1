@@ -32,20 +32,23 @@ countCounter = ahpSubCriteriaProcess.countCriteriaCalculationMethods(priorityDat
         countCriteriaAHPMatrix[1][3]=7.0;
         countCriteriaAHPMatrix[2][3]=3.0;
 
-        for (iterator = 0; iterator < 4; iterator++) {
+        for (iterator =0;iterator<4;iterator++) {
             for (jterator = iterator + 1; jterator < 4; jterator++) {
 
-                countCriteriaAHPMatrix[jterator][iterator] = Math.pow(countCriteriaAHPMatrix[iterator][jterator], -1);
+                countCriteriaAHPMatrix[jterator][iterator] =
+                        Math.pow(countCriteriaAHPMatrix[iterator][jterator], -1);
             }
         }
-        for (iterator = 0; iterator < 4; iterator++) {
+        //set priority 1 for row == column
+        for (iterator = 0;iterator<4; iterator++) {
             countCriteriaAHPMatrix[iterator][iterator] = (1);
         }
 
         double[] summationMatrix = new double[4];
         for (iterator = 0; iterator < 4; iterator++) {
             for (jterator = 0; jterator < 4; jterator++) {
-                summationMatrix[iterator] = summationMatrix[iterator] + countCriteriaAHPMatrix[iterator][jterator];
+                summationMatrix[iterator] =
+                        summationMatrix[iterator] + countCriteriaAHPMatrix[iterator][jterator];
             }
         }
 
@@ -58,7 +61,8 @@ countCounter = ahpSubCriteriaProcess.countCriteriaCalculationMethods(priorityDat
 
         for (iterator = 0; iterator < 4; iterator++) {
             for (jterator = 0; jterator < 4; jterator++) {
-                countWeightMatrix[iterator] = countWeightMatrix[iterator] + countCriteriaAHPMatrix[jterator][iterator];
+                countWeightMatrix[iterator] =
+                        countWeightMatrix[iterator] + countCriteriaAHPMatrix[jterator][iterator];
 
             }
             countWeightMatrix[iterator] = countWeightMatrix[iterator] / 4;
@@ -71,6 +75,7 @@ countCounter = ahpSubCriteriaProcess.countCriteriaCalculationMethods(priorityDat
          ahPcriteriaWeight = new AHPcriteriaWeight(countWeightMatrix[0],countWeightMatrix[1],countWeightMatrix[2],countWeightMatrix[3]);
 
         //print all criteria value to show the evaluation
+
         System.out.println(ahPcriteriaWeight.highlyDemand+"---------->  ahPcriteriaWeight.highlyDemand");
         System.out.println(ahPcriteriaWeight.highMediumDemand+"---------->  ahPcriteriaWeight.highMediumDemand");
         System.out.println(ahPcriteriaWeight.lowMediumDemand+"---------->  ahPcriteriaWeight.lowMediumDemand");

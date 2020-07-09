@@ -24,8 +24,8 @@ public class PriceCriteriaAHP {
                 priceCriteriaAHPMatrix[iterator][jterator] = priceCounter[iterator]/priceCounter[jterator];
             }
         }
-// new methodology for analytic hierarchy process
-
+// new methodology for analytical hierarchy process to calculate sub criteria by issuing book by category
+        // add new methodology for analytical hierarchy process
         priceCriteriaAHPMatrix[0][1]=3.0;
         priceCriteriaAHPMatrix[0][2]=5.0;
         priceCriteriaAHPMatrix[1][2]=5.0/3.0;
@@ -70,7 +70,9 @@ public class PriceCriteriaAHP {
         priceWeightMatrix[iterator]  =  priceWeightMatrix[iterator]*criteria;
 
         }
-         ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],
+        //print all criteria value to show the evaluation
+
+        ahPcriteriaWeight = new AHPcriteriaWeight(priceWeightMatrix[0],
                 priceWeightMatrix[1],priceWeightMatrix[2]);
         System.out.println(ahPcriteriaWeight.highPrice+"---------->  ahPcriteriaWeight.highPrice");
         System.out.println(ahPcriteriaWeight.mediumPrice+"---------->  ahPcriteriaWeight.mediumPrice");

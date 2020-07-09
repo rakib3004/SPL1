@@ -73,8 +73,6 @@ public class Main extends Application {
 
         });
 
-
-
         Button exit = new Button("Exit");
 
         exit.setTranslateX(1100);

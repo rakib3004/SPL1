@@ -24,12 +24,8 @@ typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData
                 typeCriteriaAHPMatrix[iterator][jterator] = typeCounter[iterator]/typeCounter[jterator];
             }
         }
-
-
-
-        //new methodology for analytical hierarchy process
-
-
+        // new methodology for analytical hierarchy process to calculate sub criteria by issuing book by category
+        // add new methodology for analytical hierarchy process
         typeCriteriaAHPMatrix[0][1] = 4.1;
         typeCriteriaAHPMatrix[0][2] = 1.32;
         typeCriteriaAHPMatrix[0][3] = 1.56;
@@ -46,35 +42,22 @@ typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData
         typeCriteriaAHPMatrix[3][5] = 5.1;
         typeCriteriaAHPMatrix[4][5] = 2.36;
 
-
-
         for (iterator = 0; iterator < 6; iterator++) {
             for (jterator = iterator + 1; jterator < 6; jterator++) {
-
-
-
-                typeCriteriaAHPMatrix[jterator][iterator] = Math.pow(typeCriteriaAHPMatrix[iterator][jterator], -1);
+                                typeCriteriaAHPMatrix[jterator][iterator] = Math.pow(typeCriteriaAHPMatrix[iterator][jterator], -1);
             }
         }
         for (iterator = 0; iterator < 6; iterator++) {
-
-
             typeCriteriaAHPMatrix[iterator][iterator] = (1);
 
-
         }
-
-
-
         double[] summationMatrix = new double[6];
 
         for (iterator = 0; iterator < 6; iterator++) {
             for (jterator = 0; jterator < 6; jterator++) {
-
                 summationMatrix[iterator] = summationMatrix[iterator] + typeCriteriaAHPMatrix[iterator][jterator];
             }
         }
-
         for (iterator = 0; iterator < 6; iterator++) {
             for (jterator = 0; jterator < 6; jterator++) {
 
@@ -87,7 +70,6 @@ typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData
             for (jterator = 0; jterator < 6; jterator++) {
 
                 typeWeightMatrix[iterator] = typeWeightMatrix[iterator] + typeCriteriaAHPMatrix[jterator][iterator];
-
             }
             typeWeightMatrix[iterator] = typeWeightMatrix[iterator] / 6;
         }
@@ -95,14 +77,10 @@ typeCounter  = ahpSubCriteriaProcess.typeCriteriaCalculationMethods(priorityData
 
    typeWeightMatrix[iterator]  =    typeWeightMatrix[iterator]*criteria;
         }
-
-
-
          ahPcriteriaWeight = new AHPcriteriaWeight(typeWeightMatrix[0],
                 typeWeightMatrix[1],typeWeightMatrix[2],typeWeightMatrix[3],typeWeightMatrix[4],typeWeightMatrix[5]);
 
-
-
+        // show all calculated value of sub criteria
         System.out.println(ahPcriteriaWeight.uponnashType+"---------->  ahPcriteriaWeight.uponnashType");
         System.out.println(ahPcriteriaWeight.kobitaType+"---------->  ahPcriteriaWeight.kobitaType");
         System.out.println(ahPcriteriaWeight.scienceFictionType+"---------->  ahPcriteriaWeight.scienceFictionType");
