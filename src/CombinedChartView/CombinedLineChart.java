@@ -38,7 +38,6 @@ import java.io.IOException;
 public class CombinedLineChart extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
@@ -47,7 +46,6 @@ public class CombinedLineChart extends Application {
     PageRankCalculation pageRankCalculation = new PageRankCalculation();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -62,7 +60,6 @@ public class CombinedLineChart extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         back.setOnAction(actionEvent -> {
             SystemAnalysis systemAnalysis = new SystemAnalysis();
             try {
@@ -71,21 +68,14 @@ public class CombinedLineChart extends Application {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(160, 50);
         exit.setPrefSize(160, 50);
-
-
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -97,7 +87,6 @@ public class CombinedLineChart extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -106,15 +95,12 @@ public class CombinedLineChart extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-
         }
 
         lineChart.getData().add(series1);
         lineChart.setTranslateX(10);
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1250, 300);
-
-
 
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
@@ -123,27 +109,16 @@ public class CombinedLineChart extends Application {
 
         NumberAxis numberAxis1 = new NumberAxis();
         numberAxis1.setLabel("Numbers of Book");
-
-
         LineChart lineChart1 = new LineChart(categoryAxis1, numberAxis1);
 
         XYChart.Series series2 = new XYChart.Series();
-
-
         series2.setName("Analytic Hierarchy Process");
-
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
             positionIndicator++;
             series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
-
         }
 
-
-        lineChart1.getData().add(series2);
-
+       lineChart1.getData().add(series2);
         lineChart1.setTranslateX(10);
         lineChart1.setTranslateY(350);
         lineChart1.setPrefSize(650, 300);
@@ -154,26 +129,15 @@ public class CombinedLineChart extends Application {
 
         NumberAxis numberAxis2 = new NumberAxis();
         numberAxis2.setLabel("Numbers of Book");
-
-
         LineChart lineChart2 = new LineChart(categoryAxis2, numberAxis2);
 
         XYChart.Series series3 = new XYChart.Series();
-
-
         series3.setName("Page Rank Algorithm");
 
-
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
             positionIndicator++;
             series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
-
         }
-
-
         lineChart2.getData().add(series3);
 
         lineChart2.setTranslateX(700);
@@ -200,10 +164,8 @@ public class CombinedLineChart extends Application {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
             }
         });
-
         MenuItem stackedAreaChart3 = new MenuItem("StackedArea Chart");
         stackedAreaChart3.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -215,16 +177,11 @@ public class CombinedLineChart extends Application {
                 }
             }
         });
-
-
         MenuButton selectOtherChart = new MenuButton("Select OtherChart");
         selectOtherChart.getItems().addAll( scatterChart3, lineChart3, stackedAreaChart3);
-
-
         selectOtherChart.setTranslateX(650);
         selectOtherChart.setTranslateY(320);
         selectOtherChart.setPrefSize(150, 35);
-
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
@@ -235,7 +192,6 @@ public class CombinedLineChart extends Application {
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
