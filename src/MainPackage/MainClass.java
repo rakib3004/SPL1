@@ -30,7 +30,6 @@ public class MainClass extends JFrame {
         TypeCountRegression typeCountRegression = new TypeCountRegression();
         MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
         DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-
         int numberOfBooks;
         Processing processing = new Processing();
         BookNumber bookNumber = new BookNumber();
@@ -44,12 +43,9 @@ public class MainClass extends JFrame {
 
         System.out.println("What do you want???\n1.Multivariable Linear Regression \n" +
                 "2.Analytic Heirarcy Process\n3.Page Rank Algorithm");
-
-
         input1 = scanner.nextInt();
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-
         if(input1==1){
 
             System.out.println("What do you want???\n1.Two Variable Linear Regression \n" +
@@ -58,7 +54,6 @@ public class MainClass extends JFrame {
 
             if(input2==1){
                 typeCountRegression.typeCountRegressionMethods(priorityData,numberOfBooks);
-
             }
             else if(input2==2){
                 doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
@@ -67,14 +62,9 @@ public class MainClass extends JFrame {
             else if(input2==3){
                 priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
                 mlrResult.MLR_ResultMethods(priorityData,numberOfBooks);
-
             }
-
-
-
         }
         else if(input1==2){
-
             ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
              ahpResult.AHP_ResultMethods(priorityData,numberOfBooks);
@@ -87,22 +77,16 @@ public class MainClass extends JFrame {
         }
         else{
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
-
             try {
 
            priorityData=   pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
 praResult.PRA_ResultMethods(priorityData,numberOfBooks);
                 System.exit(0);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
         }
 
-
-
-
     }
-
 }

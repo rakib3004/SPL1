@@ -29,20 +29,17 @@ public class DataParsing {
 
     public static PriorityData priorityData[] = new PriorityData[1050];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-
     public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
                                    String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookId[iterator].length();
             string = bookId[iterator].substring(0, 2);
             typeValue[iterator] = Integer.parseInt(string);
         }
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             newYear = 4 + (20) * 12;
             string1 = bookId[iterator].substring(3, 5);
@@ -52,7 +49,6 @@ public class DataParsing {
             integer2 = Integer.parseInt(string2);
             oldYear = integer1 + (integer2 * 12);
             timeCount[iterator] = newYear - oldYear;
-
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = borrowCount1[iterator].length();
@@ -76,7 +72,6 @@ public class DataParsing {
             MLRweight[iterator] = 0.0;
             AHPweight[iterator] = 0.0;
             PRAweight[iterator] = 0.0;
-
             priorityData[iterator] = new PriorityData(bookPriority[iterator],
                     timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
                     index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator]);
@@ -87,20 +82,6 @@ public class DataParsing {
         x_value[1] = borrowPriority;
         x_value[2] = pricePriority;
 
-    //   for (i = 0; i < 3; i++) {
-/*weight =linearRegression.linearRegressionMethods(x_value[i],y_value,numberOfBooks);
-            System.out.println("Linear Regression _______ Optimization No : "+(i+1));
-sorting.sortingMethods(bookData,weight,numberOfBooks);
-        }*/
-
-        //AHPcalculation ahPcalculation = new AHPcalculation();
-
-        //ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
-         //  multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-
-            /* System.out.println("Doubly  Linear Regression _______  ");*/
-
-            //doublyLinearRegression.doublyLinearRegressionMethods(priorityData);
         return  priorityData;
         }
 
