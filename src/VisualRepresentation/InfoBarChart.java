@@ -990,9 +990,9 @@ public class InfoBarChart extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            BorrrowCountOfBookFX borrrowCountOfBookFX = new BorrrowCountOfBookFX();
+            BorrowCountOfBookFX borrowCountOfBookFX = new BorrowCountOfBookFX();
             try {
-                borrrowCountOfBookFX.start(primaryStage);
+                borrowCountOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

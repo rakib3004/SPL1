@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class BorrrowCountOfBookFX extends Application {
+public class BorrowCountOfBookFX extends Application {
 
 
     InfoBarChart infoBarChart = new InfoBarChart();

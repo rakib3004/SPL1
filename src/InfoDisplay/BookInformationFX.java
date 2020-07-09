@@ -50,7 +50,7 @@ public class BookInformationFX extends Application {
     GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
     ClassesOfBookFX classesOfBookFX = new ClassesOfBookFX();
 
-    BorrrowCountOfBookFX borrrowCountOfBookFX = new BorrrowCountOfBookFX();
+    BorrowCountOfBookFX borrowCountOfBookFX = new BorrowCountOfBookFX();
 
     @Override
     public void start(Stage primaryStage) {
@@ -156,7 +156,7 @@ classesOfBookFX.start(primaryStage);
 
  borrowCountOfBook.setOnAction(actionEvent -> {
             try {
-borrrowCountOfBookFX.start(primaryStage);
+borrowCountOfBookFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
