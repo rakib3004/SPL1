@@ -24,13 +24,11 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class CrossValidationFX extends Application {
-
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
@@ -55,9 +53,7 @@ public class CrossValidationFX extends Application {
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
@@ -65,7 +61,6 @@ public class CrossValidationFX extends Application {
 
         Button dataComparing = new Button("Data Comparing");
         Button dataPlotting = new Button("Data Plotting");
-
         dataComparing.setTranslateX(500);
         dataComparing.setTranslateY(250);
         dataPlotting.setTranslateX(500);

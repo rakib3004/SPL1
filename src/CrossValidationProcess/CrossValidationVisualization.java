@@ -38,7 +38,6 @@ public class CrossValidationVisualization extends Application {
     int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -56,26 +55,18 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             TrainingObserVation trainingObserVation = new TrainingObserVation();
-
-
             try {
                 trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
 
@@ -86,16 +77,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Button codeValidationScatter = new Button("CodeValidation Scatter");
         Button codeValidationStackedArea = new Button("CodeValidation StackedArea");
         Button codeValidationLineChart = new Button("CodeValidation LineChart");
-
-
         codeValidationScatter.setTranslateX(500);
         codeValidationScatter.setTranslateY(250);
         codeValidationStackedArea.setTranslateX(500);
         codeValidationLineChart.setTranslateX(500);
         codeValidationLineChart.setTranslateY(350);
         codeValidationStackedArea.setTranslateY(450);
-
-
 
         codeValidationScatter.setOnAction(actionEvent -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
@@ -105,7 +92,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-
         codeValidationStackedArea.setOnAction(actionEvent -> {
           CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
             try {
@@ -114,7 +100,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-
         codeValidationLineChart.setOnAction(actionEvent -> {
             CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
             try {
@@ -123,24 +108,18 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-
-
         setStyle(codeValidationScatter);
         setStyle(codeValidationStackedArea);
         setStyle(codeValidationLineChart);
-
-
         codeValidationScatter.setPrefSize(400, 80);
         codeValidationStackedArea.setPrefSize(400, 80);
         codeValidationLineChart.setPrefSize(400, 80);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, exit, back,
                 codeValidationScatter, codeValidationStackedArea, codeValidationLineChart);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -151,14 +130,11 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
@@ -166,7 +142,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -175,7 +150,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -185,19 +159,14 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         group.getChildren().addAll(readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
-
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
 
     public void startStackedArea(Stage primaryStage) throws IOException {
@@ -211,46 +180,32 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-
             try {
                 crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
 
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
         XYChart.Series series3 = new XYChart.Series();
@@ -260,10 +215,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         series2.setName("Training Set 2 ");
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
-
         int positionIndicator = 0;
 
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
@@ -272,7 +225,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        // series2.setName("Training Set 2 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
@@ -282,7 +235,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        //  series3.setName("Training Set 3 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
@@ -292,7 +245,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        //   series4.setName("Training Set 4 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
@@ -301,24 +254,18 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
-        positionIndicator = 0;
 
         stackedAreaChart.getData().add(series1);
         stackedAreaChart.getData().add(series2);
         stackedAreaChart.getData().add(series3);
         stackedAreaChart.getData().add(series4);
-
         stackedAreaChart.setTranslateX(10);
         stackedAreaChart.setTranslateY(25);
         stackedAreaChart.setPrefSize(1350, 700);
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterView = new MenuItem("Scatter View");
         MenuItem lineChartView = new MenuItem("LineChart View");
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
-
-
 
         scatterView.setOnAction((event) -> {
             try {
@@ -327,9 +274,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         lineChartView.setOnAction((event) -> {
             CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
@@ -345,33 +290,23 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
-
         contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
 
         stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
@@ -391,43 +326,31 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-
             try {
                 crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
-
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
 
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
 
@@ -443,7 +366,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         int positionIndicator = 0;
 
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
@@ -452,7 +374,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        // series2.setName("Training Set 2 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
@@ -462,7 +384,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        //  series3.setName("Training Set 3 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
@@ -472,7 +394,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         }
         positionIndicator = 0;
-        //   series4.setName("Training Set 4 ");
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
@@ -481,7 +403,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
-        positionIndicator = 0;
 
         lineChart.getData().add(series1);
         lineChart.getData().add(series2);
@@ -492,13 +413,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1350, 700);
 
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterView = new MenuItem("Scatter View");
         MenuItem lineChartView = new MenuItem("LineChart View");
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
-
-
 
         scatterView.setOnAction((event) -> {
             try {
@@ -507,9 +425,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         lineChartView.setOnAction((event) -> {
             CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
@@ -525,41 +441,28 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
-
         contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, exit, back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
-
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
