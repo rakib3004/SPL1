@@ -53,8 +53,6 @@ public class UserChoiceTableData extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
-
     @Override
     public void start(Stage primaryStage){
         String  className = this.getClass().getSimpleName();
@@ -74,7 +72,6 @@ public class UserChoiceTableData extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         back.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -82,8 +79,6 @@ public class UserChoiceTableData extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
         });
 
         exit.setOnAction(actionEvent -> {
@@ -92,13 +87,11 @@ public class UserChoiceTableData extends Application {
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
                 labelName="Jion's Choice List";
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")
                             ||priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")||priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
@@ -110,7 +103,6 @@ public class UserChoiceTableData extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-
 Button show = new Button("Show");
 show.setOnAction(actionEvent -> {
     showInfo(primaryStage,labelName,data);
@@ -120,8 +112,6 @@ show.setPrefSize(200,100);
 show.setTranslateX(500);
 show.setTranslateY(250);
 
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -130,18 +120,13 @@ show.setTranslateY(250);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
-
-
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -159,7 +144,6 @@ show.setTranslateY(250);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         back.setOnAction(actionEvent -> {
             list.clear();
             try {
@@ -167,24 +151,18 @@ show.setTranslateY(250);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
-
         table = new TableView();
-
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
@@ -193,13 +171,11 @@ show.setTranslateY(250);
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
 
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
-
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId);
         table.setPrefWidth(1240);
@@ -211,19 +187,8 @@ show.setTranslateY(250);
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new UserChoiceTableData.RowSelectChangeListener());
 
-
-
-        // Status message text
-      //  actionStatus = new Text();
-       // actionStatus.setFill(Color.FIREBRICK);
-
-
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
-        //actionStatus.setText(book.toString());
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
@@ -235,22 +200,16 @@ show.setTranslateY(250);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
-
         secondaryStage.setScene(scene1);
         secondaryStage.setTitle("Books Statistics");
         secondaryStage.setFullScreen(true);
         secondaryStage.show();
-
-
     }
-
-
 
     private class RowSelectChangeListener implements ChangeListener {
 
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-
         }
     }
 
@@ -266,7 +225,6 @@ show.setTranslateY(250);
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
@@ -274,9 +232,6 @@ show.setTranslateY(250);
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-
-
-
 
     public Button setStyle( Button button)
     {

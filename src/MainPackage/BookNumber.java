@@ -15,7 +15,6 @@ public class BookNumber {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         int numOfBook;
         int iterator;
         int charIndex = 0;
@@ -27,18 +26,13 @@ public class BookNumber {
             char[] arrayOfCharacter = new char[120500];
             fr.read(arrayOfCharacter);
 
-
-            // reads the content to the array
             String  bookName[] = new String[1050];
             String writerName[] = new String[1050];
             String bookId[] = new String[1050];
 
-
             String borrowCount[] = new String[1050];
 
             String bookPrice[] = new String[1050];
-
-
 
             bookName[wordIndex] = "\0";
             writerName[wordIndex] = "\0";
@@ -58,20 +52,15 @@ public class BookNumber {
 
                     charIndex = charIndex % 5;
 
-
-
-
                     wordIndex++;
                     bookName[wordIndex] = "\0";
                     writerName[wordIndex] = "\0";
                     bookId[wordIndex] = "\0";
-
                     borrowCount[wordIndex] = "\0";
                     bookPrice[wordIndex] = "\0";
 
                 }
                 if (charIndex == 0) {
-
                     bookName[wordIndex] = bookName[wordIndex] + arrayOfCharacter[iterator];
                 } else if (charIndex == 1) {
 
@@ -80,17 +69,14 @@ public class BookNumber {
                 } else if (charIndex == 2) {
                     bookId[wordIndex] = bookId[wordIndex] + arrayOfCharacter[iterator];
 
-
                 } else if (charIndex == 3) {
                     borrowCount[wordIndex] = borrowCount[wordIndex] + arrayOfCharacter[iterator];
-
                 }
                 else if(charIndex ==4){
                     bookPrice[wordIndex]=bookPrice[wordIndex]+arrayOfCharacter[iterator];
                 }
             }
             fr.close();
-
             numOfBook= wordIndex;
 
 return numOfBook;

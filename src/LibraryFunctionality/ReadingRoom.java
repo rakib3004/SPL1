@@ -39,13 +39,11 @@ public class ReadingRoom extends Application {
 
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
 
         Button automaticSystem = new Button("Automatic System");
         automaticSystem.setOnAction(actionEvent -> {
@@ -59,7 +57,6 @@ public class ReadingRoom extends Application {
         automaticSystem.setPrefSize(400,80);
         automaticSystem.setTranslateX(240);
         automaticSystem.setTranslateY(50);
-
         Button manualSystem = new Button("Manual System");
         manualSystem.setOnAction(actionEvent -> {
             try {
@@ -67,7 +64,6 @@ public class ReadingRoom extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         setStyle(manualSystem);
         manualSystem.setPrefSize(400,80);
@@ -78,31 +74,23 @@ public class ReadingRoom extends Application {
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
             FxSecondWindow fxSecondWindow = new FxSecondWindow();
-
             try {
                 fxSecondWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -113,12 +101,9 @@ public class ReadingRoom extends Application {
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -127,7 +112,6 @@ public class ReadingRoom extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         readersMood.setOnAction(actionEvent -> {
 
@@ -137,11 +121,8 @@ public class ReadingRoom extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
@@ -158,7 +139,6 @@ public class ReadingRoom extends Application {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
@@ -181,19 +161,13 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-
-
         Label label = new Label("");
-
         RadioButton logIn = new RadioButton("Log In");
         RadioButton signUp = new RadioButton("Sign Up");
         ToggleGroup toggleGroupMain = new ToggleGroup();
         logIn.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
-
-
 logIn.setOnAction(actionEvent -> {
-
     TextField getUserName = new TextField();
     TextField getUserID = new TextField();
 
@@ -203,12 +177,10 @@ logIn.setOnAction(actionEvent -> {
     userNameTextField.setMnemonicParsing(true);
     userIdTextField.setLabelFor(getUserID);
     userIdTextField.setMnemonicParsing(true);
-
     Label label1 = new Label("Insert Your Name & ID");
     Button enter = new Button("----Enter----");
 
             enter.setPrefSize(160, 40);
-
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
@@ -217,7 +189,6 @@ logIn.setOnAction(actionEvent -> {
     label.setTranslateX(100);
     label.setTranslateY(20);
     label.setPrefSize(250,65);
-
     Label label2 = new Label();
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
@@ -344,7 +315,6 @@ addFavouriteWriter = kaziAnwarHossain.getText();
 addFavouriteWriter = sharatChandraChattropadhay.getText();
            }
        });
-       
        MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
@@ -365,7 +335,6 @@ addFavouriteWriter = sunilGangoPaddahay.getText();
 addFavouriteWriter = samareshMajumdar.getText();
            }
        });
-
        MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
 
        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
@@ -401,83 +370,71 @@ addFavouriteWriter = others.getText();
            addFavouriteBookType[typeNumber]=kobita.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox rochonaboli =new CheckBox("Rochonaboli");
        rochonaboli.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=rochonaboli.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox religion =new CheckBox("Religion");
        religion.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=religion.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox biggan =new CheckBox("Biggan");
        biggan.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biggan.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox scienceFiction =new CheckBox("Science Fiction");
        scienceFiction.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=scienceFiction.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox shishuShahitto =new CheckBox("Shishu Shahitto");
        shishuShahitto.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=shishuShahitto.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox kisoreUponnash =new CheckBox("Kisore Uponnash");
        kisoreUponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kisoreUponnash.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox biography =new CheckBox("Biography");
        biography.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biography.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox gobesona =new CheckBox("Gobesona");
        gobesona.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=gobesona.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox onubad =new CheckBox("Onubad");
        onubad.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=onubad.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-           
        });
        CheckBox others1 =new CheckBox("Others");
        others1.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=others1.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
-
        });
 
        gridPane.addRow(6,uponnash,kobita,rochonaboli,religion);
        gridPane.addRow(7,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
        gridPane.addRow(8,biography,gobesona,onubad,others1);
-
        var ref = new Object() {
            int gridPaneCounter = 0;
        };
@@ -505,8 +462,7 @@ if(ref.gridPaneCounter==0){
     gridPane.addRow(5, departmentName, textFieldDepartment);
 ref.gridPaneCounter=1;
 
-    educationLevel = "Higher";
-}
+    educationLevel = "Higher";}
 else{
     infoStage.close();
 }
@@ -527,7 +483,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                stringStudyLevel = textFieldClassNo.getText();
                if(stringStudyLevel.equals("")){
                    stringStudyLevel = textFieldDepartment.getText();
-
                }
                String [] infoDataArray = new String[4];
 
@@ -559,7 +514,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                    addFavouriteBookType[iterator]=null;
                }
                typeNumber=0;
-
            }
            });
    });
@@ -582,7 +536,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
@@ -595,7 +548,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -606,8 +558,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-        
-        administrationMood.setPrefSize(160, 30);
+                administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
@@ -621,7 +572,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             }
         });
         readersMood.setOnAction(actionEvent -> {
-
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
@@ -631,7 +581,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         });
 
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
 
@@ -650,9 +599,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
-        
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(false);
@@ -662,14 +609,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
         Button writerWise = new Button("Writer Wise");
 
         writerWise.setTranslateX(230);
         writerWise.setTranslateY(50);
         writerWise.setOnAction(actionEvent -> {
-
             try {
 
                 WriterWiseFX writerWiseFX = new WriterWiseFX();
@@ -679,12 +623,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         writerWise.setPrefSize(400, 80);
         setStyle(writerWise);
-
-
         Button classWise = new Button("Class Wise");
 
         classWise.setTranslateX(640);
@@ -699,12 +640,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         classWise.setPrefSize(400, 80);
         setStyle(classWise);
-
-
         Button selfWise = new Button("Self Wise");
 
         selfWise.setTranslateX(230);
@@ -712,26 +650,21 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         selfWise.setOnAction(actionEvent -> {
 
             try {
-
                 RemoveBookFX.SelfWiseFX selfWiseFX = new RemoveBookFX.SelfWiseFX();
                 selfWiseFX.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         selfWise.setPrefSize(400, 80);
         setStyle(selfWise);
-
 
         Button timeWise = new Button("Time Wise");
 
         timeWise.setTranslateX(640);
         timeWise.setTranslateY(140);
         timeWise.setOnAction(actionEvent -> {
-
             try {
                 TimeWiseFX timeWiseFX = new TimeWiseFX();
                 timeWiseFX.start(primaryStage);
@@ -758,7 +691,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -774,7 +706,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
@@ -787,33 +718,24 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         readersMood.setOnAction(actionEvent -> {
-
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -822,13 +744,10 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                 writerWise,classWise,selfWise,
                 timeWise ,readersMood,
                 administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
