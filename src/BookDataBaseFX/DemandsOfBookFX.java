@@ -29,11 +29,7 @@ public class DemandsOfBookFX extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
-        //  Button Start = new Button("Start");
+       ///add 4 buttons
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button barChart = new Button("Bar Chart");

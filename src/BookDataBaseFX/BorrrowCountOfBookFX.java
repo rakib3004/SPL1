@@ -87,7 +87,8 @@ public class BorrrowCountOfBookFX extends Application {
         setStyle(barChart);
         setStyle(pieChart);
 
-        //  Start.setPrefSize(200, 80);
+//set all buttons size
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 

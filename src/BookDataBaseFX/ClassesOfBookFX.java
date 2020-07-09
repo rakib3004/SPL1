@@ -32,14 +32,13 @@ public class ClassesOfBookFX extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
+
+        //  add all button position
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -48,7 +47,7 @@ public class ClassesOfBookFX extends Application {
         barChart.setTranslateY(200);
         pieChart.setTranslateX(500);
         pieChart.setTranslateY(300);
-
+// add all 4  buttons in action event
         back.setOnAction(actionEvent -> {
             BookInformationFX bookInformationFX = new BookInformationFX();
             try {
@@ -83,10 +82,9 @@ public class ClassesOfBookFX extends Application {
         setStyle(back);
         setStyle(barChart);
         setStyle(pieChart);
-
+// add buttons size
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         barChart.setPrefSize(200, 80);
         pieChart.setPrefSize(200, 80);
 
