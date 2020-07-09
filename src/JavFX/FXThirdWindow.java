@@ -20,20 +20,15 @@ public class FXThirdWindow extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
 
         Button authorsMood = new Button("Authors Mood");
         Button librarianMood = new Button("Librarian Mood");
         Button systemAnalysis = new Button("System Analysis");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-
-
         librarianMood.setTranslateX(200);
         librarianMood.setTranslateY(50);
         authorsMood.setTranslateX(530);
@@ -45,8 +40,6 @@ public class FXThirdWindow extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         authorsMood.setOnAction(actionEvent -> {
 
             AuthorSystem authorSystem = new AuthorSystem();
@@ -55,9 +48,7 @@ public class FXThirdWindow extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         librarianMood.setOnAction(actionEvent -> {
 
             LibraryDesk libraryDesk = new LibraryDesk();
@@ -66,49 +57,39 @@ public class FXThirdWindow extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         systemAnalysis.setOnAction(actionEvent -> {
-
             SystemAnalysis systemAnalysis1 = new SystemAnalysis();
             try {
                 systemAnalysis1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
-
         back.setOnAction(actionEvent -> {
-
             FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
                 fxSecondWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(authorsMood);
         setStyle(librarianMood);
         setStyle(exit);
         setStyle(back);
         setStyle(systemAnalysis);
-
         authorsMood.setPrefSize(320, 80);
         librarianMood.setPrefSize(320, 80);
         systemAnalysis.setPrefSize(320,80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
@@ -120,14 +101,9 @@ public class FXThirdWindow extends Application {
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
-
-
 
         administrationMood.setOnAction(actionEvent -> {
 
@@ -137,9 +113,7 @@ public class FXThirdWindow extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         readersMood.setOnAction(actionEvent -> {
 
             ReadingRoom readingRoom = new ReadingRoom();
@@ -148,42 +122,30 @@ public class FXThirdWindow extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,authorsMood,exit,
                 back,librarianMood,systemAnalysis,readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
 
     }
     public Button setStyle( Button button)
