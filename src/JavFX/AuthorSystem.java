@@ -17,12 +17,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
-
 public class AuthorSystem extends Application {
-
-
-
-    @Override
+        @Override
     public void start(Stage primaryStage) {
 
         String  className = this.getClass().getSimpleName();
@@ -51,14 +47,10 @@ public class AuthorSystem extends Application {
                 exception.printStackTrace();
             }
         });
-
-
         setStyle(processImplementation);
         setStyle(processValidation);
-
         processImplementation.setPrefSize(420, 80);
         processValidation.setPrefSize(420, 80);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -72,18 +64,14 @@ public class AuthorSystem extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -95,13 +83,11 @@ public class AuthorSystem extends Application {
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
@@ -109,7 +95,6 @@ public class AuthorSystem extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -127,14 +112,12 @@ public class AuthorSystem extends Application {
                 exception.printStackTrace();
             }
         });
-
         Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
                 processValidation,exit,back
                 ,readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
