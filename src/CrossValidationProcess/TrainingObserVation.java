@@ -22,10 +22,8 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class TrainingObserVation extends Application {
-
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -34,7 +32,6 @@ public class TrainingObserVation extends Application {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage){
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -45,9 +42,6 @@ public class TrainingObserVation extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
             CrossValidationFX crossValidationFX = new CrossValidationFX();
 
@@ -56,32 +50,20 @@ public class TrainingObserVation extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
-
-        setStyle(exit);
+                setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Button trainingMethodology = new Button("Training Methodology");
         Button cvVisualization = new Button("CV Visualization");
-
-
         trainingMethodology.setTranslateX(500);
         trainingMethodology.setTranslateY(250);
         cvVisualization.setTranslateX(500);
         cvVisualization.setTranslateY(350);
-
 
         trainingMethodology.setOnAction(actionEvent -> {
             TrainingMethodology trainingMethodology1 = new TrainingMethodology();
@@ -91,7 +73,6 @@ public class TrainingObserVation extends Application {
                 exception.printStackTrace();
             }
         });
-
         cvVisualization.setOnAction(actionEvent -> {
             CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
@@ -100,16 +81,10 @@ public class TrainingObserVation extends Application {
                 exception.printStackTrace();
             }
         });
-
-
         setStyle(trainingMethodology);
         setStyle(cvVisualization);
-
-
         trainingMethodology.setPrefSize(350,80);
         cvVisualization.setPrefSize(350,80);
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -125,12 +100,9 @@ public class TrainingObserVation extends Application {
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -140,7 +112,6 @@ public class TrainingObserVation extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -149,7 +120,6 @@ public class TrainingObserVation extends Application {
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -159,21 +129,14 @@ public class TrainingObserVation extends Application {
             }
         });
         group.getChildren().addAll(readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +

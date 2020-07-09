@@ -29,31 +29,24 @@ import java.io.IOException;
 public class TrainingSet1 extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
 
         back.setOnAction(actionEvent -> {
            TrainingMethodology trainingMethodology = new TrainingMethodology();
@@ -63,35 +56,23 @@ public class TrainingSet1 extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-priorityData = processing.fileReaderMethods();
+        priorityData = processing.fileReaderMethods();
 numberOfBooks = bookNumber.bookNumberFindingMethods();
 priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
-
         ScatterChart ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -99,18 +80,13 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         for (iterator=0;iterator<numberOfBooks;iterator++){
             if (priorityData[iterator].bookData.bookId.substring(13,14).contains("1")||
                     priorityData[iterator].bookData.bookId.substring(13,14).contains("6")) {
-
                 series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,priorityData[iterator].getMLRweight()));
             }
         }
-
-
         ScatterChart .getData().add(series1);
-
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem trainingSet1 = new MenuItem("Training Set 1");
@@ -119,7 +95,6 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
         MenuItem trainingSet4 = new MenuItem("Training Set 4");
         MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
 
-
         trainingSet1.setOnAction((event) -> {
             try {
                 TrainingSet1 trainingSet11 = new TrainingSet1();
@@ -127,9 +102,7 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         trainingSet2.setOnAction((event) -> {
             TrainingSet2 trainingSet21 = new TrainingSet2();
             try {
@@ -145,7 +118,6 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         trainingSet4.setOnAction((event) -> {
             try {
@@ -154,7 +126,6 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         fullTrainingSet.setOnAction((event) -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
@@ -164,44 +135,27 @@ priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priority
                 exception.printStackTrace();
             }
         });
-
-
         contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4,fullTrainingSet);
-
-
-
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
+                ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
 
                 contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
-
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,ScatterChart,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-       // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
