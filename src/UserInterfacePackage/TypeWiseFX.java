@@ -36,14 +36,12 @@ import java.util.*;
 
 public class TypeWiseFX extends Application {
 
-
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
     GenericAlgo[] genericAlgo;
 PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
-
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int iterator;
@@ -74,7 +72,6 @@ int iterator;
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         back.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -82,33 +79,21 @@ int iterator;
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
              public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+uponnash.getText();
-
-
-              
-
              for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) 
                     {
                         //   uponnashTypeNO++;
@@ -116,26 +101,16 @@ int iterator;
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                   data = FXCollections.observableList(list);
-
                     }
                 }
-             
-            
-              //  System.out.println(map);
-                showInfo(primaryStage,labelName,data);
-
+             showInfo(primaryStage,labelName,data);
             } });
 
-
         MenuItem kobita = new MenuItem("Kobita");
-
         kobita.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+kobita.getText();
-
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")) {
@@ -144,38 +119,30 @@ int iterator;
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                          data = FXCollections.observableList(list);
-
                     }
                  }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
         MenuItem rochonaboli = new MenuItem("Rochonaboli");
         rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+rochonaboli.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
+                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("05")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                          data = FXCollections.observableList(list);
-
                     }
                  }
-
                 showInfo(primaryStage,labelName,data);
           }
         });
         MenuItem religion = new MenuItem("Religion");
         religion.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+religion.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -186,23 +153,17 @@ int iterator;
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
                 showInfo(primaryStage,labelName,data);
           }
         });
 
-
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+biggan.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("13")) {
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -210,21 +171,16 @@ int iterator;
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                  }
 
-
                 showInfo(primaryStage,labelName,data);
           } });
-
         MenuItem sciFi = new MenuItem("Sci Fi");
         sciFi.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+sciFi.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")) {
                         //   uponnashTypeNO++;
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -234,15 +190,12 @@ int iterator;
                         data = FXCollections.observableList(list);
                     }
                  }
-
                 showInfo(primaryStage,labelName,data);
           }
         });
-
         MenuItem shishuShahitto = new MenuItem("Shishu Shahitto");
         shishuShahitto.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+shishuShahitto.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
@@ -257,156 +210,110 @@ int iterator;
                 showInfo(primaryStage,labelName,data);
           }
         });
-
-        MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
+       MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
         kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+kisoreUponnash.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("10")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
-                showInfo(primaryStage,labelName,data);
+                 showInfo(primaryStage,labelName,data);
           } });
+
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+biography.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
                 showInfo(primaryStage,labelName,data);
           }
         });
-
         MenuItem gobesona = new MenuItem("Gobesona");
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+gobesona.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
-                showInfo(primaryStage,labelName,data);
+                 showInfo(primaryStage,labelName,data);
           }
         });
-        MenuItem onubad = new MenuItem("Onubad");
 
+        MenuItem onubad = new MenuItem("Onubad");
         onubad.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+onubad.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("12")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
-                showInfo(primaryStage,labelName,data);
+                 showInfo(primaryStage,labelName,data);
           }
         });
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                     labelName="Top Books of  "+others.getText();
                  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("07")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("22")) {
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
-
                         data = FXCollections.observableList(list);
-
                     }
                  }
-
-
                 showInfo(primaryStage,labelName,data);
           }
         });
-
         MenuButton bookType = new MenuButton("Choose Your Type");
         bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
                 biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
                 gobesona, onubad,others);
-
-
 bookType.setTranslateX(500);
 bookType.setTranslateY(350);
 bookType.setPrefSize(200, 50);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,bookType);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
 
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
         String  className = this.getClass().getSimpleName();
@@ -425,7 +332,6 @@ bookType.setPrefSize(200, 50);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         back.setOnAction(actionEvent -> {
             list.clear();
             try {
@@ -433,24 +339,17 @@ bookType.setPrefSize(200, 50);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
-
         table = new TableView();
-
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
@@ -458,14 +357,10 @@ bookType.setPrefSize(200, 50);
 
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
-
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
-
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
-
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId);
         table.setPrefWidth(1240);
@@ -473,53 +368,35 @@ bookType.setPrefSize(200, 50);
         table.setTranslateX(60);
         table.setTranslateY(70);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new TypeWiseFX.RowSelectChangeListener());
-        
-        
-        
+
                 // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
-
-
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         secondaryStage.setScene(scene1);
         secondaryStage.setTitle("Books Statistics");
         secondaryStage.setFullScreen(true);
         secondaryStage.show();
-
-
     }
-
-
-
     private class RowSelectChangeListener implements ChangeListener {
-
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
 
         }
     }
-
     private ObservableList getInitialTableData() throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -540,10 +417,6 @@ bookType.setPrefSize(200, 50);
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-
-
-
-
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
