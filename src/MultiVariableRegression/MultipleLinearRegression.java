@@ -6,7 +6,6 @@ import ObjectOriented.PriorityData;
 public class MultipleLinearRegression {
 
 /*
-
 d1 = a1X + b1Y + c1Z
 d2 = a2X + b2Y + c2Z
 d3 = a3X + b3Y + c3Z
@@ -16,14 +15,12 @@ double b1,b2,b3;
 double c1,c2,c3;
 double d1,d2,d3;
 int iterator;
-
     double [] a_array = new double[3];
 double [] b_array = new double[3];
 double [] c_array = new double[3];
 double [] d_array = new double[3];
 double y_mean;
 Matrix matrix = new Matrix();
-
 
  public PriorityData[] multipleLinearRegressionMethods(PriorityData[] priorityData, int numberOfBooks ){
      String  className = this.getClass().getSimpleName();
@@ -43,7 +40,6 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
 for(iterator =0; iterator <numberOfBooks; iterator++){
  d3 = d3 + (priorityData[iterator].bookPriority*priorityData[iterator].pricePriority);
 }
-
   for(iterator =0; iterator <numberOfBooks; iterator++){
    a1 = a1 + (priorityData[iterator].borrowPriority*priorityData[iterator].borrowPriority);
   }for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -59,7 +55,6 @@ for(iterator =0; iterator <numberOfBooks; iterator++){
   }for(iterator =0; iterator <numberOfBooks; iterator++){
    c2 = c2 + (priorityData[iterator].pricePriority*priorityData[iterator].timePriority);
   }
-
 for(iterator =0; iterator <numberOfBooks; iterator++){
    a3 = a3 + (priorityData[iterator].borrowPriority*priorityData[iterator].pricePriority);
   }for(iterator =0; iterator <numberOfBooks; iterator++){

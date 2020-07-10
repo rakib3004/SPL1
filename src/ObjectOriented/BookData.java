@@ -2,16 +2,12 @@ package ObjectOriented;
 
 public class BookData {
     public  String SerialNo;
-
-
-
-    public   String  bookName;
+        public   String  bookName;
     public  String writerName;
     public  String bookId;
     public String borrowCount;
     public   String bookPrice;
     public String typeName;
-
     public BookData(String bookName, String writerName, String bookId, String borrowCount, String bookPrice, String typeName) {
         this.bookName = bookName;
         this.writerName = writerName;
@@ -38,7 +34,6 @@ public class BookData {
         this.writerName =writerName;
          this.bookId = bookId;
          this.bookPrice = bookPrice;
-
      }
 
     public BookData(String  bookName,String  writerName,String  bookId,
@@ -46,14 +41,10 @@ public class BookData {
         this.bookName = bookName;
         this.writerName =writerName;
         this.bookId = bookId;
-      //  this.bookType = bookType;
-      //  this.priority = priority;
         this.borrowCount = borrowCount;
-      //  this.monthCount = monthCount;
         this.bookPrice = bookPrice;
         this.weight = weight;
     }
-
     public BookData(String  bookName,String  writerName,String  bookId,
                     String  borrowCount , String  bookPrice) {
         this.bookName = bookName;
@@ -68,10 +59,7 @@ public class BookData {
         this.bookName = bookName;
         this.writerName =writerName;
         this.bookId = bookId;
-      //  this.bookType = bookType;
-      //  this.priority = priority;
         this.borrowCount = borrowCount;
-      //  this.monthCount = monthCount;
         this.bookPrice = bookPrice;
         this.weight = weight;
         this.rank= rank;
@@ -108,10 +96,8 @@ public class BookData {
     public String getTypeName() {
         return typeName;
     }
-
     public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-
 
 }

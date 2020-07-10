@@ -27,7 +27,6 @@ public class AHPcriteriaWeight {
 
 
     public AHPcriteriaWeight() {
-
     }
 
     public AHPcriteriaWeight(double uponnashType, double kobitaType,
@@ -40,14 +39,11 @@ public class AHPcriteriaWeight {
         this.religionType = religionType;
         this.othersType = othersType;
     }
-
-
     public AHPcriteriaWeight(double lowPrice, double mediumPrice, double highPrice) {
         this.lowPrice = lowPrice;
         this.mediumPrice = mediumPrice;
         this.highPrice = highPrice;
     }
-
     public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook, double oldestBook) {
         this.latestBook = latestBook;
         this.newlyBook = newlyBook;
@@ -55,17 +51,12 @@ public class AHPcriteriaWeight {
         this.oldBook = oldBook;
         this.oldestBook = oldestBook;
     }
-
     public AHPcriteriaWeight(double lowlyDemand, double lowMediumDemand, double highMediumDemand, double highlyDemand) {
         this.lowlyDemand = lowlyDemand;
         this.lowMediumDemand = lowMediumDemand;
         this.highMediumDemand = highMediumDemand;
         this.highlyDemand = highlyDemand;
     }
-
-
-
-
     public AHPcriteriaWeight(double highPrice, double mediumPrice, double lowPrice, double highlyDemand,
                              double highMediumDemand, double lowMediumDemand , double lowlyDemand,
                              double latestBook, double newlyBook, double recentlyOldBook, double oldBook,
@@ -234,6 +225,5 @@ public class AHPcriteriaWeight {
     public void setOthersType(double othersType) {
         this.othersType = othersType;
     }
-
 
 }
