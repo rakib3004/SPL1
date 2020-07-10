@@ -49,8 +49,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
@@ -58,68 +56,43 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(160, 50);
         exit.setPrefSize(160, 50);
-
-
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
 
-
         series1.setName("Book Weight Show");
-
-
         int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-
         }
 
-
         lineChart.getData().add(series1);
-
         lineChart.setTranslateX(10);
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1350, 700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
-
-
 
         mlr_process.setOnAction((event) -> {
             try {
@@ -128,9 +101,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         ahp_process.setOnAction((event) -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
@@ -146,14 +117,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
-
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
@@ -161,48 +127,34 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
 
-
-
         Button scatterChartView = new Button("ScatterChart View");
         Button stackedAreaChartView = new Button("StackedAreaChart View");
         scatterChartView.setTranslateX(30);
         scatterChartView.setTranslateY(0);
         stackedAreaChartView.setTranslateX(1170);
         stackedAreaChartView.setTranslateY(0);
-
-
         scatterChartView.setOnAction(actionEvent -> {
             try {
                 startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         stackedAreaChartView.setOnAction(actionEvent -> {
             try {
                 startStackedAreaChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
         scatterChartView.setPrefSize(160, 40);
         stackedAreaChartView.setPrefSize(160, 40);
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, stackedAreaChartView, scatterChartView,exit,back);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
@@ -212,15 +164,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
@@ -228,66 +177,44 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         ScatterChart scatterChart = new ScatterChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
-
-
         series1.setName("Book Weight Show");
 
-
-        int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
+       int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-
         }
 
-
         scatterChart.getData().add(series1);
-
         scatterChart.setTranslateX(10);
         scatterChart.setTranslateY(25);
         scatterChart.setPrefSize(1350, 700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
-
-
 
         mlr_process.setOnAction((event) -> {
             try {
@@ -296,7 +223,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         ahp_process.setOnAction((event) -> {
@@ -314,28 +240,20 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
 
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
         scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
             }
-        });
-
-        Button lineChartView = new Button("LineChart View");
+        });        Button lineChartView = new Button("LineChart View");
         Button stackedAreaChartView = new Button("StackedAreaChart View");
         lineChartView.setTranslateX(30);
         lineChartView.setTranslateY(0);
         stackedAreaChartView.setTranslateX(1170);
         stackedAreaChartView.setTranslateY(0);
-
 
         lineChartView.setOnAction(actionEvent -> {
             try {
@@ -343,32 +261,22 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         stackedAreaChartView.setOnAction(actionEvent -> {
             try {
                 startStackedAreaChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
-
-
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, scatterChart,
                 exit, back,lineChartView,stackedAreaChartView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group, 1500, 950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
@@ -380,14 +288,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
 
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
@@ -396,66 +302,43 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
 
-
         series1.setName("Book Weight Show");
-
-
         int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-
         }
 
-
         stackedAreaChart.getData().add(series1);
-
         stackedAreaChart.setTranslateX(10);
         stackedAreaChart.setTranslateY(25);
         stackedAreaChart.setPrefSize(1350, 700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
-
-
 
         mlr_process.setOnAction((event) -> {
             try {
@@ -464,7 +347,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         ahp_process.setOnAction((event) -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
@@ -481,17 +363,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
-
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
         stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
@@ -502,14 +379,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChartView.setTranslateX(1170);
         lineChartView.setTranslateY(0);
 
-
         scatterChartView.setOnAction(actionEvent -> {
             try {
                 startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         lineChartView.setOnAction(actionEvent -> {
@@ -518,7 +393,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         //  Image image = new Image("libraryBackground9.jpg");
@@ -526,14 +400,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Group group = new Group();
         group.getChildren().addAll(canvas, stackedAreaChart, exit, back
         ,scatterChartView,lineChartView);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
