@@ -26,7 +26,6 @@ public class ReverseSorting {
             }
         }
         return priorityData;
-
     }
     public PriorityData[] reverseSortingAHPmethods(PriorityData[] priorityData, int numberOfBooks){
         PriorityData temporaryPriority;
@@ -41,7 +40,6 @@ public class ReverseSorting {
         }
         return priorityData;
     }
-
     public PriorityData[] reverseSortingPRAmethods(PriorityData[] priorityData, int numberOfBooks){
         PriorityData temporaryPriority;
         for(iterator = 0; iterator <numberOfBooks; iterator++){
@@ -76,7 +74,6 @@ public class ReverseSorting {
         }
         return genericAlgo;
     }
-
     public GenericAlgo[] sortingAHPmethods(PriorityData[] priorityData, int numberOfBooks){
         GenericAlgo genericAlgo[] = new GenericAlgo[632];
         for(iterator = 0; iterator <numberOfBooks; iterator++){
