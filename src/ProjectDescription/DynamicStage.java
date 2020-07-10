@@ -21,9 +21,6 @@ import java.io.File;
 
 public class DynamicStage extends Application {
     Timeline time = new Timeline();
-    int numberOfBooks;
-    int typeCounter=6,writerCounter=350, yearCounter =12;
-    int typePalse,writerPalse,yearPalse;
     int timeSec = 1;
     int bookCounter=0;
     @Override
@@ -31,7 +28,6 @@ public class DynamicStage extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -39,22 +35,13 @@ public class DynamicStage extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         Text bookNameText = new Text();
-
-      //  bookNameText.setText("Book Name : ");
-
 
         setStyle(bookNameText);
 
         bookNameText.setFill(Color.GREENYELLOW);
-
         bookNameText.setTranslateX(200);
-
         bookNameText.setTranslateY(200);
-
-        
-
         back.setOnAction(actionEvent -> {
             About about = new About();
 
@@ -65,11 +52,9 @@ public class DynamicStage extends Application {
             }
 
         });
-
         exit.setOnAction(actionEvent -> {
            System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
 
@@ -77,16 +62,11 @@ public class DynamicStage extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         PathTransition pt = new PathTransition();
         pt.setDuration(Duration.seconds(6));
-        // pt.setNode(ball);
-//        pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
         pt.setCycleCount(1);
         pt.setAutoReverse(false);
         pt.play();
-
-
 
         time = new Timeline();
         time.setCycleCount(6);
@@ -95,21 +75,6 @@ public class DynamicStage extends Application {
                 new KeyFrame(Duration.seconds(2),
                         event -> {
                             timeSec++;
-                          /*  bookCounter = (numberOfBooks/6)*timeSec;
-                            writerPalse =  (writerCounter/6)*timeSec;
-                            typePalse = (typeCounter/6)*timeSec;
-                            yearPalse =  (yearCounter/6)*timeSec;*/
-                            /*BookNumbers.setText(bookCounter+" Books" );
-                            WriterNumbers.setText(writerPalse+" Writers" );
-                            TypeNumbers.setText(typePalse+" types" );
-                            YearsNumbers.setText(yearPalse+" Years" );*/
-
-//                            if (timeSec == 6) {
-//
-//                                time.stop();
-//                            }
-
-
                             if(timeSec%4==1){
 
 
@@ -121,17 +86,13 @@ public class DynamicStage extends Application {
                                 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
                                 graphicsContext.drawImage(image,0,0);
 
-
                                 Scene scene1 = new Scene(group,1500,950);
-
-
                                 primaryStage.setScene(scene1);
                                 primaryStage.setTitle("Books Statistics");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
                             }
                             else  if(timeSec%4==2){
-
 
                                 Image image = new Image("Images"+ File.separator +"Slide3.jpg");
                                 Canvas canvas = new Canvas(1500,950);
@@ -140,19 +101,13 @@ public class DynamicStage extends Application {
 
                                 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
                                 graphicsContext.drawImage(image,0,0);
-
-
                                 Scene scene1 = new Scene(group,1500,950);
-
-
                                 primaryStage.setScene(scene1);
                                 primaryStage.setTitle("Books Statistics");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
 
                             }  else  if(timeSec%4==3){
-
-
                                 Image image = new Image("Images"+ File.separator +"Slide4.jpg");
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
@@ -161,7 +116,6 @@ public class DynamicStage extends Application {
                                 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
                                 graphicsContext.drawImage(image,0,0);
 
-
                                 Scene scene1 = new Scene(group,1500,950);
 
 
@@ -169,7 +123,6 @@ public class DynamicStage extends Application {
                                 primaryStage.setTitle("Books Statistics");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
-
                             }   else  if(timeSec%4==0){
 
 
@@ -177,28 +130,18 @@ public class DynamicStage extends Application {
                                 Canvas canvas = new Canvas(1500,950);
                                 Group group = new Group();
                                 group.getChildren().addAll(canvas,exit,back,bookNameText);
-
                                 GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
                                 graphicsContext.drawImage(image,0,0);
-
-
                                 Scene scene1 = new Scene(group,1500,950);
-
 
                                 primaryStage.setScene(scene1);
                                 primaryStage.setTitle("Books Statistics");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
-
                             }
                         })
         );
-
         time.play();
-
-
-
-
     }
     public Text setStyle(Text text)
     {

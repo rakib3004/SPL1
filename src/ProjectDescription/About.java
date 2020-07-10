@@ -15,9 +15,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class About extends Application {
-
-
-    @Override
+        @Override
     public void start(Stage primaryStage) {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -29,9 +27,6 @@ public class About extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
             FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
@@ -39,34 +34,23 @@ public class About extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
         Button staticShowing = new Button("Static Showing");
         Button dynamicShowing = new Button("Dynamic Showing");
-
-
-
         staticShowing.setTranslateX(500);
         staticShowing.setTranslateY(250);
         dynamicShowing.setTranslateX(500);
         dynamicShowing.setTranslateY(350);
-
-
         staticShowing.setOnAction(actionEvent -> {
 
             // new process which we processed today......................................................................
@@ -76,11 +60,7 @@ public class About extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
-
         });
-
         dynamicShowing.setOnAction(actionEvent -> {
             DynamicStage dynamicStage = new DynamicStage();
             try {
@@ -88,17 +68,11 @@ public class About extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
         setStyle(staticShowing);
         setStyle(dynamicShowing);
-
         staticShowing.setPrefSize(350, 80);
         dynamicShowing.setPrefSize(350, 80);
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -107,19 +81,12 @@ public class About extends Application {
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
