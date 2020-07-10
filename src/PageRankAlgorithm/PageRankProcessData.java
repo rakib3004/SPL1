@@ -6,8 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-
 public class PageRankProcessData {
     String [] stringArray = new String[632];
     public PriorityData[]  PageRankProcessDataMethods(PriorityData[] priorityData, int numberOfBooks) throws IOException {
@@ -16,13 +14,10 @@ int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
 stringArray[iterator]="";
         }
-
-
         pageRankArray = pageRankDataFromText(pageRankArray);
 for(iterator=0;iterator<numberOfBooks;iterator++){
     priorityData[iterator].setPRAweight(pageRankArray[iterator]);
 }
-
         return  priorityData;
     }
     public double [] pageRankDataFromText(double[] pageRankArray) throws IOException {
@@ -33,7 +28,6 @@ for(iterator=0;iterator<numberOfBooks;iterator++){
         FileReader fileReader = new FileReader(file);
         char[] arrayOfCharacter = new char[900000];
         fileReader.read(arrayOfCharacter);
-
         int iCount;
         int charIndex=0;
         int wordIndex=0;
@@ -48,7 +42,6 @@ int iterator1=0;
             else{
                 stringArray[iterator1] = stringArray[iterator1]+arrayOfCharacter[iCount];
             }
-
         }
         fileReader.close();
         return pageRankArray;
@@ -59,6 +52,5 @@ int iterator1=0;
             System.out.println(priorityData[iterator].getPRAweight());
         }
     }
-
     }
 
