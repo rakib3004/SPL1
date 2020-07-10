@@ -66,6 +66,7 @@ public class PRA_Chart_View extends Application {
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
+     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
         priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
         CategoryAxis categoryAxis = new CategoryAxis();
@@ -170,6 +171,7 @@ public class PRA_Chart_View extends Application {
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
+     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
       priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
 
@@ -298,6 +300,7 @@ public class PRA_Chart_View extends Application {
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
+     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
       PageRankProcessData pageRankProcessData = new PageRankProcessData();
       priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
 

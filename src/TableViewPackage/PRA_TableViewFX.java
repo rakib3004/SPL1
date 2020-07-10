@@ -35,7 +35,6 @@ import java.util.List;
 
 public class PRA_TableViewFX extends Application {
 
-
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
@@ -53,7 +52,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         primaryStage.setTitle("Table View Example 1");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -64,30 +62,20 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
 
-
-
-
-
-        // Books label
         Label label = new Label("Page Rank Algorithm Results");
         label.setTextFill(Color.DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
@@ -96,43 +84,32 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         hb.getChildren().add(label);
 
         // Table view, data, columns and properties
-
         table = new TableView();
         data = getInitialTableData();
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
         bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
-
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
-
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
-
         TableColumn borrowCount = new TableColumn("Borrow Count");
         borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
-
-
         TableColumn price = new TableColumn("Price");
         price.setCellValueFactory(new PropertyValueFactory("price"));
-
         TableColumn bookWeight = new TableColumn("Book Weight");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
-
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
-
         table.setPrefWidth(1440);
         table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new PRA_TableViewFX.RowSelectChangeListener());
-
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
@@ -141,7 +118,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         MenuItem mlr_table_view = new MenuItem("MLR Table View");
         MenuItem ahp_table_view = new MenuItem("AHP Table View");
         MenuItem pra_table_view = new MenuItem("PRA Table View");
-
         ahp_table_view.setOnAction((event) -> {
             AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
             try {
@@ -157,7 +133,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         mlr_table_view.setOnAction((event) -> {
             MLR_TableViewFX mlrTableViewFX = new MLR_TableViewFX();
@@ -166,22 +141,17 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
-
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(table, event.getScreenX(), event.getScreenY());
             }
         });
 
-        // Hbox
-        HBox hBox = new HBox();
+       HBox hBox = new HBox();
         hBox.getChildren().add(table);
         VBox vBox = new VBox();
         vBox.getChildren().addAll(hb,hBox);
@@ -192,19 +162,13 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
         // Select the first row
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
-
     } // start()
-
     private class RowSelectChangeListener implements ChangeListener {
-
-
-
-        @Override
+                @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
             String  className = this.getClass().getSimpleName();
             DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -216,7 +180,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
         List list = new ArrayList();
 
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
      //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
@@ -225,7 +188,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         genericAlgo =soring.sortingPRAmethods(priorityData,numberOfBooks);
         int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
@@ -233,10 +195,8 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
                     Double.toString(priorityData[genericAlgo[iterator].getIndex()].getPRAweight())));
         }
         ObservableList data = FXCollections.observableList(list);
-
         return data;
     }
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +

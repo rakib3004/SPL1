@@ -39,7 +39,6 @@ int positionLocator=85;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
@@ -73,13 +72,11 @@ int positionLocator=85;
         Text typeNameText = new Text();
         Text bookPriceText = new Text();
         Text bookInformationText = new Text();
-
         bookNameText.setText("Book Name : ");
         writerNameText.setText("Writer Name : ");
         typeNameText.setText("Type Name : ");
         bookPriceText.setText("Book price : ");
         bookInformationText.setText("Book Info : ");
-
         setStyle(bookNameText);
         setStyle(writerNameText);
         setStyle(typeNameText);
@@ -91,7 +88,6 @@ int positionLocator=85;
         typeNameText.setFill(Color.GREENYELLOW);
         bookPriceText.setFill(Color.GREENYELLOW);
         bookInformationText.setFill(Color.GREENYELLOW);
-
         bookNameText.setTranslateX(200);
         writerNameText.setTranslateX(200);
         typeNameText.setTranslateX(200);
@@ -103,7 +99,6 @@ int positionLocator=85;
         typeNameText.setTranslateY(400-positionLocator);
         bookPriceText.setTranslateY(500-positionLocator);
         bookInformationText.setTranslateY(700-positionLocator);
-
         TextField bookNameTextField = new TextField("Nil Oporajita");
         TextField writerNameTextField = new TextField();
         TextField typeNameTextField = new TextField();
@@ -115,7 +110,6 @@ int positionLocator=85;
         setStyle(typeNameTextField);
         setStyle(bookPriceTextField);
         setStyle(bookInformationTextField);
-
         bookNameTextField.setTranslateX(450);
         writerNameTextField.setTranslateX(450);
         typeNameTextField.setTranslateX(450);
@@ -127,7 +121,6 @@ int positionLocator=85;
         typeNameTextField.setTranslateY(355-positionLocator);
         bookPriceTextField.setTranslateY(455-positionLocator);
         bookInformationTextField.setTranslateY(655-positionLocator);
-
         bookNameTextField.setPrefSize(400,60);
         writerNameTextField.setPrefSize(400,60);
         typeNameTextField.setPrefSize(400,60);
@@ -138,44 +131,34 @@ int positionLocator=85;
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
          typeNameTextField.setText(uponnash.getText());
-
             } });
-
         MenuItem kobita = new MenuItem("Kobita");
-
         kobita.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(kobita.getText());
-
             }
         });
         MenuItem rochonaboli = new MenuItem("Rochonaboli");
         rochonaboli.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(rochonaboli.getText());
             }
         });
         MenuItem religion = new MenuItem("Religion");
         religion.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(religion.getText());
             }
         });
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(biggan.getText());
             } });
         MenuItem sciFi = new MenuItem("Sci Fi");
         sciFi.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(sciFi.getText());
             }
         });
@@ -186,24 +169,20 @@ int positionLocator=85;
                 typeNameTextField.setText(shishuShahitto.getText());
             }
         });
-
         MenuItem kisoreUponnash = new MenuItem("Kisore Uponnash");
         kisoreUponnash.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(kisoreUponnash.getText());
             } });
         MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(biography.getText());
             }
         });
         MenuItem gobesona = new MenuItem("Gobesona");
         gobesona.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
-
                 typeNameTextField.setText(gobesona.getText());
             }
         });
@@ -212,7 +191,6 @@ int positionLocator=85;
         onubad.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
                 typeNameTextField.setText(onubad.getText());
-
             }
         });
         MenuItem others = new MenuItem("Others");
@@ -226,26 +204,21 @@ int positionLocator=85;
         bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
                 biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
                 gobesona, onubad,others);
-
         bookType.setTranslateX(880);
         bookType.setTranslateY(355-positionLocator);
         bookType.setPrefSize(200,55);
-
         MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
         humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
 writerNameTextField.setText(humayonAhmed.getText());
             } });
-
         MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
 
         muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
                 writerNameTextField.setText(muhammadJafarIqbal.getText());
-
             }
         });
         MenuItem rokibHasan = new MenuItem("Rokib Hasan");
@@ -265,7 +238,6 @@ writerNameTextField.setText(humayonAhmed.getText());
         kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 writerNameTextField.setText(kaziNazrulIslam.getText());
-
             } });
         MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
         kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
@@ -277,15 +249,12 @@ writerNameTextField.setText(humayonAhmed.getText());
         sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 writerNameTextField.setText(sharatChandraChattropadhay.getText());
-
             }
         });
         MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
         rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 writerNameTextField.setText(rabindranathTagore.getText());
-
             } });
         MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
         sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
@@ -313,21 +282,16 @@ writerNameTextField.setText(humayonAhmed.getText());
         writerMenu.setTranslateX(880);
         writerMenu.setTranslateY(255-positionLocator);
         writerMenu.setPrefSize(200, 55);
-
         MenuItem price1 = new MenuItem("120.00");
         price1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price1.getText());
-
             } });
 
         MenuItem price2 = new MenuItem("135.00");
-
         price2.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price2.getText());
             }
         });
@@ -337,7 +301,6 @@ writerNameTextField.setText(humayonAhmed.getText());
             public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price3.getText());
             } });
-
         MenuItem price4 = new MenuItem("150.00");
 
         price4.setOnAction(new EventHandler<ActionEvent>() {
@@ -351,9 +314,7 @@ writerNameTextField.setText(humayonAhmed.getText());
             public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price5.getText());
             } });
-
         MenuItem price6 = new MenuItem("175.00");
-
         price6.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price6.getText());
@@ -363,10 +324,8 @@ writerNameTextField.setText(humayonAhmed.getText());
         price7.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price7.getText());
             } });
-
         MenuItem price8 = new MenuItem("190.00");
 
         price8.setOnAction(new EventHandler<ActionEvent>() {
@@ -380,12 +339,9 @@ writerNameTextField.setText(humayonAhmed.getText());
             public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price9.getText());
             } });
-
         MenuItem price10 = new MenuItem("210.00");
-
         price10.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price10.getText());
             }
         });
@@ -393,12 +349,9 @@ writerNameTextField.setText(humayonAhmed.getText());
         price11.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price11.getText());
             } });
-
         MenuItem price12 = new MenuItem("250.00");
-
         price12.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price12.getText());
@@ -413,7 +366,6 @@ writerNameTextField.setText(humayonAhmed.getText());
         MenuItem price14 = new MenuItem("280.00");
         price14.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price14.getText());
             }
         });
@@ -422,7 +374,6 @@ writerNameTextField.setText(humayonAhmed.getText());
             @Override
             public void handle(ActionEvent e) {
                 bookPriceTextField.setText(price15.getText());
-
             } });
         MenuItem price16 = new MenuItem("320.00");
 
@@ -441,7 +392,6 @@ writerNameTextField.setText(humayonAhmed.getText());
 
         price18.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price18.getText());
             }
         });
@@ -449,15 +399,13 @@ writerNameTextField.setText(humayonAhmed.getText());
         price19.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
-                bookPriceTextField.setText(price19.getText());
+               bookPriceTextField.setText(price19.getText());
 
             } });
         MenuItem price20 = new MenuItem("500.00");
 
         price20.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 bookPriceTextField.setText(price20.getText());
             }
         });
@@ -466,38 +414,34 @@ writerNameTextField.setText(humayonAhmed.getText());
                 price5,price6,price7,price8,price9,price10,price11,
                 price12,price13,price14,price15,price16,price17,
                 price18,price19,price20);
-
         priceMenu.setTranslateX(880);
         priceMenu.setTranslateY(455-positionLocator);
         priceMenu.setPrefSize(200, 55);
-
         Button addItem = new Button("Add Item");
         addItem.setTranslateX(480);
         addItem.setTranslateY(450);
         addItem.setOnAction(actionEvent -> {
-        //    try{
+
                 bookInformationTextField.setText(bookNameTextField.getText()+"-"+
                         writerNameTextField.getText()+"-"+typeNameTextField.getText()+
                         "-"+bookPriceTextField.getText());
-
                 double newBookPrice = Double.parseDouble(bookPriceTextField.getText());
+                double writerWeight=0;
+                double priceWeight=0;
+                double typeWeight=0;
 
-double writerWeight=0;
-double priceWeight=0;
-double typeWeight=0;
+                int writerCounter=0;
+                int priceCounter=0;
+                int typeCounter=0;
 
-int writerCounter=0;
-int priceCounter=0;
-int typeCounter=0;
-
-String upperBookPrice,lowerBookPrice;
-double upperBookPriceRange;
-double lowerBookPriceRange;
-double newBookPriceValue;
-newBookPriceValue =newBookPrice;
-boolean isGetAnyWriter = false;
-boolean isGetAnyType = false;
-boolean isGetSimilarPrice = false;
+                String upperBookPrice,lowerBookPrice;
+                double upperBookPriceRange;
+                double lowerBookPriceRange;
+                double newBookPriceValue;
+                newBookPriceValue =newBookPrice;
+                boolean isGetAnyWriter = false;
+                boolean isGetAnyType = false;
+                boolean isGetSimilarPrice = false;
             try {
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
             } catch (IOException e) {
@@ -511,17 +455,17 @@ boolean isGetSimilarPrice = false;
             priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
                 newBookPriceValue = Double.parseDouble(bookPriceTextField.getText());
 
-                for(iterator=0;iterator<numberOfBooks;iterator++){
-upperBookPrice = priorityData[iterator].bookData.bookPrice;
-lowerBookPrice = priorityData[iterator].bookData.bookPrice;
+                                for(iterator=0;iterator<numberOfBooks;iterator++){
+                upperBookPrice = priorityData[iterator].bookData.bookPrice;
+                lowerBookPrice = priorityData[iterator].bookData.bookPrice;
 
-upperBookPriceRange = Double.parseDouble(upperBookPrice)+30.00;
-lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
-if(newBookPriceValue<=upperBookPriceRange&&newBookPriceValue>=lowerBookPriceRange){
-    priceWeight = priceWeight + priorityData[iterator].getMLRweight();
-    priceCounter++;
-    isGetSimilarPrice = true;
-}
+                upperBookPriceRange = Double.parseDouble(upperBookPrice)+30.00;
+                lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
+                if(newBookPriceValue<=upperBookPriceRange&&newBookPriceValue>=lowerBookPriceRange){
+                    priceWeight = priceWeight + priorityData[iterator].getMLRweight();
+                    priceCounter++;
+                    isGetSimilarPrice = true;
+                }
                 }
                 for(iterator=0;iterator<numberOfBooks;iterator++){
 
@@ -539,27 +483,26 @@ if(newBookPriceValue<=upperBookPriceRange&&newBookPriceValue>=lowerBookPriceRang
                         isGetAnyType = true;
                     }
                 }
-if(isGetAnyType==true){
-    typeWeight = typeWeight/typeCounter;
-}
-if(isGetAnyWriter==true){
-    writerWeight = writerWeight/writerCounter;
-}
-if(isGetSimilarPrice==true){
-    priceWeight = priceWeight/priceCounter;
-}
-int maxPriorityDataIndex=0;
-            PrioritySort prioritySort = new PrioritySort();
+                if(isGetAnyType==true){
+                    typeWeight = typeWeight/typeCounter;
+                }
+                if(isGetAnyWriter==true){
+                    writerWeight = writerWeight/writerCounter;
+                }
+                if(isGetSimilarPrice==true){
+                    priceWeight = priceWeight/priceCounter;
+                }
+                int maxPriorityDataIndex=0;
 
-            priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+                PrioritySort prioritySort = new PrioritySort();
+                priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+                double comparingDataValue = priorityData[maxPriorityDataIndex].getMLRweight();
 
-double comparingDataValue = priorityData[maxPriorityDataIndex].getMLRweight();
-
-double writerPrediction,typePrediction,pricePrediction;
-writerPrediction =(writerWeight/comparingDataValue)*100;
-typePrediction = (typeWeight/comparingDataValue)*100;
-pricePrediction = (priceWeight/comparingDataValue)*100;
-//double terminalPrediction = (.37*writerPrediction) + (.43*typePrediction) + (.2 *pricePrediction);
+                double writerPrediction,typePrediction,pricePrediction;
+                writerPrediction =(writerWeight/comparingDataValue)*100;
+                typePrediction = (typeWeight/comparingDataValue)*100;
+                pricePrediction = (priceWeight/comparingDataValue)*100;
+                //double terminalPrediction = (.37*writerPrediction) + (.43*typePrediction) + (.2 *pricePrediction);
             double terminalPrediction = ((.370*writerPrediction)+(.430*typePrediction)+(.200*pricePrediction));
             terminalPrediction = Math.round(terminalPrediction*100.00)/100.00;
             typeWeight = Math.round(typeWeight*100.00)/100.00;
@@ -575,23 +518,18 @@ pricePrediction = (priceWeight/comparingDataValue)*100;
                 // TextField Ve = new TextField();
             Button analysis = new Button("Analysis");
             analysis.setPrefSize(160,40);
-
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
                 gridPane.add(label3,1,1,5,5);
                 gridPane.add(analysis,3,6,1,1);
                 setStyle2(analysis);
-
-                // VELO.add(Ve,3,10,1,1);
                 Scene S = new Scene(gridPane, 290, 165);
                 infoStage.setTitle("Add Book");
                 infoStage.setScene(S);
                 infoStage.show();
             analysis.setOnAction(actionEvent1 -> {
-
-setStyle2(label4);
-
+            setStyle2(label4);
                 Stage analysisStage = new Stage();
                 GridPane subGridPane = new GridPane();
                 subGridPane.setAlignment(Pos.CENTER_RIGHT);
@@ -602,7 +540,6 @@ setStyle2(label4);
                 analysisStage.setScene(scene2);
                 analysisStage.show();
             });
-
 
         });
 
@@ -617,7 +554,6 @@ setStyle2(label4);
                 writerNameTextField,typeNameTextField,
                 bookPriceTextField,bookInformationTextField,
                 addItem,bookType,writerMenu,priceMenu);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -628,14 +564,11 @@ setStyle2(label4);
         administrationMood.setTranslateY(320);
         about.setTranslateX(1200);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
@@ -643,7 +576,6 @@ setStyle2(label4);
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -652,7 +584,6 @@ setStyle2(label4);
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -662,24 +593,15 @@ setStyle2(label4);
             }
         });
 group.getChildren().addAll(readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
        // primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
-
-
-    public Button setStyle( Button button)
+        public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
