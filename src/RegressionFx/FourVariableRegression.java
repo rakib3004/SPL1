@@ -48,26 +48,21 @@ public class FourVariableRegression extends Application {
         exit.setTranslateY(650);
         tableView.setOnAction(actionEvent -> {
             try {
-
                 MLR_TableViewFX MLRTableViewFX = new MLR_TableViewFX();
-
                 MLRTableViewFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-
         consoleView.setOnAction(actionEvent -> {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
                 priorityData =     multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
                 System.exit(0);
-
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         back.setOnAction(actionEvent -> {
             MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
@@ -77,11 +72,8 @@ public class FourVariableRegression extends Application {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(tableView);
         setStyle(consoleView);
@@ -98,10 +90,8 @@ public class FourVariableRegression extends Application {
         graphView.setOnAction(actionEvent -> {
             MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
             try {
-
                 mlr_chart_view.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -113,7 +103,6 @@ public class FourVariableRegression extends Application {
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -124,14 +113,11 @@ public class FourVariableRegression extends Application {
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
@@ -139,7 +125,6 @@ public class FourVariableRegression extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -148,7 +133,6 @@ public class FourVariableRegression extends Application {
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -158,22 +142,16 @@ public class FourVariableRegression extends Application {
             }
         });
         group.getChildren().addAll(readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
-
         Scene scene1 = new Scene(group, 1500, 950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
-
     }
-
-
 
     public Button setStyle( Button button)
     {

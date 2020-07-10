@@ -43,22 +43,17 @@ double temp;
         temp=      threeVariableRegression.getTranslateX();
         threeVariableRegression.setTranslateX(threeVariableRegression.getTranslateY());
         threeVariableRegression.setTranslateY(temp);
-
         temp=     fourVariableRegression.getTranslateX();
         fourVariableRegression.setTranslateX(fourVariableRegression.getTranslateY());
         fourVariableRegression.setTranslateY(temp);
-
         twoVariableRegression.setOnAction(actionEvent -> {
-
             TwoVariableRegression twoVariableRegression1 = new TwoVariableRegression();
-
             try {
 
                 twoVariableRegression1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         threeVariableRegression.setOnAction(actionEvent -> {
 ThreeVariableRegression threeVariableRegression1 = new ThreeVariableRegression();
@@ -67,7 +62,6 @@ ThreeVariableRegression threeVariableRegression1 = new ThreeVariableRegression()
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         fourVariableRegression.setOnAction(actionEvent -> {
 FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
@@ -76,21 +70,14 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
         });
-
-
         setStyle(twoVariableRegression);
         setStyle(threeVariableRegression);
         setStyle(fourVariableRegression);
 
-
         twoVariableRegression.setPrefSize(350, 80);
         threeVariableRegression.setPrefSize(350, 80);
         fourVariableRegression.setPrefSize(350, 80);
-
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -100,49 +87,38 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
-
             try {
                 statisticsFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
 
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,twoVariableRegression,fourVariableRegression,
                 threeVariableRegression,exit,back);
 
-
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
-
         readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
         administrationMood.setTranslateX(20);
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -152,7 +128,6 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -161,7 +136,6 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -171,21 +145,15 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             }
         });
         group.getChildren().addAll(readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
-
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
