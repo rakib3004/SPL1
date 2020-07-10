@@ -38,7 +38,6 @@ TypeCountRegression typeCountRegression = new TypeCountRegression();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         Start.setOnAction(actionEvent -> {
-
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -49,7 +48,6 @@ TypeCountRegression typeCountRegression = new TypeCountRegression();
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         back.setOnAction(actionEvent -> {
 MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
@@ -58,41 +56,29 @@ MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(Start);
         setStyle(exit);
         setStyle(back);
-
         Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground7.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,Start,exit,back);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
     }
 
     public Button setStyle( Button button)

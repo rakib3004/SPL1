@@ -27,11 +27,9 @@ public class ThreeVariableRegression extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button Start = new Button("Start");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -42,14 +40,11 @@ public class ThreeVariableRegression extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         Start.setOnAction(actionEvent -> {
-
             try {
-
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
                 doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
                 System.exit(0);    }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -62,37 +57,25 @@ public class ThreeVariableRegression extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(Start);
         setStyle(exit);
         setStyle(back);
-
         Start.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground19.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,Start,exit,back);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
@@ -114,6 +97,4 @@ public class ThreeVariableRegression extends Application {
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-
-
 }
