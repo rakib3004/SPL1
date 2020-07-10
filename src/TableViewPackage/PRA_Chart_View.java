@@ -29,14 +29,12 @@ import java.io.IOException;
 public class PRA_Chart_View extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     PageRankCalculation pageRankCalculation = new PageRankCalculation();
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -49,8 +47,6 @@ public class PRA_Chart_View extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
             try {
@@ -58,29 +54,18 @@ public class PRA_Chart_View extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
-
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-/*
-        priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
-*/
-
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
         priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
         CategoryAxis categoryAxis = new CategoryAxis();
@@ -88,40 +73,24 @@ public class PRA_Chart_View extends Application {
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
-
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
 
-
         series1.setName("Book Weight Show");
-
-
         int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
-
         }
-
-
         lineChart.getData().add(series1);
-
         lineChart.setTranslateX(10);
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1350, 700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
-
-
 
         mlr_process.setOnAction((event) -> {
             try {
@@ -130,9 +99,7 @@ public class PRA_Chart_View extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         ahp_process.setOnAction((event) -> {
             AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
@@ -148,14 +115,9 @@ public class PRA_Chart_View extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
-
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
         lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
@@ -166,13 +128,9 @@ public class PRA_Chart_View extends Application {
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, exit, back);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
-
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
@@ -191,7 +149,6 @@ public class PRA_Chart_View extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         back.setOnAction(actionEvent -> {
             PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
             try {
@@ -199,57 +156,40 @@ public class PRA_Chart_View extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         exit.setOnAction(actionEvent -> {
             System.exit(0);
 
         });
-
-
         setStyle(exit);
         setStyle(back);
-
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-      //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
-      PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
       priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
 
         ScatterChart scatterChart = new ScatterChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
-
-
         series1.setName("Book Weight Show");
-
-
         int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
-
         }
 
-
         scatterChart.getData().add(series1);
-
         scatterChart.setTranslateX(10);
         scatterChart.setTranslateY(25);
         scatterChart.setPrefSize(1350, 700);
@@ -260,8 +200,6 @@ public class PRA_Chart_View extends Application {
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
 
-
-
       mlr_process.setOnAction((event) -> {
           try {
               MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
@@ -269,7 +207,6 @@ public class PRA_Chart_View extends Application {
           } catch (IOException e) {
               e.printStackTrace();
           }
-
       });
 
       ahp_process.setOnAction((event) -> {
@@ -287,30 +224,21 @@ public class PRA_Chart_View extends Application {
           } catch (IOException e) {
               e.printStackTrace();
           }
-
       });
-
-
-
       contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
-        scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+       scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
             }
         });
-
       Button lineChartView = new Button("LineChart View");
       Button stackedAreaChartView = new Button("StackedAreaChart View");
       lineChartView.setTranslateX(30);
       lineChartView.setTranslateY(0);
       stackedAreaChartView.setTranslateX(1170);
       stackedAreaChartView.setTranslateY(0);
-
-
       lineChartView.setOnAction(actionEvent -> {
           try {
               startScatterChart(primaryStage);
@@ -319,7 +247,6 @@ public class PRA_Chart_View extends Application {
           }
 
       });
-
       stackedAreaChartView.setOnAction(actionEvent -> {
           try {
               startStackedAreaChart(primaryStage);
@@ -328,16 +255,12 @@ public class PRA_Chart_View extends Application {
           }
 
       });
-      //  Image image = new Image("libraryBackground9.jpg");
       Canvas canvas = new Canvas(1500, 950);
       Group group = new Group();
       group.getChildren().addAll(canvas, scatterChart,
               exit, back,lineChartView,stackedAreaChartView);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group, 1500, 950);
 
 
@@ -357,8 +280,6 @@ public class PRA_Chart_View extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
         back.setOnAction(actionEvent -> {
             PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
             try {
@@ -366,49 +287,30 @@ public class PRA_Chart_View extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-      //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
       PageRankProcessData pageRankProcessData = new PageRankProcessData();
       priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
-
-
         series1.setName("Book Weight Show");
-
-
         int positionIndicator = 0;
-
-        //   series1.setName("Training Set 1 ");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator),
                     priorityData[iterator].getPRAweight()));
@@ -422,7 +324,6 @@ public class PRA_Chart_View extends Application {
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
         MenuItem pra_process = new MenuItem("PRA Process");
-
         mlr_process.setOnAction((event) -> {
           try {
               MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
@@ -430,7 +331,6 @@ public class PRA_Chart_View extends Application {
           } catch (IOException e) {
               e.printStackTrace();
           }
-
       });
       ahp_process.setOnAction((event) -> {
           AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
@@ -447,17 +347,11 @@ public class PRA_Chart_View extends Application {
           } catch (IOException e) {
               e.printStackTrace();
           }
-
       });
-
-
         contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-
         stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
@@ -468,38 +362,26 @@ public class PRA_Chart_View extends Application {
       scatterChartView.setTranslateY(0);
       lineChartView.setTranslateX(1170);
       lineChartView.setTranslateY(0);
-
-
       scatterChartView.setOnAction(actionEvent -> {
           try {
               startScatterChart(primaryStage);
           } catch (Exception exception) {
               exception.printStackTrace();
           }
-
       });
-
       lineChartView.setOnAction(actionEvent -> {
           try {
               start(primaryStage);
           } catch (Exception exception) {
               exception.printStackTrace();
           }
-
       });
-
-      //  Image image = new Image("libraryBackground9.jpg");
       Canvas canvas = new Canvas(1500, 950);
       Group group = new Group();
       group.getChildren().addAll(canvas, stackedAreaChart, exit, back
               ,scatterChartView,lineChartView);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        // graphicsContext.drawImage(image,0,0);
-
-
         Scene scene1 = new Scene(group, 1500, 950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);

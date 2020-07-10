@@ -46,7 +46,6 @@ public class MLR_TableViewFX extends Application {
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
-
      @Override
     public void start(Stage primaryStage) throws IOException {
          String  className = this.getClass().getSimpleName();
@@ -63,24 +62,18 @@ public class MLR_TableViewFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
-
 
         // Books label
         Label label = new Label("Multiple Linear Regression Results");
@@ -91,7 +84,6 @@ public class MLR_TableViewFX extends Application {
         hb.getChildren().add(label);
 
         // Table view, data, columns and properties
-
         table = new TableView();
         data = getInitialTableData();
         table.setItems(data);
@@ -101,21 +93,15 @@ public class MLR_TableViewFX extends Application {
 
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
-
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
         TableColumn borrowCount = new TableColumn("Borrow Count");
         borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
-
-
         TableColumn price = new TableColumn("Price");
         price.setCellValueFactory(new PropertyValueFactory("price"));
-
         TableColumn bookWeight = new TableColumn("Book Weight");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
-
 
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
@@ -124,14 +110,12 @@ public class MLR_TableViewFX extends Application {
         table.setPrefWidth(1440);
         table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RowSelectChangeListener());
 
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_table_view = new MenuItem("MLR Table View");
         MenuItem ahp_table_view = new MenuItem("AHP Table View");
@@ -152,7 +136,6 @@ public class MLR_TableViewFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         mlr_table_view.setOnAction((event) -> {
             MLR_TableViewFX mlrTableViewFX = new MLR_TableViewFX();
@@ -161,13 +144,11 @@ public class MLR_TableViewFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
 
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
@@ -186,7 +167,6 @@ public class MLR_TableViewFX extends Application {
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
         // Select the first row
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
@@ -205,10 +185,7 @@ public class MLR_TableViewFX extends Application {
     }
 
     private ObservableList getInitialTableData() throws IOException {
-
         List list = new ArrayList();
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
@@ -223,7 +200,6 @@ int iterator;
                     Double.toString(priorityData[genericAlgo[iterator].getIndex()].getMLRweight())));
         }
         ObservableList data = FXCollections.observableList(list);
-
         return data;
     }
 
