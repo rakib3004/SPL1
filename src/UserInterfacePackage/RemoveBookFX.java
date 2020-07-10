@@ -536,164 +536,104 @@ ReverseSorting reverseSorting = new ReverseSorting();
                    showInfo(primaryStage,labelName,data);
                 }
             });
-
             MenuItem self3 = new MenuItem("Book No : 201-300");
             self3.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
 
                         labelName="Top Books from "+self3.getText();
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("2")) {
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
                             data = FXCollections.observableList(list);
-
                         }
                     }
                    showInfo(primaryStage,labelName,data);
                 }
             });
-
-
-
-
             MenuItem self4 = new MenuItem("Book No : 301-400");
             self4.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self4.getText();
-
-
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("3")) {
-
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
                             data = FXCollections.observableList(list);
-
                         }
                     }
                    showInfo(primaryStage,labelName,data);
                 } });
-
-
-
-            MenuItem self5 = new MenuItem("Book No : 401-500");
+                        MenuItem self5 = new MenuItem("Book No : 401-500");
             self5.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self5.getText();
-
-
-
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("4")) {
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
                             data = FXCollections.observableList(list);
-
                         }
                     }
-
                    showInfo(primaryStage,labelName,data);
                 } });
-
-
-
             MenuItem self6 = new MenuItem("Book No : 501-600");
             self6.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self6.getText();
 
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("5")) {
-
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
                             data = FXCollections.observableList(list);
-
                         }
                     }
-
                    showInfo(primaryStage,labelName,data);
                 } });
-
-
            MenuItem self7 = new MenuItem("Book No : 601-700");
             self7.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self7.getText();
-
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("6")) {
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
-                            data = FXCollections.observableList(list);
-
-                        }
+                           data = FXCollections.observableList(list);
+                       }
                     }
-
                    showInfo(primaryStage,labelName,data);
                 } });
-
-
-
-
 
             MenuButton selfSection = new MenuButton("Choose Self ");
             selfSection.getItems().addAll(self1, self2, self3,
                     self4,self5,self6,self7);
-
-
             selfSection.setTranslateX(500);
             selfSection.setTranslateY(350);
             selfSection.setPrefSize(200, 50);
-
 
             Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
             group.getChildren().addAll(canvas,exit,back,selfSection);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
             graphicsContext.drawImage(image,0,0);
-
-
-        Scene scene1 = new Scene(group,1500,950);
-
-
+            Scene scene1 = new Scene(group,1500,950);
             primaryStage.setScene(scene1);
             primaryStage.setTitle("Books Statistics");
             primaryStage.setFullScreen(true);
             primaryStage.show();
-
     }
 
         public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
@@ -706,56 +646,41 @@ ReverseSorting reverseSorting = new ReverseSorting();
             label.setTranslateY(0);
             label.setText(labelName);
             setStyle(label);
-
             Button back = new Button("Back");
             Button exit = new Button("Exit");
-
 
             back.setTranslateX(0);
             back.setTranslateY(650);
             exit.setTranslateX(1100);
             exit.setTranslateY(650);
-
-
-
             back.setOnAction(actionEvent -> {
                 list.clear();
-
                 try {
                     this.start(secondaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-
             });
-
             exit.setOnAction(actionEvent -> {
                 System.exit(0);
-
             });
-
 
             setStyle(exit);
             setStyle(back);
             back.setPrefSize(200, 80);
             exit.setPrefSize(200, 80);
             table = new TableView();
-
             table.setItems(data);
 
             TableColumn bookName = new TableColumn("Book Name");
             bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
-
             TableColumn writerName = new TableColumn("Writer Name");
             writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
 
-
             TableColumn bookId = new TableColumn("Book ID");
             bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
-
             TableColumn typeName = new TableColumn("Type Name");
             typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
-
 
             table.getColumns().setAll(bookName,writerName,typeName,bookId);
             table.setPrefWidth(1240);
@@ -763,49 +688,35 @@ ReverseSorting reverseSorting = new ReverseSorting();
             table.setTranslateX(60);
             table.setTranslateY(70);
             table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
             table.getSelectionModel().selectedIndexProperty().addListener(
                     new RowSelectChangeListener());
-
-
-
             // Status message text
             actionStatus = new Text();
             actionStatus.setFill(Color.FIREBRICK);
-
 
             table.getSelectionModel().select(0);
             Book book = (Book) table.getSelectionModel().getSelectedItem();
             actionStatus.setText(book.toString());
 
-
-
             Image image = new Image("libraryBackground16.jpg");
             Canvas canvas = new Canvas(1500, 950);
             Group group = new Group();
             group.getChildren().addAll(canvas,exit, back,label,table);
-
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
             graphicsContext.drawImage(image, 0, 0);
-
             Scene scene1 = new Scene(group, 1500, 950);
 
             secondaryStage.setScene(scene1);
             secondaryStage.setTitle("Books Statistics");
             secondaryStage.setFullScreen(true);
             secondaryStage.show();
-
-
         }
 
         private class RowSelectChangeListener implements ChangeListener {
-
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-
             }
         }
-
         private ObservableList getInitialTableData() throws IOException {
             String  className = this.getClass().getSimpleName();
             DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -818,7 +729,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
             priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
             int iterator;
             for(iterator=0;iterator<numberOfBooks;iterator++){
-
                 list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                         priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
                         priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
@@ -826,10 +736,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
             ObservableList data = FXCollections.observableList(list);
             return data;
         }
-
-
-
-
 
         public Button setStyle( Button button)
         {
