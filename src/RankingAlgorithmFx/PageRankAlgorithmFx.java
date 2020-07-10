@@ -36,13 +36,10 @@ public class PageRankAlgorithmFx extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-
     @Override
     public void start(Stage primaryStage) throws IOException {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -64,14 +61,12 @@ public class PageRankAlgorithmFx extends Application {
         });
         setStyle(tableView);
         tableView.setPrefSize(350,80);
-
         consoleView.setTranslateX(140);
         consoleView.setTranslateY(50);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
         consoleView.setOnAction(actionEvent -> {
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
             try {
@@ -94,7 +89,6 @@ public class PageRankAlgorithmFx extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
@@ -102,11 +96,9 @@ public class PageRankAlgorithmFx extends Application {
         setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
-
         consoleView.setPrefSize(200, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Button graphView = new Button("Graph View");
         graphView.setTranslateX(500);
         graphView.setTranslateY(50);
@@ -124,8 +116,6 @@ public class PageRankAlgorithmFx extends Application {
         });
         setStyle(graphView);
         graphView.setPrefSize(200,80);
-
-
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -135,7 +125,6 @@ public class PageRankAlgorithmFx extends Application {
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
-
         readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
         administrationMood.setTranslateX(20);
@@ -143,13 +132,11 @@ public class PageRankAlgorithmFx extends Application {
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
@@ -157,7 +144,6 @@ public class PageRankAlgorithmFx extends Application {
                 exception.printStackTrace();
             }
         });
-
         readersMood.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
@@ -166,7 +152,6 @@ public class PageRankAlgorithmFx extends Application {
                 exception.printStackTrace();
             }
         });
-
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
@@ -175,20 +160,16 @@ public class PageRankAlgorithmFx extends Application {
                 exception.printStackTrace();
             }
         });
-        group.getChildren().addAll(readersMood,administrationMood,about);
 
+        group.getChildren().addAll(readersMood,administrationMood,about);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
 
     public Button setStyle( Button button)
