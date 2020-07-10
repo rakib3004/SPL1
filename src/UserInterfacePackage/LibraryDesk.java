@@ -31,26 +31,20 @@ public class LibraryDesk extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button addBook = new Button("Add Book");
         addBook.setTranslateX(160);
         addBook.setTranslateY(50);
-
         addBook.setOnAction(actionEvent -> {
-
             try {
                 AddBookFX addBookFX = new AddBookFX();
                 addBookFX.start(primaryStage);
             }
-
             catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         addBook.setPrefSize(350, 80);
         setStyle(addBook);
-
 
         Button bookInformation = new Button("Book Information");
         bookInformation.setTranslateX(520);
@@ -62,17 +56,13 @@ public class LibraryDesk extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         setStyle(bookInformation);
         bookInformation.setPrefSize(350, 80);
-
 Button removeBook = new Button("Remove Book");
-
         removeBook.setTranslateX(880);
         removeBook.setTranslateY(50);
         removeBook.setOnAction(actionEvent -> {
-
             try {
                 RemoveBookFX removeBookFX = new RemoveBookFX();
                 removeBookFX.start(primaryStage);
@@ -83,41 +73,31 @@ Button removeBook = new Button("Remove Book");
         });
         removeBook.setPrefSize(350, 80);
         setStyle(removeBook);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
-
             try {
                 fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
-
         readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
         administrationMood.setTranslateX(20);
@@ -125,51 +105,33 @@ Button removeBook = new Button("Remove Book");
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
-
-
-
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         readersMood.setOnAction(actionEvent -> {
-
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
@@ -177,13 +139,9 @@ Button removeBook = new Button("Remove Book");
         group.getChildren().addAll(canvas,addBook,exit,
                 back,removeBook,bookInformation
                 ,readersMood,administrationMood,about);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
-
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);

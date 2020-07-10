@@ -41,20 +41,17 @@ import java.util.TreeMap;
 
 public class RemoveBookFX extends Application {
 
-
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
     GenericAlgo[] genericAlgo;
 ReverseSorting reverseSorting = new ReverseSorting();
     List list = new ArrayList();
-
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
     int bookPoint;
-
     public int getNumberOfBooks() {
         return numberOfBooks;
     }
@@ -62,7 +59,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
     public void setNumberOfBooks(int numberOfBooks) {
         this.numberOfBooks = numberOfBooks;
     }
-
     public int getBookPoint() {
         return bookPoint;
     }
@@ -78,35 +74,30 @@ ReverseSorting reverseSorting = new ReverseSorting();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
     @Override
     public void start(Stage primaryStage){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-if(bookPoint==0){
-    try {
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
-else{
-    try {
-        priorityData = processing.fileReaderMethods();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-}
-
+        if(bookPoint==0){
+            try {
+                priorityData = processing.fileReaderMethods();
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            try {
+                priorityData = processing.fileReaderMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -114,7 +105,6 @@ else{
 
         back.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
-
             try {
                 libraryDesk.start(primaryStage);
             } catch (Exception exception) {
@@ -123,54 +113,37 @@ else{
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
         setStyle(exit);
         setStyle(back);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
- Button show = new Button("Show");
-
+         Button show = new Button("Show");
         show.setTranslateX(550);
         show.setTranslateY(350);
-
         show.setOnAction(actionEvent -> {
             showInfo(primaryStage,labelName,data);
         });
-
         setStyle(show);
 
-
         show.setPrefSize(200, 80);
-
         labelName="Top Books of "+this.getClass();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                 list.add(new Book(priorityData[iterator].bookData.bookName,
                         priorityData[iterator].bookData.writerName,
                         priorityData[iterator].bookData.bookId,
                         priorityData[iterator].bookData.typeName));
-
                 data = FXCollections.observableList(list);
-
         }
-
-
-
 
         Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,show);
-
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
-
         readersMood.setTranslateX(20);
         readersMood.setTranslateY(260);
         administrationMood.setTranslateX(20);
@@ -178,11 +151,9 @@ else{
         about.setTranslateX(20);
         about.setTranslateY(380);
 
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
-
         administrationMood.setOnAction(actionEvent -> {
 
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
@@ -469,13 +440,12 @@ else{
                 "        #717375,\n" +
                 "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: ;\n" +
+                "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.7em;");
         return  textField;
     }
 
     public static class SelfWiseFX extends Application {
-
 
         private TableView table;
         private ObservableList data;
@@ -522,52 +492,38 @@ else{
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-
             });
             exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
             back.setPrefSize(200, 80);
             exit.setPrefSize(200, 80);
-
             MenuItem self1 = new MenuItem("Book No : 1-100");
-
             self1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self1.getText();
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("0")) {
-
-
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
                                     priorityData[iterator].bookData.typeName));
-
                             data = FXCollections.observableList(list);
                         }
                     }
                showInfo(primaryStage,labelName,data);
                 }
             });
-
-
             MenuItem self2 = new MenuItem("Book No : 101-200");
             self2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-
                         labelName="Top Books from "+self2.getText();
-
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("1")) {
-
 
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
@@ -575,20 +531,17 @@ else{
                                     priorityData[iterator].bookData.typeName));
 
                             data = FXCollections.observableList(list);
-
                         }
                     }
                    showInfo(primaryStage,labelName,data);
                 }
             });
 
-
             MenuItem self3 = new MenuItem("Book No : 201-300");
             self3.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
 
                         labelName="Top Books from "+self3.getText();
-
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                         if (priorityData[iterator].bookData.bookId.substring(11,12).contains("2")) {
