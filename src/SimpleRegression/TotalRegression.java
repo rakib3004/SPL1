@@ -13,18 +13,15 @@ public class TotalRegression {
     int queueValue [] = new int [1050];
     int bookPrice [] =new int[1050];
     int writePriority [] = new int[1050] ;
-
     String string,string1,string2;
     int length;
     int integer1,integer2;
     int newYear,oldYear;
     public double[] totalRegressionMethods(BookData[] bookData, String[] writerName,
                                            String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         for(int iterator=0;iterator<numberOfBooks;iterator++){
            if(writerName[iterator].equals(" Humayon Ahmed")){
                writePriority[iterator]=25;
@@ -35,7 +32,6 @@ public class TotalRegression {
             else {
                writePriority[iterator]=15;
             }
-
         } for(int iterator=0;iterator<numberOfBooks;iterator++){
             length = bookId[iterator].length();
             string =bookId[iterator].substring(1,3);
@@ -46,7 +42,6 @@ public class TotalRegression {
 string1 = bookId[iterator].substring(4,6);
 integer1 = Integer.parseInt(string1);
 string2=bookId[iterator].substring(6,8);
-
 integer2 = Integer.parseInt(string2);
 oldYear = integer1+(integer2*12);
 timeCount[iterator] = newYear - oldYear;
@@ -61,7 +56,6 @@ timeCount[iterator] = newYear - oldYear;
             string=string.replaceAll("[\\t\\n\\r]+","");
             bookPrice[iterator] = Integer.parseInt(string);
         }
-
         double bookPriority [] = new double[1050];
         double timePriority [] = new double [1050];
         int borrowCount [] = new int [1050];
@@ -69,26 +63,18 @@ timeCount[iterator] = newYear - oldYear;
         double pricePriority [] = new double [1050];
         double weight [] = new double[1050];
 
-        //   processing.fileReader();
-
-
         for(int iterator =0;iterator<numberOfBooks;iterator++){
 bookPriority[iterator] =  (20 - Math.sqrt(typeValue[iterator]));
 timePriority[iterator] = 16 -  (timeCount[iterator]/12);
 borrowCount[iterator] = bookCount[iterator];
-//serialPriority[iterator] = Math.pow(queueValue[iterator],(1/3));
 pricePriority[iterator] = Math.pow(bookPrice[iterator],(2/5));
 
 weight[iterator] = bookPriority[iterator] +timePriority[iterator] +
-        borrowCount[iterator]+//serialPriority[iterator]+
+        borrowCount[iterator]+
         +writePriority[iterator]+pricePriority[iterator];
-          //  System.out.println(weight[iterator]);
 bookData[iterator].setWeight(weight[iterator]);
         }
-        MainClass mainClass = new MainClass();
-        BookData bookData1 = new BookData();
-
-        GenericAlgo genericAlgo[] = new GenericAlgo[1050];
+             GenericAlgo genericAlgo[] = new GenericAlgo[1050];
         for(int i = 0; i<numberOfBooks; i++){
             genericAlgo[i] = new GenericAlgo(bookData[i].getWeight(),i);
         }
@@ -107,20 +93,14 @@ bookData[iterator].setWeight(weight[iterator]);
                 }
             }
         }
-
         System.out.println("Optimized View 01 :" );
-
-
         for(int iterator=190;iterator<numberOfBooks;iterator++){
             System.out.println("Book Name :"+bookData[genericAlgo[iterator].getIndex()].getBookName()+
                     "; Writer Name : "+bookData[genericAlgo[iterator].getIndex()].getWriterName()
                     + "; Weight : "+genericAlgo[iterator].getWeight());
 
         }
-        //  outStream.induction(bookData,numberOfBooks);
 
-      //SortingAll sortingAll = new SortingAll();
-        //sortingAll.algorithm(bookData,numberOfBooks);
         return weight;
     }
 
