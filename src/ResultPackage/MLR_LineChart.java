@@ -36,13 +36,11 @@ import java.util.List;
 public class MLR_LineChart extends Application {
 
     PriorityData[] priorityData;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
-
     double []  year2017Books = new double[7];
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -68,35 +66,23 @@ public class MLR_LineChart extends Application {
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
         LineChart LineChart  = new LineChart (categoryAxis,numberAxis);
-
-
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
         over30 =  "30+" ;
-
-
         double []   below4Count = new double[7] ;
         double [] over4Count = new double[7] ;
         double [] over7Count = new double[7] ;
@@ -105,32 +91,21 @@ public class MLR_LineChart extends Application {
         double []  over20Count = new double[7] ;
         double [] over25Count = new double[7] ;
         double [] over30Count = new double[7];
-
-
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
-
         List<Double> list = new ArrayList<>();
 
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over30Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -138,13 +113,11 @@ public class MLR_LineChart extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over25Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -152,89 +125,68 @@ public class MLR_LineChart extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over20Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over15Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over10Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over7Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 //over4Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>4.0){
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
-
-
-
-
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(below4);
@@ -253,10 +205,6 @@ public class MLR_LineChart extends Application {
         XYChart.Series series8 = new XYChart.Series();
         series8.setName(over30);
 
-
-
-
-
         series1.getData().add(new XYChart.Data(below4,below4Count[0]));
         series1.getData().add(new XYChart.Data(below4,below4Count[1]));
         series1.getData().add(new XYChart.Data(below4,below4Count[2]));
@@ -264,7 +212,6 @@ public class MLR_LineChart extends Application {
         series1.getData().add(new XYChart.Data(below4,below4Count[4]));
         series1.getData().add(new XYChart.Data(below4,below4Count[5]));
         series1.getData().add(new XYChart.Data(below4,below4Count[6]));
-
 
         series2.getData().add(new XYChart.Data(over4,over4Count[0]));
         series2.getData().add(new XYChart.Data(over4,over4Count[1]));
@@ -274,7 +221,6 @@ public class MLR_LineChart extends Application {
         series2.getData().add(new XYChart.Data(over4,over4Count[5]));
         series2.getData().add(new XYChart.Data(over4,over4Count[6]));
 
-
         series3.getData().add(new XYChart.Data(over7,over7Count[0]));
         series3.getData().add(new XYChart.Data(over7,over7Count[1]));
         series3.getData().add(new XYChart.Data(over7,over7Count[2]));
@@ -282,7 +228,6 @@ public class MLR_LineChart extends Application {
         series3.getData().add(new XYChart.Data(over7,over7Count[4]));
         series3.getData().add(new XYChart.Data(over7,over7Count[5]));
         series3.getData().add(new XYChart.Data(over7,over7Count[6]));
-
 
         series4.getData().add(new XYChart.Data(over10,over10Count[0]));
         series4.getData().add(new XYChart.Data(over10,over10Count[1]));
@@ -292,7 +237,6 @@ public class MLR_LineChart extends Application {
         series4.getData().add(new XYChart.Data(over10,over10Count[5]));
         series4.getData().add(new XYChart.Data(over10,over10Count[6]));
 
-
         series5.getData().add(new XYChart.Data(over15,over15Count[0]));
         series5.getData().add(new XYChart.Data(over15,over15Count[1]));
         series5.getData().add(new XYChart.Data(over15,over15Count[2]));
@@ -300,7 +244,6 @@ public class MLR_LineChart extends Application {
         series5.getData().add(new XYChart.Data(over15,over15Count[4]));
         series5.getData().add(new XYChart.Data(over15,over15Count[5]));
         series5.getData().add(new XYChart.Data(over15,over15Count[6]));
-
 
         series6.getData().add(new XYChart.Data(over20,over20Count[0]));
         series6.getData().add(new XYChart.Data(over20,over20Count[1]));
@@ -310,7 +253,6 @@ public class MLR_LineChart extends Application {
         series6.getData().add(new XYChart.Data(over20,over20Count[5]));
         series6.getData().add(new XYChart.Data(over20,over20Count[6]));
 
-
         series7.getData().add(new XYChart.Data(over25,over25Count[0]));
         series7.getData().add(new XYChart.Data(over25,over25Count[1]));
         series7.getData().add(new XYChart.Data(over25,over25Count[2]));
@@ -319,7 +261,6 @@ public class MLR_LineChart extends Application {
         series7.getData().add(new XYChart.Data(over25,over25Count[5]));
         series7.getData().add(new XYChart.Data(over25,over25Count[6]));
 
-
         series8.getData().add(new XYChart.Data(over30,over30Count[0]));
         series8.getData().add(new XYChart.Data(over30,over30Count[1]));
         series8.getData().add(new XYChart.Data(over30,over30Count[2]));
@@ -327,10 +268,6 @@ public class MLR_LineChart extends Application {
         series8.getData().add(new XYChart.Data(over30,over30Count[4]));
         series8.getData().add(new XYChart.Data(over30,over30Count[5]));
         series8.getData().add(new XYChart.Data(over30,over30Count[6]));
-
-
-
-
 
         LineChart .getData().add(series1);
         LineChart .getData().add(series2);
@@ -341,20 +278,13 @@ public class MLR_LineChart extends Application {
         LineChart .getData().add(series7);
         LineChart .getData().add(series8);
 
-
-
-
         LineChart .setTranslateX(65);
         LineChart .setTranslateY(55);
         LineChart .setPrefSize(1000,700);
-
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -370,7 +300,6 @@ public class MLR_LineChart extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -379,12 +308,9 @@ public class MLR_LineChart extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-
-
         LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
@@ -393,21 +319,11 @@ public class MLR_LineChart extends Application {
                 contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
-
-
         HBox hBox1 = new HBox(LineChart ,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
         vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
@@ -417,20 +333,14 @@ public class MLR_LineChart extends Application {
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
-    }
+            }
 
 
     public Button setStyle(Button button)

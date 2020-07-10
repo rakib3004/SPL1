@@ -60,74 +60,33 @@ public class AHP_Result {
         else if (enterChoice==7){
             borrowCollection.borrowCollectionAHPMethods(priorityData,numberOfBooks);
         }
-
-
     }
-
-
-
-
-
     public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
-
-
-
         double temporary;
         int temp;
         PriorityData tempData;
-      /*  for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            for (int j = 0; j < numberOfBooks; j++) {
-                if (priorityData[iterator].getAHPweight() > priorityData[j].getAHPweight()) {
-
-                    tempData = priorityData[iterator];
-                    priorityData[iterator] = priorityData[j];
-                    priorityData[j] = tempData;
-                }
-            }
-        }*/
-
         try {
-
-
             String aString = JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
                     "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
                     "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
-            //     optimizedResult(priorityData,numberOfBooks);
 
             int anInt = Integer.parseInt(aString);
             JOptionPane.showMessageDialog(null, "You Pressed " + anInt);
-
             if (anInt == 1) {
-
                 typeCollection.typeCollectionAHPMethods(priorityData, numberOfBooks);
-
             } else if (anInt == 2) {
-
                 writerCollection.writerCollectionAHPMethods(priorityData, numberOfBooks);
-
             } else if (anInt == 3) {
-
                 timeCollection.timeCollectionAHPMethods(priorityData, numberOfBooks);
-
             } else if (anInt == 4) {
-
                 borrowCollection.borrowCollectionAHPMethods(priorityData, numberOfBooks);
-
             } else if (anInt == 5) {
-
                 searching.search(priorityData, numberOfBooks);
-
             } else {
                 JOptionPane.showMessageDialog(null, "Empty Command");
             }
-
         } catch (NullPointerException nullPointerException) {
             System.out.println();
-
         }
-
-
-
     }
-
 }
