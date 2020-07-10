@@ -14,10 +14,7 @@ public class MonthCountRegression {
     double bookCount1 [] = new double [1050];
 
     int timeCount [] = new int[1050];
-
     double timeValue [] =new double[1050];
-
-
     int length;
     String string;
     String string1,string2;
@@ -25,7 +22,6 @@ public class MonthCountRegression {
     int newYear,oldYear,integer1,integer2;
     public  void monthCountRegressionMethods(BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -35,11 +31,9 @@ public class MonthCountRegression {
             string1 = bookId[iterator].substring(4,6);
             integer1 = Integer.parseInt(string1);
             string2=bookId[iterator].substring(6,8);
-
             integer2 = Integer.parseInt(string2);
             oldYear = integer1+(integer2*12);
             timeValue[iterator] = newYear - oldYear;
-
         }
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -47,15 +41,12 @@ public class MonthCountRegression {
             string =borrowCount1[iterator].substring(1,length);
             bookCount[iterator] = Integer.parseInt(string);
         }
-
         for(iterator =0; iterator <numberOfBooks; iterator++){
             timeMean = timeMean +timeValue[iterator];
             countMean = countMean+bookCount[iterator];
         }
-
         timeMean = timeMean/numberOfBooks;
         countMean = countMean/numberOfBooks;
-
         double assumpMean1  = 0;
         double assumpMean2  = 0;
         for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -63,7 +54,6 @@ public class MonthCountRegression {
             bookCount[iterator]=bookCount[iterator]-countMean;
             assumpMean1 = assumpMean1 +( timeValue[iterator]*bookCount[iterator]);
             assumpMean2 = assumpMean2 + (timeValue[iterator]*timeValue[iterator]);
-
         }
 
         double metaValue = assumpMean1/assumpMean2;
@@ -76,8 +66,6 @@ public class MonthCountRegression {
 
             bookData[iterator].setWeight(bookCount1[iterator]);
         }
-       // SortingMonthCount sortingMonthCount = new SortingMonthCount();
-      //  sortingMonthCount.algorithm(bookData,numberOfBooks);
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(), iterator);
@@ -94,7 +82,6 @@ public class MonthCountRegression {
                     genericAlgo[iterator].setIndex(genericAlgo[j].getIndex());
                     genericAlgo[j].setIndex(temp);
                     bookData[j].setRank(temp,2);
-
                 }
             }
         }
@@ -103,13 +90,10 @@ public class MonthCountRegression {
         System.out.println( );
         System.out.println( );
         System.out.println("Optimized View 3 :" );
-
         for(iterator =190; iterator <numberOfBooks; iterator++){
             System.out.println("Book Name :"+bookData[genericAlgo[iterator].getIndex()].getBookName()+
                     "; Writer Name : "+bookData[genericAlgo[iterator].getIndex()].getWriterName()
                     + "; Weight : "+genericAlgo[iterator].getWeight());
         }
-
     }
-
 }

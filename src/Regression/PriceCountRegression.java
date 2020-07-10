@@ -14,7 +14,6 @@
     double bookPrice [] =new double[1050];
     double bookPrice1 [] =new double[1050];
     double bookPrice0 [] =new double[1050];
-
     int length;
     String string;
     public  void priceCountRegressionMethods(BookData[] bookData, String[] writerName,
@@ -23,8 +22,6 @@
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
         for(iterator =0; iterator <numberOfBooks; iterator++){
             length = borrowCount1[iterator].length();
             string =borrowCount1[iterator].substring(1,length);
@@ -36,7 +33,6 @@
         string=string.replaceAll("[\\t\\n\\r]+","");
         bookPrice[iterator] = Integer.parseInt(string);
     }
-
     for(iterator =0; iterator <numberOfBooks; iterator++){
         priceMean = priceMean +bookPrice[iterator];
         countMean = countMean+bookCount[iterator];

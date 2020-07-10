@@ -17,14 +17,11 @@ public class CountTypeRegression {
 
     int length;
     String string;
-
     public  void countTypeRegressionMethods (BookData[] bookData, String[] writerName,
                             String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookId[iterator].length();
@@ -37,15 +34,12 @@ public class CountTypeRegression {
             string = borrowCount1[iterator].substring(1, length);
             bookCount[iterator] = Integer.parseInt(string);
         }
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             typeMean = typeMean + typeValue[iterator];
             countMean = countMean + bookCount[iterator];
         }
-
         typeMean = typeMean / numberOfBooks;
         countMean = countMean / numberOfBooks;
-
         double assumpMean1 = 0;
         double assumpMean2 = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
@@ -53,7 +47,6 @@ public class CountTypeRegression {
             bookCount[iterator] = bookCount[iterator] - countMean;
             assumpMean1 = assumpMean1 + (typeValue[iterator] * bookCount[iterator]);
             assumpMean2 = assumpMean2 + (typeValue[iterator] * typeValue[iterator]);
-
         }
 
         double metaValue = assumpMean1 / assumpMean2;
@@ -61,16 +54,11 @@ public class CountTypeRegression {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             bookCount2[iterator] = betaValue + metaValue * typeValue[iterator];
-            //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             bookData[iterator].setWeight(bookCount2[iterator]);
         }
-        // SortingTypeCount sortingTypeCount = new SortingTypeCount();
-        //   sortingTypeCount.algorithm(bookData,numberOfBooks);
-
-
         GenericAlgo genericAlgo[] = new GenericAlgo[1050];
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             genericAlgo[iterator] = new GenericAlgo(bookData[iterator].getWeight(), iterator);
@@ -87,7 +75,6 @@ public class CountTypeRegression {
                     genericAlgo[iterator].setIndex(genericAlgo[j].getIndex());
                     genericAlgo[j].setIndex(temp);
                     bookData[j].setRank(temp, 8);
-
                 }
             }
         }

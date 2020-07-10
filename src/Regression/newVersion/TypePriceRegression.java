@@ -33,29 +33,20 @@ public class TypePriceRegression {
             typeMean = typeMean +typeValue[iterator];
             priceMean = priceMean+bookPrice[iterator];
         }
-
         typeMean = typeMean/numberOfBooks;
         priceMean = priceMean/numberOfBooks;
-
-
         for(iterator =0; iterator <numberOfBooks; iterator++){
             typeValue[iterator] =  typeValue[iterator]  - typeMean;
             bookPrice[iterator]=bookPrice[iterator]-priceMean;
             assumpMean1 = assumpMean1 +( typeValue[iterator]*bookPrice[iterator]);
             assumpMean2 = assumpMean2 + (bookPrice[iterator]*bookPrice[iterator]);
-
         }
-
         double metaValue = assumpMean1/assumpMean2;
         double betaValue = priceMean - (metaValue*typeMean);
         for(iterator =0; iterator <numberOfBooks; iterator++) {
 
             typeValue1[iterator] = betaValue + metaValue * bookPrice[iterator];
-            //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
-
         return  metaValue;
-
     }
-
 }
