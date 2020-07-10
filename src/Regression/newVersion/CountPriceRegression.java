@@ -16,12 +16,10 @@ public class CountPriceRegression {
     int length;
     String string;
     public  double countPriceRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         for(iterator =0; iterator <numberOfBooks; iterator++){
-
             bookCount[iterator] = priorityData[iterator].borrowPriority;
         }
         for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -52,9 +50,7 @@ public class CountPriceRegression {
         for(iterator =0; iterator <numberOfBooks; iterator++) {
 
             bookPrice1[iterator] = betaValue + metaValue * bookCount[iterator];
-            //     System.out.println(bookPrice0[i]+"\t"+bookPrice1[i]);
         }
-
         return  metaValue;
 
     }

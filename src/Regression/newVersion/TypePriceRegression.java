@@ -17,7 +17,6 @@ public class TypePriceRegression {
     double assumpMean2  = 0;
 
     public  double typePriceRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -26,7 +25,6 @@ public class TypePriceRegression {
             typeValue[iterator] = priorityData[iterator].bookPriority;
             typeValue0[iterator]=typeValue[iterator];
         }
-
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
             bookPrice[iterator] = priorityData[iterator].pricePriority;

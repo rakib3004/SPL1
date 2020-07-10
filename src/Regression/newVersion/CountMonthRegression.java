@@ -19,7 +19,6 @@ public class CountMonthRegression {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             timeValue[iterator] = priorityData[iterator].timePriority;
         }
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             bookCount[iterator] = priorityData[iterator].borrowPriority;
@@ -42,7 +41,6 @@ public class CountMonthRegression {
         double betaValue = timeMean - (metaValue * countMean);
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             timeValue1[iterator] = betaValue + metaValue * bookCount[iterator];
-            //     System.out.println(typeValue0[i]+"\t"+timeValue1[i]);
         }
 return  metaValue;
     }

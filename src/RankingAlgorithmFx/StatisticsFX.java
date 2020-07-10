@@ -26,7 +26,6 @@ public class StatisticsFX extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button multiVariableRegression = new Button("MultiVariable Regression");
         Button analyticHierarchy = new Button("Analytic Hierarchy Process");
         Button pageRankAlgorithm = new Button("Page Rank Algorithm");
@@ -38,15 +37,12 @@ public class StatisticsFX extends Application {
         pageRankAlgorithm.setTranslateY(50);
 
         multiVariableRegression.setOnAction(actionEvent -> {
-
             MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
             try {
-
                 multiVaribleRegressionFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         analyticHierarchy.setOnAction(actionEvent -> {
 AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
@@ -55,33 +51,22 @@ AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarch
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
         pageRankAlgorithm.setOnAction(actionEvent -> {
-
 PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
-
 try {
                 pageRankAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
-
 
         setStyle(multiVariableRegression);
         setStyle(analyticHierarchy);
         setStyle(pageRankAlgorithm);
-
-
         multiVariableRegression.setPrefSize(350, 80);
         analyticHierarchy.setPrefSize(350, 80);
         pageRankAlgorithm.setPrefSize(350, 80);
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -91,32 +76,25 @@ try {
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
-
         try {
                 authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Image image = new Image("Images"+ File.separator +"libraryBackground4.jpg");
         Canvas canvas = new Canvas(1400,800);
         Group group = new Group();
         group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,
                 analyticHierarchy,exit,back);
-
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
@@ -127,20 +105,17 @@ try {
         administrationMood.setTranslateY(320);
         about.setTranslateX(20);
         about.setTranslateY(380);
-
         administrationMood.setPrefSize(160, 30);
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
         administrationMood.setOnAction(actionEvent -> {
-
             FXThirdWindow fxThirdWindow = new FXThirdWindow();
             try {
                 fxThirdWindow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
 
         readersMood.setOnAction(actionEvent -> {
@@ -153,7 +128,6 @@ try {
         });
 
         about.setOnAction(actionEvent -> {
-
             About about1 = new About();
             try {
                 about1.start(primaryStage);
@@ -170,8 +144,6 @@ try {
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
     }
 
     public Button setStyle( Button button)

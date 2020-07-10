@@ -14,7 +14,6 @@ public class TypeCountRegression {
     double typeValue [] =new double[1050];
     double typeValue1 [] =new double[1050];
     double typeValue0 [] =new double[1050];
-
     int length;
     String string;
     double assumpMean1  = 0;
@@ -38,29 +37,22 @@ public class TypeCountRegression {
 typeMean = typeMean +typeValue[iterator];
 countMean = countMean+bookCount[iterator];
         }
-
         typeMean = typeMean/numberOfBooks;
         countMean = countMean/numberOfBooks;
-
 
     for(iterator =0; iterator <numberOfBooks; iterator++){
 typeValue[iterator] =  typeValue[iterator]  - typeMean;
 bookCount[iterator]=bookCount[iterator]-countMean;
 assumpMean1 = assumpMean1 +( typeValue[iterator]*bookCount[iterator]);
 assumpMean2 = assumpMean2 + (bookCount[iterator]*bookCount[iterator]);
-
     }
 
     double metaValue = assumpMean1/assumpMean2;
     double betaValue = countMean - (metaValue*typeMean);
         for(iterator =0; iterator <numberOfBooks; iterator++) {
-
             typeValue1[iterator] = betaValue + metaValue * bookCount[iterator];
-       //     System.out.println(typeValue0[i]+"\t"+typeValue1[i]);
         }
         return  metaValue;
-
-
     }
 
     }

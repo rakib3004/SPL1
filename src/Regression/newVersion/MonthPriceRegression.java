@@ -23,7 +23,6 @@ public class MonthPriceRegression {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
-
             timeCount[iterator] = priorityData[iterator].timePriority;
         }
         for(iterator =0; iterator <numberOfBooks; iterator++){
@@ -46,7 +45,6 @@ public class MonthPriceRegression {
             timeCount[iterator]= timeCount[iterator]- timeMean;
             assumpMean1 = assumpMean1 +( bookPrice[iterator]* timeCount[iterator]);
             assumpMean2 = assumpMean2 + (timeCount[iterator]* timeCount[iterator]);
-
         }
 
         double metaValue = assumpMean1/assumpMean2;
@@ -54,10 +52,7 @@ public class MonthPriceRegression {
         for(iterator =0; iterator <numberOfBooks; iterator++) {
 
             bookPrice1[iterator] = betaValue + metaValue * timeCount[iterator];
-            //     System.out.println(bookPrice0[i]+"\t"+bookPrice1[i]);
         }
         return  metaValue;
-
-
     }
 }
