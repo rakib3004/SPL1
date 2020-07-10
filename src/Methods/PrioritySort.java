@@ -11,7 +11,6 @@ public class PrioritySort {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         PriorityData temporaryPriority;
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             for(jterator= iterator+1;jterator<numberOfBooks;jterator++){

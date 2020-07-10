@@ -15,10 +15,7 @@ public class ReverseSorting {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         PriorityData temporaryPriority;
-
-
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             for(jterator= iterator+1;jterator<numberOfBooks;jterator++){
                 if(priorityData[iterator].getMLRweight()>priorityData[jterator].getMLRweight()){
@@ -28,19 +25,11 @@ public class ReverseSorting {
                 }
             }
         }
-
         return priorityData;
 
-
-
-
     }
-
     public PriorityData[] reverseSortingAHPmethods(PriorityData[] priorityData, int numberOfBooks){
-
         PriorityData temporaryPriority;
-
-
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             for(jterator= iterator+1;jterator<numberOfBooks;jterator++){
                 if(priorityData[iterator].getAHPweight()>priorityData[jterator].getAHPweight()){
@@ -50,16 +39,11 @@ public class ReverseSorting {
                 }
             }
         }
-
         return priorityData;
-
     }
 
     public PriorityData[] reverseSortingPRAmethods(PriorityData[] priorityData, int numberOfBooks){
-
         PriorityData temporaryPriority;
-
-
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             for(jterator= iterator+1;jterator<numberOfBooks;jterator++){
                 if(priorityData[iterator].getPRAweight()>priorityData[jterator].getPRAweight()){
@@ -69,14 +53,9 @@ public class ReverseSorting {
                 }
             }
         }
-
         return priorityData;
     }
-
-
     public GenericAlgo[] sortingMLRmethods(PriorityData[] priorityData, int numberOfBooks){
-
-
 
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             genericAlgo[iterator] = new GenericAlgo(priorityData[iterator].getMLRweight(), iterator);
@@ -95,16 +74,11 @@ public class ReverseSorting {
                 }
             }
         }
-
         return genericAlgo;
-
-
     }
 
     public GenericAlgo[] sortingAHPmethods(PriorityData[] priorityData, int numberOfBooks){
-
         GenericAlgo genericAlgo[] = new GenericAlgo[632];
-
         for(iterator = 0; iterator <numberOfBooks; iterator++){
             genericAlgo[iterator] = new GenericAlgo(priorityData[iterator].getAHPweight(), iterator);
         }
@@ -122,12 +96,8 @@ public class ReverseSorting {
                 }
             }
         }
-
-
         return genericAlgo;
-
     }
-
     public GenericAlgo[] sortingPRAmethods(PriorityData[] priorityData, int numberOfBooks){
 
         GenericAlgo genericAlgo[] = new GenericAlgo[632];
@@ -149,8 +119,6 @@ public class ReverseSorting {
                 }
             }
         }
-
         return genericAlgo;
-
     }
 }
