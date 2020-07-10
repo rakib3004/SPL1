@@ -2,7 +2,6 @@ package SimpleRegression;
 
 import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
-
 public class CalculateDoublyRegression {
     int number=632;
     int iterator;

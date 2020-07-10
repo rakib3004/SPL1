@@ -76,7 +76,6 @@ public class PRA_Result {
                 timeCollection.timeCollectionPRAMethods(priorityData, numberOfBooks);
             } else if (anInt == 4) {
                 borrowCollection.borrowCollectionPRAMethods(priorityData, numberOfBooks);
-
             } else if (anInt == 5) {
                 searching.search(priorityData, numberOfBooks);
             } else {

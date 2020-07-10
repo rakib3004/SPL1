@@ -15,7 +15,6 @@ CalculateDoublyRegression calculateDoublyRegression = new CalculateDoublyRegress
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         for(iterator =0; iterator <number; iterator++){
 meanX2 = meanX2 + priorityData[iterator].borrowPriority;
         }for(iterator =0; iterator <number; iterator++){
@@ -30,14 +29,11 @@ meanY = meanY + priorityData[iterator].bookPriority ;
         for(iterator =0; iterator <number; iterator++){
             sumX2square= sumX2square + Math.pow(priorityData[iterator].borrowPriority,2);
         }
-
         for(iterator =0; iterator <number; iterator++) {
             sumX3square= sumX3square + Math.pow(priorityData[iterator].timePriority,2);
-
         }
  for(iterator =0; iterator <number; iterator++) {
      sumYX2 = sumYX2 + (priorityData[iterator].bookPriority*priorityData[iterator].borrowPriority);
-
         }
  for(iterator =0; iterator <number; iterator++) {
      sumYX3 = sumYX3 + (priorityData[iterator].bookPriority*priorityData[iterator].timePriority);
@@ -52,9 +48,7 @@ meanY = meanY + priorityData[iterator].bookPriority ;
  beta3 = ((sumYX3*sumX2square)-(sumYX2*sumX2X3))/((sumX2square*sumX3square)-(sumX2X3*sumX2X3));
  //beta2 = Math.pow(beta2,-1);
  //beta3 = Math.pow(beta3,-1);
-
  beta1 = meanY - (beta2*meanX2) - (beta3*meanX3);
-
  calculateDoublyRegression.calculateDoublyRegressionMethod(beta1,beta2,beta3,priorityData);
         }
 }

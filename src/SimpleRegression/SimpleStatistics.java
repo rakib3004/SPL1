@@ -25,9 +25,5 @@ public class SimpleStatistics {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
     }
-
-
 }

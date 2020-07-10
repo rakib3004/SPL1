@@ -4,7 +4,6 @@ import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;
 
 public class LinearRegression {
-
     int iterator;
     double y_mean = 0;
     double x_mean = 0;
@@ -19,22 +18,17 @@ public  double [] linearRegressionMethods(double x_value[], double y_value[], in
     String  className = this.getClass().getSimpleName();
     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
     dateTimeWriter.dateTimeWriterMethods(className);
-
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
         x_mean = x_mean + x_value[iterator];
         y_mean = y_mean + y_value[iterator];
     }
-
     x_mean = x_mean / numberOfBooks;
     y_mean = y_mean / numberOfBooks;
-
-
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
         x_value[iterator] = x_value[iterator] - x_mean;
         y_value[iterator] = y_value[iterator] - y_mean;
         alpha_value = alpha_value + (x_value[iterator] * y_value[iterator]);
         beta_value = beta_value + (x_value[iterator] * x_value[iterator]);
-
     }
     double metaValue = alpha_value / beta_value;
     double betaValue = y_mean - (metaValue * x_mean);
@@ -44,6 +38,4 @@ public  double [] linearRegressionMethods(double x_value[], double y_value[], in
     }
 return reg_y_value;
 }
-
-
 }

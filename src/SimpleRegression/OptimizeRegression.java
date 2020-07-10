@@ -23,20 +23,13 @@ public class OptimizeRegression {
     int integer1,integer2;
     int newYear,oldYear;
     public void newCountValue(){
-
     }
     public void newTypeValue(){
-
     }
     public void newPriceValue(){
-
     }
     public void newMonthValue(){
-
     }
-
-
-
     public void OptimizeRegressionMethods(BookData[] bookData, String[] writerName,
                                           String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks){
         //   Processing processing = new Processing();
@@ -44,7 +37,6 @@ public class OptimizeRegression {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         for(int iterator=0;iterator<numberOfBooks;iterator++){
             if(writerName[iterator].equals(" Humayon Ahmed")){
                 writePriority[iterator]=25;
@@ -55,7 +47,6 @@ public class OptimizeRegression {
             else {
                 writePriority[iterator]=15;
             }
-
         }
 
         for(int iterator =0;iterator<numberOfBooks;iterator++){
@@ -91,16 +82,11 @@ public class OptimizeRegression {
                 }
             }
         }
-
         System.out.println("Optimized View 01 :" );
-
-
         for(int i=190;i<numberOfBooks;i++){
             System.out.println("Book Name :"+bookData[genericAlgo[i].getIndex()].getBookName()+
                     "; Writer Name : "+bookData[genericAlgo[i].getIndex()].getWriterName()
                     + "; Weight : "+genericAlgo[i].getWeight());
-
         }
-
     }
 }
