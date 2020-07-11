@@ -733,33 +733,20 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
-
-
         StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
-
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
@@ -769,25 +756,15 @@ public class StackedAreaFX extends Application {
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
-
 
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
-
     }
-
-
     public void startBorrowing(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -808,36 +785,23 @@ public class StackedAreaFX extends Application {
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
 
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
         StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
 
-
-
         String below4,over4,over7,over10,over15,over20,over25,over30;
-
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
         over30 =  "30+" ;
-
 
         double []   below4Count = new double[7] ;
         double [] over4Count = new double[7] ;
@@ -847,32 +811,20 @@ public class StackedAreaFX extends Application {
         double []  over20Count = new double[7] ;
         double [] over25Count = new double[7] ;
         double [] over30Count = new double[7];
-
-
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
-
         List<Double> list = new ArrayList<>();
-
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over30Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -880,13 +832,11 @@ public class StackedAreaFX extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over25Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -894,13 +844,11 @@ public class StackedAreaFX extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over20Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -908,27 +856,22 @@ public class StackedAreaFX extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over15Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over10Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -936,47 +879,35 @@ public class StackedAreaFX extends Application {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over7Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 //over4Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))<4.0){
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 below4Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
-
-
-
-
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(below4);
@@ -995,10 +926,6 @@ public class StackedAreaFX extends Application {
         XYChart.Series series8 = new XYChart.Series();
         series8.setName(over30);
 
-
-
-
-
         series1.getData().add(new XYChart.Data(sevenValueArray0,below4Count[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,below4Count[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,below4Count[2]));
@@ -1006,7 +933,6 @@ public class StackedAreaFX extends Application {
         series1.getData().add(new XYChart.Data(sevenValueArray4,below4Count[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,below4Count[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,below4Count[6]));
-
 
         series2.getData().add(new XYChart.Data(sevenValueArray0,over4Count[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,over4Count[1]));
@@ -1016,7 +942,6 @@ public class StackedAreaFX extends Application {
         series2.getData().add(new XYChart.Data(sevenValueArray5,over4Count[5]));
         series2.getData().add(new XYChart.Data(sevenValueArray6,over4Count[6]));
 
-
         series3.getData().add(new XYChart.Data(sevenValueArray0,over7Count[0]));
         series3.getData().add(new XYChart.Data(sevenValueArray1,over7Count[1]));
         series3.getData().add(new XYChart.Data(sevenValueArray2,over7Count[2]));
@@ -1024,7 +949,6 @@ public class StackedAreaFX extends Application {
         series3.getData().add(new XYChart.Data(sevenValueArray4,over7Count[4]));
         series3.getData().add(new XYChart.Data(sevenValueArray5,over7Count[5]));
         series3.getData().add(new XYChart.Data(sevenValueArray6,over7Count[6]));
-
 
         series4.getData().add(new XYChart.Data(sevenValueArray0,over10Count[0]));
         series4.getData().add(new XYChart.Data(sevenValueArray1,over10Count[1]));
@@ -1034,7 +958,6 @@ public class StackedAreaFX extends Application {
         series4.getData().add(new XYChart.Data(sevenValueArray5,over10Count[5]));
         series4.getData().add(new XYChart.Data(sevenValueArray6,over10Count[6]));
 
-
         series5.getData().add(new XYChart.Data(sevenValueArray0,over15Count[0]));
         series5.getData().add(new XYChart.Data(sevenValueArray1,over15Count[1]));
         series5.getData().add(new XYChart.Data(sevenValueArray2,over15Count[2]));
@@ -1042,7 +965,6 @@ public class StackedAreaFX extends Application {
         series5.getData().add(new XYChart.Data(sevenValueArray4,over15Count[4]));
         series5.getData().add(new XYChart.Data(sevenValueArray5,over15Count[5]));
         series5.getData().add(new XYChart.Data(sevenValueArray6,over15Count[6]));
-
 
         series6.getData().add(new XYChart.Data(sevenValueArray0,over20Count[0]));
         series6.getData().add(new XYChart.Data(sevenValueArray1,over20Count[1]));
@@ -1052,7 +974,6 @@ public class StackedAreaFX extends Application {
         series6.getData().add(new XYChart.Data(sevenValueArray5,over20Count[5]));
         series6.getData().add(new XYChart.Data(sevenValueArray6,over20Count[6]));
 
-
         series7.getData().add(new XYChart.Data(sevenValueArray0,over25Count[0]));
         series7.getData().add(new XYChart.Data(sevenValueArray1,over25Count[1]));
         series7.getData().add(new XYChart.Data(sevenValueArray2,over25Count[2]));
@@ -1061,7 +982,6 @@ public class StackedAreaFX extends Application {
         series7.getData().add(new XYChart.Data(sevenValueArray5,over25Count[5]));
         series7.getData().add(new XYChart.Data(sevenValueArray6,over25Count[6]));
 
-
         series8.getData().add(new XYChart.Data(sevenValueArray0,over30Count[0]));
         series8.getData().add(new XYChart.Data(sevenValueArray1,over30Count[1]));
         series8.getData().add(new XYChart.Data(sevenValueArray2,over30Count[2]));
@@ -1069,9 +989,6 @@ public class StackedAreaFX extends Application {
         series8.getData().add(new XYChart.Data(sevenValueArray4,over30Count[4]));
         series8.getData().add(new XYChart.Data(sevenValueArray5,over30Count[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,over30Count[6]));
-
-
-
 
         StackedAreaChart.getData().add(series1);
         StackedAreaChart.getData().add(series2);
@@ -1082,20 +999,13 @@ public class StackedAreaFX extends Application {
         StackedAreaChart.getData().add(series7);
         StackedAreaChart.getData().add(series8);
 
-
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -1111,7 +1021,6 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -1120,34 +1029,22 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
-
-
         StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -1155,19 +1052,14 @@ public class StackedAreaFX extends Application {
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
 
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
     }
 
     public void startPricing(Stage primaryStage) throws IOException {
@@ -1187,46 +1079,27 @@ public class StackedAreaFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
         StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
 
-
-
-
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
-
-
 
         over100 =  "100-140" ;
         over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
         over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
         over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
-
-
-
 
         double [] over100Count= new double[7];
         double[] over140Count= new double[7];
@@ -1238,30 +1111,22 @@ public class StackedAreaFX extends Application {
         double[] over350Count= new double[7];
         double[] over400Count= new double[7];
         double[] over500Count= new double[7];
-
-
-
         int iterator;
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
         List<Double> list = new ArrayList<>();
-
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
 
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                 //over500Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over500Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
@@ -1269,13 +1134,11 @@ public class StackedAreaFX extends Application {
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<500.00){
                 //over400Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over400Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
@@ -1283,17 +1146,13 @@ public class StackedAreaFX extends Application {
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<400.00){
                 //over350Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over350Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
@@ -1350,7 +1209,6 @@ public class StackedAreaFX extends Application {
             if(sizeB>7){
                 over180Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -1359,13 +1217,11 @@ public class StackedAreaFX extends Application {
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<180.00){
                 //over160Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over160Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -1393,7 +1249,6 @@ public class StackedAreaFX extends Application {
             if(sizeB>7){
                 over100Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -1419,10 +1274,6 @@ public class StackedAreaFX extends Application {
         series9.setName(over400);
         XYChart.Series series10 = new XYChart.Series();
         series10.setName(over500);
-
-
-
-
         series1.getData().add(new XYChart.Data(sevenValueArray0,over100Count[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,over100Count[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,over100Count[2]));
@@ -1430,8 +1281,6 @@ public class StackedAreaFX extends Application {
         series1.getData().add(new XYChart.Data(sevenValueArray4,over100Count[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,over100Count[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,over100Count[6]));
-
-
         series2.getData().add(new XYChart.Data(sevenValueArray0,over140Count[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,over140Count[1]));
         series2.getData().add(new XYChart.Data(sevenValueArray2,over140Count[2]));
@@ -1439,7 +1288,6 @@ public class StackedAreaFX extends Application {
         series2.getData().add(new XYChart.Data(sevenValueArray4,over140Count[4]));
         series2.getData().add(new XYChart.Data(sevenValueArray5,over140Count[5]));
         series2.getData().add(new XYChart.Data(sevenValueArray6,over140Count[6]));
-
 
         series3.getData().add(new XYChart.Data(sevenValueArray0,over160Count[0]));
         series3.getData().add(new XYChart.Data(sevenValueArray1,over160Count[1]));
@@ -1449,7 +1297,6 @@ public class StackedAreaFX extends Application {
         series3.getData().add(new XYChart.Data(sevenValueArray5,over160Count[5]));
         series3.getData().add(new XYChart.Data(sevenValueArray6,over160Count[6]));
 
-
         series4.getData().add(new XYChart.Data(sevenValueArray0,over180Count[0]));
         series4.getData().add(new XYChart.Data(sevenValueArray1,over180Count[1]));
         series4.getData().add(new XYChart.Data(sevenValueArray2,over180Count[2]));
@@ -1457,7 +1304,6 @@ public class StackedAreaFX extends Application {
         series4.getData().add(new XYChart.Data(sevenValueArray4,over180Count[4]));
         series4.getData().add(new XYChart.Data(sevenValueArray5,over180Count[5]));
         series4.getData().add(new XYChart.Data(sevenValueArray6,over180Count[6]));
-
 
         series5.getData().add(new XYChart.Data(sevenValueArray0,over210Count[0]));
         series5.getData().add(new XYChart.Data(sevenValueArray1,over210Count[1]));
@@ -1467,7 +1313,6 @@ public class StackedAreaFX extends Application {
         series5.getData().add(new XYChart.Data(sevenValueArray5,over210Count[5]));
         series5.getData().add(new XYChart.Data(sevenValueArray6,over210Count[6]));
 
-
         series6.getData().add(new XYChart.Data(sevenValueArray0,over250Count[0]));
         series6.getData().add(new XYChart.Data(sevenValueArray1,over250Count[1]));
         series6.getData().add(new XYChart.Data(sevenValueArray2,over250Count[2]));
@@ -1475,7 +1320,6 @@ public class StackedAreaFX extends Application {
         series6.getData().add(new XYChart.Data(sevenValueArray4,over250Count[4]));
         series6.getData().add(new XYChart.Data(sevenValueArray5,over250Count[5]));
         series6.getData().add(new XYChart.Data(sevenValueArray6,over250Count[6]));
-
 
         series7.getData().add(new XYChart.Data(sevenValueArray0,over300Count[0]));
         series7.getData().add(new XYChart.Data(sevenValueArray1,over300Count[1]));
@@ -1485,7 +1329,6 @@ public class StackedAreaFX extends Application {
         series7.getData().add(new XYChart.Data(sevenValueArray5,over300Count[5]));
         series7.getData().add(new XYChart.Data(sevenValueArray6,over300Count[6]));
 
-
         series8.getData().add(new XYChart.Data(sevenValueArray0,over350Count[0]));
         series8.getData().add(new XYChart.Data(sevenValueArray1,over350Count[1]));
         series8.getData().add(new XYChart.Data(sevenValueArray2,over350Count[2]));
@@ -1493,7 +1336,6 @@ public class StackedAreaFX extends Application {
         series8.getData().add(new XYChart.Data(sevenValueArray4,over350Count[4]));
         series8.getData().add(new XYChart.Data(sevenValueArray5,over350Count[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,over350Count[6]));
-
 
         series9.getData().add(new XYChart.Data(sevenValueArray0,over400Count[0]));
         series9.getData().add(new XYChart.Data(sevenValueArray1,over400Count[1]));
@@ -1503,7 +1345,6 @@ public class StackedAreaFX extends Application {
         series9.getData().add(new XYChart.Data(sevenValueArray5,over400Count[5]));
         series9.getData().add(new XYChart.Data(sevenValueArray6,over400Count[6]));
 
-
         series10.getData().add(new XYChart.Data(sevenValueArray0,over500Count[0]));
         series10.getData().add(new XYChart.Data(sevenValueArray1,over500Count[1]));
         series10.getData().add(new XYChart.Data(sevenValueArray2,over500Count[2]));
@@ -1511,7 +1352,6 @@ public class StackedAreaFX extends Application {
         series10.getData().add(new XYChart.Data(sevenValueArray4,over500Count[4]));
         series10.getData().add(new XYChart.Data(sevenValueArray5,over500Count[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,over500Count[6]));
-
 
         StackedAreaChart.getData().add(series1);
         StackedAreaChart.getData().add(series2);
@@ -1524,19 +1364,12 @@ public class StackedAreaFX extends Application {
         StackedAreaChart.getData().add(series9);
         StackedAreaChart.getData().add(series10);
 
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
@@ -1558,7 +1391,6 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -1567,14 +1399,10 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
-
-
         StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
@@ -1582,18 +1410,12 @@ public class StackedAreaFX extends Application {
             }
         });
 
-
-
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
 
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
@@ -1606,15 +1428,11 @@ public class StackedAreaFX extends Application {
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
 
     }
     public Button setStyle(Button button)
