@@ -35,7 +35,6 @@ public class ScatterChartFX extends Application {
     BookNumber bookNumber = new BookNumber();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
-
     @Override
     public void start(Stage primaryStage) {
     }
@@ -70,7 +69,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
-
         double [] uponnashTypeNO= new double[7] ;
         double []kobitaTypeNO= new double[7] ;
         double []rochonaBoliTypeNO= new double[7] ;
@@ -81,7 +79,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         double []  kisoreUponnashTypeNO= new double[7] ;
         double []onubadTypeNO= new double[7] ;
         double []othersTypeNO = new double[7];
-
         uponnashType="Uponnash";
         kobitaType = "Kobita";
         rochonaBoliType = "Rochhona Boli";
@@ -97,20 +94,17 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
              //   uponnashTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
                 int sizeB = list.size();
             if(sizeB>7){
                 uponnashTypeNO  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
             //    rochonaBoliTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -199,7 +193,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
              //   othersTypeNO++;
             }
         }
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Types");
 
@@ -350,7 +343,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
                 e.printStackTrace();
             }
         });
-
         contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
@@ -360,7 +352,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
                 contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
             }
         });
-
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
@@ -384,7 +375,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
     public void startTiming(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -402,250 +392,192 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Generics of Book Bar Chart");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
-
         ScatterChart  ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
-
-
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
                 year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
-
-
-
         int iterator;
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
         List<Double> list = new ArrayList<>();
-
-
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 //year2017Books++;
                 list.add(priorityData[iterator].getMLRweight());
-                
-            }
+                            }
             int sizeB = list.size();
             if(sizeB>7){
                 year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("16")){
                 //year2016Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2016Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("15")){
                 //year2015Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2015Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("14")){
                 //year2014Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2014Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("13")){
                 //year2013Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2013Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0812")){
                 //year2012Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0212")){
                 //year2012Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1211")){
                 //year2011Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0311")){
                 //year2011Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1210")){
                 //year2010Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0810")){
                 //year2010Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0410")){
                 //year2010Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1009")){
                 //year2009Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2009Books =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0409")){
                 //year2009Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2009Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1208")){
                 //year2008Books++;
               list.add(priorityData[iterator].getMLRweight());
-
             }
           int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0608")){
                 //year2008Books++;
             list.add(priorityData[iterator].getMLRweight());
-
         }
             int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
-
-
-        
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(year2008);
         XYChart.Series series2 = new XYChart.Series();
@@ -667,10 +599,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         XYChart.Series series10 = new XYChart.Series();
         series9.setName(year2017);
 
-
-
-
-
         series1.getData().add(new XYChart.Data(year2008,year2008Books[0]));
         series1.getData().add(new XYChart.Data(year2008,year2008Books[1]));
         series1.getData().add(new XYChart.Data(year2008,year2008Books[2]));
@@ -678,7 +606,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series1.getData().add(new XYChart.Data(year2008,year2008Books[4]));
         series1.getData().add(new XYChart.Data(year2008,year2008Books[5]));
         series1.getData().add(new XYChart.Data(year2008,year2008Books[6]));
-
 
         series2.getData().add(new XYChart.Data(year2009,year2009Books[0]));
         series2.getData().add(new XYChart.Data(year2009,year2009Books[1]));
@@ -688,7 +615,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series2.getData().add(new XYChart.Data(year2009,year2009Books[5]));
         series2.getData().add(new XYChart.Data(year2009,year2009Books[6]));
 
-
         series3.getData().add(new XYChart.Data(year2010,year2010Books[0]));
         series3.getData().add(new XYChart.Data(year2010,year2010Books[1]));
         series3.getData().add(new XYChart.Data(year2010,year2010Books[2]));
@@ -696,7 +622,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series3.getData().add(new XYChart.Data(year2010,year2010Books[4]));
         series3.getData().add(new XYChart.Data(year2010,year2010Books[5]));
         series3.getData().add(new XYChart.Data(year2010,year2010Books[6]));
-
 
         series4.getData().add(new XYChart.Data(year2011,year2011Books[0]));
         series4.getData().add(new XYChart.Data(year2011,year2011Books[1]));
@@ -706,7 +631,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series4.getData().add(new XYChart.Data(year2011,year2011Books[5]));
         series4.getData().add(new XYChart.Data(year2011,year2011Books[6]));
 
-
         series5.getData().add(new XYChart.Data(year2012,year2012Books[0]));
         series5.getData().add(new XYChart.Data(year2012,year2012Books[1]));
         series5.getData().add(new XYChart.Data(year2012,year2012Books[2]));
@@ -714,7 +638,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series5.getData().add(new XYChart.Data(year2012,year2012Books[4]));
         series5.getData().add(new XYChart.Data(year2012,year2012Books[5]));
         series5.getData().add(new XYChart.Data(year2012,year2012Books[6]));
-
 
         series6.getData().add(new XYChart.Data(year2013,year2013Books[0]));
         series6.getData().add(new XYChart.Data(year2013,year2013Books[1]));
@@ -724,7 +647,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series6.getData().add(new XYChart.Data(year2013,year2013Books[5]));
         series6.getData().add(new XYChart.Data(year2013,year2013Books[6]));
 
-
         series7.getData().add(new XYChart.Data(year2014,year2014Books[0]));
         series7.getData().add(new XYChart.Data(year2014,year2014Books[1]));
         series7.getData().add(new XYChart.Data(year2014,year2014Books[2]));
@@ -733,7 +655,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series7.getData().add(new XYChart.Data(year2014,year2014Books[5]));
         series7.getData().add(new XYChart.Data(year2014,year2014Books[6]));
 
-
         series8.getData().add(new XYChart.Data(year2015,year2015Books[0]));
         series8.getData().add(new XYChart.Data(year2015,year2015Books[1]));
         series8.getData().add(new XYChart.Data(year2015,year2015Books[2]));
@@ -741,7 +662,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series8.getData().add(new XYChart.Data(year2015,year2015Books[4]));
         series8.getData().add(new XYChart.Data(year2015,year2015Books[5]));
         series8.getData().add(new XYChart.Data(year2015,year2015Books[6]));
-
 
         series9.getData().add(new XYChart.Data(year2016,year2016Books[0]));
         series9.getData().add(new XYChart.Data(year2016,year2016Books[1]));
@@ -760,9 +680,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series10.getData().add(new XYChart.Data(year2017,year2017Books[5]));
         series10.getData().add(new XYChart.Data(year2017,year2017Books[6]));
 
-
-
-
         ScatterChart .getData().add(series1);
         ScatterChart .getData().add(series2);
         ScatterChart .getData().add(series3);
@@ -774,20 +691,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series9);
         ScatterChart .getData().add(series10);
 
-
-
-
-
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,800);
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart1 = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -803,7 +713,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart1.setOnAction((event) -> {
             try {
@@ -812,34 +721,21 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
-
-
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
-
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
@@ -849,25 +745,14 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
-
-
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
-
     }
-
-
     public void startBorrowing(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -885,40 +770,25 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
         ScatterChart  scatterChart  = new ScatterChart (categoryAxis,numberAxis);
-
-
-
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
         over30 =  "30+" ;
-
         double []   below4Count = new double[7] ;
         double [] over4Count = new double[7] ;
         double [] over7Count = new double[7] ;
@@ -927,32 +797,21 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         double []  over20Count = new double[7] ;
         double [] over25Count = new double[7] ;
         double [] over30Count = new double[7];
-
-
-
-        int iterator;
+                int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
-
         List<Double> list = new ArrayList<>();
-
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over30Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -960,13 +819,11 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over25Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -974,27 +831,22 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over20Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over15Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
 
@@ -1002,21 +854,17 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over10Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
