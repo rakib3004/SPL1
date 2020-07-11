@@ -30,7 +30,6 @@ import java.util.List;
 public class LineChartFX extends Application {
 
     PriorityData[] priorityData;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -40,14 +39,11 @@ public class LineChartFX extends Application {
 double []  year2017Books = new double[7];
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPcriteriaWeight ahPcriteriaWeight;
-
     @Override
     public void start(Stage primaryStage) {
-
     }
 
     public void startTyping(Stage primaryStage) throws IOException {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -64,34 +60,21 @@ double []  year2017Books = new double[7];
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
 
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
-
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
-
-
 
         double [] uponnashTypeNO= new double[7] ;
         double []kobitaTypeNO= new double[7] ;
@@ -103,8 +86,6 @@ double []  year2017Books = new double[7];
         double []  kisoreUponnashTypeNO= new double[7] ;
         double []onubadTypeNO= new double[7] ;
         double []othersTypeNO = new double[7];
-
-
         uponnashType="Uponnash";
         kobitaType = "Kobita";
         rochonaBoliType = "Rochhona Boli";
@@ -115,42 +96,32 @@ double []  year2017Books = new double[7];
         kisoreUponnashType = "Kisore";
         onubadType = "Onubad";
         othersType= "Others";
-
-
         List<Double> list = new ArrayList<>();
-
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                 //   uponnashTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
-
             int sizeB = list.size();
             if(sizeB>7){
                 uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
                 //    rochonaBoliTypeNO++;
-
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 rochonaBoliTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
             //    kobitaTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
 
         }
@@ -158,128 +129,87 @@ double []  year2017Books = new double[7];
             if(sizeB>7){
                 kobitaTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
             //  bigganTypeNO++;
 
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
             //   bigganTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
             int sizeB = list.size();
             if(sizeB>7){
                 bigganTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
             //   sciFicTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
             int sizeB = list.size();
             if(sizeB>7){
                 sciFicTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
             //  kisoreUponnashTypeNO++;
-
-        }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+        }
+        } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
             //  shisuSahittoTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
 
-
-            int sizeB = list.size();
+        int sizeB = list.size();
             if(sizeB>7){
                 shisuSahittoTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
             // onubadTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
             int sizeB = list.size();
             if(sizeB>7){
-
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
             }
-
-
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
             //  onubadTypeNO++;
-
-            list.add(priorityData[iterator].getMLRweight());
-
+           list.add(priorityData[iterator].getMLRweight());
         }
-
             int sizeB = list.size();
             if(sizeB>7){
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
-
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
                 //     religionTypeNO++;
-
                 list.add(priorityData[iterator].getMLRweight());
-
             }
-
             int sizeB = list.size();
             if(sizeB>7){
                 religionTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
             }
-
-
-        }for (iterator = 0; iterator < numberOfBooks; iterator++) { {
+        }
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { {
             //   othersTypeNO++;
-
         }
         }
-
-
-
 
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Types");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-
         LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -303,10 +233,6 @@ double []  year2017Books = new double[7];
         XYChart.Series series10 = new XYChart.Series();
         series10.setName(othersType);
 
-
-
-
-
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[0]));
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[1]));
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[2]));
@@ -314,7 +240,6 @@ double []  year2017Books = new double[7];
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[4]));
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[5]));
         series1.getData().add(new XYChart.Data(uponnashType,uponnashTypeNO[6]));
-
 
         series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[0]));
         series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[1]));
@@ -324,7 +249,6 @@ double []  year2017Books = new double[7];
         series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[5]));
         series2.getData().add(new XYChart.Data(kobitaType,kobitaTypeNO[6]));
 
-
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[0]));
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[1]));
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[2]));
@@ -332,7 +256,6 @@ double []  year2017Books = new double[7];
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[4]));
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[5]));
         series3.getData().add(new XYChart.Data(rochonaBoliType,rochonaBoliTypeNO[6]));
-
 
         series4.getData().add(new XYChart.Data(religionType,religionTypeNO[0]));
         series4.getData().add(new XYChart.Data(religionType,religionTypeNO[1]));
@@ -342,7 +265,6 @@ double []  year2017Books = new double[7];
         series4.getData().add(new XYChart.Data(religionType,religionTypeNO[5]));
         series4.getData().add(new XYChart.Data(religionType,religionTypeNO[6]));
 
-
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[0]));
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[1]));
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[2]));
@@ -350,7 +272,6 @@ double []  year2017Books = new double[7];
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[4]));
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[5]));
         series5.getData().add(new XYChart.Data(bigganType,bigganTypeNO[6]));
-
 
         series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[0]));
         series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[1]));
@@ -360,7 +281,6 @@ double []  year2017Books = new double[7];
         series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[5]));
         series6.getData().add(new XYChart.Data(sciFicType,sciFicTypeNO[6]));
 
-
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[0]));
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[1]));
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[2]));
@@ -368,7 +288,6 @@ double []  year2017Books = new double[7];
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[4]));
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[5]));
         series7.getData().add(new XYChart.Data(shisuSahittoType,shisuSahittoTypeNO[6]));
-
 
         series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[0]));
         series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[1]));
@@ -378,7 +297,6 @@ double []  year2017Books = new double[7];
         series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[5]));
         series8.getData().add(new XYChart.Data(kisoreUponnashType,kisoreUponnashTypeNO[6]));
 
-
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[0]));
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[1]));
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[2]));
@@ -387,7 +305,6 @@ double []  year2017Books = new double[7];
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[5]));
         series9.getData().add(new XYChart.Data(onubadType,onubadTypeNO[6]));
 
-
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[0]));
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[1]));
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[2]));
@@ -395,8 +312,6 @@ double []  year2017Books = new double[7];
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[4]));
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[5]));
         series10.getData().add(new XYChart.Data(othersType,othersTypeNO[6]));
-
-
 
         LineChart .getData().add(series1);
         LineChart .getData().add(series2);
@@ -409,12 +324,9 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series9);
         LineChart .getData().add(series10);
 
-
-
         LineChart .setTranslateX(65);
         LineChart .setTranslateY(55);
         LineChart .setPrefSize(1000,700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
@@ -436,7 +348,6 @@ double []  year2017Books = new double[7];
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -445,12 +356,9 @@ double []  year2017Books = new double[7];
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
 
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-
-
         LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
@@ -460,20 +368,12 @@ double []  year2017Books = new double[7];
             }
         });
 
-
-
-
-
         HBox hBox1 = new HBox(LineChart ,exit,back);
-
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
         vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
         BackgroundImage bi = new BackgroundImage(background,
@@ -483,19 +383,13 @@ double []  year2017Books = new double[7];
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
 
     }
 
