@@ -1303,7 +1303,6 @@ double []  year2017Books = new double[7];
         series3.getData().add(new XYChart.Data(over160,over160Count[5]));
         series3.getData().add(new XYChart.Data(over160,over160Count[6]));
 
-
         series4.getData().add(new XYChart.Data(over180,over180Count[0]));
         series4.getData().add(new XYChart.Data(over180,over180Count[1]));
         series4.getData().add(new XYChart.Data(over180,over180Count[2]));
@@ -1311,7 +1310,6 @@ double []  year2017Books = new double[7];
         series4.getData().add(new XYChart.Data(over180,over180Count[4]));
         series4.getData().add(new XYChart.Data(over180,over180Count[5]));
         series4.getData().add(new XYChart.Data(over180,over180Count[6]));
-
 
         series5.getData().add(new XYChart.Data(over210,over210Count[0]));
         series5.getData().add(new XYChart.Data(over210,over210Count[1]));
@@ -1321,7 +1319,6 @@ double []  year2017Books = new double[7];
         series5.getData().add(new XYChart.Data(over210,over210Count[5]));
         series5.getData().add(new XYChart.Data(over210,over210Count[6]));
 
-
         series6.getData().add(new XYChart.Data(over250,over250Count[0]));
         series6.getData().add(new XYChart.Data(over250,over250Count[1]));
         series6.getData().add(new XYChart.Data(over250,over250Count[2]));
@@ -1329,7 +1326,6 @@ double []  year2017Books = new double[7];
         series6.getData().add(new XYChart.Data(over250,over250Count[4]));
         series6.getData().add(new XYChart.Data(over250,over250Count[5]));
         series6.getData().add(new XYChart.Data(over250,over250Count[6]));
-
 
         series7.getData().add(new XYChart.Data(over300,over300Count[0]));
         series7.getData().add(new XYChart.Data(over300,over300Count[1]));
@@ -1339,7 +1335,6 @@ double []  year2017Books = new double[7];
         series7.getData().add(new XYChart.Data(over300,over300Count[5]));
         series7.getData().add(new XYChart.Data(over300,over300Count[6]));
 
-
         series8.getData().add(new XYChart.Data(over350,over350Count[0]));
         series8.getData().add(new XYChart.Data(over350,over350Count[1]));
         series8.getData().add(new XYChart.Data(over350,over350Count[2]));
@@ -1347,7 +1342,6 @@ double []  year2017Books = new double[7];
         series8.getData().add(new XYChart.Data(over350,over350Count[4]));
         series8.getData().add(new XYChart.Data(over350,over350Count[5]));
         series8.getData().add(new XYChart.Data(over350,over350Count[6]));
-
 
         series9.getData().add(new XYChart.Data(over400,over400Count[0]));
         series9.getData().add(new XYChart.Data(over400,over400Count[1]));
@@ -1357,7 +1351,6 @@ double []  year2017Books = new double[7];
         series9.getData().add(new XYChart.Data(over400,over400Count[5]));
         series9.getData().add(new XYChart.Data(over400,over400Count[6]));
 
-
         series10.getData().add(new XYChart.Data(over500,over500Count[0]));
         series10.getData().add(new XYChart.Data(over500,over500Count[1]));
         series10.getData().add(new XYChart.Data(over500,over500Count[2]));
@@ -1365,8 +1358,6 @@ double []  year2017Books = new double[7];
         series10.getData().add(new XYChart.Data(over500,over500Count[4]));
         series10.getData().add(new XYChart.Data(over500,over500Count[5]));
         series10.getData().add(new XYChart.Data(over500,over500Count[6]));
-
-
 
         LineChart .getData().add(series1);
         LineChart .getData().add(series2);
@@ -1379,18 +1370,14 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series9);
         LineChart .getData().add(series10);
 
-
-
         LineChart .setTranslateX(65);
         LineChart .setTranslateY(55);
         LineChart .setPrefSize(1000,700);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -1406,7 +1393,6 @@ double []  year2017Books = new double[7];
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -1415,38 +1401,21 @@ double []  year2017Books = new double[7];
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-
-
         LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
-
-
-
         HBox hBox1 = new HBox(LineChart ,exit,back);
-
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -1457,19 +1426,12 @@ double []  year2017Books = new double[7];
 
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
     }
-
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
