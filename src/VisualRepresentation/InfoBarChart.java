@@ -452,7 +452,6 @@ public class InfoBarChart extends Application {
                  year2008Books++;
              }
          }
-
          year2008 =  "year2008" ;
          year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
          year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
@@ -525,14 +524,12 @@ public class InfoBarChart extends Application {
          barChart.setTranslateY(55);
          barChart.setPrefSize(500,500);
          barChart.getData().add(series1);
-
          barChart.setTranslateX(65);
          barChart.setTranslateY(55);
          barChart.setPrefSize(500,500);
          ContextMenu contextMenu = new ContextMenu();
          MenuItem pie_chart = new MenuItem("Pie Chart");
          MenuItem bar_chart = new MenuItem("Bar Chart");
-
          pie_chart.setOnAction((event) -> {
              try {
                  InfoPieChart infoPieChart = new InfoPieChart();
@@ -556,17 +553,11 @@ public class InfoBarChart extends Application {
                  contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
              }
          });
-
          HBox hBox1 = new HBox(barChart,exit,back);
-
-
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
-
           vbox.setMaxSize(1400, 800);
          // vBox3.setSpacing(5);
-
-
          Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
@@ -576,22 +567,13 @@ public class InfoBarChart extends Application {
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
           // vbox.setBackground(bg);
-
          vbox.setPrefSize(1400,750);
          Group group = new Group(vbox,exit,back);
-
          Scene scene = new Scene(group ,1400, 770);
-
-
          primaryStage.setScene(scene);
-
-
          primaryStage.setTitle("Books Statistics");
          primaryStage.setFullScreen(true);
          primaryStage.show();
-
-
-
      }
 
      public void startClassBook(Stage primaryStage) throws IOException {
@@ -612,41 +594,27 @@ public class InfoBarChart extends Application {
              } catch (Exception exception) {
                  exception.printStackTrace();
              }
-
          });
          exit.setOnAction(actionEvent -> {
              System.exit(0);
-
-
          });
-
          setStyle(exit);
          setStyle(back);
-
-
          back.setPrefSize(200, 80);
          exit.setPrefSize(200, 80);
-
 
          String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
          int  over100Count,over140Count,over160Count,over180Count,over210Count,
                  over250Count,over300Count,over350Count,over400Count,over500Count;
-
-
          over100Count=0;over140Count=0;over160Count=0;over180Count=0;
          over210Count=0;over250Count=0;over300Count=0;over350Count=0;
          over400Count=0;over500Count=0;
-
          int iterator;
          priorityData = processing.fileReaderMethods();
          numberOfBooks = bookNumber.bookNumberFindingMethods();
-
          for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
              if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                  over500Count++;
-
              }
              else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00){
                  over400Count++;
@@ -667,27 +635,17 @@ public class InfoBarChart extends Application {
              }else if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.00){
                  over100Count++;
              }
-
-
          }
-
-
 
          over100 =  "100-140" ;
          over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
          over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
          over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
-
-
-
          CategoryAxis categoryAxis = new CategoryAxis();
          categoryAxis.setLabel("Book Class Category");
-
          NumberAxis numberAxis = new NumberAxis();
          numberAxis.setLabel("Numbers of Book");
-
          BarChart barChart = new BarChart(categoryAxis,numberAxis);
-
          XYChart.Series series1 = new XYChart.Series();
          series1.setName(over100);
          XYChart.Series series2 = new XYChart.Series();
@@ -708,8 +666,6 @@ public class InfoBarChart extends Application {
          series9.setName(over400);
          XYChart.Series series10 = new XYChart.Series();
          series10.setName(over500);
-
-
 
          series1.getData().add(new XYChart.Data(over100,over100Count));
          series2.getData().add(new XYChart.Data(over140,over140Count));
@@ -732,21 +688,13 @@ public class InfoBarChart extends Application {
          barChart.getData().add(series8);
          barChart.getData().add(series9);
          barChart.getData().add(series10);
-
-
-
          barChart.setTranslateX(65);
          barChart.setTranslateY(55);
          barChart.setPrefSize(1000,700);
 
-
-
          ContextMenu contextMenu = new ContextMenu();
          MenuItem pie_chart = new MenuItem("Pie Chart");
          MenuItem bar_chart = new MenuItem("Bar Chart");
-
-
-
          pie_chart.setOnAction((event) -> {
              try {
                  InfoPieChart infoPieChart = new InfoPieChart();
@@ -754,7 +702,6 @@ public class InfoBarChart extends Application {
              } catch (IOException e) {
                  e.printStackTrace();
              }
-
          });
          bar_chart.setOnAction((event) -> {
              InfoBarChart infoBarChart = new InfoBarChart();
@@ -764,31 +711,19 @@ public class InfoBarChart extends Application {
                  e.printStackTrace();
              }
          });
-
          contextMenu.getItems().addAll(pie_chart,bar_chart);
-
-
          barChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
              @Override
              public void handle(ContextMenuEvent event) {
-
                  contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
              }
          });
 
-
-
          HBox hBox1 = new HBox(barChart,exit,back);
-
-
          VBox vbox = new VBox();
          vbox.getChildren().addAll(hBox1);
-
           vbox.setMaxSize(1400, 800);
          // vBox3.setSpacing(5);
-
-
          Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
          BackgroundImage bi = new BackgroundImage(background,
@@ -798,19 +733,14 @@ public class InfoBarChart extends Application {
                  BackgroundSize.DEFAULT);
          Background bg = new Background(bi);
           // vbox.setBackground(bg);
-
          vbox.setPrefSize(1400,750);
          Group group = new Group(vbox,exit,back);
-
          Scene scene = new Scene(group ,1400, 770);
-
 
          primaryStage.setScene(scene);
          primaryStage.setTitle("Books Statistics");
          primaryStage.setFullScreen(true);
          primaryStage.show();
-
-
      }
     public void startBorrowCount(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -829,28 +759,20 @@ public class InfoBarChart extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Generics of Book Bar Chart");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
-
         BarChart barChart = new BarChart(categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -861,15 +783,10 @@ public class InfoBarChart extends Application {
         year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
         year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
         year2016Books=0;year2017Books=0;
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
-
-
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 year2017Books++;
             }
@@ -904,20 +821,12 @@ public class InfoBarChart extends Application {
             }else if(priorityData[iterator].bookData.bookId.contains("0608")){
                 year2008Books++;
             }
-
-
         }
-
-
 
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
-
         series1.getData().add(new XYChart.Data(year2008,year2008Books));
         series1.getData().add(new XYChart.Data(year2009,year2009Books));
         series1.getData().add(new XYChart.Data(year2010,year2010Books));
@@ -930,30 +839,17 @@ public class InfoBarChart extends Application {
         series1.getData().add(new XYChart.Data(year2017,year2017Books));
 
         barChart.getData().add(series1);
-
-
-
         barChart.setTranslateX(65);
         barChart.setTranslateY(55);
         barChart.setPrefSize(500,500);
-
-
         barChart.getData().add(series1);
-
-
-
         barChart.setTranslateX(65);
         barChart.setTranslateY(55);
         barChart.setPrefSize(500,500);
-
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem pie_chart = new MenuItem("Pie Chart");
         MenuItem bar_chart = new MenuItem("Bar Chart");
-
-
-
         pie_chart.setOnAction((event) -> {
             try {
                 InfoPieChart infoPieChart = new InfoPieChart();
@@ -961,7 +857,6 @@ public class InfoBarChart extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         bar_chart.setOnAction((event) -> {
             InfoBarChart infoBarChart = new InfoBarChart();
@@ -971,36 +866,21 @@ public class InfoBarChart extends Application {
                 e.printStackTrace();
             }
         });
-
         contextMenu.getItems().addAll(pie_chart,bar_chart);
-
-
         barChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-
-
-
-
-
         HBox hBox1 = new HBox(barChart,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
          vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
 
-
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
+       Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -1008,20 +888,14 @@ public class InfoBarChart extends Application {
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
          // vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
-
     }
 
     public Button setStyle( Button button)
@@ -1039,7 +913,4 @@ public class InfoBarChart extends Application {
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-
-
-
 }
