@@ -44,14 +44,12 @@ public class WriterWiseFX extends Application {
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
-
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
     String labelName="Top Books";
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
@@ -67,20 +65,16 @@ public class WriterWiseFX extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        
-        
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        
-        back.setOnAction(actionEvent -> {
+                back.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
@@ -89,20 +83,13 @@ public class WriterWiseFX extends Application {
             }
 
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
     /*
                                 Humayon Ahmed
                                 Muhammad Jafar Iqbal
@@ -120,71 +107,47 @@ public class WriterWiseFX extends Application {
                                 Emdadiya Pustokaloy
                                 others
        */
-
-
         TreeMap<Object, Object> map = new TreeMap<>();
-
         MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
         humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent e) {
-
-int as=0;
+            int as=0;
                 labelName="Top Books of "+humayonAhmed.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Humayon Ahmed")) {
-
                         as++;
                         System.out.println("Yes"+as);
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
-
             } });
-        
-
-
         MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
-
         muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+muhammadJafarIqbal.getText();
-
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Muhammad Jafar Iqbal")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
         MenuItem rokibHasan = new MenuItem("Rokib Hasan");
         rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+rokibHasan.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -192,180 +155,125 @@ int as=0;
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
         MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
         emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+emdadulHaqueMilon.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Emdadul Haque Milon")) {
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
-
         MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
         kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+kaziNazrulIslam.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Nazrul Islam")) {
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             } });
 
         MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
         kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+kaziAnwarHossain.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Anwar Hossain")) {
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
         MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
         sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+sharatChandraChattropadhay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Sharat Chandra Chattropadhay")||
                             priorityData[iterator].bookData.writerName.contains("Sharatchandra Chottopaddhday")) {
-
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
-
-
         MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
         rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+rabindranathTagore.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Rabindranath Tagore")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             } });
-
-
         MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
         sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+sunilGangoPaddahay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
-                    if (priorityData[iterator].bookData.writerName.contains("Sunil Gango Paddahay")||
+                   if (priorityData[iterator].bookData.writerName.contains("Sunil Gango Paddahay")||
                             priorityData[iterator].bookData.writerName.contains("Sunil gangopadhyay")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
-
         MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
         samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-
                 labelName="Top Books of "+samareshMajumdar.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-
                     if (priorityData[iterator].bookData.writerName.contains("Samaresh majumdar")) {
-
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
                                 priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
-
                     }
                 }
-
                 showInfo(primaryStage,labelName,data);
             }
         });
-
-
         MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
-
         emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 

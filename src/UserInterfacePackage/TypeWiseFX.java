@@ -158,7 +158,6 @@ int iterator;
                 showInfo(primaryStage,labelName,data);
           }
         });
-
         MenuItem biggan = new MenuItem("Biggan");
         biggan.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
@@ -225,8 +224,7 @@ int iterator;
                  }
                  showInfo(primaryStage,labelName,data);
           } });
-
-        MenuItem biography = new MenuItem("Biography");
+       MenuItem biography = new MenuItem("Biography");
         biography.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
                     labelName="Top Books of  "+biography.getText();
@@ -258,7 +256,6 @@ int iterator;
                  showInfo(primaryStage,labelName,data);
           }
         });
-
         MenuItem onubad = new MenuItem("Onubad");
         onubad.setOnAction(new EventHandler<ActionEvent>() {
             @Override  public void handle(ActionEvent e) {
@@ -300,7 +297,6 @@ int iterator;
 bookType.setTranslateX(500);
 bookType.setTranslateY(350);
 bookType.setPrefSize(200, 50);
-
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -314,7 +310,6 @@ bookType.setPrefSize(200, 50);
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
     public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
