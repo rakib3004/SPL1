@@ -29,29 +29,21 @@ import java.util.List;
 public class StackedAreaFX extends Application {
 
     PriorityData[] priorityData;
-
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
-
-
-    String sevenValueArray0 =  "findMinimumValue";
+        String sevenValueArray0 =  "findMinimumValue";
     String sevenValueArray6 ="findMaximumValue";
     String sevenValueArray3= "findMedianValue";
     String sevenValueArray2= "findFirstQuartileValue";
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
-
-
     @Override
     public void start(Stage primaryStage) {
-
     }
-
     public void startTyping(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -69,35 +61,22 @@ public class StackedAreaFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
-
 
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
 
-
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
-
-
-
 
         double [] uponnashTypeNO= new double[7] ;
         double []kobitaTypeNO= new double[7] ;
@@ -109,7 +88,6 @@ public class StackedAreaFX extends Application {
         double []  kisoreUponnashTypeNO= new double[7] ;
         double []onubadTypeNO= new double[7] ;
         double []othersTypeNO = new double[7];
-
        /* uponnashType="Minimum Value";
         kobitaType = "Lower Adjacent Value";
         rochonaBoliType = "First Quartile Value";
@@ -117,8 +95,6 @@ public class StackedAreaFX extends Application {
         bigganType = "Third Quartile Value";
         sciFicType = "Upper Adjacent Value";
         shisuSahittoType = "Maximum Value";*/
-
-
         uponnashType="Uponnash";
         kobitaType = "Kobita";
         rochonaBoliType = "Rochhona Boli";
@@ -129,87 +105,64 @@ public class StackedAreaFX extends Application {
         kisoreUponnashType = "Kisore";
         onubadType = "Onubad";
         othersType= "Others";
-
         List<Double> list = new ArrayList<>();
-
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                 //   uponnashTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
-
             int sizeB = list.size();
             if(sizeB>7){
                 uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
                 //    rochonaBoliTypeNO++;
-
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 rochonaBoliTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
             //    kobitaTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
             int sizeB = list.size();
             if(sizeB>7){
                 kobitaTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
             //  bigganTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
             //   bigganTypeNO++;
 
             list.add(priorityData[iterator].getMLRweight());
-
         }
             int sizeB = list.size();
             if(sizeB>7){
                 bigganTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
             //   sciFicTypeNO++;
-
-            list.add(priorityData[iterator].getMLRweight());
-
+           list.add(priorityData[iterator].getMLRweight());
         }
-
-            int sizeB = list.size();
+           int sizeB = list.size();
             if(sizeB>7){
                 sciFicTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
@@ -217,82 +170,51 @@ public class StackedAreaFX extends Application {
 
         }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
             //  shisuSahittoTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
-
             int sizeB = list.size();
             if(sizeB>7){
                 shisuSahittoTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
-
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
             // onubadTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
             int sizeB = list.size();
             if(sizeB>7){
-
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
             }
-
-
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
             //  onubadTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
-
         }
-
             int sizeB = list.size();
             if(sizeB>7){
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
-
             }
-
-
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
                 //     religionTypeNO++;
-
                 list.add(priorityData[iterator].getMLRweight());
-
             }
-
             int sizeB = list.size();
             if(sizeB>7){
                 religionTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
-
             }
-
-
         }for (iterator = 0; iterator < numberOfBooks; iterator++) { {
             //   othersTypeNO++;
-
         }
         }
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Types");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
         StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
         XYChart.Series series2 = new XYChart.Series();
@@ -314,8 +236,6 @@ public class StackedAreaFX extends Application {
         XYChart.Series series10 = new XYChart.Series();
         series10.setName(othersType);
 
-
-
         series1.getData().add(new XYChart.Data(sevenValueArray0,uponnashTypeNO[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,uponnashTypeNO[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,uponnashTypeNO[2]));
@@ -323,7 +243,6 @@ public class StackedAreaFX extends Application {
         series1.getData().add(new XYChart.Data(sevenValueArray4,uponnashTypeNO[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,uponnashTypeNO[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,uponnashTypeNO[6]));
-
 
         series2.getData().add(new XYChart.Data(sevenValueArray0,kobitaTypeNO[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,kobitaTypeNO[1]));
@@ -333,7 +252,6 @@ public class StackedAreaFX extends Application {
         series2.getData().add(new XYChart.Data(sevenValueArray5,kobitaTypeNO[5]));
         series2.getData().add(new XYChart.Data(sevenValueArray6,kobitaTypeNO[6]));
 
-
         series3.getData().add(new XYChart.Data(sevenValueArray0,rochonaBoliTypeNO[0]));
         series3.getData().add(new XYChart.Data(sevenValueArray1,rochonaBoliTypeNO[1]));
         series3.getData().add(new XYChart.Data(sevenValueArray2,rochonaBoliTypeNO[2]));
@@ -341,7 +259,6 @@ public class StackedAreaFX extends Application {
         series3.getData().add(new XYChart.Data(sevenValueArray4,rochonaBoliTypeNO[4]));
         series3.getData().add(new XYChart.Data(sevenValueArray5,rochonaBoliTypeNO[5]));
         series3.getData().add(new XYChart.Data(sevenValueArray6,rochonaBoliTypeNO[6]));
-
 
         series4.getData().add(new XYChart.Data(sevenValueArray0,religionTypeNO[0]));
         series4.getData().add(new XYChart.Data(sevenValueArray1,religionTypeNO[1]));
@@ -351,7 +268,6 @@ public class StackedAreaFX extends Application {
         series4.getData().add(new XYChart.Data(sevenValueArray5,religionTypeNO[5]));
         series4.getData().add(new XYChart.Data(sevenValueArray6,religionTypeNO[6]));
 
-
         series5.getData().add(new XYChart.Data(sevenValueArray0,bigganTypeNO[0]));
         series5.getData().add(new XYChart.Data(sevenValueArray1,bigganTypeNO[1]));
         series5.getData().add(new XYChart.Data(sevenValueArray2,bigganTypeNO[2]));
@@ -359,7 +275,6 @@ public class StackedAreaFX extends Application {
         series5.getData().add(new XYChart.Data(sevenValueArray4,bigganTypeNO[4]));
         series5.getData().add(new XYChart.Data(sevenValueArray5,bigganTypeNO[5]));
         series5.getData().add(new XYChart.Data(sevenValueArray6,bigganTypeNO[6]));
-
 
         series6.getData().add(new XYChart.Data(sevenValueArray0,sciFicTypeNO[0]));
         series6.getData().add(new XYChart.Data(sevenValueArray1,sciFicTypeNO[1]));
@@ -369,7 +284,6 @@ public class StackedAreaFX extends Application {
         series6.getData().add(new XYChart.Data(sevenValueArray5,sciFicTypeNO[5]));
         series6.getData().add(new XYChart.Data(sevenValueArray6,sciFicTypeNO[6]));
 
-
         series7.getData().add(new XYChart.Data(sevenValueArray0,shisuSahittoTypeNO[0]));
         series7.getData().add(new XYChart.Data(sevenValueArray1,shisuSahittoTypeNO[1]));
         series7.getData().add(new XYChart.Data(sevenValueArray2,shisuSahittoTypeNO[2]));
@@ -377,7 +291,6 @@ public class StackedAreaFX extends Application {
         series7.getData().add(new XYChart.Data(sevenValueArray4,shisuSahittoTypeNO[4]));
         series7.getData().add(new XYChart.Data(sevenValueArray5,shisuSahittoTypeNO[5]));
         series7.getData().add(new XYChart.Data(sevenValueArray6,shisuSahittoTypeNO[6]));
-
 
         series8.getData().add(new XYChart.Data(sevenValueArray0,kisoreUponnashTypeNO[0]));
         series8.getData().add(new XYChart.Data(sevenValueArray1,kisoreUponnashTypeNO[1]));
@@ -387,7 +300,6 @@ public class StackedAreaFX extends Application {
         series8.getData().add(new XYChart.Data(sevenValueArray5,kisoreUponnashTypeNO[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,kisoreUponnashTypeNO[6]));
 
-
         series9.getData().add(new XYChart.Data(sevenValueArray0,onubadTypeNO[0]));
         series9.getData().add(new XYChart.Data(sevenValueArray1,onubadTypeNO[1]));
         series9.getData().add(new XYChart.Data(sevenValueArray2,onubadTypeNO[2]));
@@ -396,7 +308,6 @@ public class StackedAreaFX extends Application {
         series9.getData().add(new XYChart.Data(sevenValueArray5,onubadTypeNO[5]));
         series9.getData().add(new XYChart.Data(sevenValueArray6,onubadTypeNO[6]));
 
-
         series10.getData().add(new XYChart.Data(sevenValueArray0,othersTypeNO[0]));
         series10.getData().add(new XYChart.Data(sevenValueArray1,othersTypeNO[1]));
         series10.getData().add(new XYChart.Data(sevenValueArray2,othersTypeNO[2]));
@@ -404,8 +315,6 @@ public class StackedAreaFX extends Application {
         series10.getData().add(new XYChart.Data(sevenValueArray4,othersTypeNO[4]));
         series10.getData().add(new XYChart.Data(sevenValueArray5,othersTypeNO[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,othersTypeNO[6]));
-
-
 
         StackedAreaChart.getData().add(series1);
         StackedAreaChart.getData().add(series2);
@@ -418,25 +327,16 @@ public class StackedAreaFX extends Application {
         StackedAreaChart.getData().add(series9);
         StackedAreaChart .getData().add(series10);
 
-
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -452,7 +352,6 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
@@ -461,48 +360,27 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
-
         contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
-
-
         StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
-     
 
-        vbox.setPrefSize(1400,750);
+       vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
-
-
     }
-
     public void startTiming(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -521,248 +399,194 @@ public class StackedAreaFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
-
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Generics of Book Bar Chart");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
 
         StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
-
-
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
                 year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
-
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
         List<Double> list = new ArrayList<>();
 
-
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 //year2017Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("16")){
                 //year2016Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2016Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("15")){
                 //year2015Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2015Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("14")){
                 //year2014Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2014Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("13")){
                 //year2013Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2013Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0812")){
                 //year2012Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0212")){
                 //year2012Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1211")){
                 //year2011Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0311")){
                 //year2011Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1210")){
                 //year2010Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0810")){
                 //year2010Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0410")){
                 //year2010Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1009")){
                 //year2009Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2009Books =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0409")){
                 //year2009Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2009Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1208")){
                 //year2008Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0608")){
                 //year2008Books++;
                 list.add(priorityData[iterator].getMLRweight());
-
             }
             int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-
         }
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
-
-
 
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(year2008);
         XYChart.Series series2 = new XYChart.Series();
@@ -784,10 +608,6 @@ public class StackedAreaFX extends Application {
         XYChart.Series series10 = new XYChart.Series();
         series9.setName(year2017);
 
-
-
-
-
         series1.getData().add(new XYChart.Data(sevenValueArray0,year2008Books[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,year2008Books[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,year2008Books[2]));
@@ -795,7 +615,6 @@ public class StackedAreaFX extends Application {
         series1.getData().add(new XYChart.Data(sevenValueArray4,year2008Books[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,year2008Books[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,year2008Books[6]));
-
 
         series2.getData().add(new XYChart.Data(sevenValueArray0,year2009Books[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,year2009Books[1]));
@@ -805,7 +624,6 @@ public class StackedAreaFX extends Application {
         series2.getData().add(new XYChart.Data(sevenValueArray5,year2009Books[5]));
         series2.getData().add(new XYChart.Data(sevenValueArray6,year2009Books[6]));
 
-
         series3.getData().add(new XYChart.Data(sevenValueArray0,year2010Books[0]));
         series3.getData().add(new XYChart.Data(sevenValueArray1,year2010Books[1]));
         series3.getData().add(new XYChart.Data(sevenValueArray2,year2010Books[2]));
@@ -813,7 +631,6 @@ public class StackedAreaFX extends Application {
         series3.getData().add(new XYChart.Data(sevenValueArray4,year2010Books[4]));
         series3.getData().add(new XYChart.Data(sevenValueArray5,year2010Books[5]));
         series3.getData().add(new XYChart.Data(sevenValueArray6,year2010Books[6]));
-
 
         series4.getData().add(new XYChart.Data(sevenValueArray0,year2011Books[0]));
         series4.getData().add(new XYChart.Data(sevenValueArray1,year2011Books[1]));
@@ -823,7 +640,6 @@ public class StackedAreaFX extends Application {
         series4.getData().add(new XYChart.Data(sevenValueArray5,year2011Books[5]));
         series4.getData().add(new XYChart.Data(sevenValueArray6,year2011Books[6]));
 
-
         series5.getData().add(new XYChart.Data(sevenValueArray0,year2012Books[0]));
         series5.getData().add(new XYChart.Data(sevenValueArray1,year2012Books[1]));
         series5.getData().add(new XYChart.Data(sevenValueArray2,year2012Books[2]));
@@ -831,7 +647,6 @@ public class StackedAreaFX extends Application {
         series5.getData().add(new XYChart.Data(sevenValueArray4,year2012Books[4]));
         series5.getData().add(new XYChart.Data(sevenValueArray5,year2012Books[5]));
         series5.getData().add(new XYChart.Data(sevenValueArray6,year2012Books[6]));
-
 
         series6.getData().add(new XYChart.Data(sevenValueArray0,year2013Books[0]));
         series6.getData().add(new XYChart.Data(sevenValueArray1,year2013Books[1]));
@@ -841,7 +656,6 @@ public class StackedAreaFX extends Application {
         series6.getData().add(new XYChart.Data(sevenValueArray5,year2013Books[5]));
         series6.getData().add(new XYChart.Data(sevenValueArray6,year2013Books[6]));
 
-
         series7.getData().add(new XYChart.Data(sevenValueArray0,year2014Books[0]));
         series7.getData().add(new XYChart.Data(sevenValueArray1,year2014Books[1]));
         series7.getData().add(new XYChart.Data(sevenValueArray2,year2014Books[2]));
@@ -849,7 +663,6 @@ public class StackedAreaFX extends Application {
         series7.getData().add(new XYChart.Data(sevenValueArray4,year2014Books[4]));
         series7.getData().add(new XYChart.Data(sevenValueArray5,year2014Books[5]));
         series7.getData().add(new XYChart.Data(sevenValueArray6,year2014Books[6]));
-
 
         series8.getData().add(new XYChart.Data(sevenValueArray0,year2015Books[0]));
         series8.getData().add(new XYChart.Data(sevenValueArray1,year2015Books[1]));
@@ -859,7 +672,6 @@ public class StackedAreaFX extends Application {
         series8.getData().add(new XYChart.Data(sevenValueArray5,year2015Books[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,year2015Books[6]));
 
-
         series9.getData().add(new XYChart.Data(sevenValueArray0,year2016Books[0]));
         series9.getData().add(new XYChart.Data(sevenValueArray1,year2016Books[1]));
         series9.getData().add(new XYChart.Data(sevenValueArray2,year2016Books[2]));
@@ -868,7 +680,6 @@ public class StackedAreaFX extends Application {
         series9.getData().add(new XYChart.Data(sevenValueArray5,year2016Books[5]));
         series9.getData().add(new XYChart.Data(sevenValueArray6,year2016Books[6]));
 
-
         series10.getData().add(new XYChart.Data(sevenValueArray0,year2017Books[0]));
         series10.getData().add(new XYChart.Data(sevenValueArray1,year2017Books[1]));
         series10.getData().add(new XYChart.Data(sevenValueArray2,year2017Books[2]));
@@ -876,11 +687,6 @@ public class StackedAreaFX extends Application {
         series10.getData().add(new XYChart.Data(sevenValueArray4,year2017Books[4]));
         series10.getData().add(new XYChart.Data(sevenValueArray5,year2017Books[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,year2017Books[6]));
-
-
-
-
-
 
         StackedAreaChart.getData().add(series1);
         StackedAreaChart.getData().add(series2);
@@ -893,25 +699,17 @@ public class StackedAreaFX extends Application {
         StackedAreaChart.getData().add(series9);
         StackedAreaChart.getData().add(series10);
 
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
-
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
         StackedAreaChart.setPrefSize(1000,700);
-
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
-
         lineChart.setOnAction((event) -> {
             LineChartFX lineChartFX = new LineChartFX();
             try {
@@ -927,7 +725,6 @@ public class StackedAreaFX extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         scatterChart.setOnAction((event) -> {
             try {
