@@ -635,21 +635,15 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
-
         });
 
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
 
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
@@ -657,13 +651,10 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         year2008Books=0;year2009Books=0;year2010Books=0;year2011Books=0;
         year2012Books=0;year2013Books=0;year2014Books=0;year2015Books=0;
         year2016Books=0;year2017Books=0;
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 year2017Books++;
             }
@@ -699,18 +690,10 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 year2008Books++;
             }
         }
-
-
-
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
-
-
-
-
         PieChart pieChart = new PieChart();
 
         PieChart.Data slice1 = new PieChart.Data(year2008,year2008Books);
@@ -734,19 +717,13 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.getData().add(slice8);
         pieChart.getData().add(slice9);
         pieChart.getData().add(slice10);
-
-
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
 
-
         ContextMenu contextMenu = new ContextMenu();
         MenuItem pie_chart = new MenuItem("Pie Chart");
         MenuItem bar_chart = new MenuItem("Bar Chart");
-
-
-
         pie_chart.setOnAction((event) -> {
             try {
                 InfoPieChart infoPieChart = new InfoPieChart();
@@ -754,7 +731,6 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
         bar_chart.setOnAction((event) -> {
             InfoBarChart infoBarChart = new InfoBarChart();
@@ -764,33 +740,22 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 e.printStackTrace();
             }
         });
-
         contextMenu.getItems().addAll(bar_chart,pie_chart);
-
-
         pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
             @Override
             public void handle(ContextMenuEvent event) {
 
                 contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-
-
         HBox hBox1 = new HBox(pieChart,back,exit);
 
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
          vbox.setMaxSize(1400, 800);
         // vBox3.setSpacing(5);
-
-
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -798,19 +763,14 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
          // vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
-
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
-
     }
 
     public Button setStyle(Button button)
