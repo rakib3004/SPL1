@@ -27,6 +27,8 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -236,55 +238,35 @@ public class Main extends Application {
         bootOperation2.setTranslateY(514.5);
         bootOperation2.setPrefSize(150, 25);
 
-        ToggleButton toggleButton1 = new ToggleButton("Left");
-        ToggleButton toggleButton2 = new ToggleButton("Right");
-        ToggleButton toggleButton3 = new ToggleButton("Up");
-        ToggleButton toggleButton4 = new ToggleButton("Down");
-toggleButton1.setPrefWidth(300);
-toggleButton2.setPrefWidth(300);
-toggleButton3.setPrefWidth(300);
-toggleButton4.setPrefWidth(300);
-setTheme(toggleButton1);
-setTheme(toggleButton2);
-setTheme(toggleButton3);
-setTheme(toggleButton4);
-toggleButton1.setOnMouseDragOver(new EventHandler<MouseEvent>() {
-    @Override
-    public void handle(MouseEvent mouseEvent) {
-        setHoverTheme(toggleButton1);
-    }
-});toggleButton2.setOnMouseDragOver(new EventHandler<MouseEvent>() {
-    @Override
-    public void handle(MouseEvent mouseEvent) {
-        setHoverTheme(toggleButton2);
-    }
-});toggleButton3.setOnMouseDragOver(new EventHandler<MouseEvent>() {
-    @Override
-    public void handle(MouseEvent mouseEvent) {
-        setHoverTheme(toggleButton3);
-    }
-});toggleButton4.setOnMouseDragOver(new EventHandler<MouseEvent>() {
-    @Override
-    public void handle(MouseEvent mouseEvent) {
-        setHoverTheme(toggleButton4);
-    }
-});
+        Menu menu1 = new Menu("user");
+        Menu menu2 = new Menu("admin");
+        Menu menu3 = new Menu("system");
+        Menu menu4 = new Menu("data show");
+        Menu menu5 = new Menu("analyze");
 
-        ToggleGroup toggleGroup = new ToggleGroup();
+        MenuItem menuItem1a = new MenuItem("login");
+        MenuItem menuItem1b = new MenuItem("sign-up");
+        menu1.getItems().addAll(menuItem1a,menuItem1b);
 
-        toggleButton1.setToggleGroup(toggleGroup);
-        toggleButton2.setToggleGroup(toggleGroup);
-        toggleButton3.setToggleGroup(toggleGroup);
-        toggleButton4.setToggleGroup(toggleGroup);
+        MenuItem menuItem2a = new MenuItem("add book");
+        MenuItem menuItem2b = new MenuItem("book info");
+        MenuItem menuItem2c = new MenuItem("remove book");
+        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
 
-        HBox hbox = new HBox(toggleButton1, toggleButton2, toggleButton3, toggleButton4);
+        MenuItem menuItem3a = new MenuItem("add book");
+        MenuItem menuItem3b = new MenuItem("book info");
+        MenuItem menuItem3c = new MenuItem("remove book");
+        menu2.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+
+        MenuBar menuBar = new MenuBar();
+        menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
 
 
    //     Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
-        root.getChildren().addAll(canvas, hbox,welcome,exit,bootOperation1,bootOperation2);
+        root.getChildren().addAll(canvas,menuBar,welcome,exit,bootOperation1,bootOperation2);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
        // gc.drawImage(background,0,0);
