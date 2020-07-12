@@ -253,10 +253,22 @@ public class Main extends Application {
         MenuItem menuItem2c = new MenuItem("remove book");
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
 
-        MenuItem menuItem3a = new MenuItem("add book");
-        MenuItem menuItem3b = new MenuItem("book info");
-        MenuItem menuItem3c = new MenuItem("remove book");
-        menu2.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+        MenuItem menuItem3a = new MenuItem("cross validation");
+        MenuItem menuItem3b = new MenuItem("seven value showing");
+        MenuItem menuItem3c = new MenuItem("data optimization");
+        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+
+        MenuItem menuItem4a = new MenuItem("multi-variable regression");
+        MenuItem menuItem4b = new MenuItem("analytic hierarchy process");
+        MenuItem menuItem4c = new MenuItem("page rank algorithm");
+        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
+
+        MenuItem menuItem5a = new MenuItem("scatter chart");
+        MenuItem menuItem5b = new MenuItem("line chart");
+        MenuItem menuItem5c = new MenuItem("stacked area chart");
+        MenuItem menuItem5d = new MenuItem("bar chart");
+        MenuItem menuItem5e = new MenuItem("pie chart");
+        menu5.getItems().addAll(menuItem5a,menuItem5b,menuItem5c,menuItem5d,menuItem5e);
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
