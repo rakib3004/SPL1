@@ -20,17 +20,17 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.io.File;
@@ -146,7 +146,7 @@ public class Main extends Application {
                 }
             }
         });
-        MenuButton bootOperation1 = new MenuButton("Boot Operation1");
+        MenuButton bootOperation1 = new MenuButton("ShortCut 1");
         bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,
                 statisticsView,fourVariableRegressionView,
                 cvVisualizationView,testingSetView);
@@ -227,7 +227,7 @@ public class Main extends Application {
                 }
             }
         });
-        MenuButton bootOperation2 = new MenuButton("Boot Operation2");
+        MenuButton bootOperation2 = new MenuButton("ShortCut 2");
         bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,
                 bookInformationView,crossValidationView,systemAnalysisView,
                 processValidationView,trainingMethodologyView);
@@ -235,11 +235,34 @@ public class Main extends Application {
         bootOperation2.setTranslateY(514.5);
         bootOperation2.setPrefSize(150, 25);
 
+        ToggleButton toggleButton1 = new ToggleButton("Left");
+        ToggleButton toggleButton2 = new ToggleButton("Right");
+        ToggleButton toggleButton3 = new ToggleButton("Up");
+        ToggleButton toggleButton4 = new ToggleButton("Down");
+toggleButton1.setPrefWidth(300);
+toggleButton2.setPrefWidth(300);
+toggleButton3.setPrefWidth(300);
+toggleButton4.setPrefWidth(300);
+setTheme(toggleButton1);
+setTheme(toggleButton2);
+setTheme(toggleButton3);
+setTheme(toggleButton4);
+
+        ToggleGroup toggleGroup = new ToggleGroup();
+
+        toggleButton1.setToggleGroup(toggleGroup);
+        toggleButton2.setToggleGroup(toggleGroup);
+        toggleButton3.setToggleGroup(toggleGroup);
+        toggleButton4.setToggleGroup(toggleGroup);
+
+        HBox hbox = new HBox(toggleButton1, toggleButton2, toggleButton3, toggleButton4);
+
+
         Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
-        root.getChildren().addAll(canvas, welcome,exit,bootOperation1,bootOperation2);
+        root.getChildren().addAll(canvas, hbox,welcome,exit,bootOperation1,bootOperation2);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(background,0,0);
@@ -265,7 +288,10 @@ public class Main extends Application {
                 "        -fx-padding: 10 20 10 20;");
         return button;
     }
-
+    public  ToggleButton setTheme(ToggleButton toggleButton){
+        toggleButton.setStyle("-fx-background-color: #A9A9A9;");
+        return toggleButton;
+    }
     public static void main(String[] args) {
         Application.launch(args);
     }
