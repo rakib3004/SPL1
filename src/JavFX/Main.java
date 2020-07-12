@@ -30,6 +30,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.awt.*;
@@ -247,6 +248,27 @@ setTheme(toggleButton1);
 setTheme(toggleButton2);
 setTheme(toggleButton3);
 setTheme(toggleButton4);
+toggleButton1.setOnMouseDragOver(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent mouseEvent) {
+        setHoverTheme(toggleButton1);
+    }
+});toggleButton2.setOnMouseDragOver(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent mouseEvent) {
+        setHoverTheme(toggleButton2);
+    }
+});toggleButton3.setOnMouseDragOver(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent mouseEvent) {
+        setHoverTheme(toggleButton3);
+    }
+});toggleButton4.setOnMouseDragOver(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent mouseEvent) {
+        setHoverTheme(toggleButton4);
+    }
+});
 
         ToggleGroup toggleGroup = new ToggleGroup();
 
@@ -258,14 +280,14 @@ setTheme(toggleButton4);
         HBox hbox = new HBox(toggleButton1, toggleButton2, toggleButton3, toggleButton4);
 
 
-        Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
+   //     Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
         root.getChildren().addAll(canvas, hbox,welcome,exit,bootOperation1,bootOperation2);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.drawImage(background,0,0);
+       // gc.drawImage(background,0,0);
         Scene scene = new Scene(root,1400,770);
         stage.setScene(scene);
        stage.setFullScreen(true);
@@ -289,7 +311,13 @@ setTheme(toggleButton4);
         return button;
     }
     public  ToggleButton setTheme(ToggleButton toggleButton){
-        toggleButton.setStyle("-fx-background-color: #A9A9A9;");
+        toggleButton.setStyle("-fx-background-color: #A9A9A9 \n"+
+                "-fx-");
+        return toggleButton;
+    }
+    public  ToggleButton setHoverTheme(ToggleButton toggleButton){
+        toggleButton.setStyle("-fx-background-color: #00FFFF \n"+
+                "-fx-");
         return toggleButton;
     }
     public static void main(String[] args) {
