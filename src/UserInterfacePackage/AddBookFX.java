@@ -522,6 +522,12 @@ writerNameTextField.setText(humayonAhmed.getText());
                if(terminalPrediction<35.00){
                    label3.setText(string);
                }
+               else  if(terminalPrediction<75.00){
+                   label3.setText(string1);
+               }
+ else {
+     label3.setText(string1);
+               }
 
                 setStyle(label3);
 
