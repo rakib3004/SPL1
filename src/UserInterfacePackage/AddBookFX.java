@@ -512,9 +512,19 @@ writerNameTextField.setText(humayonAhmed.getText());
                 Label label4= new Label("Type Predicted  : "+typeWeight+"%\n" +
                         "Writer Predicted : "+writerWeight+"%\n" +
                         "Price Predicted : "+priceWeight+"%\n");
-            Label label3 = new Label("Tool recommended "+terminalPrediction+"%\n"+
-                    "to add this book \n"+"in the Library");
+            Label label3 = new Label();
+            /*"Tool recommended "+terminalPrediction+"%\n"+
+                    "to add this book \n"+"in the Library"*/
+               String string ="Low Quality's Book";
+               String string1 ="Medium Quality's Book";
+               String string2 ="High Quality's Book";
+               String string3 ="New Type's Book";
+               if(terminalPrediction<35.00){
+                   label3.setText(string);
+               }
+
                 setStyle(label3);
+
                 // TextField Ve = new TextField();
             Button analysis = new Button("Analysis");
             analysis.setPrefSize(160,40);

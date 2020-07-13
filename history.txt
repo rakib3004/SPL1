@@ -1,2 +1,5 @@
-Main	Sun 12.07.2020 at 11:53:11 PM
-FxSecondWindow	Sun 12.07.2020 at 11:54:39 PM
+Main	Mon 13.07.2020 at 04:37:51 PM
+ReadingRoom	Mon 13.07.2020 at 04:38:12 PM
+FxSecondWindow	Mon 13.07.2020 at 04:38:46 PM
+FXThirdWindow	Mon 13.07.2020 at 04:38:48 PM
+SystemAnalysis	Mon 13.07.2020 at 04:38:49 PM
