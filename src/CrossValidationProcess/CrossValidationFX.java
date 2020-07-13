@@ -129,7 +129,7 @@ public void finish(Stage primaryStage){
         testingSet.setTranslateY(350);
 
         trainingSet.setOnAction(actionEvent -> {
-        TrainingObserVation trainingObserVation = new TrainingObserVation();
+        TrainingObservation trainingObserVation = new TrainingObservation();
             try {
                 trainingObserVation.start(primaryStage);
             } catch (Exception exception) {

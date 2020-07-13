@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class TrainingObserVation extends Application {
+public class TrainingObservation extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int numberOfBooks;

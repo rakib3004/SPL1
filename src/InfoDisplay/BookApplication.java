@@ -59,41 +59,41 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         priceBased.setTranslateY(500);
 
         back.setOnAction(actionEvent -> {
-AuthorSystem authorSystem = new AuthorSystem();
-try {
-                authorSystem.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-typeBased.setOnAction(actionEvent -> {
-            try {
-uiDisplayFX.typeStatistics(primaryStage);
+                AuthorSystem authorSystem = new AuthorSystem();
+                try {
+                                authorSystem.start(primaryStage);
+                            } catch (Exception exception) {
+                                exception.printStackTrace();
+                            }
+                        });
+                        exit.setOnAction(actionEvent -> {
+                            System.exit(0);
+                        });
+                typeBased.setOnAction(actionEvent -> {
+                            try {
+                uiDisplayFX.typeStatistics(primaryStage);
 
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        borrowBased.setOnAction(actionEvent -> {
-            try {
-                uiDisplayFX.borrowStatistics(primaryStage);
+                            } catch (Exception exception) {
+                                exception.printStackTrace();
+                            }
+                        });
+                        borrowBased.setOnAction(actionEvent -> {
+                            try {
+                                uiDisplayFX.borrowStatistics(primaryStage);
 
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+                            } catch (Exception exception) {
+                                exception.printStackTrace();
+                            }
+                        });
 
-timeBased.setOnAction(actionEvent -> {
-    try {
-        uiDisplayFX.timeStatistics(primaryStage);
+                timeBased.setOnAction(actionEvent -> {
+                    try {
+                        uiDisplayFX.timeStatistics(primaryStage);
 
-    } catch (Exception exception) {
-        exception.printStackTrace();
-    }
-});
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+                });
         priceBased.setOnAction(actionEvent -> {
             try {
                 uiDisplayFX.priceStatistics(primaryStage);

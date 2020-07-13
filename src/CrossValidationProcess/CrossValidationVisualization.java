@@ -56,7 +56,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TrainingObserVation trainingObserVation = new TrainingObserVation();
+            TrainingObservation trainingObserVation = new TrainingObservation();
             try {
                 trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
