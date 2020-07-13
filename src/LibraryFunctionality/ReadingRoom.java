@@ -91,50 +91,11 @@ public class ReadingRoom extends Application {
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-        Button administrationMood = new Button("Administration Mood");
-        Button readersMood = new Button("Readers Mood");
-        Button about = new Button("About");
 
-        readersMood.setTranslateX(20);
-        readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(20);
-        administrationMood.setTranslateY(320);
-        about.setTranslateX(20);
-        about.setTranslateY(380);
-        administrationMood.setPrefSize(160, 30);
-        readersMood.setPrefSize(160, 30);
-        about.setPrefSize(160,30);
-        administrationMood.setOnAction(actionEvent -> {
-
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        readersMood.setOnAction(actionEvent -> {
-
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        about.setOnAction(actionEvent -> {
-            About about1 = new About();
-            try {
-                about1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,
-          readersMood,administrationMood,about);
+        group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll(automaticSystem,manualSystem);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -548,53 +509,12 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-        Button administrationMood = new Button("Administration Mood");
-        Button readersMood = new Button("Readers Mood");
-        Button about = new Button("About");
-
-        readersMood.setTranslateX(20);
-        readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(20);
-        administrationMood.setTranslateY(320);
-        about.setTranslateX(20);
-        about.setTranslateY(380);
-                administrationMood.setPrefSize(160, 30);
-        readersMood.setPrefSize(160, 30);
-        about.setPrefSize(160,30);
-
-        administrationMood.setOnAction(actionEvent -> {
-
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        readersMood.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        about.setOnAction(actionEvent -> {
-            About about1 = new About();
-            try {
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
 
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
-        group.getChildren().addAll(readersMood,
-                administrationMood,about);
+        group.getChildren().addAll();
         group.getChildren().addAll(logIn,signUp,label);
         
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
@@ -696,54 +616,13 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        Button administrationMood = new Button("Administration Mood");
-        Button readersMood = new Button("Readers Mood");
-        Button about = new Button("About");
-
-        readersMood.setTranslateX(20);
-        readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(20);
-        administrationMood.setTranslateY(320);
-        about.setTranslateX(20);
-        about.setTranslateY(380);
-        administrationMood.setPrefSize(160, 30);
-        readersMood.setPrefSize(160, 30);
-        about.setPrefSize(160,30);
-
-        administrationMood.setOnAction(actionEvent -> {
-
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        readersMood.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        about.setOnAction(actionEvent -> {
-            About about1 = new About();
-            try {
-                about1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
 
         Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,
                 writerWise,classWise,selfWise,
-                timeWise ,readersMood,
-                administrationMood,about);
+                timeWise );
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
