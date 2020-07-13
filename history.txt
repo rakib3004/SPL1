@@ -1,5 +1,12 @@
-Main	Mon 13.07.2020 at 04:37:51 PM
-ReadingRoom	Mon 13.07.2020 at 04:38:12 PM
-FxSecondWindow	Mon 13.07.2020 at 04:38:46 PM
-FXThirdWindow	Mon 13.07.2020 at 04:38:48 PM
-SystemAnalysis	Mon 13.07.2020 at 04:38:49 PM
+Main	Mon 13.07.2020 at 08:41:08 PM
+FxSecondWindow	Mon 13.07.2020 at 08:41:11 PM
+FXThirdWindow	Mon 13.07.2020 at 08:41:13 PM
+LibraryDesk	Mon 13.07.2020 at 08:41:15 PM
+AddBookFX	Mon 13.07.2020 at 08:41:17 PM
+BookNumber	Mon 13.07.2020 at 08:41:25 PM
+Processing	Mon 13.07.2020 at 08:41:25 PM
+DataParsing	Mon 13.07.2020 at 08:41:25 PM
+MultipleLinearRegression	Mon 13.07.2020 at 08:41:25 PM
+Matrix	Mon 13.07.2020 at 08:41:25 PM
+CalculateWeight	Mon 13.07.2020 at 08:41:25 PM
+PrioritySort	Mon 13.07.2020 at 08:41:25 PM
