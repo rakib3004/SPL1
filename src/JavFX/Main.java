@@ -52,16 +52,18 @@ public class Main extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
+
         final Label response = new Label();
         final ImageView imageView = new ImageView(
                 new Image("http://icons.iconarchive.com/icons/eponas-deeway/colobrush/128/heart-2-icon.png")
         );
         final Button welcome = new Button("Start", imageView);
-        welcome.setStyle("-fx-base: coral;");
+        welcome.setStyle("-fx-base: aqua;");
         welcome.setContentDisplay(ContentDisplay.TOP);
         welcome.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                response.setText("I love you too!");
+                welcome.setStyle("-fx-base: lime;");
+
             }
         });
 
@@ -69,7 +71,7 @@ public class Main extends Application {
       //  Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(550);
         welcome.setTranslateY(370);
-        setStyle(welcome);
+ //       setStyle(welcome);
         FileInputStream fileInputStream = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
@@ -272,17 +274,24 @@ public class Main extends Application {
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
+menuBar.setStyle("-fx-text-fill: #ffffff;");
+menuBar.setStyle("-fx-background-color: #000000;");
+menuBar.setStyle("-fx-padding: 1 5 1 5;");
+menuBar.setStyle(" -fx-spacing: 47;");
+menuBar.prefHeight(32);
+/*.menu-item {  }
+.menu { -fx-padding: 1 5 1 5; }*/
 
-
-   //     Image background = new Image("Images"+ File.separator +"libraryBackground24.png");
+        Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
         root.getChildren().addAll(canvas,menuBar,welcome,exit);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-       // gc.drawImage(background,0,0);
+       gc.drawImage(background,0,0);
         Scene scene = new Scene(root,1400,770);
+        menuBar.prefWidthProperty().bind(scene.widthProperty());
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();
