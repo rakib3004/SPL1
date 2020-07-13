@@ -526,7 +526,7 @@ writerNameTextField.setText(humayonAhmed.getText());
                    label3.setText(string1);
                }
  else {
-     label3.setText(string1);
+     label3.setText(string2);
                }
 
                 setStyle(label3);

@@ -27,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -51,17 +52,30 @@ public class Main extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
+        final Label response = new Label();
+        final ImageView imageView = new ImageView(
+                new Image("http://icons.iconarchive.com/icons/eponas-deeway/colobrush/128/heart-2-icon.png")
+        );
+        final Button welcome = new Button("Start", imageView);
+        welcome.setStyle("-fx-base: coral;");
+        welcome.setContentDisplay(ContentDisplay.TOP);
+        welcome.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                response.setText("I love you too!");
+            }
+        });
 
-        Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(345);
-        welcome.setTranslateY(450);
+
+      //  Button welcome = new Button("Welcome to RTML");
+        welcome.setTranslateX(550);
+        welcome.setTranslateY(370);
         setStyle(welcome);
         FileInputStream fileInputStream = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
         welcome.setGraphic(new ImageView(image));
 
-        welcome.setPrefSize(340, 100);
+        welcome.setPrefSize(100, 100);
 
         welcome.setOnAction(actionEvent -> {
 
@@ -82,6 +96,32 @@ public class Main extends Application {
         setStyle(exit);
         exit.setPrefSize(200, 80);
 
+
+
+        Menu menu1 = new Menu("user");
+        Menu menu2 = new Menu("admin");
+        Menu menu3 = new Menu("system");
+        Menu menu4 = new Menu("data show");
+        Menu menu5 = new Menu("shortcut");
+
+        MenuItem menuItem1a = new MenuItem("login");
+        MenuItem menuItem1b = new MenuItem("sign-up");
+        menu1.getItems().addAll(menuItem1a,menuItem1b);
+
+        MenuItem menuItem2a = new MenuItem("add book");
+        MenuItem menuItem2b = new MenuItem("book info");
+        MenuItem menuItem2c = new MenuItem("remove book");
+        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
+
+        MenuItem menuItem3a = new MenuItem("cross validation");
+        MenuItem menuItem3b = new MenuItem("seven value showing");
+        MenuItem menuItem3c = new MenuItem("data optimization");
+        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+
+        MenuItem menuItem4a = new MenuItem("multi-variable regression");
+        MenuItem menuItem4b = new MenuItem("analytic hierarchy process");
+        MenuItem menuItem4c = new MenuItem("page rank algorithm");
+        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
         MenuItem readingRoomView = new MenuItem("Reading RoomView");
         readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -108,7 +148,7 @@ public class Main extends Application {
                 }
             }
         });
-           MenuItem statisticsView = new MenuItem("Statistics View");
+        MenuItem statisticsView = new MenuItem("Statistics View");
 
         statisticsView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -131,7 +171,7 @@ public class Main extends Application {
                 }
             }
         });
- MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
+        MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
         cvVisualizationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
@@ -140,7 +180,7 @@ public class Main extends Application {
                 }
             }
         });
- MenuItem testingSetView = new MenuItem("Testing SetView");
+        MenuItem testingSetView = new MenuItem("Testing SetView");
         testingSetView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 TestingSet testingSet = new TestingSet();
@@ -149,14 +189,7 @@ public class Main extends Application {
                 }
             }
         });
-        MenuButton bootOperation1 = new MenuButton("ShortCut 1");
-        bootOperation1.getItems().addAll( readingRoomView,libraryDeskView,
-                statisticsView,fourVariableRegressionView,
-                cvVisualizationView,testingSetView);
 
-        bootOperation1.setTranslateX(1125);
-        bootOperation1.setTranslateY(518);
-        bootOperation1.setPrefSize(150, 25);
         MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
 
         analyticHierarchyProcessView.setOnAction(new EventHandler<ActionEvent>() {
@@ -184,7 +217,7 @@ public class Main extends Application {
                 }
             }
         });
-           MenuItem bookInformationView = new MenuItem("Book InformationView");
+        MenuItem bookInformationView = new MenuItem("Book InformationView");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -230,45 +263,12 @@ public class Main extends Application {
                 }
             }
         });
-        MenuButton bootOperation2 = new MenuButton("ShortCut 2");
-        bootOperation2.getItems().addAll( analyticHierarchyProcessView,pageRankAlgorithmView,
+
+        menu5.getItems().addAll(readingRoomView,libraryDeskView,
+                statisticsView,fourVariableRegressionView,
+                cvVisualizationView,testingSetView,analyticHierarchyProcessView,pageRankAlgorithmView,
                 bookInformationView,crossValidationView,systemAnalysisView,
                 processValidationView,trainingMethodologyView);
-        bootOperation2.setTranslateX(833);
-        bootOperation2.setTranslateY(514.5);
-        bootOperation2.setPrefSize(150, 25);
-
-        Menu menu1 = new Menu("user");
-        Menu menu2 = new Menu("admin");
-        Menu menu3 = new Menu("system");
-        Menu menu4 = new Menu("data show");
-        Menu menu5 = new Menu("analyze");
-
-        MenuItem menuItem1a = new MenuItem("login");
-        MenuItem menuItem1b = new MenuItem("sign-up");
-        menu1.getItems().addAll(menuItem1a,menuItem1b);
-
-        MenuItem menuItem2a = new MenuItem("add book");
-        MenuItem menuItem2b = new MenuItem("book info");
-        MenuItem menuItem2c = new MenuItem("remove book");
-        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
-
-        MenuItem menuItem3a = new MenuItem("cross validation");
-        MenuItem menuItem3b = new MenuItem("seven value showing");
-        MenuItem menuItem3c = new MenuItem("data optimization");
-        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
-
-        MenuItem menuItem4a = new MenuItem("multi-variable regression");
-        MenuItem menuItem4b = new MenuItem("analytic hierarchy process");
-        MenuItem menuItem4c = new MenuItem("page rank algorithm");
-        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
-
-        MenuItem menuItem5a = new MenuItem("scatter chart");
-        MenuItem menuItem5b = new MenuItem("line chart");
-        MenuItem menuItem5c = new MenuItem("stacked area chart");
-        MenuItem menuItem5d = new MenuItem("bar chart");
-        MenuItem menuItem5e = new MenuItem("pie chart");
-        menu5.getItems().addAll(menuItem5a,menuItem5b,menuItem5c,menuItem5d,menuItem5e);
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
@@ -278,7 +278,7 @@ public class Main extends Application {
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar,welcome,exit,bootOperation1,bootOperation2);
+        root.getChildren().addAll(canvas,menuBar,welcome,exit);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
        // gc.drawImage(background,0,0);
