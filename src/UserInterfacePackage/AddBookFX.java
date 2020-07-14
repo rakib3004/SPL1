@@ -559,6 +559,10 @@ writerNameTextField.setText(humayonAhmed.getText());
                 label1b.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
                 label1c.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
 
+                Tooltip tooltip = new Tooltip(2*typeWeight+"%");
+                Tooltip tooltip1 = new Tooltip(2*writerWeight+"%");
+                Tooltip tooltip2 = new Tooltip(2*priceWeight+"%");
+
             typeWeight = 2*typeWeight/100.00;
             writerWeight = 2*writerWeight/100.00;
             priceWeight = 2*priceWeight/100.00;
@@ -568,6 +572,9 @@ writerNameTextField.setText(humayonAhmed.getText());
                 label1a.setLabelFor(progressBar);
                 label1b.setLabelFor(progressBar1);
                 label1c.setLabelFor(progressBar2);
+                progressBar.setTooltip(tooltip);
+                progressBar1.setTooltip(tooltip2);
+                progressBar2.setTooltip(tooltip2);
                 progressBar.setStyle("-fx-accent: orange");
                 progressBar1.setStyle("-fx-accent: blue");
                 progressBar2.setStyle("-fx-accent: green");

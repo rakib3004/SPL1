@@ -36,6 +36,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.io.File;
@@ -56,6 +59,7 @@ public class Main extends Application {
 
 
         final Button welcome = new Button("Start");
+        welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
 
         welcome.setStyle("-fx-base: #A9A9A9;");
         welcome.setContentDisplay(ContentDisplay.TOP);

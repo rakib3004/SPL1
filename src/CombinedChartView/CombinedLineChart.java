@@ -26,10 +26,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 
@@ -88,9 +85,11 @@ public class CombinedLineChart extends Application {
         numberAxis.setLabel("Numbers of Book");
 
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        Tooltip tooltip = new Tooltip("Multiple Linear Regression results shows in Line Chart.\nAll data are books weight");
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Multi-variable Linear Regression ");
+
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
