@@ -653,7 +653,7 @@ writerNameTextField.setText(humayonAhmed.getText());
                 "    -fx-font-size: 1.1em;");
         return  label;
     }
-    public TextField setStyle(TextField textField)
+    public TextField setStyle2(TextField textField)
     {
         textField.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
@@ -666,6 +666,22 @@ writerNameTextField.setText(humayonAhmed.getText());
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
+        return  textField;
+    }  public TextField setStyle(TextField textField)
+    {
+        textField.setStyle("-fx-background-color: \n" +
+        "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  textField;
     }
 }

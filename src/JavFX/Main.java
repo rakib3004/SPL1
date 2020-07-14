@@ -35,6 +35,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.io.File;
@@ -53,16 +54,14 @@ public class Main extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
-        final Label response = new Label();
-        final ImageView imageView = new ImageView(
-                new Image("http://icons.iconarchive.com/icons/eponas-deeway/colobrush/128/heart-2-icon.png")
-        );
-        final Button welcome = new Button("Start", imageView);
-        welcome.setStyle("-fx-base: aqua;");
+
+        final Button welcome = new Button("Start");
+
+        welcome.setStyle("-fx-base: #A9A9A9;");
         welcome.setContentDisplay(ContentDisplay.TOP);
         welcome.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                welcome.setStyle("-fx-base: lime;");
+                welcome.setStyle("-fx-base: #00009A;");
 
             }
         });
@@ -95,7 +94,7 @@ public class Main extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
+       setStyle(exit);
         exit.setPrefSize(200, 80);
 
 
