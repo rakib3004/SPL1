@@ -41,6 +41,10 @@ int positionLocator=85;
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+    double writerWeight=0;
+    double priceWeight=0;
+    double typeWeight=0;
+
     @Override
     public void start(Stage primaryStage){
         String  className = this.getClass().getSimpleName();
@@ -426,9 +430,6 @@ writerNameTextField.setText(humayonAhmed.getText());
                         writerNameTextField.getText()+"-"+typeNameTextField.getText()+
                         "-"+bookPriceTextField.getText());
                 double newBookPrice = Double.parseDouble(bookPriceTextField.getText());
-                double writerWeight=0;
-                double priceWeight=0;
-                double typeWeight=0;
 
                 int writerCounter=0;
                 int priceCounter=0;
@@ -546,6 +547,15 @@ writerNameTextField.setText(humayonAhmed.getText());
                 infoStage.show();
             analysis.setOnAction(actionEvent1 -> {
             setStyle2(label4);
+
+            ProgressBar progressBar = new ProgressBar();
+            ProgressBar progressBar1 = new ProgressBar();
+            ProgressBar progressBar2 = new ProgressBar();
+            typeWeight = typeWeight/100.00;
+            writerWeight = writerWeight/100.00;
+            priceWeight = priceWeight/100.00;
+
+
                 Stage analysisStage = new Stage();
                 GridPane subGridPane = new GridPane();
                 subGridPane.setAlignment(Pos.CENTER_RIGHT);
@@ -625,32 +635,36 @@ writerNameTextField.setText(humayonAhmed.getText());
 
  public Label setStyle(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color:\n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #00ff00, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 1.1em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
  public Label setStyle2(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color:\n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #aaaaaa  , #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 1.1em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
     public TextField setStyle2(TextField textField)
