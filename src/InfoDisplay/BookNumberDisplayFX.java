@@ -88,7 +88,7 @@ public class BookNumberDisplayFX extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Label BookNumbers = new Label((numberOfBooks/6)+" Books" );
+        Label BookNumbers = new Label((numberOfBooks)+" Books" );
         BookNumbers.setAlignment(Pos.CENTER);
         setStyle1(BookNumbers);
         BookNumbers.setFont(font1);
@@ -102,7 +102,7 @@ public class BookNumberDisplayFX extends Application {
         BookNumbers.setScaleX(6);
         BookNumbers.setScaleY(3.4);
 
-        Label WriterNumbers = new Label((writerCounter/6)+" Writers " );
+        Label WriterNumbers = new Label((writerCounter)+" Writers " );
         WriterNumbers.setAlignment(Pos.CENTER);
         setStyle2(WriterNumbers);
         WriterNumbers.setPrefSize(110, 80);
@@ -118,7 +118,7 @@ public class BookNumberDisplayFX extends Application {
         WriterNumbers.setScaleX(6);
         WriterNumbers.setScaleY(3.4);
 
-        Label YearsNumbers = new Label( (yearCounter /6)+" Years " );
+        Label YearsNumbers = new Label( (yearCounter)+" Years " );
         YearsNumbers.setAlignment(Pos.CENTER);
         setStyle3(YearsNumbers);
         YearsNumbers.setPrefSize(110, 80);
@@ -131,7 +131,7 @@ public class BookNumberDisplayFX extends Application {
         YearsNumbers.setTextFill(Color.BLACK);
         YearsNumbers.setScaleX(6);
         YearsNumbers.setScaleY(3.4);
-        Label TypeNumbers = new Label((typeCounter/6)+" types");
+        Label TypeNumbers = new Label((typeCounter)+" types");
         TypeNumbers.setAlignment(Pos.CENTER);
         setStyle4(TypeNumbers);
         TypeNumbers.setFont(font1);
@@ -145,46 +145,18 @@ public class BookNumberDisplayFX extends Application {
         TypeNumbers.setScaleX(6);
         TypeNumbers.setScaleY(3.4);
 
-        PathTransition pt = new PathTransition();
-        pt.setDuration(Duration.seconds(6));
-        pt.setCycleCount(1);
-        pt.setAutoReverse(false);
-        pt.play();
 
-        time = new Timeline();
-        time.setCycleCount(6);
-        time.setAutoReverse(false);
-        time.getKeyFrames().add(
-                new KeyFrame(Duration.seconds(1.13),
-                        event -> {
-                            timeSec++;
-                            bookCounter = (numberOfBooks/6)*timeSec;
-                            writerPalse =  (writerCounter/6)*timeSec;
-                            typePalse = (typeCounter/6)*timeSec;
-                            yearPalse =  (yearCounter/6)*timeSec;
-                            BookNumbers.setText(bookCounter+" Books" );
-                            WriterNumbers.setText(writerPalse+" Writers" );
-                            TypeNumbers.setText(typePalse+" types" );
-                            YearsNumbers.setText(yearPalse+" Years" );
-
-                            if (timeSec == 6) {
-
-                                time.stop();
-                            }
-                        })
-        );
-        time.play();
         Group semiGroup = new Group();;
         semiGroup.getChildren().addAll(BookNumbers,WriterNumbers,YearsNumbers,TypeNumbers);
-        String string ="Images"+ File.separator + "libraryBackground9.jpg";
+    //    String string ="Images"+ File.separator + "libraryBackground9.jpg";
 
-        Image image = new Image(string);
+    //    Image image = new Image(string);
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,semiGroup,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+      //  graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
@@ -196,81 +168,91 @@ public class BookNumberDisplayFX extends Application {
 
     public Button setStyle( Button button)
     {
-        button.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #33FF66 \n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 2.1em;");
+        button.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), #F0FFF0);\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #F0FFF0);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  button;
     }
 
     public Label setStyle1(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #00FFFF \n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 0.6em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
 
     public Label setStyle2(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #00FFFF \n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 0.6em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
 
     public Label setStyle3(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #00FFFF \n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 0.6em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
 
     public Label setStyle4(Label label)
     {
-        label.setStyle("-fx-padding: 8 15 15 15;\n" +
-                "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
-                "    -fx-background-radius: 8;\n" +
-                "    -fx-background-color: #00FFFF \n" +
-                "        linear-gradient(from 0% 93% to 0% 100%, #8d9092 0%, #717375 100%),\n" +
-                "        #8d9092,\n" +
-                "        #717375,\n" +
-                "        radial-gradient(center 50% 50%, radius 100%, #ffffff, #a1a3a6);\n" +
-                "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
-                "    -fx-font-weight: bold;\n" +
-                "    -fx-font-size: 0.6em;");
+        label.setStyle("-fx-background-color: \n" +
+                "        #090a0c,\n" +
+                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
+                "        linear-gradient(#20262b, #191d22),\n" +
+                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "        -fx-background-radius: 5,4,3,5;\n" +
+                "        -fx-background-insets: 0,1,2,0;\n" +
+                "        -fx-text-fill: white;\n" +
+                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "        -fx-font-family: \"Arial\";\n" +
+                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
+                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-padding: 10 20 10 20;");
         return  label;
     }
 }
