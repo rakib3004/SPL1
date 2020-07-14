@@ -23,7 +23,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -548,19 +552,35 @@ writerNameTextField.setText(humayonAhmed.getText());
             analysis.setOnAction(actionEvent1 -> {
             setStyle2(label4);
 
-            ProgressBar progressBar = new ProgressBar();
-            ProgressBar progressBar1 = new ProgressBar();
-            ProgressBar progressBar2 = new ProgressBar();
-            typeWeight = typeWeight/100.00;
-            writerWeight = writerWeight/100.00;
-            priceWeight = priceWeight/100.00;
+                Label label1a = new Label("Type Priority :");
+                Label label1b = new Label("Writer Priority :");
+                Label label1c = new Label("Price Priority :");
+                label1a.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+                label1b.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+                label1c.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
 
-
+            typeWeight = 2*typeWeight/100.00;
+            writerWeight = 2*writerWeight/100.00;
+            priceWeight = 2*priceWeight/100.00;
+                ProgressBar progressBar = new ProgressBar(typeWeight);
+                ProgressBar progressBar1 = new ProgressBar(writerWeight);
+                ProgressBar progressBar2 = new ProgressBar(priceWeight);
+                label1a.setLabelFor(progressBar);
+                label1b.setLabelFor(progressBar1);
+                label1c.setLabelFor(progressBar2);
+                progressBar.setStyle("-fx-accent: orange");
+                progressBar1.setStyle("-fx-accent: blue");
+                progressBar2.setStyle("-fx-accent: green");
+                label1a.setMnemonicParsing(true);
+                label1b.setMnemonicParsing(true);
+                label1c.setMnemonicParsing(true);
                 Stage analysisStage = new Stage();
                 GridPane subGridPane = new GridPane();
-                subGridPane.setAlignment(Pos.CENTER_RIGHT);
-                subGridPane.add(label4,1,1,5,5);
-
+                subGridPane.addRow(0,label1a,progressBar);
+                subGridPane.addRow(1,label1b,progressBar1);
+                subGridPane.addRow(2,label1c,progressBar2);
+                subGridPane.setAlignment(Pos.CENTER);
+            //    subGridPane.add(label4,1,1,5,5);
                 Scene scene2 = new Scene(subGridPane, 290, 165);
                 analysisStage.setTitle("Add Book");
                 analysisStage.setScene(scene2);
