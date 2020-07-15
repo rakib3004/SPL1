@@ -59,28 +59,28 @@ public class Main extends Application {
 
 
         final Button welcome = new Button("Start");
-        welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+        welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
 
-        welcome.setStyle("-fx-base: #A9A9A9;");
+        welcome.setStyle("-fx-base: #000000;");
         welcome.setContentDisplay(ContentDisplay.TOP);
         welcome.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                welcome.setStyle("-fx-base: #00009A;");
+                welcome.setStyle("-fx-base: #00FFFF;");
 
             }
         });
 
 
       //  Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(550);
+        welcome.setTranslateX(620);
         welcome.setTranslateY(370);
  //       setStyle(welcome);
         FileInputStream fileInputStream = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"power.png");
         Image image = new Image(fileInputStream);
-        welcome.setGraphic(new ImageView(image));
+      //  welcome.setGraphic(new ImageView(image));
 
-        welcome.setPrefSize(100, 100);
+        welcome.setPrefSize(125, 55);
 
         welcome.setOnAction(actionEvent -> {
 
@@ -277,8 +277,8 @@ public class Main extends Application {
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
-menuBar.setStyle("-fx-text-fill: #ffffff;");
-menuBar.setStyle("-fx-background-color: #000000;");
+menuBar.setStyle("-fx-text-fill: #000000;");
+menuBar.setStyle("-fx-background-color: #ffffff;");
 menuBar.setStyle("-fx-padding: 1 5 1 5;");
 menuBar.setStyle(" -fx-spacing: 47;");
 menuBar.prefHeight(32);

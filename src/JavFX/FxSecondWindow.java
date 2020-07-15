@@ -115,7 +115,7 @@ graphicsContext.drawImage(image,0,0);
                 "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
                 "        -fx-font-family: \"Arial\";\n" +
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
-                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-font-size: 1.9em;\n" +
                 "        -fx-padding: 10 20 10 20;");
         return button;
     }
