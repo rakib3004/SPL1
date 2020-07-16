@@ -346,7 +346,11 @@ menuBar.prefHeight(32);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"search.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+      //  setStyle(exit);
         exit.setPrefSize(200, 80);
         exit.setFont(font);
         Text text = new Text("Library Recommendation Tool ");
