@@ -91,16 +91,6 @@ public class Main extends Application {
                 exception.printStackTrace();
             }
         });
-        Button exit = new Button("Exit");
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-       setStyle(exit);
-        exit.setPrefSize(200, 80);
-
 
 
         Menu menu1 = new Menu("user");
@@ -284,6 +274,10 @@ menuBar.setStyle(" -fx-spacing: 47;");
 menuBar.prefHeight(32);
 /*.menu-item {  }
 .menu { -fx-padding: 1 5 1 5; }*/
+        Font font = new Font(36);
+        Font font1 = new Font(47);
+
+
         Button user = new Button("User");
         Button librarian = new Button("Librarian");
         Button system = new Button("System");
@@ -291,8 +285,7 @@ menuBar.prefHeight(32);
         user.setPrefSize(410,230);
         librarian.setPrefSize(410,230);
         system.setPrefSize(410,230);
-        Font font = new Font(36);
-        Font font1 = new Font(47);
+
         user.setFont(font);
         librarian.setFont(font);
         system.setFont(font);
@@ -347,25 +340,35 @@ menuBar.prefHeight(32);
                 exception.printStackTrace();
             }
         });
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        setStyle(exit);
+        exit.setPrefSize(200, 80);
+        exit.setFont(font);
         Text text = new Text("Library Recommendation Tool ");
-        text.setTranslateX(500);
-        text.setTranslateY(100);
+        text.setTranslateX(575);
+        text.setTranslateY(500);
         text.setFont(font1);
-        text.setFill(Color.BLACK);
+        text.setFill(Color.WHITE);
         text.setTextAlignment(TextAlignment.RIGHT);
         text.setStyle("-fx-font-weight: bold;");
-        setStyle1(welcome);
+    /*    setStyle1(welcome);
         setStyle1(exit);
-
-        //     Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
-        Canvas canvas = new Canvas(1400, 770);
-
+*/
+             Image background = new Image("Images"+ File.separator +"libraryBackground12.jpg");
+        Canvas canvas = new Canvas(850, 475);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar,welcome,exit,
+        root.getChildren().addAll(canvas,menuBar/*,welcome*/,exit,
                 text,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-     //  gc.drawImage(background,0,0);
+       gc.drawImage(background,0,0);
         Scene scene = new Scene(root,1400,770);
         menuBar.prefWidthProperty().bind(scene.widthProperty());
         stage.setScene(scene);
