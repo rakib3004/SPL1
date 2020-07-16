@@ -276,6 +276,7 @@ menuBar.prefHeight(32);
 .menu { -fx-padding: 1 5 1 5; }*/
         Font font = new Font(36);
         Font font1 = new Font(47);
+        Font font2 = new Font(25);
 
 
         Button user = new Button("User");
@@ -340,55 +341,55 @@ menuBar.prefHeight(32);
                 exception.printStackTrace();
             }
         });
-        Button exit = new Button("Exit");
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        FileInputStream fileInputStream4 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"search.png");
-        Image image4 = new Image(fileInputStream4);
-        exit.setGraphic(new ImageView(image4));
 
-        Button search = new Button("Search");
+
+        Button search = new Button("Search Book");
         search.setTranslateX(470);
         search.setTranslateY(520);
-        search.setPrefSize(340,45);
-        search.setFont(font);
-        search.setContentDisplay(ContentDisplay.TOP);
+        search.setPrefSize(375,30);
+        search.setFont(font2);
+        search.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream5 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"search.png");
         Image image5 = new Image(fileInputStream5);
         search.setGraphic(new ImageView(image5));
 
          Button about = new Button("About");
-        about.setTranslateX(920);
+        about.setTranslateX(950);
         about.setTranslateY(520);
-        about.setPrefSize(340,45);
-        about.setFont(font);
-        about.setContentDisplay(ContentDisplay.TOP);
+        about.setPrefSize(375,30);
+        about.setFont(font2);
+        about.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream6 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"search.png");
+                "src"+ File.separator +"Images"+ File.separator +"about.png");
         Image image6 = new Image(fileInputStream6);
         about.setGraphic(new ImageView(image6));
 
-
-
         //  setStyle(exit);
-        exit.setPrefSize(200, 80);
-        exit.setFont(font);
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font2);
         Text text = new Text("Library Recommendation Tool ");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.WHITE);
-        text.setTextAlignment(TextAlignment.RIGHT);
+        text.setTextAlignment(TextAlignment.LEFT);
         text.setStyle("-fx-font-weight: bold;");
     /*    setStyle1(welcome);
         setStyle1(exit);
 */
-             Image background = new Image("Images"+ File.separator +"libraryBackground12.jpg");
+       Image background = new Image("Images"+ File.separator +"libraryBackground12.jpg");
         Canvas canvas = new Canvas(850, 475);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
