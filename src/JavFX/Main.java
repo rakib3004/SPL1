@@ -36,9 +36,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.*;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.io.File;
@@ -292,6 +292,7 @@ menuBar.prefHeight(32);
         librarian.setPrefSize(410,230);
         system.setPrefSize(410,230);
         Font font = new Font(36);
+        Font font1 = new Font(47);
         user.setFont(font);
         librarian.setFont(font);
         system.setFont(font);
@@ -309,36 +310,59 @@ menuBar.prefHeight(32);
                 "src"+ File.separator +"Images"+ File.separator +"user.png");
         Image image1 = new Image(fileInputStream1);
         user.setGraphic(new ImageView(image1));
+
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"admin.png");
         Image image2 = new Image(fileInputStream2);
           librarian.setGraphic(new ImageView(image2));
 
-/*
+        FileInputStream fileInputStream3 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"automation.png");
+        Image image3 = new Image(fileInputStream3);
+        system.setGraphic(new ImageView(image3));
 
-        welcome.setStyle("-fx-base: #000000;");
-        welcome.setContentDisplay(ContentDisplay.TOP);
-        welcome.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
-                welcome.setStyle("-fx-base: #00FFFF;");
-
+        user.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(stage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
+        librarian.setOnAction(actionEvent -> {
+            LibraryDesk libraryDesk = new LibraryDesk();
+            try {
+                    libraryDesk.start(stage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        system.setOnAction(actionEvent -> {
+            AuthorSystem authorSystem = new AuthorSystem();
+            try {
+                authorSystem.start(stage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Text text = new Text("Library Recommendation Tool ");
+        text.setTranslateX(500);
+        text.setTranslateY(100);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.RIGHT);
+        text.setStyle("-fx-font-weight: bold;");
+        setStyle1(welcome);
+        setStyle1(exit);
 
-
-        //  Button welcome = new Button("Welcome to RTML");
-
-        FileInputStream fileInputStream = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"power.png");
-        Image image = new Image(fileInputStream);
-        //  welcome.setGraphic(new ImageView(image));
-*/
-
-   //     Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        //     Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar,welcome,exit,user,librarian,system);
+        root.getChildren().addAll(canvas,menuBar,welcome,exit,
+                text,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
      //  gc.drawImage(background,0,0);
@@ -363,6 +387,17 @@ menuBar.prefHeight(32);
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
+        return button;
+    }
+    public Button setStyle1( Button button) {
+        button.setStyle("-fx-background-color:\n" +
+                "        linear-gradient(#ee2100, #ff3400),\n" +
+                "        radial-gradient(center 50% -40%, radius 200%, #ee0000 45%, #ff000 50%);\n" +
+                "    -fx-background-radius: 6, 5;\n" +
+                "    -fx-background-insets: 0, 1;\n" +
+                "        -fx-font-size: 1.9em;\n" +
+                "    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );\n" +
+                "    -fx-text-fill: #000000;");
         return button;
     }
     public  ToggleButton setTheme(ToggleButton toggleButton){
