@@ -58,7 +58,7 @@ public class Main extends Application {
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
 
-        final Button welcome = new Button("Start");
+         Button welcome = new Button("Start");
         welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
 
         welcome.setStyle("-fx-base: #000000;");
@@ -288,16 +288,47 @@ menuBar.prefHeight(32);
         Button librarian = new Button("Librarian");
         Button system = new Button("System");
 
-        user.setPrefSize(350,300);
-        librarian.setPrefSize(350,300);
-        system.setPrefSize(350,300);
+        user.setPrefSize(410,230);
+        librarian.setPrefSize(410,230);
+        system.setPrefSize(410,230);
+        Font font = new Font(36);
+        user.setFont(font);
+        librarian.setFont(font);
+        system.setFont(font);
+        user.setTranslateX(30);
+        user.setTranslateY(35);
+        librarian.setTranslateX(30);
+        librarian.setTranslateY(270);
+        system.setTranslateX(30);
+        system.setTranslateY(505);
 
-        user.setTranslateX(50);
-        user.setTranslateY(150);
-        librarian.setTranslateX(50);
-        librarian.setTranslateY(505);
-        system.setTranslateX(50);
-        system.setTranslateY(860);
+        user.setContentDisplay(ContentDisplay.TOP);
+        librarian.setContentDisplay(ContentDisplay.TOP);
+        system.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+        Image image1 = new Image(fileInputStream1);
+          librarian.setGraphic(new ImageView(image1));
+
+/*
+
+        welcome.setStyle("-fx-base: #000000;");
+        welcome.setContentDisplay(ContentDisplay.TOP);
+        welcome.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                welcome.setStyle("-fx-base: #00FFFF;");
+
+            }
+        });
+
+
+        //  Button welcome = new Button("Welcome to RTML");
+
+        FileInputStream fileInputStream = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"power.png");
+        Image image = new Image(fileInputStream);
+        //  welcome.setGraphic(new ImageView(image));
+*/
 
    //     Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1400, 770);
