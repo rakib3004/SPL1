@@ -306,9 +306,13 @@ menuBar.prefHeight(32);
         librarian.setContentDisplay(ContentDisplay.TOP);
         system.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+                "src"+ File.separator +"Images"+ File.separator +"user.png");
         Image image1 = new Image(fileInputStream1);
-          librarian.setGraphic(new ImageView(image1));
+        user.setGraphic(new ImageView(image1));
+        FileInputStream fileInputStream2 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+        Image image2 = new Image(fileInputStream2);
+          librarian.setGraphic(new ImageView(image2));
 
 /*
 
