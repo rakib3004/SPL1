@@ -350,7 +350,32 @@ menuBar.prefHeight(32);
                 "src"+ File.separator +"Images"+ File.separator +"search.png");
         Image image4 = new Image(fileInputStream4);
         exit.setGraphic(new ImageView(image4));
-      //  setStyle(exit);
+
+        Button search = new Button("Search");
+        search.setTranslateX(470);
+        search.setTranslateY(520);
+        search.setPrefSize(340,45);
+        search.setFont(font);
+        search.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"search.png");
+        Image image5 = new Image(fileInputStream5);
+        search.setGraphic(new ImageView(image5));
+
+         Button about = new Button("About");
+        about.setTranslateX(920);
+        about.setTranslateY(520);
+        about.setPrefSize(340,45);
+        about.setFont(font);
+        about.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"search.png");
+        Image image6 = new Image(fileInputStream6);
+        about.setGraphic(new ImageView(image6));
+
+
+
+        //  setStyle(exit);
         exit.setPrefSize(200, 80);
         exit.setFont(font);
         Text text = new Text("Library Recommendation Tool ");
@@ -368,7 +393,8 @@ menuBar.prefHeight(32);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar/*,welcome*/,exit,
+        root.getChildren().addAll(canvas,menuBar/*,welcome*/
+                ,exit,search,about,
                 text,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
