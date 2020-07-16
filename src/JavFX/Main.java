@@ -276,8 +276,7 @@ menuBar.prefHeight(32);
 .menu { -fx-padding: 1 5 1 5; }*/
         Font font = new Font(36);
         Font font1 = new Font(47);
-        Font font2 = new Font(25);
-
+        Font font2 = new Font( 25);
 
         Button user = new Button("User");
         Button librarian = new Button("Librarian");
@@ -383,14 +382,14 @@ menuBar.prefHeight(32);
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);
-        text.setFill(Color.WHITE);
+        text.setFill(Color.BLACK);
         text.setTextAlignment(TextAlignment.LEFT);
         text.setStyle("-fx-font-weight: bold;");
     /*    setStyle1(welcome);
         setStyle1(exit);
 */
-       Image background = new Image("Images"+ File.separator +"libraryBackground12.jpg");
-        Canvas canvas = new Canvas(850, 475);
+       Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group root = new Group();

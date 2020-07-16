@@ -524,7 +524,10 @@ writerNameTextField.setText(humayonAhmed.getText());
                String string1 ="Medium Quality's Book";
                String string2 ="High Quality's Book";
                String string3 ="New Type's Book";
-               if(terminalPrediction<35.00){
+            if(terminalPrediction<10.00){
+                label3.setText(string3);
+            }
+            else   if(terminalPrediction<35.00){
                    label3.setText(string);
                }
                else  if(terminalPrediction<75.00){
@@ -563,17 +566,19 @@ writerNameTextField.setText(humayonAhmed.getText());
                 Tooltip tooltip1 = new Tooltip(2*writerWeight+"%");
                 Tooltip tooltip2 = new Tooltip(2*priceWeight+"%");
 
-            typeWeight = 2*typeWeight/100.00;
-            writerWeight = 2*writerWeight/100.00;
-            priceWeight = 2*priceWeight/100.00;
+                typeWeight = 2*typeWeight/100.00;
+                writerWeight = 2*writerWeight/100.00;
+                priceWeight = 2*priceWeight/100.00;
+
                 ProgressBar progressBar = new ProgressBar(typeWeight);
                 ProgressBar progressBar1 = new ProgressBar(writerWeight);
                 ProgressBar progressBar2 = new ProgressBar(priceWeight);
                 label1a.setLabelFor(progressBar);
                 label1b.setLabelFor(progressBar1);
                 label1c.setLabelFor(progressBar2);
+
                 progressBar.setTooltip(tooltip);
-                progressBar1.setTooltip(tooltip2);
+                progressBar1.setTooltip(tooltip1);
                 progressBar2.setTooltip(tooltip2);
                 progressBar.setStyle("-fx-accent: orange");
                 progressBar1.setStyle("-fx-accent: blue");
@@ -593,7 +598,6 @@ writerNameTextField.setText(humayonAhmed.getText());
                 analysisStage.setScene(scene2);
                 analysisStage.show();
             });
-
         });
 
         setStyle(addItem);
