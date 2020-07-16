@@ -284,15 +284,29 @@ menuBar.setStyle(" -fx-spacing: 47;");
 menuBar.prefHeight(32);
 /*.menu-item {  }
 .menu { -fx-padding: 1 5 1 5; }*/
+        Button user = new Button("User");
+        Button librarian = new Button("Librarian");
+        Button system = new Button("System");
 
-        Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        user.setPrefSize(350,300);
+        librarian.setPrefSize(350,300);
+        system.setPrefSize(350,300);
+
+        user.setTranslateX(50);
+        user.setTranslateY(150);
+        librarian.setTranslateX(50);
+        librarian.setTranslateY(505);
+        system.setTranslateX(50);
+        system.setTranslateY(860);
+
+   //     Image background = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1400, 770);
 
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar,welcome,exit);
+        root.getChildren().addAll(canvas,menuBar,welcome,exit,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-       gc.drawImage(background,0,0);
+     //  gc.drawImage(background,0,0);
         Scene scene = new Scene(root,1400,770);
         menuBar.prefWidthProperty().bind(scene.widthProperty());
         stage.setScene(scene);
