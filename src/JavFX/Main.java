@@ -7,6 +7,7 @@ import CrossValidationProcess.TrainingMethodology;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
@@ -363,6 +364,15 @@ menuBar.prefHeight(32);
                 "src"+ File.separator +"Images"+ File.separator +"about.png");
         Image image6 = new Image(fileInputStream6);
         about.setGraphic(new ImageView(image6));
+        about.setOnAction(actionEvent -> {
+            About about1 = new About();
+            try {
+                about1.start(stage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
 
         //  setStyle(exit);
         Button exit = new Button("Exit");

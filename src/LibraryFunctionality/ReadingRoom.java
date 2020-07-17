@@ -3,6 +3,7 @@ package LibraryFunctionality;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.AuthorSystem;
 import JavFX.FXThirdWindow;
 import JavFX.FxSecondWindow;
 import MainPackage.BookNumber;
@@ -21,11 +22,14 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadingRoom extends Application {
@@ -45,30 +49,72 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button automaticSystem = new Button("Automatic System");
-        automaticSystem.setOnAction(actionEvent -> {
+        Font font = new Font(26);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 25);
+
+        Button user = new Button("Default Book Recommendation");
+        Button librarian = new Button("User Based Book Recommendation");
+        Button system = new Button("Members Rules & Regulations");
+
+        user.setPrefSize(410,230);
+        librarian.setPrefSize(410,230);
+        system.setPrefSize(410,230);
+
+        user.setFont(font);
+        librarian.setFont(font);
+        system.setFont(font);
+        user.setTranslateX(30);
+        user.setTranslateY(35);
+        librarian.setTranslateX(30);
+        librarian.setTranslateY(270);
+        system.setTranslateX(30);
+        system.setTranslateY(505);
+
+        user.setContentDisplay(ContentDisplay.TOP);
+        librarian.setContentDisplay(ContentDisplay.TOP);
+        system.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"user.png");
+        Image image1 = new Image(fileInputStream1);
+        user.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+        Image image2 = new Image(fileInputStream2);
+        librarian.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"automation.png");
+        Image image3 = new Image(fileInputStream3);
+        system.setGraphic(new ImageView(image3));
+
+        user.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
             try {
-                automaticSystem(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        setStyle(automaticSystem);
-        automaticSystem.setPrefSize(400,80);
-        automaticSystem.setTranslateX(240);
-        automaticSystem.setTranslateY(50);
-        Button manualSystem = new Button("Manual System");
-        manualSystem.setOnAction(actionEvent -> {
+        librarian.setOnAction(actionEvent -> {
+            LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                manualSystem(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                libraryDesk.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
             }
         });
-        setStyle(manualSystem);
-        manualSystem.setPrefSize(400,80);
-        manualSystem.setTranslateX(650);
-        manualSystem.setTranslateY(50);
+        system.setOnAction(actionEvent -> {
+            AuthorSystem authorSystem = new AuthorSystem();
+            try {
+                authorSystem.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -92,14 +138,14 @@ public class ReadingRoom extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+     //   Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
-        group.getChildren().addAll(automaticSystem,manualSystem);
+        group.getChildren().addAll(user,librarian,system);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+    //    graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
@@ -616,15 +662,14 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+      //  Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,
                 writerWise,classWise,selfWise,
                 timeWise );
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+      //  graphicsContext.drawImage(image,0,0);
 
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
