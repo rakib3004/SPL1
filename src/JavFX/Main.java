@@ -49,14 +49,13 @@ public class Main extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
-        ReadingRoom readingRoom1 = new ReadingRoom();
-        LibraryDesk libraryDesk1 = new LibraryDesk();
-        CrossValidationFX crossValidationFX1 = new CrossValidationFX();
+        ReadingRoom readingRoom2 = new ReadingRoom();
+        LibraryDesk libraryDesk2 = new LibraryDesk();
+        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
         BookApplication bookApplication1 = new BookApplication();
-        WriterCollection writerCollection1 = new WriterCollection();
-        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
-        AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-        PageRankAlgorithmFx pageRankAlgorithmFx1a = new PageRankAlgorithmFx();
+        WriterCollection writerCollection = new WriterCollection();
+        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
+        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
          Button welcome = new Button("Start");
         welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
 
@@ -148,24 +147,20 @@ public class Main extends Application {
         MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                crossValidationFX2.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                bookApplication1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem3c.setOnAction(actionEvent -> {
-            try {
-                start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+           //     writerCollection.writerCollectionMLRMethods();
         });
 
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
@@ -176,21 +171,21 @@ public class Main extends Application {
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
         menuItem4a.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                fourVariableRegression1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4b.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                analyticHierarchyAlgorithmFx1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4c.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                pageRankAlgorithmFx1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
