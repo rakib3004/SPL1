@@ -99,7 +99,7 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem1b.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
@@ -111,21 +111,21 @@ public class Main extends Application {
         MenuItem menuItem2a = new MenuItem("Add book");
         MenuItem menuItem2b = new MenuItem("Book Info");
         MenuItem menuItem2c = new MenuItem("Remove Book");
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem2a.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem2b.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem2c.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
@@ -138,21 +138,21 @@ public class Main extends Application {
         MenuItem menuItem3a = new MenuItem("Cross validation");
         MenuItem menuItem3b = new MenuItem("Seven value showing");
         MenuItem menuItem3c = new MenuItem("Data optimization");
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem3a.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem3b.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem3c.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
@@ -166,21 +166,21 @@ public class Main extends Application {
         MenuItem menuItem4b = new MenuItem("Analytic hierarchy process");
         MenuItem menuItem4c = new MenuItem("Page rank algorithm");
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem4a.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem4b.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-        menuItem1a.setOnAction(actionEvent -> {
+        menuItem4c.setOnAction(actionEvent -> {
             try {
                 start(stage);
             } catch (Exception e) {
