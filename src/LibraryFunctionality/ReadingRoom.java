@@ -152,14 +152,14 @@ public class ReadingRoom extends Application {
         setStyle(back);
         back.setPrefSize(200, 80);
         back.setTranslateX(1100);
-        back.setTranslateY(450);
+        back.setTranslateY(550);
         Image background = new Image("Images"+ File.separator +"framework.jpg");
         Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
-        group.getChildren().addAll(user,librarian,system);
+        group.getChildren().addAll(user,librarian,system,text);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
       graphicsContext.drawImage(background,0,0);

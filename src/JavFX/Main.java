@@ -107,8 +107,9 @@ public class Main extends Application {
         MenuItem menuItem4b = new MenuItem("Analytic hierarchy process");
         MenuItem menuItem4c = new MenuItem("Page rank algorithm");
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
-        MenuItem readingRoomView = new MenuItem("Reading Room");
-        readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
+
+        MenuItem readingRoom1 = new MenuItem("Reading Room");
+        readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 ReadingRoom readingRoom = new ReadingRoom();
                 try {
@@ -120,8 +121,8 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem libraryDeskView = new MenuItem("Library Desk");
-        libraryDeskView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem libraryDesk1 = new MenuItem("Library Desk");
+        libraryDesk1.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 LibraryDesk libraryDesk = new LibraryDesk();
                 try {
@@ -133,9 +134,9 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem statisticsView = new MenuItem("Statistics View");
+        MenuItem processVisualization = new MenuItem("Process Visualization");
 
-        statisticsView.setOnAction(new EventHandler<ActionEvent>() {
+        processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 StatisticsFX statisticsFX = new StatisticsFX();
                 {
@@ -143,8 +144,8 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem fourVariableRegressionView = new MenuItem("FourVariable RegressionView");
-        fourVariableRegressionView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem multivariableLinearRegression = new MenuItem("Multi-variable Linear Regression");
+        multivariableLinearRegression.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 FourVariableRegression fourVariableRegression = new FourVariableRegression();
                 try {
@@ -157,9 +158,8 @@ public class Main extends Application {
             }
         });
 
-        MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
-
-        analyticHierarchyProcessView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
+        analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
                 try {
@@ -171,8 +171,8 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem pageRankAlgorithmView = new MenuItem("PageRank AlgorithmView");
-        pageRankAlgorithmView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
+        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
                 try {
@@ -184,16 +184,16 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
-        cvVisualizationView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
+        crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-                {
-                    crossValidationVisualization.start(stage);
+CrossValidationFX crossValidationFX = new CrossValidationFX();
+{
+    crossValidationFX.start(stage);
                 }
             }
         });
-        MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
+        MenuItem trainingMethodologyView = new MenuItem("Training Set View");
         trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 TrainingSet trainingSet = new TrainingSet();
@@ -203,7 +203,7 @@ public class Main extends Application {
             }
         });
 
-        MenuItem testingSetView = new MenuItem("Testing SetView");
+        MenuItem testingSetView = new MenuItem("Testing Set View");
         testingSetView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 TestingSet testingSet = new TestingSet();
@@ -213,7 +213,7 @@ public class Main extends Application {
             }
         });
 
-        MenuItem bookInformationView = new MenuItem("Book InformationView");
+        MenuItem bookInformationView = new MenuItem("Book Information");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -223,16 +223,8 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem crossValidationView = new MenuItem("Cross ValidationView");
-        crossValidationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                TrainingSet trainingSet = new TrainingSet();
-                {
-                    trainingSet.start(stage);
-                }
-            }
-        });
-        MenuItem systemAnalysisView = new MenuItem("System AnalysisView");
+
+        MenuItem systemAnalysisView = new MenuItem("System Analysis");
         systemAnalysisView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
@@ -251,10 +243,10 @@ public class Main extends Application {
             }
         });
 
-        menu5.getItems().addAll(readingRoomView,libraryDeskView,
-                statisticsView,fourVariableRegressionView,
-                cvVisualizationView,testingSetView,analyticHierarchyProcessView,pageRankAlgorithmView,
-                bookInformationView,crossValidationView,systemAnalysisView,
+        menu5.getItems().addAll(readingRoom1,libraryDesk1,
+                processVisualization,multivariableLinearRegression,
+                crossValidationProcess,testingSetView,analyticHierarchyProcess,pageRankAlgorithm,
+                bookInformationView,systemAnalysisView,
                 processValidationView,trainingMethodologyView);
 
         MenuBar menuBar = new MenuBar();
@@ -380,7 +372,7 @@ menuBar.prefHeight(32);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font2);
         Text text = new Text("Library Recommendation Tool ");
-        text.setTranslateX(575);
+        text.setTranslateX(550);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
