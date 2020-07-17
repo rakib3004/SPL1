@@ -92,15 +92,74 @@ public class Main extends Application {
         MenuItem menuItem1a = new MenuItem("Default Recommendation");
         MenuItem menuItem1b = new MenuItem("User Based Recommendation");
         menu1.getItems().addAll(menuItem1a,menuItem1b);
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
 
         MenuItem menuItem2a = new MenuItem("Add book");
         MenuItem menuItem2b = new MenuItem("Book Info");
         MenuItem menuItem2c = new MenuItem("Remove Book");
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
 
         MenuItem menuItem3a = new MenuItem("Cross validation");
         MenuItem menuItem3b = new MenuItem("Seven value showing");
         MenuItem menuItem3c = new MenuItem("Data optimization");
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
 
         MenuItem menuItem4a = new MenuItem("Multi-variable regression");
@@ -157,7 +216,6 @@ public class Main extends Application {
                 }
             }
         });
-
         MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
         analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -193,8 +251,8 @@ CrossValidationFX crossValidationFX = new CrossValidationFX();
                 }
             }
         });
-        MenuItem trainingMethodologyView = new MenuItem("Training Set View");
-        trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem trainingSetView = new MenuItem("Training Set View");
+        trainingSetView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 TrainingSet trainingSet = new TrainingSet();
                 {
@@ -224,8 +282,8 @@ CrossValidationFX crossValidationFX = new CrossValidationFX();
             }
         });
 
-        MenuItem systemAnalysisView = new MenuItem("System Analysis");
-        systemAnalysisView.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem systemAnalysis = new MenuItem("System Analysis");
+        systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
                 {
@@ -233,21 +291,12 @@ CrossValidationFX crossValidationFX = new CrossValidationFX();
                 }
             }
         });
-        MenuItem processValidationView = new MenuItem("Process ValidationView");
-        processValidationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                CrossValidationFX crossValidationFX = new CrossValidationFX();
-                {
-                    crossValidationFX.start(stage);
-                }
-            }
-        });
 
         menu5.getItems().addAll(readingRoom1,libraryDesk1,
                 processVisualization,multivariableLinearRegression,
-                crossValidationProcess,testingSetView,analyticHierarchyProcess,pageRankAlgorithm,
-                bookInformationView,systemAnalysisView,
-                processValidationView,trainingMethodologyView);
+                analyticHierarchyProcess,pageRankAlgorithm,
+                crossValidationProcess,trainingSetView,
+                testingSetView,bookInformationView,systemAnalysis);
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
