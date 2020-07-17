@@ -24,7 +24,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -115,9 +118,28 @@ public class ReadingRoom extends Application {
                 exception.printStackTrace();
             }
         });
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font2);
+        Text text = new Text("Library's Reading Room ");
+        text.setTranslateX(575);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
 
         Button back = new Button("Back");
-        Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
             FxSecondWindow fxSecondWindow = new FxSecondWindow();
             try {
@@ -126,26 +148,21 @@ public class ReadingRoom extends Application {
                 exception.printStackTrace();
             }
         });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
+
         setStyle(back);
         back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-
-     //   Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        back.setTranslateX(1100);
+        back.setTranslateY(450);
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll(user,librarian,system);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-    //    graphicsContext.drawImage(image,0,0);
+      graphicsContext.drawImage(background,0,0);
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
