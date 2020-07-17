@@ -1,10 +1,12 @@
 package JavFX;
 
+import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidationFX;
 import CrossValidationProcess.CrossValidationVisualization;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
+import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
@@ -47,7 +49,14 @@ public class Main extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
-
+        ReadingRoom readingRoom1 = new ReadingRoom();
+        LibraryDesk libraryDesk1 = new LibraryDesk();
+        CrossValidationFX crossValidationFX1 = new CrossValidationFX();
+        BookApplication bookApplication1 = new BookApplication();
+        WriterCollection writerCollection1 = new WriterCollection();
+        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+        AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
+        PageRankAlgorithmFx pageRankAlgorithmFx1a = new PageRankAlgorithmFx();
          Button welcome = new Button("Start");
         welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
 
@@ -55,11 +64,10 @@ public class Main extends Application {
         welcome.setContentDisplay(ContentDisplay.TOP);
         welcome.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                welcome.setStyle("-fx-base: #00FFFF;");
+                welcome.setStyle("-fx-base: #00ffff;");
 
             }
         });
-
 
       //  Button welcome = new Button("Welcome to RTML");
         welcome.setTranslateX(620);
@@ -135,9 +143,9 @@ public class Main extends Application {
 
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
 
-        MenuItem menuItem3a = new MenuItem("Cross validation");
-        MenuItem menuItem3b = new MenuItem("Seven value showing");
-        MenuItem menuItem3c = new MenuItem("Data optimization");
+        MenuItem menuItem3a = new MenuItem("Cross Validation");
+        MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
+        MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
                 start(stage);
@@ -162,9 +170,9 @@ public class Main extends Application {
 
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
 
-        MenuItem menuItem4a = new MenuItem("Multi-variable regression");
-        MenuItem menuItem4b = new MenuItem("Analytic hierarchy process");
-        MenuItem menuItem4c = new MenuItem("Page rank algorithm");
+        MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
+        MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
+        MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
         menuItem4a.setOnAction(actionEvent -> {
             try {
@@ -187,7 +195,6 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         });
-
 
         MenuItem readingRoom1 = new MenuItem("Reading Room");
         readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
