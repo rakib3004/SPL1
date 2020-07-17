@@ -3,7 +3,7 @@ package JavFX;
 import CrossValidationProcess.CrossValidationFX;
 import CrossValidationProcess.CrossValidationVisualization;
 import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingMethodology;
+import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import LibraryFunctionality.ReadingRoom;
@@ -12,42 +12,31 @@ import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
 import RegressionFx.FourVariableRegression;
-import TableViewPackage.Book;
 import UserInterfacePackage.LibraryDesk;
-import VisualRepresentation.LineChartFX;
 import javafx.application.Application;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.control.*;
 
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import java.awt.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Main extends Application {
 
@@ -207,9 +196,9 @@ public class Main extends Application {
         MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
         trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                TrainingMethodology trainingMethodology = new TrainingMethodology();
+                TrainingSet trainingSet = new TrainingSet();
                 {
-                    trainingMethodology.start(stage);
+                    trainingSet.start(stage);
                 }
             }
         });
@@ -237,9 +226,9 @@ public class Main extends Application {
         MenuItem crossValidationView = new MenuItem("Cross ValidationView");
         crossValidationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                TrainingMethodology trainingMethodology = new TrainingMethodology();
+                TrainingSet trainingSet = new TrainingSet();
                 {
-                    trainingMethodology.start(stage);
+                    trainingSet.start(stage);
                 }
             }
         });

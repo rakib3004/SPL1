@@ -3,13 +3,10 @@ package CrossValidationProcess;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.FXThirdWindow;
-import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -66,9 +63,9 @@ public class TrainingObservation extends Application {
         cvVisualization.setTranslateY(350);
 
         trainingMethodology.setOnAction(actionEvent -> {
-            TrainingMethodology trainingMethodology1 = new TrainingMethodology();
+            TrainingSet trainingSet1 = new TrainingSet();
             try {
-                trainingMethodology1.start(primaryStage);
+                trainingSet1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

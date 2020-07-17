@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class TrainingMethodology extends Application {
+public class TrainingSet extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;

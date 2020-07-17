@@ -49,10 +49,10 @@ public class TrainingSet1 extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-           TrainingMethodology trainingMethodology = new TrainingMethodology();
+           TrainingSet trainingSet = new TrainingSet();
 
             try {
-                trainingMethodology.start(primaryStage);
+                trainingSet.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
