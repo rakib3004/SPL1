@@ -208,37 +208,36 @@ trainingSetAll.setOnAction(actionEvent -> {
         MenuItem trainingSet4 = new MenuItem("Training Set 4");
         MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
 
-        trainingSet1.setOnAction((event) -> {
+        trainingSet1.setOnAction(actionEvent -> {
             try {
                 trainingSet1(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet2.setOnAction((event) -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
+
+        trainingSet2.setOnAction(actionEvent -> {
             try {
                 trainingSet2(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet3.setOnAction((event) -> {
+        trainingSet3.setOnAction(actionEvent -> {
             try {
-                TrainingSet3 trainingSet31 = new TrainingSet3();
-                trainingSet31.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                trainingSet3(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet4.setOnAction((event) -> {
+        trainingSet4.setOnAction(actionEvent -> {
             try {
-                TrainingSet4 trainingSet41 = new TrainingSet4();
-                trainingSet41.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                trainingSet4(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
+
         fullTrainingSet.setOnAction((event) -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
@@ -326,36 +325,34 @@ trainingSetAll.setOnAction(actionEvent -> {
         MenuItem trainingSet3 = new MenuItem("Training Set 3");
         MenuItem trainingSet4 = new MenuItem("Training Set 4");
         MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
-        trainingSet1.setOnAction((event) -> {
+
+        trainingSet1.setOnAction(actionEvent -> {
             try {
-                TrainingSet trainingSet = new TrainingSet();
-                trainingSet.trainingSet1(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                trainingSet1(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet2.setOnAction((event) -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
+
+        trainingSet2.setOnAction(actionEvent -> {
             try {
                 trainingSet2(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet3.setOnAction((event) -> {
+        trainingSet3.setOnAction(actionEvent -> {
             try {
-                TrainingSet3 trainingSet31 = new TrainingSet3();
-                trainingSet31.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                trainingSet3(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
-        trainingSet4.setOnAction((event) -> {
+        trainingSet4.setOnAction(actionEvent -> {
             try {
-                TrainingSet4 trainingSet41 = new TrainingSet4();
-                trainingSet41.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
+                trainingSet4(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
         fullTrainingSet.setOnAction((event) -> {
