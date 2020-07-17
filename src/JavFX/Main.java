@@ -166,6 +166,28 @@ public class Main extends Application {
         MenuItem menuItem4b = new MenuItem("Analytic hierarchy process");
         MenuItem menuItem4c = new MenuItem("Page rank algorithm");
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
 
         MenuItem readingRoom1 = new MenuItem("Reading Room");
         readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
