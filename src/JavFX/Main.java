@@ -14,7 +14,10 @@ import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
 import RegressionFx.FourVariableRegression;
+import TableViewPackage.Book;
+import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
+import UserInterfacePackage.RemoveBookFX;
 import javafx.application.Application;
 
 import javafx.event.ActionEvent;
@@ -49,13 +52,7 @@ public class Main extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
-        ReadingRoom readingRoom2 = new ReadingRoom();
-        LibraryDesk libraryDesk2 = new LibraryDesk();
-        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
-        BookApplication bookApplication1 = new BookApplication();
-        WriterCollection writerCollection = new WriterCollection();
-        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+
          Button welcome = new Button("Start");
         welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
 
@@ -63,8 +60,8 @@ public class Main extends Application {
         welcome.setContentDisplay(ContentDisplay.TOP);
         welcome.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                welcome.setStyle("-fx-base: #00ffff;");
 
+                welcome.setStyle("-fx-base: #00ffff;");
             }
         });
 
@@ -89,6 +86,16 @@ public class Main extends Application {
             }
         });
 
+        ReadingRoom readingRoom2 = new ReadingRoom();
+        LibraryDesk libraryDesk2 = new LibraryDesk();
+        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
+        BookApplication bookApplication1 = new BookApplication();
+        WriterCollection writerCollection = new WriterCollection();
+        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
+        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+        AddBookFX addBookFX = new AddBookFX();
+        RemoveBookFX removeBookFX = new RemoveBookFX();
+        BookInformationFX bookInformationFX = new BookInformationFX();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -101,14 +108,14 @@ public class Main extends Application {
         menu1.getItems().addAll(menuItem1a,menuItem1b);
         menuItem1a.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                readingRoom2.automaticSystem(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem1b.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                readingRoom2.manualSystem(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -120,21 +127,21 @@ public class Main extends Application {
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                addBookFX.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                bookInformationFX.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                start(stage);
+                removeBookFX.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

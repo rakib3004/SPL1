@@ -1,17 +1,7 @@
 package UserInterfacePackage;
-
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationFX;
 import JavFX.FXThirdWindow;
-import JavFX.FxSecondWindow;
-import LibraryFunctionality.ReadingRoom;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
