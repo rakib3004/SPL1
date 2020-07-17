@@ -37,7 +37,7 @@ import java.io.IOException;
 public class AddBookFX extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-int positionLocator=85;
+int positionLocator=145;
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
@@ -725,7 +725,7 @@ writerNameTextField.setText(humayonAhmed.getText());
                 "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
                 "        -fx-font-family: \"Arial\";\n" +
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
-                "        -fx-font-size: 1.5em;\n" +
+                "        -fx-font-size: 2.3em;\n" +
                 "        -fx-padding: 10 20 10 20;");
         return  textField;
     }

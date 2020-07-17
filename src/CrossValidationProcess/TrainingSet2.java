@@ -97,8 +97,8 @@ public class TrainingSet2 extends Application {
         MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
         trainingSet1.setOnAction((event) -> {
             try {
-                TrainingSet1 trainingSet11 = new TrainingSet1();
-                trainingSet11.start(primaryStage);
+                TrainingSet trainingSet = new TrainingSet();
+                trainingSet.trainingSet1(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
