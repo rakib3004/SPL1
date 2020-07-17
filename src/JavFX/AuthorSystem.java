@@ -26,11 +26,14 @@ public class AuthorSystem extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
         Button processImplementation = new Button("Process Implementation");
         Button processValidation = new Button("Process Validation");
+        Button sevenValueCalculation = new Button("Seven Value Calculation");
 
         processImplementation.setTranslateX(210);
         processImplementation.setTranslateY(50);
         processValidation.setTranslateX(640);
         processValidation.setTranslateY(50);
+        sevenValueCalculation.setTranslateX(425);
+        sevenValueCalculation.setTranslateY(150);
         processImplementation.setOnAction(actionEvent -> {
             StatisticsFX statisticsFX = new StatisticsFX();
             try {
@@ -47,10 +50,20 @@ public class AuthorSystem extends Application {
                 exception.printStackTrace();
             }
         });
+         sevenValueCalculation.setOnAction(actionEvent -> {
+BookApplication bookApplication = new BookApplication();
+try {
+                bookApplication.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
         setStyle(processImplementation);
         setStyle(processValidation);
+        setStyle(sevenValueCalculation);
         processImplementation.setPrefSize(420, 80);
         processValidation.setPrefSize(420, 80);
+        sevenValueCalculation.setPrefSize(420, 80);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -77,7 +90,7 @@ public class AuthorSystem extends Application {
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
-                processValidation,exit,back);
+                processValidation,exit,back,sevenValueCalculation);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
