@@ -94,31 +94,31 @@ public class Main extends Application {
         });
 
 
-        Menu menu1 = new Menu("user");
-        Menu menu2 = new Menu("admin");
-        Menu menu3 = new Menu("system");
-        Menu menu4 = new Menu("data show");
-        Menu menu5 = new Menu("shortcut");
+        Menu menu1 = new Menu("User");
+        Menu menu2 = new Menu("Librarian");
+        Menu menu3 = new Menu("Analysis");
+        Menu menu4 = new Menu("Process");
+        Menu menu5 = new Menu("Shortcut");
 
-        MenuItem menuItem1a = new MenuItem("login");
-        MenuItem menuItem1b = new MenuItem("sign-up");
+        MenuItem menuItem1a = new MenuItem("Default Recommendation");
+        MenuItem menuItem1b = new MenuItem("User Based Recommendation");
         menu1.getItems().addAll(menuItem1a,menuItem1b);
 
-        MenuItem menuItem2a = new MenuItem("add book");
-        MenuItem menuItem2b = new MenuItem("book info");
-        MenuItem menuItem2c = new MenuItem("remove book");
+        MenuItem menuItem2a = new MenuItem("Add book");
+        MenuItem menuItem2b = new MenuItem("Book Info");
+        MenuItem menuItem2c = new MenuItem("Remove Book");
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
 
-        MenuItem menuItem3a = new MenuItem("cross validation");
-        MenuItem menuItem3b = new MenuItem("seven value showing");
-        MenuItem menuItem3c = new MenuItem("data optimization");
+        MenuItem menuItem3a = new MenuItem("Cross validation");
+        MenuItem menuItem3b = new MenuItem("Seven value showing");
+        MenuItem menuItem3c = new MenuItem("Data optimization");
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
 
-        MenuItem menuItem4a = new MenuItem("multi-variable regression");
-        MenuItem menuItem4b = new MenuItem("analytic hierarchy process");
-        MenuItem menuItem4c = new MenuItem("page rank algorithm");
+        MenuItem menuItem4a = new MenuItem("Multi-variable regression");
+        MenuItem menuItem4b = new MenuItem("Analytic hierarchy process");
+        MenuItem menuItem4c = new MenuItem("Page rank algorithm");
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
-        MenuItem readingRoomView = new MenuItem("Reading RoomView");
+        MenuItem readingRoomView = new MenuItem("Reading Room");
         readingRoomView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 ReadingRoom readingRoom = new ReadingRoom();
@@ -131,7 +131,7 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem libraryDeskView = new MenuItem("Library DeskView");
+        MenuItem libraryDeskView = new MenuItem("Library Desk");
         libraryDeskView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 LibraryDesk libraryDesk = new LibraryDesk();
@@ -167,24 +167,6 @@ public class Main extends Application {
                 }
             }
         });
-        MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
-        cvVisualizationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-                {
-                    crossValidationVisualization.start(stage);
-                }
-            }
-        });
-        MenuItem testingSetView = new MenuItem("Testing SetView");
-        testingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                TestingSet testingSet = new TestingSet();
-                {
-                    testingSet.start(stage);
-                }
-            }
-        });
 
         MenuItem analyticHierarchyProcessView = new MenuItem("AnalyticHierarchy ProcessView");
 
@@ -213,6 +195,35 @@ public class Main extends Application {
                 }
             }
         });
+        MenuItem cvVisualizationView = new MenuItem("CV VisualizationView");
+        cvVisualizationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+                {
+                    crossValidationVisualization.start(stage);
+                }
+            }
+        });
+        MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
+        trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TrainingMethodology trainingMethodology = new TrainingMethodology();
+                {
+                    trainingMethodology.start(stage);
+                }
+            }
+        });
+
+        MenuItem testingSetView = new MenuItem("Testing SetView");
+        testingSetView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TestingSet testingSet = new TestingSet();
+                {
+                    testingSet.start(stage);
+                }
+            }
+        });
+
         MenuItem bookInformationView = new MenuItem("Book InformationView");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
@@ -247,15 +258,6 @@ public class Main extends Application {
                 CrossValidationFX crossValidationFX = new CrossValidationFX();
                 {
                     crossValidationFX.start(stage);
-                }
-            }
-        });
-        MenuItem trainingMethodologyView = new MenuItem("Training MethodologyView");
-        trainingMethodologyView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                TrainingMethodology trainingMethodology = new TrainingMethodology();
-                {
-                    trainingMethodology.start(stage);
                 }
             }
         });
