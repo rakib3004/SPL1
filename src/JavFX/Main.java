@@ -86,256 +86,8 @@ public class Main extends Application {
             }
         });
 
-        ReadingRoom readingRoom2 = new ReadingRoom();
-        LibraryDesk libraryDesk2 = new LibraryDesk();
-        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
-        BookApplication bookApplication1 = new BookApplication();
-        WriterCollection writerCollection = new WriterCollection();
-        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
-        AddBookFX addBookFX = new AddBookFX();
-        RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
-
-        Menu menu1 = new Menu("User");
-        Menu menu2 = new Menu("Librarian");
-        Menu menu3 = new Menu("Analysis");
-        Menu menu4 = new Menu("Process");
-        Menu menu5 = new Menu("Shortcut");
-
-        MenuItem menuItem1a = new MenuItem("Default Recommendation");
-        MenuItem menuItem1b = new MenuItem("User Based Recommendation");
-        menu1.getItems().addAll(menuItem1a,menuItem1b);
-        menuItem1a.setOnAction(actionEvent -> {
-            try {
-                readingRoom2.automaticSystem(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem1b.setOnAction(actionEvent -> {
-            try {
-                readingRoom2.manualSystem(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
 
 
-        MenuItem menuItem2a = new MenuItem("Add book");
-        MenuItem menuItem2b = new MenuItem("Book Info");
-        MenuItem menuItem2c = new MenuItem("Remove Book");
-        menuItem2a.setOnAction(actionEvent -> {
-            try {
-                addBookFX.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem2b.setOnAction(actionEvent -> {
-            try {
-                bookInformationFX.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem2c.setOnAction(actionEvent -> {
-            try {
-                removeBookFX.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
-
-        MenuItem menuItem3a = new MenuItem("Cross Validation");
-        MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
-        MenuItem menuItem3c = new MenuItem("Data Optimization");
-        menuItem3a.setOnAction(actionEvent -> {
-            try {
-                crossValidationFX2.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem3b.setOnAction(actionEvent -> {
-            try {
-                bookApplication1.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem3c.setOnAction(actionEvent -> {
-           //     writerCollection.writerCollectionMLRMethods();
-        });
-
-        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
-
-        MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
-        MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
-        MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
-        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
-        menuItem4a.setOnAction(actionEvent -> {
-            try {
-                fourVariableRegression1.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem4b.setOnAction(actionEvent -> {
-            try {
-                analyticHierarchyAlgorithmFx1.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        menuItem4c.setOnAction(actionEvent -> {
-            try {
-                pageRankAlgorithmFx1.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem readingRoom1 = new MenuItem("Reading Room");
-        readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                ReadingRoom readingRoom = new ReadingRoom();
-                try {
-                    {
-                        readingRoom.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-        MenuItem libraryDesk1 = new MenuItem("Library Desk");
-        libraryDesk1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                LibraryDesk libraryDesk = new LibraryDesk();
-                try {
-                    {
-                        libraryDesk.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-        MenuItem processVisualization = new MenuItem("Process Visualization");
-
-        processVisualization.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                StatisticsFX statisticsFX = new StatisticsFX();
-                {
-                    statisticsFX.start(stage);
-                }
-            }
-        });
-        MenuItem multivariableLinearRegression = new MenuItem("Multi-variable Linear Regression");
-        multivariableLinearRegression.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                FourVariableRegression fourVariableRegression = new FourVariableRegression();
-                try {
-                    {
-                        fourVariableRegression.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-        MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
-        analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
-                try {
-                    {
-                        analyticHierarchyAlgorithmFx.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
-        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
-                try {
-                    {
-                        pageRankAlgorithmFx.start(stage);
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-        MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
-        crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-CrossValidationFX crossValidationFX = new CrossValidationFX();
-{
-    crossValidationFX.start(stage);
-                }
-            }
-        });
-        MenuItem trainingSetView = new MenuItem("Training Set View");
-        trainingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                TrainingSet trainingSet = new TrainingSet();
-                {
-                    trainingSet.start(stage);
-                }
-            }
-        });
-
-        MenuItem testingSetView = new MenuItem("Testing Set View");
-        testingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                TestingSet testingSet = new TestingSet();
-                {
-                    testingSet.start(stage);
-                }
-            }
-        });
-
-        MenuItem bookInformationView = new MenuItem("Book Information");
-
-        bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
-                {
-                    bookInformationFX.start(stage);
-                }
-            }
-        });
-
-        MenuItem systemAnalysis = new MenuItem("System Analysis");
-        systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
-                {
-                    systemAnalysis.start(stage);
-                }
-            }
-        });
-
-        menu5.getItems().addAll(readingRoom1,libraryDesk1,
-                processVisualization,multivariableLinearRegression,
-                analyticHierarchyProcess,pageRankAlgorithm,
-                crossValidationProcess,trainingSetView,
-                testingSetView,bookInformationView,systemAnalysis);
-
-        MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
-menuBar.setStyle("-fx-text-fill: #000000;");
-menuBar.setStyle("-fx-background-color: #ffffff;");
-menuBar.setStyle("-fx-padding: 1 5 1 5;");
-menuBar.setStyle(" -fx-spacing: 47;");
-menuBar.prefHeight(32);
 /*.menu-item {  }
 .menu { -fx-padding: 1 5 1 5; }*/
         Font font = new Font(36);
@@ -466,14 +218,265 @@ menuBar.prefHeight(32);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group root = new Group();
-        root.getChildren().addAll(canvas,menuBar/*,welcome*/
+        root.getChildren().addAll(canvas/*,welcome*/
                 ,exit,search,about,
                 text,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
        gc.drawImage(background,0,0);
         Scene scene = new Scene(root,1400,770);
+        ReadingRoom readingRoom2 = new ReadingRoom();
+        LibraryDesk libraryDesk2 = new LibraryDesk();
+        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
+        BookApplication bookApplication1 = new BookApplication();
+        WriterCollection writerCollection = new WriterCollection();
+        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
+        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+        AddBookFX addBookFX = new AddBookFX();
+        RemoveBookFX removeBookFX = new RemoveBookFX();
+        BookInformationFX bookInformationFX = new BookInformationFX();
+
+        Menu menu1 = new Menu("User");
+        Menu menu2 = new Menu("Librarian");
+        Menu menu3 = new Menu("Analysis");
+        Menu menu4 = new Menu("Process");
+        Menu menu5 = new Menu("Shortcut");
+
+        MenuItem menuItem1a = new MenuItem("Default Recommendation");
+        MenuItem menuItem1b = new MenuItem("User Based Recommendation");
+        menu1.getItems().addAll(menuItem1a,menuItem1b);
+        menuItem1a.setOnAction(actionEvent -> {
+            try {
+                readingRoom2.automaticSystem(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem1b.setOnAction(actionEvent -> {
+            try {
+                readingRoom2.manualSystem(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        MenuItem menuItem2a = new MenuItem("Add book");
+        MenuItem menuItem2b = new MenuItem("Book Info");
+        MenuItem menuItem2c = new MenuItem("Remove Book");
+        menuItem2a.setOnAction(actionEvent -> {
+            try {
+                addBookFX.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem2b.setOnAction(actionEvent -> {
+            try {
+                bookInformationFX.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem2c.setOnAction(actionEvent -> {
+            try {
+                removeBookFX.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
+
+        MenuItem menuItem3a = new MenuItem("Cross Validation");
+        MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
+        MenuItem menuItem3c = new MenuItem("Data Optimization");
+        menuItem3a.setOnAction(actionEvent -> {
+            try {
+                crossValidationFX2.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem3b.setOnAction(actionEvent -> {
+            try {
+                bookApplication1.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem3c.setOnAction(actionEvent -> {
+            //     writerCollection.writerCollectionMLRMethods();
+        });
+
+        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+
+        MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
+        MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
+        MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
+        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
+        menuItem4a.setOnAction(actionEvent -> {
+            try {
+                fourVariableRegression1.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem4b.setOnAction(actionEvent -> {
+            try {
+                analyticHierarchyAlgorithmFx1.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        menuItem4c.setOnAction(actionEvent -> {
+            try {
+                pageRankAlgorithmFx1.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem readingRoom1 = new MenuItem("Reading Room");
+        readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    {
+                        readingRoom.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        MenuItem libraryDesk1 = new MenuItem("Library Desk");
+        libraryDesk1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                LibraryDesk libraryDesk = new LibraryDesk();
+                try {
+                    {
+                        libraryDesk.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        MenuItem processVisualization = new MenuItem("Process Visualization");
+
+        processVisualization.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                StatisticsFX statisticsFX = new StatisticsFX();
+                {
+                    statisticsFX.start(stage);
+                }
+            }
+        });
+        MenuItem multivariableLinearRegression = new MenuItem("Multi-variable Linear Regression");
+        multivariableLinearRegression.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                FourVariableRegression fourVariableRegression = new FourVariableRegression();
+                try {
+                    {
+                        fourVariableRegression.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
+        analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+                try {
+                    {
+                        analyticHierarchyAlgorithmFx.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
+        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+                try {
+                    {
+                        pageRankAlgorithmFx.start(stage);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
+        crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                CrossValidationFX crossValidationFX = new CrossValidationFX();
+                {
+                    crossValidationFX.start(stage);
+                }
+            }
+        });
+        MenuItem trainingSetView = new MenuItem("Training Set View");
+        trainingSetView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TrainingSet trainingSet = new TrainingSet();
+                {
+                    trainingSet.start(stage);
+                }
+            }
+        });
+
+        MenuItem testingSetView = new MenuItem("Testing Set View");
+        testingSetView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                TestingSet testingSet = new TestingSet();
+                {
+                    testingSet.start(stage);
+                }
+            }
+        });
+
+        MenuItem bookInformationView = new MenuItem("Book Information");
+
+        bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                BookInformationFX bookInformationFX = new BookInformationFX();
+                {
+                    bookInformationFX.start(stage);
+                }
+            }
+        });
+
+        MenuItem systemAnalysis = new MenuItem("System Analysis");
+        systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                {
+                    systemAnalysis.start(stage);
+                }
+            }
+        });
+
+        menu5.getItems().addAll(readingRoom1,libraryDesk1,
+                processVisualization,multivariableLinearRegression,
+                analyticHierarchyProcess,pageRankAlgorithm,
+                crossValidationProcess,trainingSetView,
+                testingSetView,bookInformationView,systemAnalysis);
+
+        MenuBar menuBar = new MenuBar();
+        menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
+        menuBar.setStyle("-fx-text-fill: #000000;");
+        menuBar.setStyle("-fx-background-color: #ffffff;");
+        menuBar.setStyle("-fx-padding: 1 5 1 5;");
+        menuBar.setStyle(" -fx-spacing: 47;");
+        menuBar.prefHeight(32);
         menuBar.prefWidthProperty().bind(scene.widthProperty());
+        root.getChildren().add(menuBar);
         stage.setScene(scene);
        stage.setFullScreen(true);
         stage.show();

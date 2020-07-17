@@ -364,6 +364,8 @@ Button removeBook = new Button("Remove Book");
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
+        menuBar.prefWidthProperty().bind(scene1.widthProperty());
+
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();

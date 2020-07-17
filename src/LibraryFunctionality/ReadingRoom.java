@@ -428,6 +428,7 @@ public class ReadingRoom extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
       graphicsContext.drawImage(background,0,0);
         Scene scene1 = new Scene(group,1500,950);
+        menuBar.prefWidthProperty().bind(scene1.widthProperty());
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
@@ -1205,6 +1206,8 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
       //  graphicsContext.drawImage(image,0,0);
 
         Scene scene1 = new Scene(group,1500,950);
+        menuBar.prefWidthProperty().bind(scene1.widthProperty());
+
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
