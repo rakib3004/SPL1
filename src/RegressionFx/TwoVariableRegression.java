@@ -4,7 +4,7 @@ import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
-import Regression.newVersion.TypeCountRegression;
+import Regression.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -15,7 +15,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.IOException;
+
 public class TwoVariableRegression extends Application {
 
     PriorityData [] priorityData;

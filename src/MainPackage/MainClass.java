@@ -3,13 +3,12 @@ package MainPackage;
 
         import AHPalgorithm.AHPcalculation;
         import AHPalgorithm.AHPprocessImplementation;
-        import FilePackage.DateTimeWriter;
         import SimpleRegression.DoublyLinearRegression;
         import MultiVariableRegression.MultipleLinearRegression;
         import ObjectOriented.AHPcriteriaWeight;
         import ObjectOriented.PriorityData;
         import PageRankAlgorithm.PageRankCalculation;
-        import Regression.newVersion.TypeCountRegression;
+        import Regression.TypeCountRegression;
         import ResultPackage.AHP_Result;
         import ResultPackage.MLR_Result;
         import ResultPackage.PRA_Result;

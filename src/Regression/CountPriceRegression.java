@@ -1,29 +1,26 @@
-package Regression.newVersion;
+package Regression;
 
 import FilePackage.DateTimeWriter;
+import ObjectOriented.BookData;
+import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 
-public class MonthPriceRegression {
-
-
+public class CountPriceRegression {
     int iterator;
-    double timeMean =0;
+    double countMean=0;
     double priceMean=0;
-    double timeCount[] = new double [1050];
+    double bookCount [] = new double [1050];
     double bookPrice [] =new double[1050];
     double bookPrice1 [] =new double[1050];
-    double bookPrice0 [] =new double[1050];
 
     int length;
     String string;
-    public  double monthPriceRegressionMethods(PriorityData[] priorityData, int numberOfBooks){
-
+    public  double countPriceRegressionMethods(PriorityData [] priorityData, int numberOfBooks){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         for(iterator =0; iterator <numberOfBooks; iterator++){
-            timeCount[iterator] = priorityData[iterator].timePriority;
+            bookCount[iterator] = priorityData[iterator].borrowPriority;
         }
         for(iterator =0; iterator <numberOfBooks; iterator++){
 
@@ -32,27 +29,30 @@ public class MonthPriceRegression {
 
         for(iterator =0; iterator <numberOfBooks; iterator++){
             priceMean = priceMean +bookPrice[iterator];
-            timeMean = timeMean + timeCount[iterator];
+            countMean = countMean+bookCount[iterator];
         }
 
         priceMean = priceMean/numberOfBooks;
-        timeMean = timeMean /numberOfBooks;
+        countMean = countMean/numberOfBooks;
 
         double assumpMean1  = 0;
         double assumpMean2  = 0;
         for(iterator =0; iterator <numberOfBooks; iterator++){
             bookPrice[iterator] =  bookPrice[iterator]  - priceMean;
-            timeCount[iterator]= timeCount[iterator]- timeMean;
-            assumpMean1 = assumpMean1 +( bookPrice[iterator]* timeCount[iterator]);
-            assumpMean2 = assumpMean2 + (timeCount[iterator]* timeCount[iterator]);
+            bookCount[iterator]=bookCount[iterator]-countMean;
+            assumpMean1 = assumpMean1 +( bookPrice[iterator]*bookCount[iterator]);
+            assumpMean2 = assumpMean2 + (bookCount[iterator]*bookCount[iterator]);
+
         }
 
         double metaValue = assumpMean1/assumpMean2;
-        double betaValue = timeMean - (metaValue*priceMean);
+        double betaValue = countMean - (metaValue*priceMean);
         for(iterator =0; iterator <numberOfBooks; iterator++) {
 
-            bookPrice1[iterator] = betaValue + metaValue * timeCount[iterator];
+            bookPrice1[iterator] = betaValue + metaValue * bookCount[iterator];
         }
         return  metaValue;
+
     }
+
 }

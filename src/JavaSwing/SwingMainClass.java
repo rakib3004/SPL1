@@ -9,7 +9,7 @@ import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
-import Regression.newVersion.TypeCountRegression;
+import Regression.TypeCountRegression;
 
 import javax.swing.*;
 import java.io.IOException;

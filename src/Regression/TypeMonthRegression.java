@@ -1,4 +1,4 @@
-package Regression.newVersion;
+package Regression;
 
 import FilePackage.DateTimeWriter;
 import ObjectOriented.PriorityData;

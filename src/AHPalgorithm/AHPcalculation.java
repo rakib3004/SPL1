@@ -3,6 +3,7 @@ package AHPalgorithm;
 import FilePackage.DateTimeWriter;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
+import Regression.*;
 import Regression.newVersion.*;
 public class AHPcalculation {
     AHPcriteriaWeight ahPcriteriaWeight;
