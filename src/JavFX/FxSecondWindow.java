@@ -31,7 +31,7 @@ public class FxSecondWindow extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
-int positionVariable=150;
+        int positionVariable=150;
         readersMood.setTranslateX(200);
         readersMood.setTranslateY(200-positionVariable);
         administrationMood.setTranslateX(530);
