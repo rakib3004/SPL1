@@ -97,25 +97,22 @@ public class TrainingSet extends Application {
         });
 
         trainingSet2.setOnAction(actionEvent -> {
-            TrainingSet2 trainingSet21 = new TrainingSet2();
             try {
-                trainingSet21.start(primaryStage);
+                trainingSet2(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 trainingSet3.setOnAction(actionEvent -> {
-           TrainingSet3 trainingSet31 = new TrainingSet3();
             try {
-                trainingSet31.start(primaryStage);
+                trainingSet3(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet4.setOnAction(actionEvent -> {
-            TrainingSet4 trainingSet41 = new TrainingSet4();
             try {
-                trainingSet41.start(primaryStage);
+                trainingSet4(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
