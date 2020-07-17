@@ -30,7 +30,7 @@ public class StackedAreaFX extends Application {
     BookNumber bookNumber = new BookNumber();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-        String sevenValueArray0 =  "findMinimumValue";
+    String sevenValueArray0 =  "findMinimumValue";
     String sevenValueArray6 ="findMaximumValue";
     String sevenValueArray3= "findMedianValue";
     String sevenValueArray2= "findFirstQuartileValue";
@@ -84,13 +84,6 @@ public class StackedAreaFX extends Application {
         double []  kisoreUponnashTypeNO= new double[7] ;
         double []onubadTypeNO= new double[7] ;
         double []othersTypeNO = new double[7];
-       /* uponnashType="Minimum Value";
-        kobitaType = "Lower Adjacent Value";
-        rochonaBoliType = "First Quartile Value";
-        religionType= "Median";
-        bigganType = "Third Quartile Value";
-        sciFicType = "Upper Adjacent Value";
-        shisuSahittoType = "Maximum Value";*/
         uponnashType="Uponnash";
         kobitaType = "Kobita";
         rochonaBoliType = "Rochhona Boli";

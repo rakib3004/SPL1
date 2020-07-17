@@ -30,6 +30,13 @@ public class ScatterChartFX extends Application {
     BookNumber bookNumber = new BookNumber();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
+    String sevenValueArray0 =  "findMinimumValue";
+    String sevenValueArray6 ="findMaximumValue";
+    String sevenValueArray3= "findMedianValue";
+    String sevenValueArray2= "findFirstQuartileValue";
+    String sevenValueArray4=  "findThirdQuartileValue";
+    String sevenValueArray1=  "findLowerAdjacentValue";
+    String sevenValueArray5=  "findUpperAdjacentValue";
     @Override
     public void start(Stage primaryStage) {
     }
