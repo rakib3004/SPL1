@@ -42,6 +42,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class PageRankAlgorithmFx extends Application {
@@ -369,7 +370,11 @@ public class PageRankAlgorithmFx extends Application {
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
                 {
-                    systemAnalysis.start(primaryStage);
+                    try {
+                        systemAnalysis.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

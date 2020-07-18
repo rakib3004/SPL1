@@ -114,25 +114,25 @@ public class SystemAnalysis extends Application {
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
             Button processValueAreaChart = new Button("ProcessValue AreaChart");
-            Button processValueLineChart = new Button("ProcessValue LineChart");
+            Button processValueLineArt = new Button("ProcessValue LineArt");
             Button processValuePlotting = new Button("ProcessValue Plotting");
 
             processValueAreaChart.setPrefSize(410,230);
-            processValueLineChart.setPrefSize(410,230);
+            processValueLineArt.setPrefSize(410,230);
             processValuePlotting.setPrefSize(410,230);
 
             processValueAreaChart.setFont(font);
-            processValueLineChart.setFont(font);
+            processValueLineArt.setFont(font);
             processValuePlotting.setFont(font2);
             processValueAreaChart.setTranslateX(30);
             processValueAreaChart.setTranslateY(35);
-            processValueLineChart.setTranslateX(30);
-            processValueLineChart.setTranslateY(270);
+            processValueLineArt.setTranslateX(30);
+            processValueLineArt.setTranslateY(270);
             processValuePlotting.setTranslateX(30);
             processValuePlotting.setTranslateY(505);
 
             processValueAreaChart.setContentDisplay(ContentDisplay.TOP);
-            processValueLineChart.setContentDisplay(ContentDisplay.TOP);
+            processValueLineArt.setContentDisplay(ContentDisplay.TOP);
             processValuePlotting.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"automatic.png");
@@ -142,7 +142,7 @@ public class SystemAnalysis extends Application {
             FileInputStream fileInputStream2 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"manual.png");
             Image image2 = new Image(fileInputStream2);
-            processValueLineChart.setGraphic(new ImageView(image2));
+            processValueLineArt.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"document.png");
@@ -158,7 +158,7 @@ public class SystemAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-            processValueLineChart.setOnAction(actionEvent -> {
+            processValueLineArt.setOnAction(actionEvent -> {
                 BookInformationFX bookInformationFX = new BookInformationFX();
                 try {
                     bookInformationFX.start(primaryStage);
@@ -474,7 +474,11 @@ public class SystemAnalysis extends Application {
                 @Override public void handle(ActionEvent e) {
                     SystemAnalysis systemAnalysis = new SystemAnalysis();
                     {
-                        systemAnalysis.start(primaryStage);
+                        try {
+                            systemAnalysis.start(primaryStage);
+                        } catch (Exception exception) {
+                            exception.printStackTrace();
+                        }
                     }
                 }
             });
