@@ -32,6 +32,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MultiVaribleRegressionFX extends Application {
@@ -350,7 +351,11 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
                 {
-                    systemAnalysis.start(primaryStage);
+                    try {
+                        systemAnalysis.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

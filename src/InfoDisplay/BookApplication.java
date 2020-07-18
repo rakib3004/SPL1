@@ -34,6 +34,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class BookApplication extends Application {
@@ -372,7 +373,11 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
                 {
-                    systemAnalysis.start(primaryStage);
+                    try {
+                        systemAnalysis.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });
