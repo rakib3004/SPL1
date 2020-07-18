@@ -361,7 +361,7 @@ Button removeBook = new Button("Remove Book");
         group.getChildren().add(menuBar);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+      //  graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());

@@ -169,7 +169,7 @@ public class Main extends Application {
         Image image5 = new Image(fileInputStream5);
         search.setGraphic(new ImageView(image5));
 
-         Button about = new Button("About");
+        Button about = new Button("About");
         about.setTranslateX(950);
         about.setTranslateY(520);
         about.setPrefSize(375,30);

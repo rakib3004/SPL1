@@ -102,7 +102,7 @@ try {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
+      //  Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
@@ -360,7 +360,7 @@ try {
             menuBar.prefHeight(32);
             group.getChildren().add(menuBar);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+      //  graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
 

@@ -63,9 +63,9 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font = new Font(26);
+        Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 25);
+        Font font2 = new Font( 26);
 
         Button user = new Button("Default Book Recommendation");
         Button librarian = new Button("User Based Book Recommendation");
@@ -77,7 +77,7 @@ public class ReadingRoom extends Application {
 
         user.setFont(font);
         librarian.setFont(font);
-        system.setFont(font);
+        system.setFont(font2);
         user.setTranslateX(30);
         user.setTranslateY(35);
         librarian.setTranslateX(30);
@@ -141,7 +141,7 @@ public class ReadingRoom extends Application {
         exit.setGraphic(new ImageView(image4));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
-        exit.setFont(font2);
+        exit.setFont(font);
         Text text = new Text("Library's Reading Room ");
         text.setTranslateX(575);
         text.setTranslateY(500);
@@ -150,26 +150,43 @@ public class ReadingRoom extends Application {
         text.setTextAlignment(TextAlignment.LEFT);
         text.setStyle("-fx-font-weight: bold;");
 
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"home.png");
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+
         Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"about.png");
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            About about1 = new About();
             try {
-                fxSecondWindow.start(primaryStage);
-            } catch (Exception exception) {
+                about1.start(primaryStage);
+            }
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });
-
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        back.setTranslateX(1100);
-        back.setTranslateY(550);
         Image background = new Image("Images"+ File.separator +"framework.jpg");
         Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back);
+        group.getChildren().addAll(canvas,exit,back,home);
         group.getChildren().addAll(user,librarian,system,text);
 
         ReadingRoom readingRoom2 = new ReadingRoom();
