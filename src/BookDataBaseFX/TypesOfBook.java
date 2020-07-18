@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class TypesOfBookFX extends Application {
+public class TypesOfBook extends Application {
 
 InfoBarChart infoBarChart = new InfoBarChart();
 InfoPieChart infoPieChart = new InfoPieChart();

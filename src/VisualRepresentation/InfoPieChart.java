@@ -44,9 +44,9 @@ public class InfoPieChart extends Application  {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
+            TypesOfBook typesOfBook = new TypesOfBook();
             try {
-                typesOfBookFX.start(primaryStage);
+                typesOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -199,10 +199,10 @@ public class InfoPieChart extends Application  {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
+            DemandsOfBook demandsOfBook = new DemandsOfBook();
 
             try {
-                demandsOfBookFX.start(primaryStage);
+                demandsOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -332,9 +332,9 @@ public class InfoPieChart extends Application  {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
+            GenericsOfBook genericsOfBook = new GenericsOfBook();
             try {
-                genericsOfBookFX.start(primaryStage);
+                genericsOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -488,9 +488,9 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            ClassesOfBookFX classesOfBookFX = new ClassesOfBookFX();
+            ClassesOfBook classesOfBook = new ClassesOfBook();
             try {
-                classesOfBookFX.start(primaryStage);
+                classesOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -629,9 +629,9 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            BorrowCountOfBookFX borrowCountOfBookFX = new BorrowCountOfBookFX();
+            BorrowCountOfBook borrowCountOfBook = new BorrowCountOfBook();
             try {
-                borrowCountOfBookFX.start(primaryStage);
+                borrowCountOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

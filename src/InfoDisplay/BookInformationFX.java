@@ -1,21 +1,13 @@
 package InfoDisplay;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.*;
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidationFX;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import JavFX.FXThirdWindow;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
@@ -23,7 +15,6 @@ import RegressionFx.FourVariableRegression;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,24 +23,19 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class BookInformationFX extends Application {
 
-    TypesOfBookFX typesOfBookFX = new TypesOfBookFX();
-    DemandsOfBookFX demandsOfBookFX = new DemandsOfBookFX();
-    GenericsOfBookFX genericsOfBookFX = new GenericsOfBookFX();
-    ClassesOfBookFX classesOfBookFX = new ClassesOfBookFX();
+    TypesOfBook typesOfBook = new TypesOfBook();
+    DemandsOfBook demandsOfBook = new DemandsOfBook();
+    GenericsOfBook genericsOfBook = new GenericsOfBook();
+    ClassesOfBook classesOfBook = new ClassesOfBook();
 
-    BorrowCountOfBookFX borrowCountOfBookFX = new BorrowCountOfBookFX();
+    BorrowCountOfBook borrowCountOfBook = new BorrowCountOfBook();
 
     @Override
     public void start(Stage primaryStage) {
@@ -101,7 +87,7 @@ public class BookInformationFX extends Application {
 
         typesOfBook.setOnAction(actionEvent -> {
             try {
-        typesOfBookFX.start(primaryStage);
+        this.typesOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -109,7 +95,7 @@ public class BookInformationFX extends Application {
 
         genericsOfBook.setOnAction(actionEvent -> {
             try {
-   genericsOfBookFX.start(primaryStage);
+   this.genericsOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -117,7 +103,7 @@ public class BookInformationFX extends Application {
 
         demandsOfBook.setOnAction(actionEvent -> {
             try {
-demandsOfBookFX.start(primaryStage);
+this.demandsOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -125,7 +111,7 @@ demandsOfBookFX.start(primaryStage);
 
         classesOfBooks.setOnAction(actionEvent -> {
             try {
-classesOfBookFX.start(primaryStage);
+classesOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -133,7 +119,7 @@ classesOfBookFX.start(primaryStage);
 
  borrowCountOfBook.setOnAction(actionEvent -> {
             try {
-borrowCountOfBookFX.start(primaryStage);
+this.borrowCountOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

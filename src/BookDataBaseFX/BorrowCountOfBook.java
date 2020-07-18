@@ -19,32 +19,37 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class DemandsOfBookFX extends Application {
+public class BorrowCountOfBook extends Application {
+
+
     InfoBarChart infoBarChart = new InfoBarChart();
     InfoPieChart infoPieChart = new InfoPieChart();
 
     @Override
     public void start(Stage primaryStage) {
+
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-       ///add 4 buttons
+//add 4 buttons
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
 
+        // set buttons positions
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
 
-        pieChart.setTranslateX(500);
+        barChart.setTranslateX(600);
+        barChart.setTranslateY(200);
+        pieChart.setTranslateX(600);
         pieChart.setTranslateY(300);
 
+//add action event in all 4 buttons
         back.setOnAction(actionEvent -> {
             BookInformationFX bookInformationFX = new BookInformationFX();
             try {
@@ -52,6 +57,7 @@ public class DemandsOfBookFX extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
         });
 
         exit.setOnAction(actionEvent -> {
@@ -59,25 +65,29 @@ public class DemandsOfBookFX extends Application {
         });
         barChart.setOnAction(actionEvent -> {
             try {
-                infoBarChart.startDemandBook(primaryStage);
+                infoBarChart.startBorrowCount(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-        });
 
+        });
         pieChart.setOnAction(actionEvent -> {
             try {
-                infoPieChart.startDemandBook(primaryStage);
+                infoPieChart.startBorrowCount(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
+
         });
 
         setStyle(exit);
         setStyle(back);
-
         setStyle(barChart);
         setStyle(pieChart);
+
+//set all buttons size
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
@@ -85,23 +95,19 @@ public class DemandsOfBookFX extends Application {
         barChart.setPrefSize(200, 80);
         pieChart.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground2.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
-
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-background-color: \n" +
