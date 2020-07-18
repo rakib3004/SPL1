@@ -44,69 +44,7 @@ public class AuthorSystem extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-      /*  Button processImplementation = new Button("Process Implementation");
-        Button processValidation = new Button("Process Validation");
-        Button sevenValueCalculation = new Button("Seven Value Calculation");
 
-        processImplementation.setTranslateX(210);
-        processImplementation.setTranslateY(50);
-        processValidation.setTranslateX(640);
-        processValidation.setTranslateY(50);
-        sevenValueCalculation.setTranslateX(425);
-        sevenValueCalculation.setTranslateY(150);
-        processImplementation.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
-            try {
-                statisticsFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-         processValidation.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
-            try {
-                crossValidationFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-         sevenValueCalculation.setOnAction(actionEvent -> {
-BookApplication bookApplication = new BookApplication();
-try {
-                bookApplication.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        setStyle(processImplementation);
-        setStyle(processValidation);
-        setStyle(sevenValueCalculation);
-        processImplementation.setPrefSize(420, 80);
-        processValidation.setPrefSize(420, 80);
-        sevenValueCalculation.setPrefSize(420, 80);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);*/
-
-      //  Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
             Font font = new Font(19);
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
