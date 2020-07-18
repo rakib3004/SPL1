@@ -3,7 +3,6 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.FXThirdWindow;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -13,7 +12,6 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import TableViewPackage.Book;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -39,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
-public class RemoveBookFX extends Application {
+public class RemoveBook extends Application {
 
     private TableView table;
     private ObservableList data;
@@ -256,7 +254,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
-                new RemoveBookFX.RowSelectChangeListener());
+                new RemoveBook.RowSelectChangeListener());
 
 
 

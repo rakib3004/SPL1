@@ -20,9 +20,9 @@ import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.FourVariableRegression;
 import TableViewPackage.PRA_Chart_View;
 import TableViewPackage.PRA_TableView;
-import UserInterfacePackage.AddBookFX;
+import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBookFX;
+import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -139,8 +139,8 @@ public class PageRankAlgorithm extends Application {
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBookFX addBookFX = new AddBookFX();
-        RemoveBookFX removeBookFX = new RemoveBookFX();
+        AddBook addBook = new AddBook();
+        RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -173,7 +173,7 @@ public class PageRankAlgorithm extends Application {
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBookFX.start(primaryStage);
+                addBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -187,7 +187,7 @@ public class PageRankAlgorithm extends Application {
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookFX.start(primaryStage);
+                removeBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -16,9 +16,9 @@ import JavFX.AuthorSystem;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
-import UserInterfacePackage.AddBookFX;
+import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBookFX;
+import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -148,8 +148,8 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBookFX addBookFX = new AddBookFX();
-        RemoveBookFX removeBookFX = new RemoveBookFX();
+        AddBook addBook = new AddBook();
+        RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -182,7 +182,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBookFX.start(primaryStage);
+                addBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -196,7 +196,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookFX.start(primaryStage);
+                removeBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

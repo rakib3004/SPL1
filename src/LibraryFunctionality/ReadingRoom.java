@@ -202,8 +202,8 @@ public class ReadingRoom extends Application {
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBookFX addBookFX = new AddBookFX();
-        RemoveBookFX removeBookFX = new RemoveBookFX();
+        AddBook addBook = new AddBook();
+        RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -236,7 +236,7 @@ public class ReadingRoom extends Application {
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBookFX.start(primaryStage);
+                addBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -250,7 +250,7 @@ public class ReadingRoom extends Application {
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookFX.start(primaryStage);
+                removeBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -890,7 +890,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         writerWise.setOnAction(actionEvent -> {
             try {
 
-                WriterWiseFX writerWiseFX = new WriterWiseFX();
+                WriterWise writerWiseFX = new WriterWise();
                 writerWiseFX.start(primaryStage);
             }
 
@@ -907,8 +907,8 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         classWise.setOnAction(actionEvent -> {
 
             try {
-                TypeWiseFX typeWiseFX = new TypeWiseFX();
-                typeWiseFX.start(primaryStage);
+                TypeWise typeWise = new TypeWise();
+                typeWise.start(primaryStage);
             }
 
             catch (Exception exception) {
@@ -924,7 +924,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                RemoveBookFX.SelfWiseFX selfWiseFX = new RemoveBookFX.SelfWiseFX();
+                RemoveBook.SelfWiseFX selfWiseFX = new RemoveBook.SelfWiseFX();
                 selfWiseFX.start(primaryStage);
             }
             catch (Exception exception) {
@@ -940,7 +940,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         timeWise.setTranslateY(140);
         timeWise.setOnAction(actionEvent -> {
             try {
-                TimeWiseFX timeWiseFX = new TimeWiseFX();
+                TimeWise timeWiseFX = new TimeWise();
                 timeWiseFX.start(primaryStage);
             }
             catch (Exception exception) {
@@ -984,8 +984,8 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBookFX addBookFX = new AddBookFX();
-        RemoveBookFX removeBookFX = new RemoveBookFX();
+        AddBook addBook = new AddBook();
+        RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -1018,7 +1018,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBookFX.start(primaryStage);
+                addBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1032,7 +1032,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookFX.start(primaryStage);
+                removeBook.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

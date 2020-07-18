@@ -34,7 +34,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class AddBookFX extends Application {
+public class AddBook extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int positionLocator=145;
