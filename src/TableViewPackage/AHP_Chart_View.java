@@ -2,15 +2,13 @@ package TableViewPackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import CrossValidationProcess.CombinedTrainingSet;
-import CrossValidationProcess.CrossValidationVisualization;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -52,9 +50,9 @@ public class AHP_Chart_View extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
             try {
-                analyticHierarchyAlgorithmFx.start(primaryStage);
+                analyticHierarchyAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -181,9 +179,9 @@ public class AHP_Chart_View extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
             try {
-                analyticHierarchyAlgorithmFx.start(primaryStage);
+                analyticHierarchyAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -310,9 +308,9 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
             try {
-                analyticHierarchyAlgorithmFx.start(primaryStage);
+                analyticHierarchyAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

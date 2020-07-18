@@ -9,9 +9,9 @@ import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
-import RankingAlgorithmFx.PageRankAlgorithmFx;
-import RankingAlgorithmFx.StatisticsFX;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
+import RankingAlgorithmFx.PageRankAlgorithm;
+import RankingAlgorithmFx.Statistics;
 import RegressionFx.FourVariableRegression;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
@@ -228,8 +228,9 @@ public class Main extends Application {
         CrossValidation crossValidation2 = new CrossValidation();
         BookApplication bookApplication1 = new BookApplication();
         WriterCollection writerCollection = new WriterCollection();
-        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+        FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+        AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
+        PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
         BookInformationShow bookInformationShow = new BookInformationShow();
@@ -322,14 +323,14 @@ public class Main extends Application {
         });
         menuItem4b.setOnAction(actionEvent -> {
             try {
-                analyticHierarchyAlgorithmFx1.start(stage);
+                analyticHierarchyAlgorithm1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4c.setOnAction(actionEvent -> {
             try {
-                pageRankAlgorithmFx1.start(stage);
+                pageRankAlgorithm1.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -365,9 +366,9 @@ public class Main extends Application {
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                StatisticsFX statisticsFX = new StatisticsFX();
+                Statistics statistics = new Statistics();
                 {
-                    statisticsFX.start(stage);
+                    statistics.start(stage);
                 }
             }
         });
@@ -387,10 +388,10 @@ public class Main extends Application {
         MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
         analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+                AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     {
-                        analyticHierarchyAlgorithmFx.start(stage);
+                        analyticHierarchyAlgorithm.start(stage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -400,10 +401,10 @@ public class Main extends Application {
         MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
         pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+                PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                 try {
                     {
-                        pageRankAlgorithmFx.start(stage);
+                        pageRankAlgorithm.start(stage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();

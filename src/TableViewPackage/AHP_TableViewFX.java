@@ -9,7 +9,7 @@ import Methods.ReverseSorting;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -59,9 +59,9 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
             try {
-                analyticHierarchyAlgorithmFx.start(primaryStage);
+                analyticHierarchyAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

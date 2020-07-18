@@ -1,7 +1,5 @@
 package TableViewPackage;
 
-import CrossValidationProcess.CombinedTrainingSet;
-import CrossValidationProcess.CrossValidationVisualization;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -10,7 +8,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RankingAlgorithmFx.PageRankAlgorithmFx;
+import RankingAlgorithmFx.PageRankAlgorithm;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -48,9 +46,9 @@ public class PRA_Chart_View extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
             try {
-                pageRankAlgorithmFx.start(primaryStage);
+                pageRankAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -151,9 +149,9 @@ public class PRA_Chart_View extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
             try {
-                pageRankAlgorithmFx.start(primaryStage);
+                pageRankAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -283,9 +281,9 @@ public class PRA_Chart_View extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
             try {
-                pageRankAlgorithmFx.start(primaryStage);
+                pageRankAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

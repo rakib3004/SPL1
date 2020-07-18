@@ -6,9 +6,9 @@ import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
-import RankingAlgorithmFx.PageRankAlgorithmFx;
-import RankingAlgorithmFx.StatisticsFX;
+import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
+import RankingAlgorithmFx.PageRankAlgorithm;
+import RankingAlgorithmFx.Statistics;
 import RegressionFx.FourVariableRegression;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
@@ -247,8 +247,8 @@ public class SystemAnalysis extends Application {
             BookApplication bookApplication1 = new BookApplication();
             WriterCollection writerCollection = new WriterCollection();
             FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
-            AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-            PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
+            PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
             AddBookFX addBookFX = new AddBookFX();
             RemoveBookFX removeBookFX = new RemoveBookFX();
             BookInformationShow bookInformationShow = new BookInformationShow();
@@ -341,14 +341,14 @@ public class SystemAnalysis extends Application {
             });
             menuItem4b.setOnAction(actionEvent -> {
                 try {
-                    analyticHierarchyAlgorithmFx1.start(primaryStage);
+                    analyticHierarchyAlgorithm1.start(primaryStage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
             menuItem4c.setOnAction(actionEvent -> {
                 try {
-                    pageRankAlgorithmFx1.start(primaryStage);
+                    pageRankAlgorithm1.start(primaryStage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -384,9 +384,9 @@ public class SystemAnalysis extends Application {
 
             processVisualization.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    StatisticsFX statisticsFX = new StatisticsFX();
+                    Statistics statistics = new Statistics();
                     {
-                        statisticsFX.start(primaryStage);
+                        statistics.start(primaryStage);
                     }
                 }
             });
@@ -406,10 +406,10 @@ public class SystemAnalysis extends Application {
             MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
             analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+                    AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                     try {
                         {
-                            analyticHierarchyAlgorithmFx.start(primaryStage);
+                            analyticHierarchyAlgorithm.start(primaryStage);
                         }
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -419,10 +419,10 @@ public class SystemAnalysis extends Application {
             MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
             pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+                    PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                     try {
                         {
-                            pageRankAlgorithmFx.start(primaryStage);
+                            pageRankAlgorithm.start(primaryStage);
                         }
                     } catch (IOException ex) {
                         ex.printStackTrace();

@@ -8,7 +8,7 @@ import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RankingAlgorithmFx.PageRankAlgorithmFx;
+import RankingAlgorithmFx.PageRankAlgorithm;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -56,9 +56,9 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
             try {
-                pageRankAlgorithmFx.start(primaryStage);
+                pageRankAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

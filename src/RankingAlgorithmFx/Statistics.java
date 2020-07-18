@@ -1,7 +1,5 @@
 package RankingAlgorithmFx;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
@@ -9,17 +7,11 @@ import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
+import JavFX.AuthorSystem;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
-import PageRankAlgorithm.PageRankCalculation;
-import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.FourVariableRegression;
-import TableViewPackage.PRA_Chart_View;
-import TableViewPackage.PRA_TableViewFX;
+import RegressionFx.MultiVaribleRegressionFX;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
@@ -39,64 +31,67 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class PageRankAlgorithmFx extends Application {
+public class Statistics extends Application {
 
-    PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
 
-    int numberOfBooks;
-    Processing processing = new Processing();
-    BookNumber bookNumber = new BookNumber();
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
+
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+        Button multiVariableRegression = new Button("MultiVariable Regression");
+        Button analyticHierarchy = new Button("Analytic Hierarchy Process");
+        Button pageRankAlgorithm = new Button("Page Rank Algorithm");
+        multiVariableRegression.setTranslateX(140);
+        multiVariableRegression.setTranslateY(50);
+        analyticHierarchy.setTranslateX(500);
+        analyticHierarchy.setTranslateY(50);
+        pageRankAlgorithm.setTranslateX(860);
+        pageRankAlgorithm.setTranslateY(50);
 
-        Button consoleView = new Button("Console View");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        Button tableView = new Button("Table View");
-        tableView.setTranslateX(860);
-        tableView.setTranslateY(50);
-        tableView.setOnAction(actionEvent -> {
-            PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
+        multiVariableRegression.setOnAction(actionEvent -> {
+            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
             try {
-                pra_tableViewFX.start(primaryStage);
-            }
-            catch (Exception exception) {
+                multiVaribleRegressionFX.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        setStyle(tableView);
-        tableView.setPrefSize(350,80);
-        consoleView.setTranslateX(140);
-        consoleView.setTranslateY(50);
+        analyticHierarchy.setOnAction(actionEvent -> {
+AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
+        try {
+                analyticHierarchyAlgorithm.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        pageRankAlgorithm.setOnAction(actionEvent -> {
+PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
+try {
+                pageRankAlgorithmFx.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        setStyle(multiVariableRegression);
+        setStyle(analyticHierarchy);
+        setStyle(pageRankAlgorithm);
+        multiVariableRegression.setPrefSize(350, 80);
+        analyticHierarchy.setPrefSize(350, 80);
+        pageRankAlgorithm.setPrefSize(350, 80);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-        consoleView.setOnAction(actionEvent -> {
-            PageRankCalculation pageRankCalculation = new PageRankCalculation();
-            try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
-                PageRankProcessData pageRankProcessData = new PageRankProcessData();
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
         back.setOnAction(actionEvent -> {
-            StatisticsFX statisticsFX = new StatisticsFX();
-
-            try {
-                statisticsFX.start(primaryStage);
+            AuthorSystem authorSystem = new AuthorSystem();
+        try {
+                authorSystem.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -104,41 +99,24 @@ public class PageRankAlgorithmFx extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
-        consoleView.setPrefSize(200, 80);
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-        Button graphView = new Button("Graph View");
-        graphView.setTranslateX(500);
-        graphView.setTranslateY(50);
-        graphView.setOnAction(actionEvent -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-            try {
-
-                pra_chart_view.start(primaryStage);
-            }
-
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
-        });
-        setStyle(graphView);
-        graphView.setPrefSize(200,80);
-      //  Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        //Image image = new Image("Images"+ File.separator +"libraryBackground4.jpg");
+        Canvas canvas = new Canvas(1400,800);
         Group group = new Group();
-        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
+        group.getChildren().addAll(canvas,multiVariableRegression,pageRankAlgorithm,
+                analyticHierarchy,exit,back);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
         BookApplication bookApplication1 = new BookApplication();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
-        AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
-        PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
+        AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
+        PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
         BookInformationShow bookInformationShow = new BookInformationShow();
@@ -231,14 +209,14 @@ public class PageRankAlgorithmFx extends Application {
         });
         menuItem4b.setOnAction(actionEvent -> {
             try {
-                analyticHierarchyAlgorithmFx1.start(primaryStage);
+                analyticHierarchyAlgorithm1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4c.setOnAction(actionEvent -> {
             try {
-                pageRankAlgorithmFx1.start(primaryStage);
+                pageRankAlgorithm1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -274,9 +252,9 @@ public class PageRankAlgorithmFx extends Application {
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                StatisticsFX statisticsFX = new StatisticsFX();
+                Statistics statistics = new Statistics();
                 {
-                    statisticsFX.start(primaryStage);
+                    statistics.start(primaryStage);
                 }
             }
         });
@@ -296,23 +274,23 @@ public class PageRankAlgorithmFx extends Application {
         MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
         analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx = new AnalyticHierarchyAlgorithmFx();
+                AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     {
-                        analyticHierarchyAlgorithmFx.start(primaryStage);
+                        analyticHierarchyAlgorithm.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
         });
-        MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
-        pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem pageRank_algorithm = new MenuItem("PageRank Algorithm");
+        pageRank_algorithm.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                PageRankAlgorithmFx pageRankAlgorithmFx = new PageRankAlgorithmFx();
+                PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                 try {
                     {
-                        pageRankAlgorithmFx.start(primaryStage);
+                        pageRankAlgorithm.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -375,7 +353,7 @@ public class PageRankAlgorithmFx extends Application {
 
         menu5.getItems().addAll(readingRoom1,libraryDesk1,
                 processVisualization,multivariableLinearRegression,
-                analyticHierarchyProcess,pageRankAlgorithm,
+                analyticHierarchyProcess,pageRank_algorithm,
                 crossValidationProcess,trainingSetView,
                 testingSetView,bookInformationView,systemAnalysis);
 
@@ -387,9 +365,9 @@ public class PageRankAlgorithmFx extends Application {
         menuBar.setStyle(" -fx-spacing: 47;");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-      //  graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+              GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    //    graphicsContext.drawImage(image,0,0);
+        Scene scene1 = new Scene(group,1400,800);
         primaryStage.setScene(scene1);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setTitle("Books Statistics");
