@@ -69,17 +69,17 @@ public class LibraryDesk extends Application {
         bookInformation.setContentDisplay(ContentDisplay.TOP);
         removeBook.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+                "src"+ File.separator +"Images"+ File.separator +"add.png");
         Image image1 = new Image(fileInputStream1);
         addBook.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"manual.png");
+                "src"+ File.separator +"Images"+ File.separator +"info.png");
         Image image2 = new Image(fileInputStream2);
         bookInformation.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"document.png");
+                "src"+ File.separator +"Images"+ File.separator +"remove.png");
         Image image3 = new Image(fileInputStream3);
         removeBook.setGraphic(new ImageView(image3));
 
