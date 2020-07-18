@@ -236,11 +236,16 @@ public class SystemAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
+            Image background = new Image("Images"+ File.separator +"framework.jpg");
+            Canvas canvas = new Canvas(850, 425);
+            canvas.setTranslateX(470);
+            canvas.setTranslateY(35);
+            GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+            graphicsContext.drawImage(background,0,0);
+            Group group = new Group();
         group.getChildren().addAll(canvas,processValueAreaChart,
                 processValueLineArt,
-                processValuePlotting,exit,back);
+                processValuePlotting,exit,home,back);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidationFX crossValidationFX2 = new CrossValidationFX();
@@ -497,8 +502,6 @@ public class SystemAnalysis extends Application {
             menuBar.setStyle(" -fx-spacing: 47;");
             menuBar.prefHeight(32);
             group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-    //    graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
 menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
