@@ -429,7 +429,7 @@ borrowCountOfBookFX.start(primaryStage);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
-        menuBar.prefHeightProperty().bind(scene1.widthProperty());
+        menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
