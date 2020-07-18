@@ -51,9 +51,9 @@ public class ThreeVariableRegression extends Application {
 
         });
         back.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
             try {
-                multiVaribleRegressionFX.start(primaryStage);
+                multiVaribleRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

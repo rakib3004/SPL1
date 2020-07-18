@@ -11,7 +11,7 @@ import JavFX.AuthorSystem;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RegressionFx.FourVariableRegression;
-import RegressionFx.MultiVaribleRegressionFX;
+import RegressionFx.MultiVaribleRegression;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
@@ -51,9 +51,9 @@ public class Statistics extends Application {
         pageRankAlgorithm.setTranslateY(50);
 
         multiVariableRegression.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
             try {
-                multiVaribleRegressionFX.start(primaryStage);
+                multiVaribleRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class MultiVaribleRegressionFX extends Application {
+public class MultiVaribleRegression extends Application {
 
 
     @Override

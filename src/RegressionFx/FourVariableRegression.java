@@ -1,10 +1,6 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
-import JavFX.FXThirdWindow;
-import LibraryFunctionality.ReadingRoom;
-import ProjectDescription.About;
-import TableViewPackage.AHP_Chart_View;
 import TableViewPackage.MLR_Chart_View;
 import TableViewPackage.MLR_TableViewFX;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -17,10 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class FourVariableRegression extends Application {
@@ -65,9 +59,9 @@ public class FourVariableRegression extends Application {
             }
         });
         back.setOnAction(actionEvent -> {
-            MultiVaribleRegressionFX multiVaribleRegressionFX = new MultiVaribleRegressionFX();
+            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
             try {
-                multiVaribleRegressionFX.start(primaryStage);
+                multiVaribleRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
