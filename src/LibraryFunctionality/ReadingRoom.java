@@ -9,10 +9,7 @@ import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
-import JavFX.AuthorSystem;
-import JavFX.FXThirdWindow;
-import JavFX.FxSecondWindow;
-import JavFX.SystemAnalysis;
+import JavFX.*;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -67,43 +64,43 @@ public class ReadingRoom extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
 
-        Button user = new Button("Default Book Recommendation");
-        Button librarian = new Button("User Based Book Recommendation");
-        Button system = new Button("Users Rules & Regulations");
+        Button defaultType = new Button("Default Book Recommendation");
+        Button userBased = new Button("User Based Book Recommendation");
+        Button rules = new Button("Users Rules & Regulations");
 
-        user.setPrefSize(410,230);
-        librarian.setPrefSize(410,230);
-        system.setPrefSize(410,230);
+        defaultType.setPrefSize(410,230);
+        userBased.setPrefSize(410,230);
+        rules.setPrefSize(410,230);
 
-        user.setFont(font);
-        librarian.setFont(font);
-        system.setFont(font2);
-        user.setTranslateX(30);
-        user.setTranslateY(35);
-        librarian.setTranslateX(30);
-        librarian.setTranslateY(270);
-        system.setTranslateX(30);
-        system.setTranslateY(505);
+        defaultType.setFont(font);
+        userBased.setFont(font);
+        rules.setFont(font2);
+        defaultType.setTranslateX(30);
+        defaultType.setTranslateY(35);
+        userBased.setTranslateX(30);
+        userBased.setTranslateY(270);
+        rules.setTranslateX(30);
+        rules.setTranslateY(505);
 
-        user.setContentDisplay(ContentDisplay.TOP);
-        librarian.setContentDisplay(ContentDisplay.TOP);
-        system.setContentDisplay(ContentDisplay.TOP);
+        defaultType.setContentDisplay(ContentDisplay.TOP);
+        userBased.setContentDisplay(ContentDisplay.TOP);
+        rules.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"user.png");
+                "src"+ File.separator +"Images"+ File.separator +"automatic.png");
         Image image1 = new Image(fileInputStream1);
-        user.setGraphic(new ImageView(image1));
+        defaultType.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+                "src"+ File.separator +"Images"+ File.separator +"manual.png");
         Image image2 = new Image(fileInputStream2);
-        librarian.setGraphic(new ImageView(image2));
+        userBased.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"automation.png");
+                "src"+ File.separator +"Images"+ File.separator +"document.png");
         Image image3 = new Image(fileInputStream3);
-        system.setGraphic(new ImageView(image3));
+        rules.setGraphic(new ImageView(image3));
 
-        user.setOnAction(actionEvent -> {
+        defaultType.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
@@ -111,7 +108,7 @@ public class ReadingRoom extends Application {
                 exception.printStackTrace();
             }
         });
-        librarian.setOnAction(actionEvent -> {
+        userBased.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
             try {
                 libraryDesk.start(primaryStage);
@@ -120,7 +117,7 @@ public class ReadingRoom extends Application {
                 exception.printStackTrace();
             }
         });
-        system.setOnAction(actionEvent -> {
+        rules.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
             try {
                 authorSystem.start(primaryStage);
@@ -161,7 +158,15 @@ public class ReadingRoom extends Application {
                 "src"+ File.separator +"Images"+ File.separator +"home.png");
         Image image5 = new Image(fileInputStream5);
         home.setGraphic(new ImageView(image5));
-
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
         Button back = new Button("Back");
         back.setTranslateX(950);
         back.setTranslateY(520);
@@ -169,13 +174,13 @@ public class ReadingRoom extends Application {
         back.setFont(font2);
         back.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream6 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"about.png");
+                "src"+ File.separator +"Images"+ File.separator +"back.png");
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            About about1 = new About();
+            Main main = new Main();
             try {
-                about1.start(primaryStage);
+                main.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -187,7 +192,7 @@ public class ReadingRoom extends Application {
         canvas.setTranslateY(35);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,home);
-        group.getChildren().addAll(user,librarian,system,text);
+        group.getChildren().addAll(defaultType,userBased,rules,text);
 
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
