@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class CrossValidationFX extends Application {
+public class CrossValidation extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int numberOfBooks;

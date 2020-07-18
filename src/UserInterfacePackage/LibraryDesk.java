@@ -1,13 +1,11 @@
 package UserInterfacePackage;
 import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidationFX;
+import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
-import JavFX.AuthorSystem;
-import JavFX.FXThirdWindow;
 import JavFX.Main;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
@@ -182,7 +180,7 @@ public class LibraryDesk extends Application {
         group.getChildren().addAll(text,home);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
-        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
+        CrossValidation crossValidation2 = new CrossValidation();
         BookApplication bookApplication1 = new BookApplication();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
@@ -249,7 +247,7 @@ public class LibraryDesk extends Application {
         MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
-                crossValidationFX2.start(primaryStage);
+                crossValidation2.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -371,9 +369,9 @@ public class LibraryDesk extends Application {
         MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
         crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                CrossValidationFX crossValidationFX = new CrossValidationFX();
+                CrossValidation crossValidation = new CrossValidation();
                 {
-                    crossValidationFX.start(primaryStage);
+                    crossValidation.start(primaryStage);
                 }
             }
         });

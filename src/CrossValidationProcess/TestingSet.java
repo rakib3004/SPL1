@@ -3,14 +3,11 @@ package CrossValidationProcess;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.FXThirdWindow;
-import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -50,9 +47,9 @@ public class TestingSet extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            CrossValidation crossValidation = new CrossValidation();
             try {
-                crossValidationFX.finish(primaryStage);
+                crossValidation.finish(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -1,6 +1,6 @@
 package DataComparing;
 
-import CrossValidationProcess.CrossValidationFX;
+import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -58,9 +58,9 @@ int iterator;
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            CrossValidation crossValidation = new CrossValidation();
             try {
-                crossValidationFX.start(primaryStage);
+                crossValidation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

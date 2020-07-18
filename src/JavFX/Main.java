@@ -1,8 +1,7 @@
 package JavFX;
 
 import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidationFX;
-import CrossValidationProcess.CrossValidationVisualization;
+import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
@@ -14,7 +13,6 @@ import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
 import RankingAlgorithmFx.StatisticsFX;
 import RegressionFx.FourVariableRegression;
-import TableViewPackage.Book;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
@@ -41,7 +39,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -228,7 +225,7 @@ public class Main extends Application {
         Scene scene = new Scene(root,1400,770);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
-        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
+        CrossValidation crossValidation2 = new CrossValidation();
         BookApplication bookApplication1 = new BookApplication();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();AnalyticHierarchyAlgorithmFx analyticHierarchyAlgorithmFx1 = new AnalyticHierarchyAlgorithmFx();
@@ -294,7 +291,7 @@ public class Main extends Application {
         MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
-                crossValidationFX2.start(stage);
+                crossValidation2.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -416,9 +413,9 @@ public class Main extends Application {
         MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
         crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                CrossValidationFX crossValidationFX = new CrossValidationFX();
+                CrossValidation crossValidation = new CrossValidation();
                 {
-                    crossValidationFX.start(stage);
+                    crossValidation.start(stage);
                 }
             }
         });

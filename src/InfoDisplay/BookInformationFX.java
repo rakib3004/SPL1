@@ -2,7 +2,7 @@ package InfoDisplay;
 
 import BookDataBaseFX.*;
 import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidationFX;
+import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
@@ -165,7 +165,7 @@ this.borrowCountOfBook.start(primaryStage);
         group.getChildren().addAll(borrowCountOfBook,numberDisplay);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
-        CrossValidationFX crossValidationFX2 = new CrossValidationFX();
+        CrossValidation crossValidation2 = new CrossValidation();
         BookApplication bookApplication1 = new BookApplication();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
@@ -232,7 +232,7 @@ this.borrowCountOfBook.start(primaryStage);
         MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
-                crossValidationFX2.start(primaryStage);
+                crossValidation2.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -354,9 +354,9 @@ this.borrowCountOfBook.start(primaryStage);
         MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
         crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                CrossValidationFX crossValidationFX = new CrossValidationFX();
+                CrossValidation crossValidation = new CrossValidation();
                 {
-                    crossValidationFX.start(primaryStage);
+                    crossValidation.start(primaryStage);
                 }
             }
         });

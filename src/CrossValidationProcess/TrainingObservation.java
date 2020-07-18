@@ -40,10 +40,10 @@ public class TrainingObservation extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            CrossValidationFX crossValidationFX = new CrossValidationFX();
+            CrossValidation crossValidation = new CrossValidation();
 
             try {
-                crossValidationFX.start(primaryStage);
+                crossValidation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
