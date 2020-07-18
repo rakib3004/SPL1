@@ -19,7 +19,7 @@ import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
 import RegressionFx.FourVariableRegression;
 import TableViewPackage.PRA_Chart_View;
-import TableViewPackage.PRA_TableViewFX;
+import TableViewPackage.PRA_TableView;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
@@ -62,9 +62,9 @@ public class PageRankAlgorithm extends Application {
         tableView.setTranslateX(860);
         tableView.setTranslateY(50);
         tableView.setOnAction(actionEvent -> {
-            PRA_TableViewFX pra_tableViewFX = new PRA_TableViewFX();
+            PRA_TableView pra_tableView = new PRA_TableView();
             try {
-                pra_tableViewFX.start(primaryStage);
+                pra_tableView.start(primaryStage);
             }
             catch (Exception exception) {
                 exception.printStackTrace();

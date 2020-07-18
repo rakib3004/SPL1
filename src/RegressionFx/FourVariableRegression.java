@@ -2,7 +2,7 @@ package RegressionFx;
 
 import FilePackage.DateTimeWriter;
 import TableViewPackage.MLR_Chart_View;
-import TableViewPackage.MLR_TableViewFX;
+import TableViewPackage.MLR_TableView;
 import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -42,7 +42,7 @@ public class FourVariableRegression extends Application {
         exit.setTranslateY(650);
         tableView.setOnAction(actionEvent -> {
             try {
-                MLR_TableViewFX MLRTableViewFX = new MLR_TableViewFX();
+                MLR_TableView MLRTableViewFX = new MLR_TableView();
                 MLRTableViewFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();

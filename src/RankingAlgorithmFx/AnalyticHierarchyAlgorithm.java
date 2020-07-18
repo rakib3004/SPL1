@@ -17,7 +17,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import RegressionFx.FourVariableRegression;
 import TableViewPackage.AHP_Chart_View;
-import TableViewPackage.AHP_TableViewFX;
+import TableViewPackage.AHP_TableView;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBookFX;
@@ -58,7 +58,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         tableView.setTranslateX(140);
         tableView.setTranslateY(50);
         tableView.setOnAction(actionEvent -> {
-            AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
+            AHP_TableView ahpTableViewFX = new AHP_TableView();
             try {
 
                 ahpTableViewFX.start(primaryStage);

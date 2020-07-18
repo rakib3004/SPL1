@@ -1,68 +1,69 @@
 package TableViewPackage;
+
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.ReverseSorting;
-import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import RegressionFx.FourVariableRegression;
+import PageRankAlgorithm.PageRankCalculation;
+import PageRankAlgorithm.PageRankProcessData;
+import RankingAlgorithmFx.PageRankAlgorithm;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
-import javafx.scene.control.*;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.paint.Color;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.geometry.Pos;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.ArrayList;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import java.util.List;
 
-import static javafx.scene.paint.Color.DARKBLUE;
-
-public class MLR_TableViewFX extends Application {
+public class PRA_TableView extends Application {
 
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
     PriorityData[] priorityData;
-    GenericAlgo [] genericAlgo;
+    GenericAlgo[] genericAlgo;
 
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+PageRankCalculation pageRankCalculation = new PageRankCalculation();
     ReverseSorting soring = new ReverseSorting();
-     @Override
-    public void start(Stage primaryStage) throws IOException {
-         String  className = this.getClass().getSimpleName();
-         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-         dateTimeWriter.dateTimeWriterMethods(className);
 
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
         primaryStage.setTitle("Table View Example 1");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            FourVariableRegression fourVariableRegression = new FourVariableRegression();
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
             try {
-                fourVariableRegression.start(primaryStage);
+                pageRankAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
@@ -75,9 +76,8 @@ public class MLR_TableViewFX extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
 
-        // Books label
-        Label label = new Label("Multiple Linear Regression Results");
-        label.setTextFill(DARKBLUE);
+        Label label = new Label("Page Rank Algorithm Results");
+        label.setTextFill(Color.DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
         HBox hb = new HBox();
         hb.setAlignment(Pos.CENTER);
@@ -90,19 +90,16 @@ public class MLR_TableViewFX extends Application {
 
         TableColumn bookName = new TableColumn("Book Name");
         bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
-
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
-
         TableColumn borrowCount = new TableColumn("Borrow Count");
         borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
         TableColumn price = new TableColumn("Price");
         price.setCellValueFactory(new PropertyValueFactory("price"));
         TableColumn bookWeight = new TableColumn("Book Weight");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
-
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
@@ -110,19 +107,19 @@ public class MLR_TableViewFX extends Application {
         table.setPrefWidth(1440);
         table.setPrefHeight(620);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        table.getSelectionModel().selectedIndexProperty().addListener(
-                new RowSelectChangeListener());
 
+        table.getSelectionModel().selectedIndexProperty().addListener(
+                new PRA_TableView.RowSelectChangeListener());
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
+
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_table_view = new MenuItem("MLR Table View");
         MenuItem ahp_table_view = new MenuItem("AHP Table View");
         MenuItem pra_table_view = new MenuItem("PRA Table View");
-
         ahp_table_view.setOnAction((event) -> {
-            AHP_TableViewFX ahpTableViewFX = new AHP_TableViewFX();
+            AHP_TableView ahpTableViewFX = new AHP_TableView();
             try {
                 ahpTableViewFX.start(primaryStage);
             } catch (IOException e) {
@@ -130,7 +127,7 @@ public class MLR_TableViewFX extends Application {
             }
         });
         pra_table_view.setOnAction((event) -> {
-            PRA_TableViewFX praTableViewFX = new PRA_TableViewFX();
+            PRA_TableView praTableViewFX = new PRA_TableView();
             try {
                 praTableViewFX.start(primaryStage);
             } catch (IOException e) {
@@ -138,25 +135,23 @@ public class MLR_TableViewFX extends Application {
             }
         });
         mlr_table_view.setOnAction((event) -> {
-            MLR_TableViewFX mlrTableViewFX = new MLR_TableViewFX();
+            MLR_TableView mlrTableViewFX = new MLR_TableView();
             try {
                 mlrTableViewFX.start(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-
         contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
-
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(table, event.getScreenX(), event.getScreenY());
             }
         });
-        // Hbox
-        HBox hBox = new HBox();
+
+       HBox hBox = new HBox();
         hBox.getChildren().add(table);
         VBox vBox = new VBox();
         vBox.getChildren().addAll(hb,hBox);
@@ -171,12 +166,9 @@ public class MLR_TableViewFX extends Application {
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
-
     } // start()
-
     private class RowSelectChangeListener implements ChangeListener {
-
-        @Override
+                @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
             String  className = this.getClass().getSimpleName();
             DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -185,25 +177,27 @@ public class MLR_TableViewFX extends Application {
     }
 
     private ObservableList getInitialTableData() throws IOException {
+
         List list = new ArrayList();
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        genericAlgo =soring.sortingMLRmethods(priorityData,numberOfBooks);
-int iterator;
+     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+        genericAlgo =soring.sortingPRAmethods(priorityData,numberOfBooks);
+        int iterator;
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getMLRweight())));
+                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getPRAweight())));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-
-    public Button setStyle( Button button)
+    public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
