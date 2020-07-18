@@ -24,19 +24,23 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SystemAnalysis extends Application {
         @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -106,6 +110,132 @@ public class SystemAnalysis extends Application {
         exit.setPrefSize(200, 80);*/
     //    Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
 
+            Font font = new Font(19);
+            Font font1 = new Font(47);
+            Font font2 = new Font( 26);
+            Button addBook = new Button("Add Book");
+            Button bookInformation = new Button("Book Information");
+            Button removeBook = new Button("Remove Book");
+
+            addBook.setPrefSize(410,230);
+            bookInformation.setPrefSize(410,230);
+            removeBook.setPrefSize(410,230);
+
+            addBook.setFont(font);
+            bookInformation.setFont(font);
+            removeBook.setFont(font2);
+            addBook.setTranslateX(30);
+            addBook.setTranslateY(35);
+            bookInformation.setTranslateX(30);
+            bookInformation.setTranslateY(270);
+            removeBook.setTranslateX(30);
+            removeBook.setTranslateY(505);
+
+            addBook.setContentDisplay(ContentDisplay.TOP);
+            bookInformation.setContentDisplay(ContentDisplay.TOP);
+            removeBook.setContentDisplay(ContentDisplay.TOP);
+            FileInputStream fileInputStream1 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+            Image image1 = new Image(fileInputStream1);
+            addBook.setGraphic(new ImageView(image1));
+
+            FileInputStream fileInputStream2 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"manual.png");
+            Image image2 = new Image(fileInputStream2);
+            bookInformation.setGraphic(new ImageView(image2));
+
+            FileInputStream fileInputStream3 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"document.png");
+            Image image3 = new Image(fileInputStream3);
+            removeBook.setGraphic(new ImageView(image3));
+
+            addBook.setOnAction(actionEvent -> {
+                try {
+                    AddBookFX addBookFX = new AddBookFX();
+                    addBookFX.start(primaryStage);
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+            bookInformation.setOnAction(actionEvent -> {
+                BookInformationFX bookInformationFX = new BookInformationFX();
+                try {
+                    bookInformationFX.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+            removeBook.setOnAction(actionEvent -> {
+                try {
+                    RemoveBookFX removeBookFX = new RemoveBookFX();
+                    removeBookFX.start(primaryStage);
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+
+            Button exit = new Button("Exit");
+            exit.setTranslateX(1200);
+            exit.setTranslateY(700);
+            exit.setOnAction(actionEvent -> {
+                System.exit(0);
+            });
+            FileInputStream fileInputStream4 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+            Image image4 = new Image(fileInputStream4);
+            exit.setGraphic(new ImageView(image4));
+            exit.setPrefSize(120, 20);
+            exit.setContentDisplay(ContentDisplay.LEFT);
+            exit.setFont(font);
+            Text text = new Text("Librarian Desk");
+            text.setTranslateX(575);
+            text.setTranslateY(500);
+            text.setFont(font1);
+            text.setFill(Color.BLACK);
+            text.setTextAlignment(TextAlignment.LEFT);
+            text.setStyle("-fx-font-weight: bold;");
+
+
+            Button home = new Button("Home");
+            home.setTranslateX(470);
+            home.setTranslateY(520);
+            home.setPrefSize(375,30);
+            home.setFont(font2);
+            home.setContentDisplay(ContentDisplay.LEFT);
+            FileInputStream fileInputStream5 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+            Image image5 = new Image(fileInputStream5);
+            home.setGraphic(new ImageView(image5));
+            home.setOnAction(actionEvent -> {
+                Main main = new Main();
+                try {
+                    main.start(primaryStage);
+                }
+                catch (Exception exception){
+                    exception.printStackTrace();
+                }
+            });
+            Button back = new Button("Back");
+            back.setTranslateX(950);
+            back.setTranslateY(520);
+            back.setPrefSize(375,30);
+            back.setFont(font2);
+            back.setContentDisplay(ContentDisplay.LEFT);
+            FileInputStream fileInputStream6 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+            Image image6 = new Image(fileInputStream6);
+            back.setGraphic(new ImageView(image6));
+            back.setOnAction(actionEvent -> {
+                Main main = new Main();
+                try {
+                    main.start(primaryStage);
+                }
+                catch (Exception exception){
+                    exception.printStackTrace();
+                }
+            });
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processValueAreaChart,
