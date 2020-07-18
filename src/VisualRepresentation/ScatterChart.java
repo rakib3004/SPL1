@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScatterChartFX extends Application {
+public class ScatterChart extends Application {
 
     PriorityData[] priorityData;
     int numberOfBooks;
@@ -200,7 +200,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        ScatterChart  ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
@@ -323,7 +323,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startTyping(primaryStage);
             } catch (IOException e) {
@@ -332,15 +332,15 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stackedAreaChart.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startTyping(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startTyping(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart1.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                VisualRepresentation.ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startTyping(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -408,7 +408,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         categoryAxis.setLabel("Generics of Book Bar Chart");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
-        ScatterChart  ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
                 year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
@@ -700,7 +700,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startTiming(primaryStage);
             } catch (IOException e) {
@@ -709,15 +709,15 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stackedAreaChart.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startTiming(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startTiming(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart1.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                VisualRepresentation.ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startTiming(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -783,7 +783,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         categoryAxis.setLabel("Book Class Category");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        ScatterChart  scatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        javafx.scene.chart.ScatterChart scatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
@@ -996,7 +996,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startBorrowing(primaryStage);
             } catch (IOException e) {
@@ -1005,15 +1005,15 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stackedAreaChart.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startBorrowing(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart1.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -1080,7 +1080,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         categoryAxis.setLabel("Book Class Category");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        ScatterChart  ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
 
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
 
@@ -1344,7 +1344,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
 
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startPricing(primaryStage);
             } catch (IOException e) {
@@ -1353,15 +1353,15 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stackedAreaChart.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startPricing(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startPricing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart1.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                VisualRepresentation.ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startPricing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();

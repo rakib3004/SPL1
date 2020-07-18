@@ -1,21 +1,16 @@
 package VisualRepresentation;
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
-import MultiVariableRegression.MultipleLinearRegression;
 import InfoDisplay.UIDisplayFX;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
+import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
@@ -27,14 +22,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineChartFX extends Application {
+public class StackedArea extends Application {
 
     PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     String sevenValueArray0 =  "findMinimumValue";
     String sevenValueArray6 ="findMaximumValue";
     String sevenValueArray3= "findMedianValue";
@@ -42,14 +37,9 @@ public class LineChartFX extends Application {
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
-
-double []  year2017Books = new double[7];
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPcriteriaWeight ahPcriteriaWeight;
     @Override
     public void start(Stage primaryStage) {
     }
-
     public void startTyping(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -73,13 +63,14 @@ double []  year2017Books = new double[7];
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
+
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
 
@@ -104,7 +95,6 @@ double []  year2017Books = new double[7];
         onubadType = "Onubad";
         othersType= "Others";
         List<Double> list = new ArrayList<>();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                 //   uponnashTypeNO++;
@@ -130,7 +120,6 @@ double []  year2017Books = new double[7];
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
             //    kobitaTypeNO++;
             list.add(priorityData[iterator].getMLRweight());
-
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -140,13 +129,13 @@ double []  year2017Books = new double[7];
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
             //  bigganTypeNO++;
-
             list.add(priorityData[iterator].getMLRweight());
         }
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
             //   bigganTypeNO++;
+
             list.add(priorityData[iterator].getMLRweight());
         }
             int sizeB = list.size();
@@ -157,9 +146,9 @@ double []  year2017Books = new double[7];
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
             //   sciFicTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+           list.add(priorityData[iterator].getMLRweight());
         }
-            int sizeB = list.size();
+           int sizeB = list.size();
             if(sizeB>7){
                 sciFicTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -167,13 +156,12 @@ double []  year2017Books = new double[7];
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
             //  kisoreUponnashTypeNO++;
-        }
-        } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+
+        }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
             //  shisuSahittoTypeNO++;
             list.add(priorityData[iterator].getMLRweight());
         }
-
-        int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 shisuSahittoTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -189,7 +177,7 @@ double []  year2017Books = new double[7];
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
             //  onubadTypeNO++;
-           list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getMLRweight());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -206,19 +194,16 @@ double []  year2017Books = new double[7];
             if(sizeB>7){
                 religionTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-        }
-        for (iterator = 0; iterator < numberOfBooks; iterator++) { {
+        }for (iterator = 0; iterator < numberOfBooks; iterator++) { {
             //   othersTypeNO++;
         }
         }
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Types");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
 
+        StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
         XYChart.Series series2 = new XYChart.Series();
@@ -320,84 +305,70 @@ double []  year2017Books = new double[7];
         series10.getData().add(new XYChart.Data(sevenValueArray5,othersTypeNO[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,othersTypeNO[6]));
 
-        LineChart .getData().add(series1);
-        LineChart .getData().add(series2);
-        LineChart .getData().add(series3);
-        LineChart .getData().add(series4);
-        LineChart .getData().add(series5);
-        LineChart .getData().add(series6);
-        LineChart .getData().add(series7);
-        LineChart .getData().add(series8);
-        LineChart .getData().add(series9);
-        LineChart .getData().add(series10);
+        StackedAreaChart.getData().add(series1);
+        StackedAreaChart.getData().add(series2);
+        StackedAreaChart.getData().add(series3);
+        StackedAreaChart .getData().add(series4);
+        StackedAreaChart.getData().add(series5);
+        StackedAreaChart.getData().add(series6);
+        StackedAreaChart.getData().add(series7);
+        StackedAreaChart.getData().add(series8);
+        StackedAreaChart.getData().add(series9);
+        StackedAreaChart .getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(1000,700);
-
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
+        MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startTyping(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction((event) -> {
+        stackedAreaChart1.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startTyping(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startTyping(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startTyping(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-
-        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
+        StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
-
-        HBox hBox1 = new HBox(LineChart ,exit,back);
-
+        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-        vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
+       vbox.setMaxSize(1400,750);
 
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-        vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
+       vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
     public void startTiming(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -430,16 +401,13 @@ double []  year2017Books = new double[7];
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
 
-        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
-
-        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
+        StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
                 year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-       priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         List<Double> list = new ArrayList<>();
 
         for(iterator=0;iterator<numberOfBooks;iterator++){
@@ -602,12 +570,12 @@ double []  year2017Books = new double[7];
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
+        String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
 
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(year2008);
         XYChart.Series series2 = new XYChart.Series();
@@ -709,64 +677,67 @@ double []  year2017Books = new double[7];
         series10.getData().add(new XYChart.Data(sevenValueArray5,year2017Books[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,year2017Books[6]));
 
-        LineChart .getData().add(series1);
-        LineChart .getData().add(series2);
-        LineChart .getData().add(series3);
-        LineChart .getData().add(series4);
-        LineChart .getData().add(series5);
-        LineChart .getData().add(series6);
-        LineChart .getData().add(series7);
-        LineChart .getData().add(series8);
-        LineChart .getData().add(series9);
-        LineChart .getData().add(series10);
+        StackedAreaChart.getData().add(series1);
+        StackedAreaChart.getData().add(series2);
+        StackedAreaChart.getData().add(series3);
+        StackedAreaChart.getData().add(series4);
+        StackedAreaChart.getData().add(series5);
+        StackedAreaChart.getData().add(series6);
+        StackedAreaChart.getData().add(series7);
+        StackedAreaChart.getData().add(series8);
+        StackedAreaChart.getData().add(series9);
+        StackedAreaChart.getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(1000,700);
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
+
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+        MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startTiming(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction((event) -> {
+        stackedAreaChart1.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startTiming(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startTiming(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startTiming(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
+        StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
-        HBox hBox1 = new HBox(LineChart ,exit,back);
+
+        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
+
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -776,15 +747,13 @@ double []  year2017Books = new double[7];
         vbox.setBackground(bg);
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
-
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
+
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
-
     public void startBorrowing(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -808,16 +777,16 @@ double []  year2017Books = new double[7];
         });
         setStyle(exit);
         setStyle(back);
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
-
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
-       String below4,over4,over7,over10,over15,over20,over25,over30;
+        StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
 
+        String below4,over4,over7,over10,over15,over20,over25,over30;
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
@@ -837,10 +806,9 @@ double []  year2017Books = new double[7];
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         List<Double> list = new ArrayList<>();
         for(iterator=0;iterator<numberOfBooks;iterator++){
-
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
-                   list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -848,11 +816,11 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -860,10 +828,11 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
-                   list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -875,7 +844,7 @@ double []  year2017Books = new double[7];
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
-                   list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -886,12 +855,11 @@ double []  year2017Books = new double[7];
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
-                   list.add(priorityData[iterator].getMLRweight());
-
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
-            if(sizeB>7) {
-                over10Count = sevenValueCalculation.sevenValueCalculationMethods(list);
+            if(sizeB>7){
+                over10Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
         list.clear();
@@ -899,7 +867,7 @@ double []  year2017Books = new double[7];
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
-                   list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -907,11 +875,10 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 //over4Count++;
-                   list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -919,6 +886,7 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))<4.0){
                 list.add(priorityData[iterator].getMLRweight());
@@ -929,6 +897,7 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(below4);
         XYChart.Series series2 = new XYChart.Series();
@@ -945,6 +914,7 @@ double []  year2017Books = new double[7];
         series7.setName(over25);
         XYChart.Series series8 = new XYChart.Series();
         series8.setName(over30);
+
         series1.getData().add(new XYChart.Data(sevenValueArray0,below4Count[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,below4Count[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,below4Count[2]));
@@ -1009,65 +979,61 @@ double []  year2017Books = new double[7];
         series8.getData().add(new XYChart.Data(sevenValueArray5,over30Count[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,over30Count[6]));
 
-        LineChart .getData().add(series1);
-        LineChart .getData().add(series2);
-        LineChart .getData().add(series3);
-        LineChart .getData().add(series4);
-        LineChart .getData().add(series5);
-        LineChart .getData().add(series6);
-        LineChart .getData().add(series7);
-        LineChart .getData().add(series8);
+        StackedAreaChart.getData().add(series1);
+        StackedAreaChart.getData().add(series2);
+        StackedAreaChart.getData().add(series3);
+        StackedAreaChart.getData().add(series4);
+        StackedAreaChart.getData().add(series5);
+        StackedAreaChart.getData().add(series6);
+        StackedAreaChart.getData().add(series7);
+        StackedAreaChart.getData().add(series8);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(1000,700);
-
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-
+        MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction((event) -> {
+        stackedAreaChart1.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startBorrowing(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
+        StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
 
-        HBox hBox1 = new HBox(LineChart ,exit,back);
-
+        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
-
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -1075,7 +1041,6 @@ double []  year2017Books = new double[7];
                 BackgroundSize.DEFAULT);
         Background bg = new Background(bi);
         vbox.setBackground(bg);
-
         vbox.setPrefSize(1400,750);
         Group group = new Group(vbox,exit,back);
 
@@ -1090,7 +1055,6 @@ double []  year2017Books = new double[7];
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -1107,19 +1071,18 @@ double []  year2017Books = new double[7];
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-       });
-
+        });
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
+
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
+        StackedAreaChart StackedAreaChart = new StackedAreaChart(categoryAxis,numberAxis);
 
-        LineChart  LineChart  = new LineChart (categoryAxis,numberAxis);
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
 
         over100 =  "100-140" ;
@@ -1179,16 +1142,18 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over300Count++;
                 list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over300Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
+
         }
         list.clear();
 
@@ -1197,11 +1162,13 @@ double []  year2017Books = new double[7];
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over250Count++;
                 list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over250Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
+
         }
         list.clear();
 
@@ -1210,11 +1177,13 @@ double []  year2017Books = new double[7];
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<250.00){
                 //over210Count++;
                 list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over210Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
+
         }
         list.clear();
 
@@ -1223,6 +1192,7 @@ double []  year2017Books = new double[7];
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<210.00){
                 //over180Count++;
                 list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1230,6 +1200,7 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<180.00){
@@ -1242,19 +1213,23 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=140.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<160.00){
                 //over140Count++;
                 list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
                 over140Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
+
         }
         list.clear();
-       for (iterator = 0; iterator < numberOfBooks; iterator++) {
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.0&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<140.000){
                 //over100Count++;
@@ -1265,6 +1240,9 @@ double []  year2017Books = new double[7];
             }
         }
         list.clear();
+
+
+
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(over100);
         XYChart.Series series2 = new XYChart.Series();
@@ -1364,63 +1342,71 @@ double []  year2017Books = new double[7];
         series10.getData().add(new XYChart.Data(sevenValueArray5,over500Count[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,over500Count[6]));
 
-        LineChart .getData().add(series1);
-        LineChart .getData().add(series2);
-        LineChart .getData().add(series3);
-        LineChart .getData().add(series4);
-        LineChart .getData().add(series5);
-        LineChart .getData().add(series6);
-        LineChart .getData().add(series7);
-        LineChart .getData().add(series8);
-        LineChart .getData().add(series9);
-        LineChart .getData().add(series10);
+        StackedAreaChart.getData().add(series1);
+        StackedAreaChart.getData().add(series2);
+        StackedAreaChart.getData().add(series3);
+        StackedAreaChart.getData().add(series4);
+        StackedAreaChart.getData().add(series5);
+        StackedAreaChart.getData().add(series6);
+        StackedAreaChart.getData().add(series7);
+        StackedAreaChart.getData().add(series8);
+        StackedAreaChart.getData().add(series9);
+        StackedAreaChart.getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
-        LineChart .setPrefSize(1000,700);
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setTranslateX(65);
+        StackedAreaChart.setTranslateY(55);
+        StackedAreaChart.setPrefSize(1000,700);
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterChart = new MenuItem("Scatter Chart");
         MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
+        MenuItem stackedAreaChart1 = new MenuItem("Stacked Area Chart");
+
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startPricing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction((event) -> {
+        stackedAreaChart1.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startPricing(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startPricing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startPricing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+
+        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart1);
+        StackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
+
+                contextMenu.show(StackedAreaChart, event.getScreenX(), event.getScreenY());
             }
         });
-        HBox hBox1 = new HBox(LineChart ,exit,back);
 
+        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
+
        vbox.setMaxSize(1400,750);
         // vBox3.setSpacing(5);
         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
+
         BackgroundImage bi = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -1436,6 +1422,7 @@ double []  year2017Books = new double[7];
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
     }
     public Button setStyle(Button button)
     {
@@ -1452,4 +1439,6 @@ double []  year2017Books = new double[7];
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
+
+
 }

@@ -9,15 +9,14 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import VisualRepresentation.LineChartFX;
-import VisualRepresentation.ScatterChartFX;
-import VisualRepresentation.StackedAreaFX;
+import VisualRepresentation.LineChart;
+import VisualRepresentation.ScatterChart;
+import VisualRepresentation.StackedArea;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
@@ -76,7 +75,7 @@ public class MLR_LineChart extends Application {
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        LineChart LineChart  = new LineChart (categoryAxis,numberAxis);
+        javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
@@ -286,7 +285,7 @@ public class MLR_LineChart extends Application {
         MenuItem lineChart = new MenuItem("Line Chart");
         MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
         lineChart.setOnAction((event) -> {
-            LineChartFX lineChartFX = new LineChartFX();
+            VisualRepresentation.LineChart lineChartFX = new LineChart();
             try {
                 lineChartFX.startBorrowing(primaryStage);
             } catch (IOException e) {
@@ -295,15 +294,15 @@ public class MLR_LineChart extends Application {
         });
         stackedAreaChart.setOnAction((event) -> {
             try {
-                StackedAreaFX stackedAreaFX = new StackedAreaFX();
-                stackedAreaFX.startBorrowing(primaryStage);
+                StackedArea stackedArea = new StackedArea();
+                stackedArea.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         scatterChart.setOnAction((event) -> {
             try {
-                ScatterChartFX stackedAreaFX = new ScatterChartFX();
+                ScatterChart stackedAreaFX = new ScatterChart();
                 stackedAreaFX.startBorrowing(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();

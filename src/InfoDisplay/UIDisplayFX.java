@@ -1,9 +1,9 @@
 package InfoDisplay;
 
 import FilePackage.DateTimeWriter;
-import VisualRepresentation.ScatterChartFX;
-import VisualRepresentation.LineChartFX;
-import VisualRepresentation.StackedAreaFX;
+import VisualRepresentation.ScatterChart;
+import VisualRepresentation.LineChart;
+import VisualRepresentation.StackedArea;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -21,9 +21,9 @@ import java.io.File;
 
 public class UIDisplayFX extends Application {
 
-ScatterChartFX scatterChartFX = new ScatterChartFX();
-LineChartFX lineChartFX = new LineChartFX();
-StackedAreaFX stackedAreaFX = new StackedAreaFX();
+ScatterChart scatterChart = new ScatterChart();
+LineChart lineChart = new LineChart();
+StackedArea stackedArea = new StackedArea();
     @Override
     public void start(Stage primaryStage) {
     }
@@ -71,7 +71,7 @@ BookApplication bookApplication = new BookApplication();
         });
         scatterChart.setOnAction(actionEvent -> {
             try {
-                scatterChartFX.startTyping(typeStatisticsStage);
+                this.scatterChart.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -80,7 +80,7 @@ BookApplication bookApplication = new BookApplication();
 
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                stackedAreaFX.startTyping(typeStatisticsStage);
+                stackedArea.startTyping(typeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -88,7 +88,7 @@ BookApplication bookApplication = new BookApplication();
         });
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startTyping(typeStatisticsStage);
+                this.lineChart.startTyping(typeStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -165,7 +165,7 @@ BookApplication bookApplication = new BookApplication();
         });
         scatterChart.setOnAction(actionEvent -> {
             try {
-                scatterChartFX.startTiming(timeStatisticsStage);
+                this.scatterChart.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -174,7 +174,7 @@ BookApplication bookApplication = new BookApplication();
         });
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                stackedAreaFX.startTiming(timeStatisticsStage);
+                stackedArea.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -183,7 +183,7 @@ BookApplication bookApplication = new BookApplication();
 
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startTiming(timeStatisticsStage);
+                this.lineChart.startTiming(timeStatisticsStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -253,21 +253,21 @@ BookApplication bookApplication = new BookApplication();
         });
         scatterChart.setOnAction(actionEvent -> {
             try {
-                scatterChartFX.startBorrowing(borrowStatisticsStage);
+                this.scatterChart.startBorrowing(borrowStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                stackedAreaFX.startBorrowing(borrowStatisticsStage);
+                stackedArea.startBorrowing(borrowStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         lineChart.setOnAction(actionEvent -> {
             try {
-                lineChartFX.startBorrowing(borrowStatisticsStage);
+                this.lineChart.startBorrowing(borrowStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -330,21 +330,21 @@ BookApplication bookApplication = new BookApplication();
          });
          scatterChart.setOnAction(actionEvent -> {
              try {
-                 scatterChartFX.startPricing(priceStatisticsStage);
+                 this.scatterChart.startPricing(priceStatisticsStage);
              } catch (Exception exception) {
                  exception.printStackTrace();
              }
          });
          stackedAreaChart.setOnAction(actionEvent -> {
              try {
-                 stackedAreaFX.startPricing(priceStatisticsStage);
+                 stackedArea.startPricing(priceStatisticsStage);
              } catch (Exception exception) {
                  exception.printStackTrace();
              }
          });
          lineChart.setOnAction(actionEvent -> {
              try {
-                 lineChartFX.startPricing(priceStatisticsStage);
+                 this.lineChart.startPricing(priceStatisticsStage);
              } catch (Exception exception) {
                  exception.printStackTrace();
              }
