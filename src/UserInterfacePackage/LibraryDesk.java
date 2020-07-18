@@ -55,8 +55,8 @@ public class LibraryDesk extends Application {
         bookInformation.setPrefSize(410,230);
         removeBook.setPrefSize(410,230);
 
-        addBook.setFont(font);
-        bookInformation.setFont(font);
+        addBook.setFont(font2);
+        bookInformation.setFont(font2);
         removeBook.setFont(font2);
         addBook.setTranslateX(30);
         addBook.setTranslateY(35);

@@ -119,8 +119,8 @@ try {
             processValidation.setPrefSize(410,230);
             sevenValueCalculation.setPrefSize(410,230);
 
-            processImplementation.setFont(font);
-            processValidation.setFont(font);
+            processImplementation.setFont(font2);
+            processValidation.setFont(font2);
             sevenValueCalculation.setFont(font2);
             processImplementation.setTranslateX(30);
             processImplementation.setTranslateY(35);
