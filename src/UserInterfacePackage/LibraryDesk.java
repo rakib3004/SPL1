@@ -6,6 +6,7 @@ import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
+import JavFX.AuthorSystem;
 import JavFX.FXThirdWindow;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
@@ -20,14 +21,14 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class LibraryDesk extends Application {
@@ -37,7 +38,7 @@ public class LibraryDesk extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button addBook = new Button("Add Book");
+    /*    Button addBook = new Button("Add Book");
         addBook.setTranslateX(160);
         addBook.setTranslateY(50);
         addBook.setOnAction(actionEvent -> {
@@ -78,7 +79,72 @@ Button removeBook = new Button("Remove Book");
             }
         });
         removeBook.setPrefSize(350, 80);
-        setStyle(removeBook);
+        setStyle(removeBook);*/
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+        Button addBook = new Button("Add Book");
+        Button bookInformation = new Button("Book Information");
+        Button removeBook = new Button("Remove Book");
+
+        addBook.setPrefSize(410,230);
+        bookInformation.setPrefSize(410,230);
+        removeBook.setPrefSize(410,230);
+
+        addBook.setFont(font);
+        bookInformation.setFont(font);
+        removeBook.setFont(font2);
+        addBook.setTranslateX(30);
+        addBook.setTranslateY(35);
+        bookInformation.setTranslateX(30);
+        bookInformation.setTranslateY(270);
+        removeBook.setTranslateX(30);
+        removeBook.setTranslateY(505);
+
+        addBook.setContentDisplay(ContentDisplay.TOP);
+        bookInformation.setContentDisplay(ContentDisplay.TOP);
+        removeBook.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+        Image image1 = new Image(fileInputStream1);
+        addBook.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"manual.png");
+        Image image2 = new Image(fileInputStream2);
+        bookInformation.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"document.png");
+        Image image3 = new Image(fileInputStream3);
+        removeBook.setGraphic(new ImageView(image3));
+
+        addBook.setOnAction(actionEvent -> {
+            try {
+                AddBookFX addBookFX = new AddBookFX();
+                addBookFX.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        bookInformation.setOnAction(actionEvent -> {
+            BookInformationFX bookInformationFX = new BookInformationFX();
+            try {
+                bookInformationFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        removeBook.setOnAction(actionEvent -> {
+            try {
+                RemoveBookFX removeBookFX = new RemoveBookFX();
+                removeBookFX.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
