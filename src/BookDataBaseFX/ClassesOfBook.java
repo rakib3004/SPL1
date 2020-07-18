@@ -1,7 +1,7 @@
 package BookDataBaseFX;
 
 import FilePackage.DateTimeWriter;
-import InfoDisplay.BookInformationFX;
+import InfoDisplay.BookInformationShow;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
 import javafx.application.Application;
@@ -10,11 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -49,9 +45,9 @@ public class ClassesOfBook extends Application {
         pieChart.setTranslateY(300);
 // add all 4  buttons in action event
         back.setOnAction(actionEvent -> {
-            BookInformationFX bookInformationFX = new BookInformationFX();
+            BookInformationShow bookInformationShow = new BookInformationShow();
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

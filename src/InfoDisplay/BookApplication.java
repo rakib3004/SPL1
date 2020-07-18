@@ -150,7 +150,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
+        BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -189,7 +189,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -361,9 +361,9 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 }
             }
         });

@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 
 import java.io.IOException;
 
-public class BookAnalysisFX extends Application {
+public class BookAnalysis extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();

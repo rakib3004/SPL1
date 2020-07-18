@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class BookInformationFX extends Application {
+public class BookInformationShow extends Application {
 
     TypesOfBook typesOfBook = new TypesOfBook();
     DemandsOfBook demandsOfBook = new DemandsOfBook();
@@ -125,9 +125,9 @@ this.borrowCountOfBook.start(primaryStage);
             }
         });
         numberDisplay.setOnAction(actionEvent -> {
-            BookNumberDisplayFX bookNumberDisplayFX = new BookNumberDisplayFX();
+            BookNumberDisplay bookNumberDisplay = new BookNumberDisplay();
             try {
-                bookNumberDisplayFX.start(primaryStage);
+                bookNumberDisplay.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -173,7 +173,7 @@ this.borrowCountOfBook.start(primaryStage);
         PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
+        BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -212,7 +212,7 @@ this.borrowCountOfBook.start(primaryStage);
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -384,9 +384,9 @@ this.borrowCountOfBook.start(primaryStage);
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 }
             }
         });

@@ -36,7 +36,7 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 
-public class BookNumberDisplayFX extends Application {
+public class BookNumberDisplay extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;

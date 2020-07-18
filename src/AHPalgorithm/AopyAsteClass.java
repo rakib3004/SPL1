@@ -1,23 +1,11 @@
 package AHPalgorithm;
 
-import InfoDisplay.BookInformationFX;
-import JavFX.Main;
-import UserInterfacePackage.AddBookFX;
-import UserInterfacePackage.RemoveBookFX;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
 import java.io.File;
-import java.io.FileInputStream;
 
 public class AopyAsteClass {
     public void menubar(){

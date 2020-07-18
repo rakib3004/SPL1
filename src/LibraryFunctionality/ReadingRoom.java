@@ -8,7 +8,7 @@ import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
-import InfoDisplay.BookInformationFX;
+import InfoDisplay.BookInformationShow;
 import JavFX.*;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -204,7 +204,7 @@ public class ReadingRoom extends Application {
         PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
+        BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -243,7 +243,7 @@ public class ReadingRoom extends Application {
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -415,9 +415,9 @@ public class ReadingRoom extends Application {
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 }
             }
         });
@@ -986,7 +986,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
+        BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -1025,7 +1025,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1197,9 +1197,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 }
             }
         });

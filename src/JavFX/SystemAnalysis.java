@@ -4,7 +4,7 @@ import Collection.WriterCollection;
 import CrossValidationProcess.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
-import InfoDisplay.BookInformationFX;
+import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
 import RankingAlgorithmFx.PageRankAlgorithmFx;
@@ -155,9 +155,9 @@ public class SystemAnalysis extends Application {
                 }
             });
             processValueLineArt.setOnAction(actionEvent -> {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 try {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -251,7 +251,7 @@ public class SystemAnalysis extends Application {
             PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
             AddBookFX addBookFX = new AddBookFX();
             RemoveBookFX removeBookFX = new RemoveBookFX();
-            BookInformationFX bookInformationFX = new BookInformationFX();
+            BookInformationShow bookInformationShow = new BookInformationShow();
 
             Menu menu1 = new Menu("User");
             Menu menu2 = new Menu("Librarian");
@@ -290,7 +290,7 @@ public class SystemAnalysis extends Application {
             });
             menuItem2b.setOnAction(actionEvent -> {
                 try {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -462,9 +462,9 @@ public class SystemAnalysis extends Application {
 
             bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    BookInformationFX bookInformationFX = new BookInformationFX();
+                    BookInformationShow bookInformationShow = new BookInformationShow();
                     {
-                        bookInformationFX.start(primaryStage);
+                        bookInformationShow.start(primaryStage);
                     }
                 }
             });

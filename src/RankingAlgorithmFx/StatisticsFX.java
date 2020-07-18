@@ -6,7 +6,7 @@ import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
-import InfoDisplay.BookInformationFX;
+import InfoDisplay.BookInformationShow;
 import JavFX.AuthorSystem;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
@@ -119,7 +119,7 @@ try {
         PageRankAlgorithmFx pageRankAlgorithmFx1 = new PageRankAlgorithmFx();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
-        BookInformationFX bookInformationFX = new BookInformationFX();
+        BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
@@ -158,7 +158,7 @@ try {
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationFX.start(primaryStage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -330,9 +330,9 @@ try {
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                BookInformationFX bookInformationFX = new BookInformationFX();
+                BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationFX.start(primaryStage);
+                    bookInformationShow.start(primaryStage);
                 }
             }
         });
