@@ -113,43 +113,43 @@ public class SystemAnalysis extends Application {
             Font font = new Font(19);
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
-            Button addBook = new Button("Add Book");
-            Button bookInformation = new Button("Book Information");
-            Button removeBook = new Button("Remove Book");
+            Button processValueAreaChart = new Button("ProcessValue AreaChart");
+            Button processValueLineChart = new Button("ProcessValue LineChart");
+            Button processValuePlotting = new Button("ProcessValue Plotting");
 
-            addBook.setPrefSize(410,230);
-            bookInformation.setPrefSize(410,230);
-            removeBook.setPrefSize(410,230);
+            processValueAreaChart.setPrefSize(410,230);
+            processValueLineChart.setPrefSize(410,230);
+            processValuePlotting.setPrefSize(410,230);
 
-            addBook.setFont(font);
-            bookInformation.setFont(font);
-            removeBook.setFont(font2);
-            addBook.setTranslateX(30);
-            addBook.setTranslateY(35);
-            bookInformation.setTranslateX(30);
-            bookInformation.setTranslateY(270);
-            removeBook.setTranslateX(30);
-            removeBook.setTranslateY(505);
+            processValueAreaChart.setFont(font);
+            processValueLineChart.setFont(font);
+            processValuePlotting.setFont(font2);
+            processValueAreaChart.setTranslateX(30);
+            processValueAreaChart.setTranslateY(35);
+            processValueLineChart.setTranslateX(30);
+            processValueLineChart.setTranslateY(270);
+            processValuePlotting.setTranslateX(30);
+            processValuePlotting.setTranslateY(505);
 
-            addBook.setContentDisplay(ContentDisplay.TOP);
-            bookInformation.setContentDisplay(ContentDisplay.TOP);
-            removeBook.setContentDisplay(ContentDisplay.TOP);
+            processValueAreaChart.setContentDisplay(ContentDisplay.TOP);
+            processValueLineChart.setContentDisplay(ContentDisplay.TOP);
+            processValuePlotting.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"automatic.png");
             Image image1 = new Image(fileInputStream1);
-            addBook.setGraphic(new ImageView(image1));
+            processValueAreaChart.setGraphic(new ImageView(image1));
 
             FileInputStream fileInputStream2 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"manual.png");
             Image image2 = new Image(fileInputStream2);
-            bookInformation.setGraphic(new ImageView(image2));
+            processValueLineChart.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"document.png");
             Image image3 = new Image(fileInputStream3);
-            removeBook.setGraphic(new ImageView(image3));
+            processValuePlotting.setGraphic(new ImageView(image3));
 
-            addBook.setOnAction(actionEvent -> {
+            processValueAreaChart.setOnAction(actionEvent -> {
                 try {
                     AddBookFX addBookFX = new AddBookFX();
                     addBookFX.start(primaryStage);
@@ -158,7 +158,7 @@ public class SystemAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-            bookInformation.setOnAction(actionEvent -> {
+            processValueLineChart.setOnAction(actionEvent -> {
                 BookInformationFX bookInformationFX = new BookInformationFX();
                 try {
                     bookInformationFX.start(primaryStage);
@@ -166,7 +166,7 @@ public class SystemAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-            removeBook.setOnAction(actionEvent -> {
+            processValuePlotting.setOnAction(actionEvent -> {
                 try {
                     RemoveBookFX removeBookFX = new RemoveBookFX();
                     removeBookFX.start(primaryStage);
