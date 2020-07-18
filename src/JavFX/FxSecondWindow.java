@@ -89,13 +89,13 @@ Main main = new Main();
        back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
+       // Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,administrationMood,exit,
                 back,readersMood,about);
-GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-graphicsContext.drawImage(image,0,0);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+      //  graphicsContext.drawImage(image,0,0);
 
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
