@@ -99,13 +99,13 @@ public class FourVariableRegression extends Application {
         setStyle(graphView);
         graphView.setPrefSize(350,80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
+       // Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image, 0, 0);
+   //     graphicsContext.drawImage(image, 0, 0);
         Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);

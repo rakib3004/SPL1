@@ -135,13 +135,11 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AddBookFX addBookFX = new AddBookFX();
         RemoveBookFX removeBookFX = new RemoveBookFX();
         BookInformationFX bookInformationFX = new BookInformationFX();
-
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
         Menu menu3 = new Menu("Analysis");
         Menu menu4 = new Menu("Process");
         Menu menu5 = new Menu("Shortcut");
-
         MenuItem menuItem1a = new MenuItem("Default Recommendation");
         MenuItem menuItem1b = new MenuItem("User Based Recommendation");
         menu1.getItems().addAll(menuItem1a,menuItem1b);
@@ -159,8 +157,6 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
                 e.printStackTrace();
             }
         });
-
-
         MenuItem menuItem2a = new MenuItem("Add book");
         MenuItem menuItem2b = new MenuItem("Book Info");
         MenuItem menuItem2c = new MenuItem("Remove Book");
@@ -185,9 +181,7 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
                 e.printStackTrace();
             }
         });
-
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
-
         MenuItem menuItem3a = new MenuItem("Cross Validation");
         MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
         MenuItem menuItem3c = new MenuItem("Data Optimization");
@@ -210,7 +204,6 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         });
 
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
-
         MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
         MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
         MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
