@@ -23,25 +23,28 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class AuthorSystem extends Application {
         @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button processImplementation = new Button("Process Implementation");
+      /*  Button processImplementation = new Button("Process Implementation");
         Button processValidation = new Button("Process Validation");
         Button sevenValueCalculation = new Button("Seven Value Calculation");
 
@@ -101,13 +104,139 @@ try {
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);*/
 
       //  Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
+            Font font = new Font(19);
+            Font font1 = new Font(47);
+            Font font2 = new Font( 26);
+            Button processImplementation = new Button("Process Implementation");
+            Button processValidation = new Button("Process Validation");
+            Button sevenValueCalculation = new Button("Seven Value Calculation");
+
+
+            processImplementation.setPrefSize(410,230);
+            processValidation.setPrefSize(410,230);
+            sevenValueCalculation.setPrefSize(410,230);
+
+            processImplementation.setFont(font);
+            processValidation.setFont(font);
+            sevenValueCalculation.setFont(font2);
+            processImplementation.setTranslateX(30);
+            processImplementation.setTranslateY(35);
+            processValidation.setTranslateX(30);
+            processValidation.setTranslateY(270);
+            sevenValueCalculation.setTranslateX(30);
+            sevenValueCalculation.setTranslateY(505);
+
+            processImplementation.setContentDisplay(ContentDisplay.TOP);
+            processValidation.setContentDisplay(ContentDisplay.TOP);
+            sevenValueCalculation.setContentDisplay(ContentDisplay.TOP);
+            FileInputStream fileInputStream1 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+            Image image1 = new Image(fileInputStream1);
+            processImplementation.setGraphic(new ImageView(image1));
+
+            FileInputStream fileInputStream2 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"manual.png");
+            Image image2 = new Image(fileInputStream2);
+            processValidation.setGraphic(new ImageView(image2));
+
+            FileInputStream fileInputStream3 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"document.png");
+            Image image3 = new Image(fileInputStream3);
+            sevenValueCalculation.setGraphic(new ImageView(image3));
+
+            processImplementation.setOnAction(actionEvent -> {
+                try {
+                    AddBookFX addBookFX = new AddBookFX();
+                    addBookFX.start(primaryStage);
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+            processValidation.setOnAction(actionEvent -> {
+                BookInformationFX bookInformationFX = new BookInformationFX();
+                try {
+                    bookInformationFX.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+            sevenValueCalculation.setOnAction(actionEvent -> {
+                try {
+                    RemoveBookFX removeBookFX = new RemoveBookFX();
+                    removeBookFX.start(primaryStage);
+                }
+                catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+
+            Button exit = new Button("Exit");
+            exit.setTranslateX(1200);
+            exit.setTranslateY(700);
+            exit.setOnAction(actionEvent -> {
+                System.exit(0);
+            });
+            FileInputStream fileInputStream4 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+            Image image4 = new Image(fileInputStream4);
+            exit.setGraphic(new ImageView(image4));
+            exit.setPrefSize(120, 20);
+            exit.setContentDisplay(ContentDisplay.LEFT);
+            exit.setFont(font);
+            Text text = new Text("Librarian Desk");
+            text.setTranslateX(575);
+            text.setTranslateY(500);
+            text.setFont(font1);
+            text.setFill(Color.BLACK);
+            text.setTextAlignment(TextAlignment.LEFT);
+            text.setStyle("-fx-font-weight: bold;");
+
+            Button home = new Button("Home");
+            home.setTranslateX(470);
+            home.setTranslateY(520);
+            home.setPrefSize(375,30);
+            home.setFont(font2);
+            home.setContentDisplay(ContentDisplay.LEFT);
+            FileInputStream fileInputStream5 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+            Image image5 = new Image(fileInputStream5);
+            home.setGraphic(new ImageView(image5));
+            home.setOnAction(actionEvent -> {
+                Main main = new Main();
+                try {
+                    main.start(primaryStage);
+                }
+                catch (Exception exception){
+                    exception.printStackTrace();
+                }
+            });
+            Button back = new Button("Back");
+            back.setTranslateX(950);
+            back.setTranslateY(520);
+            back.setPrefSize(375,30);
+            back.setFont(font2);
+            back.setContentDisplay(ContentDisplay.LEFT);
+            FileInputStream fileInputStream6 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+            Image image6 = new Image(fileInputStream6);
+            back.setGraphic(new ImageView(image6));
+            back.setOnAction(actionEvent -> {
+                Main main = new Main();
+                try {
+                    main.start(primaryStage);
+                }
+                catch (Exception exception){
+                    exception.printStackTrace();
+                }
+            });
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processImplementation,
-                processValidation,exit,back,sevenValueCalculation);
+                processValidation,exit,back,home,sevenValueCalculation);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidationFX crossValidationFX2 = new CrossValidationFX();

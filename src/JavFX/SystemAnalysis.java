@@ -197,7 +197,6 @@ public class SystemAnalysis extends Application {
             text.setTextAlignment(TextAlignment.LEFT);
             text.setStyle("-fx-font-weight: bold;");
 
-
             Button home = new Button("Home");
             home.setTranslateX(470);
             home.setTranslateY(520);
