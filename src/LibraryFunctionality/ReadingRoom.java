@@ -1210,7 +1210,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             @Override public void handle(ActionEvent e) {
                 SystemAnalysis systemAnalysis = new SystemAnalysis();
                 {
-                    systemAnalysis.start(primaryStage);
+                    try {
+                        systemAnalysis.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });
