@@ -8,6 +8,7 @@ import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationFX;
 import JavFX.AuthorSystem;
 import JavFX.FXThirdWindow;
+import JavFX.Main;
 import JavFX.SystemAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithmFx;
@@ -24,7 +25,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -38,48 +42,7 @@ public class LibraryDesk extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-    /*    Button addBook = new Button("Add Book");
-        addBook.setTranslateX(160);
-        addBook.setTranslateY(50);
-        addBook.setOnAction(actionEvent -> {
-            try {
-                AddBookFX addBookFX = new AddBookFX();
-                addBookFX.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        addBook.setPrefSize(350, 80);
-        setStyle(addBook);
 
-        Button bookInformation = new Button("Book Information");
-        bookInformation.setTranslateX(520);
-        bookInformation.setTranslateY(50);
-        bookInformation.setOnAction(actionEvent -> {
-            BookInformationFX bookInformationFX = new BookInformationFX();
-            try {
-                bookInformationFX.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        setStyle(bookInformation);
-        bookInformation.setPrefSize(350, 80);
-Button removeBook = new Button("Remove Book");
-        removeBook.setTranslateX(880);
-        removeBook.setTranslateY(50);
-        removeBook.setOnAction(actionEvent -> {
-            try {
-                RemoveBookFX removeBookFX = new RemoveBookFX();
-                removeBookFX.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        removeBook.setPrefSize(350, 80);
-        setStyle(removeBook);*/
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
@@ -145,34 +108,77 @@ Button removeBook = new Button("Remove Book");
                 exception.printStackTrace();
             }
         });
-        Button back = new Button("Back");
+
         Button exit = new Button("Exit");
-        back.setOnAction(actionEvent -> {
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Librarian Desk");
+        text.setTranslateX(575);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
 
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"home.png");
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"back.png");
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background,0,0);
         Group group = new Group();
         group.getChildren().addAll(canvas,addBook,exit,
                 back,removeBook,bookInformation);
+        group.getChildren().addAll(text,home);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidationFX crossValidationFX2 = new CrossValidationFX();
@@ -426,8 +432,6 @@ Button removeBook = new Button("Remove Book");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
 
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-      //  graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());

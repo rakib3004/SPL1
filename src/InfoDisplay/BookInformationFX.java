@@ -168,9 +168,11 @@ borrowCountOfBookFX.start(primaryStage);
          borrowCountOfBook.setPrefSize(350, 80);
         numberDisplay.setPrefSize(350, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
+      //  Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+    //    graphicsContext.drawImage(background,0,0);
         group.getChildren().addAll(canvas,exit,back,typesOfBook);
         group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
         group.getChildren().addAll(borrowCountOfBook,numberDisplay);
@@ -426,8 +428,7 @@ borrowCountOfBookFX.start(primaryStage);
         menuBar.setStyle(" -fx-spacing: 47;");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+
         Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
