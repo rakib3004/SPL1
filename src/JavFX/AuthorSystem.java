@@ -233,9 +233,14 @@ try {
                     exception.printStackTrace();
                 }
             });
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,processImplementation,
+            Image background = new Image("Images"+ File.separator +"framework.jpg");
+            Canvas canvas = new Canvas(850, 425);
+            canvas.setTranslateX(470);
+            canvas.setTranslateY(35);
+            GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+            graphicsContext.drawImage(background,0,0);
+            Group group = new Group();
+            group.getChildren().addAll(canvas,processImplementation,
                 processValidation,exit,back,home,sevenValueCalculation);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
@@ -493,7 +498,6 @@ try {
             menuBar.setStyle(" -fx-spacing: 47;");
             menuBar.prefHeight(32);
             group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
       //  graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());

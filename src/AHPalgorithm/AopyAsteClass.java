@@ -4,6 +4,9 @@ import InfoDisplay.BookInformationFX;
 import JavFX.Main;
 import UserInterfacePackage.AddBookFX;
 import UserInterfacePackage.RemoveBookFX;
+import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
@@ -148,6 +151,12 @@ public class AopyAsteClass {
         });*/
     }
     public void grapicsCard(){
-
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background,0,0);
+        Group group = new Group();
     }
 }
