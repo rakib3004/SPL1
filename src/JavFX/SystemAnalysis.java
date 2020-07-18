@@ -41,7 +41,7 @@ public class SystemAnalysis extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button processValueAreaChart = new Button("ProcessValue AreaChart");
+    /*    Button processValueAreaChart = new Button("ProcessValue AreaChart");
         Button processValueLineArt = new Button("ProcessValue LineArt");
         Button processValuePlotting = new Button("ProcessValue Plotting");
 
@@ -103,10 +103,9 @@ public class SystemAnalysis extends Application {
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-
+        exit.setPrefSize(200, 80);*/
     //    Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
+
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,processValueAreaChart,
