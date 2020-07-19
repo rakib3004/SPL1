@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class UIDisplayFX extends Application {
+public class SevenNumberStatistics extends Application {
 
 ScatterChart scatterChart = new ScatterChart();
 LineChart lineChart = new LineChart();

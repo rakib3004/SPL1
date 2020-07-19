@@ -1,7 +1,7 @@
 package VisualRepresentation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.UIDisplayFX;
+import InfoDisplay.SevenNumberStatistics;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -51,9 +51,9 @@ public class StackedArea extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
             try {
-                uiDisplayFX.typeStatistics(primaryStage);
+                sevenNumberStatistics.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -382,9 +382,9 @@ public class StackedArea extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
             try {
-                uiDisplayFX.timeStatistics(primaryStage);
+                sevenNumberStatistics.timeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -765,9 +765,9 @@ public class StackedArea extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
             try {
-                uiDisplayFX.borrowStatistics(primaryStage);
+                sevenNumberStatistics.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1062,9 +1062,9 @@ public class StackedArea extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            UIDisplayFX uiDisplayFX = new UIDisplayFX();
+            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
             try {
-                uiDisplayFX.priceStatistics(primaryStage);
+                sevenNumberStatistics.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

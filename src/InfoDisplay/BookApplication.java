@@ -43,7 +43,7 @@ public class BookApplication extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-UIDisplayFX uiDisplayFX = new UIDisplayFX();
+SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
     @Override
     public void start(Stage primaryStage) {
         String  className = this.getClass().getSimpleName();
@@ -88,7 +88,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
                         });
                 typeBased.setOnAction(actionEvent -> {
                             try {
-                uiDisplayFX.typeStatistics(primaryStage);
+                sevenNumberStatistics.typeStatistics(primaryStage);
 
                             } catch (Exception exception) {
                                 exception.printStackTrace();
@@ -96,7 +96,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
                         });
                         borrowBased.setOnAction(actionEvent -> {
                             try {
-                                uiDisplayFX.borrowStatistics(primaryStage);
+                                sevenNumberStatistics.borrowStatistics(primaryStage);
 
                             } catch (Exception exception) {
                                 exception.printStackTrace();
@@ -105,7 +105,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
                 timeBased.setOnAction(actionEvent -> {
                     try {
-                        uiDisplayFX.timeStatistics(primaryStage);
+                        sevenNumberStatistics.timeStatistics(primaryStage);
 
                     } catch (Exception exception) {
                         exception.printStackTrace();
@@ -113,7 +113,7 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
                 });
         priceBased.setOnAction(actionEvent -> {
             try {
-                uiDisplayFX.priceStatistics(primaryStage);
+                sevenNumberStatistics.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
