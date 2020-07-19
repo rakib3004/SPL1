@@ -8,6 +8,7 @@ import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
 import RankingAlgorithmFx.Statistics;
@@ -103,8 +104,8 @@ public class AuthorSystem extends Application {
             });
             processDescription.setOnAction(actionEvent -> {
                 try {
-                    RemoveBook removeBook = new RemoveBook();
-                    removeBook.start(primaryStage);
+                    About about = new About();
+                    about.start(primaryStage);
                 }
                 catch (Exception exception) {
                     exception.printStackTrace();
@@ -410,10 +411,10 @@ public class AuthorSystem extends Application {
             MenuItem systemAnalysis = new MenuItem("System Analysis");
             systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    SystemAnalysis systemAnalysis = new SystemAnalysis();
+                    ProcessAnalysis processAnalysis = new ProcessAnalysis();
                     {
                         try {
-                            systemAnalysis.start(primaryStage);
+                            processAnalysis.start(primaryStage);
                         } catch (FileNotFoundException fileNotFoundException) {
                             fileNotFoundException.printStackTrace();
                         }

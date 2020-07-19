@@ -9,7 +9,7 @@ import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
-import JavFX.SystemAnalysis;
+import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -362,10 +362,10 @@ public class PageRankAlgorithm extends Application {
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        systemAnalysis.start(primaryStage);
+                        processAnalysis.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }

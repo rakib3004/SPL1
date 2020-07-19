@@ -5,7 +5,7 @@ import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import JavFX.SystemAnalysis;
+import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
@@ -371,10 +371,10 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        systemAnalysis.start(primaryStage);
+                        processAnalysis.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }

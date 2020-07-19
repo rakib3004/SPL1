@@ -454,10 +454,10 @@ public class Main extends Application {
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        systemAnalysis.start(stage);
+                        processAnalysis.start(stage);
                     } catch (Exception fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }

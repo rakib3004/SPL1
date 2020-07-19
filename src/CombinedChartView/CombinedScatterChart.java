@@ -3,7 +3,7 @@ package CombinedChartView;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.SystemAnalysis;
+import JavFX.ProcessAnalysis;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -11,10 +11,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RegressionFx.FourVariableRegression;
-import TableViewPackage.Book;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -53,9 +50,9 @@ public class CombinedScatterChart extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SystemAnalysis systemAnalysis = new SystemAnalysis();
+            ProcessAnalysis processAnalysis = new ProcessAnalysis();
             try {
-                systemAnalysis.start(primaryStage);
+                processAnalysis.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

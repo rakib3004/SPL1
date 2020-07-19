@@ -34,7 +34,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class SystemAnalysis extends Application {
+public class ProcessAnalysis extends Application {
         @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
         String  className = this.getClass().getSimpleName();
@@ -472,10 +472,10 @@ public class SystemAnalysis extends Application {
             MenuItem systemAnalysis = new MenuItem("System Analysis");
             systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    SystemAnalysis systemAnalysis = new SystemAnalysis();
+                    ProcessAnalysis processAnalysis = new ProcessAnalysis();
                     {
                         try {
-                            systemAnalysis.start(primaryStage);
+                            processAnalysis.start(primaryStage);
                         } catch (Exception exception) {
                             exception.printStackTrace();
                         }

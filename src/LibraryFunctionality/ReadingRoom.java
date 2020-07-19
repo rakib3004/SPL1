@@ -425,10 +425,10 @@ public class ReadingRoom extends Application {
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        systemAnalysis.start(primaryStage);
+                        processAnalysis.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }
@@ -1207,10 +1207,10 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                SystemAnalysis systemAnalysis = new SystemAnalysis();
+                ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        systemAnalysis.start(primaryStage);
+                        processAnalysis.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }

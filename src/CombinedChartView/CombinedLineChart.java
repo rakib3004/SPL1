@@ -3,7 +3,7 @@ package CombinedChartView;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.SystemAnalysis;
+import JavFX.ProcessAnalysis;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -11,23 +11,17 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RegressionFx.FourVariableRegression;
-import TableViewPackage.AHP_Chart_View;
-import TableViewPackage.MLR_Chart_View;
-import TableViewPackage.PRA_Chart_View;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -58,9 +52,9 @@ public class CombinedLineChart extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            SystemAnalysis systemAnalysis = new SystemAnalysis();
+            ProcessAnalysis processAnalysis = new ProcessAnalysis();
             try {
-                systemAnalysis.start(primaryStage);
+                processAnalysis.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
