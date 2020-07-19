@@ -1,6 +1,7 @@
 package ProjectDescription;
 
 import FilePackage.DateTimeWriter;
+import JavFX.Main;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -26,10 +27,11 @@ public class About extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            Main main = new Main();
             try {
-                fxSecondWindow.start(primaryStage);
-            } catch (Exception exception) {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });
