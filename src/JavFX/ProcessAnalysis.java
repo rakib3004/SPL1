@@ -5,6 +5,7 @@ import CrossValidationProcess.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookApplication;
 import InfoDisplay.BookInformationShow;
+import InfoDisplay.SevenNumberStatistics;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
@@ -67,43 +68,42 @@ public class ProcessAnalysis extends Application {
             sevenValueStatistics.setContentDisplay(ContentDisplay.TOP);
             dataOptimization.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
             Image image1 = new Image(fileInputStream1);
             crossValidationAnalysis.setGraphic(new ImageView(image1));
 
             FileInputStream fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"manual.png");
+                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
             Image image2 = new Image(fileInputStream2);
             sevenValueStatistics.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"document.png");
+                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
             Image image3 = new Image(fileInputStream3);
             dataOptimization.setGraphic(new ImageView(image3));
 
             crossValidationAnalysis.setOnAction(actionEvent -> {
                 try {
-                    AddBook addBook = new AddBook();
-                    addBook.start(primaryStage);
+                    CrossValidation crossValidation = new CrossValidation();
+                    crossValidation.start(primaryStage);
                 }
                 catch (Exception exception) {
                     exception.printStackTrace();
                 }
             });
             sevenValueStatistics.setOnAction(actionEvent -> {
-                BookInformationShow bookInformationShow = new BookInformationShow();
+                SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
                 try {
-                    bookInformationShow.start(primaryStage);
+                    sevenNumberStatistics.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
             });
             dataOptimization.setOnAction(actionEvent -> {
+              ReadingRoom readingRoom = new ReadingRoom();
                 try {
-                    RemoveBook removeBook = new RemoveBook();
-                    removeBook.start(primaryStage);
-                }
-                catch (Exception exception) {
+                    readingRoom.start(primaryStage);
+                } catch (Exception exception) {
                     exception.printStackTrace();
                 }
             });
