@@ -339,7 +339,11 @@ public class ReadingRoom extends Application {
             @Override public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    processImplementation.start(primaryStage);
+                    try {
+                        processImplementation.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });
@@ -1121,7 +1125,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
             @Override public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    processImplementation.start(primaryStage);
+                    try {
+                        processImplementation.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });
