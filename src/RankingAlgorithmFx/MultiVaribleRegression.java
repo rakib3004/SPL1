@@ -245,11 +245,10 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            Main main = new Main();
+            ProcessImplementation processImplementation = new ProcessImplementation();
             try {
-                main.start(primaryStage);
-            }
-            catch (Exception exception){
+                processImplementation.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -400,7 +399,11 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             @Override public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    processImplementation.start(primaryStage);
+                    try {
+                        processImplementation.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

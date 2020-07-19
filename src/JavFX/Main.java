@@ -39,6 +39,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -368,7 +369,11 @@ public class Main extends Application {
             @Override public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    processImplementation.start(stage);
+                    try {
+                        processImplementation.start(stage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

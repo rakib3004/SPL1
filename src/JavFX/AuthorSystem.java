@@ -325,7 +325,11 @@ public class AuthorSystem extends Application {
                 @Override public void handle(ActionEvent e) {
                     ProcessImplementation processImplementation = new ProcessImplementation();
                     {
-                        processImplementation.start(primaryStage);
+                        try {
+                            processImplementation.start(primaryStage);
+                        } catch (FileNotFoundException fileNotFoundException) {
+                            fileNotFoundException.printStackTrace();
+                        }
                     }
                 }
             });

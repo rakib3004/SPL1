@@ -119,68 +119,61 @@ try {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-        Button twoVariableRegression = new Button("MultiVariable Regression");
-        Button threeVariableRegression = new Button("Analytic Hierarchy Process");
-        Button fourVariableRegression = new Button("Page Rank Algorithm");
-        Button twoVariableRegression = new Button("Two Variable Regression");
-        Button threeVariableRegression = new Button("Three Variable Regression");
-        Button fourVariableRegression = new Button("Four Variable Regression");
+        Button multiVariableRegression = new Button("MultiVariable Regression");
+        Button analyticHierarchyProcess1 = new Button("Analytic Hierarchy Process");
+        Button pageRankAlgorithm = new Button("Page Rank Algorithm");
 
+        multiVariableRegression.setPrefSize(410,230);
+        analyticHierarchyProcess1.setPrefSize(410,230);
+        pageRankAlgorithm.setPrefSize(410,230);
 
+        multiVariableRegression.setFont(font2);
+        analyticHierarchyProcess1.setFont(font2);
+        pageRankAlgorithm.setFont(font2);
+        multiVariableRegression.setTranslateX(30);
+        multiVariableRegression.setTranslateY(35);
+        analyticHierarchyProcess1.setTranslateX(30);
+        analyticHierarchyProcess1.setTranslateY(270);
+        pageRankAlgorithm.setTranslateX(30);
+        pageRankAlgorithm.setTranslateY(505);
 
-
-        twoVariableRegression.setPrefSize(410,230);
-        threeVariableRegression.setPrefSize(410,230);
-        fourVariableRegression.setPrefSize(410,230);
-
-        twoVariableRegression.setFont(font2);
-        threeVariableRegression.setFont(font2);
-        fourVariableRegression.setFont(font2);
-        twoVariableRegression.setTranslateX(30);
-        twoVariableRegression.setTranslateY(35);
-        threeVariableRegression.setTranslateX(30);
-        threeVariableRegression.setTranslateY(270);
-        fourVariableRegression.setTranslateX(30);
-        fourVariableRegression.setTranslateY(505);
-
-        twoVariableRegression.setContentDisplay(ContentDisplay.TOP);
-        threeVariableRegression.setContentDisplay(ContentDisplay.TOP);
-        fourVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        multiVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        analyticHierarchyProcess1.setContentDisplay(ContentDisplay.TOP);
+        pageRankAlgorithm.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"implement.png");
         Image image1 = new Image(fileInputStream1);
-        twoVariableRegression.setGraphic(new ImageView(image1));
+        multiVariableRegression.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"analysis.png");
         Image image2 = new Image(fileInputStream2);
-        threeVariableRegression.setGraphic(new ImageView(image2));
+        analyticHierarchyProcess1.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"description.png");
         Image image3 = new Image(fileInputStream3);
-        fourVariableRegression.setGraphic(new ImageView(image3));
-        twoVariableRegression.setOnAction(actionEvent -> {
-            TwoVariableRegression twoVariableRegression1 = new TwoVariableRegression();
+        pageRankAlgorithm.setGraphic(new ImageView(image3));
+        multiVariableRegression.setOnAction(actionEvent -> {
+            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
             try {
-
-                twoVariableRegression1.start(primaryStage);
+                multiVaribleRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        threeVariableRegression.setOnAction(actionEvent -> {
-            ThreeVariableRegression threeVariableRegression1 = new ThreeVariableRegression();
+        analyticHierarchyProcess1.setOnAction(actionEvent -> {
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
             try {
-                threeVariableRegression1.start(primaryStage);
+                analyticHierarchyAlgorithm.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        fourVariableRegression.setOnAction(actionEvent -> {
-            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+        pageRankAlgorithm.setOnAction(actionEvent -> {
+            PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
             try {
-                fourVariableRegression1.start(primaryStage);
+                pageRankAlgorithmFx.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -237,11 +230,10 @@ try {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            Main main = new Main();
+            AuthorSystem authorSystem = new AuthorSystem();
             try {
-                main.start(primaryStage);
-            }
-            catch (Exception exception){
+                authorSystem.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -252,8 +244,8 @@ try {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,twoVariableRegression,
-                threeVariableRegression,exit,back,home,text,fourVariableRegression);
+        group.getChildren().addAll(canvas,multiVariableRegression,
+                analyticHierarchyProcess1,exit,back,home,text,pageRankAlgorithm);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
