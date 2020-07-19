@@ -1,4 +1,4 @@
-package RegressionFx;
+package RankingAlgorithmFx;
 
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
@@ -12,6 +12,9 @@ import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
 import RankingAlgorithmFx.ProcessImplementation;
+import RegressionFx.FourVariableRegression;
+import RegressionFx.ThreeVariableRegression;
+import RegressionFx.TwoVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;

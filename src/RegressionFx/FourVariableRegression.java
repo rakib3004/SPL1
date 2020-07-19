@@ -1,6 +1,7 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
+import RankingAlgorithmFx.MultiVaribleRegression;
 import TableViewPackage.MLR_Chart_View;
 import TableViewPackage.MLR_TableView;
 import MultiVariableRegression.MultipleLinearRegression;

@@ -4,6 +4,7 @@ import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
+import RankingAlgorithmFx.MultiVaribleRegression;
 import Regression.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
