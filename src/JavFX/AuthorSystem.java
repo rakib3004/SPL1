@@ -95,9 +95,10 @@ public class AuthorSystem extends Application {
                 }
             });
             processAnalysis.setOnAction(actionEvent -> {
-                BookInformationShow bookInformationShow = new BookInformationShow();
+ProcessAnalysis processAnalysis1 = new ProcessAnalysis();
+
                 try {
-                    bookInformationShow.start(primaryStage);
+                    processAnalysis1.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

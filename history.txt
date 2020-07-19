@@ -1,5 +1,3 @@
-Main	Sun 19.07.2020 at 12:26:23 PM
-AuthorSystem	Sun 19.07.2020 at 12:26:25 PM
-ProcessImplementation	Sun 19.07.2020 at 12:26:26 PM
-MultiVaribleRegression	Sun 19.07.2020 at 12:26:28 PM
-ProcessImplementation	Sun 19.07.2020 at 12:26:30 PM
+Main	Sun 19.07.2020 at 12:42:15 PM
+AuthorSystem	Sun 19.07.2020 at 12:42:18 PM
+ProcessAnalysis	Sun 19.07.2020 at 12:42:19 PM
