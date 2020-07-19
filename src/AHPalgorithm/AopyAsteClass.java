@@ -147,4 +147,24 @@ public class AopyAsteClass {
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
     }
+    public void swapPosition(){
+        /*twoVariableRegression.setTranslateX(50);
+        twoVariableRegression.setTranslateY(20);
+        threeVariableRegression.setTranslateX(50);
+        threeVariableRegression.setTranslateY(380);
+        fourVariableRegression.setTranslateX(50);
+        fourVariableRegression.setTranslateY(740);
+
+        double temp;
+        temp= twoVariableRegression.getTranslateX();
+        twoVariableRegression.setTranslateX(twoVariableRegression.getTranslateY());
+        twoVariableRegression.setTranslateY(temp);
+
+        temp=      threeVariableRegression.getTranslateX();
+        threeVariableRegression.setTranslateX(threeVariableRegression.getTranslateY());
+        threeVariableRegression.setTranslateY(temp);
+        temp=     fourVariableRegression.getTranslateX();
+        fourVariableRegression.setTranslateX(fourVariableRegression.getTranslateY());
+        fourVariableRegression.setTranslateY(temp);*/
+    }
 }
