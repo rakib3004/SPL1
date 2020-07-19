@@ -71,17 +71,17 @@ public class AuthorSystem extends Application {
             processAnalysis.setContentDisplay(ContentDisplay.TOP);
             processDescription.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"automatic.png");
+                    "src"+ File.separator +"Images"+ File.separator +"implement.png");
             Image image1 = new Image(fileInputStream1);
             processImplementation.setGraphic(new ImageView(image1));
 
             FileInputStream fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"manual.png");
+                    "src"+ File.separator +"Images"+ File.separator +"analysis.png");
             Image image2 = new Image(fileInputStream2);
             processAnalysis.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"document.png");
+                    "src"+ File.separator +"Images"+ File.separator +"description.png");
             Image image3 = new Image(fileInputStream3);
             processDescription.setGraphic(new ImageView(image3));
 
@@ -125,7 +125,7 @@ public class AuthorSystem extends Application {
             exit.setPrefSize(120, 20);
             exit.setContentDisplay(ContentDisplay.LEFT);
             exit.setFont(font);
-            Text text = new Text("Librarian Desk");
+            Text text = new Text("System/Process");
             text.setTranslateX(575);
             text.setTranslateY(500);
             text.setFont(font1);
@@ -179,7 +179,7 @@ public class AuthorSystem extends Application {
             graphicsContext.drawImage(background,0,0);
             Group group = new Group();
             group.getChildren().addAll(canvas,processImplementation,
-                processAnalysis,exit,back,home,processDescription);
+                processAnalysis,exit,back,home,text,processDescription);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidation crossValidation2 = new CrossValidation();
