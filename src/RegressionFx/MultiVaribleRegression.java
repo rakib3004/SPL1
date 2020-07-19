@@ -11,7 +11,7 @@ import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
-import RankingAlgorithmFx.Statistics;
+import RankingAlgorithmFx.ProcessImplementation;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;
@@ -101,9 +101,9 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            Statistics statistics = new Statistics();
+            ProcessImplementation processImplementation = new ProcessImplementation();
             try {
-                statistics.start(primaryStage);
+                processImplementation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -257,9 +257,9 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

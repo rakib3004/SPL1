@@ -11,7 +11,7 @@ import LibraryFunctionality.ReadingRoom;
 import ProjectDescription.About;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
-import RankingAlgorithmFx.Statistics;
+import RankingAlgorithmFx.ProcessImplementation;
 import RegressionFx.FourVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
@@ -87,7 +87,7 @@ public class AuthorSystem extends Application {
 
             processImplementation.setOnAction(actionEvent -> {
                 try {
-            Statistics statistics = new Statistics();
+            ProcessImplementation statistics = new ProcessImplementation();
             statistics.start(primaryStage);
                 }
                 catch (Exception exception) {
@@ -323,9 +323,9 @@ public class AuthorSystem extends Application {
 
             processVisualization.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    Statistics statistics = new Statistics();
+                    ProcessImplementation processImplementation = new ProcessImplementation();
                     {
-                        statistics.start(primaryStage);
+                        processImplementation.start(primaryStage);
                     }
                 }
             });

@@ -11,7 +11,7 @@ import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
-import RankingAlgorithmFx.Statistics;
+import RankingAlgorithmFx.ProcessImplementation;
 import RegressionFx.FourVariableRegression;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -321,9 +321,9 @@ public class LibraryDesk extends Application {
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

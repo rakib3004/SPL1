@@ -9,7 +9,7 @@ import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
-import RankingAlgorithmFx.Statistics;
+import RankingAlgorithmFx.ProcessImplementation;
 import RegressionFx.FourVariableRegression;
 import SimpleRegression.DoublyLinearRegression;
 import JavFX.AuthorSystem;
@@ -283,9 +283,9 @@ UIDisplayFX uiDisplayFX = new UIDisplayFX();
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

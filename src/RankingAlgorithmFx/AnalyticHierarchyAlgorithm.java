@@ -109,9 +109,9 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            Statistics statistics = new Statistics();
+            ProcessImplementation processImplementation = new ProcessImplementation();
             try {
-                statistics.start(primaryStage);
+                processImplementation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -274,9 +274,9 @@ AHPcalculation ahPcalculation = new AHPcalculation();
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

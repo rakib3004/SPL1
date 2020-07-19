@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Statistics extends Application {
+public class ProcessImplementation extends Application {
 
 
     @Override
@@ -252,9 +252,9 @@ try {
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

@@ -93,10 +93,10 @@ public class PageRankAlgorithm extends Application {
             }
         });
         back.setOnAction(actionEvent -> {
-            Statistics statistics = new Statistics();
+            ProcessImplementation processImplementation = new ProcessImplementation();
 
             try {
-                statistics.start(primaryStage);
+                processImplementation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -274,9 +274,9 @@ public class PageRankAlgorithm extends Application {
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Statistics statistics = new Statistics();
+                ProcessImplementation processImplementation = new ProcessImplementation();
                 {
-                    statistics.start(primaryStage);
+                    processImplementation.start(primaryStage);
                 }
             }
         });

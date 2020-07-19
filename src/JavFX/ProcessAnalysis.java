@@ -8,7 +8,7 @@ import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
-import RankingAlgorithmFx.Statistics;
+import RankingAlgorithmFx.ProcessImplementation;
 import RegressionFx.FourVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
@@ -41,70 +41,6 @@ public class ProcessAnalysis extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-    /*    Button processValueAreaChart = new Button("ProcessValue AreaChart");
-        Button processValueLineArt = new Button("ProcessValue LineArt");
-        Button processValuePlotting = new Button("ProcessValue Plotting");
-
-        processValueAreaChart.setTranslateX(100);
-        processValueAreaChart.setTranslateY(50);
-        processValueLineArt.setTranslateX(460);
-        processValueLineArt.setTranslateY(50);
-        processValuePlotting.setTranslateX(820);
-        processValuePlotting.setTranslateY(50);
-        processValueAreaChart.setOnAction(actionEvent -> {
-            CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
-            try {
-                combinedStackedAreaChart.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        processValueLineArt.setOnAction(actionEvent -> {
-            CombinedLineChart crossValidationVisualization = new CombinedLineChart();
-            try {
-                crossValidationVisualization.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        processValuePlotting.setOnAction(actionEvent -> {
-            CombinedScatterChart combinedScatterChart = new CombinedScatterChart();
-            try {
-                combinedScatterChart.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        setStyle(processValueAreaChart);
-        setStyle(processValueLineArt);
-        setStyle(processValuePlotting);
-        processValueAreaChart.setPrefSize(350, 80);
-        processValueLineArt.setPrefSize(350, 80);
-        processValuePlotting.setPrefSize(350, 80);
-
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);*/
-    //    Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
 
             Font font = new Font(19);
             Font font1 = new Font(47);
@@ -384,9 +320,9 @@ public class ProcessAnalysis extends Application {
 
             processVisualization.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    Statistics statistics = new Statistics();
+                    ProcessImplementation processImplementation = new ProcessImplementation();
                     {
-                        statistics.start(primaryStage);
+                        processImplementation.start(primaryStage);
                     }
                 }
             });
