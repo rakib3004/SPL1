@@ -130,66 +130,66 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-        Button processImplementation = new Button("Process Implementation");
-        Button processAnalysis = new Button("Process Analysis");
-        Button processDescription = new Button("Process Description");
+        Button twoVariableRegression = new Button("Two Variable Regression");
+        Button threeVariableRegression = new Button("Three Variable Regression");
+        Button fourVariableRegression = new Button("Four Variable Regression");
 
 
-        processImplementation.setPrefSize(410,230);
-        processAnalysis.setPrefSize(410,230);
-        processDescription.setPrefSize(410,230);
 
-        processImplementation.setFont(font2);
-        processAnalysis.setFont(font2);
-        processDescription.setFont(font2);
-        processImplementation.setTranslateX(30);
-        processImplementation.setTranslateY(35);
-        processAnalysis.setTranslateX(30);
-        processAnalysis.setTranslateY(270);
-        processDescription.setTranslateX(30);
-        processDescription.setTranslateY(505);
 
-        processImplementation.setContentDisplay(ContentDisplay.TOP);
-        processAnalysis.setContentDisplay(ContentDisplay.TOP);
-        processDescription.setContentDisplay(ContentDisplay.TOP);
+        twoVariableRegression.setPrefSize(410,230);
+        threeVariableRegression.setPrefSize(410,230);
+        fourVariableRegression.setPrefSize(410,230);
+
+        twoVariableRegression.setFont(font2);
+        threeVariableRegression.setFont(font2);
+        fourVariableRegression.setFont(font2);
+        twoVariableRegression.setTranslateX(30);
+        twoVariableRegression.setTranslateY(35);
+        threeVariableRegression.setTranslateX(30);
+        threeVariableRegression.setTranslateY(270);
+        fourVariableRegression.setTranslateX(30);
+        fourVariableRegression.setTranslateY(505);
+
+        twoVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        threeVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        fourVariableRegression.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"implement.png");
         Image image1 = new Image(fileInputStream1);
-        processImplementation.setGraphic(new ImageView(image1));
+        twoVariableRegression.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"analysis.png");
         Image image2 = new Image(fileInputStream2);
-        processAnalysis.setGraphic(new ImageView(image2));
+        threeVariableRegression.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"description.png");
         Image image3 = new Image(fileInputStream3);
-        processDescription.setGraphic(new ImageView(image3));
+        fourVariableRegression.setGraphic(new ImageView(image3));
+        twoVariableRegression.setOnAction(actionEvent -> {
+            TwoVariableRegression twoVariableRegression1 = new TwoVariableRegression();
+            try {
 
-        processImplementation.setOnAction(actionEvent -> {
-            try {
-                ProcessImplementation statistics = new ProcessImplementation();
-                statistics.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        processAnalysis.setOnAction(actionEvent -> {
-            BookInformationShow bookInformationShow = new BookInformationShow();
-            try {
-                bookInformationShow.start(primaryStage);
+                twoVariableRegression1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        processDescription.setOnAction(actionEvent -> {
+        threeVariableRegression.setOnAction(actionEvent -> {
+            ThreeVariableRegression threeVariableRegression1 = new ThreeVariableRegression();
             try {
-                About about = new About();
-                about.start(primaryStage);
+                threeVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
-            catch (Exception exception) {
+        });
+        fourVariableRegression.setOnAction(actionEvent -> {
+            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+            try {
+                fourVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -260,8 +260,8 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,processImplementation,
-                processAnalysis,exit,back,home,text,processDescription);
+        group.getChildren().addAll(canvas,twoVariableRegression,
+                threeVariableRegression,exit,back,home,text,fourVariableRegression);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
@@ -511,7 +511,6 @@ FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         menuBar.setStyle(" -fx-spacing: 47;");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
     //    graphicsContext.drawImage(image,0,0);
 Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
