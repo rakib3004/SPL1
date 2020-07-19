@@ -127,7 +127,7 @@ ProcessAnalysis processAnalysis1 = new ProcessAnalysis();
             exit.setContentDisplay(ContentDisplay.LEFT);
             exit.setFont(font);
             Text text = new Text("System/Process");
-            text.setTranslateX(575);
+            text.setTranslateX(600);
             text.setTranslateY(500);
             text.setFont(font1);
             text.setFill(Color.BLACK);

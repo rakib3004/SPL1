@@ -140,7 +140,7 @@ public class ReadingRoom extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("Library's Reading Room ");
-        text.setTranslateX(575);
+        text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);

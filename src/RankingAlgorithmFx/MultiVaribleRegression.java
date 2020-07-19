@@ -57,9 +57,6 @@ public class MultiVaribleRegression extends Application {
         Button threeVariableRegression = new Button("Three Variable Regression");
         Button fourVariableRegression = new Button("Four Variable Regression");
 
-
-
-
         twoVariableRegression.setPrefSize(410,230);
         threeVariableRegression.setPrefSize(410,230);
         fourVariableRegression.setPrefSize(410,230);

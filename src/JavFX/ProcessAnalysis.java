@@ -45,43 +45,43 @@ public class ProcessAnalysis extends Application {
             Font font = new Font(19);
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
-            Button processValueAreaChart = new Button("ProcessValue AreaChart");
-            Button processValueLineArt = new Button("ProcessValue LineArt");
-            Button processValuePlotting = new Button("ProcessValue Plotting");
+            Button crossValidationAnalysis = new Button("Cross Validation Analysis");
+            Button sevenValueStatistics = new Button("Seven Value Statistics");
+            Button dataOptimization = new Button("Data Optimization");
 
-            processValueAreaChart.setPrefSize(410,230);
-            processValueLineArt.setPrefSize(410,230);
-            processValuePlotting.setPrefSize(410,230);
+            crossValidationAnalysis.setPrefSize(410,230);
+            sevenValueStatistics.setPrefSize(410,230);
+            dataOptimization.setPrefSize(410,230);
 
-            processValueAreaChart.setFont(font);
-            processValueLineArt.setFont(font);
-            processValuePlotting.setFont(font2);
-            processValueAreaChart.setTranslateX(30);
-            processValueAreaChart.setTranslateY(35);
-            processValueLineArt.setTranslateX(30);
-            processValueLineArt.setTranslateY(270);
-            processValuePlotting.setTranslateX(30);
-            processValuePlotting.setTranslateY(505);
+            crossValidationAnalysis.setFont(font);
+            sevenValueStatistics.setFont(font);
+            dataOptimization.setFont(font2);
+            crossValidationAnalysis.setTranslateX(30);
+            crossValidationAnalysis.setTranslateY(35);
+            sevenValueStatistics.setTranslateX(30);
+            sevenValueStatistics.setTranslateY(270);
+            dataOptimization.setTranslateX(30);
+            dataOptimization.setTranslateY(505);
 
-            processValueAreaChart.setContentDisplay(ContentDisplay.TOP);
-            processValueLineArt.setContentDisplay(ContentDisplay.TOP);
-            processValuePlotting.setContentDisplay(ContentDisplay.TOP);
+            crossValidationAnalysis.setContentDisplay(ContentDisplay.TOP);
+            sevenValueStatistics.setContentDisplay(ContentDisplay.TOP);
+            dataOptimization.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"automatic.png");
             Image image1 = new Image(fileInputStream1);
-            processValueAreaChart.setGraphic(new ImageView(image1));
+            crossValidationAnalysis.setGraphic(new ImageView(image1));
 
             FileInputStream fileInputStream2 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"manual.png");
             Image image2 = new Image(fileInputStream2);
-            processValueLineArt.setGraphic(new ImageView(image2));
+            sevenValueStatistics.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"document.png");
             Image image3 = new Image(fileInputStream3);
-            processValuePlotting.setGraphic(new ImageView(image3));
+            dataOptimization.setGraphic(new ImageView(image3));
 
-            processValueAreaChart.setOnAction(actionEvent -> {
+            crossValidationAnalysis.setOnAction(actionEvent -> {
                 try {
                     AddBook addBook = new AddBook();
                     addBook.start(primaryStage);
@@ -90,7 +90,7 @@ public class ProcessAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-            processValueLineArt.setOnAction(actionEvent -> {
+            sevenValueStatistics.setOnAction(actionEvent -> {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 try {
                     bookInformationShow.start(primaryStage);
@@ -98,7 +98,7 @@ public class ProcessAnalysis extends Application {
                     exception.printStackTrace();
                 }
             });
-            processValuePlotting.setOnAction(actionEvent -> {
+            dataOptimization.setOnAction(actionEvent -> {
                 try {
                     RemoveBook removeBook = new RemoveBook();
                     removeBook.start(primaryStage);
@@ -121,7 +121,7 @@ public class ProcessAnalysis extends Application {
             exit.setPrefSize(120, 20);
             exit.setContentDisplay(ContentDisplay.LEFT);
             exit.setFont(font);
-            Text text = new Text("Librarian Desk");
+            Text text = new Text("Process Analysis");
             text.setTranslateX(575);
             text.setTranslateY(500);
             text.setFont(font1);
@@ -159,9 +159,9 @@ public class ProcessAnalysis extends Application {
             Image image6 = new Image(fileInputStream6);
             back.setGraphic(new ImageView(image6));
             back.setOnAction(actionEvent -> {
-                Main main = new Main();
+                AuthorSystem authorSystem = new AuthorSystem();
                 try {
-                    main.start(primaryStage);
+                    authorSystem.start(primaryStage);
                 }
                 catch (Exception exception){
                     exception.printStackTrace();
@@ -174,9 +174,9 @@ public class ProcessAnalysis extends Application {
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
             graphicsContext.drawImage(background,0,0);
             Group group = new Group();
-        group.getChildren().addAll(canvas,processValueAreaChart,
-                processValueLineArt,
-                processValuePlotting,exit,home,back);
+        group.getChildren().addAll(canvas,crossValidationAnalysis,
+                sevenValueStatistics,
+                dataOptimization,exit,home,text,back);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidation crossValidation2 = new CrossValidation();
