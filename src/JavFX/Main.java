@@ -75,11 +75,11 @@ public class Main extends Application {
         welcome.setPrefSize(125, 55);
 
         welcome.setOnAction(actionEvent -> {
-
-          FxSecondWindow fxSecondWindow = new FxSecondWindow();
+            Main main = new Main();
             try {
-                fxSecondWindow.start(stage);
-            } catch (Exception exception) {
+                main.start(stage);
+            }
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });

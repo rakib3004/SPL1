@@ -133,31 +133,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         readersMood.setPrefSize(160, 30);
         about.setPrefSize(160,30);
 
-        administrationMood.setOnAction(actionEvent -> {
-            FXThirdWindow fxThirdWindow = new FXThirdWindow();
-            try {
-                fxThirdWindow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        readersMood.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        about.setOnAction(actionEvent -> {
-            About about1 = new About();
-            try {
-                about1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        group.getChildren().addAll(readersMood,administrationMood,about);
+
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
