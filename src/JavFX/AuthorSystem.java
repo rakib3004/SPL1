@@ -48,27 +48,27 @@ public class AuthorSystem extends Application {
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
             Button processImplementation = new Button("Process Implementation");
-            Button processValidation = new Button("Process Validation");
-            Button sevenValueCalculation = new Button("Seven Value Calculation");
+            Button processAnalysis = new Button("Process Analysis");
+            Button processDescription = new Button("Process Description");
 
 
             processImplementation.setPrefSize(410,230);
-            processValidation.setPrefSize(410,230);
-            sevenValueCalculation.setPrefSize(410,230);
+            processAnalysis.setPrefSize(410,230);
+            processDescription.setPrefSize(410,230);
 
             processImplementation.setFont(font2);
-            processValidation.setFont(font2);
-            sevenValueCalculation.setFont(font2);
+            processAnalysis.setFont(font2);
+            processDescription.setFont(font2);
             processImplementation.setTranslateX(30);
             processImplementation.setTranslateY(35);
-            processValidation.setTranslateX(30);
-            processValidation.setTranslateY(270);
-            sevenValueCalculation.setTranslateX(30);
-            sevenValueCalculation.setTranslateY(505);
+            processAnalysis.setTranslateX(30);
+            processAnalysis.setTranslateY(270);
+            processDescription.setTranslateX(30);
+            processDescription.setTranslateY(505);
 
             processImplementation.setContentDisplay(ContentDisplay.TOP);
-            processValidation.setContentDisplay(ContentDisplay.TOP);
-            sevenValueCalculation.setContentDisplay(ContentDisplay.TOP);
+            processAnalysis.setContentDisplay(ContentDisplay.TOP);
+            processDescription.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"automatic.png");
             Image image1 = new Image(fileInputStream1);
@@ -77,23 +77,23 @@ public class AuthorSystem extends Application {
             FileInputStream fileInputStream2 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"manual.png");
             Image image2 = new Image(fileInputStream2);
-            processValidation.setGraphic(new ImageView(image2));
+            processAnalysis.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"document.png");
             Image image3 = new Image(fileInputStream3);
-            sevenValueCalculation.setGraphic(new ImageView(image3));
+            processDescription.setGraphic(new ImageView(image3));
 
             processImplementation.setOnAction(actionEvent -> {
                 try {
-                    AddBook addBook = new AddBook();
-                    addBook.start(primaryStage);
+            Statistics statistics = new Statistics();
+            statistics.start(primaryStage);
                 }
                 catch (Exception exception) {
                     exception.printStackTrace();
                 }
             });
-            processValidation.setOnAction(actionEvent -> {
+            processAnalysis.setOnAction(actionEvent -> {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 try {
                     bookInformationShow.start(primaryStage);
@@ -101,7 +101,7 @@ public class AuthorSystem extends Application {
                     exception.printStackTrace();
                 }
             });
-            sevenValueCalculation.setOnAction(actionEvent -> {
+            processDescription.setOnAction(actionEvent -> {
                 try {
                     RemoveBook removeBook = new RemoveBook();
                     removeBook.start(primaryStage);
@@ -178,7 +178,7 @@ public class AuthorSystem extends Application {
             graphicsContext.drawImage(background,0,0);
             Group group = new Group();
             group.getChildren().addAll(canvas,processImplementation,
-                processValidation,exit,back,home,sevenValueCalculation);
+                processAnalysis,exit,back,home,processDescription);
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidation crossValidation2 = new CrossValidation();
