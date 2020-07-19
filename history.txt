@@ -1,2 +1,4 @@
 Main	Sat 18.07.2020 at 07:50:57 PM
 SystemAnalysis	Sat 18.07.2020 at 07:51:03 PM
+FXThirdWindow	Sun 19.07.2020 at 09:20:32 AM
+SystemAnalysis	Sun 19.07.2020 at 09:21:00 AM

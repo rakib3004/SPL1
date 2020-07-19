@@ -1,8 +1,6 @@
 package ProjectDescription;
 
 import FilePackage.DateTimeWriter;
-import JavFX.AuthorSystem;
-import JavFX.FxSecondWindow;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;

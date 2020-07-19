@@ -5,7 +5,6 @@ import AHPalgorithm.AHPprocessImplementation;
 import DataComparing.CodeValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.AuthorSystem;
-import JavFX.FXThirdWindow;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
