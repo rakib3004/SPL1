@@ -8,7 +8,7 @@ import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RankingAlgorithmFx.PageRankAlgorithm;
+import RecommendationAlgorithm.PageRankAlgorithm;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

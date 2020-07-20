@@ -8,7 +8,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import RankingAlgorithmFx.PageRankAlgorithm;
+import RecommendationAlgorithm.PageRankAlgorithm;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;

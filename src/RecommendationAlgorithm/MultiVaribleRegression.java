@@ -1,7 +1,5 @@
-package RankingAlgorithmFx;
+package RecommendationAlgorithm;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
@@ -9,15 +7,12 @@ import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenValueStatistics;
 import InfoDisplay.BookInformationShow;
+import JavFX.Main;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
 import RegressionFx.FourVariableRegression;
-import TableViewPackage.AHP_Chart_View;
-import TableViewPackage.AHP_TableView;
+import RegressionFx.ThreeVariableRegression;
+import RegressionFx.TwoVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;
@@ -28,86 +23,143 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class AnalyticHierarchyAlgorithm extends Application {
-    PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
-    int numberOfBooks;
-    Processing processing = new Processing();
-    BookNumber bookNumber = new BookNumber();
+public class MultiVaribleRegression extends Application {
 
-AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-
+    public void start(Stage primaryStage) throws FileNotFoundException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button tableView = new Button("Table View");
-        tableView.setTranslateX(140);
-        tableView.setTranslateY(50);
-        tableView.setOnAction(actionEvent -> {
-            AHP_TableView ahpTableViewFX = new AHP_TableView();
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+        Button twoVariableRegression = new Button("Two Variable Regression");
+        Button threeVariableRegression = new Button("Three Variable Regression");
+        Button fourVariableRegression = new Button("Four Variable Regression");
+
+        twoVariableRegression.setPrefSize(410,230);
+        threeVariableRegression.setPrefSize(410,230);
+        fourVariableRegression.setPrefSize(410,230);
+
+        twoVariableRegression.setFont(font2);
+        threeVariableRegression.setFont(font2);
+        fourVariableRegression.setFont(font2);
+        twoVariableRegression.setTranslateX(30);
+        twoVariableRegression.setTranslateY(35);
+        threeVariableRegression.setTranslateX(30);
+        threeVariableRegression.setTranslateY(270);
+        fourVariableRegression.setTranslateX(30);
+        fourVariableRegression.setTranslateY(505);
+
+        twoVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        threeVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        fourVariableRegression.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+        Image image1 = new Image(fileInputStream1);
+        twoVariableRegression.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+        Image image2 = new Image(fileInputStream2);
+        threeVariableRegression.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"description.png");
+        Image image3 = new Image(fileInputStream3);
+        fourVariableRegression.setGraphic(new ImageView(image3));
+        twoVariableRegression.setOnAction(actionEvent -> {
+            TwoVariableRegression twoVariableRegression1 = new TwoVariableRegression();
             try {
 
-                ahpTableViewFX.start(primaryStage);
-            }
-            catch (Exception exception) {
+                twoVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        setStyle(tableView);
-        tableView.setPrefSize(350,80);
-        Button graphView = new Button("Graph View");
-        graphView.setTranslateX(500);
-        graphView.setTranslateY(50);
-        graphView.setOnAction(actionEvent -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+        threeVariableRegression.setOnAction(actionEvent -> {
+            ThreeVariableRegression threeVariableRegression1 = new ThreeVariableRegression();
             try {
-                ahp_chart_view.start(primaryStage);
-            }
-            catch (Exception exception) {
+                threeVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        setStyle(graphView);
-        graphView.setPrefSize(350,80);
-
-        Button consoleView = new Button("Console View");
-        consoleView.setTranslateX(860);
-        consoleView.setTranslateY(50);
-        consoleView.setOnAction(actionEvent -> {
+        fourVariableRegression.setOnAction(actionEvent -> {
+            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             try {
-
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
-            }
-
-            catch (Exception exception) {
+                fourVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        consoleView.setPrefSize(350, 80);
-        setStyle(consoleView);
 
-        Button back = new Button("Back");
         Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("System/Process");
+        text.setTranslateX(575);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"home.png");
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"back.png");
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
             ProcessImplementation processImplementation = new ProcessImplementation();
             try {
@@ -116,21 +168,15 @@ AHPcalculation ahPcalculation = new AHPcalculation();
                 exception.printStackTrace();
             }
         });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        //Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
+        group.getChildren().addAll(canvas,twoVariableRegression,
+                threeVariableRegression,exit,back,home,text,fourVariableRegression);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
@@ -142,13 +188,11 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         AddBook addBook = new AddBook();
         RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
-
         Menu menu1 = new Menu("User");
         Menu menu2 = new Menu("Librarian");
         Menu menu3 = new Menu("Analysis");
         Menu menu4 = new Menu("Process");
         Menu menu5 = new Menu("Shortcut");
-
         MenuItem menuItem1a = new MenuItem("Default Recommendation");
         MenuItem menuItem1b = new MenuItem("User Based Recommendation");
         menu1.getItems().addAll(menuItem1a,menuItem1b);
@@ -166,8 +210,6 @@ AHPcalculation ahPcalculation = new AHPcalculation();
                 e.printStackTrace();
             }
         });
-
-
         MenuItem menuItem2a = new MenuItem("Add book");
         MenuItem menuItem2b = new MenuItem("Book Info");
         MenuItem menuItem2c = new MenuItem("Remove Book");
@@ -192,9 +234,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
                 e.printStackTrace();
             }
         });
-
         menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
-
         MenuItem menuItem3a = new MenuItem("Cross Validation");
         MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
         MenuItem menuItem3c = new MenuItem("Data Optimization");
@@ -217,7 +257,6 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         });
 
         menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
-
         MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
         MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
         MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
@@ -391,9 +430,8 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         menuBar.setStyle(" -fx-spacing: 47;");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-      //  graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+    //    graphicsContext.drawImage(image,0,0);
+Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");

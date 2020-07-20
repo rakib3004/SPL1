@@ -1,7 +1,7 @@
 package RegressionFx;
 
 import FilePackage.DateTimeWriter;
-import RankingAlgorithmFx.MultiVaribleRegression;
+import RecommendationAlgorithm.MultiVaribleRegression;
 import SimpleRegression.DoublyLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;

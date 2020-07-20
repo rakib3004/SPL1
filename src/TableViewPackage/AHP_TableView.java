@@ -9,7 +9,7 @@ import Methods.ReverseSorting;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
+import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

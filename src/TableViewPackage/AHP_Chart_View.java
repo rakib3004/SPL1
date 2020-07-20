@@ -8,7 +8,7 @@ import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
+import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
