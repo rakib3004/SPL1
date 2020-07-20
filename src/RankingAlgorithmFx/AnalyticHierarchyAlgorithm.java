@@ -7,7 +7,7 @@ import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.BookApplication;
+import InfoDisplay.SevenValueStatistics;
 import InfoDisplay.BookInformationShow;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
@@ -134,7 +134,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
-        BookApplication bookApplication1 = new BookApplication();
+        SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -207,7 +207,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                bookApplication1.start(primaryStage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -37,13 +37,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class BookApplication extends Application {
+public class SevenValueStatistics extends Application {
    PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
     @Override
     public void start(Stage primaryStage) {
         String  className = this.getClass().getSimpleName();
@@ -88,7 +88,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
                         });
                 typeBased.setOnAction(actionEvent -> {
                             try {
-                sevenNumberStatistics.typeStatistics(primaryStage);
+                sevenNumberImplementation.typeStatistics(primaryStage);
 
                             } catch (Exception exception) {
                                 exception.printStackTrace();
@@ -96,7 +96,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
                         });
                         borrowBased.setOnAction(actionEvent -> {
                             try {
-                                sevenNumberStatistics.borrowStatistics(primaryStage);
+                                sevenNumberImplementation.borrowStatistics(primaryStage);
 
                             } catch (Exception exception) {
                                 exception.printStackTrace();
@@ -105,7 +105,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
 
                 timeBased.setOnAction(actionEvent -> {
                     try {
-                        sevenNumberStatistics.timeStatistics(primaryStage);
+                        sevenNumberImplementation.timeStatistics(primaryStage);
 
                     } catch (Exception exception) {
                         exception.printStackTrace();
@@ -113,7 +113,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
                 });
         priceBased.setOnAction(actionEvent -> {
             try {
-                sevenNumberStatistics.priceStatistics(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -143,7 +143,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
-        BookApplication bookApplication1 = new BookApplication();
+        SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -216,7 +216,7 @@ SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                bookApplication1.start(primaryStage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

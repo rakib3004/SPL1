@@ -3,9 +3,8 @@ package JavFX;
 import Collection.WriterCollection;
 import CrossValidationProcess.*;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.BookApplication;
+import InfoDisplay.SevenValueStatistics;
 import InfoDisplay.BookInformationShow;
-import InfoDisplay.SevenNumberStatistics;
 import LibraryFunctionality.ReadingRoom;
 import RankingAlgorithmFx.AnalyticHierarchyAlgorithm;
 import RankingAlgorithmFx.PageRankAlgorithm;
@@ -92,9 +91,9 @@ public class ProcessAnalysis extends Application {
                 }
             });
             sevenValueStatistics.setOnAction(actionEvent -> {
-                SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+SevenValueStatistics bookApplication = new SevenValueStatistics();
                 try {
-                    sevenNumberStatistics.start(primaryStage);
+                    bookApplication.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -180,7 +179,7 @@ public class ProcessAnalysis extends Application {
             ReadingRoom readingRoom2 = new ReadingRoom();
             LibraryDesk libraryDesk2 = new LibraryDesk();
             CrossValidation crossValidation2 = new CrossValidation();
-            BookApplication bookApplication1 = new BookApplication();
+            SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
             WriterCollection writerCollection = new WriterCollection();
             FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
             AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -253,7 +252,7 @@ public class ProcessAnalysis extends Application {
             });
             menuItem3b.setOnAction(actionEvent -> {
                 try {
-                    bookApplication1.start(primaryStage);
+                    sevenValueStatistics1.start(primaryStage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

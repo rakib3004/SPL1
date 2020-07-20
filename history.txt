@@ -1,13 +1,4 @@
-Main	Sun 19.07.2020 at 06:41:06 PM
-AuthorSystem	Sun 19.07.2020 at 06:41:12 PM
-ProcessAnalysis	Sun 19.07.2020 at 06:41:14 PM
-AuthorSystem	Sun 19.07.2020 at 06:41:32 PM
-ProcessImplementation	Sun 19.07.2020 at 06:41:37 PM
-AuthorSystem	Sun 19.07.2020 at 06:41:40 PM
-ProcessImplementation	Sun 19.07.2020 at 06:41:42 PM
-MultiVaribleRegression	Sun 19.07.2020 at 06:41:43 PM
-ProcessImplementation	Sun 19.07.2020 at 06:41:46 PM
-MultiVaribleRegression	Sun 19.07.2020 at 06:41:48 PM
-ProcessImplementation	Sun 19.07.2020 at 06:41:52 PM
-AuthorSystem	Sun 19.07.2020 at 06:41:52 PM
-ProcessAnalysis	Sun 19.07.2020 at 06:41:54 PM
+Main	Mon 20.07.2020 at 03:01:49 PM
+AuthorSystem	Mon 20.07.2020 at 03:01:50 PM
+ProcessAnalysis	Mon 20.07.2020 at 03:01:55 PM
+BookApplication	Mon 20.07.2020 at 03:01:56 PM

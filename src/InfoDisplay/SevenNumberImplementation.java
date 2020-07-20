@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class SevenNumberStatistics extends Application {
+public class SevenNumberImplementation extends Application {
 
 ScatterChart scatterChart = new ScatterChart();
 LineChart lineChart = new LineChart();
@@ -56,9 +56,9 @@ StackedArea stackedArea = new StackedArea();
         stackedAreaChart.setTranslateY(400);
 
         back.setOnAction(actionEvent -> {
-BookApplication bookApplication = new BookApplication();
+SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                bookApplication.start(typeStatisticsStage);
+                sevenValueStatistics.start(typeStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -152,9 +152,9 @@ BookApplication bookApplication = new BookApplication();
 
 
         back.setOnAction(actionEvent -> {
-            BookApplication bookApplication = new BookApplication();
+            SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                bookApplication.start(timeStatisticsStage);
+                sevenValueStatistics.start(timeStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -241,9 +241,9 @@ BookApplication bookApplication = new BookApplication();
         stackedAreaChart.setTranslateX(500);
         stackedAreaChart.setTranslateY(400);
         back.setOnAction(actionEvent -> {
-            BookApplication bookApplication = new BookApplication();
+            SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                bookApplication.start(borrowStatisticsStage);
+                sevenValueStatistics.start(borrowStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -318,9 +318,9 @@ BookApplication bookApplication = new BookApplication();
          stackedAreaChart.setTranslateX(500);
          stackedAreaChart.setTranslateY(400);
          back.setOnAction(actionEvent -> {
-             BookApplication bookApplication = new BookApplication();
+             SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
              try {
-                 bookApplication.start(priceStatisticsStage);
+                 sevenValueStatistics.start(priceStatisticsStage);
              } catch (Exception exception) {
                  exception.printStackTrace();
              }

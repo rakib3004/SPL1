@@ -1,7 +1,7 @@
 package VisualRepresentation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.SevenNumberStatistics;
+import InfoDisplay.SevenNumberImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -51,9 +51,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.typeStatistics(primaryStage);
+                sevenNumberImplementation.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -389,9 +389,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.timeStatistics(primaryStage);
+                sevenNumberImplementation.timeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -765,9 +765,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.borrowStatistics(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1060,9 +1060,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.priceStatistics(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

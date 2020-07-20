@@ -3,7 +3,7 @@ import AHPalgorithm.AHPcalculation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
 import MultiVariableRegression.MultipleLinearRegression;
-import InfoDisplay.SevenNumberStatistics;
+import InfoDisplay.SevenNumberImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -60,9 +60,9 @@ double []  year2017Books = new double[7];
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.typeStatistics(primaryStage);
+                sevenNumberImplementation.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -410,9 +410,9 @@ double []  year2017Books = new double[7];
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.timeStatistics(primaryStage);
+                sevenNumberImplementation.timeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -795,9 +795,9 @@ double []  year2017Books = new double[7];
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.borrowStatistics(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1097,9 +1097,9 @@ double []  year2017Books = new double[7];
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            SevenNumberStatistics sevenNumberStatistics = new SevenNumberStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberStatistics.priceStatistics(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

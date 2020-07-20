@@ -7,7 +7,7 @@ import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.BookApplication;
+import InfoDisplay.SevenValueStatistics;
 import InfoDisplay.BookInformationShow;
 import JavFX.*;
 import MainPackage.BookNumber;
@@ -197,7 +197,7 @@ public class ReadingRoom extends Application {
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
-        BookApplication bookApplication1 = new BookApplication();
+        SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -270,7 +270,7 @@ public class ReadingRoom extends Application {
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                bookApplication1.start(primaryStage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -983,7 +983,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
-        BookApplication bookApplication1 = new BookApplication();
+        SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -1056,7 +1056,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                bookApplication1.start(primaryStage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

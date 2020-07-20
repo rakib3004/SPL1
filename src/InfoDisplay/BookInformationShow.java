@@ -166,7 +166,7 @@ this.borrowCountOfBook.start(primaryStage);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
-        BookApplication bookApplication1 = new BookApplication();
+        SevenValueStatistics sevenValueStatistics1 = new SevenValueStatistics();
         WriterCollection writerCollection = new WriterCollection();
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
@@ -239,7 +239,7 @@ this.borrowCountOfBook.start(primaryStage);
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                bookApplication1.start(primaryStage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
