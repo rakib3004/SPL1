@@ -23,13 +23,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class CrossValidation extends Application {
-    PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
-    int numberOfBooks;
-    Processing processing = new Processing();
-    BookNumber bookNumber = new BookNumber();
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+
     @Override
     public void start(Stage primaryStage){
         String  className = this.getClass().getSimpleName();

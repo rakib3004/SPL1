@@ -1,4 +1,4 @@
-Main	Mon 20.07.2020 at 03:01:49 PM
-AuthorSystem	Mon 20.07.2020 at 03:01:50 PM
-ProcessAnalysis	Mon 20.07.2020 at 03:01:55 PM
-BookApplication	Mon 20.07.2020 at 03:01:56 PM
+Main	Tue 21.07.2020 at 03:20:18 PM
+AuthorSystem	Tue 21.07.2020 at 03:20:28 PM
+ProcessAnalysis	Tue 21.07.2020 at 03:20:29 PM
+CrossValidation	Tue 21.07.2020 at 03:20:33 PM
