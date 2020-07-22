@@ -10,7 +10,7 @@ import LibraryFunctionality.ReadingRoom;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import SimpleRegression.DoublyLinearRegression;
 import JavFX.AuthorSystem;
 import MainPackage.BookNumber;

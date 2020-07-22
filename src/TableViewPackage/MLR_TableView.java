@@ -6,7 +6,7 @@ import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;

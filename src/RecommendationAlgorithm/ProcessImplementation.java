@@ -11,7 +11,7 @@ import JavFX.AuthorSystem;
 import JavFX.Main;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;

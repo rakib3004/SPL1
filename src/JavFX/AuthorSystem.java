@@ -12,7 +12,7 @@ import ProjectDescription.About;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import UserInterfacePackage.AddBook;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;
@@ -87,8 +87,8 @@ public class AuthorSystem extends Application {
 
             processImplementation.setOnAction(actionEvent -> {
                 try {
-            ProcessImplementation statistics = new ProcessImplementation();
-            statistics.start(primaryStage);
+            ProcessImplementation processImplementation1 = new ProcessImplementation();
+            processImplementation1.start(primaryStage);
                 }
                 catch (Exception exception) {
                     exception.printStackTrace();

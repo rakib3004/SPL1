@@ -17,7 +17,7 @@ import ObjectOriented.PriorityData;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import UserInterfacePackage.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;

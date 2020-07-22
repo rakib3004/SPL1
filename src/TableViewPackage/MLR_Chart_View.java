@@ -1,16 +1,12 @@
 package TableViewPackage;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
-import CrossValidationProcess.CombinedTrainingSet;
-import CrossValidationProcess.CrossValidationVisualization;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RegressionFx.FourVariableRegression;
+import LinearRegression.FourVariableRegression;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;

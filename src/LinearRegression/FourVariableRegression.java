@@ -1,8 +1,10 @@
-package RegressionFx;
+package LinearRegression;
 
 import FilePackage.DateTimeWriter;
 import RecommendationAlgorithm.MultiVaribleRegression;
-import SimpleRegression.DoublyLinearRegression;
+import TableViewPackage.MLR_Chart_View;
+import TableViewPackage.MLR_TableView;
+import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
@@ -12,44 +14,50 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
-public class ThreeVariableRegression extends Application {
-
-    PriorityData [] priorityData;
+public class FourVariableRegression extends Application {
+    PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     @Override
     public void start(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button Start = new Button("Start");
+        Button consoleView = new Button("Console View");
+        Button tableView = new Button("Table View");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        Start.setTranslateX(500);
-        Start.setTranslateY(400);
+        tableView.setTranslateX(860);
+        tableView.setTranslateY(50);
+        consoleView.setTranslateX(140);
+        consoleView.setTranslateY(50);
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-        Start.setOnAction(actionEvent -> {
+        tableView.setOnAction(actionEvent -> {
+            try {
+                MLR_TableView MLRTableViewFX = new MLR_TableView();
+                MLRTableViewFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        consoleView.setOnAction(actionEvent -> {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-                doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
-                System.exit(0);    }
-            catch (Exception exception) {
+                priorityData =     multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+                System.exit(0);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         back.setOnAction(actionEvent -> {
             MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
@@ -62,27 +70,46 @@ public class ThreeVariableRegression extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(Start);
+        setStyle(tableView);
+        setStyle(consoleView);
         setStyle(exit);
         setStyle(back);
-        Start.setPrefSize(200, 80);
+        tableView.setPrefSize(350, 80);
+        consoleView.setPrefSize(350, 80);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground19.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+        Button graphView = new Button("Graph View");
+        graphView.setTranslateX(500);
+        graphView.setTranslateY(50);
+        graphView.setOnAction(actionEvent -> {
+            MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+            try {
+                mlr_chart_view.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        setStyle(graphView);
+        graphView.setPrefSize(350,80);
 
-        Scene scene1 = new Scene(group,1500,950);
+       // Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+   //     graphicsContext.drawImage(image, 0, 0);
+        Scene scene1 = new Scene(group, 1500, 950);
+
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
+
     public Button setStyle( Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
@@ -98,4 +125,9 @@ public class ThreeVariableRegression extends Application {
                 "    -fx-font-size: 2.1em;");
         return  button;
     }
-}
+
+
+
+
+
+    }

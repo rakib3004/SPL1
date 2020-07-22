@@ -1,4 +1,4 @@
-package RegressionFx;
+package LinearRegression;
 
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
