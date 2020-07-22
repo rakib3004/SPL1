@@ -40,19 +40,15 @@ import java.io.IOException;
 public class AuthorSystem extends Application {
         @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
-
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
             Font font = new Font(19);
             Font font1 = new Font(47);
             Font font2 = new Font( 26);
             Button processImplementation = new Button("Process Implementation");
             Button processAnalysis = new Button("Process Analysis");
             Button processDescription = new Button("Process Description");
-
-
             processImplementation.setPrefSize(410,230);
             processAnalysis.setPrefSize(410,230);
             processDescription.setPrefSize(410,230);

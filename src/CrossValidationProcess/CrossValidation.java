@@ -30,7 +30,7 @@ public class CrossValidation extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button back = new Button("Back");
+     /*   Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -58,19 +58,7 @@ public class CrossValidation extends Application {
         dataComparing.setTranslateY(250);
         dataPlotting.setTranslateX(500);
         dataPlotting.setTranslateY(350);
-        dataComparing.setOnAction(actionEvent -> {
-            // new process which we processed today......................................................................
-            CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
-            try {
-                codeValidationShowing.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
 
-        dataPlotting.setOnAction(actionEvent -> {
-                finish(primaryStage);
-        });
         setStyle(dataComparing);
         setStyle(dataPlotting);
 
@@ -91,7 +79,7 @@ public class CrossValidation extends Application {
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
+*/
     }
 public void finish(Stage primaryStage){
     String  className = this.getClass().getSimpleName();

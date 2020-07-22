@@ -1,12 +1,2 @@
-Main	Wed 22.07.2020 at 05:09:48 PM
-AuthorSystem	Wed 22.07.2020 at 05:10:01 PM
-ProcessImplementation	Wed 22.07.2020 at 05:10:10 PM
-MultiVaribleRegression	Wed 22.07.2020 at 05:10:14 PM
-ProcessImplementation	Wed 22.07.2020 at 05:10:17 PM
-AnalyticHierarchyAlgorithm	Wed 22.07.2020 at 05:10:21 PM
-ProcessImplementation	Wed 22.07.2020 at 05:10:26 PM
-PageRankAlgorithm	Wed 22.07.2020 at 05:10:27 PM
-ProcessImplementation	Wed 22.07.2020 at 05:10:29 PM
-MultiVaribleRegression	Wed 22.07.2020 at 05:10:31 PM
-FourVariableRegression	Wed 22.07.2020 at 05:10:34 PM
-MultiVaribleRegression	Wed 22.07.2020 at 05:10:36 PM
+Main	Wed 22.07.2020 at 06:29:28 PM
+About	Wed 22.07.2020 at 06:29:30 PM

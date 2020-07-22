@@ -165,7 +165,8 @@ public class FourVariableRegression extends Application {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-                priorityData =     multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+                priorityData =     multipleLinearRegression.
+                        multipleLinearRegressionMethods(priorityData, numberOfBooks);
                 System.exit(0);
             } catch (Exception exception) {
                 exception.printStackTrace();
