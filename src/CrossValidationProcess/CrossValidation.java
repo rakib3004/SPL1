@@ -52,7 +52,7 @@ public class CrossValidation extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Font font = new Font(19);
+        Font font = new Font(14);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
         Button crossValidationImplementation = new Button("CrossValidation Implementation");

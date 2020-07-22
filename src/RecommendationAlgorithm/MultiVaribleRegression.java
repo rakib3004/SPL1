@@ -71,17 +71,17 @@ public class MultiVaribleRegression extends Application {
         threeVariableRegression.setContentDisplay(ContentDisplay.TOP);
         fourVariableRegression.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+                "src"+ File.separator +"Images"+ File.separator +"2var.png");
         Image image1 = new Image(fileInputStream1);
         twoVariableRegression.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+                "src"+ File.separator +"Images"+ File.separator +"3var.png");
         Image image2 = new Image(fileInputStream2);
         threeVariableRegression.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"description.png");
+                "src"+ File.separator +"Images"+ File.separator +"4var.png");
         Image image3 = new Image(fileInputStream3);
         fourVariableRegression.setGraphic(new ImageView(image3));
         twoVariableRegression.setOnAction(actionEvent -> {
