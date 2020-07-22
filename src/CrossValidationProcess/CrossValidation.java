@@ -55,42 +55,42 @@ public class CrossValidation extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-        Button dataComparing = new Button("Data Comparing");
-        Button dataPlotting = new Button("Data Plotting");
-        Button processDescription = new Button("Process Description");
-        dataComparing.setPrefSize(410,230);
-        dataPlotting.setPrefSize(410,230);
-        processDescription.setPrefSize(410,230);
+        Button crossValidationImplementation = new Button("CrossValidation Implementation");
+        Button crossValidationVisualization = new Button("CrossValidation Visualization");
+        Button crossValidationDescription = new Button("CrossValidation Description");
+        crossValidationImplementation.setPrefSize(410,230);
+        crossValidationVisualization.setPrefSize(410,230);
+        crossValidationDescription.setPrefSize(410,230);
 
-        dataComparing.setFont(font2);
-        dataPlotting.setFont(font2);
-        processDescription.setFont(font2);
-        dataComparing.setTranslateX(30);
-        dataComparing.setTranslateY(35);
-        dataPlotting.setTranslateX(30);
-        dataPlotting.setTranslateY(270);
-        processDescription.setTranslateX(30);
-        processDescription.setTranslateY(505);
+        crossValidationImplementation.setFont(font2);
+        crossValidationVisualization.setFont(font2);
+        crossValidationDescription.setFont(font2);
+        crossValidationImplementation.setTranslateX(30);
+        crossValidationImplementation.setTranslateY(35);
+        crossValidationVisualization.setTranslateX(30);
+        crossValidationVisualization.setTranslateY(270);
+        crossValidationDescription.setTranslateX(30);
+        crossValidationDescription.setTranslateY(505);
 
-        dataComparing.setContentDisplay(ContentDisplay.TOP);
-        dataPlotting.setContentDisplay(ContentDisplay.TOP);
-        processDescription.setContentDisplay(ContentDisplay.TOP);
+        crossValidationImplementation.setContentDisplay(ContentDisplay.TOP);
+        crossValidationVisualization.setContentDisplay(ContentDisplay.TOP);
+        crossValidationDescription.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"implement.png");
         Image image1 = new Image(fileInputStream1);
-        dataComparing.setGraphic(new ImageView(image1));
+        crossValidationImplementation.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"analysis.png");
         Image image2 = new Image(fileInputStream2);
-        dataPlotting.setGraphic(new ImageView(image2));
+        crossValidationVisualization.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"description.png");
         Image image3 = new Image(fileInputStream3);
-        processDescription.setGraphic(new ImageView(image3));
+        crossValidationDescription.setGraphic(new ImageView(image3));
 
-        dataComparing.setOnAction(actionEvent -> {
+        crossValidationImplementation.setOnAction(actionEvent -> {
             // new process which we processed today......................................................................
             CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
             try {
@@ -100,10 +100,10 @@ public class CrossValidation extends Application {
             }
         });
 
-        dataPlotting.setOnAction(actionEvent -> {
+        crossValidationVisualization.setOnAction(actionEvent -> {
             finish(primaryStage);
         });
-        processDescription.setOnAction(actionEvent -> {
+        crossValidationDescription.setOnAction(actionEvent -> {
             try {
                 About about = new About();
                 about.start(primaryStage);
@@ -180,8 +180,8 @@ public class CrossValidation extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,dataComparing,
-                dataPlotting,exit,back,home,text,processDescription);
+        group.getChildren().addAll(canvas,crossValidationImplementation,
+                crossValidationVisualization,exit,back,home,text,crossValidationDescription);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
