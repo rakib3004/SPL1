@@ -123,7 +123,7 @@ public class MultiVaribleRegression extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("System/Process");
+        Text text = new Text("Multi-variable Linear Regression");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);
