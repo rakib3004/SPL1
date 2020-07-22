@@ -148,7 +148,7 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Process Implementation");
+        Text text = new Text("Analytic Hierarchy Process");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
