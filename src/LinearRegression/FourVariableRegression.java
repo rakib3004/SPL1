@@ -29,18 +29,17 @@ public class FourVariableRegression extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button consoleView = new Button("Console View");
-        Button tableView = new Button("Table View");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        tableView.setTranslateX(860);
-        tableView.setTranslateY(50);
-        consoleView.setTranslateX(140);
-        consoleView.setTranslateY(50);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+
+        graphView.setOnAction(actionEvent -> {
+            MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+            try {
+                mlr_chart_view.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
         tableView.setOnAction(actionEvent -> {
             try {
                 MLR_TableView MLRTableViewFX = new MLR_TableView();
@@ -67,46 +66,7 @@ public class FourVariableRegression extends Application {
                 exception.printStackTrace();
             }
         });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(tableView);
-        setStyle(consoleView);
-        setStyle(exit);
-        setStyle(back);
-        tableView.setPrefSize(350, 80);
-        consoleView.setPrefSize(350, 80);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
 
-        Button graphView = new Button("Graph View");
-        graphView.setTranslateX(500);
-        graphView.setTranslateY(50);
-        graphView.setOnAction(actionEvent -> {
-            MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-            try {
-                mlr_chart_view.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        setStyle(graphView);
-        graphView.setPrefSize(350,80);
-
-       // Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-   //     graphicsContext.drawImage(image, 0, 0);
-        Scene scene1 = new Scene(group, 1500, 950);
-
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();
 
     }
 
