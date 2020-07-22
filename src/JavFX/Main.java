@@ -420,7 +420,11 @@ public class Main extends Application {
             @Override public void handle(ActionEvent e) {
                 CrossValidation crossValidation = new CrossValidation();
                 {
-                    crossValidation.start(stage);
+                    try {
+                        crossValidation.start(stage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

@@ -375,7 +375,11 @@ public class LibraryDesk extends Application {
             @Override public void handle(ActionEvent e) {
                 CrossValidation crossValidation = new CrossValidation();
                 {
-                    crossValidation.start(primaryStage);
+                    try {
+                        crossValidation.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

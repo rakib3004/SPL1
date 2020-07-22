@@ -374,7 +374,11 @@ ProcessAnalysis processAnalysis1 = new ProcessAnalysis();
                 @Override public void handle(ActionEvent e) {
                     CrossValidation crossValidation = new CrossValidation();
                     {
-                        crossValidation.start(primaryStage);
+                        try {
+                            crossValidation.start(primaryStage);
+                        } catch (FileNotFoundException fileNotFoundException) {
+                            fileNotFoundException.printStackTrace();
+                        }
                     }
                 }
             });
