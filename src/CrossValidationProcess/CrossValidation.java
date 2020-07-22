@@ -48,56 +48,7 @@ public class CrossValidation extends Application {
 
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
-           /*   Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
-            try {
-                authorSystem.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
 
-        Button dataComparing = new Button("Data Comparing");
-        Button dataPlotting = new Button("Data Plotting");
-        dataComparing.setTranslateX(500);
-        dataComparing.setTranslateY(250);
-        dataPlotting.setTranslateX(500);
-        dataPlotting.setTranslateY(350);
-
-        setStyle(dataComparing);
-        setStyle(dataPlotting);
-
-        dataComparing.setPrefSize(350, 80);
-        dataPlotting.setPrefSize(350, 80);
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,dataComparing,dataPlotting);
-
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-
-        Scene scene1 = new Scene(group,1500,950);
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();
-*/
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
