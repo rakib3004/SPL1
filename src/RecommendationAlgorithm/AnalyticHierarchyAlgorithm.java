@@ -132,17 +132,17 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         graphView.setContentDisplay(ContentDisplay.TOP);
         consoleView.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"mlr.png");
+                "src"+ File.separator +"Images"+ File.separator +"table.png");
         Image image1 = new Image(fileInputStream1);
         tableView.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"ahp.png");
+                "src"+ File.separator +"Images"+ File.separator +"graph.png");
         Image image2 = new Image(fileInputStream2);
         graphView.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"pra.png");
+                "src"+ File.separator +"Images"+ File.separator +"console.png");
         Image image3 = new Image(fileInputStream3);
         consoleView.setGraphic(new ImageView(image3));
         consoleView.setOnAction(actionEvent -> {
