@@ -4,7 +4,7 @@ import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
-import RecommendationAlgorithm.MultiVaribleRegression;
+import RecommendationAlgorithm.MultiVariableRegression;
 import Regression.TypeCountRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -51,9 +51,9 @@ TypeCountRegression typeCountRegression = new TypeCountRegression();
             }
         });
         back.setOnAction(actionEvent -> {
-MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
+MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
                 try {
-                multiVaribleRegression.start(primaryStage);
+                multiVariableRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

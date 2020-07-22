@@ -85,7 +85,7 @@ public class ProcessImplementation extends Application {
         Image image3 = new Image(fileInputStream3);
         pageRankAlgorithm.setGraphic(new ImageView(image3));
         multiVariableRegression.setOnAction(actionEvent -> {
-            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
+            MultiVariableRegression multiVaribleRegression = new MultiVariableRegression();
             try {
                 multiVaribleRegression.start(primaryStage);
             } catch (Exception exception) {

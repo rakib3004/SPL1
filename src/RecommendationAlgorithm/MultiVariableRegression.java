@@ -37,7 +37,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class MultiVaribleRegression extends Application {
+public class MultiVariableRegression extends Application {
 
 
     @Override

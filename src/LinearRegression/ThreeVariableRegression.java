@@ -1,7 +1,7 @@
 package LinearRegression;
 
 import FilePackage.DateTimeWriter;
-import RecommendationAlgorithm.MultiVaribleRegression;
+import RecommendationAlgorithm.MultiVariableRegression;
 import SimpleRegression.DoublyLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -52,9 +52,9 @@ public class ThreeVariableRegression extends Application {
 
         });
         back.setOnAction(actionEvent -> {
-            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
+            MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
             try {
-                multiVaribleRegression.start(primaryStage);
+                multiVariableRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

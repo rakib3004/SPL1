@@ -11,11 +11,9 @@ import JavFX.Main;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
-import RecommendationAlgorithm.MultiVaribleRegression;
+import RecommendationAlgorithm.MultiVariableRegression;
 import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
-import TableViewPackage.AHP_Chart_View;
-import TableViewPackage.AHP_TableView;
 import TableViewPackage.MLR_Chart_View;
 import TableViewPackage.MLR_TableView;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -173,9 +171,9 @@ public class FourVariableRegression extends Application {
             }
         });
         back.setOnAction(actionEvent -> {
-            MultiVaribleRegression multiVaribleRegression = new MultiVaribleRegression();
+            MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
             try {
-                multiVaribleRegression.start(primaryStage);
+                multiVariableRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
