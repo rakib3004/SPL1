@@ -61,52 +61,6 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-       /* Button tableView = new Button("Table View");
-        tableView.setTranslateX(140);
-        tableView.setTranslateY(50);
-
-        setStyle(tableView);
-        tableView.setPrefSize(350,80);
-        Button graphView = new Button("Graph View");
-        graphView.setTranslateX(500);
-        graphView.setTranslateY(50);
-
-        setStyle(graphView);
-        graphView.setPrefSize(350,80);
-
-        Button consoleView = new Button("Console View");
-        consoleView.setTranslateX(860);
-        consoleView.setTranslateY(50);
-
-        consoleView.setPrefSize(350, 80);
-        setStyle(consoleView);
-
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setOnAction(actionEvent -> {
-            ProcessImplementation processImplementation = new ProcessImplementation();
-            try {
-                processImplementation.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        //Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,tableView,consoleView,graphView,exit,back);*/
-
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
