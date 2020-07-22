@@ -1,5 +1,4 @@
 package JavFX;
-
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;

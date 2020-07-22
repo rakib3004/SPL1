@@ -1,4 +1,10 @@
-Main	Tue 21.07.2020 at 03:20:18 PM
-AuthorSystem	Tue 21.07.2020 at 03:20:28 PM
-ProcessAnalysis	Tue 21.07.2020 at 03:20:29 PM
-CrossValidation	Tue 21.07.2020 at 03:20:33 PM
+Main	Wed 22.07.2020 at 04:12:37 PM
+AuthorSystem	Wed 22.07.2020 at 04:12:38 PM
+ProcessImplementation	Wed 22.07.2020 at 04:12:44 PM
+AnalyticHierarchyAlgorithm	Wed 22.07.2020 at 04:12:51 PM
+ProcessImplementation	Wed 22.07.2020 at 04:12:54 PM
+MultiVaribleRegression	Wed 22.07.2020 at 04:12:55 PM
+FourVariableRegression	Wed 22.07.2020 at 04:12:57 PM
+MultiVaribleRegression	Wed 22.07.2020 at 04:12:58 PM
+ProcessImplementation	Wed 22.07.2020 at 04:13:00 PM
+PageRankAlgorithm	Wed 22.07.2020 at 04:13:01 PM
