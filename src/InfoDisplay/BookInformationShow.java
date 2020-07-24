@@ -6,8 +6,10 @@ import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
+import JavFX.Main;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
+import ProjectDescription.About;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
@@ -23,8 +25,16 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -38,21 +48,13 @@ public class BookInformationShow extends Application {
     BorrowCountOfBook borrowCountOfBook = new BorrowCountOfBook();
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        Button typesOfBook = new Button("Types Of Book");
-        Button demandsOfBook = new Button("Demands Of Book");
-        Button genericsOfBook = new Button("Generics Of Book");
-        Button classesOfBooks = new Button("Classes of Books");
-        Button borrowCountOfBook = new Button("Borrow Count Of Book");
-        Button numberDisplay = new Button("Number Display");
 
-        back.setTranslateX(0);
+     /*   back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
@@ -162,7 +164,164 @@ this.borrowCountOfBook.start(primaryStage);
     //    graphicsContext.drawImage(background,0,0);
         group.getChildren().addAll(canvas,exit,back,typesOfBook);
         group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
-        group.getChildren().addAll(borrowCountOfBook,numberDisplay);
+        group.getChildren().addAll(borrowCountOfBook,numberDisplay);*/
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+
+        Button typesOfBook = new Button("Types Of Book");
+        Button demandsOfBook = new Button("Demands Of Book");
+        Button genericsOfBook = new Button("Generics Of Book");
+        Button classesOfBooks = new Button("Classes of Books");
+        Button borrowCountOfBook = new Button("Borrow Count Of Book");
+        Button numberDisplay = new Button("Number Display");
+
+        typesOfBook.setPrefSize(370,110);
+        demandsOfBook.setPrefSize(370,110);
+        genericsOfBook.setPrefSize(410,110);
+        classesOfBooks.setPrefSize(370,110);
+        borrowCountOfBook.setPrefSize(370,110);
+        numberDisplay.setPrefSize(410,110);
+
+        typesOfBook.setFont(font2);
+        demandsOfBook.setFont(font2);
+        genericsOfBook.setFont(font2);
+        classesOfBooks.setFont(font2);
+        borrowCountOfBook.setFont(font2);
+        numberDisplay.setFont(font2);
+
+        typesOfBook.setTranslateX(30);
+        typesOfBook.setTranslateY(35);
+        demandsOfBook.setTranslateX(30);
+        demandsOfBook.setTranslateY(150);
+        genericsOfBook.setTranslateX(30);
+        genericsOfBook.setTranslateY(265);
+
+        classesOfBooks.setTranslateX(30);
+        classesOfBooks.setTranslateY(380);
+        borrowCountOfBook.setTranslateX(30);
+        borrowCountOfBook.setTranslateY(495);
+        numberDisplay.setTranslateX(30);
+        numberDisplay.setTranslateY(610);
+
+
+        typesOfBook.setContentDisplay(ContentDisplay.TOP);
+        demandsOfBook.setContentDisplay(ContentDisplay.TOP);
+        genericsOfBook.setContentDisplay(ContentDisplay.TOP);
+        classesOfBooks.setContentDisplay(ContentDisplay.TOP);
+        borrowCountOfBook.setContentDisplay(ContentDisplay.TOP);
+        numberDisplay.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+        Image image1 = new Image(fileInputStream1);
+        typesOfBook.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+        Image image2 = new Image(fileInputStream2);
+        demandsOfBook.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"description.png");
+        Image image3 = new Image(fileInputStream3);
+        genericsOfBook.setGraphic(new ImageView(image3));
+
+        typesOfBook.setOnAction(actionEvent -> {
+            try {
+                ProcessImplementation processImplementation1 = new ProcessImplementation();
+                processImplementation1.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        demandsOfBook.setOnAction(actionEvent -> {
+            ProcessAnalysis processAnalysis1 = new ProcessAnalysis();
+
+            try {
+                processAnalysis1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        genericsOfBook.setOnAction(actionEvent -> {
+            try {
+                About about = new About();
+                about.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("System/Process");
+        text.setTranslateX(600);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"home.png");
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"back.png");
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background,0,0);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,typesOfBook,
+                demandsOfBook,exit,back,home,text,genericsOfBook);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();

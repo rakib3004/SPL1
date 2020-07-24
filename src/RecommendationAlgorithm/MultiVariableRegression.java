@@ -87,7 +87,6 @@ public class MultiVariableRegression extends Application {
         twoVariableRegression.setOnAction(actionEvent -> {
             TwoVariableRegression twoVariableRegression1 = new TwoVariableRegression();
             try {
-
                 twoVariableRegression1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
