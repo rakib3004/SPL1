@@ -56,7 +56,6 @@ public class BookInformationShow extends Application {
         Font font = new Font(26);
         Font font1 = new Font(47);
         Font font2 = new Font( 23);
-
         Button typesOfBook = new Button("Types Of Book");
         Button demandsOfBook = new Button("Demands Of Book");
         Button genericsOfBook = new Button("Generics Of Book");
@@ -70,7 +69,6 @@ public class BookInformationShow extends Application {
         classesOfBooks.setPrefSize(370,110);
         borrowCountOfBook.setPrefSize(370,110);
         numberDisplay.setPrefSize(370,110);
-
         typesOfBook.setFont(font2);
         demandsOfBook.setFont(font2);
         genericsOfBook.setFont(font2);
@@ -84,15 +82,12 @@ public class BookInformationShow extends Application {
         demandsOfBook.setTranslateY(150);
         genericsOfBook.setTranslateX(30);
         genericsOfBook.setTranslateY(265);
-
         classesOfBooks.setTranslateX(30);
         classesOfBooks.setTranslateY(380);
         borrowCountOfBook.setTranslateX(30);
         borrowCountOfBook.setTranslateY(495);
         numberDisplay.setTranslateX(30);
         numberDisplay.setTranslateY(610);
-
-
         typesOfBook.setContentDisplay(ContentDisplay.LEFT);
         demandsOfBook.setContentDisplay(ContentDisplay.LEFT);
         genericsOfBook.setContentDisplay(ContentDisplay.LEFT);
@@ -100,34 +95,34 @@ public class BookInformationShow extends Application {
         borrowCountOfBook.setContentDisplay(ContentDisplay.LEFT);
         numberDisplay.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+                "src"+ File.separator +"Images"+ File.separator +"types.png");
         Image image1 = new Image(fileInputStream1);
-      //  typesOfBook.setGraphic(new ImageView(image1));
+        typesOfBook.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+                "src"+ File.separator +"Images"+ File.separator +"types.png");
         Image image2 = new Image(fileInputStream2);
-       // demandsOfBook.setGraphic(new ImageView(image2));
+        demandsOfBook.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"description.png");
+                "src"+ File.separator +"Images"+ File.separator +"time.png");
         Image image3 = new Image(fileInputStream3);
-       // genericsOfBook.setGraphic(new ImageView(image3));
+      genericsOfBook.setGraphic(new ImageView(image3));
 
         FileInputStream fileInputStream4 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+                "src"+ File.separator +"Images"+ File.separator +"time.png");
         Image image4 = new Image(fileInputStream4);
-       // typesOfBook.setGraphic(new ImageView(image4));
+        classesOfBooks.setGraphic(new ImageView(image4));
 
         FileInputStream fileInputStream5 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+                "src"+ File.separator +"Images"+ File.separator +"display.png");
         Image image5 = new Image(fileInputStream5);
-       // demandsOfBook.setGraphic(new ImageView(image5));
+        borrowCountOfBook.setGraphic(new ImageView(image5));
 
         FileInputStream fileInputStream6 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"description.png");
+                "src"+ File.separator +"Images"+ File.separator +"display.png");
         Image image6 = new Image(fileInputStream6);
-       // genericsOfBook.setGraphic(new ImageView(image6));
+        numberDisplay.setGraphic(new ImageView(image6));
 
         typesOfBook.setOnAction(actionEvent -> {
             try {
