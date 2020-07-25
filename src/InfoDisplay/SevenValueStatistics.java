@@ -175,7 +175,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Process Analysis");
+        Text text = new Text("Seven Value Statistics");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);

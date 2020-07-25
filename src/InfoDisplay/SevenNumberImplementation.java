@@ -53,8 +53,8 @@ StackedArea stackedArea = new StackedArea();
         lineChart.setPrefSize(410,230);
         stackedAreaChart.setPrefSize(410,230);
 
-        scatterChart.setFont(font);
-        lineChart.setFont(font);
+        scatterChart.setFont(font2);
+        lineChart.setFont(font2);
         stackedAreaChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
@@ -69,7 +69,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
+                    "src"+ File.separator +"Images"+ File.separator +"scatter.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
+                    "src"+ File.separator +"Images"+ File.separator +"line.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -89,12 +89,13 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                    "src"+ File.separator +"Images"+ File.separator +"area.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
         stackedAreaChart.setGraphic(new ImageView(image3));
+        
         scatterChart.setOnAction(actionEvent -> {
             try {
                 this.scatterChart.startTyping(typeStatisticsStage);
@@ -137,8 +138,8 @@ StackedArea stackedArea = new StackedArea();
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Process Analysis");
-        text.setTranslateX(575);
+        Text text = new Text("Type based Seven Value Analysis");
+        text.setTranslateX(550);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
@@ -230,8 +231,8 @@ StackedArea stackedArea = new StackedArea();
         lineChart.setPrefSize(410,230);
         stackedAreaChart.setPrefSize(410,230);
 
-        scatterChart.setFont(font);
-        lineChart.setFont(font);
+        scatterChart.setFont(font2);
+        lineChart.setFont(font2);
         stackedAreaChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
@@ -246,7 +247,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
+                    "src"+ File.separator +"Images"+ File.separator +"scatter.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -256,7 +257,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
+                    "src"+ File.separator +"Images"+ File.separator +"line.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -266,7 +267,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                    "src"+ File.separator +"Images"+ File.separator +"area.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -316,8 +317,8 @@ StackedArea stackedArea = new StackedArea();
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Process Analysis");
-        text.setTranslateX(575);
+        Text text = new Text("Time based Seven Value Analysis");
+        text.setTranslateX(550);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
@@ -409,8 +410,8 @@ StackedArea stackedArea = new StackedArea();
         lineChart.setPrefSize(410,230);
         stackedAreaChart.setPrefSize(410,230);
 
-        scatterChart.setFont(font);
-        lineChart.setFont(font);
+        scatterChart.setFont(font2);
+        lineChart.setFont(font2);
         stackedAreaChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
@@ -425,7 +426,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
+                    "src"+ File.separator +"Images"+ File.separator +"scatter.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -435,7 +436,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
+                    "src"+ File.separator +"Images"+ File.separator +"line.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -445,7 +446,7 @@ StackedArea stackedArea = new StackedArea();
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                    "src"+ File.separator +"Images"+ File.separator +"area.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -495,8 +496,8 @@ StackedArea stackedArea = new StackedArea();
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Process Analysis");
-        text.setTranslateX(575);
+        Text text = new Text("Borrow based Seven Value Analysis");
+        text.setTranslateX(550);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
@@ -587,8 +588,8 @@ StackedArea stackedArea = new StackedArea();
          lineChart.setPrefSize(410,230);
          stackedAreaChart.setPrefSize(410,230);
 
-         scatterChart.setFont(font);
-         lineChart.setFont(font);
+         scatterChart.setFont(font2);
+         lineChart.setFont(font2);
          stackedAreaChart.setFont(font2);
          scatterChart.setTranslateX(30);
          scatterChart.setTranslateY(35);
@@ -603,7 +604,7 @@ StackedArea stackedArea = new StackedArea();
          FileInputStream fileInputStream1 = null;
          try {
              fileInputStream1 = new FileInputStream(
-                     "src"+ File.separator +"Images"+ File.separator +"cross.png");
+                     "src"+ File.separator +"Images"+ File.separator +"scatter.png");
          } catch (FileNotFoundException e) {
              e.printStackTrace();
          }
@@ -613,7 +614,7 @@ StackedArea stackedArea = new StackedArea();
          FileInputStream fileInputStream2 = null;
          try {
              fileInputStream2 = new FileInputStream(
-                     "src"+ File.separator +"Images"+ File.separator +"7value.png");
+                     "src"+ File.separator +"Images"+ File.separator +"line.png");
          } catch (FileNotFoundException e) {
              e.printStackTrace();
          }
@@ -623,7 +624,7 @@ StackedArea stackedArea = new StackedArea();
          FileInputStream fileInputStream3 = null;
          try {
              fileInputStream3 = new FileInputStream(
-                     "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                     "src"+ File.separator +"Images"+ File.separator +"area.png");
          } catch (FileNotFoundException e) {
              e.printStackTrace();
          }
@@ -673,8 +674,8 @@ StackedArea stackedArea = new StackedArea();
          exit.setPrefSize(120, 20);
          exit.setContentDisplay(ContentDisplay.LEFT);
          exit.setFont(font);
-         Text text = new Text("Process Analysis");
-         text.setTranslateX(575);
+         Text text = new Text("Price based Seven Value Analysis");
+         text.setTranslateX(550);
          text.setTranslateY(500);
          text.setFont(font1);
          text.setFill(Color.BLACK);
