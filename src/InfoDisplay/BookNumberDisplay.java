@@ -33,6 +33,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -60,8 +61,7 @@ public class BookNumberDisplay extends Application {
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 8);
+        Font font1 = Font.font("Times New Roman", FontPosture.REGULAR, 5);
 
         back.setTranslateX(0);
         back.setTranslateY(650);
@@ -78,9 +78,6 @@ public class BookNumberDisplay extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         try {
@@ -90,76 +87,57 @@ public class BookNumberDisplay extends Application {
         }
         Label BookNumbers = new Label((numberOfBooks) + " Books");
         BookNumbers.setAlignment(Pos.CENTER);
-        setStyle1(BookNumbers);
         BookNumbers.setFont(font1);
         BookNumbers.setPrefSize(110, 80);
         BookNumbers.setTextAlignment(TextAlignment.CENTER);
-        BookNumbers.setTranslateX(250);
-        BookNumbers.setTranslateY(130);
-        Paint svColor = Color.rgb(102, 111, 200);
-        BookNumbers.setBackground(new Background(new BackgroundFill(svColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        BookNumbers.setTranslateX(200);
+        BookNumbers.setTranslateY(50);
         BookNumbers.setTextFill(Color.BLACK);
         BookNumbers.setScaleX(6);
         BookNumbers.setScaleY(3.4);
 
         Label WriterNumbers = new Label((writerCounter) + " Writers ");
         WriterNumbers.setAlignment(Pos.CENTER);
-        setStyle2(WriterNumbers);
         WriterNumbers.setPrefSize(110, 80);
         WriterNumbers.setTextAlignment(TextAlignment.CENTER);
         WriterNumbers.setFont(font1);
-        WriterNumbers.setTranslateX(1000);
-        WriterNumbers.setTranslateY(130);
-        Paint sttColor = Color.rgb(0, 96, 11);
-        BookNumbers.setBackground(new Background(new BackgroundFill(sttColor, CornerRadii.EMPTY, Insets.EMPTY)));
-        Paint stColor = Color.rgb(100, 150, 50);
-        WriterNumbers.setBackground(new Background(new BackgroundFill(stColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        WriterNumbers.setTranslateX(300);
+        WriterNumbers.setTranslateY(50);
         WriterNumbers.setTextFill(Color.BLACK);
         WriterNumbers.setScaleX(6);
         WriterNumbers.setScaleY(3.4);
 
         Label YearsNumbers = new Label((yearCounter) + " Years ");
         YearsNumbers.setAlignment(Pos.CENTER);
-        setStyle3(YearsNumbers);
         YearsNumbers.setPrefSize(110, 80);
         YearsNumbers.setTextAlignment(TextAlignment.CENTER);
         YearsNumbers.setFont(font1);
-        YearsNumbers.setTranslateX(250);
-        YearsNumbers.setTranslateY(465);
-        Paint shColor = Color.rgb(200, 20, 30);
-        YearsNumbers.setBackground(new Background(new BackgroundFill(shColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        YearsNumbers.setTranslateX(200);
+        YearsNumbers.setTranslateY(130);
         YearsNumbers.setTextFill(Color.BLACK);
         YearsNumbers.setScaleX(6);
         YearsNumbers.setScaleY(3.4);
         Label TypeNumbers = new Label((typeCounter) + " types");
         TypeNumbers.setAlignment(Pos.CENTER);
-        setStyle4(TypeNumbers);
         TypeNumbers.setFont(font1);
         TypeNumbers.setTextAlignment(TextAlignment.CENTER);
         TypeNumbers.setPrefSize(110, 80);
-        TypeNumbers.setTranslateX(1000);
-        TypeNumbers.setTranslateY(465);
-        Paint srColor = Color.rgb(214, 158, 33);
-        TypeNumbers.setBackground(new Background(new BackgroundFill(srColor, CornerRadii.EMPTY, Insets.EMPTY)));
+        TypeNumbers.setTranslateX(300);
+        TypeNumbers.setTranslateY(130);
         TypeNumbers.setTextFill(Color.BLACK);
         TypeNumbers.setScaleX(6);
         TypeNumbers.setScaleY(3.4);
-
-
         Group semiGroup = new Group();
 
         semiGroup.getChildren().addAll(BookNumbers, WriterNumbers, YearsNumbers, TypeNumbers);
-        //    String string ="Images"+ File.separator + "libraryBackground9.jpg";
-
-        //    Image image = new Image(string);
-        Canvas canvas = new Canvas(1500, 950);
+        Image image = new Image("Images"+ File.separator +"numberDisplay.JPG");
+        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, semiGroup, exit, back);
+        group.getChildren().addAll(canvas,exit,back, semiGroup);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        //  graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group, 1500, 950);
-
+        graphicsContext.drawImage(image,0,0);
+        Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
@@ -167,88 +145,4 @@ public class BookNumberDisplay extends Application {
 
     }
 
-    public Button setStyle(Button button) {
-        button.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), #F0FFF0);\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #F0FFF0);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return button;
-    }
-
-    public Label setStyle1(Label label) {
-        label.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return label;
-    }
-
-    public Label setStyle2(Label label) {
-        label.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return label;
-    }
-
-    public Label setStyle3(Label label) {
-        label.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return label;
-    }
-
-    public Label setStyle4(Label label) {
-        label.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #00bfff);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return label;
-    }
 }
