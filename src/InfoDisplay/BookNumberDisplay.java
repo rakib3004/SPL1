@@ -91,8 +91,8 @@ public class BookNumberDisplay extends Application {
         BookNumbers.setPrefSize(110, 80);
         BookNumbers.setTextAlignment(TextAlignment.CENTER);
         BookNumbers.setTranslateX(200);
-        BookNumbers.setTranslateY(50);
-        BookNumbers.setTextFill(Color.BLACK);
+        BookNumbers.setTranslateY(30);
+        BookNumbers.setTextFill(Color.WHITE);
         BookNumbers.setScaleX(6);
         BookNumbers.setScaleY(3.4);
 
@@ -101,9 +101,9 @@ public class BookNumberDisplay extends Application {
         WriterNumbers.setPrefSize(110, 80);
         WriterNumbers.setTextAlignment(TextAlignment.CENTER);
         WriterNumbers.setFont(font1);
-        WriterNumbers.setTranslateX(300);
-        WriterNumbers.setTranslateY(50);
-        WriterNumbers.setTextFill(Color.BLACK);
+        WriterNumbers.setTranslateX(500);
+        WriterNumbers.setTranslateY(30);
+        WriterNumbers.setTextFill(Color.WHITE);
         WriterNumbers.setScaleX(6);
         WriterNumbers.setScaleY(3.4);
 
@@ -114,7 +114,7 @@ public class BookNumberDisplay extends Application {
         YearsNumbers.setFont(font1);
         YearsNumbers.setTranslateX(200);
         YearsNumbers.setTranslateY(130);
-        YearsNumbers.setTextFill(Color.BLACK);
+        YearsNumbers.setTextFill(Color.WHITE);
         YearsNumbers.setScaleX(6);
         YearsNumbers.setScaleY(3.4);
         Label TypeNumbers = new Label((typeCounter) + " types");
@@ -122,9 +122,9 @@ public class BookNumberDisplay extends Application {
         TypeNumbers.setFont(font1);
         TypeNumbers.setTextAlignment(TextAlignment.CENTER);
         TypeNumbers.setPrefSize(110, 80);
-        TypeNumbers.setTranslateX(300);
+        TypeNumbers.setTranslateX(500);
         TypeNumbers.setTranslateY(130);
-        TypeNumbers.setTextFill(Color.BLACK);
+        TypeNumbers.setTextFill(Color.WHITE);
         TypeNumbers.setScaleX(6);
         TypeNumbers.setScaleY(3.4);
         Group semiGroup = new Group();
