@@ -61,44 +61,7 @@ StackedArea stackedArea = new StackedArea();
         stackedAreaChart.setTranslateX(500);
         stackedAreaChart.setTranslateY(400);
 
-        back.setOnAction(actionEvent -> {
-SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
-            try {
-                sevenValueStatistics.start(typeStatisticsStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
 
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-
-
-        });
-        scatterChart.setOnAction(actionEvent -> {
-            try {
-                this.scatterChart.startTyping(typeStatisticsStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        stackedAreaChart.setOnAction(actionEvent -> {
-            try {
-                stackedArea.startTyping(typeStatisticsStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        lineChart.setOnAction(actionEvent -> {
-            try {
-                this.lineChart.startTyping(typeStatisticsStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
 
         setStyle(exit);
         setStyle(back);
@@ -176,33 +139,30 @@ SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
         }
         Image image3 = new Image(fileInputStream3);
         stackedAreaChart.setGraphic(new ImageView(image3));
-
         scatterChart.setOnAction(actionEvent -> {
             try {
-                CrossValidation crossValidation = new CrossValidation();
-                crossValidation.start(typeStatisticsStage);
+                this.scatterChart.startTyping(typeStatisticsStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
-            catch (Exception exception) {
+        });
+
+        stackedAreaChart.setOnAction(actionEvent -> {
+            try {
+                stackedArea.startTyping(typeStatisticsStage);
+
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            SevenValueStatistics bookApplication = new SevenValueStatistics();
             try {
-                bookApplication.start(typeStatisticsStage);
+                this.lineChart.startTyping(typeStatisticsStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(typeStatisticsStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -269,11 +229,10 @@ SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
+            SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                authorSystem.start(typeStatisticsStage);
-            }
-            catch (Exception exception){
+                sevenValueStatistics.start(typeStatisticsStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
