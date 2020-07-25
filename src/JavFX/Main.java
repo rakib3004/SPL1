@@ -202,7 +202,7 @@ public class Main extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font2);
         Text text = new Text("Library Recommendation Tool ");
-        text.setTranslateX(550);
+        text.setTranslateX(530);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
