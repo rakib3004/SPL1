@@ -5,6 +5,7 @@ import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
+import JavFX.Main;
 import JavFX.ProcessAnalysis;
 import LibraryFunctionality.ReadingRoom;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
@@ -28,12 +29,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -50,10 +52,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button typeBased = new Button("Type Based");
-        Button timeBased = new Button("Time Based");
-        Button borrowBased = new Button("Borrow Based");
-        Button priceBased = new Button("Price Based");
+
 /*
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -137,6 +136,173 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);*/
+
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+
+        Button priceBased = new Button("Price Based");
+        Button typeBased = new Button("Type Based");
+        Button timeBased = new Button("Time Based");
+        Button borrowBased = new Button("Borrow Based");
+
+        typeBased.setPrefSize(400,170);
+        timeBased.setPrefSize(400,170);
+        borrowBased.setPrefSize(400,170);
+
+        typeBased.setFont(font);
+        timeBased.setFont(font);
+        borrowBased.setFont(font2);
+        typeBased.setTranslateX(30);
+        typeBased.setTranslateY(35);
+        timeBased.setTranslateX(30);
+        timeBased.setTranslateY(270);
+        borrowBased.setTranslateX(30);
+        borrowBased.setTranslateY(505);
+
+        typeBased.setContentDisplay(ContentDisplay.TOP);
+        timeBased.setContentDisplay(ContentDisplay.TOP);
+        borrowBased.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        typeBased.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        timeBased.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        borrowBased.setGraphic(new ImageView(image3));
+
+        typeBased.setOnAction(actionEvent -> {
+            try {
+                CrossValidation crossValidation = new CrossValidation();
+                crossValidation.start(primaryStage);
+            }
+            catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        timeBased.setOnAction(actionEvent -> {
+            SevenValueStatistics bookApplication = new SevenValueStatistics();
+            try {
+                bookApplication.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        borrowBased.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Process Analysis");
+        text.setTranslateX(575);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            AuthorSystem authorSystem = new AuthorSystem();
+            try {
+                authorSystem.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background,0,0);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,typeBased,
+                timeBased,
+                borrowBased,exit,home,text,back);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
@@ -405,8 +571,6 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         menuBar.setStyle(" -fx-spacing: 47;");
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
