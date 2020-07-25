@@ -172,7 +172,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"cross.png");
+                    "src"+ File.separator +"Images"+ File.separator +"types.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -182,7 +182,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"7value.png");
+                    "src"+ File.separator +"Images"+ File.separator +"time.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -192,12 +192,22 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                    "src"+ File.separator +"Images"+ File.separator +"borrow.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
         borrowBased.setGraphic(new ImageView(image3));
+
+FileInputStream fileInputStream7 = null;
+        try {
+            fileInputStream7 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"demand.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image7 = new Image(fileInputStream7);
+        priceBased.setGraphic(new ImageView(image7));
 
         typeBased.setOnAction(actionEvent -> {
             try {
@@ -307,7 +317,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
         group.getChildren().addAll(canvas,typeBased,
-                timeBased,
+                timeBased,priceBased,
                 borrowBased,exit,home,text,back);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
