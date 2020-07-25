@@ -51,92 +51,6 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
-/*
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        
-        typeBased.setTranslateX(500);
-        typeBased.setTranslateY(200);
-        timeBased.setTranslateX(500);
-        timeBased.setTranslateY(300);
-
-        borrowBased.setTranslateX(500);
-        borrowBased.setTranslateY(400);
-        priceBased.setTranslateX(500);
-        priceBased.setTranslateY(500);
-
-        back.setOnAction(actionEvent -> {
-                AuthorSystem authorSystem = new AuthorSystem();
-                try {
-                                authorSystem.start(primaryStage);
-                            } catch (Exception exception) {
-                                exception.printStackTrace();
-                            }
-                        });
-                        exit.setOnAction(actionEvent -> {
-                            System.exit(0);
-                        });
-                typeBased.setOnAction(actionEvent -> {
-                            try {
-                sevenNumberImplementation.typeStatistics(primaryStage);
-
-                            } catch (Exception exception) {
-                                exception.printStackTrace();
-                            }
-                        });
-                        borrowBased.setOnAction(actionEvent -> {
-                            try {
-                                sevenNumberImplementation.borrowStatistics(primaryStage);
-
-                            } catch (Exception exception) {
-                                exception.printStackTrace();
-                            }
-                        });
-
-                timeBased.setOnAction(actionEvent -> {
-                    try {
-                        sevenNumberImplementation.timeStatistics(primaryStage);
-
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }
-                });
-        priceBased.setOnAction(actionEvent -> {
-            try {
-                sevenNumberImplementation.priceStatistics(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        setStyle(exit);
-        setStyle(back);
-
-       setStyle(timeBased);
-        setStyle(typeBased);
-
-       setStyle(borrowBased);
-        setStyle(priceBased);
-
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-         timeBased.setPrefSize(200, 80);
-        typeBased.setPrefSize(200, 80);
-         priceBased.setPrefSize(200, 80);
-        borrowBased.setPrefSize(200, 80);
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
-       Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);*/
-
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 23);
@@ -199,7 +113,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         Image image3 = new Image(fileInputStream3);
         borrowBased.setGraphic(new ImageView(image3));
 
-FileInputStream fileInputStream7 = null;
+        FileInputStream fileInputStream7 = null;
         try {
             fileInputStream7 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"demand.png");
@@ -211,29 +125,37 @@ FileInputStream fileInputStream7 = null;
 
         typeBased.setOnAction(actionEvent -> {
             try {
-                CrossValidation crossValidation = new CrossValidation();
-                crossValidation.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        timeBased.setOnAction(actionEvent -> {
-            SevenValueStatistics bookApplication = new SevenValueStatistics();
-            try {
-                bookApplication.start(primaryStage);
+                sevenNumberImplementation.typeStatistics(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         borrowBased.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
             try {
-                readingRoom.start(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+
+        timeBased.setOnAction(actionEvent -> {
+            try {
+                sevenNumberImplementation.timeStatistics(primaryStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        priceBased.setOnAction(actionEvent -> {
+            try {
+                sevenNumberImplementation.priceStatistics(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
 
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
