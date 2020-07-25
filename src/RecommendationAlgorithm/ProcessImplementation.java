@@ -407,7 +407,11 @@ public class ProcessImplementation extends Application {
             @Override public void handle(ActionEvent e) {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationShow.start(primaryStage);
+                    try {
+                        bookInformationShow.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });
