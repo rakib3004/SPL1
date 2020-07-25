@@ -243,28 +243,48 @@ this.borrowCountOfBook.start(primaryStage);
 
         typesOfBook.setOnAction(actionEvent -> {
             try {
-                ProcessImplementation processImplementation1 = new ProcessImplementation();
-                processImplementation1.start(primaryStage);
-            }
-            catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        demandsOfBook.setOnAction(actionEvent -> {
-            ProcessAnalysis processAnalysis1 = new ProcessAnalysis();
-
-            try {
-                processAnalysis1.start(primaryStage);
+                this.typesOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+
         genericsOfBook.setOnAction(actionEvent -> {
             try {
-                About about = new About();
-                about.start(primaryStage);
+                this.genericsOfBook.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
-            catch (Exception exception) {
+        });
+
+        demandsOfBook.setOnAction(actionEvent -> {
+            try {
+                this.demandsOfBook.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        classesOfBooks.setOnAction(actionEvent -> {
+            try {
+                classesOfBook.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        borrowCountOfBook.setOnAction(actionEvent -> {
+            try {
+                this.borrowCountOfBook.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        numberDisplay.setOnAction(actionEvent -> {
+            BookNumberDisplay bookNumberDisplay = new BookNumberDisplay();
+            try {
+                bookNumberDisplay.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -568,7 +588,11 @@ this.borrowCountOfBook.start(primaryStage);
             @Override public void handle(ActionEvent e) {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationShow.start(primaryStage);
+                    try {
+                        bookInformationShow.start(primaryStage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
 
                 }
             }
