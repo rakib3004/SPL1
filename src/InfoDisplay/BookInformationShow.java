@@ -53,121 +53,9 @@ public class BookInformationShow extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-
-     /*   back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-
-        typesOfBook.setTranslateX(100);
-        typesOfBook.setTranslateY(100);
-        demandsOfBook.setTranslateX(460);
-        demandsOfBook.setTranslateY(100);
-        genericsOfBook.setTranslateX(820);
-        genericsOfBook.setTranslateY(100);
-
-        classesOfBooks.setTranslateX(100);
-        classesOfBooks.setTranslateY(250);
-        borrowCountOfBook.setTranslateX(460);
-        borrowCountOfBook.setTranslateY(250);
-        numberDisplay.setTranslateX(820);
-        numberDisplay.setTranslateY(250);
-
-        back.setOnAction(actionEvent -> {
-            LibraryDesk libraryDesk = new LibraryDesk();
-
-            try {
-                libraryDesk.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-
-        typesOfBook.setOnAction(actionEvent -> {
-            try {
-        this.typesOfBook.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        genericsOfBook.setOnAction(actionEvent -> {
-            try {
-   this.genericsOfBook.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        demandsOfBook.setOnAction(actionEvent -> {
-            try {
-this.demandsOfBook.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        classesOfBooks.setOnAction(actionEvent -> {
-            try {
-classesOfBook.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
- borrowCountOfBook.setOnAction(actionEvent -> {
-            try {
-this.borrowCountOfBook.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        numberDisplay.setOnAction(actionEvent -> {
-            BookNumberDisplay bookNumberDisplay = new BookNumberDisplay();
-            try {
-                bookNumberDisplay.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        setStyle(exit);
-        setStyle(back);
-
-        setStyle(demandsOfBook);
-        setStyle(typesOfBook);
-
-        setStyle(genericsOfBook);
-        setStyle(classesOfBooks);
-
-        setStyle(borrowCountOfBook);
-        setStyle(numberDisplay);
-
-        back.setPrefSize(270, 80);
-        exit.setPrefSize(270, 80);
-
-        demandsOfBook.setPrefSize(350, 80);
-        typesOfBook.setPrefSize(350, 80);
-
-        classesOfBooks.setPrefSize(350, 80);
-        genericsOfBook.setPrefSize(350, 80);
-         borrowCountOfBook.setPrefSize(350, 80);
-        numberDisplay.setPrefSize(350, 80);
-
-      //  Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-    //    graphicsContext.drawImage(background,0,0);
-        group.getChildren().addAll(canvas,exit,back,typesOfBook);
-        group.getChildren().addAll(demandsOfBook,classesOfBooks,genericsOfBook);
-        group.getChildren().addAll(borrowCountOfBook,numberDisplay);*/
-        Font font = new Font(19);
+        Font font = new Font(26);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+        Font font2 = new Font( 23);
 
         Button typesOfBook = new Button("Types Of Book");
         Button demandsOfBook = new Button("Demands Of Book");
@@ -178,10 +66,10 @@ this.borrowCountOfBook.start(primaryStage);
 
         typesOfBook.setPrefSize(370,110);
         demandsOfBook.setPrefSize(370,110);
-        genericsOfBook.setPrefSize(410,110);
+        genericsOfBook.setPrefSize(370,110);
         classesOfBooks.setPrefSize(370,110);
         borrowCountOfBook.setPrefSize(370,110);
-        numberDisplay.setPrefSize(410,110);
+        numberDisplay.setPrefSize(370,110);
 
         typesOfBook.setFont(font2);
         demandsOfBook.setFont(font2);
@@ -205,41 +93,41 @@ this.borrowCountOfBook.start(primaryStage);
         numberDisplay.setTranslateY(610);
 
 
-        typesOfBook.setContentDisplay(ContentDisplay.TOP);
-        demandsOfBook.setContentDisplay(ContentDisplay.TOP);
-        genericsOfBook.setContentDisplay(ContentDisplay.TOP);
-        classesOfBooks.setContentDisplay(ContentDisplay.TOP);
-        borrowCountOfBook.setContentDisplay(ContentDisplay.TOP);
-        numberDisplay.setContentDisplay(ContentDisplay.TOP);
+        typesOfBook.setContentDisplay(ContentDisplay.LEFT);
+        demandsOfBook.setContentDisplay(ContentDisplay.LEFT);
+        genericsOfBook.setContentDisplay(ContentDisplay.LEFT);
+        classesOfBooks.setContentDisplay(ContentDisplay.LEFT);
+        borrowCountOfBook.setContentDisplay(ContentDisplay.LEFT);
+        numberDisplay.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"implement.png");
         Image image1 = new Image(fileInputStream1);
-        typesOfBook.setGraphic(new ImageView(image1));
+      //  typesOfBook.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"analysis.png");
         Image image2 = new Image(fileInputStream2);
-        demandsOfBook.setGraphic(new ImageView(image2));
+       // demandsOfBook.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"description.png");
         Image image3 = new Image(fileInputStream3);
-        genericsOfBook.setGraphic(new ImageView(image3));
+       // genericsOfBook.setGraphic(new ImageView(image3));
 
         FileInputStream fileInputStream4 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"implement.png");
         Image image4 = new Image(fileInputStream4);
-        typesOfBook.setGraphic(new ImageView(image4));
+       // typesOfBook.setGraphic(new ImageView(image4));
 
         FileInputStream fileInputStream5 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"analysis.png");
         Image image5 = new Image(fileInputStream5);
-        demandsOfBook.setGraphic(new ImageView(image5));
+       // demandsOfBook.setGraphic(new ImageView(image5));
 
         FileInputStream fileInputStream6 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"description.png");
         Image image6 = new Image(fileInputStream6);
-        genericsOfBook.setGraphic(new ImageView(image6));
+       // genericsOfBook.setGraphic(new ImageView(image6));
 
         typesOfBook.setOnAction(actionEvent -> {
             try {
@@ -301,7 +189,7 @@ this.borrowCountOfBook.start(primaryStage);
         exit.setGraphic(new ImageView(image7));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
-        exit.setFont(font);
+        exit.setFont(font2);
         Text text = new Text("System/Process");
         text.setTranslateX(600);
         text.setTranslateY(500);
@@ -340,11 +228,11 @@ this.borrowCountOfBook.start(primaryStage);
         Image image9 = new Image(fileInputStream9);
         back.setGraphic(new ImageView(image9));
         back.setOnAction(actionEvent -> {
-            Main main = new Main();
+            LibraryDesk libraryDesk = new LibraryDesk();
+
             try {
-                main.start(primaryStage);
-            }
-            catch (Exception exception){
+                libraryDesk.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
