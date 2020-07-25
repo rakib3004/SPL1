@@ -454,7 +454,11 @@ public class Main extends Application {
             @Override public void handle(ActionEvent e) {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
-                    bookInformationShow.start(stage);
+                    try {
+                        bookInformationShow.start(stage);
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    }
                 }
             }
         });

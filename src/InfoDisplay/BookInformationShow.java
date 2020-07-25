@@ -356,7 +356,7 @@ this.borrowCountOfBook.start(primaryStage);
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
         group.getChildren().addAll(canvas,typesOfBook,
-                demandsOfBook,exit,back,home,text,genericsOfBook);
+                demandsOfBook,exit,back,home,text,genericsOfBook,classesOfBooks,borrowCountOfBook,numberDisplay);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
