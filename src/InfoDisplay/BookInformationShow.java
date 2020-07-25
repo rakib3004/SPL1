@@ -53,7 +53,7 @@ public class BookInformationShow extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font = new Font(26);
+        Font font = new Font(23);
         Font font1 = new Font(47);
         Font font2 = new Font( 23);
         Button typesOfBook = new Button("Types Of Book");
@@ -184,7 +184,7 @@ public class BookInformationShow extends Application {
         exit.setGraphic(new ImageView(image7));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
-        exit.setFont(font2);
+        exit.setFont(font);
         Text text = new Text("Book Information");
         text.setTranslateX(600);
         text.setTranslateY(500);

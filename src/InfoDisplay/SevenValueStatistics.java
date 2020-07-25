@@ -139,7 +139,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
 
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+        Font font2 = new Font( 23);
 
         Button priceBased = new Button("Price Based");
         Button typeBased = new Button("Type Based");
@@ -149,20 +149,26 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         typeBased.setPrefSize(400,170);
         timeBased.setPrefSize(400,170);
         borrowBased.setPrefSize(400,170);
+        priceBased.setPrefSize(400,170);
 
-        typeBased.setFont(font);
-        timeBased.setFont(font);
+        typeBased.setFont(font2);
+        timeBased.setFont(font2);
         borrowBased.setFont(font2);
+        priceBased.setFont(font2);
+        
         typeBased.setTranslateX(30);
         typeBased.setTranslateY(35);
         timeBased.setTranslateX(30);
-        timeBased.setTranslateY(270);
+        timeBased.setTranslateY(210);
         borrowBased.setTranslateX(30);
-        borrowBased.setTranslateY(505);
+        borrowBased.setTranslateY(385);
+         priceBased.setTranslateX(30);
+        priceBased.setTranslateY(560);
 
-        typeBased.setContentDisplay(ContentDisplay.TOP);
-        timeBased.setContentDisplay(ContentDisplay.TOP);
-        borrowBased.setContentDisplay(ContentDisplay.TOP);
+        typeBased.setContentDisplay(ContentDisplay.LEFT);
+        timeBased.setContentDisplay(ContentDisplay.LEFT);
+        borrowBased.setContentDisplay(ContentDisplay.LEFT);
+        priceBased.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
