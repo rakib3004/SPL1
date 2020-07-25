@@ -40,50 +40,6 @@ StackedArea stackedArea = new StackedArea();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        
-    /*    Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
-
-        //  Button Start = new Button("Start");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-
-        scatterChart.setTranslateX(500);
-        scatterChart.setTranslateY(200);
-        lineChart.setTranslateX(500);
-        lineChart.setTranslateY(300);
-        stackedAreaChart.setTranslateX(500);
-        stackedAreaChart.setTranslateY(400);
-
-
-
-        setStyle(exit);
-        setStyle(back);
-
-        setStyle(lineChart);
-        setStyle(scatterChart);
-
-        setStyle(stackedAreaChart);
-
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-        lineChart.setPrefSize(275, 80);
-        scatterChart.setPrefSize(275, 80);
-
-        stackedAreaChart.setPrefSize(275, 80);
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground3.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,scatterChart,lineChart,stackedAreaChart);
-*/
 
         Font font = new Font(19);
         Font font1 = new Font(47);
