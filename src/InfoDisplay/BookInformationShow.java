@@ -226,6 +226,21 @@ this.borrowCountOfBook.start(primaryStage);
         Image image3 = new Image(fileInputStream3);
         genericsOfBook.setGraphic(new ImageView(image3));
 
+        FileInputStream fileInputStream4 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+        Image image4 = new Image(fileInputStream4);
+        typesOfBook.setGraphic(new ImageView(image4));
+
+        FileInputStream fileInputStream5 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+        Image image5 = new Image(fileInputStream5);
+        demandsOfBook.setGraphic(new ImageView(image5));
+
+        FileInputStream fileInputStream6 = new FileInputStream(
+                "src"+ File.separator +"Images"+ File.separator +"description.png");
+        Image image6 = new Image(fileInputStream6);
+        genericsOfBook.setGraphic(new ImageView(image6));
+
         typesOfBook.setOnAction(actionEvent -> {
             try {
                 ProcessImplementation processImplementation1 = new ProcessImplementation();
@@ -260,10 +275,10 @@ this.borrowCountOfBook.start(primaryStage);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        FileInputStream fileInputStream4 = new FileInputStream(
+        FileInputStream fileInputStream7 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"exit.png");
-        Image image4 = new Image(fileInputStream4);
-        exit.setGraphic(new ImageView(image4));
+        Image image7 = new Image(fileInputStream7);
+        exit.setGraphic(new ImageView(image7));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
@@ -281,10 +296,10 @@ this.borrowCountOfBook.start(primaryStage);
         home.setPrefSize(375,30);
         home.setFont(font2);
         home.setContentDisplay(ContentDisplay.LEFT);
-        FileInputStream fileInputStream5 = new FileInputStream(
+        FileInputStream fileInputStream8 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"home.png");
-        Image image5 = new Image(fileInputStream5);
-        home.setGraphic(new ImageView(image5));
+        Image image8 = new Image(fileInputStream8);
+        home.setGraphic(new ImageView(image8));
         home.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
@@ -300,10 +315,10 @@ this.borrowCountOfBook.start(primaryStage);
         back.setPrefSize(375,30);
         back.setFont(font2);
         back.setContentDisplay(ContentDisplay.LEFT);
-        FileInputStream fileInputStream6 = new FileInputStream(
+        FileInputStream fileInputStream9 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"back.png");
-        Image image6 = new Image(fileInputStream6);
-        back.setGraphic(new ImageView(image6));
+        Image image9 = new Image(fileInputStream9);
+        back.setGraphic(new ImageView(image9));
         back.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
@@ -554,6 +569,7 @@ this.borrowCountOfBook.start(primaryStage);
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
                     bookInformationShow.start(primaryStage);
+
                 }
             }
         });
