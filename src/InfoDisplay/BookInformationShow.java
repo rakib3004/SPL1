@@ -100,7 +100,7 @@ public class BookInformationShow extends Application {
         typesOfBook.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"types.png");
+                "src"+ File.separator +"Images"+ File.separator +"demand.png");
         Image image2 = new Image(fileInputStream2);
         demandsOfBook.setGraphic(new ImageView(image2));
 
@@ -110,12 +110,12 @@ public class BookInformationShow extends Application {
       genericsOfBook.setGraphic(new ImageView(image3));
 
         FileInputStream fileInputStream4 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"time.png");
+                "src"+ File.separator +"Images"+ File.separator +"classification.png");
         Image image4 = new Image(fileInputStream4);
         classesOfBooks.setGraphic(new ImageView(image4));
 
         FileInputStream fileInputStream5 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"display.png");
+                "src"+ File.separator +"Images"+ File.separator +"borrow.png");
         Image image5 = new Image(fileInputStream5);
         borrowCountOfBook.setGraphic(new ImageView(image5));
 
@@ -185,7 +185,7 @@ public class BookInformationShow extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font2);
-        Text text = new Text("System/Process");
+        Text text = new Text("Book Information");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);

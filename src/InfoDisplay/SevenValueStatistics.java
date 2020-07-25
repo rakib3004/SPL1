@@ -49,17 +49,14 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 25);
-        Font font2 = Font.font("Verdana", FontWeight.BOLD, 8);
-        Font font1 = Font.font("Times New Roman", FontPosture.ITALIC, 18);
 
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
         Button typeBased = new Button("Type Based");
         Button timeBased = new Button("Time Based");
         Button borrowBased = new Button("Borrow Based");
         Button priceBased = new Button("Price Based");
-
+/*
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
@@ -139,7 +136,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         Image image = new Image("Images"+ File.separator +"libraryBackground13.jpg");
        Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);
+        group.getChildren().addAll(canvas,exit,back,typeBased,timeBased,priceBased,borrowBased);*/
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
