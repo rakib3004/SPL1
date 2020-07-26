@@ -46,7 +46,7 @@ public class CombinedTrainingSet extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TestingSet crossValidationVisualization = new TestingSet();
             try {
                 crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {

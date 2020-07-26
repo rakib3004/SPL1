@@ -19,7 +19,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class TestingSet extends Application {
+public class
+TestingSet extends Application {
 
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
