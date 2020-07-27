@@ -120,7 +120,7 @@ trainingSet3.setOnAction(actionEvent -> {
 trainingSetAll.setOnAction(actionEvent -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
-               startCombined(primaryStage);
+               trainingSetAll(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -240,7 +240,7 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         fullTrainingSet.setOnAction((event) -> {
             try {
-             startCombined(primaryStage);
+             trainingSetAll(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -356,7 +356,7 @@ trainingSetAll.setOnAction(actionEvent -> {
         });
         fullTrainingSet.setOnAction((event) -> {
             try {
-               startCombined(primaryStage);
+               trainingSetAll(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -473,7 +473,7 @@ trainingSetAll.setOnAction(actionEvent -> {
         fullTrainingSet.setOnAction((event) -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
-               startCombined(primaryStage);
+               trainingSetAll(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -596,7 +596,7 @@ trainingSetAll.setOnAction(actionEvent -> {
         fullTrainingSet.setOnAction((event) -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
-               startCombined(primaryStage);
+               trainingSetAll(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -623,7 +623,7 @@ trainingSetAll.setOnAction(actionEvent -> {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void startCombined(Stage primaryStage) throws IOException {
+    public void trainingSetAll(Stage primaryStage) throws IOException {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
