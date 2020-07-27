@@ -101,17 +101,16 @@ public class ReadingRoom extends Application {
         rules.setGraphic(new ImageView(image3));
 
         defaultType.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
+
             try {
-                readingRoom.start(primaryStage);
+                automaticSystem(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         userBased.setOnAction(actionEvent -> {
-            LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                libraryDesk.start(primaryStage);
+                manualSystem(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();

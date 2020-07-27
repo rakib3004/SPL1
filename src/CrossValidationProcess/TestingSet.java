@@ -64,9 +64,9 @@ TestingSet extends Application {
         exit.setPrefSize(200, 80);
         Button trainingTestingCompersion = new Button("TrainingTesting Compersion");
 
-        trainingTestingCompersion.setTranslateX(500);
+        trainingTestingCompersion.setTranslateX(450);
 
-        trainingTestingCompersion.setTranslateY(450);
+        trainingTestingCompersion.setTranslateY(330);
 
         trainingTestingCompersion.setOnAction(actionEvent -> {
 
@@ -78,7 +78,7 @@ TestingSet extends Application {
             }
         });
         setStyle(trainingTestingCompersion);
-        trainingTestingCompersion.setPrefSize(380, 80);
+        trainingTestingCompersion.setPrefSize(540, 80);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
