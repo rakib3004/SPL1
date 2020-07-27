@@ -69,76 +69,7 @@ public class TrainingTestingComparison extends Application {
 
     @Override
     public void start(Stage primaryStage){
-/*
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
 
-        back.setOnAction(actionEvent -> {
-            CrossValidation crossValidation = new CrossValidation();
-            try {
-                crossValidation.finish(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-
-        setStyle(exit);
-        setStyle(back);
-
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-
-        scatterChartComparison.setTranslateX(500);
-        scatterChartComparison.setTranslateY(250);
-        lineChartComparison.setTranslateX(500);
-        stackedAreaChartComparison.setTranslateX(500);
-        stackedAreaChartComparison.setTranslateY(350);
-        lineChartComparison.setTranslateY(450);
-
-        setStyle(scatterChartComparison);
-        setStyle(lineChartComparison);
-        setStyle(stackedAreaChartComparison);
-
-        scatterChartComparison.setPrefSize(350, 80);
-        lineChartComparison.setPrefSize(380, 80);
-        stackedAreaChartComparison.setPrefSize(350, 80);
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,scatterChartComparison,
-                lineChartComparison,stackedAreaChartComparison);
-        Button administrationMood = new Button("Administration Mood");
-        Button readersMood = new Button("Readers Mood");
-        Button about = new Button("About");
-
-        readersMood.setTranslateX(20);
-        readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(20);
-        administrationMood.setTranslateY(320);
-        about.setTranslateX(20);
-        about.setTranslateY(380);
-        administrationMood.setPrefSize(160, 30);
-        readersMood.setPrefSize(160, 30);
-        about.setPrefSize(160,30);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();*/
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
