@@ -85,7 +85,7 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
         codeValidationStackedArea.setTranslateY(450);
 
         codeValidationScatter.setOnAction(actionEvent -> {
-            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+         //   CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (Exception exception) {
@@ -387,7 +387,7 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
 
         scatterView.setOnAction((event) -> {
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -538,7 +538,7 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
 
         scatterView.setOnAction((event) -> {
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();

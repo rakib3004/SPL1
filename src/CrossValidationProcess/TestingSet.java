@@ -39,7 +39,6 @@ TestingSet extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -63,23 +62,12 @@ TestingSet extends Application {
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-        Button testingSetResults = new Button("TestingSet Results");
         Button trainingTestingCompersion = new Button("TrainingTesting Compersion");
-        Button codeValidationSet = new Button("CodeValidation Set");
-        testingSetResults.setTranslateX(500);
-        testingSetResults.setTranslateY(250);
+
         trainingTestingCompersion.setTranslateX(500);
-        codeValidationSet.setTranslateX(500);
-        codeValidationSet.setTranslateY(350);
+
         trainingTestingCompersion.setTranslateY(450);
-        testingSetResults.setOnAction(actionEvent -> {
-            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-            try {
-                combinedTrainingSet.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+
         trainingTestingCompersion.setOnAction(actionEvent -> {
 
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
@@ -89,28 +77,14 @@ TestingSet extends Application {
                 exception.printStackTrace();
             }
         });
-        codeValidationSet.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
-            try {
-                crossValidationVisualization.startLineChart(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        setStyle(testingSetResults);
         setStyle(trainingTestingCompersion);
-        setStyle(codeValidationSet);
-        testingSetResults.setPrefSize(350, 80);
         trainingTestingCompersion.setPrefSize(380, 80);
-        codeValidationSet.setPrefSize(350, 80);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,testingSetResults,
-                trainingTestingCompersion,codeValidationSet);
-
-
+        group.getChildren().addAll(canvas,exit,back,
+                trainingTestingCompersion);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);

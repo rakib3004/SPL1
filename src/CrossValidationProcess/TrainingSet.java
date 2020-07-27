@@ -118,7 +118,7 @@ trainingSet3.setOnAction(actionEvent -> {
             }
         });
 trainingSetAll.setOnAction(actionEvent -> {
-            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+           // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
                trainingSetAll(primaryStage);
             } catch (Exception exception) {
@@ -471,7 +471,7 @@ trainingSetAll.setOnAction(actionEvent -> {
             }
         });
         fullTrainingSet.setOnAction((event) -> {
-            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+           // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
                trainingSetAll(primaryStage);
             } catch (Exception exception) {
@@ -594,7 +594,7 @@ trainingSetAll.setOnAction(actionEvent -> {
             }
         });
         fullTrainingSet.setOnAction((event) -> {
-            CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+           // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
                trainingSetAll(primaryStage);
             } catch (Exception exception) {
@@ -606,7 +606,6 @@ trainingSetAll.setOnAction(actionEvent -> {
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
             }
         });
