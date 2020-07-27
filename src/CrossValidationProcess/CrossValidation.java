@@ -515,13 +515,13 @@ public void finish(Stage primaryStage){
 
         trainingSet.setPrefSize(350, 80);
         testingSet.setPrefSize(350, 80);
-    Button trainingTestingComparision = new Button("TrainingTesting Comparision");
+    Button trainTestComparision = new Button("Train Test Comparision");
 
-    trainingTestingComparision.setTranslateX(500);
+    trainTestComparision.setTranslateX(500);
 
-    trainingTestingComparision.setTranslateY(450);
+    trainTestComparision.setTranslateY(450);
 
-    trainingTestingComparision.setOnAction(actionEvent -> {
+    trainTestComparision.setOnAction(actionEvent -> {
 
         TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
         try {
@@ -530,14 +530,14 @@ public void finish(Stage primaryStage){
             exception.printStackTrace();
         }
     });
-    setStyle(trainingTestingComparision);
-    trainingTestingComparision.setPrefSize(200, 80);
+    setStyle(trainTestComparision);
+    trainTestComparision.setPrefSize(350, 80);
 
 
     Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet,trainingTestingComparision);
+        group.getChildren().addAll(canvas,exit,back,trainingSet,testingSet,trainTestComparision);
 
     Button administrationMood = new Button("Administration Mood");
     Button readersMood = new Button("Readers Mood");

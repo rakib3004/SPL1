@@ -62,9 +62,9 @@ public class TrainingTestingComparison extends Application {
         exit.setTranslateY(650);
 
         back.setOnAction(actionEvent -> {
-            TestingSet testingSet = new TestingSet();
+            CrossValidation crossValidation = new CrossValidation();
             try {
-                testingSet.start(primaryStage);
+                crossValidation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -79,18 +79,18 @@ public class TrainingTestingComparison extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Button scatterChartComperison = new Button("ScatterChart Comperison");
-        Button lineChartComperison = new Button("LineChart Comperison");
-        Button stackedAreaChartComperison = new Button("StackedAreaChart Comperison");
+        Button scatterChartComparison = new Button("ScatterChart Comparison");
+        Button lineChartComparison = new Button("LineChart Comparison");
+        Button stackedAreaChartComparison = new Button("StackedAreaChart Comparison");
 
-        scatterChartComperison.setTranslateX(500);
-        scatterChartComperison.setTranslateY(250);
-        lineChartComperison.setTranslateX(500);
-        stackedAreaChartComperison.setTranslateX(500);
-        stackedAreaChartComperison.setTranslateY(350);
-        lineChartComperison.setTranslateY(450);
+        scatterChartComparison.setTranslateX(500);
+        scatterChartComparison.setTranslateY(250);
+        lineChartComparison.setTranslateX(500);
+        stackedAreaChartComparison.setTranslateX(500);
+        stackedAreaChartComparison.setTranslateY(350);
+        lineChartComparison.setTranslateY(450);
 
-        scatterChartComperison.setOnAction(actionEvent -> {
+        scatterChartComparison.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startScatterChart(primaryStage);
@@ -98,7 +98,7 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        lineChartComperison.setOnAction(actionEvent -> {
+        lineChartComparison.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startLineChart(primaryStage);
@@ -106,7 +106,7 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        stackedAreaChartComperison.setOnAction(actionEvent -> {
+        stackedAreaChartComparison.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startStackedAreaChart(primaryStage);
@@ -114,18 +114,18 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        setStyle(scatterChartComperison);
-        setStyle(lineChartComperison);
-        setStyle(stackedAreaChartComperison);
+        setStyle(scatterChartComparison);
+        setStyle(lineChartComparison);
+        setStyle(stackedAreaChartComparison);
 
-        scatterChartComperison.setPrefSize(350, 80);
-        lineChartComperison.setPrefSize(380, 80);
-        stackedAreaChartComperison.setPrefSize(350, 80);
+        scatterChartComparison.setPrefSize(350, 80);
+        lineChartComparison.setPrefSize(380, 80);
+        stackedAreaChartComparison.setPrefSize(350, 80);
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,scatterChartComperison,
-                lineChartComperison,stackedAreaChartComperison);
+        group.getChildren().addAll(canvas,exit,back,scatterChartComparison,
+                lineChartComparison,stackedAreaChartComparison);
         Button administrationMood = new Button("Administration Mood");
         Button readersMood = new Button("Readers Mood");
         Button about = new Button("About");
