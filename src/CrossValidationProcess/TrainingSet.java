@@ -742,8 +742,8 @@ trainingSetAll.setOnAction(actionEvent -> {
         });
         fullTrainingSet.setOnAction((event) -> {
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+              TrainingSet trainingSet5 = new TrainingSet();
+              trainingSet5.trainingSetAll(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }

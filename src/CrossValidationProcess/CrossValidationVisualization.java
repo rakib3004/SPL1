@@ -40,6 +40,7 @@ public class CrossValidationVisualization extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
 
     @Override
     public void start(Stage primaryStage) {
@@ -86,7 +87,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         codeValidationScatter.setOnAction(actionEvent -> {
             CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
             try {
-                combinedTrainingSet.start(primaryStage);
+                crossValidationVisualization.startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -239,8 +240,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
         scatterView.setOnAction((event) -> {
             try {
-                CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+
+                crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -387,7 +388,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         scatterView.setOnAction((event) -> {
             try {
                 CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+                crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -538,7 +539,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         scatterView.setOnAction((event) -> {
             try {
                 CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-                combinedTrainingSet.start(primaryStage);
+                crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
