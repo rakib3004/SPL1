@@ -463,28 +463,28 @@ public void finish(Stage primaryStage){
 
     Button training_set = new Button("Training Set");
     Button testing_set = new Button("Testing Set");
-    Button train_test_comparision = new Button("Train Test Comparision");
+    Button trainingTestingComparision = new Button("Training Testing Comparision");
     training_set.setPrefSize(410,230);
-    testing_set.setPrefSize(410,230);
-    train_test_comparision.setPrefSize(410,230);
+    testing_set.setPrefSize(410, 230);
+    trainingTestingComparision.setPrefSize(410, 230);
 
     training_set.setFont(font2);
     testing_set.setFont(font2);
-    train_test_comparision.setFont(font2);
+    trainingTestingComparision.setFont(font2);
     training_set.setTranslateX(30);
     training_set.setTranslateY(35);
     testing_set.setTranslateX(30);
     testing_set.setTranslateY(270);
-    train_test_comparision.setTranslateX(30);
-    train_test_comparision.setTranslateY(505);
+    trainingTestingComparision.setTranslateX(30);
+    trainingTestingComparision.setTranslateY(505);
 
     training_set.setContentDisplay(ContentDisplay.TOP);
     testing_set.setContentDisplay(ContentDisplay.TOP);
-    train_test_comparision.setContentDisplay(ContentDisplay.TOP);
+    trainingTestingComparision.setContentDisplay(ContentDisplay.TOP);
     FileInputStream fileInputStream1 = null;
     try {
         fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+                "src" + File.separator + "Images" + File.separator + "implement.png");
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     }
@@ -509,9 +509,9 @@ public void finish(Stage primaryStage){
         e.printStackTrace();
     }
     Image image3 = new Image(fileInputStream3);
-    train_test_comparision.setGraphic(new ImageView(image3));
+    trainingTestingComparision.setGraphic(new ImageView(image3));
 
-    train_test_comparision.setOnAction(actionEvent -> {
+    trainingTestingComparision.setOnAction(actionEvent -> {
 
         TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
         try {
@@ -555,7 +555,7 @@ public void finish(Stage primaryStage){
     exit.setPrefSize(120, 20);
     exit.setContentDisplay(ContentDisplay.LEFT);
     exit.setFont(font);
-    Text text = new Text("System/Process");
+    Text text = new Text("Cross Validation Visualization");
     text.setTranslateX(600);
     text.setTranslateY(500);
     text.setFont(font1);
@@ -619,8 +619,8 @@ public void finish(Stage primaryStage){
     GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
     graphicsContext.drawImage(background,0,0);
     Group group = new Group();
-    group.getChildren().addAll(canvas,training_set,
-            testing_set,exit,back,home,text,train_test_comparision);
+    group.getChildren().addAll(canvas, training_set,
+            testing_set, exit, back, home, text, trainingTestingComparision);
     ReadingRoom readingRoom2 = new ReadingRoom();
     LibraryDesk libraryDesk2 = new LibraryDesk();
     CrossValidation crossValidation2 = new CrossValidation();

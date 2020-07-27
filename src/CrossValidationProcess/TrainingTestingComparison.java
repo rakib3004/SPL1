@@ -239,7 +239,7 @@ public class TrainingTestingComparison extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("System/Process");
+        Text text = new Text("Training Testing Comparison");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
