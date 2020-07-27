@@ -64,7 +64,7 @@ public class TrainingTestingComparison extends Application {
         back.setOnAction(actionEvent -> {
             CrossValidation crossValidation = new CrossValidation();
             try {
-                crossValidation.start(primaryStage);
+                crossValidation.finish(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

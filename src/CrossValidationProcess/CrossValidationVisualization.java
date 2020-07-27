@@ -40,7 +40,6 @@ public class CrossValidationVisualization extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
 
     @Override
     public void start(Stage primaryStage) {
@@ -85,7 +84,7 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
         codeValidationStackedArea.setTranslateY(450);
 
         codeValidationScatter.setOnAction(actionEvent -> {
-         //   CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (Exception exception) {
@@ -240,7 +239,8 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
         scatterView.setOnAction((event) -> {
             try {
-
+                CrossValidationVisualization crossValidationVisualization =
+                        new CrossValidationVisualization();
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -387,7 +387,8 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
 
         scatterView.setOnAction((event) -> {
             try {
-                // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                CrossValidationVisualization crossValidationVisualization =
+                        new CrossValidationVisualization();
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -538,7 +539,7 @@ CrossValidationVisualization crossValidationVisualization = new CrossValidationV
 
         scatterView.setOnAction((event) -> {
             try {
-                // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
+                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
                 crossValidationVisualization.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
