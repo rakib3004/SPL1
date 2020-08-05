@@ -1023,7 +1023,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Seven Value Statistics");
+        Text text = new Text("Default Book Recommendation");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);

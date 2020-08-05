@@ -1,12 +1,1 @@
-Main	Tue 28.07.2020 at 12:39:46 AM
-LibraryDesk	Tue 28.07.2020 at 12:39:47 AM
-BookInformationShow	Tue 28.07.2020 at 12:39:51 AM
-LibraryDesk	Tue 28.07.2020 at 12:39:54 AM
-RemoveBook	Tue 28.07.2020 at 12:39:55 AM
-Processing	Tue 28.07.2020 at 12:39:55 AM
-DataParsing	Tue 28.07.2020 at 12:39:55 AM
-BookNumber	Tue 28.07.2020 at 12:39:55 AM
-MultipleLinearRegression	Tue 28.07.2020 at 12:39:55 AM
-Matrix	Tue 28.07.2020 at 12:39:55 AM
-CalculateWeight	Tue 28.07.2020 at 12:39:55 AM
-ReverseSorting	Tue 28.07.2020 at 12:39:55 AM
+Main	Tue 28.07.2020 at 11:26:35 AM
