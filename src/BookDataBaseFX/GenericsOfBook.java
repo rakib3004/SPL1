@@ -28,8 +28,6 @@ public class GenericsOfBook extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         Button barChart = new Button("Bar Chart");
