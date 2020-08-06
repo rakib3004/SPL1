@@ -45,21 +45,21 @@ public class BorrowCountOfBook extends Application {
         Button analyticChart = new Button("Analytic Chart");
         barChart.setOnAction(actionEvent -> {
             try {
-                infoBarChart.startGenericBook(primaryStage);
+                infoBarChart.startBorrowCount(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         pieChart.setOnAction(actionEvent -> {
             try {
-                infoPieChart.startGenericBook(primaryStage);
+                infoPieChart.startBorrowCount(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         analyticChart.setOnAction(actionEvent -> {
             try {
-                analyticChart1.startGenericBook(primaryStage);
+                analyticChart1.startBorrowCount(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

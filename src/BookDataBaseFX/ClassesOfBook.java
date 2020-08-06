@@ -129,12 +129,12 @@ public class ClassesOfBook extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Types of Books");
+        Text text = new Text("Classes of Books");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
-        text.setTextAlignment(TextAlignment.LEFT);
+        text.setTextAlignment(TextAlignment.CENTER);
         text.setStyle("-fx-font-weight: bold;");
 
         Button home = new Button("Home");
