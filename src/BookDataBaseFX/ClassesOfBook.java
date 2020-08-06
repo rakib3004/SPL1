@@ -197,7 +197,7 @@ public class ClassesOfBook extends Application {
 
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
