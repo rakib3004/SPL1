@@ -21,7 +21,7 @@ public class DemandsOfBook extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        String  className = this.getClass().getSimpleName();
+      /*  String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
@@ -94,7 +94,7 @@ public class DemandsOfBook extends Application {
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
 

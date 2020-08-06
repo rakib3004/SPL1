@@ -23,7 +23,7 @@ public class ClassesOfBook extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+/*
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -97,7 +97,7 @@ public class ClassesOfBook extends Application {
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
 
