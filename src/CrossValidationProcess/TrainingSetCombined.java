@@ -53,10 +53,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Font font1 = new Font(47);
         Font font2 = new Font(26);
 
-        Button codeValidationScatter = new Button("CodeValidation Scatter");
-        Button codeValidationStackedArea = new Button("CodeValidation StackedArea");
-        Button codeValidationLineChart = new Button("CodeValidation LineChart");
-        codeValidationScatter.setOnAction(actionEvent -> {
+        Button scatterChart = new Button("Scatter Chart");
+        Button stackedAreaChart = new Button("StackedArea Chart");
+        Button lineChart = new Button("Line Chart");
+        scatterChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startScatterChart(primaryStage);
@@ -64,7 +64,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        codeValidationStackedArea.setOnAction(actionEvent -> {
+        stackedAreaChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
@@ -72,7 +72,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        codeValidationLineChart.setOnAction(actionEvent -> {
+        lineChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
@@ -80,22 +80,22 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        codeValidationScatter.setPrefSize(410, 230);
-        codeValidationStackedArea.setPrefSize(410, 230);
-        codeValidationLineChart.setPrefSize(410, 230);
+        scatterChart.setPrefSize(410, 230);
+        stackedAreaChart.setPrefSize(410, 230);
+        lineChart.setPrefSize(410, 230);
 
-        codeValidationScatter.setFont(font2);
-        codeValidationStackedArea.setFont(font2);
-        codeValidationLineChart.setFont(font2);
-        codeValidationScatter.setTranslateX(30);
-        codeValidationScatter.setTranslateY(35);
-        codeValidationStackedArea.setTranslateX(30);
-        codeValidationStackedArea.setTranslateY(270);
-        codeValidationLineChart.setTranslateX(30);
-        codeValidationLineChart.setTranslateY(505);
-        codeValidationScatter.setContentDisplay(ContentDisplay.TOP);
-        codeValidationStackedArea.setContentDisplay(ContentDisplay.TOP);
-        codeValidationLineChart.setContentDisplay(ContentDisplay.TOP);
+        scatterChart.setFont(font2);
+        stackedAreaChart.setFont(font2);
+        lineChart.setFont(font2);
+        scatterChart.setTranslateX(30);
+        scatterChart.setTranslateY(35);
+        stackedAreaChart.setTranslateX(30);
+        stackedAreaChart.setTranslateY(270);
+        lineChart.setTranslateX(30);
+        lineChart.setTranslateY(505);
+        scatterChart.setContentDisplay(ContentDisplay.TOP);
+        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        lineChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -104,7 +104,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        codeValidationScatter.setGraphic(new ImageView(image1));
+        scatterChart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -114,7 +114,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        codeValidationStackedArea.setGraphic(new ImageView(image2));
+        stackedAreaChart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -124,7 +124,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        codeValidationLineChart.setGraphic(new ImageView(image3));
+        lineChart.setGraphic(new ImageView(image3));
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -204,8 +204,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
-        group.getChildren().addAll(canvas, codeValidationScatter,
-                codeValidationStackedArea, exit, back, home, text, codeValidationLineChart);
+        group.getChildren().addAll(canvas, scatterChart,
+                stackedAreaChart, exit, back, home, text, lineChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -224,9 +224,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TestingSet crossValidationVisualization = new TestingSet();
             try {
-                crossValidationVisualization.start(primaryStage);
+                start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
