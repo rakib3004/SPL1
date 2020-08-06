@@ -393,7 +393,7 @@ double []  year2017Books = new double[7];
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
@@ -778,7 +778,7 @@ double []  year2017Books = new double[7];
 
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1080,7 +1080,7 @@ double []  year2017Books = new double[7];
 
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1432,7 +1432,7 @@ double []  year2017Books = new double[7];
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }

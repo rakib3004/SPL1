@@ -106,7 +106,7 @@ public class AnalyticChart extends Application {
         Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }public void startDemandBook(Stage primaryStage){

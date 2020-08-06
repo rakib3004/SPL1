@@ -366,7 +366,7 @@ public class StackedArea extends Application {
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -750,7 +750,7 @@ public class StackedArea extends Application {
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
 
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1046,7 +1046,7 @@ public class StackedArea extends Application {
 
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1419,7 +1419,7 @@ public class StackedArea extends Application {
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 

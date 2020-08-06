@@ -374,7 +374,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -750,7 +750,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1044,7 +1044,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -1394,7 +1394,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Group group = new Group(vbox,exit,back);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
