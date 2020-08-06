@@ -5,6 +5,7 @@ import CrossValidationProcess.TrainingTestingComparison;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationShow;
 import JavFX.Main;
+import VisualRepresentation.AnalyticChart;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
 import javafx.application.Application;
@@ -28,7 +29,7 @@ public class TypesOfBook extends Application {
 
 InfoBarChart infoBarChart = new InfoBarChart();
 InfoPieChart infoPieChart = new InfoPieChart();
-
+AnalyticChart analyticChart1 = new AnalyticChart();
     @Override
     public void start(Stage primaryStage) {
         String className = this.getClass().getSimpleName();
@@ -58,9 +59,8 @@ InfoPieChart infoPieChart = new InfoPieChart();
             }
         });
         analyticChart.setOnAction(actionEvent -> {
-            TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
-                trainingTestingComparison.startStackedAreaChart(primaryStage);
+analyticChart1.startTypeBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
