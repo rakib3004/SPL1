@@ -199,7 +199,7 @@ public class GenericsOfBook extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Types of Books");
+        Text text = new Text("Generics of Books");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
