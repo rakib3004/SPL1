@@ -84,10 +84,6 @@ public class Main extends Application {
             }
         });
 
-
-
-/*.menu-item {  }
-.menu { -fx-padding: 1 5 1 5; }*/
         Font font = new Font(36);
         Font font1 = new Font(47);
         Font font2 = new Font( 25);
