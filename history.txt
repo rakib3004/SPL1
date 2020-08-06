@@ -1,1 +1,8 @@
-Main	Tue 28.07.2020 at 11:26:35 AM
+Main	Thu 06.08.2020 at 07:16:26 AM
+AuthorSystem	Thu 06.08.2020 at 07:16:31 AM
+ProcessAnalysis	Thu 06.08.2020 at 07:16:32 AM
+CrossValidation	Thu 06.08.2020 at 07:16:33 AM
+CrossValidation	Thu 06.08.2020 at 07:16:35 AM
+TrainingTestingComparison	Thu 06.08.2020 at 07:16:36 AM
+CrossValidation	Thu 06.08.2020 at 07:16:38 AM
+TestingSet	Thu 06.08.2020 at 07:16:39 AM

@@ -84,7 +84,6 @@ public class CrossValidation extends Application {
         crossValidationDescription.setGraphic(new ImageView(image3));
 
         crossValidationImplementation.setOnAction(actionEvent -> {
-            // new process which we processed today......................................................................
             CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
             try {
                 codeValidationShowing.start(primaryStage);
@@ -157,9 +156,9 @@ public class CrossValidation extends Application {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-        AuthorSystem authorSystem = new AuthorSystem();
+        ProcessAnalysis processAnalysis = new ProcessAnalysis();
         try {
-            authorSystem.start(primaryStage);
+            processAnalysis.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -463,24 +462,24 @@ public void finish(Stage primaryStage){
 
     Button training_set = new Button("Training Set");
     Button testing_set = new Button("Testing Set");
-    Button trainingTestingComparision = new Button("Training Testing Comparision");
+    Button trainingTestingComparison1 = new Button("Training Testing Comparison");
     training_set.setPrefSize(410,230);
     testing_set.setPrefSize(410, 230);
-    trainingTestingComparision.setPrefSize(410, 230);
+    trainingTestingComparison1.setPrefSize(410, 230);
 
     training_set.setFont(font2);
     testing_set.setFont(font2);
-    trainingTestingComparision.setFont(font2);
+    trainingTestingComparison1.setFont(font2);
     training_set.setTranslateX(30);
     training_set.setTranslateY(35);
     testing_set.setTranslateX(30);
     testing_set.setTranslateY(270);
-    trainingTestingComparision.setTranslateX(30);
-    trainingTestingComparision.setTranslateY(505);
+    trainingTestingComparison1.setTranslateX(30);
+    trainingTestingComparison1.setTranslateY(505);
 
     training_set.setContentDisplay(ContentDisplay.TOP);
     testing_set.setContentDisplay(ContentDisplay.TOP);
-    trainingTestingComparision.setContentDisplay(ContentDisplay.TOP);
+    trainingTestingComparison1.setContentDisplay(ContentDisplay.TOP);
     FileInputStream fileInputStream1 = null;
     try {
         fileInputStream1 = new FileInputStream(
@@ -509,9 +508,9 @@ public void finish(Stage primaryStage){
         e.printStackTrace();
     }
     Image image3 = new Image(fileInputStream3);
-    trainingTestingComparision.setGraphic(new ImageView(image3));
+    trainingTestingComparison1.setGraphic(new ImageView(image3));
 
-    trainingTestingComparision.setOnAction(actionEvent -> {
+    trainingTestingComparison1.setOnAction(actionEvent -> {
 
         TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
         try {
@@ -620,7 +619,7 @@ public void finish(Stage primaryStage){
     graphicsContext.drawImage(background,0,0);
     Group group = new Group();
     group.getChildren().addAll(canvas, training_set,
-            testing_set, exit, back, home, text, trainingTestingComparision);
+            testing_set, exit, back, home, text, trainingTestingComparison1);
     ReadingRoom readingRoom2 = new ReadingRoom();
     LibraryDesk libraryDesk2 = new LibraryDesk();
     CrossValidation crossValidation2 = new CrossValidation();
