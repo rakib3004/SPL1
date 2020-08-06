@@ -2,6 +2,7 @@ package BookDataBaseFX;
 
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationShow;
+import VisualRepresentation.AnalyticChart;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
 import javafx.application.Application;
@@ -17,10 +18,9 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class GenericsOfBook extends Application {
-
-
     InfoBarChart infoBarChart = new InfoBarChart();
     InfoPieChart infoPieChart = new InfoPieChart();
+    AnalyticChart analyticChart1 = new AnalyticChart();
 
     @Override
     public void start(Stage primaryStage) {
