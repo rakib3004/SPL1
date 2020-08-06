@@ -48,9 +48,7 @@ InfoPieChart infoPieChart = new InfoPieChart();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
-
         pieChart.setOnAction(actionEvent -> {
             try {
                 infoPieChart.startTypeBook(primaryStage);
@@ -58,7 +56,6 @@ InfoPieChart infoPieChart = new InfoPieChart();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-
         });
         analyticChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
@@ -81,14 +78,13 @@ InfoPieChart infoPieChart = new InfoPieChart();
         pieChart.setTranslateY(270);
         analyticChart.setTranslateX(30);
         analyticChart.setTranslateY(505);
-
         barChart.setContentDisplay(ContentDisplay.TOP);
         pieChart.setContentDisplay(ContentDisplay.TOP);
         analyticChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "scatter.png");
+                    "src" + File.separator + "Images" + File.separator + "bar.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -98,7 +94,7 @@ InfoPieChart infoPieChart = new InfoPieChart();
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "line.png");
+                    "src" + File.separator + "Images" + File.separator + "pie.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -108,7 +104,7 @@ InfoPieChart infoPieChart = new InfoPieChart();
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "area.png");
+                    "src" + File.separator + "Images" + File.separator + "all.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -133,7 +129,7 @@ InfoPieChart infoPieChart = new InfoPieChart();
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Testing Comparison");
+        Text text = new Text("Types of Books");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
