@@ -24,7 +24,7 @@ public class GenericsOfBook extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+/*
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -96,7 +96,7 @@ public class GenericsOfBook extends Application {
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
-        primaryStage.show();
+        primaryStage.show();*/
     }
     public Button setStyle( Button button)
     {
