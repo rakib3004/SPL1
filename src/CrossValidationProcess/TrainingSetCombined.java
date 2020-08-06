@@ -3,6 +3,7 @@ package CrossValidationProcess;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.Main;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -15,13 +16,21 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TrainingSetCombined extends Application {
@@ -37,37 +46,16 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
     @Override
     public void start(Stage primaryStage) {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-/*
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            TrainingObservation trainingObserVation = new TrainingObservation();
-            try {
-                trainingObserVation.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        Font font = new Font(14);
+        Font font1 = new Font(47);
+        Font font2 = new Font(26);
 
         Button codeValidationScatter = new Button("CodeValidation Scatter");
         Button codeValidationStackedArea = new Button("CodeValidation StackedArea");
         Button codeValidationLineChart = new Button("CodeValidation LineChart");
-
         codeValidationScatter.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
@@ -92,26 +80,132 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        codeValidationScatter.setTranslateX(500);
-        codeValidationScatter.setTranslateY(250);
-        codeValidationStackedArea.setTranslateX(500);
-        codeValidationLineChart.setTranslateX(500);
-        codeValidationLineChart.setTranslateY(350);
-        codeValidationStackedArea.setTranslateY(450);
-        setStyle(codeValidationScatter);
-        setStyle(codeValidationStackedArea);
-        setStyle(codeValidationLineChart);
-        codeValidationScatter.setPrefSize(400, 80);
-        codeValidationStackedArea.setPrefSize(400, 80);
-        codeValidationLineChart.setPrefSize(400, 80);
+        codeValidationScatter.setPrefSize(410, 230);
+        codeValidationStackedArea.setPrefSize(410, 230);
+        codeValidationLineChart.setPrefSize(410, 230);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, exit, back,
-                codeValidationScatter, codeValidationStackedArea, codeValidationLineChart);*/
+        codeValidationScatter.setFont(font2);
+        codeValidationStackedArea.setFont(font2);
+        codeValidationLineChart.setFont(font2);
+        codeValidationScatter.setTranslateX(30);
+        codeValidationScatter.setTranslateY(35);
+        codeValidationStackedArea.setTranslateX(30);
+        codeValidationStackedArea.setTranslateY(270);
+        codeValidationLineChart.setTranslateX(30);
+        codeValidationLineChart.setTranslateY(505);
+        codeValidationScatter.setContentDisplay(ContentDisplay.TOP);
+        codeValidationStackedArea.setContentDisplay(ContentDisplay.TOP);
+        codeValidationLineChart.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "implement.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        codeValidationScatter.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "analysis.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        codeValidationStackedArea.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "description.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        codeValidationLineChart.setGraphic(new ImageView(image3));
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Training Set");
+        text.setTranslateX(600);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375, 30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375, 30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            CrossValidation crossValidation = new CrossValidation();
+            try {
+                crossValidation.finish(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images" + File.separator + "framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image, 0, 0);
+        graphicsContext.drawImage(background, 0, 0);
+        Group group = new Group();
+        group.getChildren().addAll(canvas, codeValidationScatter,
+                codeValidationStackedArea, exit, back, home, text, codeValidationLineChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);

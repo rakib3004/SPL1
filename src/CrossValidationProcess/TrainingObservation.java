@@ -32,7 +32,6 @@ public class TrainingObservation extends Application {
         Font font = new Font(14);
         Font font1 = new Font(47);
         Font font2 = new Font(26);
-
         Button trainingSets = new Button("Training Set 1-4");
         Button trainingSetComparison = new Button("TrainingSet Comparison");
         Button trainingSetCombined = new Button("TrainingSet Combined");
@@ -73,7 +72,6 @@ public class TrainingObservation extends Application {
         trainingSetComparison.setTranslateY(270);
         trainingSetCombined.setTranslateX(30);
         trainingSetCombined.setTranslateY(505);
-
         trainingSets.setContentDisplay(ContentDisplay.TOP);
         trainingSetComparison.setContentDisplay(ContentDisplay.TOP);
         trainingSetCombined.setContentDisplay(ContentDisplay.TOP);
@@ -106,7 +104,6 @@ public class TrainingObservation extends Application {
         }
         Image image3 = new Image(fileInputStream3);
         trainingSetCombined.setGraphic(new ImageView(image3));
-
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -179,7 +176,6 @@ public class TrainingObservation extends Application {
                 exception.printStackTrace();
             }
         });
-
         Image background = new Image("Images" + File.separator + "framework.jpg");
         Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
