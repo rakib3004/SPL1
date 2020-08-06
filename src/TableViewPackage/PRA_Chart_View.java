@@ -132,7 +132,7 @@ public class PRA_Chart_View extends Application {
         Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -265,7 +265,7 @@ public class PRA_Chart_View extends Application {
 
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -384,7 +384,7 @@ public class PRA_Chart_View extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
