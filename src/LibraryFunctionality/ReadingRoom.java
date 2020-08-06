@@ -524,7 +524,7 @@ logIn.setOnAction(actionEvent -> {
     gridPane.addRow(4,label2,enter);
     gridPane.setMaxSize(980, 650);
 
-            Scene S = new Scene(gridPane, 700, 400);
+            Scene S = new Scene(gridPane, 700, 400,Color.FORESTGREEN);
             infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
@@ -792,7 +792,7 @@ else{
 }
        });
        gridPane.setMaxSize(980, 650);
-       Scene S = new Scene(gridPane, 700, 400);
+       Scene S = new Scene(gridPane, 700, 400,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
@@ -842,19 +842,19 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
            });
    });
 
-   logIn.setTranslateX(300);
+   logIn.setTranslateX(450);
         logIn.setTranslateY(100);
-          signUp.setTranslateX(510);
+          signUp.setTranslateX(660);
           signUp.setTranslateY(100);
                 logIn.setPrefSize(150,50);
                 signUp.setPrefSize(150,50);
-             //   setStyle(logIn);
-              //  setStyle(signUp);
+                setStyle(logIn);
+              setStyle(signUp);
         Font font2 = new Font(20);
 logIn.setFont(font2);
 signUp.setFont(font2);
-logIn.setTextFill(Color.SNOW);
-signUp.setTextFill(Color.SNOW);
+logIn.setTextFill(Color.BLACK);
+signUp.setTextFill(Color.BLACK);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -877,7 +877,7 @@ signUp.setTextFill(Color.SNOW);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        Image image = new Image("Images"+ File.separator +"UI.jpg");
+        Image image = new Image("Images"+ File.separator +"abc.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);

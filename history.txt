@@ -1,1 +1,14 @@
-Main	Thu 06.08.2020 at 10:33:42 PM
+Main	Thu 06.08.2020 at 11:17:01 PM
+ReadingRoom	Thu 06.08.2020 at 11:17:02 PM
+ReadingRoom	Thu 06.08.2020 at 11:17:03 PM
+AccountManagement	Thu 06.08.2020 at 11:17:34 PM
+AccountManagement	Thu 06.08.2020 at 11:17:37 PM
+AccountManagement	Thu 06.08.2020 at 11:17:37 PM
+UserChoiceTableData	Thu 06.08.2020 at 11:17:37 PM
+Processing	Thu 06.08.2020 at 11:17:37 PM
+DataParsing	Thu 06.08.2020 at 11:17:37 PM
+BookNumber	Thu 06.08.2020 at 11:17:37 PM
+MultipleLinearRegression	Thu 06.08.2020 at 11:17:37 PM
+Matrix	Thu 06.08.2020 at 11:17:37 PM
+CalculateWeight	Thu 06.08.2020 at 11:17:37 PM
+PrioritySort	Thu 06.08.2020 at 11:17:37 PM
