@@ -459,6 +459,7 @@ public void finish(Stage primaryStage){
     Font font = new Font(14);
     Font font1 = new Font(47);
     Font font2 = new Font( 26);
+    Font font4 = new Font( 20);
 
     Button training_set = new Button("Training Set");
     Button testing_set = new Button("Testing Set");
@@ -469,7 +470,7 @@ public void finish(Stage primaryStage){
 
     training_set.setFont(font2);
     testing_set.setFont(font2);
-    trainingTestingComparison1.setFont(font2);
+    trainingTestingComparison1.setFont(font4);
     training_set.setTranslateX(30);
     training_set.setTranslateY(35);
     testing_set.setTranslateX(30);
@@ -493,7 +494,7 @@ public void finish(Stage primaryStage){
     FileInputStream fileInputStream2 = null;
     try {
         fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+                "src"+ File.separator +"Images"+ File.separator +"testing.png");
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     }
@@ -503,7 +504,7 @@ public void finish(Stage primaryStage){
     FileInputStream fileInputStream3 = null;
     try {
         fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"description.png");
+                "src"+ File.separator +"Images"+ File.separator +"compare.png");
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     }
@@ -555,11 +556,11 @@ public void finish(Stage primaryStage){
     exit.setContentDisplay(ContentDisplay.LEFT);
     exit.setFont(font);
     Text text = new Text("Cross Validation Visualization");
-    text.setTranslateX(600);
+    text.setTranslateX(520);
     text.setTranslateY(500);
     text.setFont(font1);
     text.setFill(Color.BLACK);
-    text.setTextAlignment(TextAlignment.LEFT);
+    text.setTextAlignment(TextAlignment.RIGHT);
     text.setStyle("-fx-font-weight: bold;");
 
     Button home = new Button("Home");
