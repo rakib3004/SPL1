@@ -483,7 +483,7 @@ public void finish(Stage primaryStage){
     FileInputStream fileInputStream1 = null;
     try {
         fileInputStream1 = new FileInputStream(
-                "src" + File.separator + "Images" + File.separator + "implement.png");
+                "src" + File.separator + "Images" + File.separator + "training.png");
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     }

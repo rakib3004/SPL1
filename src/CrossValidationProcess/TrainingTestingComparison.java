@@ -77,7 +77,6 @@ public class TrainingTestingComparison extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font(26);
 
-
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
