@@ -40,7 +40,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
+/*
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -67,12 +67,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Button codeValidationScatter = new Button("CodeValidation Scatter");
         Button codeValidationStackedArea = new Button("CodeValidation StackedArea");
         Button codeValidationLineChart = new Button("CodeValidation LineChart");
-        codeValidationScatter.setTranslateX(500);
-        codeValidationScatter.setTranslateY(250);
-        codeValidationStackedArea.setTranslateX(500);
-        codeValidationLineChart.setTranslateX(500);
-        codeValidationLineChart.setTranslateY(350);
-        codeValidationStackedArea.setTranslateY(450);
 
         codeValidationScatter.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
@@ -83,7 +77,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         codeValidationStackedArea.setOnAction(actionEvent -> {
-          TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -98,6 +92,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
+        codeValidationScatter.setTranslateX(500);
+        codeValidationScatter.setTranslateY(250);
+        codeValidationStackedArea.setTranslateX(500);
+        codeValidationLineChart.setTranslateX(500);
+        codeValidationLineChart.setTranslateY(350);
+        codeValidationStackedArea.setTranslateY(450);
         setStyle(codeValidationScatter);
         setStyle(codeValidationStackedArea);
         setStyle(codeValidationLineChart);
@@ -109,22 +109,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, exit, back,
-                codeValidationScatter, codeValidationStackedArea, codeValidationLineChart);
-        Button administrationMood = new Button("Administration Mood");
-        Button readersMood = new Button("Readers Mood");
-        Button about = new Button("About");
-
-        readersMood.setTranslateX(20);
-        readersMood.setTranslateY(260);
-        administrationMood.setTranslateX(20);
-        administrationMood.setTranslateY(320);
-        about.setTranslateX(20);
-        about.setTranslateY(380);
-        administrationMood.setPrefSize(160, 30);
-        readersMood.setPrefSize(160, 30);
-        about.setPrefSize(160,30);
-
-
+                codeValidationScatter, codeValidationStackedArea, codeValidationLineChart);*/
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
