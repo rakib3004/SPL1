@@ -80,11 +80,17 @@ public class AHP_Chart_View extends Application {
 
         series1.setName("Book Weight Show");
         int positionIndicator = 0;
-
-       for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator),
-                    priorityData[iterator].getAHPweight()));
+            if(priorityData[iterator].getAHPweight()<2.00){
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                        (35.00*priorityData[iterator].getAHPweight())));
+            }
+            else{
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                        priorityData[iterator].getAHPweight()));
+            }
+
         }
         lineChart.getData().add(series1);
         lineChart.setTranslateX(10);
@@ -150,8 +156,6 @@ public class AHP_Chart_View extends Application {
                 exception.printStackTrace();
             }
         });
-
-
         scatterChartView.setPrefSize(160, 40);
         stackedAreaChartView.setPrefSize(160, 40);
         Canvas canvas = new Canvas(1500, 950);
@@ -189,7 +193,6 @@ public class AHP_Chart_View extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
@@ -212,13 +215,20 @@ public class AHP_Chart_View extends Application {
 
        series1.setName("Book Weight Show");
 
-
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator),
-                    priorityData[iterator].getAHPweight()));
+            if(priorityData[iterator].getAHPweight()<2.00){
+
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                        (35.00*priorityData[iterator].getAHPweight())));
+            }
+            else{
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                        priorityData[iterator].getAHPweight()));
+            }
+
         }
         scatterChart.getData().add(series1);
         scatterChart.setTranslateX(10);
@@ -300,7 +310,6 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -315,18 +324,14 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
 
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
@@ -336,19 +341,22 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
-
         XYChart.Series series1 = new XYChart.Series();
-
         series1.setName("Book Weight Show");
 
-
-        int positionIndicator = 0;
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
+    int positionIndicator = 0;
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        positionIndicator++;
+        if(priorityData[iterator].getAHPweight()<2.00){
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                    (35.00*priorityData[iterator].getAHPweight())));
         }
+        else{
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
+                    priorityData[iterator].getAHPweight()));
+        }
+    }
 
         stackedAreaChart.getData().add(series1);
 

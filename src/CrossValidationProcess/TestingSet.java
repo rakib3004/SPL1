@@ -391,7 +391,7 @@ public class TestingSet extends Application {
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
 
-        StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
+        StackedAreaChart stackedAreaChart2 = new StackedAreaChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
@@ -440,15 +440,15 @@ public class TestingSet extends Application {
         }
 
 
-        stackedAreaChart.getData().add(series1);
-        stackedAreaChart.getData().add(series2);
-        stackedAreaChart.getData().add(series3);
-        stackedAreaChart.getData().add(series4);
-        stackedAreaChart.getData().add(series5);
+        stackedAreaChart2.getData().add(series1);
+        stackedAreaChart2.getData().add(series2);
+        stackedAreaChart2.getData().add(series3);
+        stackedAreaChart2.getData().add(series4);
+        stackedAreaChart2.getData().add(series5);
 
-        stackedAreaChart.setTranslateX(10);
-        stackedAreaChart.setTranslateY(25);
-        stackedAreaChart.setPrefSize(1000, 500);
+        stackedAreaChart2.setTranslateX(10);
+        stackedAreaChart2.setTranslateY(25);
+        stackedAreaChart2.setPrefSize(1000, 500);
         ContextMenu contextMenu = new ContextMenu();
         MenuItem scatterView = new MenuItem("Scatter View");
         MenuItem lineChartView = new MenuItem("LineChart View");
@@ -477,16 +477,16 @@ public class TestingSet extends Application {
             }
         });
         contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+        stackedAreaChart2.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-                contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
+                contextMenu.show(stackedAreaChart2, event.getScreenX(), event.getScreenY());
             }
         });
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
+        group.getChildren().addAll(canvas, stackedAreaChart2, exit, back);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Scene scene1 = new Scene(group, 1500, 950);
 
