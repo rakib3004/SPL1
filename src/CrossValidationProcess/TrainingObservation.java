@@ -58,29 +58,13 @@ public class TrainingObservation extends Application {
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-        Button trainingMethodology = new Button("Training Methodology");
-        Button cvVisualization = new Button("CV Visualization");
+
         trainingMethodology.setTranslateX(500);
         trainingMethodology.setTranslateY(250);
         cvVisualization.setTranslateX(500);
         cvVisualization.setTranslateY(350);
 
-        trainingMethodology.setOnAction(actionEvent -> {
-            TrainingSet trainingSet1 = new TrainingSet();
-            try {
-                trainingSet1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        cvVisualization.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-            try {
-                crossValidationVisualization.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+
         setStyle(trainingMethodology);
         setStyle(cvVisualization);
         trainingMethodology.setPrefSize(350,80);
@@ -99,27 +83,26 @@ public class TrainingObservation extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font(26);
 
-
-        Button scatterChartComparison = new Button("ScatterChart Comparison");
-        Button lineChartComparison = new Button("LineChart Comparison");
-        Button stackedAreaChartComparison = new Button("StackedAreaChart Comparison");
-        scatterChartComparison.setOnAction(actionEvent -> {
-            TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
+        Button trainingSets = new Button("Training Set 1-4");
+        Button trainingSetComparison = new Button("TrainingSet Comparison");
+        Button trainingSetCombined = new Button("TrainingSet Combined");
+        trainingSets.setOnAction(actionEvent -> {
+            TrainingSet trainingSet1 = new TrainingSet();
             try {
-                trainingTestingComparison.startScatterChart(primaryStage);
+                trainingSet1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        lineChartComparison.setOnAction(actionEvent -> {
-            TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
+        trainingSetComparison.setOnAction(actionEvent -> {
+            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
             try {
-                trainingTestingComparison.startLineChart(primaryStage);
+                crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        stackedAreaChartComparison.setOnAction(actionEvent -> {
+        trainingSetCombined.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startStackedAreaChart(primaryStage);
@@ -127,23 +110,23 @@ public class TrainingObservation extends Application {
                 exception.printStackTrace();
             }
         });
-        scatterChartComparison.setPrefSize(410, 230);
-        lineChartComparison.setPrefSize(410, 230);
-        stackedAreaChartComparison.setPrefSize(410, 230);
+        trainingSets.setPrefSize(410, 230);
+        trainingSetComparison.setPrefSize(410, 230);
+        trainingSetCombined.setPrefSize(410, 230);
 
-        scatterChartComparison.setFont(font2);
-        lineChartComparison.setFont(font2);
-        stackedAreaChartComparison.setFont(font2);
-        scatterChartComparison.setTranslateX(30);
-        scatterChartComparison.setTranslateY(35);
-        lineChartComparison.setTranslateX(30);
-        lineChartComparison.setTranslateY(270);
-        stackedAreaChartComparison.setTranslateX(30);
-        stackedAreaChartComparison.setTranslateY(505);
+        trainingSets.setFont(font2);
+        trainingSetComparison.setFont(font2);
+        trainingSetCombined.setFont(font2);
+        trainingSets.setTranslateX(30);
+        trainingSets.setTranslateY(35);
+        trainingSetComparison.setTranslateX(30);
+        trainingSetComparison.setTranslateY(270);
+        trainingSetCombined.setTranslateX(30);
+        trainingSetCombined.setTranslateY(505);
 
-        scatterChartComparison.setContentDisplay(ContentDisplay.TOP);
-        lineChartComparison.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChartComparison.setContentDisplay(ContentDisplay.TOP);
+        trainingSets.setContentDisplay(ContentDisplay.TOP);
+        trainingSetComparison.setContentDisplay(ContentDisplay.TOP);
+        trainingSetCombined.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -152,7 +135,7 @@ public class TrainingObservation extends Application {
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        scatterChartComparison.setGraphic(new ImageView(image1));
+        trainingSets.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -162,7 +145,7 @@ public class TrainingObservation extends Application {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChartComparison.setGraphic(new ImageView(image2));
+        trainingSetComparison.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -172,7 +155,7 @@ public class TrainingObservation extends Application {
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChartComparison.setGraphic(new ImageView(image3));
+        trainingSetCombined.setGraphic(new ImageView(image3));
 
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
@@ -254,8 +237,8 @@ public class TrainingObservation extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
-        group.getChildren().addAll(canvas, scatterChartComparison,
-                lineChartComparison, exit, back, home, text, stackedAreaChartComparison);
+        group.getChildren().addAll(canvas, trainingSets,
+                trainingSetComparison, exit, back, home, text, trainingSetCombined);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
