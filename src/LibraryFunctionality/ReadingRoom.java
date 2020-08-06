@@ -850,9 +850,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
           signUp.setTranslateY(100);
                 logIn.setPrefSize(150,50);
                 signUp.setPrefSize(150,50);
-                setStyle(logIn);
-                setStyle(signUp);
+             //   setStyle(logIn);
+              //  setStyle(signUp);
 
+logIn.setTextFill(Color.SNOW);
+signUp.setTextFill(Color.SNOW);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -875,7 +877,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+      //  Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
@@ -883,8 +885,8 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
         group.getChildren().addAll(logIn,signUp,label);
         
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+        //graphicsContext.drawImage(image,0,0);
+        Scene scene1 = new Scene(group,1500,950,Color.DARKSLATEGRAY);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(false);
