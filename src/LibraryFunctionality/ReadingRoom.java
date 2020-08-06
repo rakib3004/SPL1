@@ -767,8 +767,6 @@ addFavouriteWriter = others.getText();
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
 if(ref.gridPaneCounter ==0){
-
-
     Label classNo = new Label("Class No :");
     classNo.setLabelFor(textFieldClassNo);
     classNo.setMnemonicParsing(true);
@@ -852,7 +850,7 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                 signUp.setPrefSize(150,50);
              //   setStyle(logIn);
               //  setStyle(signUp);
-        Font font2 = new Font(26);
+        Font font2 = new Font(20);
 logIn.setFont(font2);
 signUp.setFont(font2);
 logIn.setTextFill(Color.SNOW);
@@ -879,7 +877,7 @@ signUp.setTextFill(Color.SNOW);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-      //  Image image = new Image("Images"+ File.separator +"libraryBackground23.jpg");
+        Image image = new Image("Images"+ File.separator +"UI.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
@@ -887,8 +885,8 @@ signUp.setTextFill(Color.SNOW);
         group.getChildren().addAll(logIn,signUp,label);
         
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        //graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950,Color.CRIMSON);
+        graphicsContext.drawImage(image,0,0);
+        Scene scene1 = new Scene(group,1500,950/*,Color.CRIMSON*/);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(false);
