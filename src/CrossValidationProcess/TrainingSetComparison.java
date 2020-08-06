@@ -143,7 +143,7 @@ public class TrainingSetComparison extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Sets Combined");
+        Text text = new Text("Training Sets Comparison");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -235,7 +235,6 @@ public class TrainingSetComparison extends Application {
         });
         setStyle(exit);
         setStyle(back);
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         priorityData = processing.fileReaderMethods();

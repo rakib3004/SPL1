@@ -591,7 +591,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
-
         lineChart.getData().add(series1);
         lineChart.getData().add(series2);
         lineChart.getData().add(series3);
@@ -649,7 +648,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-
     }
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +

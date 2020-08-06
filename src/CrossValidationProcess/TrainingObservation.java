@@ -1,5 +1,4 @@
 package CrossValidationProcess;
-
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
 import javafx.application.Application;
@@ -19,9 +18,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 public class TrainingObservation extends Application {
-
     @Override
     public void start(Stage primaryStage){
 
