@@ -182,7 +182,7 @@ public class CombinedLineChart extends Application {
 
         Scene scene1 = new Scene(group, 1500, 950);
                 primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
