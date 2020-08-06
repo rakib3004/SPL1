@@ -39,8 +39,6 @@ public class TrainingSetCombined extends Application {
     int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override

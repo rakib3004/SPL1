@@ -85,3 +85,6 @@ BookNumber	Thu 06.08.2020 at 09:14:42 AM
 MultipleLinearRegression	Thu 06.08.2020 at 09:14:42 AM
 Matrix	Thu 06.08.2020 at 09:14:42 AM
 CalculateWeight	Thu 06.08.2020 at 09:14:42 AM
+TrainingSetComparison	Thu 06.08.2020 at 09:20:29 AM
+TrainingSetComparison	Thu 06.08.2020 at 09:20:32 AM
+Processing	Thu 06.08.2020 at 09:2
