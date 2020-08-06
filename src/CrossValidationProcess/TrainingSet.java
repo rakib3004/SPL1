@@ -52,61 +52,6 @@ public class TrainingSet extends Application {
 
     @Override
     public void start(Stage primaryStage){
-/*
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            TrainingObservation trainingObserVation = new TrainingObservation();
-            try {
-                trainingObserVation.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-        Button trainingSet1 = new Button("Training Set 1");
-        Button trainingSet2 = new Button("Training Set 2");
-        Button trainingSet3 = new Button("Training Set 3");
-        Button trainingSet4 = new Button("Training Set 4");
-
-        trainingSet1.setTranslateX(500);
-        trainingSet1.setTranslateY(200);
-        trainingSet2.setTranslateX(500);
-        trainingSet2.setTranslateY(300);
-        trainingSet3.setTranslateX(500);
-        trainingSet3.setTranslateY(400);
-        trainingSet4.setTranslateX(500);
-        trainingSet4.setTranslateY(500);
-
-
-        setStyle(trainingSet1);
-        setStyle(trainingSet2);
-        setStyle(trainingSet3);
-        setStyle(trainingSet4);
-       trainingSet1.setPrefSize(350,80);
-        trainingSet2.setPrefSize(350,80);
-        trainingSet3.setPrefSize(350,80);
-        trainingSet4.setPrefSize(350,80);
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingSet1,trainingSet2,trainingSet3,trainingSet4);
-                GraphicsContext graphicsContext = canvas.getGraphicsContext2D();*/
 
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
@@ -272,9 +217,9 @@ public class TrainingSet extends Application {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            CrossValidation crossValidation = new CrossValidation();
+            TrainingObservation trainingObserVation = new TrainingObservation();
             try {
-                crossValidation.finish(primaryStage);
+                trainingObserVation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
