@@ -47,7 +47,7 @@ public class CrossValidation extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+        Font font2 = new Font( 20);
         Button crossValidationImplementation = new Button("CrossValidation Implementation");
         Button crossValidationVisualization = new Button("CrossValidation Visualization");
         Button crossValidationDescription = new Button("CrossValidation Description");

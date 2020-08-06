@@ -31,50 +31,6 @@ public class TrainingObservation extends Application {
 
     @Override
     public void start(Stage primaryStage){
-/*
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            CrossValidation crossValidation = new CrossValidation();
-
-            try {
-                crossValidation.finish(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-                setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-        trainingMethodology.setTranslateX(500);
-        trainingMethodology.setTranslateY(250);
-        cvVisualization.setTranslateX(500);
-        cvVisualization.setTranslateY(350);
-
-
-        setStyle(trainingMethodology);
-        setStyle(cvVisualization);
-        trainingMethodology.setPrefSize(350,80);
-        cvVisualization.setPrefSize(350,80);
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,trainingMethodology,cvVisualization);
-*/
-
 
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
