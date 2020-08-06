@@ -44,17 +44,12 @@ public class TrainingObservation extends Application {
             }
         });
         trainingSetComparison.setOnAction(actionEvent -> {
-            TrainingSetCombined crossValidationVisualization = new TrainingSetCombined();
-            try {
-                crossValidationVisualization.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+          //on process
         });
         trainingSetCombined.setOnAction(actionEvent -> {
-            TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
+            TrainingSetCombined trainingSetCombined1 = new TrainingSetCombined();
             try {
-                trainingTestingComparison.startStackedAreaChart(primaryStage);
+                trainingSetCombined1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

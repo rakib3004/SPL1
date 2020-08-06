@@ -143,7 +143,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Set");
+        Text text = new Text("Training Sets Combined");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -190,9 +190,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            CrossValidation crossValidation = new CrossValidation();
+            TrainingObservation trainingObservation = new TrainingObservation();
             try {
-                crossValidation.finish(primaryStage);
+                trainingObservation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -73,10 +73,8 @@ public class TrainingSet extends Application {
 
         Button trainingSet1 = new Button("Training Set 1");
         Button trainingSet2 = new Button("Training Set 2");
-
         Button trainingSet3 = new Button("Training Set 3");
         Button trainingSet4 = new Button("Training Set 4");
-        Button trainingSetAll = new Button("Training Set All");
 
         trainingSet1.setTranslateX(500);
         trainingSet1.setTranslateY(200);
@@ -86,11 +84,10 @@ public class TrainingSet extends Application {
         trainingSet3.setTranslateY(400);
         trainingSet4.setTranslateX(500);
         trainingSet4.setTranslateY(500);
-        trainingSetAll.setTranslateX(500);
-        trainingSetAll.setTranslateY(600);
+
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -98,29 +95,21 @@ public class TrainingSet extends Application {
 
         trainingSet2.setOnAction(actionEvent -> {
             try {
-                trainingSet2(primaryStage);
+                trainingSet1(primaryStage,2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 trainingSet3.setOnAction(actionEvent -> {
             try {
-                trainingSet3(primaryStage);
+                trainingSet1(primaryStage,3);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet4.setOnAction(actionEvent -> {
             try {
-                trainingSet4(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-trainingSetAll.setOnAction(actionEvent -> {
-           // CombinedTrainingSet combinedTrainingSet = new CombinedTrainingSet();
-            try {
-               trainingSetAll(primaryStage);
+                trainingSet1(primaryStage,4);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -129,13 +118,10 @@ trainingSetAll.setOnAction(actionEvent -> {
         setStyle(trainingSet2);
         setStyle(trainingSet3);
         setStyle(trainingSet4);
-        setStyle(trainingSetAll);
        trainingSet1.setPrefSize(350,80);
         trainingSet2.setPrefSize(350,80);
         trainingSet3.setPrefSize(350,80);
         trainingSet4.setPrefSize(350,80);
-        trainingSetAll.setPrefSize(350,80);
-
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
@@ -150,10 +136,14 @@ trainingSetAll.setOnAction(actionEvent -> {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void trainingSet1(Stage primaryStage) throws IOException {
+    public void trainingSet1(Stage primaryStage,int a) throws IOException {
+        int b=a+5;
+        String aString=Integer.toString(a);
+        String bString=Integer.toString(b);
+        
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
+        dateTimeWriter.dateTimeWriterMethods(className);        
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -191,8 +181,8 @@ trainingSetAll.setOnAction(actionEvent -> {
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Training Set 1 ");
         for (iterator=0;iterator<numberOfBooks;iterator++){
-            if (priorityData[iterator].bookData.bookId.substring(13,14).contains("1")||
-                    priorityData[iterator].bookData.bookId.substring(13,14).contains("6")) {
+            if (priorityData[iterator].bookData.bookId.substring(13,14).contains(aString)||
+                    priorityData[iterator].bookData.bookId.substring(13,14).contains(bString)) {
                 series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,priorityData[iterator].getMLRweight()));
             }
         }
@@ -210,7 +200,7 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -218,33 +208,27 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         trainingSet2.setOnAction(actionEvent -> {
             try {
-                trainingSet2(primaryStage);
+                trainingSet1(primaryStage,2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet3.setOnAction(actionEvent -> {
             try {
-                trainingSet3(primaryStage);
+                trainingSet1(primaryStage,3);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet4.setOnAction(actionEvent -> {
             try {
-                trainingSet4(primaryStage);
+                trainingSet1(primaryStage,4);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        fullTrainingSet.setOnAction((event) -> {
-            try {
-             trainingSetAll(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+
         contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4,fullTrainingSet);
         ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
@@ -327,7 +311,7 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -443,7 +427,7 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -566,7 +550,7 @@ trainingSetAll.setOnAction(actionEvent -> {
 
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -712,7 +696,7 @@ trainingSetAll.setOnAction(actionEvent -> {
         TrainingSet trainingSet = new TrainingSet();
         trainingSet1.setOnAction(actionEvent -> {
             try {
-                trainingSet.trainingSet1(primaryStage);
+                trainingSet.trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
