@@ -57,9 +57,9 @@ public class TrainingSetComparison extends Application {
         Button stackedAreaChart = new Button("StackedArea Chart");
         Button lineChart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startScatterChart(primaryStage);
+                startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -67,7 +67,7 @@ public class TrainingSetComparison extends Application {
         stackedAreaChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
-                trainingSetCombined.startStackedArea(primaryStage);
+                startStackedArea(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -75,7 +75,7 @@ public class TrainingSetComparison extends Application {
         lineChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
-                trainingSetCombined.startLineChart(primaryStage);
+                startLineChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -310,23 +310,23 @@ public class TrainingSetComparison extends Application {
             try {
                 TrainingSetCombined trainingSetCombined =
                         new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
+                startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startLineChart(primaryStage);
+                startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startStackedArea(primaryStage);
+                startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -368,9 +368,9 @@ public class TrainingSetComparison extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.start(primaryStage);
+                start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -402,43 +402,26 @@ public class TrainingSetComparison extends Application {
         series2.setName("Training Set 2 ");
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
-        int positionIndicator = 0;
-
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+           for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
-                positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-            }
-        }
-        positionIndicator = 0;
 
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+            }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
-                positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
-        }
-        positionIndicator = 0;
-
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                positionIndicator++;
-
-                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
-        }
-        positionIndicator = 0;
 
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
-                positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -458,23 +441,23 @@ public class TrainingSetComparison extends Application {
             try {
                 TrainingSetCombined trainingSetCombined =
                         new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
+                startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startLineChart(primaryStage);
+                startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startStackedArea(primaryStage);
+                startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -515,9 +498,9 @@ public class TrainingSetComparison extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.start(primaryStage);
+                start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -608,24 +591,24 @@ public class TrainingSetComparison extends Application {
 
         scatterView.setOnAction((event) -> {
             try {
-                TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
+                
+                startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startLineChart(primaryStage);
+                startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+            
             try {
-                trainingSetCombined.startStackedArea(primaryStage);
+                startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
