@@ -88,7 +88,7 @@ public class DynamicStage extends Application {
 
                                 Scene scene1 = new Scene(group,1500,950);
                                 primaryStage.setScene(scene1);
-                                primaryStage.setTitle("Books Statistics");
+                                primaryStage.setTitle("Recommendation Tool");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
                             }
@@ -103,7 +103,7 @@ public class DynamicStage extends Application {
                                 graphicsContext.drawImage(image,0,0);
                                 Scene scene1 = new Scene(group,1500,950);
                                 primaryStage.setScene(scene1);
-                                primaryStage.setTitle("Books Statistics");
+                                primaryStage.setTitle("Recommendation Tool");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
 
@@ -120,7 +120,7 @@ public class DynamicStage extends Application {
 
 
                                 primaryStage.setScene(scene1);
-                                primaryStage.setTitle("Books Statistics");
+                                primaryStage.setTitle("Recommendation Tool");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
                             }   else  if(timeSec%4==0){
@@ -135,7 +135,7 @@ public class DynamicStage extends Application {
                                 Scene scene1 = new Scene(group,1500,950);
 
                                 primaryStage.setScene(scene1);
-                                primaryStage.setTitle("Books Statistics");
+                                primaryStage.setTitle("Recommendation Tool");
                                 primaryStage.setFullScreen(true);
                                 primaryStage.show();
                             }

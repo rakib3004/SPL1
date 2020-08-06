@@ -56,7 +56,7 @@ public class Phase1 extends Application {
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -105,7 +105,7 @@ public class Phase1 extends Application {
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -151,7 +151,7 @@ public class Phase1 extends Application {
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }

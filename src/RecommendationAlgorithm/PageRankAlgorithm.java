@@ -475,7 +475,7 @@ public class PageRankAlgorithm extends Application {
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
