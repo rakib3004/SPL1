@@ -124,7 +124,7 @@ public class TrainingTestingComparison extends Application {
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "implement.png");
+                    "src" + File.separator + "Images" + File.separator + "scatter.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -134,7 +134,7 @@ public class TrainingTestingComparison extends Application {
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "analysis.png");
+                    "src" + File.separator + "Images" + File.separator + "line.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -144,7 +144,7 @@ public class TrainingTestingComparison extends Application {
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "description.png");
+                    "src" + File.separator + "Images" + File.separator + "area.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
