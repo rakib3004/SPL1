@@ -1,13 +1,7 @@
 package CrossValidationProcess;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
-import MainPackage.BookNumber;
-import MainPackage.Processing;
-import ObjectOriented.AHPcriteriaWeight;
-import ObjectOriented.PriorityData;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -51,7 +45,7 @@ public class TrainingObservation extends Application {
             }
         });
         trainingSetComparison.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined crossValidationVisualization = new TrainingSetCombined();
             try {
                 crossValidationVisualization.start(primaryStage);
             } catch (Exception exception) {
@@ -131,7 +125,7 @@ public class TrainingObservation extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Testing Comparison");
+        Text text = new Text("Training Set");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);

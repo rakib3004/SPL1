@@ -3,13 +3,10 @@ package CrossValidationProcess;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
-import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import ProjectDescription.About;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -27,12 +24,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class CrossValidationVisualization extends Application {
-
-
+public class TrainingSetCombined extends Application {
     PriorityData[] priorityData;
-    AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
@@ -68,8 +61,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
         setStyle(exit);
         setStyle(back);
-
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -84,25 +75,25 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         codeValidationStackedArea.setTranslateY(450);
 
         codeValidationScatter.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startScatterChart(primaryStage);
+                trainingSetCombined.startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         codeValidationStackedArea.setOnAction(actionEvent -> {
-          CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
+          TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
-                crossValidationVisualization.startStackedArea(primaryStage);
+                trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         codeValidationLineChart.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization =  new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
-                crossValidationVisualization.startLineChart(primaryStage);
+                trainingSetCombined.startLineChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -239,25 +230,25 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         MenuItem stackedAreaView = new MenuItem("StackedArea View");
         scatterView.setOnAction((event) -> {
             try {
-                CrossValidationVisualization crossValidationVisualization =
-                        new CrossValidationVisualization();
-                crossValidationVisualization.startScatterChart(primaryStage);
+                TrainingSetCombined trainingSetCombined =
+                        new TrainingSetCombined();
+                trainingSetCombined.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startLineChart(primaryStage);
+                trainingSetCombined.startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startStackedArea(primaryStage);
+                trainingSetCombined.startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -299,9 +290,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.start(primaryStage);
+                trainingSetCombined.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -387,25 +378,25 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         scatterView.setOnAction((event) -> {
             try {
-                CrossValidationVisualization crossValidationVisualization =
-                        new CrossValidationVisualization();
-                crossValidationVisualization.startScatterChart(primaryStage);
+                TrainingSetCombined trainingSetCombined =
+                        new TrainingSetCombined();
+                trainingSetCombined.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startLineChart(primaryStage);
+                trainingSetCombined.startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startStackedArea(primaryStage);
+                trainingSetCombined.startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -446,9 +437,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.start(primaryStage);
+                trainingSetCombined.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -539,24 +530,24 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         scatterView.setOnAction((event) -> {
             try {
-                CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
-                crossValidationVisualization.startScatterChart(primaryStage);
+                TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
+                trainingSetCombined.startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startLineChart(primaryStage);
+                trainingSetCombined.startLineChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            CrossValidationVisualization crossValidationVisualization = new CrossValidationVisualization();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
-                crossValidationVisualization.startStackedArea(primaryStage);
+                trainingSetCombined.startStackedArea(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
