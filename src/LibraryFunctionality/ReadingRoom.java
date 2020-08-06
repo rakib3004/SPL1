@@ -468,7 +468,7 @@ public class ReadingRoom extends Application {
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
 
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
@@ -852,7 +852,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                 signUp.setPrefSize(150,50);
              //   setStyle(logIn);
               //  setStyle(signUp);
-
+        Font font2 = new Font(26);
+logIn.setFont(font2);
+signUp.setFont(font2);
 logIn.setTextFill(Color.SNOW);
 signUp.setTextFill(Color.SNOW);
         Button back = new Button("Back");
@@ -886,9 +888,9 @@ signUp.setTextFill(Color.SNOW);
         
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         //graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950,Color.DARKSLATEGRAY);
+        Scene scene1 = new Scene(group,1500,950,Color.CRIMSON);
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(false);
         primaryStage.show();
     }
@@ -1371,7 +1373,7 @@ signUp.setTextFill(Color.SNOW);
         Scene scene1 = new Scene(group, 1500, 950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
+        primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
