@@ -43,8 +43,12 @@ public class TrainingObservation extends Application {
             }
         });
         trainingSetComparison.setOnAction(actionEvent -> {
-          //on process
-        });
+            TrainingSetComparison trainingSetComparison1 = new TrainingSetComparison();
+            try {
+                trainingSetComparison1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }        });
         trainingSetCombined.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined1 = new TrainingSetCombined();
             try {
