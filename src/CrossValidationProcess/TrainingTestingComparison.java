@@ -78,10 +78,10 @@ public class TrainingTestingComparison extends Application {
         Font font2 = new Font(26);
 
 
-        Button scatterChartComparison = new Button("ScatterChart Comparison");
-        Button lineChartComparison = new Button("LineChart Comparison");
-        Button stackedAreaChartComparison = new Button("StackedAreaChart Comparison");
-        scatterChartComparison.setOnAction(actionEvent -> {
+        Button scatterChart = new Button("Scatter Chart");
+        Button lineChart = new Button("Line Chart");
+        Button stackedAreaChart = new Button("Stacked Area Chart");
+        scatterChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startScatterChart(primaryStage);
@@ -89,7 +89,7 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        lineChartComparison.setOnAction(actionEvent -> {
+        lineChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startLineChart(primaryStage);
@@ -97,7 +97,7 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        stackedAreaChartComparison.setOnAction(actionEvent -> {
+        stackedAreaChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startStackedAreaChart(primaryStage);
@@ -105,23 +105,23 @@ public class TrainingTestingComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        scatterChartComparison.setPrefSize(410, 230);
-        lineChartComparison.setPrefSize(410, 230);
-        stackedAreaChartComparison.setPrefSize(410, 230);
+        scatterChart.setPrefSize(410, 230);
+        lineChart.setPrefSize(410, 230);
+        stackedAreaChart.setPrefSize(410, 230);
 
-        scatterChartComparison.setFont(font2);
-        lineChartComparison.setFont(font2);
-        stackedAreaChartComparison.setFont(font2);
-        scatterChartComparison.setTranslateX(30);
-        scatterChartComparison.setTranslateY(35);
-        lineChartComparison.setTranslateX(30);
-        lineChartComparison.setTranslateY(270);
-        stackedAreaChartComparison.setTranslateX(30);
-        stackedAreaChartComparison.setTranslateY(505);
+        scatterChart.setFont(font2);
+        lineChart.setFont(font2);
+        stackedAreaChart.setFont(font2);
+        scatterChart.setTranslateX(30);
+        scatterChart.setTranslateY(35);
+        lineChart.setTranslateX(30);
+        lineChart.setTranslateY(270);
+        stackedAreaChart.setTranslateX(30);
+        stackedAreaChart.setTranslateY(505);
 
-        scatterChartComparison.setContentDisplay(ContentDisplay.TOP);
-        lineChartComparison.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChartComparison.setContentDisplay(ContentDisplay.TOP);
+        scatterChart.setContentDisplay(ContentDisplay.TOP);
+        lineChart.setContentDisplay(ContentDisplay.TOP);
+        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -130,7 +130,7 @@ public class TrainingTestingComparison extends Application {
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        scatterChartComparison.setGraphic(new ImageView(image1));
+        scatterChart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -140,7 +140,7 @@ public class TrainingTestingComparison extends Application {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChartComparison.setGraphic(new ImageView(image2));
+        lineChart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -150,7 +150,7 @@ public class TrainingTestingComparison extends Application {
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChartComparison.setGraphic(new ImageView(image3));
+        stackedAreaChart.setGraphic(new ImageView(image3));
 
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
@@ -232,8 +232,8 @@ public class TrainingTestingComparison extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
-        group.getChildren().addAll(canvas, scatterChartComparison,
-                lineChartComparison, exit, back, home, text, stackedAreaChartComparison);
+        group.getChildren().addAll(canvas, scatterChart,
+                lineChart, exit, back, home, text, stackedAreaChart);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();

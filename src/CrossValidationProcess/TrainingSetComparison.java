@@ -57,7 +57,6 @@ public class TrainingSetComparison extends Application {
         Button stackedAreaChart = new Button("StackedArea Chart");
         Button lineChart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
-            
             try {
                 startScatterChart(primaryStage);
             } catch (Exception exception) {
@@ -65,7 +64,6 @@ public class TrainingSetComparison extends Application {
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -73,7 +71,6 @@ public class TrainingSetComparison extends Application {
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 startLineChart(primaryStage);
             } catch (Exception exception) {
