@@ -164,15 +164,14 @@ public class TrainingSet extends Application {
         trainingSet3.setTranslateY(385);
         trainingSet4.setTranslateX(30);
         trainingSet4.setTranslateY(560);
-
-        trainingSet11.setContentDisplay(ContentDisplay.TOP);
-        trainingSet2.setContentDisplay(ContentDisplay.TOP);
-        trainingSet3.setContentDisplay(ContentDisplay.TOP);
-        trainingSet4.setContentDisplay(ContentDisplay.TOP);
-        FileInputStream fileInputStream1 = null;
+        trainingSet11.setContentDisplay(ContentDisplay.LEFT);
+         trainingSet2.setContentDisplay(ContentDisplay.LEFT);
+         trainingSet3.setContentDisplay(ContentDisplay.LEFT);
+         trainingSet4.setContentDisplay(ContentDisplay.LEFT);
+         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "implement.png");
+                    "src" + File.separator + "Images" + File.separator + "types.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -182,7 +181,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "analysis.png");
+                    "src" + File.separator + "Images" + File.separator + "time.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -192,7 +191,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "description.png");
+                    "src" + File.separator + "Images" + File.separator + "borrow.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -202,7 +201,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream4 = null;
         try {
             fileInputStream4 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "description.png");
+                    "src" + File.separator + "Images" + File.separator + "demand.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -214,12 +213,19 @@ public class TrainingSet extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
-        exit.setGraphic(new ImageView(image4));
+        FileInputStream fileInputStream8 = null;
+        try {
+            fileInputStream8 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image8 = new Image(fileInputStream8);
+        exit.setGraphic(new ImageView(image8));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Set");
+        Text text = new Text("Training Set 1-4");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
