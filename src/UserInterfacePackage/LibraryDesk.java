@@ -122,7 +122,7 @@ public class LibraryDesk extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("Librarian Desk");
-        text.setTranslateX(600);
+        text.setTranslateX(685);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);

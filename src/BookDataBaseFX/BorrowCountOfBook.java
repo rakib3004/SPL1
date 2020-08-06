@@ -129,7 +129,7 @@ public class BorrowCountOfBook extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("Borrow Count of Books");
-        text.setTranslateX(600);
+        text.setTranslateX(666);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);

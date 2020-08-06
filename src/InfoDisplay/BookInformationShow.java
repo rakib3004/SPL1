@@ -186,7 +186,7 @@ public class BookInformationShow extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("Book Information");
-        text.setTranslateX(600);
+        text.setTranslateX(650);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
