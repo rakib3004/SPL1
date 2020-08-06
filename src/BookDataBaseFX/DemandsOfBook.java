@@ -32,38 +32,17 @@ public class DemandsOfBook extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-      /*  String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
 
-       ///add 4 buttons
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        Font font = new Font(14);
+        Font font1 = new Font(47);
+        Font font2 = new Font(26);
+
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
-
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
-
-        pieChart.setTranslateX(500);
-        pieChart.setTranslateY(300);
-
-        back.setOnAction(actionEvent -> {
-            BookInformationShow bookInformationShow = new BookInformationShow();
-            try {
-                bookInformationShow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
+        Button analyticChart = new Button("Analytic Chart");
         barChart.setOnAction(actionEvent -> {
             try {
                 infoBarChart.startDemandBook(primaryStage);
@@ -79,62 +58,9 @@ public class DemandsOfBook extends Application {
                 exception.printStackTrace();
             }
         });
-
-        setStyle(exit);
-        setStyle(back);
-
-        setStyle(barChart);
-        setStyle(pieChart);
-
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-
-        barChart.setPrefSize(200, 80);
-        pieChart.setPrefSize(200, 80);
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground2.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-
-        Scene scene1 = new Scene(group,1500,950);
-
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();*/
-        String className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter = new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-        Font font = new Font(14);
-        Font font1 = new Font(47);
-        Font font2 = new Font(26);
-
-        Button barChart = new Button("Bar Chart");
-        Button pieChart = new Button("Pie Chart");
-        Button analyticChart = new Button("Analytic Chart");
-        barChart.setOnAction(actionEvent -> {
-            try {
-                infoBarChart.startTypeBook(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        pieChart.setOnAction(actionEvent -> {
-            try {
-                infoPieChart.startTypeBook(primaryStage);
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
         analyticChart.setOnAction(actionEvent -> {
             try {
-                analyticChart1.startTypeBook(primaryStage);
+                analyticChart1.startDemandBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
