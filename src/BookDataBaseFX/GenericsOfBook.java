@@ -33,77 +33,7 @@ public class GenericsOfBook extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-/*
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        Button barChart = new Button("Bar Chart");
-        Button pieChart = new Button("Pie Chart");
 
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-
-        barChart.setTranslateX(500);
-        barChart.setTranslateY(200);
-
-        pieChart.setTranslateX(500);
-        pieChart.setTranslateY(300);
-
-        back.setOnAction(actionEvent -> {
-            BookInformationShow bookInformationShow = new BookInformationShow();
-            try {
-                bookInformationShow.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
-        barChart.setOnAction(actionEvent -> {
-            try {
-                infoBarChart.startGenericBook(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        pieChart.setOnAction(actionEvent -> {
-            try {
-                infoPieChart.startGenericBook(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        setStyle(exit);
-        setStyle(back);
-
-        setStyle(barChart);
-        setStyle(pieChart);
-
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
-        barChart.setPrefSize(200, 80);
-        pieChart.setPrefSize(200, 80);
-
-        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,barChart,pieChart);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
-
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Books Statistics");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();*/
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
