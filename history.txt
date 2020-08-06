@@ -87,4 +87,36 @@ Matrix	Thu 06.08.2020 at 09:14:42 AM
 CalculateWeight	Thu 06.08.2020 at 09:14:42 AM
 TrainingSetComparison	Thu 06.08.2020 at 09:20:29 AM
 TrainingSetComparison	Thu 06.08.2020 at 09:20:32 AM
-Processing	Thu 06.08.2020 at 09:2
+Processing	Thu 06.08.2020 at 09:2TestingSet	Thu 06.08.2020 at 10:26:37 AM
+TestingSet	Thu 06.08.2020 at 10:27:01 AM
+TestingSet	Thu 06.08.2020 at 10:27:09 AM
+Processing	Thu 06.08.2020 at 10:27:09 AM
+DataParsing	Thu 06.08.2020 at 10:27:09 AM
+BookNumber	Thu 06.08.2020 at 10:27:09 AM
+MultipleLinearRegression	Thu 06.08.2020 at 10:27:09 AM
+Matrix	Thu 06.08.2020 at 10:27:09 AM
+CalculateWeight	Thu 06.08.2020 at 10:27:09 AM
+TestingSet	Thu 06.08.2020 at 10:27:11 AM
+TestingSet	Thu 06.08.2020 at 10:27:12 AM
+Processing	Thu 06.08.2020 at 10:27:12 AM
+DataParsing	Thu 06.08.2020 at 10:27:13 AM
+BookNumber	Thu 06.08.2020 at 10:27:13 AM
+MultipleLinearRegression	Thu 06.08.2020 at 10:27:13 AM
+Matrix	Thu 06.08.2020 at 10:27:13 AM
+CalculateWeight	Thu 06.08.2020 at 10:27:13 AM
+TestingSet	Thu 06.08.2020 at 10:27:15 AM
+TestingSet	Thu 06.08.2020 at 10:27:15 AM
+Processing	Thu 06.08.2020 at 10:27:15 AM
+DataParsing	Thu 06.08.2020 at 10:27:15 AM
+BookNumber	Thu 06.08.2020 at 10:27:15 AM
+MultipleLinearRegression	Thu 06.08.2020 at 10:27:16 AM
+Matrix	Thu 06.08.2020 at 10:27:16 AM
+CalculateWeight	Thu 06.08.2020 at 10:27:16 AM
+TestingSet	Thu 06.08.2020 at 10:27:18 AM
+TestingSet	Thu 06.08.2020 at 10:27:20 AM
+Processing	Thu 06.08.2020 at 10:27:20 AM
+DataParsing	Thu 06.08.2020 at 10:27:20 AM
+BookNumber	Thu 06.08.2020 at 10:27:20 AM
+MultipleLinearRegression	Thu 06.08.2020 at 10:27:20 AM
+Matrix	Thu 06.08.2020 at 10:27:20 AM
+CalculateWeight	Thu 06.08.2020 at 10:27:20 AM

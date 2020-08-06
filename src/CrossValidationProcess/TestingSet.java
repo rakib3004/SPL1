@@ -67,7 +67,6 @@ public class TestingSet extends Application {
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -75,7 +74,6 @@ public class TestingSet extends Application {
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -145,7 +143,7 @@ public class TestingSet extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Training Sets Comparison");
+        Text text = new Text("Testing Set");
         text.setTranslateX(600);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -192,9 +190,9 @@ public class TestingSet extends Application {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            TrainingObservation trainingObservation = new TrainingObservation();
+            CrossValidation crossValidation = new CrossValidation();
             try {
-                trainingObservation.start(primaryStage);
+                crossValidation.finish(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -258,30 +256,43 @@ public class TestingSet extends Application {
         series2.setName("Training Set 2 ");
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
+        int positionIndicator = 0;
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
-
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                positionIndicator++;
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
+                positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
-            }
+                positionIndicator++;
 
+                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
+                positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+
+            }
+        }
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                positionIndicator++;
+                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
 
-        ScatterChart.getData().add(series1);
+            ScatterChart.getData().add(series1);
         ScatterChart.getData().add(series2);
         ScatterChart.getData().add(series3);
         ScatterChart.getData().add(series4);
@@ -389,29 +400,45 @@ public class TestingSet extends Application {
         series2.setName("Training Set 2 ");
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
+        int positionIndicator = 0;
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
-
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
-            }
-            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
-                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
-
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
-            }
-            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
-                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
-            }
-
-            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
-                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
-
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                positionIndicator++;
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
+        positionIndicator = 0;
 
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
+                positionIndicator++;
+
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            }
+        }
+        positionIndicator = 0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
+                positionIndicator++;
+
+                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            }
+        }
+        positionIndicator = 0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
+                positionIndicator++;
+
+                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            }
+        }
         stackedAreaChart.getData().add(series1);
         stackedAreaChart.getData().add(series2);
         stackedAreaChart.getData().add(series3);
@@ -522,26 +549,43 @@ public class TestingSet extends Application {
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
 
+        int positionIndicator = 0;
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
-
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                positionIndicator++;
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
+        }
+        positionIndicator = 0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
+                positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
+        }
+        positionIndicator = 0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
-            }
+                positionIndicator++;
 
+                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            }
+        }
+        positionIndicator = 0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
+                positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
 
