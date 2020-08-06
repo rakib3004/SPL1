@@ -93,34 +93,7 @@ public class TrainingSet extends Application {
         trainingSet4.setTranslateX(500);
         trainingSet4.setTranslateY(500);
 
-        trainingSet1.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,1);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        trainingSet2.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,2);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-trainingSet3.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,3);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        trainingSet4.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,4);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
+
         setStyle(trainingSet1);
         setStyle(trainingSet2);
         setStyle(trainingSet3);
@@ -141,44 +114,61 @@ trainingSet3.setOnAction(actionEvent -> {
         Font font = new Font(14);
         Font font1 = new Font(47);
         Font font2 = new Font(26);
-        Button trainingSet11 = new Button("Training Set1");
-        Button trainingSet2 = new Button("Training Set2");
-        Button trainingSet3 = new Button("Training Set3");
+        Button trainingSet11 = new Button("Training Set 1");
+        Button trainingSet2 = new Button("Training Set 2");
+        Button trainingSet3 = new Button("Training Set 3");
+        Button trainingSet4 = new Button("Training Set 4");
         trainingSet11.setOnAction(actionEvent -> {
-            TrainingSet trainingSet1 = new TrainingSet();
             try {
-                trainingSet1.start(primaryStage);
+                trainingSet1(primaryStage,1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet2.setOnAction(actionEvent -> {
-            //on process
-        });
-        trainingSet3.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined1 = new TrainingSetCombined();
             try {
-                trainingSetCombined1.start(primaryStage);
+                trainingSet1(primaryStage,2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        trainingSet11.setPrefSize(410, 230);
-        trainingSet2.setPrefSize(410, 230);
-        trainingSet3.setPrefSize(410, 230);
+        trainingSet3.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,3);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet4.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,4);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet11.setPrefSize(410, 170);
+        trainingSet2.setPrefSize(410, 170);
+        trainingSet3.setPrefSize(410, 170);
+        trainingSet4.setPrefSize(410, 170);
 
         trainingSet11.setFont(font2);
         trainingSet2.setFont(font2);
         trainingSet3.setFont(font2);
+        trainingSet4.setFont(font2);
+
         trainingSet11.setTranslateX(30);
         trainingSet11.setTranslateY(35);
         trainingSet2.setTranslateX(30);
-        trainingSet2.setTranslateY(270);
+        trainingSet2.setTranslateY(210);
         trainingSet3.setTranslateX(30);
-        trainingSet3.setTranslateY(505);
+        trainingSet3.setTranslateY(385);
+        trainingSet4.setTranslateX(30);
+        trainingSet4.setTranslateY(560);
+
         trainingSet11.setContentDisplay(ContentDisplay.TOP);
         trainingSet2.setContentDisplay(ContentDisplay.TOP);
         trainingSet3.setContentDisplay(ContentDisplay.TOP);
+        trainingSet4.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -208,20 +198,23 @@ trainingSet3.setOnAction(actionEvent -> {
         }
         Image image3 = new Image(fileInputStream3);
         trainingSet3.setGraphic(new ImageView(image3));
+
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "description.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        trainingSet4.setGraphic(new ImageView(image4));
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        FileInputStream fileInputStream4 = null;
-        try {
-            fileInputStream4 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "exit.png");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        Image image4 = new Image(fileInputStream4);
+
         exit.setGraphic(new ImageView(image4));
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
@@ -288,7 +281,8 @@ trainingSet3.setOnAction(actionEvent -> {
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
         group.getChildren().addAll(canvas, trainingSet11,
-                trainingSet2, exit, back, home, text, trainingSet3);        Scene scene1 = new Scene(group,1500,950);
+                trainingSet2, trainingSet3, trainingSet4,exit, back, home, text);
+        Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Books Statistics");
         primaryStage.setFullScreen(true);
