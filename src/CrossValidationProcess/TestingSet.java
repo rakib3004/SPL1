@@ -408,25 +408,25 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -555,25 +555,25 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
