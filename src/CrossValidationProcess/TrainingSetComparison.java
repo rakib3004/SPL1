@@ -33,7 +33,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class TrainingSetCombined extends Application {
+public class TrainingSetComparison extends Application {
     PriorityData[] priorityData;
     int numberOfBooks;
     int iterator;
@@ -41,7 +41,7 @@ public class TrainingSetCombined extends Application {
     BookNumber bookNumber = new BookNumber();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override
     public void start(Stage primaryStage) {
@@ -510,7 +510,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-                back.setTranslateX(0);
+        back.setTranslateX(0);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);

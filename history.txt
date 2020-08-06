@@ -39,3 +39,17 @@ MultipleLinearRegression	Thu 06.08.2020 at 09:03:47 AM
 Matrix	Thu 06.08.2020 at 09:03:47 AM
 CalculateWeight	Thu 06.08.2020 at 09:03:47 AM
 TestingSet	Thu 06.08.2020 at 09:03:48 AM
+TrainingSetCombined	Thu 06.08.2020 at 09:06:39 AM
+TrainingObservation	Thu 06.08.2020 at 09:06:46 AM
+TrainingSet	Thu 06.08.2020 at 09:06:48 AM
+TrainingObservation	Thu 06.08.2020 at 09:06:50 AM
+TrainingSetCombined	Thu 06.08.2020 at 09:06:53 AM
+TrainingSetCombined	Thu 06.08.2020 at 09:06:54 AM
+Processing	Thu 06.08.2020 at 09:06:54 AM
+DataParsing	Thu 06.08.2020 at 09:06:55 AM
+BookNumber	Thu 06.08.2020 at 09:06:55 AM
+MultipleLinearRegression	Thu 06.08.2020 at 09:06:55 AM
+Matrix	Thu 06.08.2020 at 09:06:55 AM
+CalculateWeight	Thu 06.08.2020 at 09:06:55 AM
+TrainingSetCombined	Thu 06.08.2020 at 09:06:58 AM
+TrainingObservation	Thu 06.08.2020 at 09:07:05 AM
