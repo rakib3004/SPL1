@@ -896,7 +896,7 @@ signUp.setTextFill(Color.BLACK);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
 
-        Image image = new Image("Images"+ File.separator +"power.png");
+        Image image = new Image("Images"+ File.separator +"a19.png");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
