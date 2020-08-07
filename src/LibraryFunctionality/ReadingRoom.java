@@ -523,8 +523,17 @@ logIn.setOnAction(actionEvent -> {
     gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(4,label2,enter);
     gridPane.setMaxSize(980, 650);
+    Image image19 = new Image("Images"+ File.separator +"a2.jpg");
+    Canvas canvas19 = new Canvas(600,400);
+    Group group19 = new Group();
+    group19.getChildren().addAll(canvas19);
+    group19.getChildren().addAll(gridPane);
 
-            Scene S = new Scene(gridPane, 700, 400,Color.FORESTGREEN);
+
+    GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
+    graphicsContext.drawImage(image19,0,0);
+
+            Scene S = new Scene(group19, 600, 400);
             infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
@@ -792,7 +801,18 @@ else{
 }
        });
        gridPane.setMaxSize(980, 650);
-       Scene S = new Scene(gridPane, 700, 400,Color.DODGERBLUE);
+
+       Image image19 = new Image("Images"+ File.separator +"a1.jpg");
+       Canvas canvas19 = new Canvas(600,400);
+       Group group19 = new Group();
+       group19.getChildren().addAll(canvas19);
+       group19.getChildren().addAll(gridPane);
+
+
+       GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
+       graphicsContext.drawImage(image19,0,0);
+
+       Scene S = new Scene(group19, 700, 400,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
@@ -841,7 +861,6 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
            }
            });
    });
-
    logIn.setTranslateX(450);
         logIn.setTranslateY(100);
           signUp.setTranslateX(660);
