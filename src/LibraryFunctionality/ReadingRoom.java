@@ -803,7 +803,7 @@ else{
        gridPane.setMaxSize(980, 650);
 
        Image image19 = new Image("Images"+ File.separator +"a1.jpg");
-       Canvas canvas19 = new Canvas(600,400);
+       Canvas canvas19 = new Canvas(800,400);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
        group19.getChildren().addAll(gridPane);
@@ -812,7 +812,7 @@ else{
        GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
        graphicsContext.drawImage(image19,0,0);
 
-       Scene S = new Scene(group19, 700, 400,Color.DODGERBLUE);
+       Scene S = new Scene(group19, 800, 400,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
