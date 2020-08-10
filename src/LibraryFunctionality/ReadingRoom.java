@@ -902,7 +902,6 @@ signUp.setTextFill(Color.BLACK);
         group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll();
         group.getChildren().addAll(logIn,signUp,label);
-        
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950/*,Color.CRIMSON*/);
@@ -967,7 +966,6 @@ signUp.setTextFill(Color.BLACK);
         }
         Image image2 = new Image(fileInputStream2);
         selfWise.setGraphic(new ImageView(image2));
-
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
@@ -987,8 +985,6 @@ signUp.setTextFill(Color.BLACK);
         }
         Image image7 = new Image(fileInputStream7);
         writerWise.setGraphic(new ImageView(image7));
-
-
         writerWise.setOnAction(actionEvent -> {
             try {
 
@@ -999,7 +995,6 @@ signUp.setTextFill(Color.BLACK);
             }
         });
         typeWise1.setOnAction(actionEvent -> {
-
             try {
                 TypeWise typeWise = new TypeWise();
                 typeWise.start(primaryStage);
@@ -1024,8 +1019,6 @@ signUp.setTextFill(Color.BLACK);
                 exception.printStackTrace();
             }
         });
-
-
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -1051,7 +1044,6 @@ signUp.setTextFill(Color.BLACK);
         text.setFill(Color.BLACK);
         text.setTextAlignment(TextAlignment.LEFT);
         text.setStyle("-fx-font-weight: bold;");
-
         Button home = new Button("Home");
         home.setTranslateX(470);
         home.setTranslateY(520);
