@@ -38,10 +38,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(900);
-        back.setTranslateY(800);
-        exit.setTranslateX(100);
-        exit.setTranslateY(800);
+        back.setTranslateX(1000);
+        back.setTranslateY(700);
+        exit.setTranslateX(1150);
+        exit.setTranslateY(700);
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
@@ -55,8 +55,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
         //setStyle(exit);
        // setStyle(back);
-    back.setPrefSize(90, 90);
-    exit.setPrefSize(90, 90);
+    back.setPrefSize(145, 20);
+    exit.setPrefSize(145, 20);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -80,6 +80,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setTranslateX(0);
         lineChart.setTranslateY(0);
         lineChart.setPrefSize(1350, 600);
+        lineChart.setStyle("-fx-chart-plot-background-color: transperant;");
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
@@ -136,12 +137,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        scatterChartView.setTranslateX(900);
-        scatterChartView.setTranslateY(700);
-        stackedAreaChartView.setTranslateX(1000);
-        stackedAreaChartView.setTranslateY(700);
-        scatterChartView.setPrefSize(90, 90);
-        stackedAreaChartView.setPrefSize(160, 90);
+        scatterChartView.setTranslateX(1000);
+        scatterChartView.setTranslateY(600);
+        stackedAreaChartView.setTranslateX(1150);
+        stackedAreaChartView.setTranslateY(600);
+        scatterChartView.setPrefSize(145, 90);
+        stackedAreaChartView.setPrefSize(145, 90);
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, stackedAreaChartView, scatterChartView,exit,back);
