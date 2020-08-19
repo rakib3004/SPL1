@@ -80,8 +80,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setTranslateX(0);
         lineChart.setTranslateY(0);
         lineChart.setPrefSize(1350, 600);
-        lineChart.setStyle("-fx-chart-plot-background-color: transperant;");
-
+       // lineChart.setStyle("-fx-chart-plot-background-color: transperant;");
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
         MenuItem ahp_process = new MenuItem("AHP Process");
@@ -149,6 +148,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         Scene scene1 = new Scene(group, 1500, 950);
+        scene1.getStylesheets().add("LineChart.css");
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
