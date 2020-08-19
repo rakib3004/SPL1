@@ -1,5 +1,4 @@
 package TableViewPackage;
-
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -21,9 +20,7 @@ import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 public class MLR_Chart_View extends Application {
-
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 
@@ -41,10 +38,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        back.setTranslateX(900);
+        back.setTranslateY(800);
+        exit.setTranslateX(100);
+        exit.setTranslateY(800);
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
@@ -56,11 +53,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(160, 50);
-        exit.setPrefSize(160, 50);
+        //setStyle(exit);
+       // setStyle(back);
+    back.setPrefSize(90, 90);
+    exit.setPrefSize(90, 90);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -81,9 +77,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         }
 
         lineChart.getData().add(series1);
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        lineChart.setTranslateX(0);
+        lineChart.setTranslateY(0);
+        lineChart.setPrefSize(1350, 600);
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
@@ -125,10 +121,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button scatterChartView = new Button("ScatterChart View");
         Button stackedAreaChartView = new Button("StackedAreaChart View");
-        scatterChartView.setTranslateX(30);
-        scatterChartView.setTranslateY(0);
-        stackedAreaChartView.setTranslateX(1170);
-        stackedAreaChartView.setTranslateY(0);
+
         scatterChartView.setOnAction(actionEvent -> {
             try {
                 startScatterChart(primaryStage);
@@ -143,8 +136,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        scatterChartView.setPrefSize(160, 40);
-        stackedAreaChartView.setPrefSize(160, 40);
+        scatterChartView.setTranslateX(900);
+        scatterChartView.setTranslateY(700);
+        stackedAreaChartView.setTranslateX(1000);
+        stackedAreaChartView.setTranslateY(700);
+        scatterChartView.setPrefSize(90, 90);
+        stackedAreaChartView.setPrefSize(160, 90);
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, stackedAreaChartView, scatterChartView,exit,back);
@@ -163,9 +160,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
-        back.setTranslateY(650);
+        back.setTranslateY(700);
         exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        exit.setTranslateY(700);
         back.setOnAction(actionEvent -> {
             FourVariableRegression fourVariableRegression = new FourVariableRegression();
             try {
