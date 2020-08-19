@@ -223,9 +223,9 @@ public class ReadingRoom extends Application {
         ToggleGroup toggleGroupMain = new ToggleGroup();
         logIn.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
-        Font font = new Font(19);
+        Font font = new Font(22);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+        Font font2 = new Font( 15);
         //login to system
 logIn.setOnAction(actionEvent -> {
     TextField getUserName = new TextField();
@@ -240,6 +240,8 @@ logIn.setOnAction(actionEvent -> {
     userIdTextField.setLabelFor(getUserID);
     userIdTextField.setMnemonicParsing(true);
     Label label1 = new Label("Insert Your Name & ID");
+    label1.setFont(font);
+    Label labelA = new Label("            ");
     Button enter = new Button("----Enter----");
 
             enter.setPrefSize(160, 40);
@@ -254,7 +256,7 @@ logIn.setOnAction(actionEvent -> {
     Label label2 = new Label();
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
-    gridPane.addRow(1,  label1);
+    gridPane.addRow(1,  labelA,label1);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(4,label2,enter);
