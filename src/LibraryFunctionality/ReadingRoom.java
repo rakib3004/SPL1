@@ -223,12 +223,18 @@ public class ReadingRoom extends Application {
         ToggleGroup toggleGroupMain = new ToggleGroup();
         logIn.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+        //login to system
 logIn.setOnAction(actionEvent -> {
     TextField getUserName = new TextField();
     TextField getUserID = new TextField();
 
     Label userNameTextField = new Label("_Name:");
     Label userIdTextField = new Label("_User ID:");
+    userNameTextField.setFont(font2);
+    userIdTextField.setFont(font2);
     userNameTextField.setLabelFor(getUserName);
     userNameTextField.setMnemonicParsing(true);
     userIdTextField.setLabelFor(getUserID);
@@ -599,9 +605,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                 signUp.setPrefSize(150,50);
                 setStyle(logIn);
               setStyle(signUp);
-        Font font2 = new Font(20);
-logIn.setFont(font2);
-signUp.setFont(font2);
+        Font font3 = new Font(20);
+logIn.setFont(font3);
+signUp.setFont(font3);
 logIn.setTextFill(Color.BLACK);
 signUp.setTextFill(Color.BLACK);
         Button back = new Button("Back");
