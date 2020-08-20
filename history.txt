@@ -396,3 +396,17 @@ BookNumber	Wed 19.08.2020 at 12:53:39 PM
 MultipleLinearRegression	Wed 19.08.2020 at 12:53:39 PM
 Matrix	Wed 19.08.2020 at 12:53:39 PM
 CalculateWeight	Wed 19.08.2020 at 12:53:39 PM
+MLR_Chart_View	Thu 20.08.2020 at 10:01:34 AM
+Processing	Thu 20.08.2020 at 10:01:35 AM
+DataParsing	Thu 20.08.2020 at 10:01:36 AM
+BookNumber	Thu 20.08.2020 at 10:01:36 AM
+MultipleLinearRegression	Thu 20.08.2020 at 10:01:36 AM
+Matrix	Thu 20.08.2020 at 10:01:36 AM
+CalculateWeight	Thu 20.08.2020 at 10:01:36 AM
+MLR_Chart_View	Thu 20.08.2020 at 10:02:15 AM
+Processing	Thu 20.08.2020 at 10:02:15 AM
+DataParsing	Thu 20.08.2020 at 10:02:15 AM
+BookNumber	Thu 20.08.2020 at 10:02:15 AM
+MultipleLinearRegression	Thu 20.08.2020 at 10:02:15 AM
+Matrix	Thu 20.08.2020 at 10:02:15 AM
+CalculateWeight	Thu 20.08.2020 at 10:02:15 AM
