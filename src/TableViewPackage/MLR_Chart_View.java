@@ -120,7 +120,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
 
         Button scatterChartView = new Button("ScatterChart View");
-        Button stackedAreaChartView = new Button("StackedAreaChart View");
+        Button stackedAreaChartView = new Button("StackedArea View");
 
         scatterChartView.setOnAction(actionEvent -> {
             try {
