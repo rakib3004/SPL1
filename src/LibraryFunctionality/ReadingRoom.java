@@ -508,17 +508,16 @@ addFavouriteWriter = others.getText();
        gridPane.addRow(6,uponnash,kobita,rochonaboli,religion);
        gridPane.addRow(7,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
        gridPane.addRow(8,biography,gobesona,onubad,others1);
-       var ref = new Object() {
-           int gridPaneCounter = 0;
-       };
+       final int[] gridPaneCounter = {0};
+
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
-if(ref.gridPaneCounter ==0){
+if(gridPaneCounter[0] ==0){
     Label classNo = new Label("Class No :");
     classNo.setLabelFor(textFieldClassNo);
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
-    ref.gridPaneCounter =1;
+    gridPaneCounter[0] =1;
     educationLevel = "Secondary";
 }
 else{
@@ -526,12 +525,12 @@ else{
 }
        });
        radioButtonUniversity.setOnAction(actionEvent1 -> {
-if(ref.gridPaneCounter==0){
+if(gridPaneCounter[0] ==0){
     Label departmentName = new Label("Department Name :");
     departmentName.setLabelFor(textFieldDepartment);
     departmentName.setMnemonicParsing(true);
     gridPane.addRow(5, departmentName, textFieldDepartment);
-ref.gridPaneCounter=1;
+gridPaneCounter[0] =1;
 
     educationLevel = "Higher";}
 else{
