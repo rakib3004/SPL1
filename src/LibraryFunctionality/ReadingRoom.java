@@ -539,7 +539,7 @@ else{
        });
        gridPane.setMaxSize(980, 650);
 
-       Image image19 = new Image("Images"+ File.separator +"a1.jpg");
+       Image image19 = new Image("Images"+ File.separator +"UI.jpg");
        Canvas canvas19 = new Canvas(800,400);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
