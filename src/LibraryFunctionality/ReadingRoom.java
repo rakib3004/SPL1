@@ -33,6 +33,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -224,8 +225,10 @@ public class ReadingRoom extends Application {
         logIn.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
         Font font = new Font(22);
-        Font font1 = new Font(47);
+        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,28);
         Font font2 = new Font( 15);
+        Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
+
         //login to system
 logIn.setOnAction(actionEvent -> {
     TextField getUserName = new TextField();
@@ -239,10 +242,16 @@ logIn.setOnAction(actionEvent -> {
     userNameTextField.setMnemonicParsing(true);
     userIdTextField.setLabelFor(getUserID);
     userIdTextField.setMnemonicParsing(true);
-    Label label1 = new Label("Insert Your Name & ID");
-    label1.setFont(font);
+  //  Label label1 = new Label("Insert Your Name & ID");
+   // label1.setFont(font);
     Label labelA = new Label("            ");
     Button enter = new Button("----Enter----");
+
+    userNameTextField.setFont(font1);
+    userIdTextField.setFont(font1);
+   // label1.setFont(font1);
+    label.setFont(font4);
+    label.setTextFill(Color.WHITE);
 
             enter.setPrefSize(160, 40);
             Stage infoStage = new Stage();
@@ -250,18 +259,18 @@ logIn.setOnAction(actionEvent -> {
             gridPane.setAlignment(Pos.CENTER);
 
     label.setText("LOG IN");
-    label.setTranslateX(100);
-    label.setTranslateY(20);
+    label.setTranslateX(230);
+    label.setTranslateY(5);
     label.setPrefSize(250,65);
     Label label2 = new Label();
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
-    gridPane.addRow(1,  labelA,label1);
+  //  gridPane.addRow(1,  labelA,label1);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(4,label2,enter);
     gridPane.setMaxSize(980, 650);
-    Image image19 = new Image("Images"+ File.separator +"a2.jpg");
+    Image image19 = new Image("Images"+ File.separator +"a6.jpg");
     Canvas canvas19 = new Canvas(600,400);
     Group group19 = new Group();
     group19.getChildren().addAll(canvas19);
@@ -539,7 +548,7 @@ else{
        });
        gridPane.setMaxSize(980, 650);
 
-       Image image19 = new Image("Images"+ File.separator +"UI.jpg");
+       Image image19 = new Image("Images"+ File.separator +"a5.jpg");
        Canvas canvas19 = new Canvas(800,400);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
