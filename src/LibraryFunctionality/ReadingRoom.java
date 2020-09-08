@@ -244,7 +244,7 @@ logIn.setOnAction(actionEvent -> {
     userIdTextField.setMnemonicParsing(true);
   //  Label label1 = new Label("Insert Your Name & ID");
    // label1.setFont(font);
-    Label labelA = new Label("            ");
+
     Button enter = new Button("----Enter----");
 
     userNameTextField.setFont(font1);
@@ -263,9 +263,12 @@ logIn.setOnAction(actionEvent -> {
     label.setTranslateY(5);
     label.setPrefSize(250,65);
     Label label2 = new Label();
+
+    Label labelA = new Label("            ");
+    Label labelB = new Label("   ");
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
-  //  gridPane.addRow(1,  labelA,label1);
+  gridPane.addRow(1,  labelA,labelB);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(4,label2,enter);
