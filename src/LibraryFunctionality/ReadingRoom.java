@@ -249,6 +249,7 @@ logIn.setOnAction(actionEvent -> {
 
     userNameTextField.setFont(font1);
     userIdTextField.setFont(font1);
+
    // label1.setFont(font1);
     label.setFont(font4);
     label.setTextFill(Color.WHITE);
@@ -264,8 +265,9 @@ logIn.setOnAction(actionEvent -> {
     label.setPrefSize(250,65);
     Label label2 = new Label();
 
-    Label labelA = new Label("            ");
-    Label labelB = new Label("   ");
+    Label labelA = new Label("     ");
+    Label labelB = new Label("Insert Your Name & User ID");
+    labelB.setFont(font1);
     gridPane.setVgap(10);
     gridPane.addRow(0,label);
   gridPane.addRow(1,  labelA,labelB);
