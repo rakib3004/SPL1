@@ -220,10 +220,10 @@ public class ReadingRoom extends Application {
 
         Label signUpLabel = new Label("");
         RadioButton logInRadioButton = new RadioButton("Log In");
-        RadioButton signUp = new RadioButton("Sign Up");
+        RadioButton signUpRadioButton = new RadioButton("Sign Up");
         ToggleGroup toggleGroupMain = new ToggleGroup();
         logInRadioButton.setToggleGroup(toggleGroupMain);
-        signUp.setToggleGroup(toggleGroupMain);
+        signUpRadioButton.setToggleGroup(toggleGroupMain);
         Font font = new Font(22);
         Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
         Font font2 = new Font( 15);
@@ -318,7 +318,7 @@ AccountManagement accountManagement = new AccountManagement();
     });
         });
 
-   signUp.setOnAction(actionEvent -> {
+   signUpRadioButton.setOnAction(actionEvent -> {
 
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
@@ -621,17 +621,17 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
    });
    logInRadioButton.setTranslateX(450);
         logInRadioButton.setTranslateY(100);
-          signUp.setTranslateX(660);
-          signUp.setTranslateY(100);
+          signUpRadioButton.setTranslateX(660);
+          signUpRadioButton.setTranslateY(100);
                 logInRadioButton.setPrefSize(150,50);
-                signUp.setPrefSize(150,50);
+                signUpRadioButton.setPrefSize(150,50);
                 setStyle(logInRadioButton);
-              setStyle(signUp);
+              setStyle(signUpRadioButton);
         Font font3 = new Font(20);
 logInRadioButton.setFont(font3);
-signUp.setFont(font3);
+signUpRadioButton.setFont(font3);
 logInRadioButton.setTextFill(Color.BLACK);
-signUp.setTextFill(Color.BLACK);
+signUpRadioButton.setTextFill(Color.BLACK);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -659,7 +659,7 @@ signUp.setTextFill(Color.BLACK);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll();
-        group.getChildren().addAll(logInRadioButton,signUp,signUpLabel);
+        group.getChildren().addAll(logInRadioButton,signUpRadioButton,signUpLabel);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950/*,Color.CRIMSON*/);
