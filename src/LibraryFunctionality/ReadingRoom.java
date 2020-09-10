@@ -265,14 +265,17 @@ logInRadioButton.setOnAction(actionEvent -> {
     signUpLabel.setPrefSize(250,65);
     Label label2 = new Label();
 
-    Label spaceLabel = new Label("     ");
+    Label spaceLabel = new Label("                 ");
+    Label emptyLabelOne = new Label("");
+    Label emptyLabelTwo = new Label("");
+    Label emptyLabelThree = new Label("");
     Label insertNameID = new Label("Insert Your Name & User ID");
     insertNameID.setFont(font1);
     gridPane.setVgap(10);
     gridPane.addRow(0,signUpLabel);
-    gridPane.addRow(1,  spaceLabel,insertNameID);
-    gridPane.addRow(2, userNameTextField, getUserName);
-    gridPane.addRow(3, userIdTextField, getUserID);
+    gridPane.addRow(1, emptyLabelOne,spaceLabel,insertNameID);
+    gridPane.addRow(2, emptyLabelTwo,userNameTextField, getUserName);
+    gridPane.addRow(3, emptyLabelThree,userIdTextField, getUserID);
     gridPane.addRow(14,label2,enterButton1);
     gridPane.setMaxSize(980, 650);
     Image image19 = new Image("Images"+ File.separator +"a6.jpg");
@@ -565,7 +568,7 @@ else{
        gridPane.setMaxSize(980, 650);
 
        Image image19 = new Image("Images"+ File.separator +"signUp.jpg");
-       Canvas canvas19 = new Canvas(800,400);
+       Canvas canvas19 = new Canvas(800,460);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
        group19.getChildren().addAll(gridPane);
