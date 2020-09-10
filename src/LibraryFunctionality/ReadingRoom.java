@@ -218,11 +218,11 @@ public class ReadingRoom extends Application {
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Label label = new Label("");
-        RadioButton logIn = new RadioButton("Log In");
+        Label signUpLabel = new Label("");
+        RadioButton logInRadioButton = new RadioButton("Log In");
         RadioButton signUp = new RadioButton("Sign Up");
         ToggleGroup toggleGroupMain = new ToggleGroup();
-        logIn.setToggleGroup(toggleGroupMain);
+        logInRadioButton.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
         Font font = new Font(22);
         Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
@@ -230,7 +230,7 @@ public class ReadingRoom extends Application {
         Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
 
         //login to system
-logIn.setOnAction(actionEvent -> {
+logInRadioButton.setOnAction(actionEvent -> {
     TextField getUserName = new TextField();
     TextField getUserID = new TextField();
 
@@ -251,25 +251,25 @@ logIn.setOnAction(actionEvent -> {
     userIdTextField.setFont(font1);
 
    // label1.setFont(font1);
-    label.setFont(font4);
-    label.setTextFill(Color.WHITE);
+    signUpLabel.setFont(font4);
+    signUpLabel.setTextFill(Color.WHITE);
 
             enter.setPrefSize(160, 40);
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
 
-    label.setText("LOG IN");
-    label.setTranslateX(230);
-    label.setTranslateY(5);
-    label.setPrefSize(250,65);
+    signUpLabel.setText("LOG IN");
+    signUpLabel.setTranslateX(230);
+    signUpLabel.setTranslateY(5);
+    signUpLabel.setPrefSize(250,65);
     Label label2 = new Label();
 
     Label labelA = new Label("     ");
     Label labelB = new Label("Insert Your Name & User ID");
     labelB.setFont(font1);
     gridPane.setVgap(10);
-    gridPane.addRow(0,label);
+    gridPane.addRow(0,signUpLabel);
   gridPane.addRow(1,  labelA,labelB);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
@@ -338,32 +338,35 @@ radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
 radioButtonCollege.setFont(font1);
 radioButtonUniversity.setFont(font1);
-       Label label1 = new Label("Insert Your Name & Institute");
+       Label insertNameInstitute = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
        Stage infoStage = new Stage();
        GridPane gridPane = new GridPane();
        gridPane.setAlignment(Pos.CENTER);
-       label.setText("SIGN UP");
-       label.setTranslateX(100);
-       label.setTranslateY(20);
-       label.setPrefSize(250,65);
+       signUpLabel.setText("SIGN UP");
+       signUpLabel.setTranslateX(100);
+       signUpLabel.setTranslateY(20);
+       signUpLabel.setPrefSize(250,65);
 
 Label label2 =new Label();
 Label label3 =new Label();
 Label label4 =new Label();
-       Button cancel = new Button("----Cancel----");
-       cancel.setPrefSize(160, 40);
-       cancel.setOnAction(actionEvent1 -> {
+       Button cancelButton = new Button("----Cancel----");
+       cancelButton.setPrefSize(160, 40);
+       insertNameInstitute.setFont(font1);
+       enterButton.setFont(font1);
+       cancelButton.setFont(font1);
+       cancelButton.setOnAction(actionEvent1 -> {
            infoStage.close();
        });
        gridPane.setVgap(10);
-       gridPane.addRow(0,label2,label);
-       gridPane.addRow(1,  label1);
+       gridPane.addRow(0,label2,signUpLabel);
+       gridPane.addRow(1,  insertNameInstitute);
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(12,label3,label4,cancel,enterButton);
+       gridPane.addRow(12,label3,label4,cancelButton,enterButton);
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
            @Override
@@ -616,18 +619,18 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
            }
            });
    });
-   logIn.setTranslateX(450);
-        logIn.setTranslateY(100);
+   logInRadioButton.setTranslateX(450);
+        logInRadioButton.setTranslateY(100);
           signUp.setTranslateX(660);
           signUp.setTranslateY(100);
-                logIn.setPrefSize(150,50);
+                logInRadioButton.setPrefSize(150,50);
                 signUp.setPrefSize(150,50);
-                setStyle(logIn);
+                setStyle(logInRadioButton);
               setStyle(signUp);
         Font font3 = new Font(20);
-logIn.setFont(font3);
+logInRadioButton.setFont(font3);
 signUp.setFont(font3);
-logIn.setTextFill(Color.BLACK);
+logInRadioButton.setTextFill(Color.BLACK);
 signUp.setTextFill(Color.BLACK);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -656,7 +659,7 @@ signUp.setTextFill(Color.BLACK);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
         group.getChildren().addAll();
-        group.getChildren().addAll(logIn,signUp,label);
+        group.getChildren().addAll(logInRadioButton,signUp,signUpLabel);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950/*,Color.CRIMSON*/);
