@@ -265,7 +265,7 @@ logInRadioButton.setOnAction(actionEvent -> {
     signUpLabel.setPrefSize(250,65);
     Label label2 = new Label();
 
-    Label spaceLabel = new Label("                 ");
+    Label spaceLabel = new Label(" ");
     Label emptyLabelOne = new Label("");
     Label emptyLabelTwo = new Label("");
     Label emptyLabelThree = new Label("");
@@ -273,9 +273,9 @@ logInRadioButton.setOnAction(actionEvent -> {
     insertNameID.setFont(font1);
     gridPane.setVgap(10);
     gridPane.addRow(0,signUpLabel);
-    gridPane.addRow(1, emptyLabelOne,spaceLabel,insertNameID);
-    gridPane.addRow(2, emptyLabelTwo,userNameTextField, getUserName);
-    gridPane.addRow(3, emptyLabelThree,userIdTextField, getUserID);
+    gridPane.addRow(1, insertNameID);
+    gridPane.addRow(2, userNameTextField, getUserName);
+    gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(14,label2,enterButton1);
     gridPane.setMaxSize(980, 650);
     Image image19 = new Image("Images"+ File.separator +"a6.jpg");
@@ -360,6 +360,8 @@ Label label4 =new Label();
        readerName.setFont(font1);
        instituteName.setFont(font1);
        insertNameInstitute.setFont(font1);
+       readerTextField.setFont(font1);
+       instituteTextField.setFont(font1);
       // enterButton.setFont(font1);
      //  cancelButton.setFont(font1);
        cancelButton.setOnAction(actionEvent1 -> {
