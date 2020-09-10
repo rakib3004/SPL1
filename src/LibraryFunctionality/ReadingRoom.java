@@ -459,6 +459,7 @@ addFavouriteWriter = others.getText();
                kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
                samareshMajumdar, emdadiyaPustokaloy,others);
 
+
        Label favouriteWriter = new Label("Favourite Writer");
        favouriteWriter.setFont(font1);
        favouriteWriter.setLabelFor(writerMenu);
