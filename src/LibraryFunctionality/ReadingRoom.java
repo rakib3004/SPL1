@@ -245,7 +245,7 @@ logInRadioButton.setOnAction(actionEvent -> {
   //  Label label1 = new Label("Insert Your Name & ID");
    // label1.setFont(font);
 
-    Button enter = new Button("----Enter----");
+    Button enterButton1 = new Button("----Enter----");
 
     userNameTextField.setFont(font1);
     userIdTextField.setFont(font1);
@@ -254,7 +254,7 @@ logInRadioButton.setOnAction(actionEvent -> {
     signUpLabel.setFont(font4);
     signUpLabel.setTextFill(Color.WHITE);
 
-            enter.setPrefSize(160, 40);
+            enterButton1.setPrefSize(160, 40);
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
@@ -265,15 +265,15 @@ logInRadioButton.setOnAction(actionEvent -> {
     signUpLabel.setPrefSize(250,65);
     Label label2 = new Label();
 
-    Label labelA = new Label("     ");
+    Label spaceLabel = new Label("     ");
     Label labelB = new Label("Insert Your Name & User ID");
     labelB.setFont(font1);
     gridPane.setVgap(10);
     gridPane.addRow(0,signUpLabel);
-  gridPane.addRow(1,  labelA,labelB);
+  gridPane.addRow(1,  spaceLabel,labelB);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
-    gridPane.addRow(14,label2,enter);
+    gridPane.addRow(14,label2,enterButton1);
     gridPane.setMaxSize(980, 650);
     Image image19 = new Image("Images"+ File.separator +"a6.jpg");
     Canvas canvas19 = new Canvas(600,400);
@@ -289,7 +289,7 @@ logInRadioButton.setOnAction(actionEvent -> {
             infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
-    enter.setOnAction(actionEvent1 -> {
+    enterButton1.setOnAction(actionEvent1 -> {
 userName = getUserName.getText();
 userID = getUserID.getText();
 userName = userName.trim();
