@@ -3,6 +3,8 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
+import JavFX.AuthorSystem;
+import JavFX.Main;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -26,11 +28,16 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,28 +76,193 @@ public class TimeWise extends Application {
         }
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            ReadingRoom readingRoom = new ReadingRoom();
+
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font(23);
+
+        Button writerWise = new Button("Writer Wise");
+        Button typeWise1 = new Button("Type Wise");
+        Button selfWise = new Button("Self Wise");
+        Button timeWise = new Button("Time Wise");
+
+        typeWise1.setPrefSize(400, 170);
+        selfWise.setPrefSize(400, 170);
+        timeWise.setPrefSize(400, 170);
+        writerWise.setPrefSize(400, 170);
+
+        typeWise1.setFont(font2);
+        selfWise.setFont(font2);
+        timeWise.setFont(font2);
+        writerWise.setFont(font2);
+
+        typeWise1.setTranslateX(30);
+        typeWise1.setTranslateY(35);
+        selfWise.setTranslateX(30);
+        selfWise.setTranslateY(210);
+        timeWise.setTranslateX(30);
+        timeWise.setTranslateY(385);
+        writerWise.setTranslateX(30);
+        writerWise.setTranslateY(560);
+
+        typeWise1.setContentDisplay(ContentDisplay.LEFT);
+        selfWise.setContentDisplay(ContentDisplay.LEFT);
+        timeWise.setContentDisplay(ContentDisplay.LEFT);
+        writerWise.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "types.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        typeWise1.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "time.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        selfWise.setGraphic(new ImageView(image2));
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        timeWise.setGraphic(new ImageView(image3));
+
+        FileInputStream fileInputStream7 = null;
+        try {
+            fileInputStream7 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "demand.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image7 = new Image(fileInputStream7);
+        writerWise.setGraphic(new ImageView(image7));
+        writerWise.setOnAction(actionEvent -> {
             try {
-                readingRoom.start(primaryStage);
+
+                WriterWise writerWiseFX = new WriterWise();
+                writerWiseFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+        typeWise1.setOnAction(actionEvent -> {
+            try {
+                TypeWise typeWise = new TypeWise();
+                typeWise.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        selfWise.setOnAction(actionEvent -> {
+
+            try {
+                SelfWiseFX selfWiseFX = new SelfWiseFX();
+                selfWiseFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        timeWise.setOnAction(actionEvent -> {
+            try {
+                TimeWise timeWiseFX = new TimeWise();
+                timeWiseFX.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Default Book Recommendation");
+        text.setTranslateX(575);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375, 30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375, 30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            AuthorSystem authorSystem = new AuthorSystem();
+            try {
+                authorSystem.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images" + File.separator + "framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background, 0, 0);
+        Group group = new Group();
+        group.getChildren().addAll(canvas, typeWise1,
+                selfWise, writerWise,
+                timeWise, exit, home, text, back);
 
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
         MenuItem year1 = new MenuItem("2008-2010");
         year1.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
@@ -188,15 +360,15 @@ public class TimeWise extends Application {
         MenuButton yearSection = new MenuButton("Choose Year");
         yearSection.getItems().addAll( year1, year2, year3, year4,
                 year5);
-        yearSection.setTranslateX(500);
-        yearSection.setTranslateY(350);
+        yearSection.setTranslateX(700);
+        yearSection.setTranslateY(285);
         yearSection.setPrefSize(200, 50);
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
+      //  Canvas canvas = new Canvas(1500,950);
+      //  Group group = new Group();
 
-        group.getChildren().addAll(canvas,exit,back,yearSection);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll(yearSection);
+       // GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
 

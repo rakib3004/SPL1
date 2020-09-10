@@ -213,6 +213,7 @@ public class ReadingRoom extends Application {
     String educationLevel = "";
     TextField textFieldClassNo = new TextField();
     TextField textFieldDepartment = new TextField();
+
     public void manualSystem(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
