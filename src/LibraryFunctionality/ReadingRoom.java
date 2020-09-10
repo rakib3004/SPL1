@@ -266,11 +266,11 @@ logInRadioButton.setOnAction(actionEvent -> {
     Label label2 = new Label();
 
     Label spaceLabel = new Label("     ");
-    Label labelB = new Label("Insert Your Name & User ID");
-    labelB.setFont(font1);
+    Label insertNameID = new Label("Insert Your Name & User ID");
+    insertNameID.setFont(font1);
     gridPane.setVgap(10);
     gridPane.addRow(0,signUpLabel);
-  gridPane.addRow(1,  spaceLabel,labelB);
+    gridPane.addRow(1,  spaceLabel,insertNameID);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
     gridPane.addRow(14,label2,enterButton1);
@@ -290,12 +290,12 @@ logInRadioButton.setOnAction(actionEvent -> {
             infoStage.setScene(S);
             infoStage.show();
     enterButton1.setOnAction(actionEvent1 -> {
-userName = getUserName.getText();
-userID = getUserID.getText();
-userName = userName.trim();
-userID =userID.trim();
+    userName = getUserName.getText();
+    userID = getUserID.getText();
+    userName = userName.trim();
+    userID =userID.trim();
 
-AccountManagement accountManagement = new AccountManagement();
+    AccountManagement accountManagement = new AccountManagement();
         boolean isFound = false;
         try {
             isFound = accountManagement.accountManagementLogInMethods(userName,userID);
@@ -322,12 +322,11 @@ AccountManagement accountManagement = new AccountManagement();
 
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
-       readerName.setFont(font1);
+
        readerName.setLabelFor(readerTextField);
        readerName.setMnemonicParsing(true);
        TextField instituteTextField = new TextField();
        Label instituteName = new Label("_Institute Name:");
-       instituteName.setFont(font1);
        instituteName.setLabelFor(instituteTextField);
        instituteName.setMnemonicParsing(true);
 
@@ -336,8 +335,7 @@ RadioButton radioButtonCollege = new RadioButton("School/College");
 RadioButton radioButtonUniversity = new RadioButton("University");
 radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
-radioButtonCollege.setFont(font1);
-radioButtonUniversity.setFont(font1);
+
        Label insertNameInstitute = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
@@ -354,9 +352,13 @@ Label label3 =new Label();
 Label label4 =new Label();
        Button cancelButton = new Button("----Cancel----");
        cancelButton.setPrefSize(160, 40);
+       radioButtonCollege.setFont(font1);
+       radioButtonUniversity.setFont(font1);
+       readerName.setFont(font1);
+       instituteName.setFont(font1);
        insertNameInstitute.setFont(font1);
-       enterButton.setFont(font1);
-       cancelButton.setFont(font1);
+      // enterButton.setFont(font1);
+     //  cancelButton.setFont(font1);
        cancelButton.setOnAction(actionEvent1 -> {
            infoStage.close();
        });
@@ -366,7 +368,7 @@ Label label4 =new Label();
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(12,label3,label4,cancelButton,enterButton);
+       gridPane.addRow(12,label3,cancelButton,enterButton,label4);
        MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
            @Override
@@ -535,6 +537,7 @@ addFavouriteWriter = others.getText();
          //  gridPane.getChildren().remove(6);
 if(gridPaneCounter[0] ==0){
     Label classNo = new Label("Class No :");
+    classNo.setFont(font1);
     classNo.setLabelFor(textFieldClassNo);
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
@@ -548,6 +551,7 @@ else{
        radioButtonUniversity.setOnAction(actionEvent1 -> {
 if(gridPaneCounter[0] ==0){
     Label departmentName = new Label("Department Name :");
+    departmentName.setFont(font1);
     departmentName.setLabelFor(textFieldDepartment);
     departmentName.setMnemonicParsing(true);
     gridPane.addRow(5, departmentName, textFieldDepartment);
@@ -570,7 +574,7 @@ else{
        GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
        graphicsContext.drawImage(image19,0,0);
 
-       Scene S = new Scene(group19, 800, 400,Color.DODGERBLUE);
+       Scene S = new Scene(group19, 800, 460,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
