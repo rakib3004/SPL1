@@ -319,12 +319,15 @@ AccountManagement accountManagement = new AccountManagement();
         });
 
    signUp.setOnAction(actionEvent -> {
+
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
+       readerName.setFont(font1);
        readerName.setLabelFor(readerTextField);
        readerName.setMnemonicParsing(true);
        TextField instituteTextField = new TextField();
        Label instituteName = new Label("_Institute Name:");
+       instituteName.setFont(font1);
        instituteName.setLabelFor(instituteTextField);
        instituteName.setMnemonicParsing(true);
 
@@ -333,7 +336,8 @@ RadioButton radioButtonCollege = new RadioButton("School/College");
 RadioButton radioButtonUniversity = new RadioButton("University");
 radioButtonCollege.setToggleGroup(toggleGroup);
 radioButtonUniversity.setToggleGroup(toggleGroup);
-
+radioButtonCollege.setFont(font1);
+radioButtonUniversity.setFont(font1);
        Label label1 = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
