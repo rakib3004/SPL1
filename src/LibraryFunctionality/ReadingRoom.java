@@ -225,7 +225,7 @@ public class ReadingRoom extends Application {
         logIn.setToggleGroup(toggleGroupMain);
         signUp.setToggleGroup(toggleGroupMain);
         Font font = new Font(22);
-        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,28);
+        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
         Font font2 = new Font( 15);
         Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
 
@@ -273,7 +273,7 @@ logIn.setOnAction(actionEvent -> {
   gridPane.addRow(1,  labelA,labelB);
     gridPane.addRow(2, userNameTextField, getUserName);
     gridPane.addRow(3, userIdTextField, getUserID);
-    gridPane.addRow(4,label2,enter);
+    gridPane.addRow(14,label2,enter);
     gridPane.setMaxSize(980, 650);
     Image image19 = new Image("Images"+ File.separator +"a6.jpg");
     Canvas canvas19 = new Canvas(600,400);
@@ -553,7 +553,7 @@ else{
        });
        gridPane.setMaxSize(980, 650);
 
-       Image image19 = new Image("Images"+ File.separator +"a5.jpg");
+       Image image19 = new Image("Images"+ File.separator +"signup.jpg");
        Canvas canvas19 = new Canvas(800,400);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
