@@ -224,8 +224,9 @@ public class ReadingRoom extends Application {
         ToggleGroup toggleGroupMain = new ToggleGroup();
         logInRadioButton.setToggleGroup(toggleGroupMain);
         signUpRadioButton.setToggleGroup(toggleGroupMain);
-        Font font = new Font(22);
+        Font font = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,18);
         Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
+        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
         Font font2 = new Font( 15);
         Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
 
@@ -251,8 +252,7 @@ logInRadioButton.setOnAction(actionEvent -> {
     userIdTextField.setFont(font1);
 
    // label1.setFont(font1);
-    signUpLabel.setFont(font4);
-    signUpLabel.setTextFill(Color.WHITE);
+
 
             enterButton1.setPrefSize(160, 40);
             Stage infoStage = new Stage();
@@ -355,13 +355,15 @@ Label label3 =new Label();
 Label label4 =new Label();
        Button cancelButton = new Button("----Cancel----");
        cancelButton.setPrefSize(160, 40);
+       signUpLabel.setFont(font4);
+       signUpLabel.setTextFill(Color.WHITE);
        radioButtonCollege.setFont(font1);
        radioButtonUniversity.setFont(font1);
        readerName.setFont(font1);
        instituteName.setFont(font1);
        insertNameInstitute.setFont(font1);
-       readerTextField.setFont(font1);
-       instituteTextField.setFont(font1);
+       readerTextField.setFont(font);
+       instituteTextField.setFont(font);
       // enterButton.setFont(font1);
      //  cancelButton.setFont(font1);
        cancelButton.setOnAction(actionEvent1 -> {
@@ -456,7 +458,9 @@ addFavouriteWriter = others.getText();
        writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
                samareshMajumdar, emdadiyaPustokaloy,others);
+
        Label favouriteWriter = new Label("Favourite Writer");
+       favouriteWriter.setFont(font1);
        favouriteWriter.setLabelFor(writerMenu);
        gridPane.addRow(9,favouriteWriter,writerMenu);
 
@@ -536,13 +540,25 @@ addFavouriteWriter = others.getText();
        gridPane.addRow(6,uponnash,kobita,rochonaboli,religion);
        gridPane.addRow(7,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
        gridPane.addRow(8,biography,gobesona,onubad,others1);
+        uponnash.setFont(font5);
+        kobita.setFont(font5);
+        rochonaboli.setFont(font5);
+        religion.setFont(font5);
+        biggan.setFont(font5);
+        scienceFiction.setFont(font5);
+        shishuShahitto.setFont(font5);
+        kisoreUponnash.setFont(font5);
+        biography.setFont(font5);
+        gobesona.setFont(font5);
+        onubad.setFont(font5);
+        others1.setFont(font5);
        final int[] gridPaneCounter = {0};
-
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
 if(gridPaneCounter[0] ==0){
     Label classNo = new Label("Class No :");
     classNo.setFont(font1);
+    textFieldClassNo.setFont(font);
     classNo.setLabelFor(textFieldClassNo);
     classNo.setMnemonicParsing(true);
     gridPane.addRow(5, classNo, textFieldClassNo);
@@ -557,6 +573,7 @@ else{
 if(gridPaneCounter[0] ==0){
     Label departmentName = new Label("Department Name :");
     departmentName.setFont(font1);
+    textFieldDepartment.setFont(font);
     departmentName.setLabelFor(textFieldDepartment);
     departmentName.setMnemonicParsing(true);
     gridPane.addRow(5, departmentName, textFieldDepartment);
