@@ -869,9 +869,9 @@ signUpRadioButton.setTextFill(Color.BLACK);
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
+           ReadingRoom readingRoom = new ReadingRoom();
             try {
-                authorSystem.start(primaryStage);
+                readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
