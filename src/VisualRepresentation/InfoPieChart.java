@@ -431,42 +431,42 @@ year2016Books=0;year2017Books=0;
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        for(iterator=0;iterator<numberOfBooks;iterator++){
-            
-if(priorityData[iterator].bookData.bookId.contains("17")){
-    year2017Books++;}
-else if(priorityData[iterator].bookData.bookId.contains("16")){
-    year2016Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("15")){
-    year2015Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("14")){
-    year2014Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("13")){
-    year2013Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0812")){
-    year2012Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0212")){
-    year2012Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("1211")){
-    year2011Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0311")){
-    year2011Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("1210")){
-    year2010Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0810")){
-    year2010Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0410")){
-    year2010Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("1009")){
-    year2009Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0409")){
-    year2009Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("1208")){
-    year2008Books++;
-}else if(priorityData[iterator].bookData.bookId.contains("0608")){
-    year2008Books++;
-}
-        }
+                    for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            if(priorityData[iterator].bookData.bookId.contains("17")){
+                year2017Books++;}
+            else if(priorityData[iterator].bookData.bookId.contains("16")){
+                year2016Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("15")){
+                year2015Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("14")){
+                year2014Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("13")){
+                year2013Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0812")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0212")){
+                year2012Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1211")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0311")){
+                year2011Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1210")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0810")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0410")){
+                year2010Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1009")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0409")){
+                year2009Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("1208")){
+                year2008Books++;
+            }else if(priorityData[iterator].bookData.bookId.contains("0608")){
+                year2008Books++;
+            }
+                    }
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
@@ -497,33 +497,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem pie_chart = new MenuItem("Pie Chart");
-        MenuItem bar_chart = new MenuItem("Bar Chart");
 
-        pie_chart.setOnAction((event) -> {
-            try {
-                InfoPieChart infoPieChart = new InfoPieChart();
-                infoPieChart.startGenericBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        bar_chart.setOnAction((event) -> {
-            InfoBarChart infoBarChart = new InfoBarChart();
-            try {
-                infoBarChart.startGenericBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(bar_chart,pie_chart);
-        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         HBox hBox1 = new HBox(pieChart,back,exit);
         VBox vbox = new VBox();
@@ -641,33 +615,6 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateX(275);
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(590,590);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem pie_chart = new MenuItem("Pie Chart");
-        MenuItem bar_chart = new MenuItem("Bar Chart");
-
-        pie_chart.setOnAction((event) -> {
-            try {
-                InfoPieChart infoPieChart = new InfoPieChart();
-                infoPieChart.startClassBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        bar_chart.setOnAction((event) -> {
-            InfoBarChart infoBarChart = new InfoBarChart();
-            try {
-                infoBarChart.startClassBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(bar_chart,pie_chart);
-        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         HBox hBox1 = new HBox(pieChart,back,exit);
         VBox vbox = new VBox();
@@ -795,35 +742,7 @@ else if(priorityData[iterator].bookData.bookId.contains("16")){
         pieChart.setTranslateY(55);
         pieChart.setPrefSize(500,500);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem pie_chart = new MenuItem("Pie Chart");
-        MenuItem bar_chart = new MenuItem("Bar Chart");
-        pie_chart.setOnAction((event) -> {
-            try {
-                InfoPieChart infoPieChart = new InfoPieChart();
-                infoPieChart.startBorrowCount(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        bar_chart.setOnAction((event) -> {
-            InfoBarChart infoBarChart = new InfoBarChart();
-            try {
-                infoBarChart.startBorrowCount(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(bar_chart,pie_chart);
-        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
-            }
-        });
         HBox hBox1 = new HBox(pieChart,back,exit);
-
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
