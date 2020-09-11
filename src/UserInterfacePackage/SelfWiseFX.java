@@ -198,7 +198,7 @@ public class SelfWiseFX extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Time Wise Book Recommendation");
+        Text text = new Text("Self Wise Book Recommendation");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);
