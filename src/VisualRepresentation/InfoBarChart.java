@@ -417,35 +417,6 @@ public class InfoBarChart extends Application {
          barChart.setTranslateX(65);
          barChart.setTranslateY(55);
          barChart.setPrefSize(1000,700);
-         ContextMenu contextMenu = new ContextMenu();
-         MenuItem pie_chart = new MenuItem("Pie Chart");
-         MenuItem bar_chart = new MenuItem("Bar Chart");
-
-         pie_chart.setOnAction((event) -> {
-             try {
-                 InfoPieChart infoPieChart = new InfoPieChart();
-                 infoPieChart.startDemandBook(primaryStage);
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-
-         });
-         bar_chart.setOnAction((event) -> {
-             InfoBarChart infoBarChart = new InfoBarChart();
-             try {
-                 infoBarChart.startDemandBook(primaryStage);
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-         });
-         contextMenu.getItems().addAll(pie_chart,bar_chart);
-         barChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
-             @Override
-             public void handle(ContextMenuEvent event) {
-                 contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
-             }
-         });
 
          HBox hBox1 = new HBox(barChart,exit,back);
 
