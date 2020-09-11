@@ -770,13 +770,13 @@ public class InfoBarChart extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font(26);
 
-        Button barChart = new Button("Bar Chart");
+        Button bar_chart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
         InfoBarChart infoBarChartObject = new InfoBarChart();
         InfoPieChart infoPieChartObject = new InfoPieChart();
         AnalyticChart analyticChart1Object = new AnalyticChart();
-        barChart.setOnAction(actionEvent -> {
+        bar_chart.setOnAction(actionEvent -> {
             try {
                 infoBarChartObject.startBorrowCount(primaryStage);
             } catch (Exception exception) {
@@ -797,20 +797,20 @@ public class InfoBarChart extends Application {
                 exception.printStackTrace();
             }
         });
-        barChart.setPrefSize(410, 230);
+        bar_chart.setPrefSize(410, 230);
         pieChart.setPrefSize(410, 230);
         analyticChart.setPrefSize(410, 230);
 
-        barChart.setFont(font2);
+        bar_chart.setFont(font2);
         pieChart.setFont(font2);
         analyticChart.setFont(font2);
-        barChart.setTranslateX(30);
-        barChart.setTranslateY(35);
+        bar_chart.setTranslateX(30);
+        bar_chart.setTranslateY(35);
         pieChart.setTranslateX(30);
         pieChart.setTranslateY(270);
         analyticChart.setTranslateX(30);
         analyticChart.setTranslateY(505);
-        barChart.setContentDisplay(ContentDisplay.TOP);
+        bar_chart.setContentDisplay(ContentDisplay.TOP);
         pieChart.setContentDisplay(ContentDisplay.TOP);
         analyticChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
@@ -821,7 +821,7 @@ public class InfoBarChart extends Application {
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        barChart.setGraphic(new ImageView(image1));
+        bar_chart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -908,9 +908,9 @@ public class InfoBarChart extends Application {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            BookInformationShow bookInformationShow = new BookInformationShow();
+            BorrowCountOfBook borrowCountOfBook = new BorrowCountOfBook();
             try {
-                bookInformationShow.start(primaryStage);
+                borrowCountOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -918,7 +918,7 @@ public class InfoBarChart extends Application {
         });
 
         Group group = new Group();
-        group.getChildren().addAll( barChart,
+        group.getChildren().addAll( bar_chart,
                 pieChart, exit, back, home, text, analyticChart);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Generics of Book Bar Chart");
@@ -991,31 +991,11 @@ public class InfoBarChart extends Application {
         series1.getData().add(new XYChart.Data(year2017,year2017Books));
 
         barChart.getData().add(series1);
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(500,500);
-        barChart.getData().add(series1);
-        barChart.setTranslateX(65);
-        barChart.setTranslateY(55);
-        barChart.setPrefSize(500,500);
+        barChart.setTranslateX(35);
+        barChart.setTranslateY(470);
+        barChart.setPrefSize(850,425);
 
-
-        HBox hBox1 = new HBox(barChart,exit,back);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-         vbox.setMaxSize(1400, 800);
-        // vBox3.setSpacing(5);
-
-       Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-         // vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+        group.getChildren().add(barChart);
         Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
