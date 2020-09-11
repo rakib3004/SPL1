@@ -27,10 +27,6 @@ import java.io.FileNotFoundException;
 
 public class ClassesOfBook extends Application {
 
-    InfoBarChart infoBarChart = new InfoBarChart();
-    InfoPieChart infoPieChart = new InfoPieChart();
-    AnalyticChart analyticChart1 = new AnalyticChart();
-
     @Override
     public void start(Stage primaryStage) {
         String className = this.getClass().getSimpleName();
@@ -43,6 +39,10 @@ public class ClassesOfBook extends Application {
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
+        InfoBarChart infoBarChart = new InfoBarChart();
+        InfoPieChart infoPieChart = new InfoPieChart();
+        AnalyticChart analyticChart1 = new AnalyticChart();
+
         barChart.setOnAction(actionEvent -> {
             try {
                 infoBarChart.startClassBook(primaryStage);

@@ -26,9 +26,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class DemandsOfBook extends Application {
-    InfoBarChart infoBarChart = new InfoBarChart();
-    InfoPieChart infoPieChart = new InfoPieChart();
-    AnalyticChart analyticChart1 = new AnalyticChart();
 
     @Override
     public void start(Stage primaryStage) {
@@ -43,6 +40,10 @@ public class DemandsOfBook extends Application {
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
+        InfoBarChart infoBarChart = new InfoBarChart();
+        InfoPieChart infoPieChart = new InfoPieChart();
+        AnalyticChart analyticChart1 = new AnalyticChart();
+
         barChart.setOnAction(actionEvent -> {
             try {
                 infoBarChart.startDemandBook(primaryStage);
