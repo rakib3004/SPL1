@@ -37,3 +37,13 @@ InfoBarChart	Fri 11.09.2020 at 06:31:01 PM
 Processing	Fri 11.09.2020 at 06:31:01 PM
 DataParsing	Fri 11.09.2020 at 06:31:01 PM
 BookNumber	Fri 11.09.2020 at 06:31:01 PM
+TypesOfBook	Fri 11.09.2020 at 06:43:09 PM
+InfoPieChart	Fri 11.09.2020 at 06:43:13 PM
+Processing	Fri 11.09.2020 at 06:43:13 PM
+DataParsing	Fri 11.09.2020 at 06:43:13 PM
+BookNumber	Fri 11.09.2020 at 06:43:13 PM
+TypesOfBook	Fri 11.09.2020 at 06:44:02 PM
+InfoPieChart	Fri 11.09.2020 at 06:44:06 PM
+Processing	Fri 11.09.2020 at 06:44:06 PM
+DataParsing	Fri 11.09.2020 at 06:44:06 PM
+BookNumber	Fri 11.09.2020 at 06:44:06 PM

@@ -275,36 +275,10 @@ public class InfoPieChart extends Application  {
         pieChart.getData().add(slice9);
         pieChart.getData().add(slice10);
 
-        pieChart.setTranslateX(275);
-        pieChart.setTranslateY(55);
-        pieChart.setPrefSize(590,590);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem pie_chart = new MenuItem("Pie Chart");
-        MenuItem bar_chart = new MenuItem("Bar Chart");
-        pie_chart.setOnAction((event) -> {
-            try {
-                InfoPieChart infoPieChart = new InfoPieChart();
-                infoPieChart.startTypeBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        bar_chart.setOnAction((event) -> {
-            InfoBarChart infoBarChart = new InfoBarChart();
-            try {
-                infoBarChart.startTypeBook(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(bar_chart,pie_chart);
+        pieChart.setTranslateX(470);
+        pieChart.setTranslateY(35);
+        pieChart.setPrefSize(850,425);
 
-        pieChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(pieChart, event.getScreenX(), event.getScreenY());
-            }
-        });
         group.getChildren().add(pieChart);
 
         Scene scene = new Scene(group ,1400, 770);
