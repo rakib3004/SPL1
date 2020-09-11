@@ -643,12 +643,147 @@ year2016Books=0;year2017Books=0;
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
+        Font font = new Font(14);
+        Font font1 = new Font(47);
+        Font font2 = new Font(26);
+
+        Button bar_chart = new Button("Bar Chart");
+        Button pie_chart = new Button("Pie Chart");
+        Button analyticChart = new Button("Analytic Chart");
+        InfoBarChart infoBarChartObject = new InfoBarChart();
+        InfoPieChart infoPieChartObject = new InfoPieChart();
+        AnalyticChart analyticChart1Object = new AnalyticChart();
+        bar_chart.setOnAction(actionEvent -> {
+            try {
+                infoBarChartObject.startBorrowCount(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        pie_chart.setOnAction(actionEvent -> {
+            try {
+                infoPieChartObject.startBorrowCount(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        analyticChart.setOnAction(actionEvent -> {
+            try {
+                analyticChart1Object.startBorrowCount(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        bar_chart.setPrefSize(410, 230);
+        pie_chart.setPrefSize(410, 230);
+        analyticChart.setPrefSize(410, 230);
+
+        bar_chart.setFont(font2);
+        pie_chart.setFont(font2);
+        analyticChart.setFont(font2);
+        bar_chart.setTranslateX(30);
+        bar_chart.setTranslateY(35);
+        pie_chart.setTranslateX(30);
+        pie_chart.setTranslateY(270);
+        analyticChart.setTranslateX(30);
+        analyticChart.setTranslateY(505);
+        bar_chart.setContentDisplay(ContentDisplay.TOP);
+        pie_chart.setContentDisplay(ContentDisplay.TOP);
+        analyticChart.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "bar.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        bar_chart.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "pie.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        pie_chart.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "all.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        analyticChart.setGraphic(new ImageView(image3));
+
         Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Borrow Count of Books");
+        text.setTranslateX(666);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375, 30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375, 30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
             BorrowCountOfBook borrowCountOfBook = new BorrowCountOfBook();
             try {
@@ -656,15 +791,13 @@ year2016Books=0;year2017Books=0;
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-        });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
+
         });
 
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        Group group = new Group();
+        group.getChildren().addAll( bar_chart,
+                pie_chart, exit, back, home, text, analyticChart);
+
 
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         int  year2008Books,year2009Books,year2010Books,year2011Books,year2012Books,
@@ -738,26 +871,12 @@ year2016Books=0;year2017Books=0;
         pieChart.getData().add(slice8);
         pieChart.getData().add(slice9);
         pieChart.getData().add(slice10);
-        pieChart.setTranslateX(275);
-        pieChart.setTranslateY(55);
-        pieChart.setPrefSize(500,500);
 
-        HBox hBox1 = new HBox(pieChart,back,exit);
+        pieChart.setTranslateX(35);
+        pieChart.setTranslateY(470);
+        pieChart.setPrefSize(850,425);
 
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-         vbox.setMaxSize(1400, 800);
-        // vBox3.setSpacing(5);
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-         // vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+     group.getChildren().add(pieChart);
         Scene scene = new Scene(group ,1400, 770);
 
         primaryStage.setScene(scene);
