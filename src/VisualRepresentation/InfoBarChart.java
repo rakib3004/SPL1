@@ -198,13 +198,7 @@ public class InfoBarChart extends Application {
              }
 
          });
-         /*
-         Image background = new Image("Images" + File.separator + "framework.jpg");
-         Canvas canvas = new Canvas(850, 425);
-         canvas.setTranslateX(470);
-         canvas.setTranslateY(35);
-         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-         graphicsContext.drawImage(background, 0, 0);*/
+
          Group group = new Group();
          group.getChildren().addAll( bar_chart1,
                  pieChart, exit, back, home, text, analyticChart);
@@ -314,33 +308,6 @@ public class InfoBarChart extends Application {
          barChart.setTranslateX(470);
          barChart.setTranslateY(35);
          barChart.setPrefSize(850,425);
-         ContextMenu contextMenu = new ContextMenu();
-         MenuItem pie_chart = new MenuItem("Pie Chart");
-         MenuItem bar_chart = new MenuItem("Bar Chart");
-
-         pie_chart.setOnAction((event) -> {
-             try {
-                 InfoPieChart infoPieChart = new InfoPieChart();
-                 infoPieChart.startTypeBook(primaryStage);
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-         });
-         bar_chart.setOnAction((event) -> {
-             InfoBarChart infoBarChart = new InfoBarChart();
-             try {
-                 infoBarChart.startTypeBook(primaryStage);
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-         });
-         contextMenu.getItems().addAll(pie_chart,bar_chart);
-         barChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-             @Override
-             public void handle(ContextMenuEvent event) {
-                 contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
-             }
-         });
 
          group.getChildren().add(barChart);
          Scene scene = new Scene(group ,1400, 800);
@@ -981,32 +948,6 @@ public class InfoBarChart extends Application {
         barChart.setTranslateY(55);
         barChart.setPrefSize(500,500);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem pie_chart = new MenuItem("Pie Chart");
-        MenuItem bar_chart = new MenuItem("Bar Chart");
-        pie_chart.setOnAction((event) -> {
-            try {
-                InfoPieChart infoPieChart = new InfoPieChart();
-                infoPieChart.startBorrowCount(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        bar_chart.setOnAction((event) -> {
-            InfoBarChart infoBarChart = new InfoBarChart();
-            try {
-                infoBarChart.startBorrowCount(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(pie_chart,bar_chart);
-        barChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(barChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         HBox hBox1 = new HBox(barChart,exit,back);
         VBox vbox = new VBox();
