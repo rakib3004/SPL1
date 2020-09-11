@@ -37,14 +37,14 @@ public class DemandsOfBook extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font(26);
 
-        Button barChart = new Button("Bar Chart");
-        Button pieChart = new Button("Pie Chart");
+        Button bar_chart = new Button("Bar Chart");
+        Button pie_chart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
         InfoBarChart infoBarChartObject = new InfoBarChart();
         InfoPieChart infoPieChartObject = new InfoPieChart();
         AnalyticChart analyticChart1Object = new AnalyticChart();
 
-        barChart.setOnAction(actionEvent -> {
+        bar_chart.setOnAction(actionEvent -> {
             try {
                 infoBarChartObject.startDemandBook(primaryStage);
             } catch (Exception exception) {
@@ -52,7 +52,7 @@ public class DemandsOfBook extends Application {
             }
         });
 
-        pieChart.setOnAction(actionEvent -> {
+        pie_chart.setOnAction(actionEvent -> {
             try {
                 infoPieChartObject.startDemandBook(primaryStage);
             } catch (Exception exception) {
@@ -66,21 +66,21 @@ public class DemandsOfBook extends Application {
                 exception.printStackTrace();
             }
         });
-        barChart.setPrefSize(410, 230);
-        pieChart.setPrefSize(410, 230);
+        bar_chart.setPrefSize(410, 230);
+        pie_chart.setPrefSize(410, 230);
         analyticChart.setPrefSize(410, 230);
 
-        barChart.setFont(font2);
-        pieChart.setFont(font2);
+        bar_chart.setFont(font2);
+        pie_chart.setFont(font2);
         analyticChart.setFont(font2);
-        barChart.setTranslateX(30);
-        barChart.setTranslateY(35);
-        pieChart.setTranslateX(30);
-        pieChart.setTranslateY(270);
+        bar_chart.setTranslateX(30);
+        bar_chart.setTranslateY(35);
+        pie_chart.setTranslateX(30);
+        pie_chart.setTranslateY(270);
         analyticChart.setTranslateX(30);
         analyticChart.setTranslateY(505);
-        barChart.setContentDisplay(ContentDisplay.TOP);
-        pieChart.setContentDisplay(ContentDisplay.TOP);
+        bar_chart.setContentDisplay(ContentDisplay.TOP);
+        pie_chart.setContentDisplay(ContentDisplay.TOP);
         analyticChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
@@ -90,7 +90,7 @@ public class DemandsOfBook extends Application {
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        barChart.setGraphic(new ImageView(image1));
+        bar_chart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -100,7 +100,7 @@ public class DemandsOfBook extends Application {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        pieChart.setGraphic(new ImageView(image2));
+        pie_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -192,8 +192,8 @@ public class DemandsOfBook extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
-        group.getChildren().addAll(canvas, barChart,
-                pieChart, exit, back, home, text, analyticChart);
+        group.getChildren().addAll(canvas, bar_chart,
+                pie_chart, exit, back, home, text, analyticChart);
         Scene scene1 = new Scene(group,1500,950);
 
 
