@@ -223,9 +223,9 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
+            ProcessAnalysis processAnalysis = new ProcessAnalysis();
             try {
-                authorSystem.start(primaryStage);
+                processAnalysis.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
