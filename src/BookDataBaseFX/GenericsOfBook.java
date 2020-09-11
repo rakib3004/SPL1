@@ -42,26 +42,26 @@ public class GenericsOfBook extends Application {
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
-        InfoBarChart infoBarChart = new InfoBarChart();
-        InfoPieChart infoPieChart = new InfoPieChart();
-        AnalyticChart analyticChart1 = new AnalyticChart();
+        InfoBarChart infoBarChartObject = new InfoBarChart();
+        InfoPieChart infoPieChartObject = new InfoPieChart();
+        AnalyticChart analyticChart1Object = new AnalyticChart();
         barChart.setOnAction(actionEvent -> {
             try {
-                infoBarChart.startGenericBook(primaryStage);
+                infoBarChartObject.startGenericBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         pieChart.setOnAction(actionEvent -> {
             try {
-                infoPieChart.startGenericBook(primaryStage);
+                infoPieChartObject.startGenericBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         analyticChart.setOnAction(actionEvent -> {
             try {
-                analyticChart1.startGenericBook(primaryStage);
+                analyticChart1Object.startGenericBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
