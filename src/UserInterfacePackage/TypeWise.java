@@ -466,7 +466,8 @@ int iterator;
                 biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
                 gobesona, onubad,others);
 bookType.setTranslateX(700);
-bookType.setTranslateY(285);
+bookType.setTranslateY(285
+);
 bookType.setPrefSize(200, 50);
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         group.getChildren().addAll(bookType);
