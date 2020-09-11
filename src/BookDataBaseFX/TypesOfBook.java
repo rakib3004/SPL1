@@ -40,12 +40,12 @@ public class TypesOfBook extends Application {
         Button barChart = new Button("Bar Chart");
         Button pieChart = new Button("Pie Chart");
         Button analyticChart = new Button("Analytic Chart");
-        InfoBarChart infoBarChart = new InfoBarChart();
-        InfoPieChart infoPieChart = new InfoPieChart();
-        AnalyticChart analyticChart1 = new AnalyticChart();
+        InfoBarChart infoBarChartObject = new InfoBarChart();
+        InfoPieChart infoPieChartObject = new InfoPieChart();
+        AnalyticChart analyticChart1Object = new AnalyticChart();
         barChart.setOnAction(actionEvent -> {
             try {
-                infoBarChart.startTypeBook(primaryStage);
+                infoBarChartObject.startTypeBook(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -53,7 +53,7 @@ public class TypesOfBook extends Application {
         });
         pieChart.setOnAction(actionEvent -> {
             try {
-                infoPieChart.startTypeBook(primaryStage);
+                infoPieChartObject.startTypeBook(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -61,7 +61,7 @@ public class TypesOfBook extends Application {
         });
         analyticChart.setOnAction(actionEvent -> {
             try {
-analyticChart1.startTypeBook(primaryStage);
+analyticChart1Object.startTypeBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
