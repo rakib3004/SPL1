@@ -390,8 +390,8 @@ public class SelfWiseFX extends Application {
         MenuButton selfSection = new MenuButton("Choose Self ");
         selfSection.getItems().addAll(self1, self2, self3,
                 self4, self5, self6, self7);
-        selfSection.setTranslateX(500);
-        selfSection.setTranslateY(350);
+        selfSection.setTranslateX(700);
+        selfSection.setTranslateY(285);
         selfSection.setPrefSize(200, 50);
 
         Image image = new Image("Images" + File.separator + "libraryBackground5.jpg");

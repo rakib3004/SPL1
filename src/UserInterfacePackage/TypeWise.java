@@ -465,11 +465,11 @@ int iterator;
         bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
                 biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
                 gobesona, onubad,others);
-bookType.setTranslateX(500);
-bookType.setTranslateY(350);
+bookType.setTranslateX(700);
+bookType.setTranslateY(285);
 bookType.setPrefSize(200, 50);
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
-        group.getChildren().addAll(canvas,exit,back,bookType);
+        group.getChildren().addAll(bookType);
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
