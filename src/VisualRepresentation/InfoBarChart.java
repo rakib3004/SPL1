@@ -1111,8 +1111,8 @@ public class InfoBarChart extends Application {
         series1.getData().add(new XYChart.Data(year2017,year2017Books));
 
         barChart.getData().add(series1);
-        barChart.setTranslateX(35);
-        barChart.setTranslateY(470);
+        barChart.setTranslateX(470);
+        barChart.setTranslateY(35);
         barChart.setPrefSize(850,425);
 
         group.getChildren().add(barChart);
