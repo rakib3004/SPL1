@@ -12,3 +12,8 @@ Processing	Fri 11.09.2020 at 05:25:05 PM
 DataParsing	Fri 11.09.2020 at 05:25:05 PM
 BookNumber	Fri 11.09.2020 at 05:25:05 PM
 TypesOfBook	Fri 11.09.2020 at 05:25:09 PM
+TypesOfBook	Fri 11.09.2020 at 06:18:06 PM
+InfoBarChart	Fri 11.09.2020 at 06:18:10 PM
+Processing	Fri 11.09.2020 at 06:18:10 PM
+DataParsing	Fri 11.09.2020 at 06:18:10 PM
+BookNumber	Fri 11.09.2020 at 06:18:10 PM

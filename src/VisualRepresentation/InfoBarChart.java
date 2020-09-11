@@ -2,6 +2,8 @@ package VisualRepresentation;
 
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
+import InfoDisplay.BookInformationShow;
+import JavFX.Main;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
@@ -9,16 +11,26 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class InfoBarChart extends Application {
@@ -34,12 +46,149 @@ public class InfoBarChart extends Application {
          String  className = this.getClass().getSimpleName();
          DateTimeWriter dateTimeWriter =  new DateTimeWriter();
          dateTimeWriter.dateTimeWriterMethods(className);
-         Button back = new Button("Back");
+         Font font = new Font(14);
+         Font font1 = new Font(47);
+         Font font2 = new Font(26);
+
+         Button bar_chart1 = new Button("Bar Chart");
+         Button pieChart = new Button("Pie Chart");
+         Button analyticChart = new Button("Analytic Chart");
+         InfoBarChart infoBarChartObject = new InfoBarChart();
+         InfoPieChart infoPieChartObject = new InfoPieChart();
+         AnalyticChart analyticChart1Object = new AnalyticChart();
+         bar_chart1.setOnAction(actionEvent -> {
+             try {
+                 infoBarChartObject.startTypeBook(primaryStage);
+
+             } catch (Exception exception) {
+                 exception.printStackTrace();
+             }
+         });
+         pieChart.setOnAction(actionEvent -> {
+             try {
+                 infoPieChartObject.startTypeBook(primaryStage);
+
+             } catch (Exception exception) {
+                 exception.printStackTrace();
+             }
+         });
+         analyticChart.setOnAction(actionEvent -> {
+             try {
+                 analyticChart1Object.startTypeBook(primaryStage);
+             } catch (Exception exception) {
+                 exception.printStackTrace();
+             }
+         });
+         bar_chart1.setPrefSize(410, 230);
+         pieChart.setPrefSize(410, 230);
+         analyticChart.setPrefSize(410, 230);
+
+         bar_chart1.setFont(font2);
+         pieChart.setFont(font2);
+         analyticChart.setFont(font2);
+         bar_chart1.setTranslateX(30);
+         bar_chart1.setTranslateY(35);
+         pieChart.setTranslateX(30);
+         pieChart.setTranslateY(270);
+         analyticChart.setTranslateX(30);
+         analyticChart.setTranslateY(505);
+         bar_chart1.setContentDisplay(ContentDisplay.TOP);
+         pieChart.setContentDisplay(ContentDisplay.TOP);
+         analyticChart.setContentDisplay(ContentDisplay.TOP);
+         FileInputStream fileInputStream1 = null;
+         try {
+             fileInputStream1 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "bar.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image1 = new Image(fileInputStream1);
+         bar_chart1.setGraphic(new ImageView(image1));
+
+         FileInputStream fileInputStream2 = null;
+         try {
+             fileInputStream2 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "pie.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image2 = new Image(fileInputStream2);
+         pieChart.setGraphic(new ImageView(image2));
+
+         FileInputStream fileInputStream3 = null;
+         try {
+             fileInputStream3 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "all.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image3 = new Image(fileInputStream3);
+         analyticChart.setGraphic(new ImageView(image3));
+
          Button exit = new Button("Exit");
-         back.setTranslateX(0);
-         back.setTranslateY(650);
-         exit.setTranslateX(1100);
-         exit.setTranslateY(650);
+         exit.setTranslateX(1200);
+         exit.setTranslateY(700);
+         exit.setOnAction(actionEvent -> {
+             System.exit(0);
+         });
+         FileInputStream fileInputStream4 = null;
+         try {
+             fileInputStream4 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "exit.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image4 = new Image(fileInputStream4);
+         exit.setGraphic(new ImageView(image4));
+         exit.setPrefSize(120, 20);
+         exit.setContentDisplay(ContentDisplay.LEFT);
+         exit.setFont(font);
+         Text text = new Text("Types of Books");
+         text.setTranslateX(600);
+         text.setTranslateY(500);
+         text.setFont(font1);
+         text.setFill(Color.BLACK);
+         text.setTextAlignment(TextAlignment.LEFT);
+         text.setStyle("-fx-font-weight: bold;");
+
+         Button home = new Button("Home");
+         home.setTranslateX(470);
+         home.setTranslateY(520);
+         home.setPrefSize(375, 30);
+         home.setFont(font2);
+         home.setContentDisplay(ContentDisplay.LEFT);
+         FileInputStream fileInputStream5 = null;
+         try {
+             fileInputStream5 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "home.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image5 = new Image(fileInputStream5);
+         home.setGraphic(new ImageView(image5));
+         home.setOnAction(actionEvent -> {
+             Main main = new Main();
+             try {
+                 main.start(primaryStage);
+             } catch (Exception exception) {
+                 exception.printStackTrace();
+             }
+         });
+         Button back = new Button("Back");
+         back.setTranslateX(950);
+         back.setTranslateY(520);
+         back.setPrefSize(375, 30);
+         back.setFont(font2);
+         back.setContentDisplay(ContentDisplay.LEFT);
+         FileInputStream fileInputStream6 = null;
+         try {
+             fileInputStream6 = new FileInputStream(
+                     "src" + File.separator + "Images" + File.separator + "back.png");
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         Image image6 = new Image(fileInputStream6);
+         back.setGraphic(new ImageView(image6));
          back.setOnAction(actionEvent -> {
              TypesOfBook typesOfBook = new TypesOfBook();
              try {
@@ -47,14 +196,17 @@ public class InfoBarChart extends Application {
              } catch (Exception exception) {
                  exception.printStackTrace();
              }
+
          });
-         exit.setOnAction(actionEvent -> {
-             System.exit(0);
-         });
-         setStyle(exit);
-         setStyle(back);
-         back.setPrefSize(200, 80);
-         exit.setPrefSize(200, 80);
+         Image background = new Image("Images" + File.separator + "framework.jpg");
+         Canvas canvas = new Canvas(850, 425);
+         canvas.setTranslateX(470);
+         canvas.setTranslateY(35);
+         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+         graphicsContext.drawImage(background, 0, 0);
+         Group group = new Group();
+         group.getChildren().addAll(canvas, bar_chart1,
+                 pieChart, exit, back, home, text, analyticChart);
          int iterator;
          priorityData = processing.fileReaderMethods();
          numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -108,8 +260,6 @@ public class InfoBarChart extends Application {
               othersTypeNO++;
              }
          }
-
-
 
          CategoryAxis categoryAxis = new CategoryAxis();
          categoryAxis.setLabel("Book Types");
@@ -198,16 +348,16 @@ public class InfoBarChart extends Application {
          vbox.setTranslateX(0);
          vbox.setTranslateY(0);
          // vBox3.setSpacing(5);
-         Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
+     /*    Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
          BackgroundImage bi = new BackgroundImage(background,
                  BackgroundRepeat.NO_REPEAT,
                  BackgroundRepeat.NO_REPEAT,
                  BackgroundPosition.DEFAULT,
                  BackgroundSize.DEFAULT);
-         Background bg = new Background(bi);
+         Background bg = new Background(bi);*/
         //  // vbox.setBackground(bg);
          vbox.setPrefSize(1400,800);
-         Group group = new Group(vbox,exit,back);
+         group.getChildren().add(vbox);
 
          Scene scene = new Scene(group ,1400, 800);
          primaryStage.setScene(scene);
