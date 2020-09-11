@@ -198,14 +198,15 @@ public class InfoBarChart extends Application {
              }
 
          });
+         /*
          Image background = new Image("Images" + File.separator + "framework.jpg");
          Canvas canvas = new Canvas(850, 425);
          canvas.setTranslateX(470);
          canvas.setTranslateY(35);
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-         graphicsContext.drawImage(background, 0, 0);
+         graphicsContext.drawImage(background, 0, 0);*/
          Group group = new Group();
-         group.getChildren().addAll(canvas, bar_chart1,
+         group.getChildren().addAll( bar_chart1,
                  pieChart, exit, back, home, text, analyticChart);
          int iterator;
          priorityData = processing.fileReaderMethods();
@@ -310,9 +311,9 @@ public class InfoBarChart extends Application {
          barChart.getData().add(series9);
          barChart.getData().add(series10);
 
-         barChart.setTranslateX(65);
-         barChart.setTranslateY(25);
-         barChart.setPrefSize(1000,700);
+         barChart.setTranslateX(470);
+         barChart.setTranslateY(35);
+         barChart.setPrefSize(850,425);
          ContextMenu contextMenu = new ContextMenu();
          MenuItem pie_chart = new MenuItem("Pie Chart");
          MenuItem bar_chart = new MenuItem("Bar Chart");
@@ -341,24 +342,7 @@ public class InfoBarChart extends Application {
              }
          });
 
-         HBox hBox1 = new HBox(barChart,exit,back);
-         VBox vbox = new VBox();
-         vbox.getChildren().addAll(hBox1);
-         vbox.setMaxSize(1400, 800);
-         vbox.setTranslateX(0);
-         vbox.setTranslateY(0);
-         // vBox3.setSpacing(5);
-     /*    Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-         BackgroundImage bi = new BackgroundImage(background,
-                 BackgroundRepeat.NO_REPEAT,
-                 BackgroundRepeat.NO_REPEAT,
-                 BackgroundPosition.DEFAULT,
-                 BackgroundSize.DEFAULT);
-         Background bg = new Background(bi);*/
-        //  // vbox.setBackground(bg);
-         vbox.setPrefSize(1400,800);
-         group.getChildren().add(vbox);
-
+         group.getChildren().add(barChart);
          Scene scene = new Scene(group ,1400, 800);
          primaryStage.setScene(scene);
          primaryStage.setTitle("Recommendation Tool");
