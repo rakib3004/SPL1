@@ -318,7 +318,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series8);
         ScatterChart .getData().add(series9);
         ScatterChart .getData().add(series10);
-        ScatterChart .setTranslateX(65);
+        ScatterChart .setTranslateX(470);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(850,425);
 
@@ -660,7 +660,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series9);
         ScatterChart .getData().add(series10);
 
-        ScatterChart .setTranslateX(65);
+        ScatterChart .setTranslateX(470);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,800);
 
@@ -920,7 +920,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         scatterChart .getData().add(series7);
         scatterChart .getData().add(series8);
 
-        scatterChart .setTranslateX(65);
+        scatterChart .setTranslateX(470);
         scatterChart .setTranslateY(55);
         scatterChart .setPrefSize(850,425);
 
@@ -1233,7 +1233,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series9);
         ScatterChart .getData().add(series10);
 
-        ScatterChart .setTranslateX(65);
+        ScatterChart .setTranslateX(470);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(850,425);
 
