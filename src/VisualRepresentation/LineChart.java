@@ -1517,8 +1517,6 @@ double []  year2017Books = new double[7];
         group.getChildren().addAll(scatter_chart,
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
-
-
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
         NumberAxis numberAxis = new NumberAxis();
