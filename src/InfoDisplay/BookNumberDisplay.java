@@ -73,7 +73,7 @@ public class BookNumberDisplay extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("BOOK INFORMATION DISPLAY");
-        text.setTranslateX(550);
+        text.setTranslateX(450);
         text.setTranslateY(500);
         text.setFont(font2);
         text.setFill(Color.BLACK);
@@ -81,7 +81,7 @@ public class BookNumberDisplay extends Application {
         text.setStyle("-fx-font-weight: bold;");
 
         Button home = new Button("Home");
-        home.setTranslateX(470);
+        home.setTranslateX(300);
         home.setTranslateY(520);
         home.setPrefSize(375,30);
         home.setFont(font2);
@@ -105,7 +105,7 @@ public class BookNumberDisplay extends Application {
             }
         });
         Button back = new Button("Back");
-        back.setTranslateX(950);
+        back.setTranslateX(780);
         back.setTranslateY(520);
         back.setPrefSize(375,30);
         back.setFont(font2);
@@ -180,7 +180,7 @@ public class BookNumberDisplay extends Application {
         group.getChildren().addAll(canvas,exit,back, semiGroup,text,home);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+        graphicsContext.drawImage(image,250,250);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
