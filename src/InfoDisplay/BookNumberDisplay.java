@@ -134,43 +134,43 @@ public class BookNumberDisplay extends Application {
         BookNumbers.setFont(times_new_roman);
         BookNumbers.setPrefSize(110, 80);
         BookNumbers.setTextAlignment(TextAlignment.CENTER);
-        BookNumbers.setTranslateX(50);
-        BookNumbers.setTranslateY(0);
+        BookNumbers.setTranslateX(650);
+        BookNumbers.setTranslateY(150);
         BookNumbers.setTextFill(Color.WHITE);
-        BookNumbers.setScaleX(6);
-        BookNumbers.setScaleY(3.4);
+        BookNumbers.setScaleX(10);
+        BookNumbers.setScaleY(5);
 
         Label WriterNumbers = new Label("No. of Writers : "+(writerCounter));
         WriterNumbers.setAlignment(Pos.CENTER);
         WriterNumbers.setPrefSize(110, 80);
         WriterNumbers.setTextAlignment(TextAlignment.CENTER);
         WriterNumbers.setFont(times_new_roman);
-        WriterNumbers.setTranslateX(600);
-        WriterNumbers.setTranslateY(0);
+        WriterNumbers.setTranslateX(650);
+        WriterNumbers.setTranslateY(200);
         WriterNumbers.setTextFill(Color.WHITE);
-        WriterNumbers.setScaleX(6);
-        WriterNumbers.setScaleY(3.4);
+        WriterNumbers.setScaleX(10);
+        WriterNumbers.setScaleY(5);
 
         Label YearsNumbers = new Label("Total "+(yearCounter) + " Years ");
         YearsNumbers.setAlignment(Pos.CENTER);
         YearsNumbers.setPrefSize(110, 80);
         YearsNumbers.setTextAlignment(TextAlignment.CENTER);
         YearsNumbers.setFont(times_new_roman);
-        YearsNumbers.setTranslateX(50);
-        YearsNumbers.setTranslateY(130);
+        YearsNumbers.setTranslateX(650);
+        YearsNumbers.setTranslateY(250);
         YearsNumbers.setTextFill(Color.WHITE);
-        YearsNumbers.setScaleX(6);
-        YearsNumbers.setScaleY(3.4);
+        YearsNumbers.setScaleX(10);
+        YearsNumbers.setScaleY(5);
         Label TypeNumbers = new Label(""+(typeCounter) + " different types Books");
         TypeNumbers.setAlignment(Pos.CENTER);
         TypeNumbers.setFont(times_new_roman);
         TypeNumbers.setTextAlignment(TextAlignment.CENTER);
         TypeNumbers.setPrefSize(110, 80);
-        TypeNumbers.setTranslateX(600);
-        TypeNumbers.setTranslateY(130);
+        TypeNumbers.setTranslateX(650);
+        TypeNumbers.setTranslateY(300);
         TypeNumbers.setTextFill(Color.WHITE);
-        TypeNumbers.setScaleX(6);
-        TypeNumbers.setScaleY(3.4);
+        TypeNumbers.setScaleX(10);
+        TypeNumbers.setScaleY(5);
         Group semiGroup = new Group();
 
         semiGroup.getChildren().addAll(BookNumbers, WriterNumbers, YearsNumbers, TypeNumbers);
@@ -180,7 +180,7 @@ public class BookNumberDisplay extends Application {
         group.getChildren().addAll(canvas,exit,back, semiGroup,text,home);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,250,250);
+        graphicsContext.drawImage(image,250,100);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
