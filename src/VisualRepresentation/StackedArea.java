@@ -200,9 +200,9 @@ public class StackedArea extends Application {
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-            SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
+            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenValueStatistics.start(primaryStage);
+                sevenNumberImplementation.typeStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
