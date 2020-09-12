@@ -34,7 +34,7 @@ StackedArea stackedArea = new StackedArea();
     @Override
     public void start(Stage typeStatisticsStage) {
     }
-    public void typeStatistics(Stage typeStatisticsStage) {
+    public void typeStatistics(Stage primaryStage) {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -98,7 +98,7 @@ StackedArea stackedArea = new StackedArea();
         
         scatterChart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTyping(typeStatisticsStage);
+                this.scatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -107,7 +107,7 @@ StackedArea stackedArea = new StackedArea();
 
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTyping(typeStatisticsStage);
+                stackedArea.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -115,7 +115,7 @@ StackedArea stackedArea = new StackedArea();
         });
         lineChart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTyping(typeStatisticsStage);
+                this.lineChart.startTyping(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -164,7 +164,7 @@ StackedArea stackedArea = new StackedArea();
         home.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
-                main.start(typeStatisticsStage);
+                main.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -188,7 +188,7 @@ StackedArea stackedArea = new StackedArea();
         back.setOnAction(actionEvent -> {
             SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                sevenValueStatistics.start(typeStatisticsStage);
+                sevenValueStatistics.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -207,13 +207,13 @@ StackedArea stackedArea = new StackedArea();
 
         Scene scene1 = new Scene(group,1500,950);
 
-        typeStatisticsStage.setScene(scene1);
-        typeStatisticsStage.setTitle("Books Statistics");
-        typeStatisticsStage.setFullScreen(true);
-        typeStatisticsStage.show();
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
-    public void timeStatistics(Stage timeStatisticsStage) {
+    public void timeStatistics(Stage primaryStage) {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -275,7 +275,7 @@ StackedArea stackedArea = new StackedArea();
         stackedAreaChart.setGraphic(new ImageView(image3));
         scatterChart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTiming(timeStatisticsStage);
+                this.scatterChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -284,7 +284,7 @@ StackedArea stackedArea = new StackedArea();
         });
         stackedAreaChart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTiming(timeStatisticsStage);
+                stackedArea.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -293,7 +293,7 @@ StackedArea stackedArea = new StackedArea();
 
         lineChart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTiming(timeStatisticsStage);
+                this.lineChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -343,7 +343,7 @@ StackedArea stackedArea = new StackedArea();
         home.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
-                main.start(timeStatisticsStage);
+                main.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -367,7 +367,7 @@ StackedArea stackedArea = new StackedArea();
         back.setOnAction(actionEvent -> {
             SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
             try {
-                sevenValueStatistics.start(timeStatisticsStage);
+                sevenValueStatistics.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -386,10 +386,10 @@ StackedArea stackedArea = new StackedArea();
 
         Scene scene1 = new Scene(group,1500,950);
 
-        timeStatisticsStage.setScene(scene1);
-        timeStatisticsStage.setTitle("Books Statistics");
-        timeStatisticsStage.setFullScreen(true);
-        timeStatisticsStage.show();
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Books Statistics");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
     public void borrowStatistics(Stage borrowStatisticsStage) {
