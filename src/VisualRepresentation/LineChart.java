@@ -837,8 +837,8 @@ double []  year2017Books = new double[7];
         Background bg = new Background(bi);
         vbox.setBackground(bg);
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
-
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(LineChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
@@ -1102,7 +1102,8 @@ double []  year2017Books = new double[7];
         vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(LineChart);
 
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
@@ -1420,7 +1421,8 @@ double []  year2017Books = new double[7];
         vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(LineChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");

@@ -328,7 +328,8 @@ public class StackedArea extends Application {
        vbox.setMaxSize(1400,750);
 
        vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
@@ -672,7 +673,8 @@ public class StackedArea extends Application {
         Background bg = new Background(bi);
         vbox.setBackground(bg);
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
 
@@ -932,7 +934,8 @@ public class StackedArea extends Application {
         Background bg = new Background(bi);
         vbox.setBackground(bg);
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(StackedAreaChart);
 
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
@@ -1265,7 +1268,8 @@ public class StackedArea extends Application {
         vbox.setBackground(bg);
 
         vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+          Group group = new Group(vbox,exit,back);
+        group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
