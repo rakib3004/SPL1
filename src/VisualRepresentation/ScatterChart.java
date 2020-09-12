@@ -2,21 +2,17 @@ package VisualRepresentation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenNumberImplementation;
-import InfoDisplay.SevenValueStatistics;
 import JavFX.Main;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -46,10 +42,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
-
-    ScatterChart scatterChart = new ScatterChart();
-    LineChart lineChart = new LineChart();
-    StackedArea stackedArea = new StackedArea();
+    ScatterChart scatterChart;
+    LineChart lineChart ;
+    StackedArea stackedArea ;
     @Override
     public void start(Stage primaryStage) {
     }
@@ -114,7 +109,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTyping(primaryStage);
+         this.scatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
