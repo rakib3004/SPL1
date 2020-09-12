@@ -45,27 +45,27 @@ StackedArea stackedArea = new StackedArea();
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
 
-        Button scatterChart = new Button("Scatter Chart");
-        Button lineChart = new Button("Line Chart");
-        Button stackedAreaChart = new Button("Stacked Area Chart");
+        Button scatter_chart = new Button("Scatter Chart");
+        Button line_chart = new Button("Line Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
 
-        scatterChart.setPrefSize(410,230);
-        lineChart.setPrefSize(410,230);
-        stackedAreaChart.setPrefSize(410,230);
+        scatter_chart.setPrefSize(410,230);
+        line_chart.setPrefSize(410,230);
+        stacked_area_chart.setPrefSize(410,230);
 
-        scatterChart.setFont(font2);
-        lineChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
-        scatterChart.setTranslateX(30);
-        scatterChart.setTranslateY(35);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(270);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(505);
+        scatter_chart.setFont(font2);
+        line_chart.setFont(font2);
+        stacked_area_chart.setFont(font2);
+        scatter_chart.setTranslateX(30);
+        scatter_chart.setTranslateY(35);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
 
-        scatterChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        scatter_chart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -74,7 +74,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        scatterChart.setGraphic(new ImageView(image1));
+        scatter_chart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -84,7 +84,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChart.setGraphic(new ImageView(image2));
+        line_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -94,9 +94,9 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChart.setGraphic(new ImageView(image3));
+        stacked_area_chart.setGraphic(new ImageView(image3));
         
-        scatterChart.setOnAction(actionEvent -> {
+        scatter_chart.setOnAction(actionEvent -> {
             try {
                 this.scatterChart.startTyping(primaryStage);
 
@@ -105,7 +105,7 @@ StackedArea stackedArea = new StackedArea();
             }
         });
 
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setOnAction(actionEvent -> {
             try {
                 stackedArea.startTyping(primaryStage);
 
@@ -113,7 +113,7 @@ StackedArea stackedArea = new StackedArea();
                 exception.printStackTrace();
             }
         });
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             try {
                 this.lineChart.startTyping(primaryStage);
             } catch (Exception exception) {
@@ -200,9 +200,9 @@ StackedArea stackedArea = new StackedArea();
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,scatterChart,
-                lineChart,
-                stackedAreaChart,exit,home,text,back);
+        group.getChildren().addAll(canvas,scatter_chart,
+                line_chart,
+                stacked_area_chart,exit,home,text,back);
 
 
         Scene scene1 = new Scene(group,1500,950);
@@ -223,27 +223,27 @@ StackedArea stackedArea = new StackedArea();
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
 
-        Button scatterChart = new Button("Scatter Chart");
-        Button lineChart = new Button("Line Chart");
-        Button stackedAreaChart = new Button("Stacked Area Chart");
+        Button scatter_chart = new Button("Scatter Chart");
+        Button line_chart = new Button("Line Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
 
-        scatterChart.setPrefSize(410,230);
-        lineChart.setPrefSize(410,230);
-        stackedAreaChart.setPrefSize(410,230);
+        scatter_chart.setPrefSize(410,230);
+        line_chart.setPrefSize(410,230);
+        stacked_area_chart.setPrefSize(410,230);
 
-        scatterChart.setFont(font2);
-        lineChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
-        scatterChart.setTranslateX(30);
-        scatterChart.setTranslateY(35);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(270);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(505);
+        scatter_chart.setFont(font2);
+        line_chart.setFont(font2);
+        stacked_area_chart.setFont(font2);
+        scatter_chart.setTranslateX(30);
+        scatter_chart.setTranslateY(35);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
 
-        scatterChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        scatter_chart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -252,7 +252,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        scatterChart.setGraphic(new ImageView(image1));
+        scatter_chart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -262,7 +262,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChart.setGraphic(new ImageView(image2));
+        line_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -272,8 +272,8 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChart.setGraphic(new ImageView(image3));
-        scatterChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setGraphic(new ImageView(image3));
+        scatter_chart.setOnAction(actionEvent -> {
             try {
                 this.scatterChart.startTiming(primaryStage);
 
@@ -282,7 +282,7 @@ StackedArea stackedArea = new StackedArea();
             }
 
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setOnAction(actionEvent -> {
             try {
                 stackedArea.startTiming(primaryStage);
 
@@ -291,7 +291,7 @@ StackedArea stackedArea = new StackedArea();
             }
         });
 
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             try {
                 this.lineChart.startTiming(primaryStage);
 
@@ -379,9 +379,9 @@ StackedArea stackedArea = new StackedArea();
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,scatterChart,
-                lineChart,
-                stackedAreaChart,exit,home,text,back);
+        group.getChildren().addAll(canvas,scatter_chart,
+                line_chart,
+                stacked_area_chart,exit,home,text,back);
 
 
         Scene scene1 = new Scene(group,1500,950);
@@ -402,27 +402,27 @@ StackedArea stackedArea = new StackedArea();
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
 
-        Button scatterChart = new Button("Scatter Chart");
-        Button lineChart = new Button("Line Chart");
-        Button stackedAreaChart = new Button("Stacked Area Chart");
+        Button scatter_chart = new Button("Scatter Chart");
+        Button line_chart = new Button("Line Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
 
-        scatterChart.setPrefSize(410,230);
-        lineChart.setPrefSize(410,230);
-        stackedAreaChart.setPrefSize(410,230);
+        scatter_chart.setPrefSize(410,230);
+        line_chart.setPrefSize(410,230);
+        stacked_area_chart.setPrefSize(410,230);
 
-        scatterChart.setFont(font2);
-        lineChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
-        scatterChart.setTranslateX(30);
-        scatterChart.setTranslateY(35);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(270);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(505);
+        scatter_chart.setFont(font2);
+        line_chart.setFont(font2);
+        stacked_area_chart.setFont(font2);
+        scatter_chart.setTranslateX(30);
+        scatter_chart.setTranslateY(35);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
 
-        scatterChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        scatter_chart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -431,7 +431,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image1 = new Image(fileInputStream1);
-        scatterChart.setGraphic(new ImageView(image1));
+        scatter_chart.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = null;
         try {
@@ -441,7 +441,7 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChart.setGraphic(new ImageView(image2));
+        line_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -451,8 +451,8 @@ StackedArea stackedArea = new StackedArea();
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChart.setGraphic(new ImageView(image3));
-        scatterChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setGraphic(new ImageView(image3));
+        scatter_chart.setOnAction(actionEvent -> {
             try {
                 this.scatterChart.startBorrowing(primaryStage);
 
@@ -461,7 +461,7 @@ StackedArea stackedArea = new StackedArea();
             }
 
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setOnAction(actionEvent -> {
             try {
                 stackedArea.startBorrowing(primaryStage);
 
@@ -470,7 +470,7 @@ StackedArea stackedArea = new StackedArea();
             }
         });
 
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             try {
                 this.lineChart.startBorrowing(primaryStage);
 
@@ -558,9 +558,9 @@ StackedArea stackedArea = new StackedArea();
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,scatterChart,
-                lineChart,
-                stackedAreaChart,exit,home,text,back);
+        group.getChildren().addAll(canvas,scatter_chart,
+                line_chart,
+                stacked_area_chart,exit,home,text,back);
 
 
         Scene scene1 = new Scene(group,1500,950);
@@ -580,27 +580,27 @@ StackedArea stackedArea = new StackedArea();
          Font font1 = new Font(47);
          Font font2 = new Font( 26);
 
-         Button scatterChart = new Button("Scatter Chart");
-         Button lineChart = new Button("Line Chart");
-         Button stackedAreaChart = new Button("Stacked Area Chart");
+         Button scatter_chart = new Button("Scatter Chart");
+         Button line_chart = new Button("Line Chart");
+         Button stacked_area_chart = new Button("Stacked Area Chart");
 
-         scatterChart.setPrefSize(410,230);
-         lineChart.setPrefSize(410,230);
-         stackedAreaChart.setPrefSize(410,230);
+         scatter_chart.setPrefSize(410,230);
+         line_chart.setPrefSize(410,230);
+         stacked_area_chart.setPrefSize(410,230);
 
-         scatterChart.setFont(font2);
-         lineChart.setFont(font2);
-         stackedAreaChart.setFont(font2);
-         scatterChart.setTranslateX(30);
-         scatterChart.setTranslateY(35);
-         lineChart.setTranslateX(30);
-         lineChart.setTranslateY(270);
-         stackedAreaChart.setTranslateX(30);
-         stackedAreaChart.setTranslateY(505);
+         scatter_chart.setFont(font2);
+         line_chart.setFont(font2);
+         stacked_area_chart.setFont(font2);
+         scatter_chart.setTranslateX(30);
+         scatter_chart.setTranslateY(35);
+         line_chart.setTranslateX(30);
+         line_chart.setTranslateY(270);
+         stacked_area_chart.setTranslateX(30);
+         stacked_area_chart.setTranslateY(505);
 
-         scatterChart.setContentDisplay(ContentDisplay.TOP);
-         lineChart.setContentDisplay(ContentDisplay.TOP);
-         stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+         scatter_chart.setContentDisplay(ContentDisplay.TOP);
+         line_chart.setContentDisplay(ContentDisplay.TOP);
+         stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
          FileInputStream fileInputStream1 = null;
          try {
              fileInputStream1 = new FileInputStream(
@@ -609,7 +609,7 @@ StackedArea stackedArea = new StackedArea();
              e.printStackTrace();
          }
          Image image1 = new Image(fileInputStream1);
-         scatterChart.setGraphic(new ImageView(image1));
+         scatter_chart.setGraphic(new ImageView(image1));
 
          FileInputStream fileInputStream2 = null;
          try {
@@ -619,7 +619,7 @@ StackedArea stackedArea = new StackedArea();
              e.printStackTrace();
          }
          Image image2 = new Image(fileInputStream2);
-         lineChart.setGraphic(new ImageView(image2));
+         line_chart.setGraphic(new ImageView(image2));
 
          FileInputStream fileInputStream3 = null;
          try {
@@ -629,8 +629,8 @@ StackedArea stackedArea = new StackedArea();
              e.printStackTrace();
          }
          Image image3 = new Image(fileInputStream3);
-         stackedAreaChart.setGraphic(new ImageView(image3));
-         scatterChart.setOnAction(actionEvent -> {
+         stacked_area_chart.setGraphic(new ImageView(image3));
+         scatter_chart.setOnAction(actionEvent -> {
              try {
                  this.scatterChart.startBorrowing(primaryStage);
 
@@ -639,7 +639,7 @@ StackedArea stackedArea = new StackedArea();
              }
 
          });
-         stackedAreaChart.setOnAction(actionEvent -> {
+         stacked_area_chart.setOnAction(actionEvent -> {
              try {
                  stackedArea.startBorrowing(primaryStage);
 
@@ -648,7 +648,7 @@ StackedArea stackedArea = new StackedArea();
              }
          });
 
-         lineChart.setOnAction(actionEvent -> {
+         line_chart.setOnAction(actionEvent -> {
              try {
                  this.lineChart.startBorrowing(primaryStage);
 
@@ -736,9 +736,9 @@ StackedArea stackedArea = new StackedArea();
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
          graphicsContext.drawImage(background,0,0);
          Group group = new Group();
-         group.getChildren().addAll(canvas,scatterChart,
-                 lineChart,
-                 stackedAreaChart,exit,home,text,back);
+         group.getChildren().addAll(canvas,scatter_chart,
+                 line_chart,
+                 stacked_area_chart,exit,home,text,back);
 
 
          Scene scene1 = new Scene(group,1500,950);
