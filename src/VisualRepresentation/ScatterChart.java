@@ -320,7 +320,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .getData().add(series10);
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
-        ScatterChart .setPrefSize(1000,700);
+        ScatterChart .setPrefSize(850,425);
 
 
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
@@ -922,7 +922,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         scatterChart .setTranslateX(65);
         scatterChart .setTranslateY(55);
-        scatterChart .setPrefSize(1000,700);
+        scatterChart .setPrefSize(850,425);
 
         HBox hBox1 = new HBox(scatterChart ,exit,back);
         VBox vbox = new VBox();
@@ -1235,7 +1235,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
-        ScatterChart .setPrefSize(1000,700);
+        ScatterChart .setPrefSize(850,425);
 
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
 

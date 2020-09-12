@@ -320,10 +320,10 @@ public class StackedArea extends Application {
 
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
 
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
@@ -658,10 +658,10 @@ public class StackedArea extends Application {
 
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
 
 
 
@@ -924,7 +924,7 @@ public class StackedArea extends Application {
 
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
 
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
@@ -1253,10 +1253,10 @@ public class StackedArea extends Application {
 
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
         StackedAreaChart.setTranslateX(65);
         StackedAreaChart.setTranslateY(55);
-        StackedAreaChart.setPrefSize(1000,700);
+        StackedAreaChart.setPrefSize(850,425);
 
         HBox hBox1 = new HBox(StackedAreaChart,exit,back);
         VBox vbox = new VBox();
