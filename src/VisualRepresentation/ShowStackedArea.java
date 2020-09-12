@@ -43,9 +43,7 @@ public class ShowStackedArea extends Application {
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
 
-    ShowScatterChart showScatterChart = new ShowScatterChart();
-    ShowLineChart showLineChart = new ShowLineChart();
-    ShowStackedArea showStackedArea = new ShowStackedArea();
+  
     @Override
     public void start(Stage primaryStage) {
     }
@@ -56,7 +54,9 @@ public class ShowStackedArea extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
+        ShowStackedArea showStackedArea = new ShowStackedArea();
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
         Button stacked_area_chart = new Button("Stacked Area Chart");
@@ -110,7 +110,7 @@ public class ShowStackedArea extends Application {
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startTyping(primaryStage);
+                showScatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -127,7 +127,7 @@ public class ShowStackedArea extends Application {
         });
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startTyping(primaryStage);
+                showLineChart.startTyping(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -478,7 +478,9 @@ public class ShowStackedArea extends Application {
 
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -532,7 +534,7 @@ public class ShowStackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startTiming(primaryStage);
+                showScatterChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -541,7 +543,7 @@ public class ShowStackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                showStackedArea.startTiming(primaryStage);
+                startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -550,7 +552,7 @@ public class ShowStackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startTiming(primaryStage);
+                showLineChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -949,7 +951,9 @@ public class ShowStackedArea extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -1003,7 +1007,7 @@ public class ShowStackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startBorrowing(primaryStage);
+                showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1012,7 +1016,7 @@ public class ShowStackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                showStackedArea.startBorrowing(primaryStage);
+               startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1021,7 +1025,7 @@ public class ShowStackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startBorrowing(primaryStage);
+                showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1333,7 +1337,9 @@ public class ShowStackedArea extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -1387,7 +1393,7 @@ public class ShowStackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startBorrowing(primaryStage);
+                showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1396,7 +1402,7 @@ public class ShowStackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                showStackedArea.startBorrowing(primaryStage);
+                startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1405,7 +1411,7 @@ public class ShowStackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startBorrowing(primaryStage);
+                showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
