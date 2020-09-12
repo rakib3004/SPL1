@@ -35,6 +35,10 @@ public class StackedArea extends Application {
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
+
+    ScatterChart scatterChart = new ScatterChart();
+    LineChart lineChart = new LineChart();
+    StackedArea stackedArea = new StackedArea();
     @Override
     public void start(Stage primaryStage) {
     }

@@ -54,6 +54,9 @@ public class LineChart extends Application {
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
 
+    ScatterChart scatterChart = new ScatterChart();
+    LineChart lineChart = new LineChart();
+    StackedArea stackedArea = new StackedArea();
 double []  year2017Books = new double[7];
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPcriteriaWeight ahPcriteriaWeight;
