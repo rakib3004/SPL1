@@ -561,7 +561,6 @@ StackedArea stackedArea = new StackedArea();
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
 
-
         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
