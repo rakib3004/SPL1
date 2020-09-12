@@ -2,7 +2,6 @@ package VisualRepresentation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenNumberImplementation;
-import InfoDisplay.SevenValueStatistics;
 import JavFX.Main;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -14,7 +13,6 @@ import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -29,7 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StackedArea extends Application {
+public class ShowStackedArea extends Application {
 
     PriorityData[] priorityData;
     int numberOfBooks;
@@ -45,9 +43,9 @@ public class StackedArea extends Application {
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
 
-    ScatterChart scatterChart;
-    LineChart lineChart ;
-    StackedArea stackedArea ;
+    ShowScatterChart showScatterChart;
+    ShowLineChart showLineChart;
+    ShowStackedArea showStackedArea;
     @Override
     public void start(Stage primaryStage) {
     }
@@ -112,7 +110,7 @@ public class StackedArea extends Application {
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTyping(primaryStage);
+                this.showScatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -121,7 +119,7 @@ public class StackedArea extends Application {
 
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTyping(primaryStage);
+                showStackedArea.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -129,7 +127,7 @@ public class StackedArea extends Application {
         });
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTyping(primaryStage);
+                this.showLineChart.startTyping(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -534,7 +532,7 @@ public class StackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTiming(primaryStage);
+                this.showScatterChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -543,7 +541,7 @@ public class StackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTiming(primaryStage);
+                showStackedArea.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -552,7 +550,7 @@ public class StackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTiming(primaryStage);
+                this.showLineChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1005,7 +1003,7 @@ public class StackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startBorrowing(primaryStage);
+                this.showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1014,7 +1012,7 @@ public class StackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startBorrowing(primaryStage);
+                showStackedArea.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1023,7 +1021,7 @@ public class StackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startBorrowing(primaryStage);
+                this.showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1389,7 +1387,7 @@ public class StackedArea extends Application {
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startBorrowing(primaryStage);
+                this.showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1398,7 +1396,7 @@ public class StackedArea extends Application {
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startBorrowing(primaryStage);
+                showStackedArea.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1407,7 +1405,7 @@ public class StackedArea extends Application {
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startBorrowing(primaryStage);
+                this.showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();

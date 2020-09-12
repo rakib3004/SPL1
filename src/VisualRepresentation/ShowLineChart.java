@@ -1,16 +1,19 @@
 package VisualRepresentation;
+import AHPalgorithm.AHPcalculation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.SevenNumberImplementation;
 import JavFX.Main;
+import MultiVariableRegression.MultipleLinearRegression;
+import InfoDisplay.SevenNumberImplementation;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import MultiVariableRegression.MultipleLinearRegression;
+import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.chart.*;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -27,14 +30,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScatterChart extends Application {
+public class ShowLineChart extends Application {
 
     PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+    SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     String sevenValueArray0 =  "findMinimumValue";
     String sevenValueArray6 ="findMaximumValue";
     String sevenValueArray3= "findMedianValue";
@@ -42,16 +45,23 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
-    ScatterChart scatterChart;
-    LineChart lineChart ;
-    StackedArea stackedArea ;
+
+    ShowScatterChart showScatterChart;
+    ShowLineChart showLineChart;
+    ShowStackedArea showStackedArea;
+double []  year2017Books = new double[7];
+    AHPcalculation ahPcalculation = new AHPcalculation();
+    AHPcriteriaWeight ahPcriteriaWeight;
     @Override
     public void start(Stage primaryStage) {
     }
+
     public void startTyping(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+
+
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
@@ -109,7 +119,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-         this.scatterChart.startTyping(primaryStage);
+                this.showScatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -118,7 +128,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTyping(primaryStage);
+                showStackedArea.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -126,7 +136,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTyping(primaryStage);
+                this.showLineChart.startTyping(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -213,9 +223,10 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData =    multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         String uponnashType,kobitaType,rochonaBoliType,
                 religionType,bigganType,sciFicType,shisuSahittoType,kisoreUponnashType,onubadType,othersType;
+
         double [] uponnashTypeNO= new double[7] ;
         double []kobitaTypeNO= new double[7] ;
         double []rochonaBoliTypeNO= new double[7] ;
@@ -237,20 +248,21 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         onubadType = "Onubad";
         othersType= "Others";
         List<Double> list = new ArrayList<>();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
-             //   uponnashTypeNO++;
+                //   uponnashTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
             }
-                int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
-                uponnashTypeNO  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+                uponnashTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
-            //    rochonaBoliTypeNO++;
+                //    rochonaBoliTypeNO++;
                 list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
@@ -262,6 +274,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
             //    kobitaTypeNO++;
             list.add(priorityData[iterator].getMLRweight());
+
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -270,15 +283,16 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
-              //  bigganTypeNO++;
+            //  bigganTypeNO++;
+
             list.add(priorityData[iterator].getMLRweight());
         }
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
-             //   bigganTypeNO++;
-              list.add(priorityData[iterator].getMLRweight());
-            }
+            //   bigganTypeNO++;
+            list.add(priorityData[iterator].getMLRweight());
+        }
             int sizeB = list.size();
             if(sizeB>7){
                 bigganTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
@@ -286,7 +300,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
-             //   sciFicTypeNO++;
+            //   sciFicTypeNO++;
             list.add(priorityData[iterator].getMLRweight());
         }
             int sizeB = list.size();
@@ -296,31 +310,31 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("10")) {
-              //  kisoreUponnashTypeNO++;
+            //  kisoreUponnashTypeNO++;
+        }
+        } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
+            //  shisuSahittoTypeNO++;
+            list.add(priorityData[iterator].getMLRweight());
+        }
 
-            }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
-              //  shisuSahittoTypeNO++;
-
-              list.add(priorityData[iterator].getMLRweight());
-            }
-            int sizeB = list.size();
+        int sizeB = list.size();
             if(sizeB>7){
                 shisuSahittoTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
-               // onubadTypeNO++;
-              list.add(priorityData[iterator].getMLRweight());
-            }
+            // onubadTypeNO++;
+            list.add(priorityData[iterator].getMLRweight());
+        }
             int sizeB = list.size();
             if(sizeB>7){
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
-              //  onubadTypeNO++;
-              list.add(priorityData[iterator].getMLRweight());
-            }
+            //  onubadTypeNO++;
+           list.add(priorityData[iterator].getMLRweight());
+        }
             int sizeB = list.size();
             if(sizeB>7){
                 onubadTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
@@ -329,23 +343,25 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
-           //     religionTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
-        }
+                //     religionTypeNO++;
+                list.add(priorityData[iterator].getMLRweight());
+            }
             int sizeB = list.size();
             if(sizeB>7){
                 religionTypeNO =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
-        }for (iterator = 0; iterator < numberOfBooks; iterator++) { {
-             //   othersTypeNO++;
-            }
         }
+        for (iterator = 0; iterator < numberOfBooks; iterator++) { {
+            //   othersTypeNO++;
+        }
+        }
+
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Types");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
+        javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(uponnashType);
@@ -367,7 +383,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series9.setName(onubadType);
         XYChart.Series series10 = new XYChart.Series();
         series10.setName(othersType);
-
 
         series1.getData().add(new XYChart.Data(sevenValueArray0,uponnashTypeNO[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,uponnashTypeNO[1]));
@@ -449,29 +464,28 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series10.getData().add(new XYChart.Data(sevenValueArray5,othersTypeNO[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,othersTypeNO[6]));
 
-        ScatterChart .getData().add(series1);
-        ScatterChart .getData().add(series2);
-        ScatterChart .getData().add(series3);
-        ScatterChart .getData().add(series4);
-        ScatterChart .getData().add(series5);
-        ScatterChart .getData().add(series6);
-        ScatterChart .getData().add(series7);
-        ScatterChart .getData().add(series8);
-        ScatterChart .getData().add(series9);
-        ScatterChart .getData().add(series10);
-        ScatterChart .setTranslateX(470);
-        ScatterChart .setTranslateY(35);
-        ScatterChart .setPrefSize(850,425);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
+        LineChart .setPrefSize(850,425);
 
-
-        group.getChildren().add(ScatterChart);
+       group.getChildren().add(LineChart);
         Scene scene = new Scene(group ,1400, 770);
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
     }
     public void startTiming(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
@@ -534,7 +548,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startTiming(primaryStage);
+                this.showScatterChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -543,7 +557,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startTiming(primaryStage);
+                showStackedArea.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -552,7 +566,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startTiming(primaryStage);
+                this.showLineChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -642,20 +656,24 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         categoryAxis.setLabel("Generics of Book Bar Chart");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Generics of Book");
-        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
+
+        javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
+
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
                 year2013Books= new double [7] ; double []year2014Books= new double [7] ; double []year2015Books= new double [7] ; double []year2016Books= new double [7] ; double []year2017Books = new double[7];
+
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+       priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         List<Double> list = new ArrayList<>();
+
         for(iterator=0;iterator<numberOfBooks;iterator++){
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 //year2017Books++;
                 list.add(priorityData[iterator].getMLRweight());
-                            }
+            }
             int sizeB = list.size();
             if(sizeB>7){
                 year2017Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
@@ -664,9 +682,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("16")){
                 //year2016Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2016Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -674,9 +692,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("15")){
                 //year2015Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2015Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -684,9 +702,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("14")){
                 //year2014Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2014Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -694,9 +712,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("13")){
                 //year2013Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2013Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -704,9 +722,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0812")){
                 //year2012Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -714,9 +732,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0212")){
                 //year2012Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2012Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -724,9 +742,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1211")){
                 //year2011Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -734,9 +752,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0311")){
                 //year2011Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2011Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -744,9 +762,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1210")){
                 //year2010Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -754,9 +772,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0810")){
                 //year2010Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -764,9 +782,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0410")){
                 //year2010Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2010Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -774,9 +792,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1009")){
                 //year2009Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2009Books =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -784,9 +802,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0409")){
                 //year2009Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2009Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -794,9 +812,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1208")){
                 //year2008Books++;
-              list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getMLRweight());
             }
-          int sizeB = list.size();
+            int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
@@ -804,17 +822,19 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0608")){
                 //year2008Books++;
-            list.add(priorityData[iterator].getMLRweight());
-        }
+                list.add(priorityData[iterator].getMLRweight());
+            }
             int sizeB = list.size();
             if(sizeB>7){
                 year2008Books  =  sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
+
         year2008 =  "year2008" ;
         year2009 =  "year2009" ; year2010 =  "year2010" ; year2011 =  "year2011" ;
         year2012=   "year2012" ;year2013 =  "year2013" ; year2014 =  "year2014" ;
         year2015 =  "year2015" ;year2016 =  "year2016" ; year2017 =  "year2017" ;
+
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(year2008);
         XYChart.Series series2 = new XYChart.Series();
@@ -835,6 +855,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series9.setName(year2016);
         XYChart.Series series10 = new XYChart.Series();
         series9.setName(year2017);
+
         series1.getData().add(new XYChart.Data(sevenValueArray0,year2008Books[0]));
         series1.getData().add(new XYChart.Data(sevenValueArray1,year2008Books[1]));
         series1.getData().add(new XYChart.Data(sevenValueArray2,year2008Books[2]));
@@ -915,29 +936,31 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series10.getData().add(new XYChart.Data(sevenValueArray5,year2017Books[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,year2017Books[6]));
 
-        ScatterChart .getData().add(series1);
-        ScatterChart .getData().add(series2);
-        ScatterChart .getData().add(series3);
-        ScatterChart .getData().add(series4);
-        ScatterChart .getData().add(series5);
-        ScatterChart .getData().add(series6);
-        ScatterChart .getData().add(series7);
-        ScatterChart .getData().add(series8);
-        ScatterChart .getData().add(series9);
-        ScatterChart .getData().add(series10);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
-        ScatterChart .setTranslateX(470);
-        ScatterChart .setTranslateY(35);
-        ScatterChart .setPrefSize(1000,800);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
+        LineChart .setPrefSize(850,425);
 
 
-        group.getChildren().add(ScatterChart);
+        group.getChildren().add(LineChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
+
     public void startBorrowing(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -998,7 +1021,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startBorrowing(primaryStage);
+                this.showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1007,7 +1030,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startBorrowing(primaryStage);
+                showStackedArea.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1016,7 +1039,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startBorrowing(primaryStage);
+                this.showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1100,17 +1123,20 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         group.getChildren().addAll(scatter_chart,
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
+
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
+
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        javafx.scene.chart.ScatterChart scatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
-        String below4,over4,over7,over10,over15,over20,over25,over30;
+        javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
+       String below4,over4,over7,over10,over15,over20,over25,over30;
 
         below4 =  "0-3" ;
         over4 =  "4-6" ; over7 =  "7-9" ; over10 =  "10-14" ;
         over15=   "15-19" ;over20 =  "20-24" ; over25 =  "25-29" ;
         over30 =  "30+" ;
+
         double []   below4Count = new double[7] ;
         double [] over4Count = new double[7] ;
         double [] over7Count = new double[7] ;
@@ -1119,16 +1145,16 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         double []  over20Count = new double[7] ;
         double [] over25Count = new double[7] ;
         double [] over30Count = new double[7];
-                int iterator;
+        int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-
         List<Double> list = new ArrayList<>();
         for(iterator=0;iterator<numberOfBooks;iterator++){
+
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1136,11 +1162,11 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1148,11 +1174,10 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1160,10 +1185,11 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1171,22 +1197,23 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
+
             }
             int sizeB = list.size();
-            if(sizeB>7){
-                over10Count  =  sevenValueCalculation.sevenValueCalculationMethods(list);
+            if(sizeB>7) {
+                over10Count = sevenValueCalculation.sevenValueCalculationMethods(list);
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1198,7 +1225,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 //over4Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                   list.add(priorityData[iterator].getMLRweight());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1206,7 +1233,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))<4.0){
                 list.add(priorityData[iterator].getMLRweight());
@@ -1217,8 +1243,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(below4);
         XYChart.Series series2 = new XYChart.Series();
@@ -1299,24 +1323,23 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series8.getData().add(new XYChart.Data(sevenValueArray5,over30Count[5]));
         series8.getData().add(new XYChart.Data(sevenValueArray6,over30Count[6]));
 
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
 
-        scatterChart .getData().add(series1);
-        scatterChart .getData().add(series2);
-        scatterChart .getData().add(series3);
-        scatterChart .getData().add(series4);
-        scatterChart .getData().add(series5);
-        scatterChart .getData().add(series6);
-        scatterChart .getData().add(series7);
-        scatterChart .getData().add(series8);
-
-        scatterChart .setTranslateX(470);
-        scatterChart .setTranslateY(35);
-        scatterChart .setPrefSize(850,425);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
+        LineChart .setPrefSize(850,425);
 
 
-        group.getChildren().add(scatterChart);
+        group.getChildren().add(LineChart);
+
         Scene scene = new Scene(group ,1400, 770);
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
@@ -1327,6 +1350,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
@@ -1383,7 +1407,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.scatterChart.startBorrowing(primaryStage);
+                this.showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1392,7 +1416,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         stacked_area_chart.setOnAction(actionEvent -> {
             try {
-                stackedArea.startBorrowing(primaryStage);
+                showStackedArea.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1401,7 +1425,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.lineChart.startBorrowing(primaryStage);
+                this.showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1489,14 +1513,15 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         categoryAxis.setLabel("Book Class Category");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
 
+        javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
 
         over100 =  "100-140" ;
         over140 =  "140-160" ; over160 =  "160-180" ; over180 =  "180-210" ;
         over210=   "210-250" ;over250 =  "250-300" ; over300 =  "300-350" ;
         over350 =  "350-400" ;over400 =  "400-500" ; over500 =  "500+" ;
+
         double [] over100Count= new double[7];
         double[] over140Count= new double[7];
         double[] over160Count= new double[7];
@@ -1507,13 +1532,14 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         double[] over350Count= new double[7];
         double[] over400Count= new double[7];
         double[] over500Count= new double[7];
-
         int iterator;
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData =  multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
         List<Double> list = new ArrayList<>();
         for(iterator=0;iterator<numberOfBooks;iterator++){
+
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                 //over500Count++;
                 list.add(priorityData[iterator].getMLRweight());
@@ -1548,7 +1574,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over300Count++;
@@ -1573,6 +1599,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<250.00){
@@ -1622,7 +1649,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+       for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=100.0&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<140.000){
                 //over100Count++;
@@ -1633,7 +1660,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
             }
         }
         list.clear();
-
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(over100);
         XYChart.Series series2 = new XYChart.Series();
@@ -1733,30 +1759,29 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series10.getData().add(new XYChart.Data(sevenValueArray5,over500Count[5]));
         series10.getData().add(new XYChart.Data(sevenValueArray6,over500Count[6]));
 
-        ScatterChart .getData().add(series1);
-        ScatterChart .getData().add(series2);
-        ScatterChart .getData().add(series3);
-        ScatterChart .getData().add(series4);
-        ScatterChart .getData().add(series5);
-        ScatterChart .getData().add(series6);
-        ScatterChart .getData().add(series7);
-        ScatterChart .getData().add(series8);
-        ScatterChart .getData().add(series9);
-        ScatterChart .getData().add(series10);
+        LineChart .getData().add(series1);
+        LineChart .getData().add(series2);
+        LineChart .getData().add(series3);
+        LineChart .getData().add(series4);
+        LineChart .getData().add(series5);
+        LineChart .getData().add(series6);
+        LineChart .getData().add(series7);
+        LineChart .getData().add(series8);
+        LineChart .getData().add(series9);
+        LineChart .getData().add(series10);
 
-        ScatterChart .setTranslateX(470);
-        ScatterChart .setTranslateY(35);
-        ScatterChart .setPrefSize(850,425);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
+        LineChart .setPrefSize(850,425);
 
 
-        group.getChildren().add(ScatterChart);
+        group.getChildren().add(LineChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
