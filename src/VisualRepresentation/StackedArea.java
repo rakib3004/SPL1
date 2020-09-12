@@ -321,14 +321,6 @@ public class StackedArea extends Application {
         StackedAreaChart.setTranslateX(470);
         StackedAreaChart.setTranslateY(35);
         StackedAreaChart.setPrefSize(850,425);
-
-        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-       vbox.setMaxSize(1400,750);
-
-       vbox.setPrefSize(1400,750);
-          Group group = new Group(vbox,exit,back);
         group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
@@ -658,22 +650,7 @@ public class StackedArea extends Application {
         StackedAreaChart.setTranslateY(35);
         StackedAreaChart.setPrefSize(850,425);
 
-        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-       vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
 
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-        vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
-          Group group = new Group(vbox,exit,back);
         group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
@@ -920,21 +897,7 @@ public class StackedArea extends Application {
         StackedAreaChart.setTranslateY(35);
         StackedAreaChart.setPrefSize(850,425);
 
-        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-       vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-        vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
-          Group group = new Group(vbox,exit,back);
+
         group.getChildren().add(StackedAreaChart);
 
         Scene scene = new Scene(group ,1400, 770);
@@ -1251,24 +1214,7 @@ public class StackedArea extends Application {
         StackedAreaChart.setPrefSize(850,425);
 
 
-        HBox hBox1 = new HBox(StackedAreaChart,exit,back);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
 
-       vbox.setMaxSize(1400,750);
-        // vBox3.setSpacing(5);
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-        vbox.setBackground(bg);
-
-        vbox.setPrefSize(1400,750);
-          Group group = new Group(vbox,exit,back);
         group.getChildren().add(StackedAreaChart);
         Scene scene = new Scene(group ,1400, 770);
         primaryStage.setScene(scene);
