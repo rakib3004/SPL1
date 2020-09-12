@@ -1421,41 +1421,6 @@ double []  year2017Books = new double[7];
         LineChart .setTranslateY(55);
         LineChart .setPrefSize(1000,700);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterChart = new MenuItem("Scatter Chart");
-        MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-        lineChart.setOnAction((event) -> {
-            VisualRepresentation.LineChart lineChartFX = new LineChart();
-            try {
-                lineChartFX.startPricing(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaChart.setOnAction((event) -> {
-            try {
-                StackedArea stackedArea = new StackedArea();
-                stackedArea.startPricing(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        scatterChart.setOnAction((event) -> {
-            try {
-                ScatterChart stackedAreaFX = new ScatterChart();
-                stackedAreaFX.startPricing(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterChart,lineChart,stackedAreaChart);
-        LineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(LineChart, event.getScreenX(), event.getScreenY());
-            }
-        });
         HBox hBox1 = new HBox(LineChart ,exit,back);
 
         VBox vbox = new VBox();
