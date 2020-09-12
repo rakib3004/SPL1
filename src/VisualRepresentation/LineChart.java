@@ -485,8 +485,8 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series9);
         LineChart .getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
         LineChart .setPrefSize(1000,700);
 
        group.getChildren().add(LineChart);
@@ -818,8 +818,8 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series9);
         LineChart .getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
         LineChart .setPrefSize(1000,700);
 
         HBox hBox1 = new HBox(LineChart ,exit,back);
@@ -1080,8 +1080,8 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series7);
         LineChart .getData().add(series8);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
         LineChart .setPrefSize(1000,700);
 
         HBox hBox1 = new HBox(LineChart ,exit,back);
@@ -1400,8 +1400,8 @@ double []  year2017Books = new double[7];
         LineChart .getData().add(series9);
         LineChart .getData().add(series10);
 
-        LineChart .setTranslateX(65);
-        LineChart .setTranslateY(55);
+        LineChart .setTranslateX(470);
+        LineChart .setTranslateY(35);
         LineChart .setPrefSize(1000,700);
 
         HBox hBox1 = new HBox(LineChart ,exit,back);
