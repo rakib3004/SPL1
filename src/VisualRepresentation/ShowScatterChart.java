@@ -42,9 +42,6 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
     String sevenValueArray4=  "findThirdQuartileValue";
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
-    ShowScatterChart showScatterChart = new ShowScatterChart();
-    ShowLineChart showLineChart = new ShowLineChart();
-    ShowStackedArea showStackedArea = new ShowStackedArea();
     @Override
     public void start(Stage primaryStage) {
     }
@@ -55,6 +52,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+       ShowLineChart showLineChart = new ShowLineChart();
+        ShowStackedArea showStackedArea = new ShowStackedArea();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -109,7 +109,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-         this.showScatterChart.startTyping(primaryStage);
+    showScatterChart.startTyping(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -126,7 +126,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         });
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startTyping(primaryStage);
+                showLineChart.startTyping(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -481,6 +481,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+          ShowLineChart showLineChart = new ShowLineChart();
+         ShowStackedArea showStackedArea = new ShowStackedArea();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -534,7 +537,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startTiming(primaryStage);
+                showScatterChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -552,7 +555,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startTiming(primaryStage);
+              showLineChart.startTiming(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -945,6 +948,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
+        ShowStackedArea showStackedArea = new ShowStackedArea();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -998,7 +1004,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startBorrowing(primaryStage);
+                showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1016,7 +1022,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startBorrowing(primaryStage);
+              showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1330,6 +1336,9 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
+        ShowScatterChart showScatterChart = new ShowScatterChart();
+        ShowLineChart showLineChart = new ShowLineChart();
+        ShowStackedArea showStackedArea = new ShowStackedArea();
 
         Button scatter_chart = new Button("Scatter Chart");
         Button line_chart = new Button("Line Chart");
@@ -1383,7 +1392,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         stacked_area_chart.setGraphic(new ImageView(image3));
         scatter_chart.setOnAction(actionEvent -> {
             try {
-                this.showScatterChart.startBorrowing(primaryStage);
+                showScatterChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -1401,7 +1410,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         line_chart.setOnAction(actionEvent -> {
             try {
-                this.showLineChart.startBorrowing(primaryStage);
+                showLineChart.startBorrowing(primaryStage);
 
             } catch (Exception exception) {
                 exception.printStackTrace();
