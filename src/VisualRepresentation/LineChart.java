@@ -1121,7 +1121,7 @@ double []  year2017Books = new double[7];
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1507,7 +1507,7 @@ double []  year2017Books = new double[7];
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

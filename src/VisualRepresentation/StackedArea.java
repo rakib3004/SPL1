@@ -1097,7 +1097,7 @@ public class StackedArea extends Application {
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1481,7 +1481,7 @@ public class StackedArea extends Application {
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

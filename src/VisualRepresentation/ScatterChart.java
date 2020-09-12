@@ -1095,7 +1095,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.priceStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -1480,7 +1480,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         back.setOnAction(actionEvent -> {
             SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
             try {
-                sevenNumberImplementation.start(primaryStage);
+                sevenNumberImplementation.borrowStatistics(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
