@@ -46,9 +46,9 @@ public class ShowLineChart extends Application {
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
 
-    ShowScatterChart showScatterChart;
-    ShowLineChart showLineChart;
-    ShowStackedArea showStackedArea;
+    ShowScatterChart showScatterChart = new ShowScatterChart();
+    ShowLineChart showLineChart = new ShowLineChart();
+    ShowStackedArea showStackedArea = new ShowStackedArea();
 double []  year2017Books = new double[7];
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPcriteriaWeight ahPcriteriaWeight;

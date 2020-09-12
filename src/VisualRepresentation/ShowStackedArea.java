@@ -43,9 +43,9 @@ public class ShowStackedArea extends Application {
     String sevenValueArray1=  "findLowerAdjacentValue";
     String sevenValueArray5=  "findUpperAdjacentValue";
 
-    ShowScatterChart showScatterChart;
-    ShowLineChart showLineChart;
-    ShowStackedArea showStackedArea;
+    ShowScatterChart showScatterChart = new ShowScatterChart();
+    ShowLineChart showLineChart = new ShowLineChart();
+    ShowStackedArea showStackedArea = new ShowStackedArea();
     @Override
     public void start(Stage primaryStage) {
     }
