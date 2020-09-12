@@ -50,6 +50,12 @@ public class BookNumberDisplay extends Application {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+        try {
+            BookNumber bookNumber = new BookNumber();
+            numberOfBooks = bookNumber.bookNumberFindingMethods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 40);
@@ -129,7 +135,7 @@ public class BookNumberDisplay extends Application {
             }
         });
 
-        Label BookNumbers = new Label("Total "+(numberOfBooks) + " Books");
+        Label BookNumbers = new Label("No. of Books : "+(numberOfBooks));
         BookNumbers.setAlignment(Pos.CENTER);
         BookNumbers.setFont(times_new_roman);
         BookNumbers.setPrefSize(110, 80);
