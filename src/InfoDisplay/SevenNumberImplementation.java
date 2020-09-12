@@ -40,7 +40,6 @@ StackedArea stackedArea = new StackedArea();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
