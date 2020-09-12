@@ -318,43 +318,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
-        MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-        lineChart.setOnAction((event) -> {
-            LineChart lineChartFX = new LineChart();
-            try {
-                lineChartFX.startTyping(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaChart.setOnAction((event) -> {
-            try {
-                StackedArea stackedArea = new StackedArea();
-                stackedArea.startTyping(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        scatterChart1.setOnAction((event) -> {
-            try {
-                VisualRepresentation.ScatterChart stackedAreaFX = new ScatterChart();
-                stackedAreaFX.startTyping(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
@@ -695,43 +659,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         ScatterChart .setTranslateX(65);
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,800);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterChart1 = new MenuItem("Scatter Chart");
-        MenuItem lineChart = new MenuItem("Line Chart");
-        MenuItem stackedAreaChart = new MenuItem("Stacked Area Chart");
-        lineChart.setOnAction((event) -> {
-            LineChart lineChartFX = new LineChart();
-            try {
-                lineChartFX.startTiming(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaChart.setOnAction((event) -> {
-            try {
-                StackedArea stackedArea = new StackedArea();
-                stackedArea.startTiming(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        scatterChart1.setOnAction((event) -> {
-            try {
-                VisualRepresentation.ScatterChart stackedAreaFX = new ScatterChart();
-                stackedAreaFX.startTiming(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
 
-        contextMenu.getItems().addAll(scatterChart1,lineChart,stackedAreaChart);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
         HBox hBox1 = new HBox(ScatterChart ,exit,back);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(hBox1);
