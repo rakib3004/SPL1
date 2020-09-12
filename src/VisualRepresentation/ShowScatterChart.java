@@ -931,7 +931,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
 
         ScatterChart .setTranslateX(470);
         ScatterChart .setTranslateY(35);
-        ScatterChart .setPrefSize(1000,800);
+        ScatterChart .setPrefSize(850,425);
 
 
         group.getChildren().add(ScatterChart);
