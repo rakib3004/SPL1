@@ -665,13 +665,15 @@ public class InfoPieChart extends Application  {
         back.setOnAction(actionEvent -> {
             GenericsOfBook genericsOfBook = new GenericsOfBook();
             try {
-                ge.start(primaryStage);
+                genericsOfBook.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
         });
-
+        Group group = new Group();
+        group.getChildren().addAll(bar_chart,
+                pie_chart, exit, back, home, text, analyticChart);
         group.getChildren().addAll( bar_chart,
                 pie_chart, exit, back, home, text, analyticChart);
 
@@ -752,23 +754,7 @@ year2016Books=0;year2017Books=0;
         pieChart.setPrefSize(500,500);
 
 
-        HBox hBox1 = new HBox(pieChart,back,exit);
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(hBox1);
-         vbox.setMaxSize(1400, 800);
-        // vBox3.setSpacing(5);
-
-
-        Image background = new Image("Images"+ File.separator +"libraryBackground4.jpg");
-        BackgroundImage bi = new BackgroundImage(background,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background bg = new Background(bi);
-         // vbox.setBackground(bg);
-        vbox.setPrefSize(1400,750);
-        Group group = new Group(vbox,exit,back);
+        group.getChildren().add(pieChart);
         Scene scene = new Scene(group ,1400, 770);
 
 
