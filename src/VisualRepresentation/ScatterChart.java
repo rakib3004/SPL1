@@ -2,6 +2,8 @@ package VisualRepresentation;
 import BookDataBaseFX.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenNumberImplementation;
+import InfoDisplay.SevenValueStatistics;
+import JavFX.Main;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -12,12 +14,19 @@ import javafx.scene.Group;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,27 +57,164 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementation();
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+
+        Button scatter_chart = new Button("Scatter Chart");
+        Button line_chart = new Button("Line Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
+
+        scatter_chart.setPrefSize(410,230);
+        line_chart.setPrefSize(410,230);
+        stacked_area_chart.setPrefSize(410,230);
+
+        scatter_chart.setFont(font2);
+        line_chart.setFont(font2);
+        stacked_area_chart.setFont(font2);
+        scatter_chart.setTranslateX(30);
+        scatter_chart.setTranslateY(35);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
+
+        scatter_chart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"scatter.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        scatter_chart.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"line.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        line_chart.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"area.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        stacked_area_chart.setGraphic(new ImageView(image3));
+
+        scatter_chart.setOnAction(actionEvent -> {
             try {
-                sevenNumberImplementation.typeStatistics(primaryStage);
+                this.scatterChart.startTyping(primaryStage);
+
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+
+        stacked_area_chart.setOnAction(actionEvent -> {
+            try {
+                stackedArea.startTyping(primaryStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        line_chart.setOnAction(actionEvent -> {
+            try {
+                this.lineChart.startTyping(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Type based Seven Value Analysis");
+        text.setTranslateX(520);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            SevenValueStatistics sevenValueStatistics = new SevenValueStatistics();
+            try {
+                sevenValueStatistics.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        Group group = new Group();
+        group.getChildren().addAll(scatter_chart,
+                line_chart,
+                stacked_area_chart,exit,home,text,back);
+
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();

@@ -228,8 +228,6 @@ double []  year2017Books = new double[7];
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
 
-
-
         int iterator;
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
