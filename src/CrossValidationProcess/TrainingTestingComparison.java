@@ -465,12 +465,12 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         ScatterChart.getData().add(series1);
         ScatterChart.getData().add(series2);
 
-        ScatterChart.setTranslateX(10);
-        ScatterChart.setTranslateY(25);
-        ScatterChart.setPrefSize(1350, 800);
+        ScatterChart.setTranslateX(470);
+        ScatterChart.setTranslateY(35);
+        ScatterChart.setPrefSize(850,425);
 
 
-        group.getChildren().addAll( ScatterChart, exit, back);
+        group.getChildren().addAll( ScatterChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -704,9 +704,9 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         lineChart.getData().add(series1);
         lineChart.getData().add(series2);
 
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 800);
+        lineChart.setTranslateX(470);
+        lineChart.setTranslateY(35);
+        lineChart.setPrefSize(850,425);
 
 
         group.getChildren().addAll( lineChart);
@@ -944,9 +944,9 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         stackedAreaChart.getData().add(series1);
         stackedAreaChart.getData().add(series2);
 
-        stackedAreaChart.setTranslateX(10);
-        stackedAreaChart.setTranslateY(25);
-        stackedAreaChart.setPrefSize(1350, 800);
+        stackedAreaChart.setTranslateX(470);
+        stackedAreaChart.setTranslateY(35);
+        stackedAreaChart.setPrefSize(850,425);
 
 
         group.getChildren().addAll( stackedAreaChart);
