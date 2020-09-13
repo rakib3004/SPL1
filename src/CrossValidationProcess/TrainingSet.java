@@ -443,9 +443,9 @@ public class TrainingSet extends Application {
             }
         }
         ScatterChart .getData().add(series1);
-        ScatterChart .setTranslateX(65);
-        ScatterChart .setTranslateY(55);
-        ScatterChart .setPrefSize(1000,700);
+        ScatterChart .setTranslateX(470);
+        ScatterChart .setTranslateY(35);
+        ScatterChart .setPrefSize(850,425);
 
         group.getChildren().addAll(ScatterChart);
 
