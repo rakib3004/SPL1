@@ -301,45 +301,7 @@ public class TestingSet extends Application {
         ScatterChart.setTranslateX(10);
         ScatterChart.setTranslateY(25);
         ScatterChart.setPrefSize(1350, 700);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined =
-                        new TrainingSetCombined();
-                startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
 
-            try {
-                startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-
-            try {
-                startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, ScatterChart, exit, back);
@@ -449,40 +411,6 @@ public class TestingSet extends Application {
         stackedAreaChart2.setTranslateX(10);
         stackedAreaChart2.setTranslateY(25);
         stackedAreaChart2.setPrefSize(1000, 500);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
-
-        scatterView.setOnAction((event) -> {
-            try {
-                startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-
-            try {
-                startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            try {
-                startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        stackedAreaChart2.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(stackedAreaChart2, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
@@ -588,42 +516,7 @@ public class TestingSet extends Application {
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1350, 700);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
-        scatterView.setOnAction((event) -> {
-            try {
-
-                startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-
-            try {
-                startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-
-            try {
-                startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
