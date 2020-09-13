@@ -897,10 +897,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setTranslateX(470);
         lineChart.setTranslateY(35);
         lineChart.setPrefSize(850, 425);
-
-
         group.getChildren().addAll(lineChart);
-
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);

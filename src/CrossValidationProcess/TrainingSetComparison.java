@@ -214,26 +214,161 @@ public class TrainingSetComparison extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
+        Font font = new Font(14);
+        Font font1 = new Font(47);
+        Font font2 = new Font(26);
+
+        Button scatterChart = new Button("Scatter Chart");
+        Button stackedAreaChart = new Button("StackedArea Chart");
+        Button lineChart = new Button("Line Chart");
+        scatterChart.setOnAction(actionEvent -> {
             try {
-                start(primaryStage);
+                startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+        stackedAreaChart.setOnAction(actionEvent -> {
+            try {
+                startStackedArea(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        lineChart.setOnAction(actionEvent -> {
+            try {
+                startLineChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        scatterChart.setPrefSize(410, 230);
+        stackedAreaChart.setPrefSize(410, 230);
+        lineChart.setPrefSize(410, 230);
+
+        scatterChart.setFont(font2);
+        stackedAreaChart.setFont(font2);
+        lineChart.setFont(font2);
+        scatterChart.setTranslateX(30);
+        scatterChart.setTranslateY(35);
+        stackedAreaChart.setTranslateX(30);
+        stackedAreaChart.setTranslateY(270);
+        lineChart.setTranslateX(30);
+        lineChart.setTranslateY(505);
+        scatterChart.setContentDisplay(ContentDisplay.TOP);
+        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        lineChart.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "scatter.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        scatterChart.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "area.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        stackedAreaChart.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "line.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        lineChart.setGraphic(new ImageView(image3));
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Training Sets Comparison");
+        text.setTranslateX(600);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375, 30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375, 30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            TrainingObservation trainingObservation = new TrainingObservation();
+            try {
+                trainingObservation.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Image background = new Image("Images" + File.separator + "framework.jpg");
+        Canvas canvas = new Canvas(850, 425);
+        canvas.setTranslateX(470);
+        canvas.setTranslateY(35);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(background, 0, 0);
+        Group group = new Group();
+        group.getChildren().addAll(canvas, scatterChart,
+                stackedAreaChart, exit, back, home, text, lineChart);
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
