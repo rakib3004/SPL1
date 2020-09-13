@@ -430,7 +430,7 @@ public class TestingSet extends Application {
         ScatterChart.setTranslateY(35);
         ScatterChart.setPrefSize(850, 425);
 
-        group.getChildren().addAll(ScatterChart, exit, back);
+        group.getChildren().addAll(ScatterChart);
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
