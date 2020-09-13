@@ -240,20 +240,175 @@ public class TrainingSet extends Application {
         primaryStage.show();
     }
     public void trainingSet1(Stage primaryStage,int a) throws IOException {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
         int b=a+5;
         String aString=Integer.toString(a);
         String bString=Integer.toString(b);
-        
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);        
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
 
+        Font font = new Font(14);
+        Font font1 = new Font(47);
+        Font font2 = new Font(26);
+        Button trainingSet11 = new Button("Training Set 1");
+        Button trainingSet2 = new Button("Training Set 2");
+        Button trainingSet3 = new Button("Training Set 3");
+        Button trainingSet4 = new Button("Training Set 4");
+        trainingSet11.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,1);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet2.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,2);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet3.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,3);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet4.setOnAction(actionEvent -> {
+            try {
+                trainingSet1(primaryStage,4);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        trainingSet11.setPrefSize(410, 170);
+        trainingSet2.setPrefSize(410, 170);
+        trainingSet3.setPrefSize(410, 170);
+        trainingSet4.setPrefSize(410, 170);
+
+        trainingSet11.setFont(font2);
+        trainingSet2.setFont(font2);
+        trainingSet3.setFont(font2);
+        trainingSet4.setFont(font2);
+
+        trainingSet11.setTranslateX(30);
+        trainingSet11.setTranslateY(35);
+        trainingSet2.setTranslateX(30);
+        trainingSet2.setTranslateY(210);
+        trainingSet3.setTranslateX(30);
+        trainingSet3.setTranslateY(385);
+        trainingSet4.setTranslateX(30);
+        trainingSet4.setTranslateY(560);
+        trainingSet11.setContentDisplay(ContentDisplay.LEFT);
+        trainingSet2.setContentDisplay(ContentDisplay.LEFT);
+        trainingSet3.setContentDisplay(ContentDisplay.LEFT);
+        trainingSet4.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "types.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        trainingSet11.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "time.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        trainingSet2.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        trainingSet3.setGraphic(new ImageView(image3));
+
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "demand.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        trainingSet4.setGraphic(new ImageView(image4));
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        FileInputStream fileInputStream8 = null;
+        try {
+            fileInputStream8 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image8 = new Image(fileInputStream8);
+        exit.setGraphic(new ImageView(image8));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Training Set 1-4");
+        text.setTranslateX(600);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
+
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375, 30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375, 30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
             TrainingSet trainingSet = new TrainingSet();
 
@@ -263,14 +418,12 @@ public class TrainingSet extends Application {
                 exception.printStackTrace();
             }
         });
-        exit.setOnAction(actionEvent -> {
-            System.exit(0);
-        });
 
-        setStyle(exit);
-        setStyle(back);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        Group group = new Group();
+        group.getChildren().addAll( trainingSet11,
+                trainingSet2, trainingSet3, trainingSet4,exit, back, home, text);
+
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
@@ -294,57 +447,7 @@ public class TrainingSet extends Application {
         ScatterChart .setTranslateY(55);
         ScatterChart .setPrefSize(1000,700);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem trainingSet1 = new MenuItem("Training Set 1");
-        MenuItem trainingSet2 = new MenuItem("Training Set 2");
-        MenuItem trainingSet3 = new MenuItem("Training Set 3");
-        MenuItem trainingSet4 = new MenuItem("Training Set 4");
-        MenuItem fullTrainingSet = new MenuItem("Full TrainingSet");
-
-        trainingSet1.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,1);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        trainingSet2.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,2);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        trainingSet3.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,3);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        trainingSet4.setOnAction(actionEvent -> {
-            try {
-                trainingSet1(primaryStage,4);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-
-        contextMenu.getItems().addAll(trainingSet1,trainingSet2,trainingSet3,trainingSet4);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-        Canvas canvas = new Canvas(1500,950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,ScatterChart,exit,back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll(ScatterChart);
 
         Scene scene1 = new Scene(group,1500,950);
 
