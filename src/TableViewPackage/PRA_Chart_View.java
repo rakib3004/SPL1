@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class PRA_Chart_View extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
