@@ -413,50 +413,9 @@ public class TrainingSetComparison extends Application {
         ScatterChart.setTranslateX(10);
         ScatterChart.setTranslateY(25);
         ScatterChart.setPrefSize(1350, 700);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined =
-                        new TrainingSetCombined();
-                startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-            
-            try {
-                startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            
-            try {
-                startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
-            @Override
-            public void handle(ContextMenuEvent event) {
+        group.getChildren().addAll( ScatterChart);
 
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-        //  Image image = new Image("libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, ScatterChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         Scene scene1 = new Scene(group, 1500, 950);
 
@@ -669,50 +628,8 @@ public class TrainingSetComparison extends Application {
         stackedAreaChart.setTranslateX(10);
         stackedAreaChart.setTranslateY(25);
         stackedAreaChart.setPrefSize(1350, 700);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined =
-                        new TrainingSetCombined();
-                startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-            
-            try {
-                startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            
-            try {
-                startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-
-        stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll(stackedAreaChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
