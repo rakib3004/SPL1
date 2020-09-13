@@ -873,20 +873,8 @@ public class TrainingSetComparison extends Application {
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-
+        group.getChildren().addAll(lineChart);
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
