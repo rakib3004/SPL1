@@ -430,45 +430,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         ScatterChart.setTranslateX(10);
         ScatterChart.setTranslateY(25);
         ScatterChart.setPrefSize(1350, 700);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined =
-                        new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        ScatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(ScatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-        //  Image image = new Image("libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, ScatterChart, exit, back);
@@ -577,44 +539,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         stackedAreaChart.setTranslateX(10);
         stackedAreaChart.setTranslateY(25);
         stackedAreaChart.setPrefSize(1350, 700);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
 
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined =
-                        new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-
-        stackedAreaChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(stackedAreaChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
@@ -728,42 +653,6 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1350, 700);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem scatterView = new MenuItem("Scatter View");
-        MenuItem lineChartView = new MenuItem("LineChart View");
-        MenuItem stackedAreaView = new MenuItem("StackedArea View");
-
-        scatterView.setOnAction((event) -> {
-            try {
-                TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-                trainingSetCombined.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        lineChartView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startLineChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        stackedAreaView.setOnAction((event) -> {
-            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
-            try {
-                trainingSetCombined.startStackedArea(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(scatterView, lineChartView, stackedAreaView);
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
-            }
-        });
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
