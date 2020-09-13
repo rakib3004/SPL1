@@ -426,9 +426,9 @@ public class TestingSet extends Application {
         ScatterChart.getData().add(series4);
         ScatterChart.getData().add(series5);
 
-        ScatterChart.setTranslateX(10);
-        ScatterChart.setTranslateY(25);
-        ScatterChart.setPrefSize(1350, 700);
+        ScatterChart.setTranslateX(470);
+        ScatterChart.setTranslateY(35);
+        ScatterChart.setPrefSize(850, 425);
 
         group.getChildren().addAll(ScatterChart, exit, back);
         Scene scene1 = new Scene(group, 1500, 950);
@@ -655,9 +655,9 @@ public class TestingSet extends Application {
         stackedAreaChart2.getData().add(series4);
         stackedAreaChart2.getData().add(series5);
 
-        stackedAreaChart2.setTranslateX(10);
-        stackedAreaChart2.setTranslateY(25);
-        stackedAreaChart2.setPrefSize(1000, 500);
+        stackedAreaChart2.setTranslateX(470);
+        stackedAreaChart2.setTranslateY(35);
+        stackedAreaChart2.setPrefSize(850, 425);
 
         group.getChildren().addAll( stackedAreaChart2);
         Scene scene1 = new Scene(group, 1500, 950);
@@ -882,9 +882,9 @@ public class TestingSet extends Application {
         lineChart2.getData().add(series4);
         lineChart2.getData().add(series5);
 
-        lineChart2.setTranslateX(10);
-        lineChart2.setTranslateY(25);
-        lineChart2.setPrefSize(1350, 700);
+        lineChart2.setTranslateX(470);
+        lineChart2.setTranslateY(35);
+        lineChart2.setPrefSize(850, 425);
 
         group.getChildren().addAll(lineChart2);
 
