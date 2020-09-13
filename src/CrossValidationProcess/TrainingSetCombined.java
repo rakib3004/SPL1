@@ -420,25 +420,18 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
-        positionIndicator = 0;
-
         ScatterChart.getData().add(series1);
         ScatterChart.getData().add(series2);
         ScatterChart.getData().add(series3);
         ScatterChart.getData().add(series4);
 
-        ScatterChart.setTranslateX(10);
-        ScatterChart.setTranslateY(25);
-        ScatterChart.setPrefSize(1350, 700);
-
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, ScatterChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-
+        ScatterChart.setTranslateX(470);
+        ScatterChart.setTranslateY(35);
+        ScatterChart.setPrefSize(850, 425);
+        
+        group.getChildren().addAll( ScatterChart);
+        
         Scene scene1 = new Scene(group, 1500, 950);
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
@@ -536,9 +529,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         stackedAreaChart.getData().add(series2);
         stackedAreaChart.getData().add(series3);
         stackedAreaChart.getData().add(series4);
-        stackedAreaChart.setTranslateX(10);
-        stackedAreaChart.setTranslateY(25);
-        stackedAreaChart.setPrefSize(1350, 700);
+        stackedAreaChart.setTranslateX(470);
+        stackedAreaChart.setTranslateY(35);
+        stackedAreaChart.setPrefSize(850, 425);
 
 
         Canvas canvas = new Canvas(1500, 950);
@@ -649,9 +642,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.getData().add(series3);
         lineChart.getData().add(series4);
 
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        lineChart.setTranslateX(470);
+        lineChart.setTranslateY(35);
+        lineChart.setPrefSize(850, 425);
 
 
         Canvas canvas = new Canvas(1500, 950);
