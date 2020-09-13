@@ -363,7 +363,7 @@ public class TestingSet extends Application {
             }
         });
         Group group = new Group();
-        group.getChildren().addAll(, scatterChart,
+        group.getChildren().addAll( scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -430,14 +430,8 @@ public class TestingSet extends Application {
         ScatterChart.setTranslateY(25);
         ScatterChart.setPrefSize(1350, 700);
 
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, ScatterChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-
+        group.getChildren().addAll(ScatterChart, exit, back);
         Scene scene1 = new Scene(group, 1500, 950);
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
@@ -595,7 +589,7 @@ public class TestingSet extends Application {
             }
         });
         Group group = new Group();
-        group.getChildren().addAll(, scatterChart,
+        group.getChildren().addAll( scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -665,10 +659,7 @@ public class TestingSet extends Application {
         stackedAreaChart2.setTranslateY(25);
         stackedAreaChart2.setPrefSize(1000, 500);
 
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart2, exit, back);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll( stackedAreaChart2);
         Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
@@ -829,7 +820,7 @@ public class TestingSet extends Application {
             }
         });
         Group group = new Group();
-        group.getChildren().addAll(, scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -838,7 +829,7 @@ public class TestingSet extends Application {
         categoryAxis.setLabel("Book Class Category");
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        LineChart lineChart2 = new LineChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
@@ -885,23 +876,18 @@ public class TestingSet extends Application {
             }
         }
 
-        lineChart.getData().add(series1);
-        lineChart.getData().add(series2);
-        lineChart.getData().add(series3);
-        lineChart.getData().add(series4);
-        lineChart.getData().add(series5);
+        lineChart2.getData().add(series1);
+        lineChart2.getData().add(series2);
+        lineChart2.getData().add(series3);
+        lineChart2.getData().add(series4);
+        lineChart2.getData().add(series5);
 
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        lineChart2.setTranslateX(10);
+        lineChart2.setTranslateY(25);
+        lineChart2.setPrefSize(1350, 700);
 
+        group.getChildren().addAll(lineChart2);
 
-
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
