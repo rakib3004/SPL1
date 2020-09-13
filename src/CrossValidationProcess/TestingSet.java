@@ -658,10 +658,9 @@ public class TestingSet extends Application {
         stackedAreaChart2.setTranslateX(470);
         stackedAreaChart2.setTranslateY(35);
         stackedAreaChart2.setPrefSize(850, 425);
-
         group.getChildren().addAll( stackedAreaChart2);
-        Scene scene1 = new Scene(group, 1500, 950);
 
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
@@ -671,8 +670,6 @@ public class TestingSet extends Application {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
