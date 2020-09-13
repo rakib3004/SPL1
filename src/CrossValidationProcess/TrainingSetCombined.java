@@ -448,7 +448,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Font font2 = new Font(26);
 
         Button scatterChart = new Button("Scatter Chart");
-        Button stackedAreaChart = new Button("StackedArea Chart");
+        Button stackedArea_chart = new Button("StackedArea Chart");
         Button lineChart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
@@ -458,7 +458,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stackedArea_chart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
@@ -475,20 +475,20 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         scatterChart.setPrefSize(410, 230);
-        stackedAreaChart.setPrefSize(410, 230);
+        stackedArea_chart.setPrefSize(410, 230);
         lineChart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
+        stackedArea_chart.setFont(font2);
         lineChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(270);
+        stackedArea_chart.setTranslateX(30);
+        stackedArea_chart.setTranslateY(270);
         lineChart.setTranslateX(30);
         lineChart.setTranslateY(505);
         scatterChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        stackedArea_chart.setContentDisplay(ContentDisplay.TOP);
         lineChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
@@ -508,7 +508,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        stackedAreaChart.setGraphic(new ImageView(image2));
+        stackedArea_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -593,7 +593,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Group group = new Group();
         group.getChildren().addAll( scatterChart,
-                stackedAreaChart, exit, back, home, text, lineChart);
+                stackedArea_chart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -662,11 +662,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         stackedAreaChart.setPrefSize(850, 425);
 
 
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, stackedAreaChart, exit, back);
 
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll( stackedAreaChart);
+
 
         Scene scene1 = new Scene(group, 1500, 950);
 
@@ -687,7 +685,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Button scatterChart = new Button("Scatter Chart");
         Button stackedAreaChart = new Button("StackedArea Chart");
-        Button lineChart = new Button("Line Chart");
+        Button line_chart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
@@ -704,7 +702,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 exception.printStackTrace();
             }
         });
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
@@ -714,20 +712,20 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
         scatterChart.setPrefSize(410, 230);
         stackedAreaChart.setPrefSize(410, 230);
-        lineChart.setPrefSize(410, 230);
+        line_chart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
         stackedAreaChart.setFont(font2);
-        lineChart.setFont(font2);
+        line_chart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
         stackedAreaChart.setTranslateX(30);
         stackedAreaChart.setTranslateY(270);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(505);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(505);
         scatterChart.setContentDisplay(ContentDisplay.TOP);
         stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -756,7 +754,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        lineChart.setGraphic(new ImageView(image3));
+        line_chart.setGraphic(new ImageView(image3));
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -831,7 +829,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         Group group = new Group();
         group.getChildren().addAll( scatterChart,
-                stackedAreaChart, exit, back, home, text, lineChart);
+                stackedAreaChart, exit, back, home, text, line_chart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
@@ -901,11 +899,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         lineChart.setPrefSize(850, 425);
 
 
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back);
+        group.getChildren().addAll(lineChart);
 
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
