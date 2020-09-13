@@ -489,7 +489,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         Font font2 = new Font(26);
 
         Button scatterChart = new Button("Scatter Chart");
-        Button lineChart = new Button("Line Chart");
+        Button line_chart = new Button("Line Chart");
         Button stackedAreaChart = new Button("Stacked Area Chart");
         scatterChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
@@ -499,7 +499,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
                 exception.printStackTrace();
             }
         });
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startLineChart(primaryStage);
@@ -516,21 +516,21 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
             }
         });
         scatterChart.setPrefSize(410, 230);
-        lineChart.setPrefSize(410, 230);
+        line_chart.setPrefSize(410, 230);
         stackedAreaChart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
-        lineChart.setFont(font2);
+        line_chart.setFont(font2);
         stackedAreaChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(270);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
         stackedAreaChart.setTranslateX(30);
         stackedAreaChart.setTranslateY(505);
 
         scatterChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
         stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
@@ -550,7 +550,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        lineChart.setGraphic(new ImageView(image2));
+        line_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -636,7 +636,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
 
         Group group = new Group();
         group.getChildren().addAll(scatterChart,
-                lineChart, exit, back, home, text, stackedAreaChart);
+                line_chart, exit, back, home, text, stackedAreaChart);
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -728,7 +728,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
 
         Button scatterChart = new Button("Scatter Chart");
         Button lineChart = new Button("Line Chart");
-        Button stackedAreaChart = new Button("Stacked Area Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
         scatterChart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
@@ -745,7 +745,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
                 exception.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stacked_area_chart.setOnAction(actionEvent -> {
             TrainingTestingComparison trainingTestingComparison = new TrainingTestingComparison();
             try {
                 trainingTestingComparison.startStackedAreaChart(primaryStage);
@@ -755,21 +755,21 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         });
         scatterChart.setPrefSize(410, 230);
         lineChart.setPrefSize(410, 230);
-        stackedAreaChart.setPrefSize(410, 230);
+        stacked_area_chart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
         lineChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
+        stacked_area_chart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
         lineChart.setTranslateX(30);
         lineChart.setTranslateY(270);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(505);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
 
         scatterChart.setContentDisplay(ContentDisplay.TOP);
         lineChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -798,7 +798,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        stackedAreaChart.setGraphic(new ImageView(image3));
+        stacked_area_chart.setGraphic(new ImageView(image3));
 
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
@@ -874,7 +874,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
 
         Group group = new Group();
         group.getChildren().addAll(scatterChart,
-                lineChart, exit, back, home, text, stackedAreaChart);
+                lineChart, exit, back, home, text, stacked_area_chart);
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -949,7 +949,7 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         stackedAreaChart.setPrefSize(1350, 800);
 
 
-        group.getChildren().addAll( stackedAreaChart, exit, back);
+        group.getChildren().addAll( stackedAreaChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
