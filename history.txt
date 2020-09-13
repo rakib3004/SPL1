@@ -1,7 +1,6 @@
-Main	Sun 13.09.2020 at 03:12:52 PM
-AuthorSystem	Sun 13.09.2020 at 03:12:54 PM
-ProcessImplementation	Sun 13.09.2020 at 03:12:55 PM
-AuthorSystem	Sun 13.09.2020 at 03:12:57 PM
-ProcessAnalysis	Sun 13.09.2020 at 03:12:57 PM
-CrossValidation	Sun 13.09.2020 at 03:13:01 PM
-ProcessAnalysis	Sun 13.09.2020 at 03:13:04 PM
+Main	Sun 13.09.2020 at 03:24:58 PM
+AuthorSystem	Sun 13.09.2020 at 03:25:00 PM
+ProcessAnalysis	Sun 13.09.2020 at 03:25:01 PM
+CrossValidation	Sun 13.09.2020 at 03:25:02 PM
+CrossValidation	Sun 13.09.2020 at 03:25:04 PM
+TrainingObservation	Sun 13.09.2020 at 03:25:05 PM

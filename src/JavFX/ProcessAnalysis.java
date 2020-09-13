@@ -77,7 +77,7 @@ public class ProcessAnalysis extends Application {
             sevenValueStatistics.setGraphic(new ImageView(image2));
 
             FileInputStream fileInputStream3 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"optimization.png");
+                    "src"+ File.separator +"Images"+ File.separator +"algorithm.png");
             Image image3 = new Image(fileInputStream3);
             dataOptimization.setGraphic(new ImageView(image3));
 
