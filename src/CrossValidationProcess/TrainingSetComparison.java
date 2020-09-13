@@ -435,7 +435,7 @@ public class TrainingSetComparison extends Application {
         Font font2 = new Font(26);
 
         Button scatterChart = new Button("Scatter Chart");
-        Button stackedAreaChart = new Button("StackedArea Chart");
+        Button stackedArea_chart = new Button("StackedArea Chart");
         Button lineChart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
             try {
@@ -444,7 +444,7 @@ public class TrainingSetComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        stackedAreaChart.setOnAction(actionEvent -> {
+        stackedArea_chart.setOnAction(actionEvent -> {
             try {
                 startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -459,20 +459,20 @@ public class TrainingSetComparison extends Application {
             }
         });
         scatterChart.setPrefSize(410, 230);
-        stackedAreaChart.setPrefSize(410, 230);
+        stackedArea_chart.setPrefSize(410, 230);
         lineChart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
-        stackedAreaChart.setFont(font2);
+        stackedArea_chart.setFont(font2);
         lineChart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
-        stackedAreaChart.setTranslateX(30);
-        stackedAreaChart.setTranslateY(270);
+        stackedArea_chart.setTranslateX(30);
+        stackedArea_chart.setTranslateY(270);
         lineChart.setTranslateX(30);
         lineChart.setTranslateY(505);
         scatterChart.setContentDisplay(ContentDisplay.TOP);
-        stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
+        stackedArea_chart.setContentDisplay(ContentDisplay.TOP);
         lineChart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
@@ -492,7 +492,7 @@ public class TrainingSetComparison extends Application {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        stackedAreaChart.setGraphic(new ImageView(image2));
+        stackedArea_chart.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = null;
         try {
@@ -577,7 +577,7 @@ public class TrainingSetComparison extends Application {
 
         Group group = new Group();
         group.getChildren().addAll(scatterChart,
-                stackedAreaChart, exit, back, home, text, lineChart);
+                stackedArea_chart, exit, back, home, text, lineChart);
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -650,7 +650,7 @@ public class TrainingSetComparison extends Application {
 
         Button scatterChart = new Button("Scatter Chart");
         Button stackedAreaChart = new Button("StackedArea Chart");
-        Button lineChart = new Button("Line Chart");
+        Button line_chart = new Button("Line Chart");
         scatterChart.setOnAction(actionEvent -> {
             try {
                 startScatterChart(primaryStage);
@@ -665,7 +665,7 @@ public class TrainingSetComparison extends Application {
                 exception.printStackTrace();
             }
         });
-        lineChart.setOnAction(actionEvent -> {
+        line_chart.setOnAction(actionEvent -> {
             try {
                 startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -674,20 +674,20 @@ public class TrainingSetComparison extends Application {
         });
         scatterChart.setPrefSize(410, 230);
         stackedAreaChart.setPrefSize(410, 230);
-        lineChart.setPrefSize(410, 230);
+        line_chart.setPrefSize(410, 230);
 
         scatterChart.setFont(font2);
         stackedAreaChart.setFont(font2);
-        lineChart.setFont(font2);
+        line_chart.setFont(font2);
         scatterChart.setTranslateX(30);
         scatterChart.setTranslateY(35);
         stackedAreaChart.setTranslateX(30);
         stackedAreaChart.setTranslateY(270);
-        lineChart.setTranslateX(30);
-        lineChart.setTranslateY(505);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(505);
         scatterChart.setContentDisplay(ContentDisplay.TOP);
         stackedAreaChart.setContentDisplay(ContentDisplay.TOP);
-        lineChart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
@@ -716,7 +716,7 @@ public class TrainingSetComparison extends Application {
             e.printStackTrace();
         }
         Image image3 = new Image(fileInputStream3);
-        lineChart.setGraphic(new ImageView(image3));
+        line_chart.setGraphic(new ImageView(image3));
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -791,7 +791,7 @@ public class TrainingSetComparison extends Application {
 
         Group group = new Group();
         group.getChildren().addAll(scatterChart,
-                stackedAreaChart, exit, back, home, text, lineChart);
+                stackedAreaChart, exit, back, home, text, line_chart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
