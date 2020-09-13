@@ -444,7 +444,7 @@ public class TrainingTestingComparison extends Application {
                 positionIndicatorSet4++;
             }
         }
-minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
+        minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         minimumRange = Math.min(minimumRange,positionIndicatorSet3);
         minimumRange = Math.min(minimumRange,positionIndicatorSet4);
         for(iterator=0;iterator<minimumRange;iterator++){
@@ -468,7 +468,6 @@ minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
         ScatterChart.setTranslateX(470);
         ScatterChart.setTranslateY(35);
         ScatterChart.setPrefSize(850,425);
-
 
         group.getChildren().addAll( ScatterChart);
 
