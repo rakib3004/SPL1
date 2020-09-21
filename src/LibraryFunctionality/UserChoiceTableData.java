@@ -24,6 +24,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -31,7 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserChoiceTableData extends Application {
+public class UserChoiceTableData {
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
@@ -45,10 +46,10 @@ public class UserChoiceTableData extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    String labelName="Top Books";
+    String labelName;
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-    @Override
-    public void start(Stage primaryStage){
+
+    public void start(Stage primaryStage,String userName, String userID){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -81,7 +82,7 @@ public class UserChoiceTableData extends Application {
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-                labelName="Jion's Choice List";
+                labelName="  "+userName+"'s Choice List";
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
                             priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")
@@ -127,6 +128,7 @@ show.setTranslateY(250);
         label.setTranslateX(425);
         label.setTranslateY(0);
         label.setText(labelName);
+        label.setTextAlignment(TextAlignment.CENTER);
         setStyle(label);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -134,10 +136,11 @@ show.setTranslateY(250);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
+        String userName="", userID="";
         back.setOnAction(actionEvent -> {
             list.clear();
             try {
-                this.start(secondaryStage);
+                this.start(secondaryStage,userName,userID);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

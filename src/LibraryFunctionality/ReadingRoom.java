@@ -232,7 +232,7 @@ public class ReadingRoom extends Application {
         Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
 
         //login to system
-logInRadioButton.setOnAction(actionEvent -> {
+        logInRadioButton.setOnAction(actionEvent -> {
             TextField getUserName = new TextField();
             TextField getUserID = new TextField();
 
@@ -287,13 +287,14 @@ logInRadioButton.setOnAction(actionEvent -> {
             infoStage.setTitle("Login");
             infoStage.setScene(S);
             infoStage.show();
-    enterButton1.setOnAction(actionEvent1 -> {
-    userName = getUserName.getText();
-    userID = getUserID.getText();
-    userName = userName.trim();
-    userID =userID.trim();
 
-    AccountManagement accountManagement = new AccountManagement();
+            enterButton1.setOnAction(actionEvent1 -> {
+            userName = getUserName.getText();
+            userID = getUserID.getText();
+            userName = userName.trim();
+            userID =userID.trim();
+
+        AccountManagement accountManagement = new AccountManagement();
         boolean isFound = false;
         try {
             isFound = accountManagement.accountManagementLogInMethods(userName,userID);
@@ -305,7 +306,7 @@ logInRadioButton.setOnAction(actionEvent -> {
             try {
                 accountManagement.accountManagementGetRecommendedBookList(userName,userID);
                 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
-                userChoiceTableData.start(primaryStage);
+                userChoiceTableData.start(primaryStage,userName,userID);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -316,7 +317,7 @@ logInRadioButton.setOnAction(actionEvent -> {
     });
         });
 
-   signUpRadioButton.setOnAction(actionEvent -> {
+       signUpRadioButton.setOnAction(actionEvent -> {
 
        TextField readerTextField = new TextField();
        Label readerName = new Label("_Name:");
@@ -328,11 +329,11 @@ logInRadioButton.setOnAction(actionEvent -> {
        instituteName.setLabelFor(instituteTextField);
        instituteName.setMnemonicParsing(true);
 
-       ToggleGroup toggleGroup = new ToggleGroup();
-RadioButton radioButtonCollege = new RadioButton("School/College");
-RadioButton radioButtonUniversity = new RadioButton("University");
-radioButtonCollege.setToggleGroup(toggleGroup);
-radioButtonUniversity.setToggleGroup(toggleGroup);
+            ToggleGroup toggleGroup = new ToggleGroup();
+            RadioButton radioButtonCollege = new RadioButton("School/College");
+            RadioButton radioButtonUniversity = new RadioButton("University");
+            radioButtonCollege.setToggleGroup(toggleGroup);
+            radioButtonUniversity.setToggleGroup(toggleGroup);
 
        Label insertNameInstitute = new Label("Insert Your Name & Institute");
        Button enterButton = new Button("----Enter----");
