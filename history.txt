@@ -1,6 +1,1 @@
-Main	Sun 13.09.2020 at 03:40:23 PM
-AuthorSystem	Sun 13.09.2020 at 03:40:26 PM
-ProcessImplementation	Sun 13.09.2020 at 03:40:28 PM
-MultiVariableRegression	Sun 13.09.2020 at 03:40:33 PM
-ProcessImplementation	Sun 13.09.2020 at 03:40:37 PM
-AnalyticHierarchyAlgorithm	Sun 13.09.2020 at 03:40:40 PM
+Main	Tue 22.09.2020 at 12:29:33 AM

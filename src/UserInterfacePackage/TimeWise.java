@@ -52,15 +52,11 @@ public class TimeWise extends Application {
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
 
-    AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     String labelName="Top Books";
-    TreeMap<Object, Object> map = new TreeMap<>();
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override

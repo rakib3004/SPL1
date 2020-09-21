@@ -46,8 +46,6 @@ public class UserChoiceTableData extends Application {
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     String labelName="Top Books";
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     @Override
     public void start(Stage primaryStage){
@@ -76,16 +74,13 @@ public class UserChoiceTableData extends Application {
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
-
         });
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
                 labelName="Jion's Choice List";
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
@@ -115,7 +110,6 @@ show.setTranslateY(250);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
-
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -148,11 +142,9 @@ show.setTranslateY(250);
                 exception.printStackTrace();
             }
         });
-
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-
         setStyle(exit);
         setStyle(back);
         back.setPrefSize(200, 80);
@@ -179,10 +171,8 @@ show.setTranslateY(250);
         table.setTranslateX(60);
         table.setTranslateY(70);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new UserChoiceTableData.RowSelectChangeListener());
-
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
 

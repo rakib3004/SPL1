@@ -233,61 +233,55 @@ public class ReadingRoom extends Application {
 
         //login to system
 logInRadioButton.setOnAction(actionEvent -> {
-    TextField getUserName = new TextField();
-    TextField getUserID = new TextField();
+            TextField getUserName = new TextField();
+            TextField getUserID = new TextField();
 
-    Label userNameTextField = new Label("_Name:");
-    Label userIdTextField = new Label("_User ID:");
-    userNameTextField.setFont(font2);
-    userIdTextField.setFont(font2);
-    userNameTextField.setLabelFor(getUserName);
-    userNameTextField.setMnemonicParsing(true);
-    userIdTextField.setLabelFor(getUserID);
-    userIdTextField.setMnemonicParsing(true);
-  //  Label label1 = new Label("Insert Your Name & ID");
-   // label1.setFont(font);
+            Label userNameTextField = new Label("_Name:");
+            Label userIdTextField = new Label("_User ID:");
+            userNameTextField.setFont(font2);
+            userIdTextField.setFont(font2);
+            userNameTextField.setLabelFor(getUserName);
+            userNameTextField.setMnemonicParsing(true);
+            userIdTextField.setLabelFor(getUserID);
+            userIdTextField.setMnemonicParsing(true);
+            Button enterButton1 = new Button("----Enter----");
 
-    Button enterButton1 = new Button("----Enter----");
-
-    userNameTextField.setFont(font1);
-    userIdTextField.setFont(font1);
-
-   // label1.setFont(font1);
-
+            userNameTextField.setFont(font1);
+            userIdTextField.setFont(font1);
 
             enterButton1.setPrefSize(160, 40);
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
 
-    signUpLabel.setText("LOG IN");
-    signUpLabel.setTranslateX(230);
-    signUpLabel.setTranslateY(5);
-    signUpLabel.setPrefSize(250,65);
-    Label label2 = new Label();
+            signUpLabel.setText("LOG IN");
+            signUpLabel.setTranslateX(230);
+            signUpLabel.setTranslateY(5);
+            signUpLabel.setPrefSize(250,65);
+            Label label2 = new Label();
 
-    Label spaceLabel = new Label(" ");
-    Label emptyLabelOne = new Label("");
-    Label emptyLabelTwo = new Label("");
-    Label emptyLabelThree = new Label("");
-    Label insertNameID = new Label("Insert Your Name & User ID");
-    insertNameID.setFont(font1);
-    gridPane.setVgap(10);
-    gridPane.addRow(0,signUpLabel);
-    gridPane.addRow(1, insertNameID);
-    gridPane.addRow(2, userNameTextField, getUserName);
-    gridPane.addRow(3, userIdTextField, getUserID);
-    gridPane.addRow(14,label2,enterButton1);
-    gridPane.setMaxSize(980, 650);
-    Image image19 = new Image("Images"+ File.separator +"a6.jpg");
-    Canvas canvas19 = new Canvas(600,400);
-    Group group19 = new Group();
-    group19.getChildren().addAll(canvas19);
-    group19.getChildren().addAll(gridPane);
+            Label spaceLabel = new Label(" ");
+            Label emptyLabelOne = new Label("");
+            Label emptyLabelTwo = new Label("");
+            Label emptyLabelThree = new Label("");
+            Label insertNameID = new Label("Insert Your Name & User ID");
+            insertNameID.setFont(font1);
+            gridPane.setVgap(10);
+            gridPane.addRow(0,signUpLabel);
+            gridPane.addRow(1, insertNameID);
+            gridPane.addRow(2, userNameTextField, getUserName);
+            gridPane.addRow(3, userIdTextField, getUserID);
+            gridPane.addRow(14,label2,enterButton1);
+            gridPane.setMaxSize(980, 650);
+            Image image19 = new Image("Images"+ File.separator +"a6.jpg");
+            Canvas canvas19 = new Canvas(600,400);
+            Group group19 = new Group();
+            group19.getChildren().addAll(canvas19);
+            group19.getChildren().addAll(gridPane);
 
 
-    GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
-    graphicsContext.drawImage(image19,0,0);
+            GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
+            graphicsContext.drawImage(image19,0,0);
 
             Scene S = new Scene(group19, 600, 400);
             infoStage.setTitle("Login");
