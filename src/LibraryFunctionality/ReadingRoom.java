@@ -312,7 +312,13 @@ public class ReadingRoom extends Application {
             }
         }
         else{
-            JOptionPane.showMessageDialog(null,"Sorry!! Your Account Does not exists");
+            Stage notExitsAccountStage = new Stage();
+            Label notExitsAccountLabel= new Label("Sorry!! Your Account Does not exists");
+            Group notExitsAccountGroup = new Group();
+            notExitsAccountGroup.getChildren().add(notExitsAccountLabel);
+            Scene notExitsAccountScene = new Scene(notExitsAccountGroup,350,50);
+            notExitsAccountStage.setScene(notExitsAccountScene);
+            notExitsAccountStage.show();
         }
     });
         });

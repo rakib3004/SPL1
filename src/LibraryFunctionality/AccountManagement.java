@@ -196,8 +196,8 @@ FILENAME = userNameTemplate+"ChoiceList";
 
             findUserName = findUserName.trim();
             findUserID = findUserID.trim();
-            System.out.println(userName+"---->"+findUserName);
-            System.out.println(userID+"---->"+findUserID);
+   /*         System.out.println(userName+"---->"+findUserName);
+            System.out.println(userID+"---->"+findUserID);*/
 
             if(findUserName.contains(userName)&&findUserID.equals(userID)){
                 isFound =true;
@@ -227,9 +227,9 @@ FILENAME = userNameTemplate+"ChoiceList";
                 }
                 findUserName = findUserName.trim();
                 findUserID = findUserID.trim();
-                System.out.println(userName+"---->"+findUserName);
+         /*       System.out.println(userName+"---->"+findUserName);
                 System.out.println(userID+"---->"+findUserID);
-
+*/
                 if(findUserName.contains(userName)&&findUserID.equals(userID)){
                     isFound =true;
                 }
