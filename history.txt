@@ -1,15 +1,1 @@
-Main	Tue 22.09.2020 at 01:23:45 AM
-ReadingRoom	Tue 22.09.2020 at 01:23:46 AM
-ReadingRoom	Tue 22.09.2020 at 01:23:46 AM
-AccountManagement	Tue 22.09.2020 at 01:23:57 AM
-AccountManagement	Tue 22.09.2020 at 01:23:58 AM
-AccountManagement	Tue 22.09.2020 at 01:23:58 AM
-UserChoiceTableData	Tue 22.09.2020 at 01:23:58 AM
-Processing	Tue 22.09.2020 at 01:23:58 AM
-DataParsing	Tue 22.09.2020 at 01:23:58 AM
-BookNumber	Tue 22.09.2020 at 01:23:58 AM
-MultipleLinearRegression	Tue 22.09.2020 at 01:23:58 AM
-Matrix	Tue 22.09.2020 at 01:23:58 AM
-CalculateWeight	Tue 22.09.2020 at 01:23:58 AM
-PrioritySort	Tue 22.09.2020 at 01:23:58 AM
-UserChoiceTableData	Tue 22.09.2020 at 01:23:59 AM
+Main	Tue 22.09.2020 at 11:31:15 PM

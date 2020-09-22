@@ -54,7 +54,7 @@ public class AccountManagement {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                FILENAME = userNameTemplate+"3ChoiceList.txt";
+                FILENAME = userNameTemplate+"3ChoiceList";
                 File fileA3 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA3.createNewFile();
                 try{
@@ -97,7 +97,7 @@ public class AccountManagement {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                FILENAME = userNameTemplate+"2ChoiceList.txt";
+                FILENAME = userNameTemplate+"2ChoiceList";
                 File fileA2 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
                 fileA2.createNewFile();
                 try{
@@ -141,7 +141,7 @@ File fileA = new File(FILENAME_COUNT);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-FILENAME = userNameTemplate+"ChoiceList.txt";
+FILENAME = userNameTemplate+"ChoiceList";
             File fileA1 = new File("src"+File.separator+"UserChoiceList" +File.separator+(FILENAME+".txt"));
             fileA1.createNewFile();
                  try{
