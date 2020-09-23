@@ -628,10 +628,9 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
 */
 
                int userChoiceListLength = userChoiceList.length();
-               System.out.println(userChoiceList);
+
                userChoiceList = userChoiceList.substring(0,userChoiceListLength-1);
-               System.out.println(userChoiceList);
-               userChoiceList = userChoiceList +addFavouriteWriter;
+               userChoiceList = userChoiceList +"\n"+addFavouriteWriter;
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
                try {
