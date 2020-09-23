@@ -195,8 +195,8 @@ public class ReadingRoom extends Application {
         group.getChildren().addAll(defaultType,userBased,rules,text);
 
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-      graphicsContext.drawImage(background,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+         graphicsContext.drawImage(background,0,0);
+         Scene scene1 = new Scene(group,1500,950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -240,6 +240,8 @@ public class ReadingRoom extends Application {
             Label userIdTextField = new Label("_User ID:");
             userNameTextField.setFont(font2);
             userIdTextField.setFont(font2);
+            getUserName.setFont(font5);
+            getUserID.setFont(font5);
             userNameTextField.setLabelFor(getUserName);
             userNameTextField.setMnemonicParsing(true);
             userIdTextField.setLabelFor(getUserID);
@@ -590,7 +592,7 @@ else{
        gridPane.setMaxSize(980, 650);
 
        Image image19 = new Image("Images"+ File.separator +"signUp.jpg");
-       Canvas canvas19 = new Canvas(800,460);
+       Canvas canvas19 = new Canvas(900,520);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
        group19.getChildren().addAll(gridPane);
@@ -621,8 +623,11 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                infoDataArray[1]=addInstituteName;
                infoDataArray[2]=stringStudyLevel;
                infoDataArray[3]=educationLevel;
+/*
                System.out.println(addReaderName+"\t"+addInstituteName+"\t"+educationLevel+"\t"+stringStudyLevel);
+*/
 
+               int userChoiceListLength = userChoiceList.length();
                userChoiceList = userChoiceList +addFavouriteWriter;
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
