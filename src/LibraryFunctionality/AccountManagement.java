@@ -409,8 +409,41 @@ public void accountManagementGetRecommendedBookList(String userName, String user
     String  className = this.getClass().getSimpleName();
     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
     dateTimeWriter.dateTimeWriterMethods(className);
- File[] file=  accountManagementGetFileName(userName,userID);
-UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
+ File[] getUserDetailsInFile =  accountManagementGetFileName(userName,userID);
+ char [] getUserInfoArray = new char[500];
+ FileReader fileReader = new FileReader(getUserDetailsInFile[1]);
+ fileReader.read(getUserInfoArray);
+    String [] favouriteBookTypeList = new String[12];
+int typeIterator =0;
+String getFavouriteType="";
+String favouriteWriter="";
+int typeCounter=0;
+boolean isWriter=false;
+for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
+    if(!isWriter){
+        if(getUserInfoArray[typeIterator]!='\t'){
+            favouriteBookTypeList[typeCounter]=getFavouriteType;
+            getFavouriteType="";
+            typeCounter++;
+        }
+        else if(getUserInfoArray[typeIterator]!='\n'){
+            isWriter = true;
+            favouriteBookTypeList[typeCounter]=getFavouriteType;
+            getFavouriteType="";
+            typeCounter++;
+        }
+        else{
+            getFavouriteType=getFavouriteType+getUserInfoArray[typeIterator];
+
+        }
+    }
+    else{
+        favouriteWriter = favouriteWriter+getUserInfoArray[typeIterator];
+    }
+
+
+}
+    UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
 
     }
 
