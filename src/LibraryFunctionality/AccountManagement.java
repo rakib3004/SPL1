@@ -456,7 +456,9 @@ PriorityList priorityList = new PriorityList(favouriteWriter,favouriteBookTypeLi
     String favWriter;
     String [] favTypeList;
      int typeCounter;
+public  PriorityList(){
 
+}
      public PriorityList(String favWriter, String[] favTypeList, int typeCounter) {
          this.favWriter = favWriter;
          this.favTypeList = favTypeList;
