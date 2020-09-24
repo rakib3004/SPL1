@@ -83,18 +83,21 @@ PriorityList priorityList1= new PriorityList();
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
                 labelName="  "+userName+"'s Choice List";
-                for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).equals("08")||
-                            priorityData[iterator].bookData.bookId.substring(0, 2).equals("06")
-                            ||priorityData[iterator].bookData.bookId.substring(0, 2).equals("02")||priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
-                        //   uponnashTypeNO++;
-                        list.add(new Book(priorityData[iterator].bookData.bookName,
-                                priorityData[iterator].bookData.writerName,
-                                priorityData[iterator].bookData.bookId,
-                                priorityData[iterator].bookData.typeName));
-                        data = FXCollections.observableList(list);
+                int jterator=0;
+                for(jterator=0;jterator<priorityList.typeCounter;jterator++){
+                    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                        if (priorityData[iterator].bookData.typeName.equals(priorityList.favTypeList[jterator])||priorityData[iterator].bookData.writerName.equals(priorityList.favWriter)) {
+                            //   uponnashTypeNO++;
+                            list.add(new Book(priorityData[iterator].bookData.bookName,
+                                    priorityData[iterator].bookData.writerName,
+                                    priorityData[iterator].bookData.bookId,
+                                    priorityData[iterator].bookData.typeName));
+                            data = FXCollections.observableList(list);
+                        }
                     }
+
                 }
+
 Button show = new Button("Show");
 show.setOnAction(actionEvent -> {
     showInfo(primaryStage,labelName,data);
@@ -183,7 +186,6 @@ show.setTranslateY(250);
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 

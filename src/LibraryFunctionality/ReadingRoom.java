@@ -307,7 +307,6 @@ public class ReadingRoom extends Application {
             JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
             try {
                 PriorityList   priorityList =    accountManagement.accountManagementGetRecommendedBookList(userName,userID);
-
                 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
                 userChoiceTableData.start(primaryStage,userName,userID,priorityList);
             } catch (IOException e) {
