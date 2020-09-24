@@ -405,7 +405,7 @@ FILENAME = userNameTemplate+"ChoiceList";
         }
         return fileObject;
     }
-public void accountManagementGetRecommendedBookList(String userName, String userID) throws IOException {
+public PriorityList accountManagementGetRecommendedBookList(String userName, String userID) throws IOException {
     String  className = this.getClass().getSimpleName();
     DateTimeWriter dateTimeWriter =  new DateTimeWriter();
     dateTimeWriter.dateTimeWriterMethods(className);
@@ -423,12 +423,14 @@ for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
     if(!isWriter){
         if(getUserInfoArray[typeIterator]!='\t'){
             favouriteBookTypeList[typeCounter]=getFavouriteType;
+            favouriteBookTypeList[typeCounter]=  favouriteBookTypeList[typeCounter].trim();
             getFavouriteType="";
             typeCounter++;
         }
         else if(getUserInfoArray[typeIterator]!='\n'){
             isWriter = true;
             favouriteBookTypeList[typeCounter]=getFavouriteType;
+            favouriteBookTypeList[typeCounter]=  favouriteBookTypeList[typeCounter].trim();
             getFavouriteType="";
             typeCounter++;
         }
@@ -441,10 +443,25 @@ for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
         favouriteWriter = favouriteWriter+getUserInfoArray[typeIterator];
     }
 
+}
+favouriteWriter = favouriteWriter.trim();
+PriorityList priorityList = new PriorityList(favouriteWriter,favouriteBookTypeList,typeCounter-1 );
+ return  priorityList;
+    }
+
 
 }
-    UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
+ class PriorityList{
 
-    }
+    String favWriter;
+    String [] favTypeList;
+     int typeCounter;
+
+     public PriorityList(String favWriter, String[] favTypeList, int typeCounter) {
+         this.favWriter = favWriter;
+         this.favTypeList = favTypeList;
+         this.typeCounter = typeCounter;
+     }
+
 
 }
