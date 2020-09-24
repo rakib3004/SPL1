@@ -309,7 +309,7 @@ public class ReadingRoom extends Application {
                 PriorityList   priorityList =    accountManagement.accountManagementGetRecommendedBookList(userName,userID);
 
                 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
-                userChoiceTableData.start(primaryStage,userName,userID);
+                userChoiceTableData.start(primaryStage,userName,userID,priorityList);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -48,8 +48,8 @@ public class UserChoiceTableData {
     BookNumber bookNumber = new BookNumber();
     String labelName;
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-
-    public void start(Stage primaryStage,String userName, String userID){
+PriorityList priorityList1= new PriorityList();
+    public void start(Stage primaryStage,String userName, String userID,PriorityList priorityList){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -140,7 +140,7 @@ show.setTranslateY(250);
         back.setOnAction(actionEvent -> {
             list.clear();
             try {
-                this.start(secondaryStage,userName,userID);
+                this.start(secondaryStage,userName,userID,priorityList1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
