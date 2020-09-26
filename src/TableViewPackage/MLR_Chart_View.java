@@ -193,17 +193,19 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         ScatterChart scatterChart = new ScatterChart(categoryAxis, numberAxis);
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Book Weight Show");
-
        int positionIndicator = 0;
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+       double getWeightAverage=0.0;
+
+       for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+   getWeightAverage = getWeightAverage+ priorityData[iterator].getMLRweight();
         }
 
         scatterChart.getData().add(series1);
-        scatterChart.setTranslateX(10);
-        scatterChart.setTranslateY(25);
-        scatterChart.setPrefSize(1350, 700);
+        scatterChart.setTranslateX(15);
+        scatterChart.setTranslateY(15);
+        scatterChart.setPrefSize(1350, 300);
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlr_process = new MenuItem("MLR Process");
