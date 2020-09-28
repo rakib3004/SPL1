@@ -18,7 +18,6 @@ public class SevenValueCalculation {
         
                double [] sevenValueArray  =  new double[7];
         Collections.sort(list);
-        System.out.println(list);
         sizeA = list.size();
        sevenValueArray[0] =  findMinimumValue(list);
         sevenValueArray[6] =findMaximumValue(list);
@@ -38,7 +37,7 @@ public class SevenValueCalculation {
     } public double  findFirstQuartileValue(List<Double> list){
         String  className = this.getClass().getSimpleName();
 
-        double q1 = sizeA/4;
+        double q1 = (double) sizeA/4;
         firstQuartile = (int)q1;
 
         double checkFloor = q1 - firstQuartile;
@@ -46,11 +45,7 @@ public class SevenValueCalculation {
         if(checkFloor>0.5){
             firstQuartile++;
         }
-        else{
-            firstQuartile++;
 
-            firstQuartile--;
-        }
         return  list.get(firstQuartile);
 
     } public double  findMedianValue(List<Double> list){
