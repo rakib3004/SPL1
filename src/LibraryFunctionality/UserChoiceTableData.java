@@ -86,8 +86,15 @@ PriorityList priorityList1= new PriorityList();
                 int jterator=0;
                 for(jterator=0;jterator<priorityList.typeCounter;jterator++){
                     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                        if (priorityData[iterator].bookData.typeName.equals(priorityList.favTypeList[jterator])||priorityData[iterator].bookData.writerName.equals(priorityList.favWriter)) {
-                            //   uponnashTypeNO++;
+                        if (priorityData[iterator].bookData.typeName.equals(priorityList.favTypeList[jterator])) {
+                            list.add(new Book(priorityData[iterator].bookData.bookName,
+                                    priorityData[iterator].bookData.writerName,
+                                    priorityData[iterator].bookData.bookId,
+                                    priorityData[iterator].bookData.typeName));
+                            data = FXCollections.observableList(list);
+                            //Kisore Uponnash
+                        }
+                        if(priorityData[iterator].bookData.typeName.equals("Uponnash")||priorityData[iterator].bookData.typeName.equals("Sci Fi")||priorityData[iterator].bookData.typeName.equals("Kisore Uponnash")){
                             list.add(new Book(priorityData[iterator].bookData.bookName,
                                     priorityData[iterator].bookData.writerName,
                                     priorityData[iterator].bookData.bookId,
