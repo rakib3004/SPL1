@@ -47,13 +47,14 @@ public class About extends Application {
 
         Button staticShowing = new Button("Static Showing");
         Button dynamicShowing = new Button("Dynamic Showing");
+        Button projectDesign = new Button("Project Design");
         staticShowing.setTranslateX(500);
-        staticShowing.setTranslateY(250);
+        staticShowing.setTranslateY(175);
         dynamicShowing.setTranslateX(500);
-        dynamicShowing.setTranslateY(350);
+        dynamicShowing.setTranslateY(275);
+        projectDesign.setTranslateX(500);
+        projectDesign.setTranslateY(375);
         staticShowing.setOnAction(actionEvent -> {
-
-            // new process which we processed today......................................................................
             StaticStage staticStage = new StaticStage();
             try {
                 staticStage.start(primaryStage);
@@ -69,15 +70,24 @@ public class About extends Application {
                 exception.printStackTrace();
             }
         });
-        setStyle(staticShowing);
-        setStyle(dynamicShowing);
+        projectDesign.setOnAction(actionEvent -> {
+            StaticStage staticStage = new StaticStage();
+            try {
+                staticStage.projectUML(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+
         staticShowing.setPrefSize(350, 80);
         dynamicShowing.setPrefSize(350, 80);
+        projectDesign.setPrefSize(350, 80);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,staticShowing,dynamicShowing);
+        group.getChildren().addAll(canvas,exit,back,staticShowing,dynamicShowing,projectDesign);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

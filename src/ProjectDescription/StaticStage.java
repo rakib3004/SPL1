@@ -61,6 +61,54 @@ public class StaticStage extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
+    public void projectUML(Stage primaryStage){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Button back = new Button("Back");
+        Button next = new Button("Next");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        next.setTranslateX(1100);
+        next.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            About about = new About();
+
+            try {
+                about.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        next.setOnAction(actionEvent -> {
+            Phase1 phase1 = new Phase1();
+            try {
+                phase1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        setStyle(next);
+        setStyle(back);
+        back.setPrefSize(200, 80);
+        next.setPrefSize(200, 80);
+
+        Image image = new Image("Images"+ File.separator +"UML.png");
+        Canvas canvas = new Canvas(1500,950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,next,back);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image,0,0);
+
+        Scene scene1 = new Scene(group,1500,950);
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Recommendation Tool");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+    }
     public Button setStyle(Button button)
     {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
