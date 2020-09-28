@@ -472,7 +472,7 @@ bookType.setTranslateX(700);
 bookType.setTranslateY(285
 );
 bookType.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground11.jpg");
         group.getChildren().addAll(bookType);
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);

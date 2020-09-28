@@ -485,10 +485,11 @@ public class WriterWise extends Application {
         writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                 kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
                 samareshMajumdar, emdadiyaPustokaloy,others);
+        writerMenu.setFont(font5);
         writerMenu.setTranslateX(700);
         writerMenu.setTranslateY(285);
         writerMenu.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground11.jpg");
 
         group.getChildren().addAll(writerMenu);
         graphicsContext.drawImage(image,0,0);

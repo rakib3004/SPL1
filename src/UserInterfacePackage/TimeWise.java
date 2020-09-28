@@ -358,10 +358,12 @@ public class TimeWise extends Application {
         MenuButton yearSection = new MenuButton("Select Year : ");
         yearSection.getItems().addAll( year1, year2, year3, year4,
                 year5);
+        yearSection.setFont(font5);
+
         yearSection.setTranslateX(700);
         yearSection.setTranslateY(285);
         yearSection.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
       //  Canvas canvas = new Canvas(1500,950);
       //  Group group = new Group();
 

@@ -392,6 +392,7 @@ public class SelfWiseFX extends Application {
         MenuButton selfSection = new MenuButton("Select Self : ");
         selfSection.getItems().addAll(self1, self2, self3,
                 self4, self5, self6, self7);
+        selfSection.setFont(font5);
         selfSection.setTranslateX(700);
         selfSection.setTranslateY(285);
         selfSection.setPrefSize(200, 50);
@@ -468,7 +469,7 @@ public class SelfWiseFX extends Application {
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("libraryBackground16.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground8.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, exit, back, label, table);
