@@ -3,10 +3,8 @@ package UserInterfacePackage;
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
-import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
@@ -18,8 +16,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -397,6 +393,11 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.7em;");
         return  textField;
+    }
+
+    public Button setButton(Button button, int x, int y, int a, int b){
+        button.setTranslateX(x);
+        return button;
     }
 
 }
