@@ -2,6 +2,7 @@ package UserInterfacePackage;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import BookDataBaseFX.TypesOfBook;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -19,6 +20,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -28,6 +30,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class
@@ -56,7 +60,7 @@ int positionLocator=145;
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(0);
+        back.setTranslateX(75);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);        back.setOnAction(actionEvent -> {
@@ -72,8 +76,27 @@ int positionLocator=145;
         });
   back.setFont(font1);
   exit.setFont(font1);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        back.setPrefSize(275, 80);
+        exit.setPrefSize(275, 80);
 
         Text bookNameText = new Text();
         Text writerNameText = new Text();
