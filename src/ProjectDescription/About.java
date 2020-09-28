@@ -9,6 +9,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -19,6 +21,7 @@ public class About extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+            Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -83,8 +86,11 @@ public class About extends Application {
         staticShowing.setPrefSize(350, 80);
         dynamicShowing.setPrefSize(350, 80);
         projectDesign.setPrefSize(350, 80);
+        staticShowing.setFont(font5);
+        dynamicShowing.setFont(font5);
+        projectDesign.setFont(font5);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground9.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,staticShowing,dynamicShowing,projectDesign);
