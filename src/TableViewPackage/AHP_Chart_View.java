@@ -18,8 +18,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -80,18 +83,52 @@ public class AHP_Chart_View extends Application {
 
         series1.setName("Book Weight Show");
         int positionIndicator = 0;
+        double getWeightAverage=0.0;
+
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             if(priorityData[iterator].getAHPweight()<2.00){
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
                         (35.00*priorityData[iterator].getAHPweight())));
+                getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+
             }
             else{
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                        priorityData[iterator].getAHPweight()));
+                        18.00*priorityData[iterator].getAHPweight()));
+                getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+
             }
 
         }
+        getWeightAverage = getWeightAverage/numberOfBooks;
+
+        double standardDeviation=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].getAHPweight()<2.00){
+
+                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+
+            }
+            else{
+                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+
+
+            }
+        }
+        standardDeviation/=numberOfBooks;
+        standardDeviation=Math.sqrt(standardDeviation);
+        Label labelMean = new Label("Mean : "+getWeightAverage);
+        Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+        Font fontModel = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
+        labelMean.setFont(fontModel);
+        labelDeviation.setFont(fontModel);
+        labelMean.setTranslateX(500);
+        labelMean.setTranslateY(350);
+        labelMean.setPrefSize(300,50);
+        labelDeviation.setTranslateX(500);
+        labelDeviation.setTranslateY(400);
+        labelDeviation.setPrefSize(300,50);
         lineChart.getData().add(series1);
         lineChart.setTranslateX(10);
         lineChart.setTranslateY(25);
@@ -161,7 +198,7 @@ public class AHP_Chart_View extends Application {
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, lineChart, exit, back
-                , stackedAreaChartView, scatterChartView);
+                , stackedAreaChartView, scatterChartView,labelMean,labelDeviation);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Scene scene1 = new Scene(group, 1500, 950);

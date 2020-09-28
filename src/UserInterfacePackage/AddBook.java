@@ -30,7 +30,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class AddBook extends Application {
+public class
+AddBook extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int positionLocator=145;
@@ -50,6 +51,9 @@ int positionLocator=145;
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+
+        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -66,8 +70,8 @@ int positionLocator=145;
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
+  back.setFont(font1);
+  exit.setFont(font1);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -422,8 +426,9 @@ writerNameTextField.setText(humayonAhmed.getText());
         priceMenu.setTranslateY(455-positionLocator);
         priceMenu.setPrefSize(200, 55);
         Button addItem = new Button("Add Item");
-        addItem.setTranslateX(480);
-        addItem.setTranslateY(450);
+        addItem.setTranslateX(570);
+        addItem.setTranslateY(400);
+addItem.setFont(font1);
         addItem.setOnAction(actionEvent -> {
 
                 bookInformationTextField.setText(bookNameTextField.getText()+"-"+
@@ -596,7 +601,6 @@ writerNameTextField.setText(humayonAhmed.getText());
             });
         });
 
-        setStyle(addItem);
         addItem.setPrefSize(220, 65);
 
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
