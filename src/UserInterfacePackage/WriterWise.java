@@ -30,6 +30,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -77,6 +78,7 @@ public class WriterWise extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
+        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -479,7 +481,7 @@ public class WriterWise extends Application {
                 showInfo(primaryStage,labelName,data);
             }
         });
-        MenuButton writerMenu = new MenuButton("Choose The Writer");
+        MenuButton writerMenu = new MenuButton("Select Your Fav Writer : ");
         writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                 kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
                 samareshMajumdar, emdadiyaPustokaloy,others);

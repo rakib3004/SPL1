@@ -30,6 +30,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -76,6 +77,7 @@ int iterator;
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
+        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -461,10 +463,11 @@ int iterator;
                 showInfo(primaryStage,labelName,data);
           }
         });
-        MenuButton bookType = new MenuButton("Choose Your Type");
+        MenuButton bookType = new MenuButton("Select Your Fav Type : ");
         bookType.getItems().addAll( uponnash, kobita, rochonaboli, religion,
                 biggan, sciFi, shishuShahitto, kisoreUponnash,biography,
                 gobesona, onubad,others);
+        bookType.setFont(font5);
 bookType.setTranslateX(700);
 bookType.setTranslateY(285
 );

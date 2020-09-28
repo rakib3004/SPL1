@@ -30,6 +30,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -79,6 +80,7 @@ public class SelfWiseFX extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
+        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -261,7 +263,7 @@ public class SelfWiseFX extends Application {
         group.getChildren().addAll(canvas, typeWise1,
                 selfWise, writerWise,
                 timeWise, exit, home, text, back);
-        MenuItem self1 = new MenuItem("Book No : 1-100");
+        MenuItem self1 = new MenuItem("Self No : 1");
         self1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -279,7 +281,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self2 = new MenuItem("Book No : 101-200");
+        MenuItem self2 = new MenuItem("Self No : 2");
         self2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -298,7 +300,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self3 = new MenuItem("Book No : 201-300");
+        MenuItem self3 = new MenuItem("Self No : 3");
         self3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -316,7 +318,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self4 = new MenuItem("Book No : 301-400");
+        MenuItem self4 = new MenuItem("Self No : 4");
         self4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -333,7 +335,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self5 = new MenuItem("Book No : 401-500");
+        MenuItem self5 = new MenuItem("Self No : 5");
         self5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -351,7 +353,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self6 = new MenuItem("Book No : 501-600");
+        MenuItem self6 = new MenuItem("Self No : 6");
         self6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -369,7 +371,7 @@ public class SelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self7 = new MenuItem("Book No : 601-700");
+        MenuItem self7 = new MenuItem("Self No : 7");
         self7.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -387,7 +389,7 @@ public class SelfWiseFX extends Application {
             }
         });
 
-        MenuButton selfSection = new MenuButton("Choose Self ");
+        MenuButton selfSection = new MenuButton("Select Self : ");
         selfSection.getItems().addAll(self1, self2, self3,
                 self4, self5, self6, self7);
         selfSection.setTranslateX(700);
