@@ -126,7 +126,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         setStyle(show);
 
         show.setPrefSize(200, 80);
-        labelName="Top Books of "+this.getClass();
+        labelName="Top Books of "+this.getClass().getSimpleName();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 list.add(new Book(priorityData[iterator].bookData.bookName,
                         priorityData[iterator].bookData.writerName,
