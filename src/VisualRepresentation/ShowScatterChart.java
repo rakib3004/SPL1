@@ -376,6 +376,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series1.getData().add(new XYChart.Data(sevenValueArray4,uponnashTypeNO[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,uponnashTypeNO[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,uponnashTypeNO[6]));
+        for(int i =1;i<=7;i++){
+            System.out.println("Scale "+i+" : "+uponnashTypeNO[i-1]+"--"+kobitaTypeNO[i-1]
+                    +"--"+rochonaBoliTypeNO[i-1]+"--"+religionTypeNO[i-1]
+                    +"--"+bigganTypeNO[i-1]+"--"+sciFicTypeNO[i-1]
+                    +"--"+shisuSahittoTypeNO[i-1]+"--"+kisoreUponnashTypeNO[i-1]
+                    +"--"+onubadTypeNO[i-1]+"--"+othersTypeNO[i-1]);
+        }
 
         series2.getData().add(new XYChart.Data(sevenValueArray0,kobitaTypeNO[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,kobitaTypeNO[1]));
@@ -845,6 +852,7 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         series1.getData().add(new XYChart.Data(sevenValueArray4,year2008Books[4]));
         series1.getData().add(new XYChart.Data(sevenValueArray5,year2008Books[5]));
         series1.getData().add(new XYChart.Data(sevenValueArray6,year2008Books[6]));
+
 
         series2.getData().add(new XYChart.Data(sevenValueArray0,year2009Books[0]));
         series2.getData().add(new XYChart.Data(sevenValueArray1,year2009Books[1]));
