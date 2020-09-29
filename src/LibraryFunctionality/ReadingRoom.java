@@ -320,15 +320,29 @@ public class ReadingRoom extends Application {
 
         }
         else{
-            accountInfoLabel.setText("Sorry!! Your Account Does not exists");
+            accountInfoLabel.setText("Sorry!! Your Account Does not exists.\n\t\t\tTry Again!!!!!");
 
         }
-        Image image20 = new Image("Images"+ File.separator +"a6.jpg");
-                Canvas canvas20 = new Canvas(400,200);
-                accountInfoGroup.getChildren().addAll(accountInfoLabel,canvas20);
+        Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
+                Canvas canvas20 = new Canvas(400,180);
+                GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();
+                graphicsContext1.drawImage(image20,0,0);
+                Font font7= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,16);
+                Button okButton = new Button("OK");
+                okButton.setFont(font7);
+                okButton.setTranslateX(180);
+                okButton.setTranslateY(125);
+                okButton.setPrefSize(75,25);
+                okButton.setOnAction(actionEvent2 ->{
+                    accountInfoStage.close();
+                });
+                accountInfoGroup.getChildren().addAll(canvas20,accountInfoLabel,okButton);
                 Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
                 accountInfoLabel.setFont(font3);
-                Scene notExitsAccountScene = new Scene(accountInfoGroup,400,300);
+                accountInfoLabel.setTextFill(Color.WHITE);
+                accountInfoLabel.setTranslateX(25);
+                accountInfoLabel.setTranslateY(50);
+                Scene notExitsAccountScene = new Scene(accountInfoGroup,400,180);
                 accountInfoStage.setScene(notExitsAccountScene);
                 accountInfoStage.show();
     });
