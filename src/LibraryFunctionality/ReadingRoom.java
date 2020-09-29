@@ -377,9 +377,9 @@ public class ReadingRoom extends Application {
        signUpLabel.setTranslateY(20);
        signUpLabel.setPrefSize(250,65);
 
-Label label2 =new Label();
-Label label3 =new Label();
-Label label4 =new Label();
+        Label label2 =new Label();
+        Label label3 =new Label();
+        Label label4 =new Label();
        Button cancelButton = new Button("----Cancel----");
        cancelButton.setPrefSize(160, 40);
        signUpLabel.setFont(font4);
@@ -629,8 +629,38 @@ else{
        infoStage.setScene(S);
        infoStage.show();
        enterButton.setOnAction(actionEvent1 -> {
-           if(addFavouriteWriter.equals("")){
-JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
+           Stage accountInfoStage = new Stage();
+           Label accountInfoLabel= new Label();
+           Group accountInfoGroup = new Group();
+           Button okButton = new Button("OK");
+           Font font7= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,16);
+           okButton.setFont(font7);
+           okButton.setTranslateX(180);
+           okButton.setTranslateY(150);
+           okButton.setPrefSize(75,25);
+           if(addFavouriteWriter.equals("")||userChoiceList.equals("")||addFavouriteBookType.equals(null)||readerTextField.getText().equals(null)||instituteTextField.getText().equals(null)){
+               accountInfoLabel.setText("Your Information are incomplete!!!!");
+               okButton.setTranslateX(180);
+               okButton.setTranslateY(120);
+               okButton.setPrefSize(120,25);
+               okButton.setText("Try Again");
+               Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
+               Canvas canvas20 = new Canvas(400,200);
+               GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();
+               graphicsContext1.drawImage(image20,0,0);
+
+               okButton.setOnAction(actionEvent2 ->{
+                   accountInfoStage.close();
+               });
+               accountInfoGroup.getChildren().addAll(canvas20,accountInfoLabel,okButton);
+               Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
+               accountInfoLabel.setFont(font3);
+               accountInfoLabel.setTextFill(Color.WHITE);
+               accountInfoLabel.setTranslateX(25);
+               accountInfoLabel.setTranslateY(50);
+               Scene notExitsAccountScene = new Scene(accountInfoGroup,400,200);
+               accountInfoStage.setScene(notExitsAccountScene);
+               accountInfoStage.show();
            }else{
                String addReaderName;
                String addInstituteName;
@@ -661,15 +691,39 @@ JOptionPane.showMessageDialog(null,"Please Choose Your\nFavourite Writer");
                } catch (IOException e) {
                    e.printStackTrace();
                }
+
                if(textUserID=="0000"){
-                   JOptionPane.showMessageDialog(null,
-                           "Your Account is not Created !!!");
+                   accountInfoLabel.setText("Your Account is not Created !!!");
+                   okButton.setTranslateX(180);
+                   okButton.setTranslateY(120);
+                   okButton.setPrefSize(120,25);
+                   okButton.setText("Try Again");
                }
                else{
-                   JOptionPane.showMessageDialog(null,
-                           "Your Account is successfully Created"+"\n"+
+                   accountInfoLabel.setText("Your Account is successfully Created"+"\n"+
                                    "Name : "+addReaderName+"\n"+"User  ID : "+textUserID);
                }
+
+
+
+
+               Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
+               Canvas canvas20 = new Canvas(400,200);
+               GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();
+               graphicsContext1.drawImage(image20,0,0);
+
+               okButton.setOnAction(actionEvent2 ->{
+                   accountInfoStage.close();
+               });
+               accountInfoGroup.getChildren().addAll(canvas20,accountInfoLabel,okButton);
+               Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
+               accountInfoLabel.setFont(font3);
+               accountInfoLabel.setTextFill(Color.WHITE);
+               accountInfoLabel.setTranslateX(25);
+               accountInfoLabel.setTranslateY(50);
+               Scene notExitsAccountScene = new Scene(accountInfoGroup,400,200);
+               accountInfoStage.setScene(notExitsAccountScene);
+               accountInfoStage.show();
                int iterator;
                for(iterator=0;iterator<12;iterator++){
                    addFavouriteBookType[iterator]=null;
