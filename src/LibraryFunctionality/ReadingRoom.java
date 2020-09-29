@@ -615,7 +615,7 @@ else{
        gridPane.setMaxSize(980, 650);
 
        Image image19 = new Image("Images"+ File.separator +"signUp.jpg");
-       Canvas canvas19 = new Canvas(900,520);
+       Canvas canvas19 = new Canvas(850,600);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
        group19.getChildren().addAll(gridPane);
@@ -624,7 +624,7 @@ else{
        GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
        graphicsContext.drawImage(image19,0,0);
 
-       Scene S = new Scene(group19, 800, 460,Color.DODGERBLUE);
+       Scene S = new Scene(group19, 850, 600,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
@@ -638,7 +638,7 @@ else{
            okButton.setTranslateX(180);
            okButton.setTranslateY(150);
            okButton.setPrefSize(75,25);
-           if(addFavouriteWriter.equals("")||userChoiceList.equals("")||addFavouriteBookType.equals(null)||readerTextField.getText().equals(null)||instituteTextField.getText().equals(null)){
+           if(addFavouriteWriter.equals("")||userChoiceList.equals("")||readerTextField.getText().equals("")||instituteTextField.getText().equals("")){
                accountInfoLabel.setText("Your Information are incomplete!!!!");
                okButton.setTranslateX(180);
                okButton.setTranslateY(120);
@@ -729,6 +729,8 @@ else{
                    addFavouriteBookType[iterator]=null;
                }
                typeNumber=0;
+
+         infoStage.close();
            }
            });
    });
