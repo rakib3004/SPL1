@@ -303,8 +303,13 @@ public class ReadingRoom extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+                Stage accountInfoStage = new Stage();
+                Label accountInfoLabel= new Label();
+                Group accountInfoGroup = new Group();
+
         if(isFound==true){
-            JOptionPane.showMessageDialog(null,"Successfully Find Your Account");
+
+            accountInfoLabel.setText("Successfully Find Your Account");
             try {
                 PriorityList   priorityList =    accountManagement.accountManagementGetRecommendedBookList(userName,userID);
                 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
@@ -312,16 +317,17 @@ public class ReadingRoom extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
         else{
-            Stage notExitsAccountStage = new Stage();
-            Label notExitsAccountLabel= new Label("Sorry!! Your Account Does not exists");
-            Group notExitsAccountGroup = new Group();
-            notExitsAccountGroup.getChildren().add(notExitsAccountLabel);
-            Scene notExitsAccountScene = new Scene(notExitsAccountGroup,350,50);
-            notExitsAccountStage.setScene(notExitsAccountScene);
-            notExitsAccountStage.show();
+            accountInfoLabel.setText("Sorry!! Your Account Does not exists");
+
         }
+                accountInfoGroup.getChildren().add(accountInfoLabel);
+                Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
+                Scene notExitsAccountScene = new Scene(accountInfoGroup,350,50);
+                accountInfoStage.setScene(notExitsAccountScene);
+                accountInfoStage.show();
     });
         });
 
