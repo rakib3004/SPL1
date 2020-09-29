@@ -105,7 +105,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
         table.setPrefWidth(1440);
-        table.setPrefHeight(620);
+        table.setPrefHeight(540);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(

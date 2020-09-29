@@ -106,7 +106,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
         table.getColumns().setAll(bookName,writerName,bookId,typeName,borrowCount,price, bookWeight);
         table.setPrefWidth(1440);
-        table.setPrefHeight(580);
+        table.setPrefHeight(540);
 
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         table.getSelectionModel().selectedIndexProperty().addListener(
