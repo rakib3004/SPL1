@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -340,11 +341,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
              //   othersTypeNO++;
             }
         }
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Types");
-
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -647,11 +650,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
 
-
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Generics of Book Bar Chart");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Generics of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
         String year2008,year2009,year2010,year2011,year2012,year2013,year2014,year2015,year2016,year2017;
         double []  year2008Books= new double [7] ; double []year2009Books= new double [7] ; double []year2010Books= new double [7] ; double []year2011Books= new double [7] ; double []year2012Books= new double [7] ; double []
@@ -1114,10 +1119,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         group.getChildren().addAll(scatter_chart,
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.ScatterChart scatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
         String below4,over4,over7,over10,over15,over20,over25,over30;
 
@@ -1502,10 +1510,13 @@ SevenValueCalculation sevenValueCalculation = new SevenValueCalculation();
         group.getChildren().addAll(scatter_chart,
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.ScatterChart ScatterChart  = new javafx.scene.chart.ScatterChart(categoryAxis,numberAxis);
 
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;

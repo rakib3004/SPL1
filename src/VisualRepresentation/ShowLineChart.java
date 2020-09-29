@@ -1135,11 +1135,13 @@ double []  year2017Books = new double[7];
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
 
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
-
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
        String below4,over4,over7,over10,over15,over20,over25,over30;
 
@@ -1523,10 +1525,13 @@ double []  year2017Books = new double[7];
         group.getChildren().addAll(scatter_chart,
                 line_chart,
                 stacked_area_chart,exit,home,text,back);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
 
         javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
         String over100,over140,over160,over180,over210,over250,over300,over350,over400,over500;
