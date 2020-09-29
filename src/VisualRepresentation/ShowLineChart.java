@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -355,12 +356,13 @@ double []  year2017Books = new double[7];
             //   othersTypeNO++;
         }
         }
-
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Types");
-
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -655,10 +657,13 @@ double []  year2017Books = new double[7];
                 stacked_area_chart,exit,home,text,back);
 
 
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Generics of Book Bar Chart");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Generics of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
 
         javafx.scene.chart.LineChart LineChart  = new javafx.scene.chart.LineChart(categoryAxis,numberAxis);
 

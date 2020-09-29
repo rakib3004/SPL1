@@ -24,6 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -369,11 +370,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
-
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         ScatterChart ScatterChart = new ScatterChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
@@ -597,12 +600,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
-
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
@@ -833,10 +837,13 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
 
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
 
