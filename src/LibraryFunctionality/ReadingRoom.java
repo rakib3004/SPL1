@@ -323,9 +323,12 @@ public class ReadingRoom extends Application {
             accountInfoLabel.setText("Sorry!! Your Account Does not exists");
 
         }
-                accountInfoGroup.getChildren().add(accountInfoLabel);
+        Image image20 = new Image("Images"+ File.separator +"a6.jpg");
+                Canvas canvas20 = new Canvas(400,200);
+                accountInfoGroup.getChildren().addAll(accountInfoLabel,canvas20);
                 Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
-                Scene notExitsAccountScene = new Scene(accountInfoGroup,350,50);
+                accountInfoLabel.setFont(font3);
+                Scene notExitsAccountScene = new Scene(accountInfoGroup,400,300);
                 accountInfoStage.setScene(notExitsAccountScene);
                 accountInfoStage.show();
     });
