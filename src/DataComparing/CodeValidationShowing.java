@@ -77,10 +77,16 @@ int iterator;
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
-        Button CV_Output = new Button("CV Output");
-        CV_Output.setTranslateX(560);
-        CV_Output.setTranslateY(685);
-        CV_Output.setPrefSize(150, 50);
+        Label outputLabel = new Label();
+        outputLabel.setTranslateX(540);
+        outputLabel.setTranslateY(725);
+        Button CV_Output = new Button("Result");
+        Font font = Font.font(Font.getFontNames().get(0),FontWeight.BOLD,20);
+        CV_Output.setFont(font);
+        outputLabel.setFont(font);
+        CV_Output.setTranslateX(540);
+        CV_Output.setTranslateY(670);
+        CV_Output.setPrefSize(200, 50);
         CV_Output.setOnAction(actionEvent -> {
             TrainingSector trainingSector = new TrainingSector();
             try {
@@ -90,10 +96,12 @@ int iterator;
             }
             CrossValidationData[] crossValidationData;
             crossValidationData = trainingSector.trainingSectorMethods();
+            System.out.println("Thank You");
             double accuracyOfCV = calculateCVResults(crossValidationData, priorityData);
-            JOptionPane.showMessageDialog(null, accuracyOfCV + "%");
+            System.out.println(accuracyOfCV);
+            /*JOptionPane.showMessageDialog(null, accuracyOfCV + "%");*/
+            outputLabel.setText("Accuracy : "+accuracyOfCV+" %");
         });
-        setStyle(CV_Output);
         Label label = new Label("Cross Validation Results");
         label.setTextFill(DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
@@ -120,8 +128,8 @@ int iterator;
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
 
         table.getColumns().setAll(bookName, writerName, typeName, bookWeight/*,bookWeightCV*/);
-        table.setPrefWidth(1440);
-        table.setPrefHeight(620);
+        table.setPrefWidth(1400);
+        table.setPrefHeight(600);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
@@ -134,7 +142,7 @@ int iterator;
         VBox vBox = new VBox();
         vBox.getChildren().addAll(hb, hBox);
         Group group = new Group();
-        group.getChildren().addAll(vBox, exit, back, CV_Output);
+        group.getChildren().addAll(vBox, exit, back, CV_Output,outputLabel);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
