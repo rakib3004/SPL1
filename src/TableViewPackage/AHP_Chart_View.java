@@ -73,10 +73,13 @@ public class AHP_Chart_View extends Application {
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
 
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
         CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
+        categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
 
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
         XYChart.Series series1 = new XYChart.Series();
@@ -241,11 +244,13 @@ public class AHP_Chart_View extends Application {
                 priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(
                 ahPcriteriaWeight,priorityData,numberOfBooks);
-        CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
-
-        NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+     Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+     CategoryAxis categoryAxis = new CategoryAxis();
+     categoryAxis.setLabel("Book Index");
+     NumberAxis numberAxis = new NumberAxis();
+     numberAxis.setLabel("Book Priority Data");
+     categoryAxis.setTickLabelFont(font3);
+     numberAxis.setTickLabelFont(font3);
 
         ScatterChart scatterChart = new ScatterChart(categoryAxis, numberAxis);
         XYChart.Series series1 = new XYChart.Series();
@@ -373,10 +378,13 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-        CategoryAxis categoryAxis = new CategoryAxis();
-        categoryAxis.setLabel("Book Class Category");
-        NumberAxis numberAxis = new NumberAxis();
-        numberAxis.setLabel("Numbers of Book");
+    Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+    CategoryAxis categoryAxis = new CategoryAxis();
+    categoryAxis.setLabel("Book Index");
+    NumberAxis numberAxis = new NumberAxis();
+    numberAxis.setLabel("Book Priority Data");
+    categoryAxis.setTickLabelFont(font3);
+    numberAxis.setTickLabelFont(font3);
 
         StackedAreaChart stackedAreaChart = new StackedAreaChart(categoryAxis, numberAxis);
         XYChart.Series series1 = new XYChart.Series();
