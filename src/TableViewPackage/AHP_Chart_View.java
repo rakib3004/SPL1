@@ -5,6 +5,7 @@ import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenValueStatistics;
 import JavFX.Main;
+import Layout.ButtonDesign;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -35,10 +36,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class AHP_Chart_View extends Application {
-
+    ButtonDesign buttonDesign = new ButtonDesign();
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();

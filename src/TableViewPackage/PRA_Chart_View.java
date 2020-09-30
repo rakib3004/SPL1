@@ -2,6 +2,7 @@ package TableViewPackage;
 
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
+import Layout.ButtonDesign;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -36,6 +37,7 @@ import java.io.IOException;
 
 
 public class PRA_Chart_View extends Application {
+    ButtonDesign buttonDesign = new ButtonDesign();
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int numberOfBooks;
@@ -405,78 +407,11 @@ public class PRA_Chart_View extends Application {
         }
 
         scatterChart.getData().add(series1);
-        scatterChart.setTranslateX(10);
-        scatterChart.setTranslateY(25);
-        scatterChart.setPrefSize(1350, 700);
+        scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
 
+group.getChildren().add(scatterChart);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem mlr_process = new MenuItem("MLR Process");
-        MenuItem ahp_process = new MenuItem("AHP Process");
-        MenuItem pra_process = new MenuItem("PRA Process");
-
-      mlr_process.setOnAction((event) -> {
-          try {
-              MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-              mlr_chart_view.startScatterChart(primaryStage);
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      });
-
-      ahp_process.setOnAction((event) -> {
-          AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
-          try {
-              ahp_chart_view.startScatterChart(primaryStage);
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      });
-      pra_process.setOnAction((event) -> {
-          PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-          try {
-              pra_chart_view.startScatterChart(primaryStage);
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      });
-      contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-       scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-      Button lineChartView = new Button("LineChart View");
-      Button stackedAreaChartView = new Button("StackedAreaChart View");
-      lineChartView.setTranslateX(30);
-      lineChartView.setTranslateY(0);
-      stackedAreaChartView.setTranslateX(1170);
-      stackedAreaChartView.setTranslateY(0);
-      lineChartView.setOnAction(actionEvent -> {
-          try {
-              startScatterChart(primaryStage);
-          } catch (Exception exception) {
-              exception.printStackTrace();
-          }
-
-      });
-      stackedAreaChartView.setOnAction(actionEvent -> {
-          try {
-              startStackedAreaChart(primaryStage);
-          } catch (Exception exception) {
-              exception.printStackTrace();
-          }
-
-      });
-
-      group.getChildren().addAll( scatterChart,
-              exit, back,lineChartView,stackedAreaChartView);
-
-        Scene scene1 = new Scene(group, 1500, 950);
-
-
+      Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);

@@ -1,6 +1,7 @@
 package TableViewPackage;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
+import Layout.ButtonDesign;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import MultiVariableRegression.MultipleLinearRegression;
@@ -31,9 +32,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 public class MLR_Chart_View extends Application {
+    ButtonDesign buttonDesign = new ButtonDesign();
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();

@@ -3,6 +3,7 @@ package Layout;
 import javafx.application.Application;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.ScatterChart;
+import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -33,11 +34,20 @@ public class ButtonDesign extends Application {
         lineChart.setTranslateX(x);
         lineChart.setTranslateX(y);
         return  lineChart;
-    }  public ScatterChart systemLine(ScatterChart scatterChart, int w, int h, int x, int y){
+    }
+
+    public ScatterChart systemLine(ScatterChart scatterChart, int w, int h, int x, int y){
         scatterChart.setPrefSize(w,h);
         scatterChart.setTranslateX(x);
-        scatterChart.setTranslateX(y);
+        scatterChart.setTranslateY(y);
         return  scatterChart;
+    }
+
+    public StackedAreaChart systemLine(StackedAreaChart stackedAreaChart, int w, int h, int x, int y){
+        stackedAreaChart.setPrefSize(w,h);
+        stackedAreaChart.setTranslateX(x);
+        stackedAreaChart.setTranslateX(y);
+        return  stackedAreaChart;
     }
 
     }
