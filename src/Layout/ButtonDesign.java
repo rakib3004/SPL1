@@ -5,6 +5,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -21,7 +22,7 @@ public class ButtonDesign extends Application {
     public void start(Stage primaryStage) {
 
     }
-    public Button systemDesign(Button button,int w, int h, int x, int y, double fontSize){
+    public Button systemLine(Button button,int w, int h, int x, int y, double fontSize){
       button.setPrefSize(w,h);
       button.setTranslateX(x);
       button.setTranslateY(y);
@@ -49,5 +50,11 @@ public class ButtonDesign extends Application {
         stackedAreaChart.setTranslateX(y);
         return  stackedAreaChart;
     }
-
+    public Label systemLine(Label label,  int x, int y, double fontSize){
+        label.setTranslateX(x);
+        label.setTranslateY(y);
+        Font font = Font.font(Font.getFontNames().get(0),
+                FontWeight.BOLD,fontSize);
+        return  label;
+    }
     }

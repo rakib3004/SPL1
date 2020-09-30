@@ -624,6 +624,9 @@ public class PRA_Chart_View extends Application {
         labelDeviation.setTranslateX(500);
         labelDeviation.setTranslateY(400);
         labelDeviation.setPrefSize(300,50);
+        labelMean = buttonDesign.systemLine(labelMean,470,390,25);
+        labelDeviation = buttonDesign.systemLine(labelDeviation,420,35,25);
+
 
         lineChart.getData().add(series1);
         lineChart = buttonDesign.systemLine(lineChart,850,350,470,35);
