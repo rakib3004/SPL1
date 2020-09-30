@@ -301,6 +301,135 @@ public class PRA_Chart_View extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+    public void startLineChart(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
+            try {
+                pageRankAlgorithm.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        setStyle(exit);
+        setStyle(back);
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Book Index");
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
+        LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        XYChart.Series series1 = new XYChart.Series();
+
+        series1.setName("Book Weight Show");
+        int positionIndicator = 0;
+        double getWeightAverage=0.0;
+
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            positionIndicator++;
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
+
+            getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+        }
+
+        getWeightAverage = getWeightAverage/numberOfBooks;
+
+        double standardDeviation=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+        }
+        standardDeviation/=numberOfBooks;
+        standardDeviation=Math.sqrt(standardDeviation);
+        Label labelMean = new Label("Mean : "+getWeightAverage);
+        Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+        Font fontModel = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
+        labelMean.setFont(fontModel);
+        labelDeviation.setFont(fontModel);
+        labelMean.setTranslateX(500);
+        labelMean.setTranslateY(350);
+        labelMean.setPrefSize(300,50);
+        labelDeviation.setTranslateX(500);
+        labelDeviation.setTranslateY(400);
+        labelDeviation.setPrefSize(300,50);
+
+        lineChart.getData().add(series1);
+        lineChart.setTranslateX(10);
+        lineChart.setTranslateY(25);
+        lineChart.setPrefSize(1350, 700);
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem mlr_process = new MenuItem("MLR Process");
+        MenuItem ahp_process = new MenuItem("AHP Process");
+        MenuItem pra_process = new MenuItem("PRA Process");
+
+        mlr_process.setOnAction((event) -> {
+            try {
+                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+                mlr_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        ahp_process.setOnAction((event) -> {
+            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+            try {
+                ahp_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        pra_process.setOnAction((event) -> {
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
+            try {
+                pra_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
+        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+        //  Image image = new Image("libraryBackground9.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas, lineChart, exit, back,labelMean,labelDeviation);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+
+        Scene scene1 = new Scene(group, 1500, 950);
+
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Recommendation Tool");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+    }
   public void startStackedAreaChart(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
