@@ -839,9 +839,35 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         }
 
         stackedAreaChart.getData().add(series1);
-        stackedAreaChart.setTranslateX(10);
-        stackedAreaChart.setTranslateY(25);
-        stackedAreaChart.setPrefSize(1350, 700);
+        stackedAreaChart = buttonDesign.systemLine(stackedAreaChart,850,350,470,35);
+        group.getChildren().add(stackedAreaChart);
+        double getWeightAverage=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].getAHPweight()<2.00){
+                getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+            }
+            else{
+                getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+
+            }
+        }
+        getWeightAverage = getWeightAverage/numberOfBooks;
+        double standardDeviation=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].getAHPweight()<2.00){
+                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+            }
+            else{
+                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+            }
+        }
+
+        standardDeviation/=numberOfBooks;
+        standardDeviation=Math.sqrt(standardDeviation);
+        Label labelMean = new Label("Mean : "+getWeightAverage);
+        Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+        labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+        labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
 
         Scene scene1 = new Scene(group, 1500, 950);
