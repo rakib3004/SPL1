@@ -419,18 +419,32 @@ public class AHP_Chart_View extends Application {
             }
 
         }
-        scatterChart.getData().add(series1);
-        scatterChart.setTranslateX(10);
-        scatterChart.setTranslateY(25);
-        scatterChart.setPrefSize(1350, 700);
+         scatterChart.getData().add(series1);
+         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
+         group.getChildren().add(scatterChart);
 
+         double getWeightAverage=0.0;
+         for (iterator = 0; iterator < numberOfBooks; iterator++) {
+             getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+         }
+         getWeightAverage = getWeightAverage/numberOfBooks;
+         double standardDeviation=0.0;
+         for (iterator = 0; iterator < numberOfBooks; iterator++) {
+             standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+         }
+         standardDeviation/=numberOfBooks;
+         standardDeviation=Math.sqrt(standardDeviation);
+         Label labelMean = new Label("Mean : "+getWeightAverage);
+         Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+         labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+         labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
-        Scene scene1 = new Scene(group, 1500, 950);
-
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Recommendation Tool");
-        primaryStage.setFullScreen(true);
-        primaryStage.show();
+         group.getChildren().addAll(labelMean,labelDeviation);
+         Scene scene1 = new Scene(group, 1500, 950);
+         primaryStage.setScene(scene1);
+         primaryStage.setTitle("Recommendation Tool");
+         primaryStage.setFullScreen(true);
+         primaryStage.show();
     }
 
  public void startLineChart(Stage primaryStage) throws IOException {

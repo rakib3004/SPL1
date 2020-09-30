@@ -406,8 +406,6 @@ public class PRA_Chart_View extends Application {
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
         }
 
-
-
       double getWeightAverage=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
           getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
