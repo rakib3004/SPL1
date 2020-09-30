@@ -839,10 +839,9 @@ public class PRA_Chart_View extends Application {
 
         stackedAreaChart.getData().add(series1);
 
+
       stackedAreaChart = buttonDesign.systemLine(stackedAreaChart,850,350,470,35);
       group.getChildren().add(stackedAreaChart);
-
-
       double getWeightAverage=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
           getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
