@@ -390,104 +390,43 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Book Weight Show");
        int positionIndicator = 0;
-       double getWeightAverage=0.0;
 
        for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-   getWeightAverage = getWeightAverage+ priorityData[iterator].getMLRweight();
         }
-       getWeightAverage = getWeightAverage/numberOfBooks;
+        scatterChart.getData().add(series1);
+        scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
+        group.getChildren().add(scatterChart);
 
-       double standardDeviation=0.0;
+        double getWeightAverage=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getMLRweight()-getWeightAverage,2);
+            if(priorityData[iterator].getAHPweight()<2.00){
+                getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+            }
+            else{
+                getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+
+            }
         }
+        getWeightAverage = getWeightAverage/numberOfBooks;
+        double standardDeviation=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if(priorityData[iterator].getAHPweight()<2.00){
+                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+            }
+            else{
+                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+            }
+        }
+
         standardDeviation/=numberOfBooks;
         standardDeviation=Math.sqrt(standardDeviation);
         Label labelMean = new Label("Mean : "+getWeightAverage);
         Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
-        Font fontModel = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
-labelMean.setFont(fontModel);
-labelDeviation.setFont(fontModel);
-labelMean.setTranslateX(500);
-labelMean.setTranslateY(350);
-labelMean.setPrefSize(300,50);
-labelDeviation.setTranslateX(500);
-labelDeviation.setTranslateY(400);
-labelDeviation.setPrefSize(300,50);
+        labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+        labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
-
-        scatterChart.getData().add(series1);
-        scatterChart.setTranslateX(15);
-        scatterChart.setTranslateY(15);
-        scatterChart.setPrefSize(1350, 300);
-
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem mlr_process = new MenuItem("MLR Process");
-        MenuItem ahp_process = new MenuItem("AHP Process");
-        MenuItem pra_process = new MenuItem("PRA Process");
-
-        mlr_process.setOnAction((event) -> {
-            try {
-                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        ahp_process.setOnAction((event) -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
-            try {
-                ahp_chart_view.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        pra_process.setOnAction((event) -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-            try {
-                pra_chart_view.startScatterChart(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-        scatterChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(scatterChart, event.getScreenX(), event.getScreenY());
-            }
-        });        Button lineChartView = new Button("LineChart View");
-        Button stackedAreaChartView = new Button("StackedAreaChart View");
-        lineChartView.setTranslateX(30);
-        lineChartView.setTranslateY(0);
-        stackedAreaChartView.setTranslateX(1170);
-        stackedAreaChartView.setTranslateY(0);
-
-        lineChartView.setOnAction(actionEvent -> {
-            try {
-                startScatterChart(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-        stackedAreaChartView.setOnAction(actionEvent -> {
-            try {
-                startStackedAreaChart(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        });
-
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, scatterChart,
-                exit, back,lineChartView,stackedAreaChartView,labelDeviation,labelMean);
-
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
