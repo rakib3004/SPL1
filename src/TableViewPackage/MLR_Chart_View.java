@@ -308,6 +308,133 @@ labelDeviation.setPrefSize(300,50);
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+    public void startLineChart(Stage primaryStage) throws IOException {
+
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(1000);
+        back.setTranslateY(700);
+        exit.setTranslateX(1150);
+        exit.setTranslateY(700);
+        back.setOnAction(actionEvent -> {
+            FourVariableRegression fourVariableRegression = new FourVariableRegression();
+            try {
+                fourVariableRegression.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        //setStyle(exit);
+        // setStyle(back);
+        back.setPrefSize(145, 20);
+        exit.setPrefSize(145, 20);
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        CategoryAxis categoryAxis = new CategoryAxis();
+        categoryAxis.setLabel("Book Index");
+        NumberAxis numberAxis = new NumberAxis();
+        numberAxis.setLabel("Book Priority Data");
+        categoryAxis.setTickLabelFont(font3);
+        numberAxis.setTickLabelFont(font3);
+
+        LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        XYChart.Series series1 = new XYChart.Series();
+
+        series1.setName("Book Weight Show");
+        int positionIndicator = 0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            positionIndicator++;
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+        }
+
+        lineChart.getData().add(series1);
+        lineChart.setTranslateX(0);
+        lineChart.setTranslateY(0);
+        lineChart.setPrefSize(1350, 600);
+        // lineChart.setStyle("-fx-chart-plot-background-color: transperant;");
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem mlr_process = new MenuItem("MLR Process");
+        MenuItem ahp_process = new MenuItem("AHP Process");
+        MenuItem pra_process = new MenuItem("PRA Process");
+
+        mlr_process.setOnAction((event) -> {
+            try {
+                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+                mlr_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        ahp_process.setOnAction((event) -> {
+            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+            try {
+                ahp_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        pra_process.setOnAction((event) -> {
+            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
+            try {
+                pra_chart_view.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
+        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+            @Override
+            public void handle(ContextMenuEvent event) {
+
+                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
+            }
+        });
+
+        Button scatterChartView = new Button("ScatterChart View");
+        Button stackedAreaChartView = new Button("StackedArea View");
+
+        scatterChartView.setOnAction(actionEvent -> {
+            try {
+                startScatterChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        stackedAreaChartView.setOnAction(actionEvent -> {
+            try {
+                startStackedAreaChart(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        scatterChartView.setTranslateX(1000);
+        scatterChartView.setTranslateY(600);
+        stackedAreaChartView.setTranslateX(1150);
+        stackedAreaChartView.setTranslateY(600);
+        scatterChartView.setPrefSize(145, 90);
+        stackedAreaChartView.setPrefSize(145, 90);
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas, lineChart, stackedAreaChartView, scatterChartView,exit,back);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+
+        Scene scene1 = new Scene(group, 1500, 950);
+        scene1.getStylesheets().add("LineChart.css");
+        primaryStage.setScene(scene1);
+        primaryStage.setTitle("Recommendation Tool");
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+    }
     public void startStackedAreaChart(Stage primaryStage) throws IOException {
 
         String  className = this.getClass().getSimpleName();
