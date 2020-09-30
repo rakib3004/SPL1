@@ -408,8 +408,24 @@ public class PRA_Chart_View extends Application {
 
         scatterChart.getData().add(series1);
         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
-
         group.getChildren().add(scatterChart);
+
+      double getWeightAverage=0.0;
+      for (iterator = 0; iterator < numberOfBooks; iterator++) {
+          getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+      }
+      getWeightAverage = getWeightAverage/numberOfBooks;
+      double standardDeviation=0.0;
+      for (iterator = 0; iterator < numberOfBooks; iterator++) {
+          standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+      }
+      standardDeviation/=numberOfBooks;
+      standardDeviation=Math.sqrt(standardDeviation);
+      Label labelMean = new Label("Mean : "+getWeightAverage);
+      Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+      labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+      labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
+      group.getChildren().addAll(labelMean,labelDeviation);
 
       Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -595,18 +611,23 @@ public class PRA_Chart_View extends Application {
         XYChart.Series series1 = new XYChart.Series();
 
         series1.setName("Book Weight Show");
-        int positionIndicator = 0;
-        double getWeightAverage=0.0;
 
+        int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
-
-            getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
         }
 
-        getWeightAverage = getWeightAverage/numberOfBooks;
 
+
+        lineChart.getData().add(series1);
+        lineChart = buttonDesign.systemLine(lineChart,850,350,470,35);
+
+        double getWeightAverage=0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+        }
+        getWeightAverage = getWeightAverage/numberOfBooks;
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
@@ -615,25 +636,11 @@ public class PRA_Chart_View extends Application {
         standardDeviation=Math.sqrt(standardDeviation);
         Label labelMean = new Label("Mean : "+getWeightAverage);
         Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
-        Font fontModel = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
-        labelMean.setFont(fontModel);
-        labelDeviation.setFont(fontModel);
-        labelMean.setTranslateX(500);
-        labelMean.setTranslateY(350);
-        labelMean.setPrefSize(300,50);
-        labelDeviation.setTranslateX(500);
-        labelDeviation.setTranslateY(400);
-        labelDeviation.setPrefSize(300,50);
-        labelMean = buttonDesign.systemLine(labelMean,470,390,25);
-        labelDeviation = buttonDesign.systemLine(labelDeviation,420,35,25);
-
-
-        lineChart.getData().add(series1);
-        lineChart = buttonDesign.systemLine(lineChart,850,350,470,35);
-
-
+        labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+        labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
         group.getChildren().addAll(labelMean,labelDeviation);
 
+        group.getChildren().add(lineChart);
         Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);

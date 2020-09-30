@@ -33,7 +33,7 @@ public class ButtonDesign extends Application {
     public LineChart systemLine(LineChart lineChart,int w, int h, int x, int y){
         lineChart.setPrefSize(w,h);
         lineChart.setTranslateX(x);
-        lineChart.setTranslateX(y);
+        lineChart.setTranslateY(y);
         return  lineChart;
     }
 
@@ -47,7 +47,7 @@ public class ButtonDesign extends Application {
     public StackedAreaChart systemLine(StackedAreaChart stackedAreaChart, int w, int h, int x, int y){
         stackedAreaChart.setPrefSize(w,h);
         stackedAreaChart.setTranslateX(x);
-        stackedAreaChart.setTranslateX(y);
+        stackedAreaChart.setTranslateY(y);
         return  stackedAreaChart;
     }
     public Label systemLine(Label label,  int x, int y, double fontSize){
