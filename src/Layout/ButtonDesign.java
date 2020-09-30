@@ -1,6 +1,8 @@
 package Layout;
 
 import javafx.application.Application;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -25,6 +27,17 @@ public class ButtonDesign extends Application {
         Font font = Font.font(Font.getFontNames().get(0),
                 FontWeight.BOLD,fontSize);
         return  button;
+    }
+    public LineChart systemLine(LineChart lineChart,int w, int h, int x, int y){
+        lineChart.setPrefSize(w,h);
+        lineChart.setTranslateX(x);
+        lineChart.setTranslateX(y);
+        return  lineChart;
+    }  public ScatterChart systemLine(ScatterChart scatterChart, int w, int h, int x, int y){
+        scatterChart.setPrefSize(w,h);
+        scatterChart.setTranslateX(x);
+        scatterChart.setTranslateX(y);
+        return  scatterChart;
     }
 
     }
