@@ -423,21 +423,33 @@ public class AHP_Chart_View extends Application {
          scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
          group.getChildren().add(scatterChart);
 
-         double getWeightAverage=0.0;
-         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-             getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+     double getWeightAverage=0.0;
+     for (iterator = 0; iterator < numberOfBooks; iterator++) {
+         if(priorityData[iterator].getAHPweight()<2.00){
+             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
          }
-         getWeightAverage = getWeightAverage/numberOfBooks;
-         double standardDeviation=0.0;
-         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-             standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+         else{
+             getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+
          }
-         standardDeviation/=numberOfBooks;
-         standardDeviation=Math.sqrt(standardDeviation);
-         Label labelMean = new Label("Mean : "+getWeightAverage);
-         Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
-         labelMean = buttonDesign.systemLine(labelMean,750,380,25);
-         labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
+     }
+     getWeightAverage = getWeightAverage/numberOfBooks;
+     double standardDeviation=0.0;
+     for (iterator = 0; iterator < numberOfBooks; iterator++) {
+         if(priorityData[iterator].getAHPweight()<2.00){
+             standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+         }
+         else{
+             standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+         }
+     }
+
+     standardDeviation/=numberOfBooks;
+     standardDeviation=Math.sqrt(standardDeviation);
+     Label labelMean = new Label("Mean : "+getWeightAverage);
+     Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+     labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+     labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
          group.getChildren().addAll(labelMean,labelDeviation);
          Scene scene1 = new Scene(group, 1500, 950);
@@ -446,6 +458,7 @@ public class AHP_Chart_View extends Application {
          primaryStage.setFullScreen(true);
          primaryStage.show();
     }
+
 
  public void startLineChart(Stage primaryStage) throws IOException {
      String  className = this.getClass().getSimpleName();
@@ -607,8 +620,6 @@ public class AHP_Chart_View extends Application {
      group.getChildren().addAll(scatter_chart,
              line_chart,
              stacked_area_chart,exit,home,text,back);
-
-
      priorityData = processing.fileReaderMethods();
      numberOfBooks = bookNumber.bookNumberFindingMethods();
      ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
@@ -627,57 +638,53 @@ public class AHP_Chart_View extends Application {
 
      series1.setName("Book Weight Show");
      int positionIndicator = 0;
-     double getWeightAverage=0.0;
 
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
          positionIndicator++;
          if(priorityData[iterator].getAHPweight()<2.00){
              series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
                      (35.00*priorityData[iterator].getAHPweight())));
-             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
-
          }
          else{
              series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
                      18.00*priorityData[iterator].getAHPweight()));
+         }
+
+     }
+
+     lineChart.getData().add(series1);
+     lineChart = buttonDesign.systemLine(lineChart,850,350,470,35);
+     group.getChildren().add(lineChart);
+
+     double getWeightAverage=0.0;
+     for (iterator = 0; iterator < numberOfBooks; iterator++) {
+         if(priorityData[iterator].getAHPweight()<2.00){
+             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+         }
+         else{
              getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
 
          }
-
      }
      getWeightAverage = getWeightAverage/numberOfBooks;
-
      double standardDeviation=0.0;
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
          if(priorityData[iterator].getAHPweight()<2.00){
-
              standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
-
          }
          else{
              standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
-
-
          }
      }
+
      standardDeviation/=numberOfBooks;
      standardDeviation=Math.sqrt(standardDeviation);
      Label labelMean = new Label("Mean : "+getWeightAverage);
      Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
-     Font fontModel = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
-     labelMean.setFont(fontModel);
-     labelDeviation.setFont(fontModel);
-     labelMean.setTranslateX(500);
-     labelMean.setTranslateY(350);
-     labelMean.setPrefSize(300,50);
-     labelDeviation.setTranslateX(500);
-     labelDeviation.setTranslateY(400);
-     labelDeviation.setPrefSize(300,50);
-     lineChart.getData().add(series1);
-     lineChart.setTranslateX(10);
-     lineChart.setTranslateY(25);
-     lineChart.setPrefSize(1350, 700);
+     labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+     labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
+     group.getChildren().addAll(labelMean,labelDeviation);
      Scene scene1 = new Scene(group, 1500, 950);
      primaryStage.setScene(scene1);
      primaryStage.setTitle("Recommendation Tool");
@@ -873,15 +880,43 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
         }
         else{
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                    priorityData[iterator].getAHPweight()));
+                    18.00*priorityData[iterator].getAHPweight()));
         }
     }
 
-        stackedAreaChart.getData().add(series1);
 
-        stackedAreaChart.setTranslateX(10);
-        stackedAreaChart.setTranslateY(25);
-        stackedAreaChart.setPrefSize(1350, 700);
+
+    stackedAreaChart.getData().add(series1);
+    stackedAreaChart = buttonDesign.systemLine(stackedAreaChart,850,350,470,35);
+    group.getChildren().add(stackedAreaChart);
+
+    double getWeightAverage=0.0;
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        if(priorityData[iterator].getAHPweight()<2.00){
+            getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+        }
+        else{
+            getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+
+        }
+    }
+    getWeightAverage = getWeightAverage/numberOfBooks;
+    double standardDeviation=0.0;
+    for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        if(priorityData[iterator].getAHPweight()<2.00){
+            standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+        }
+        else{
+            standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+        }
+    }
+
+    standardDeviation/=numberOfBooks;
+    standardDeviation=Math.sqrt(standardDeviation);
+    Label labelMean = new Label("Mean : "+getWeightAverage);
+    Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
+    labelMean = buttonDesign.systemLine(labelMean,750,380,25);
+    labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
 
        Scene scene1 = new Scene(group, 1500, 950);
 
