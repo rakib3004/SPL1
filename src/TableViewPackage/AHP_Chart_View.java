@@ -109,7 +109,7 @@ public class AHP_Chart_View extends Application {
 
         scatter_chart.setOnAction(actionEvent -> {
             try {
-startScatterChart(primaryStage);
+        startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

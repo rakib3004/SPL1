@@ -409,7 +409,7 @@ public class PRA_Chart_View extends Application {
         scatterChart.getData().add(series1);
         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
 
-group.getChildren().add(scatterChart);
+        group.getChildren().add(scatterChart);
 
       Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -422,28 +422,162 @@ group.getChildren().add(scatterChart);
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
-        back.setTranslateX(0);
-        back.setTranslateY(650);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(650);
-        back.setOnAction(actionEvent -> {
-            PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
+        Font font = new Font(19);
+        Font font1 = new Font(47);
+        Font font2 = new Font( 26);
+
+        Button scatter_chart = new Button("Scatter Chart");
+        Button line_chart = new Button("Line Chart");
+        Button stacked_area_chart = new Button("Stacked Area Chart");
+
+        scatter_chart.setPrefSize(410,230);
+        line_chart.setPrefSize(410,230);
+        stacked_area_chart.setPrefSize(410,230);
+
+        scatter_chart.setFont(font2);
+        line_chart.setFont(font2);
+        stacked_area_chart.setFont(font2);
+        scatter_chart.setTranslateX(30);
+        scatter_chart.setTranslateY(35);
+        line_chart.setTranslateX(30);
+        line_chart.setTranslateY(270);
+        stacked_area_chart.setTranslateX(30);
+        stacked_area_chart.setTranslateY(505);
+
+        scatter_chart.setContentDisplay(ContentDisplay.TOP);
+        line_chart.setContentDisplay(ContentDisplay.TOP);
+        stacked_area_chart.setContentDisplay(ContentDisplay.TOP);
+        FileInputStream fileInputStream1 = null;
+        try {
+            fileInputStream1 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"scatter.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image1 = new Image(fileInputStream1);
+        scatter_chart.setGraphic(new ImageView(image1));
+
+        FileInputStream fileInputStream2 = null;
+        try {
+            fileInputStream2 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"line.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image2 = new Image(fileInputStream2);
+        line_chart.setGraphic(new ImageView(image2));
+
+        FileInputStream fileInputStream3 = null;
+        try {
+            fileInputStream3 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"area.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image3 = new Image(fileInputStream3);
+        stacked_area_chart.setGraphic(new ImageView(image3));
+
+        scatter_chart.setOnAction(actionEvent -> {
             try {
-                pageRankAlgorithm.start(primaryStage);
+                startScatterChart(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
+
+        stacked_area_chart.setOnAction(actionEvent -> {
+            try {
+                startStackedAreaChart(primaryStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        line_chart.setOnAction(actionEvent -> {
+            try {
+                startLineChart(primaryStage);
+
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        Button exit = new Button("Exit");
+        exit.setTranslateX(1200);
+        exit.setTranslateY(700);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
+        FileInputStream fileInputStream4 = null;
+        try {
+            fileInputStream4 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image4 = new Image(fileInputStream4);
+        exit.setGraphic(new ImageView(image4));
+        exit.setPrefSize(120, 20);
+        exit.setContentDisplay(ContentDisplay.LEFT);
+        exit.setFont(font);
+        Text text = new Text("Analytic Hierarchy Algorithm");
+        text.setTranslateX(520);
+        text.setTranslateY(500);
+        text.setFont(font1);
+        text.setFill(Color.BLACK);
+        text.setTextAlignment(TextAlignment.LEFT);
+        text.setStyle("-fx-font-weight: bold;");
 
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+        Button home = new Button("Home");
+        home.setTranslateX(470);
+        home.setTranslateY(520);
+        home.setPrefSize(375,30);
+        home.setFont(font2);
+        home.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream5 = null;
+        try {
+            fileInputStream5 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image5 = new Image(fileInputStream5);
+        home.setGraphic(new ImageView(image5));
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
+            try {
+                main.start(primaryStage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        Button back = new Button("Back");
+        back.setTranslateX(950);
+        back.setTranslateY(520);
+        back.setPrefSize(375,30);
+        back.setFont(font2);
+        back.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream6 = null;
+        try {
+            fileInputStream6 = new FileInputStream(
+                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image6 = new Image(fileInputStream6);
+        back.setGraphic(new ImageView(image6));
+        back.setOnAction(actionEvent -> {
+            try {
+                start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        Group group = new Group();
+        group.getChildren().addAll(scatter_chart,
+                line_chart,
+                stacked_area_chart,exit,home,text,back);
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -492,52 +626,10 @@ group.getChildren().add(scatterChart);
         labelDeviation.setPrefSize(300,50);
 
         lineChart.getData().add(series1);
-        lineChart.setTranslateX(10);
-        lineChart.setTranslateY(25);
-        lineChart.setPrefSize(1350, 700);
+        lineChart = buttonDesign.systemLine(lineChart,850,350,470,35);
 
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem mlr_process = new MenuItem("MLR Process");
-        MenuItem ahp_process = new MenuItem("AHP Process");
-        MenuItem pra_process = new MenuItem("PRA Process");
 
-        mlr_process.setOnAction((event) -> {
-            try {
-                MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
-                mlr_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        ahp_process.setOnAction((event) -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
-            try {
-                ahp_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        pra_process.setOnAction((event) -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
-            try {
-                pra_chart_view.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        contextMenu.getItems().addAll(mlr_process, ahp_process, pra_process);
-        lineChart.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-
-                contextMenu.show(lineChart, event.getScreenX(), event.getScreenY());
-            }
-        });
-        //  Image image = new Image("libraryBackground9.jpg");
-        Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart, exit, back,labelMean,labelDeviation);
-        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        group.getChildren().addAll(labelMean,labelDeviation);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
