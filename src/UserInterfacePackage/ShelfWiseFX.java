@@ -84,30 +84,30 @@ public class ShelfWiseFX extends Application {
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
-        Button selfWise = new Button("Self Wise");
+        Button ShelfWise = new Button("Shelf Wise");
         Button timeWise = new Button("Time Wise");
 
         typeWise1.setPrefSize(400, 170);
-        selfWise.setPrefSize(400, 170);
+        ShelfWise.setPrefSize(400, 170);
         timeWise.setPrefSize(400, 170);
         writerWise.setPrefSize(400, 170);
 
         typeWise1.setFont(font2);
-        selfWise.setFont(font2);
+        ShelfWise.setFont(font2);
         timeWise.setFont(font2);
         writerWise.setFont(font2);
 
         typeWise1.setTranslateX(30);
         typeWise1.setTranslateY(35);
-        selfWise.setTranslateX(30);
-        selfWise.setTranslateY(210);
+        ShelfWise.setTranslateX(30);
+        ShelfWise.setTranslateY(210);
         timeWise.setTranslateX(30);
         timeWise.setTranslateY(385);
         writerWise.setTranslateX(30);
         writerWise.setTranslateY(560);
 
         typeWise1.setContentDisplay(ContentDisplay.LEFT);
-        selfWise.setContentDisplay(ContentDisplay.LEFT);
+        ShelfWise.setContentDisplay(ContentDisplay.LEFT);
         timeWise.setContentDisplay(ContentDisplay.LEFT);
         writerWise.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = null;
@@ -128,7 +128,7 @@ public class ShelfWiseFX extends Application {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        selfWise.setGraphic(new ImageView(image2));
+        ShelfWise.setGraphic(new ImageView(image2));
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
@@ -165,7 +165,7 @@ public class ShelfWiseFX extends Application {
                 exception.printStackTrace();
             }
         });
-        selfWise.setOnAction(actionEvent -> {
+        ShelfWise.setOnAction(actionEvent -> {
 
             try {
                 ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
@@ -200,7 +200,7 @@ public class ShelfWiseFX extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Self Wise Book Recommendation");
+        Text text = new Text("Shelf Wise Book Recommendation");
         text.setTranslateX(575);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -261,13 +261,13 @@ public class ShelfWiseFX extends Application {
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
         group.getChildren().addAll(canvas, typeWise1,
-                selfWise, writerWise,
+                ShelfWise, writerWise,
                 timeWise, exit, home, text, back);
-        MenuItem self1 = new MenuItem("Self No : 1");
-        self1.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf1 = new MenuItem("Shelf No : 1");
+        Shelf1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self1.getText();
+                labelName = "Top Books from " + Shelf1.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("0")) {
@@ -281,11 +281,11 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self2 = new MenuItem("Self No : 2");
-        self2.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf2 = new MenuItem("Shelf No : 2");
+        Shelf2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self2.getText();
+                labelName = "Top Books from " + Shelf2.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("1")) {
 
@@ -300,12 +300,12 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self3 = new MenuItem("Self No : 3");
-        self3.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf3 = new MenuItem("Shelf No : 3");
+        Shelf3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
-                labelName = "Top Books from " + self3.getText();
+                labelName = "Top Books from " + Shelf3.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("2")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -318,11 +318,11 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self4 = new MenuItem("Self No : 4");
-        self4.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf4 = new MenuItem("Shelf No : 4");
+        Shelf4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self4.getText();
+                labelName = "Top Books from " + Shelf4.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("3")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -335,11 +335,11 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self5 = new MenuItem("Self No : 5");
-        self5.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf5 = new MenuItem("Shelf No : 5");
+        Shelf5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self5.getText();
+                labelName = "Top Books from " + Shelf5.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("4")) {
@@ -353,11 +353,11 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self6 = new MenuItem("Self No : 6");
-        self6.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf6 = new MenuItem("Shelf No : 6");
+        Shelf6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self6.getText();
+                labelName = "Top Books from " + Shelf6.getText();
 
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("5")) {
@@ -371,11 +371,11 @@ public class ShelfWiseFX extends Application {
                 showInfo(primaryStage, labelName, data);
             }
         });
-        MenuItem self7 = new MenuItem("Self No : 7");
-        self7.setOnAction(new EventHandler<ActionEvent>() {
+        MenuItem Shelf7 = new MenuItem("Shelf No : 7");
+        Shelf7.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                labelName = "Top Books from " + self7.getText();
+                labelName = "Top Books from " + Shelf7.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.bookId.substring(11, 12).contains("6")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -389,16 +389,16 @@ public class ShelfWiseFX extends Application {
             }
         });
 
-        MenuButton selfSection = new MenuButton("Select Self : ");
-        selfSection.getItems().addAll(self1, self2, self3,
-                self4, self5, self6, self7);
-        selfSection.setFont(font5);
-        selfSection.setTranslateX(700);
-        selfSection.setTranslateY(285);
-        selfSection.setPrefSize(200, 50);
+        MenuButton ShelfSection = new MenuButton("Select Shelf : ");
+        ShelfSection.getItems().addAll(Shelf1, Shelf2, Shelf3,
+                Shelf4, Shelf5, Shelf6, Shelf7);
+        ShelfSection.setFont(font5);
+        ShelfSection.setTranslateX(700);
+        ShelfSection.setTranslateY(285);
+        ShelfSection.setPrefSize(200, 50);
 
         Image image = new Image("Images" + File.separator + "libraryBackground5.jpg");
-        group.getChildren().addAll(selfSection);
+        group.getChildren().addAll(ShelfSection);
         graphicsContext.drawImage(image, 0, 0);
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
