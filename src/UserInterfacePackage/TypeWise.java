@@ -165,8 +165,8 @@ int iterator;
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
-                selfWiseFX.start(primaryStage);
+                ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
+                shelfWiseFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

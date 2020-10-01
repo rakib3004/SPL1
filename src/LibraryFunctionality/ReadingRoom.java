@@ -38,7 +38,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -881,8 +880,8 @@ textHeading.setTranslateX(250);
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
-                selfWiseFX.start(primaryStage);
+                ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
+                shelfWiseFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

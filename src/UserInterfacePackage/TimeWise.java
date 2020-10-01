@@ -1,16 +1,12 @@
 package UserInterfacePackage;
 
-import AHPalgorithm.AHPcalculation;
-import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
-import JavFX.AuthorSystem;
 import JavFX.Main;
 import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
 import MultiVariableRegression.MultipleLinearRegression;
-import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import TableViewPackage.Book;
@@ -42,7 +38,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 
 public class TimeWise extends Application {
     private TableView table;
@@ -165,8 +160,8 @@ public class TimeWise extends Application {
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
-                selfWiseFX.start(primaryStage);
+                ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
+                shelfWiseFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

@@ -43,7 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
-public class SelfWiseFX extends Application {
+public class ShelfWiseFX extends Application {
 
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
@@ -168,8 +168,8 @@ public class SelfWiseFX extends Application {
         selfWise.setOnAction(actionEvent -> {
 
             try {
-                SelfWiseFX selfWiseFX = new SelfWiseFX();
-                selfWiseFX.start(primaryStage);
+                ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
+                shelfWiseFX.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
