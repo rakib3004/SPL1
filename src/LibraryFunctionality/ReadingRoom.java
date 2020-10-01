@@ -796,7 +796,7 @@ textHeading.setTranslateX(250);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
-        Button selfWise = new Button("Self Wise");
+        Button selfWise = new Button("Shelf Wise");
         Button timeWise = new Button("Time Wise");
 
         typeWise1.setPrefSize(400, 170);
@@ -835,7 +835,7 @@ textHeading.setTranslateX(250);
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "time.png");
+                    "src" + File.separator + "Images" + File.separator + "borrow.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -844,7 +844,7 @@ textHeading.setTranslateX(250);
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+                    "src" + File.separator + "Images" + File.separator + "time.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
