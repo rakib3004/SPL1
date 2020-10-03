@@ -401,56 +401,56 @@ public class ReadingRoom extends Application {
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(12,label3,cancelButton,enterButton,label4);
-       MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
+       gridPane.addRow(16,label3,cancelButton,enterButton,label4);
+       CheckBox humayonAhmed = new CheckBox("Humayon Ahmed");
        humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent e) {
 addFavouriteWriter = humayonAhmed.getText();
            } });
 
-       MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
+       CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
        muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = muhammadJafarIqbal.getText();
            }
        });
-       MenuItem rokibHasan = new MenuItem("Rokib Hasan");
+       CheckBox rokibHasan = new CheckBox("Rokib Hasan");
        rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = rokibHasan.getText();
            }
        });
-       MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
+       CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
        emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = emdadulHaqueMilon.getText();
            }
        });
-       MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
+       CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
        kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = kaziNazrulIslam.getText();
            } });
-       MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
+       CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
        kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = kaziAnwarHossain.getText();
            }
        });
-       MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
+       CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
        sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = sharatChandraChattropadhay.getText();
            }
        });
-       MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
+       CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
        rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = rabindranathTagore.getText();
            } });
 
-       MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
+       CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
        sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = sunilGangoPaddahay.getText();
@@ -458,13 +458,13 @@ addFavouriteWriter = sunilGangoPaddahay.getText();
        });
 
 
-       MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
+       CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
        samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = samareshMajumdar.getText();
            }
        });
-       MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
+       CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
 
        emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
@@ -473,23 +473,22 @@ addFavouriteWriter = emdadiyaPustokaloy.getText();
        });
 
 
-       MenuItem others = new MenuItem("Others");
+       CheckBox others = new CheckBox("Others");
        others.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
 addFavouriteWriter = others.getText();
            }
        });
 
-       MenuButton writerMenu = new MenuButton("Choose The Writer");
-       writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
-               kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
-               samareshMajumdar, emdadiyaPustokaloy,others);
 
 
        Label favouriteWriter = new Label("Favourite Writer");
        favouriteWriter.setFont(font1);
-       favouriteWriter.setLabelFor(writerMenu);
-       gridPane.addRow(9,favouriteWriter,writerMenu);
+           writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
+                   kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
+                   samareshMajumdar, emdadiyaPustokaloy,others);
+
+           gridPane.addRow(9,favouriteWriter,writerMenu);
 
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
