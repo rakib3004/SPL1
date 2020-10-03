@@ -484,11 +484,12 @@ addFavouriteWriter = others.getText();
 
        Label favouriteWriter = new Label("Favourite Writer");
        favouriteWriter.setFont(font1);
-           writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
-                   kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
-                   samareshMajumdar, emdadiyaPustokaloy,others);
 
-           gridPane.addRow(9,favouriteWriter,writerMenu);
+           gridPane.addRow(9,humayonAhmed, muhammadJafarIqbal, rokibHasan);
+           gridPane.addRow(10,emdadulHaqueMilon,
+                   kaziNazrulIslam, kaziAnwarHossain);
+           gridPane.addRow(11,sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay);
+           gridPane.addRow(12,samareshMajumdar, emdadiyaPustokaloy,others);
 
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
