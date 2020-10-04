@@ -414,10 +414,12 @@ public PriorityList accountManagementGetRecommendedBookList(String userName, Str
  FileReader fileReader = new FileReader(getUserDetailsInFile[1]);
  fileReader.read(getUserInfoArray);
     String [] favouriteBookTypeList = new String[12];
+    String [] favouriteWriterList = new String[12];
 int typeIterator =0;
 String getFavouriteType="";
-String favouriteWriter="";
+String getFavouriteWriter="";
 int typeCounter=0;
+int writerCounter=0;
 boolean isWriter=false;
 for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
     if(!isWriter){
@@ -432,7 +434,6 @@ for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
             favouriteBookTypeList[typeCounter]=getFavouriteType;
             favouriteBookTypeList[typeCounter]=  favouriteBookTypeList[typeCounter].trim();
             getFavouriteType="";
-            typeCounter++;
         }
         else{
             getFavouriteType=getFavouriteType+getUserInfoArray[typeIterator];
@@ -440,29 +441,52 @@ for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
         }
     }
     else{
-        favouriteWriter = favouriteWriter+getUserInfoArray[typeIterator];
+
+        if(getUserInfoArray[typeIterator]!='\t'){
+            favouriteWriterList[writerCounter]=getFavouriteWriter;
+            favouriteWriterList[writerCounter]=  favouriteWriterList[writerCounter].trim();
+            getFavouriteWriter="";
+            writerCounter++;
+        }
+        else if(getUserInfoArray[typeIterator]!='\n'){
+            favouriteWriterList[writerCounter]=getFavouriteWriter;
+            favouriteWriterList[writerCounter]=  favouriteWriterList[writerCounter].trim();
+            getFavouriteWriter="";
+        }
+        else{
+            getFavouriteWriter = getFavouriteWriter+getUserInfoArray[typeIterator];
+
+        }
+
     }
 
 }
-favouriteWriter = favouriteWriter.trim();
-PriorityList priorityList = new PriorityList(favouriteWriter,favouriteBookTypeList,typeCounter-1 );
+
+PriorityList priorityList = new PriorityList(favouriteWriterList,favouriteBookTypeList,typeCounter-1 );
  return  priorityList;
     }
-
-
 }
  class PriorityList{
 
-    String favWriter;
+    String [] favWriterList;
     String [] favTypeList;
      int typeCounter;
-public  PriorityList(){
+     int writerCounter;
+
+
+
+     public  PriorityList(){
 }
-     public PriorityList(String favWriter, String[] favTypeList, int typeCounter) {
-         this.favWriter = favWriter;
+     public PriorityList(String [] favWriterList, String[] favTypeList, int typeCounter) {
+         this.favWriterList = favWriterList;
          this.favTypeList = favTypeList;
          this.typeCounter = typeCounter;
      }
-
+     public PriorityList(String[] favWriterList, String[] favTypeList, int typeCounter, int writerCounter) {
+         this.favWriterList = favWriterList;
+         this.favTypeList = favTypeList;
+         this.typeCounter = typeCounter;
+         this.writerCounter = writerCounter;
+     }
 
 }

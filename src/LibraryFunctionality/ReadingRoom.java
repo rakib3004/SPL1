@@ -687,8 +687,10 @@ else{
 */
 
                int userChoiceListLength = userBookTypeChoiceList.length();
+               int userChoiceListLength2 = userWriterChoiceList.length();
 
                userBookTypeChoiceList = userBookTypeChoiceList.substring(0,userChoiceListLength-1);
+               userWriterChoiceList = userWriterChoiceList.substring(0,userChoiceListLength2-1);
                userBookTypeChoiceList = userBookTypeChoiceList +"\n"+ userWriterChoiceList;
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
