@@ -488,65 +488,82 @@ label.setFont(font1);
         others1.setFont(font5);
            CheckBox humayonAhmed = new CheckBox("Humayon Ahmed");
            humayonAhmed.setOnAction(actionEvent1 -> {
-
+               addFavouriteWriterType[writerNumber]=humayonAhmed.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
        });
 
            CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
            muhammadJafarIqbal.setOnAction(actionEvent1 -> {
-               
+               addFavouriteWriterType[writerNumber]=muhammadJafarIqbal.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox rokibHasan = new CheckBox("Rokib Hasan");
            rokibHasan.setOnAction(actionEvent1 -> {
-               
-               userWriterChoiceList = rokibHasan.getText();
+
+               addFavouriteWriterType[writerNumber]=rokibHasan.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
            emdadulHaqueMilon.setOnAction(actionEvent1 -> {
-               userWriterChoiceList = emdadulHaqueMilon.getText();
+               addFavouriteWriterType[writerNumber]=emdadulHaqueMilon.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
+
            });
            CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
            kaziNazrulIslam.setOnAction(actionEvent1 -> {
-               
-                   userWriterChoiceList = kaziNazrulIslam.getText();
-});
+               addFavouriteWriterType[writerNumber]=kaziNazrulIslam.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
+
+           });
            CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
            kaziAnwarHossain.setOnAction(actionEvent1 -> {
-               
-                   userWriterChoiceList = kaziAnwarHossain.getText();
+               addFavouriteWriterType[writerNumber]=kaziAnwarHossain.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
            sharatChandraChattropadhay.setOnAction(actionEvent1 -> {
-               
-                   userWriterChoiceList = sharatChandraChattropadhay.getText();
-               
+               addFavouriteWriterType[writerNumber]=sharatChandraChattropadhay.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
            rabindranathTagore.setOnAction(actionEvent1 -> {
-               
-               userWriterChoiceList = rabindranathTagore.getText();
+               addFavouriteWriterType[writerNumber]=rabindranathTagore.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
 
            CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
            sunilGangoPaddahay.setOnAction(actionEvent1 -> {
-               
-                   userWriterChoiceList = sunilGangoPaddahay.getText();
+               addFavouriteWriterType[writerNumber]=sunilGangoPaddahay.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
 
            CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
            samareshMajumdar.setOnAction(actionEvent1 -> {
-               
-                   userWriterChoiceList = samareshMajumdar.getText();
-               
+               addFavouriteWriterType[writerNumber]=samareshMajumdar.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
 
            emdadiyaPustokaloy.setOnAction(actionEvent1 -> {
-               userWriterChoiceList = emdadiyaPustokaloy.getText();
+               addFavouriteWriterType[writerNumber]=emdadiyaPustokaloy.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
            CheckBox othersWriter = new CheckBox("Others Writer");
            othersWriter.setOnAction(actionEvent1 -> {
-                   userWriterChoiceList = othersWriter.getText();
-               
+               addFavouriteWriterType[writerNumber]=othersWriter.getText();
+               userWriterChoiceList = userWriterChoiceList + addFavouriteWriterType[writerNumber]+"\t";
+               writerNumber++;
            });
 
            Label favouriteWriter = new Label("Choose YourFavourite Writer : ");
