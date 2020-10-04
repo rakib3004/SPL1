@@ -302,7 +302,7 @@ public class ReadingRoom extends Application {
 
             accountInfoLabel.setText("Successfully Find Your Account");
             try {
-                PriorityList   priorityList =    accountManagement.accountManagementGetRecommendedBookList(userName,userID);
+                PriorityList  priorityList =    accountManagement.accountManagementGetRecommendedBookList(userName,userID);
                 UserChoiceTableData userChoiceTableData = new UserChoiceTableData();
                 userChoiceTableData.start(primaryStage,userName,userID,priorityList);
             } catch (IOException e) {

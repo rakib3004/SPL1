@@ -462,7 +462,7 @@ for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
 
 }
 
-PriorityList priorityList = new PriorityList(favouriteWriterList,favouriteBookTypeList,typeCounter-1 );
+PriorityList priorityList = new PriorityList(favouriteWriterList,favouriteBookTypeList,typeCounter,writerCounter);
  return  priorityList;
     }
 }
