@@ -473,10 +473,10 @@ addFavouriteWriter = emdadiyaPustokaloy.getText();
        });
 
 
-       CheckBox others = new CheckBox("Others");
-       others.setOnAction(new EventHandler<ActionEvent>() {
+       CheckBox othersWriter = new CheckBox("Others Writer");
+       othersWriter.setOnAction(new EventHandler<ActionEvent>() {
            @Override public void handle(ActionEvent e) {
-addFavouriteWriter = others.getText();
+addFavouriteWriter = othersWriter.getText();
            }
        });
 
@@ -486,10 +486,9 @@ addFavouriteWriter = others.getText();
        favouriteWriter.setFont(font1);
 
            gridPane.addRow(9,humayonAhmed, muhammadJafarIqbal, rokibHasan);
-           gridPane.addRow(10,emdadulHaqueMilon,
-                   kaziNazrulIslam, kaziAnwarHossain);
+           gridPane.addRow(10,emdadulHaqueMilon, kaziNazrulIslam, kaziAnwarHossain);
            gridPane.addRow(11,sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay);
-           gridPane.addRow(12,samareshMajumdar, emdadiyaPustokaloy,others);
+           gridPane.addRow(12,samareshMajumdar, emdadiyaPustokaloy,othersWriter);
 
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
@@ -579,6 +578,19 @@ addFavouriteWriter = others.getText();
         gobesona.setFont(font5);
         onubad.setFont(font5);
         others1.setFont(font5);
+
+        humayonAhmed.setFont(font5);
+        muhammadJafarIqbal.setFont(font5);
+        rokibHasan.setFont(font5);
+        emdadulHaqueMilon.setFont(font5);
+        kaziNazrulIslam.setFont(font5);
+        kaziAnwarHossain.setFont(font5);
+        sharatChandraChattropadhay.setFont(font5);
+        rabindranathTagore.setFont(font5);
+        sunilGangoPaddahay.setFont(font5);
+        samareshMajumdar.setFont(font5);
+        emdadiyaPustokaloy.setFont(font5);
+           othersWriter.setFont(font5);
        final int[] gridPaneCounter = {0};
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
