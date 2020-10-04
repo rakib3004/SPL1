@@ -401,94 +401,8 @@ public class ReadingRoom extends Application {
        gridPane.addRow(2, readerName, readerTextField);
        gridPane.addRow(3, instituteName, instituteTextField);
        gridPane.addRow(4, radioButtonCollege, radioButtonUniversity);
-       gridPane.addRow(16,label3,cancelButton,enterButton,label4);
-       CheckBox humayonAhmed = new CheckBox("Humayon Ahmed");
-       humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
-           @Override
-           public void handle(ActionEvent e) {
-addFavouriteWriter = humayonAhmed.getText();
-           } });
+       gridPane.addRow(17,label3,cancelButton,enterButton,label4);
 
-       CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
-       muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = muhammadJafarIqbal.getText();
-           }
-       });
-       CheckBox rokibHasan = new CheckBox("Rokib Hasan");
-       rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = rokibHasan.getText();
-           }
-       });
-       CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
-       emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = emdadulHaqueMilon.getText();
-           }
-       });
-       CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
-       kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = kaziNazrulIslam.getText();
-           } });
-       CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
-       kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = kaziAnwarHossain.getText();
-           }
-       });
-       CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
-       sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = sharatChandraChattropadhay.getText();
-           }
-       });
-       CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
-       rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = rabindranathTagore.getText();
-           } });
-
-       CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
-       sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = sunilGangoPaddahay.getText();
-           }
-       });
-
-
-       CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
-       samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = samareshMajumdar.getText();
-           }
-       });
-       CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
-
-       emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = emdadiyaPustokaloy.getText();
-           }
-       });
-
-
-       CheckBox othersWriter = new CheckBox("Others Writer");
-       othersWriter.setOnAction(new EventHandler<ActionEvent>() {
-           @Override public void handle(ActionEvent e) {
-addFavouriteWriter = othersWriter.getText();
-           }
-       });
-
-
-
-       Label favouriteWriter = new Label("Favourite Writer");
-       favouriteWriter.setFont(font1);
-
-           gridPane.addRow(9,humayonAhmed, muhammadJafarIqbal, rokibHasan);
-           gridPane.addRow(10,emdadulHaqueMilon, kaziNazrulIslam, kaziAnwarHossain);
-           gridPane.addRow(11,sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay);
-           gridPane.addRow(12,samareshMajumdar, emdadiyaPustokaloy,othersWriter);
 
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
@@ -562,10 +476,12 @@ addFavouriteWriter = othersWriter.getText();
            userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
-
-       gridPane.addRow(6,uponnash,kobita,rochonaboli,religion);
-       gridPane.addRow(7,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
-       gridPane.addRow(8,biography,gobesona,onubad,others1);
+Label label = new Label("Choose Your Favourite Type : ");
+label.setFont(font1);
+       gridPane.addRow(6,label);
+       gridPane.addRow(7,uponnash,kobita,rochonaboli,religion);
+       gridPane.addRow(8,biggan,scienceFiction,shishuShahitto,kisoreUponnash);
+       gridPane.addRow(9,biography,gobesona,onubad,others1);
         uponnash.setFont(font5);
         kobita.setFont(font5);
         rochonaboli.setFont(font5);
@@ -578,7 +494,94 @@ addFavouriteWriter = othersWriter.getText();
         gobesona.setFont(font5);
         onubad.setFont(font5);
         others1.setFont(font5);
+           CheckBox humayonAhmed = new CheckBox("Humayon Ahmed");
+           humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
+               @Override
+               public void handle(ActionEvent e) {
+                   addFavouriteWriter = humayonAhmed.getText();
+               } });
 
+           CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
+           muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = muhammadJafarIqbal.getText();
+               }
+           });
+           CheckBox rokibHasan = new CheckBox("Rokib Hasan");
+           rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = rokibHasan.getText();
+               }
+           });
+           CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
+           emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = emdadulHaqueMilon.getText();
+               }
+           });
+           CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
+           kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = kaziNazrulIslam.getText();
+               } });
+           CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
+           kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = kaziAnwarHossain.getText();
+               }
+           });
+           CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
+           sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = sharatChandraChattropadhay.getText();
+               }
+           });
+           CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
+           rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = rabindranathTagore.getText();
+               } });
+
+           CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
+           sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = sunilGangoPaddahay.getText();
+               }
+           });
+
+
+           CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
+           samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = samareshMajumdar.getText();
+               }
+           });
+           CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
+
+           emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = emdadiyaPustokaloy.getText();
+               }
+           });
+
+
+           CheckBox othersWriter = new CheckBox("Others Writer");
+           othersWriter.setOnAction(new EventHandler<ActionEvent>() {
+               @Override public void handle(ActionEvent e) {
+                   addFavouriteWriter = othersWriter.getText();
+               }
+           });
+
+
+
+           Label favouriteWriter = new Label("Choose YourFavourite Writer : ");
+           favouriteWriter.setFont(font1);
+
+           gridPane.addRow(11,favouriteWriter);
+           gridPane.addRow(12,humayonAhmed, muhammadJafarIqbal, rokibHasan);
+           gridPane.addRow(13,emdadulHaqueMilon, kaziNazrulIslam, kaziAnwarHossain);
+           gridPane.addRow(14,sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay);
+           gridPane.addRow(15,samareshMajumdar, emdadiyaPustokaloy,othersWriter);
         humayonAhmed.setFont(font5);
         muhammadJafarIqbal.setFont(font5);
         rokibHasan.setFont(font5);
