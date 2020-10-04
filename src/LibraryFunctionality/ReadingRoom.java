@@ -357,7 +357,7 @@ public class ReadingRoom extends Application {
             radioButtonCollege.setToggleGroup(toggleGroup);
             radioButtonUniversity.setToggleGroup(toggleGroup);
 
-       Label insertNameInstitute = new Label("Insert Your Name & Institute");
+       Label insertNameInstitute = new Label("Insert Your Name & Institute : ");
        Button enterButton = new Button("----Enter----");
        enterButton.setPrefSize(160, 40);
        Stage infoStage = new Stage();
@@ -621,7 +621,7 @@ else{
        gridPane.setMaxSize(980, 650);
 
        Image image19 = new Image("Images"+ File.separator +"signUp.jpg");
-       Canvas canvas19 = new Canvas(850,600);
+       Canvas canvas19 = new Canvas(850,750);
        Group group19 = new Group();
        group19.getChildren().addAll(canvas19);
        group19.getChildren().addAll(gridPane);
@@ -630,7 +630,7 @@ else{
        GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
        graphicsContext.drawImage(image19,0,0);
 
-       Scene S = new Scene(group19, 850, 600,Color.DODGERBLUE);
+       Scene S = new Scene(group19, 850, 750,Color.DODGERBLUE);
        infoStage.setTitle("Login");
        infoStage.setScene(S);
        infoStage.show();
