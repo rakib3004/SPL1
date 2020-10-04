@@ -2,22 +2,12 @@ package LibraryFunctionality;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidation;
-import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.SevenValueStatistics;
-import InfoDisplay.BookInformationShow;
 import JavFX.*;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
-import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
-import RecommendationAlgorithm.PageRankAlgorithm;
-import RecommendationAlgorithm.ProcessImplementation;
-import LinearRegression.FourVariableRegression;
 import UserInterfacePackage.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -202,9 +192,10 @@ public class ReadingRoom extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    String userChoiceList ="";
-    String addFavouriteWriter="";
+    String userBookTypeChoiceList ="";
+    String userWriterChoiceList ="";
     String [] addFavouriteBookType = new String[12];
+    String [] addFavouriteWriterType = new String[12];
     int typeNumber=0;
     String userName;
     String userID;
@@ -407,73 +398,73 @@ public class ReadingRoom extends Application {
        CheckBox uponnash =new CheckBox("Uponnash");
        uponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=uponnash.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox kobita =new CheckBox("Kobita");
        kobita.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kobita.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox rochonaboli =new CheckBox("Rochonaboli");
        rochonaboli.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=rochonaboli.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox religion =new CheckBox("Religion");
        religion.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=religion.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox biggan =new CheckBox("Biggan");
        biggan.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biggan.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox scienceFiction =new CheckBox("Science Fiction");
        scienceFiction.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=scienceFiction.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox shishuShahitto =new CheckBox("Shishu Shahitto");
        shishuShahitto.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=shishuShahitto.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox kisoreUponnash =new CheckBox("Kisore Uponnash");
        kisoreUponnash.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=kisoreUponnash.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox biography =new CheckBox("Biography");
        biography.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=biography.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox gobesona =new CheckBox("Gobesona");
        gobesona.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=gobesona.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox onubad =new CheckBox("Onubad");
        onubad.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=onubad.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
        CheckBox others1 =new CheckBox("Others");
        others1.setOnAction(actionEvent1 -> {
            addFavouriteBookType[typeNumber]=others1.getText();
-           userChoiceList = userChoiceList + addFavouriteBookType[typeNumber]+"\t";
+           userBookTypeChoiceList = userBookTypeChoiceList + addFavouriteBookType[typeNumber]+"\t";
            typeNumber++;
        });
 Label label = new Label("Choose Your Favourite Type : ");
@@ -498,90 +489,85 @@ label.setFont(font1);
            humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
                @Override
                public void handle(ActionEvent e) {
-                   addFavouriteWriter = humayonAhmed.getText();
+                   userWriterChoiceList = humayonAhmed.getText();
                } });
 
            CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
            muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = muhammadJafarIqbal.getText();
+                   userWriterChoiceList = muhammadJafarIqbal.getText();
                }
            });
            CheckBox rokibHasan = new CheckBox("Rokib Hasan");
            rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = rokibHasan.getText();
+                   userWriterChoiceList = rokibHasan.getText();
                }
            });
            CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
            emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = emdadulHaqueMilon.getText();
+                   userWriterChoiceList = emdadulHaqueMilon.getText();
                }
            });
            CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
            kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = kaziNazrulIslam.getText();
+                   userWriterChoiceList = kaziNazrulIslam.getText();
                } });
            CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
            kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = kaziAnwarHossain.getText();
+                   userWriterChoiceList = kaziAnwarHossain.getText();
                }
            });
            CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
            sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = sharatChandraChattropadhay.getText();
+                   userWriterChoiceList = sharatChandraChattropadhay.getText();
                }
            });
            CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
            rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = rabindranathTagore.getText();
+                   userWriterChoiceList = rabindranathTagore.getText();
                } });
 
            CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
            sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = sunilGangoPaddahay.getText();
+                   userWriterChoiceList = sunilGangoPaddahay.getText();
                }
            });
-
 
            CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
            samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = samareshMajumdar.getText();
+                   userWriterChoiceList = samareshMajumdar.getText();
                }
            });
            CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
 
            emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = emdadiyaPustokaloy.getText();
+                   userWriterChoiceList = emdadiyaPustokaloy.getText();
                }
            });
-
-
            CheckBox othersWriter = new CheckBox("Others Writer");
            othersWriter.setOnAction(new EventHandler<ActionEvent>() {
                @Override public void handle(ActionEvent e) {
-                   addFavouriteWriter = othersWriter.getText();
+                   userWriterChoiceList = othersWriter.getText();
                }
            });
 
-
-
            Label favouriteWriter = new Label("Choose YourFavourite Writer : ");
            favouriteWriter.setFont(font1);
-
            gridPane.addRow(11,favouriteWriter);
            gridPane.addRow(12,humayonAhmed, muhammadJafarIqbal, rokibHasan);
            gridPane.addRow(13,emdadulHaqueMilon, kaziNazrulIslam, kaziAnwarHossain);
            gridPane.addRow(14,sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay);
            gridPane.addRow(15,samareshMajumdar, emdadiyaPustokaloy,othersWriter);
+
         humayonAhmed.setFont(font5);
         muhammadJafarIqbal.setFont(font5);
         rokibHasan.setFont(font5);
@@ -593,7 +579,7 @@ label.setFont(font1);
         sunilGangoPaddahay.setFont(font5);
         samareshMajumdar.setFont(font5);
         emdadiyaPustokaloy.setFont(font5);
-           othersWriter.setFont(font5);
+        othersWriter.setFont(font5);
        final int[] gridPaneCounter = {0};
        radioButtonCollege.setOnAction(actionEvent1 -> {
          //  gridPane.getChildren().remove(6);
@@ -652,7 +638,7 @@ else{
            okButton.setTranslateX(180);
            okButton.setTranslateY(150);
            okButton.setPrefSize(75,25);
-           if(addFavouriteWriter.equals("")||userChoiceList.equals("")||readerTextField.getText().equals("")||instituteTextField.getText().equals("")){
+           if(userWriterChoiceList.equals("")|| userBookTypeChoiceList.equals("")||readerTextField.getText().equals("")||instituteTextField.getText().equals("")){
                accountInfoLabel.setText("Your Information are incomplete!!!!");
                okButton.setTranslateX(180);
                okButton.setTranslateY(120);
@@ -694,14 +680,14 @@ else{
                System.out.println(addReaderName+"\t"+addInstituteName+"\t"+educationLevel+"\t"+stringStudyLevel);
 */
 
-               int userChoiceListLength = userChoiceList.length();
+               int userChoiceListLength = userBookTypeChoiceList.length();
 
-               userChoiceList = userChoiceList.substring(0,userChoiceListLength-1);
-               userChoiceList = userChoiceList +"\n"+addFavouriteWriter;
+               userBookTypeChoiceList = userBookTypeChoiceList.substring(0,userChoiceListLength-1);
+               userBookTypeChoiceList = userBookTypeChoiceList +"\n"+ userWriterChoiceList;
                String textUserID = "0000";
                AccountManagement accountManagement = new AccountManagement();
                try {
-                   textUserID=  accountManagement.accountManagementSignUpMethods(infoDataArray, userChoiceList);
+                   textUserID=  accountManagement.accountManagementSignUpMethods(infoDataArray, userBookTypeChoiceList);
                } catch (IOException e) {
                    e.printStackTrace();
                }
