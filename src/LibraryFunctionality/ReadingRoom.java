@@ -197,6 +197,7 @@ public class ReadingRoom extends Application {
     String [] addFavouriteBookType = new String[12];
     String [] addFavouriteWriterType = new String[12];
     int typeNumber=0;
+    int writerNumber=0;
     String userName;
     String userID;
     String stringStudyLevel="";
@@ -486,78 +487,66 @@ label.setFont(font1);
         onubad.setFont(font5);
         others1.setFont(font5);
            CheckBox humayonAhmed = new CheckBox("Humayon Ahmed");
-           humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
-               @Override
-               public void handle(ActionEvent e) {
-                   userWriterChoiceList = humayonAhmed.getText();
-               } });
+           humayonAhmed.setOnAction(actionEvent1 -> {
+
+       });
 
            CheckBox muhammadJafarIqbal = new CheckBox("Muhammad Jafar Iqbal");
-           muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
-                   userWriterChoiceList = muhammadJafarIqbal.getText();
-               }
+           muhammadJafarIqbal.setOnAction(actionEvent1 -> {
+               
            });
            CheckBox rokibHasan = new CheckBox("Rokib Hasan");
-           rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
-                   userWriterChoiceList = rokibHasan.getText();
-               }
+           rokibHasan.setOnAction(actionEvent1 -> {
+               
+               userWriterChoiceList = rokibHasan.getText();
            });
            CheckBox emdadulHaqueMilon = new CheckBox("Emdadul Haque Milon");
-           emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
-                   userWriterChoiceList = emdadulHaqueMilon.getText();
-               }
+           emdadulHaqueMilon.setOnAction(actionEvent1 -> {
+               userWriterChoiceList = emdadulHaqueMilon.getText();
            });
            CheckBox kaziNazrulIslam = new CheckBox("Kazi Nazrul Islam");
-           kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           kaziNazrulIslam.setOnAction(actionEvent1 -> {
+               
                    userWriterChoiceList = kaziNazrulIslam.getText();
-               } });
+});
            CheckBox kaziAnwarHossain = new CheckBox("Kazi Anwar Hossain");
-           kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           kaziAnwarHossain.setOnAction(actionEvent1 -> {
+               
                    userWriterChoiceList = kaziAnwarHossain.getText();
-               }
            });
            CheckBox sharatChandraChattropadhay = new CheckBox("Sharat Chandra Chattropadhay");
-           sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           sharatChandraChattropadhay.setOnAction(actionEvent1 -> {
+               
                    userWriterChoiceList = sharatChandraChattropadhay.getText();
-               }
+               
            });
            CheckBox rabindranathTagore = new CheckBox("Rabindranath Tagore");
-           rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
-                   userWriterChoiceList = rabindranathTagore.getText();
-               } });
+           rabindranathTagore.setOnAction(actionEvent1 -> {
+               
+               userWriterChoiceList = rabindranathTagore.getText();
+           });
 
            CheckBox sunilGangoPaddahay = new CheckBox("Sunil Gango Paddahay");
-           sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           sunilGangoPaddahay.setOnAction(actionEvent1 -> {
+               
                    userWriterChoiceList = sunilGangoPaddahay.getText();
-               }
            });
 
            CheckBox samareshMajumdar = new CheckBox("Samaresh majumdar");
-           samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           samareshMajumdar.setOnAction(actionEvent1 -> {
+               
                    userWriterChoiceList = samareshMajumdar.getText();
-               }
+               
            });
            CheckBox emdadiyaPustokaloy = new CheckBox("Emdadiya Pustokaloy");
 
-           emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
-                   userWriterChoiceList = emdadiyaPustokaloy.getText();
-               }
+           emdadiyaPustokaloy.setOnAction(actionEvent1 -> {
+               userWriterChoiceList = emdadiyaPustokaloy.getText();
            });
            CheckBox othersWriter = new CheckBox("Others Writer");
-           othersWriter.setOnAction(new EventHandler<ActionEvent>() {
-               @Override public void handle(ActionEvent e) {
+           othersWriter.setOnAction(actionEvent1 -> {
                    userWriterChoiceList = othersWriter.getText();
-               }
+               
            });
 
            Label favouriteWriter = new Label("Choose YourFavourite Writer : ");
