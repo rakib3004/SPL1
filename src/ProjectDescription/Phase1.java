@@ -1,6 +1,7 @@
 package ProjectDescription;
 
 import FilePackage.DateTimeWriter;
+import JavFX.Main;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -8,6 +9,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -42,9 +45,9 @@ public class Phase1 extends Application {
                 exception.printStackTrace();
             }
         });
-        setStyle(next);
-        setStyle(back);
-
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        next.setFont(font3);
         back.setPrefSize(200, 80);
         next.setPrefSize(200, 80);
         Image image = new Image("Images"+ File.separator +"Slide3.jpg");
@@ -90,8 +93,9 @@ public class Phase1 extends Application {
                 exception.printStackTrace();
             }
         });
-        setStyle(next);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        next.setFont(font3);
 
         back.setPrefSize(200, 80);
         next.setPrefSize(200, 80);
@@ -115,11 +119,11 @@ public class Phase1 extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
-        Button next = new Button("Next");
+        Button home = new Button("Home");
         back.setTranslateX(0);
         back.setTranslateY(650);
-        next.setTranslateX(1100);
-        next.setTranslateY(650);
+        home.setTranslateX(1100);
+        home.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             Phase1 phase1 = new Phase1();
             try {
@@ -128,23 +132,24 @@ public class Phase1 extends Application {
                 exception.printStackTrace();
             }
         });
-        next.setOnAction(actionEvent -> {
-            Phase1 phase1 = new Phase1();
+        home.setOnAction(actionEvent -> {
+            Main main = new Main();
             try {
-                phase1.start(primaryStage);
+                main.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-        setStyle(next);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        home.setFont(font3);
         back.setPrefSize(200, 80);
-        next.setPrefSize(200, 80);
+        home.setPrefSize(200, 80);
 
         Image image = new Image("Images"+ File.separator +"Slide5.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,next,back);
+        group.getChildren().addAll(canvas,home,back);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);

@@ -45,8 +45,9 @@ public class StaticStage extends Application {
                 exception.printStackTrace();
             }
         });
-        setStyle(next);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        next.setFont(font3);
         back.setPrefSize(200, 80);
         next.setPrefSize(200, 80);
 
