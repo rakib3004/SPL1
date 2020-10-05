@@ -25,7 +25,7 @@ public class About extends Application {
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(0);
+        back.setTranslateX(50);
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
@@ -43,8 +43,9 @@ public class About extends Application {
             System.exit(0);
         });
 
-        setStyle(exit);
-        setStyle(back);
+            Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+            back.setFont(font3);
+            exit.setFont(font3);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
