@@ -29,7 +29,7 @@ public class TimeCollection {
             number =1;
             writerCount++;
             List<Double> list = new ArrayList<>();
-   System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
+   System.out.println("##########Books issue in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
                     System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
@@ -93,7 +93,7 @@ public class TimeCollection {
             number =1;
             writerCount++;
             List<Double> list = new ArrayList<>();
-            System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
+            System.out.println("##########Books issue in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
                     System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
@@ -156,7 +156,7 @@ public class TimeCollection {
 
             List<Double> list = new ArrayList<>();
 
-            System.out.println("##########Books issu in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
+            System.out.println("##########Books issue in :  \""+element.substring(0,2)+" - "+element.substring(1,3)+"\" #########("+writerCount+")###");
             for(iterator1=0;iterator1<numberOfBooks;iterator1++){
                 if(priorityData[iterator1].bookData.bookId.substring(3,6).equals(element)){
                     System.out.println(number+" . "+priorityData[iterator1].bookData.bookName);
