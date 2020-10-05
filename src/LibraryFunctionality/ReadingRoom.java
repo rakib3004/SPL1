@@ -107,9 +107,9 @@ public class ReadingRoom extends Application {
             }
         });
         rules.setOnAction(actionEvent -> {
-            AuthorSystem authorSystem = new AuthorSystem();
+            ProjectDescription projectDescription = new ProjectDescription();
             try {
-                authorSystem.start(primaryStage);
+                projectDescription.startUserRules(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();

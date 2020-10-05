@@ -2,6 +2,7 @@ package JavFX;
 
 import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
+import LibraryFunctionality.ReadingRoom;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -115,13 +116,13 @@ public void startUserRules(Stage primaryStage) {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(50);
-        back.setTranslateY(650);
+        back.setTranslateY(680);
         exit.setTranslateX(1100);
-        exit.setTranslateY(650);
+        exit.setTranslateY(680);
         back.setOnAction(actionEvent -> {
-   AuthorSystem authorSystem = new AuthorSystem();
+   ReadingRoom readingRoom = new ReadingRoom();
             try {
-                authorSystem.start(primaryStage);
+                readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
