@@ -130,7 +130,7 @@ int positionLocator=145;
         typeNameText.setTranslateY(400-positionLocator);
         bookPriceText.setTranslateY(500-positionLocator);
         bookInformationText.setTranslateY(700-positionLocator);
-        TextField bookNameTextField = new TextField("Nil Oporajita");
+        TextField bookNameTextField = new TextField("");
         TextField writerNameTextField = new TextField();
         TextField typeNameTextField = new TextField();
         TextField bookPriceTextField = new TextField();
