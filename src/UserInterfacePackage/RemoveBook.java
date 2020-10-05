@@ -24,6 +24,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -108,8 +110,9 @@ ReverseSorting reverseSorting = new ReverseSorting();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        exit.setFont(font3);
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
@@ -119,7 +122,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         show.setOnAction(actionEvent -> {
             showInfo(primaryStage,labelName,data);
         });
-        setStyle(show);
+        show.setFont(font3);
 
         show.setPrefSize(200, 80);
         labelName="Top Books of "+this.getClass().getSimpleName();
@@ -190,8 +193,9 @@ ReverseSorting reverseSorting = new ReverseSorting();
         });
 
 
-        setStyle(exit);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        exit.setFont(font3);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
