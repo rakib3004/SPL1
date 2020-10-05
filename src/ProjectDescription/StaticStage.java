@@ -8,6 +8,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -68,11 +70,11 @@ public class StaticStage extends Application {
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
-        Button next = new Button("Next");
+        Button exit = new Button("Exit");
         back.setTranslateX(0);
         back.setTranslateY(650);
-        next.setTranslateX(1100);
-        next.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             About about = new About();
 
@@ -83,23 +85,19 @@ public class StaticStage extends Application {
             }
         });
 
-        next.setOnAction(actionEvent -> {
-            Phase1 phase1 = new Phase1();
-            try {
-                phase1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+        exit.setOnAction(actionEvent -> {
+           System.exit(1129);
         });
-        setStyle(next);
-        setStyle(back);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,20);
+        back.setFont(font3);
+        exit.setFont(font3);
         back.setPrefSize(200, 80);
-        next.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
 
         Image image = new Image("Images"+ File.separator +"UML.png");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,next,back);
+        group.getChildren().addAll(canvas,exit,back);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
 
