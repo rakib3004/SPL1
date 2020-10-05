@@ -148,7 +148,7 @@ public class PRA_Chart_View extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Analytic Hierarchy Algorithm");
+        Text text = new Text("Page Rank Algorithm");
         text.setTranslateX(520);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -322,7 +322,7 @@ public class PRA_Chart_View extends Application {
       exit.setPrefSize(120, 20);
       exit.setContentDisplay(ContentDisplay.LEFT);
       exit.setFont(font);
-      Text text = new Text("Analytic Hierarchy Algorithm");
+      Text text = new Text("Page Rank Algorithm");
       text.setTranslateX(520);
       text.setTranslateY(500);
       text.setFont(font1);
@@ -534,7 +534,7 @@ public class PRA_Chart_View extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
-        Text text = new Text("Analytic Hierarchy Algorithm");
+        Text text = new Text("Page Rank Algorithm");
         text.setTranslateX(520);
         text.setTranslateY(500);
         text.setFont(font1);
@@ -750,7 +750,7 @@ public class PRA_Chart_View extends Application {
       exit.setPrefSize(120, 20);
       exit.setContentDisplay(ContentDisplay.LEFT);
       exit.setFont(font);
-      Text text = new Text("Analytic Hierarchy Algorithm");
+      Text text = new Text("Page Rank Algorithm");
       text.setTranslateX(520);
       text.setTranslateY(500);
       text.setFont(font1);

@@ -64,3 +64,12 @@ public class ProjectDescription extends Application {
         primaryStage.show();
     }
 }
+ /*
+
+   Class tree/ Diagram ache naki kono
+        Coding difficulties ki ki
+        Function name readable
+        Comment ache naki kono ( important jaygay comment rakhte hobe)
+        Library r use ache naki
+
+        */
