@@ -1,6 +1,6 @@
 package CrossValidationProcess;
 import Collection.WriterCollection;
-import DataComparing.CodeValidationShowing;
+import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationShow;
 import InfoDisplay.SevenValueStatistics;
@@ -84,9 +84,9 @@ public class CrossValidation extends Application {
         crossValidationDescription.setGraphic(new ImageView(image3));
 
         crossValidationImplementation.setOnAction(actionEvent -> {
-            CodeValidationShowing codeValidationShowing = new CodeValidationShowing();
+            CrossValidationShowing crossValidationShowing = new CrossValidationShowing();
             try {
-                codeValidationShowing.start(primaryStage);
+                crossValidationShowing.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

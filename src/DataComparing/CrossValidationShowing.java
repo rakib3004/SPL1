@@ -36,7 +36,7 @@ import java.util.List;
 
 import static javafx.scene.paint.Color.DARKBLUE;
 
-public class CodeValidationShowing extends Application {
+public class CrossValidationShowing extends Application {
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
@@ -133,7 +133,7 @@ int iterator;
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
-                new CodeValidationShowing.RowSelectChangeListener());
+                new CrossValidationShowing.RowSelectChangeListener());
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
