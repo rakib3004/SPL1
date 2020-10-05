@@ -68,9 +68,9 @@ int iterator;
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
-
+        Font font10= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
+        back.setFont(font10);
+        exit.setFont(font10);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         back.setTranslateX(0);
