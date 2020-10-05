@@ -7,6 +7,7 @@ import InfoDisplay.SevenValueStatistics;
 import JavFX.AuthorSystem;
 import JavFX.Main;
 import JavFX.ProcessAnalysis;
+import JavFX.ProjectDescription;
 import LibraryFunctionality.ReadingRoom;
 import LinearRegression.FourVariableRegression;
 import ProjectDescription.About;
@@ -97,8 +98,8 @@ public class CrossValidation extends Application {
         });
         crossValidationDescription.setOnAction(actionEvent -> {
             try {
-                About about = new About();
-                about.start(primaryStage);
+                ProjectDescription projectDescription = new ProjectDescription();
+                projectDescription.start(primaryStage);
             }
             catch (Exception exception) {
                 exception.printStackTrace();

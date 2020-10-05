@@ -1,5 +1,6 @@
 package JavFX;
 
+import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -75,9 +76,9 @@ public class ProjectDescription extends Application {
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
-   AuthorSystem authorSystem = new AuthorSystem();
+   CrossValidation crossValidation = new CrossValidation();
             try {
-                authorSystem.start(primaryStage);
+                crossValidation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
