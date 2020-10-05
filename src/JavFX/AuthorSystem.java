@@ -100,8 +100,8 @@ public class AuthorSystem extends Application {
         });
         processDescription.setOnAction(actionEvent -> {
             try {
-                About about = new About();
-                about.start(primaryStage);
+                ProjectDescription projectDescription = new ProjectDescription();
+                projectDescription.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
