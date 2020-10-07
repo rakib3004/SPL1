@@ -1,1 +1,16 @@
-Main	Mon 05.10.2020 at 07:51:06 PM
+Main	Wed 07.10.2020 at 08:55:50 PM
+LibraryDesk	Wed 07.10.2020 at 08:56:07 PM
+BookInformationShow	Wed 07.10.2020 at 08:56:09 PM
+GenericsOfBook	Wed 07.10.2020 at 08:56:11 PM
+InfoBarChart	Wed 07.10.2020 at 08:56:11 PM
+Processing	Wed 07.10.2020 at 08:56:11 PM
+DataParsing	Wed 07.10.2020 at 08:56:11 PM
+BookNumber	Wed 07.10.2020 at 08:56:11 PM
+InfoPieChart	Wed 07.10.2020 at 08:56:18 PM
+InfoPieChart	Wed 07.10.2020 at 08:56:21 PM
+BookInformationShow	Wed 07.10.2020 at 08:56:22 PM
+DemandsOfBook	Wed 07.10.2020 at 08:56:24 PM
+InfoPieChart	Wed 07.10.2020 at 08:56:25 PM
+Processing	Wed 07.10.2020 at 08:56:25 PM
+DataParsing	Wed 07.10.2020 at 08:56:25 PM
+BookNumber	Wed 07.10.2020 at 08:56:25 PM

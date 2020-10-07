@@ -28,6 +28,12 @@ public class ButtonDesign extends Application {
       button.setTranslateY(y);
         Font font = Font.font(Font.getFontNames().get(0),
                 FontWeight.BOLD,fontSize);
+        button.setFont(font);
+        return  button;
+    }public Button systemLine(Button button,int w, int h, int x, int y){
+      button.setPrefSize(w,h);
+      button.setTranslateX(x);
+      button.setTranslateY(y);
         return  button;
     }
     public LineChart systemLine(LineChart lineChart,int w, int h, int x, int y){

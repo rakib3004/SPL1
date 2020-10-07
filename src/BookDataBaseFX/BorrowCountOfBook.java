@@ -3,6 +3,7 @@ package BookDataBaseFX;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationShow;
 import JavFX.Main;
+import Layout.ButtonDesign;
 import VisualRepresentation.AnalyticChart;
 import VisualRepresentation.InfoBarChart;
 import VisualRepresentation.InfoPieChart;
@@ -34,6 +35,7 @@ public class BorrowCountOfBook extends Application {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+        ButtonDesign buttonDesign = new ButtonDesign();
         Font font = new Font(14);
         Font font1 = new Font(47);
         Font font2 = new Font(26);
@@ -65,19 +67,11 @@ public class BorrowCountOfBook extends Application {
                 exception.printStackTrace();
             }
         });
-        barChart.setPrefSize(410, 230);
-        pieChart.setPrefSize(410, 230);
-        analyticChart.setPrefSize(410, 230);
 
-        barChart.setFont(font2);
-        pieChart.setFont(font2);
-        analyticChart.setFont(font2);
-        barChart.setTranslateX(30);
-        barChart.setTranslateY(35);
-        pieChart.setTranslateX(30);
-        pieChart.setTranslateY(270);
-        analyticChart.setTranslateX(30);
-        analyticChart.setTranslateY(505);
+        barChart = buttonDesign.systemLine(barChart,410,230,30,35,26);
+        pieChart = buttonDesign.systemLine(pieChart,410,230,30,270,26);
+        analyticChart = buttonDesign.systemLine(analyticChart,410,230,30,505,26);
+
         barChart.setContentDisplay(ContentDisplay.TOP);
         pieChart.setContentDisplay(ContentDisplay.TOP);
         analyticChart.setContentDisplay(ContentDisplay.TOP);
@@ -201,23 +195,4 @@ public class BorrowCountOfBook extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle( Button button)
-    {
-        button.setStyle("-fx-background-color: \n" +
-                "        #090a0c,\n" +
-                "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
-                "        linear-gradient(#20262b, #191d22),\n" +
-                "        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
-                "        -fx-background-radius: 5,4,3,5;\n" +
-                "        -fx-background-insets: 0,1,2,0;\n" +
-                "        -fx-text-fill: white;\n" +
-                "        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
-                "        -fx-font-family: \"Arial\";\n" +
-                "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
-                "        -fx-font-size: 1.5em;\n" +
-                "        -fx-padding: 10 20 10 20;");
-        return  button;
-    }
-
-
-}
+ }
