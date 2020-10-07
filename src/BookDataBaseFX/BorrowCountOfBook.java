@@ -68,9 +68,6 @@ public class BorrowCountOfBook extends Application {
             }
         });
 
-        barChart = buttonDesign.systemLine(barChart,410,230,30,35,26);
-        pieChart = buttonDesign.systemLine(pieChart,410,230,30,270,26);
-        analyticChart = buttonDesign.systemLine(analyticChart,410,230,30,505,26);
 
         barChart.setContentDisplay(ContentDisplay.TOP);
         pieChart.setContentDisplay(ContentDisplay.TOP);
@@ -189,10 +186,16 @@ public class BorrowCountOfBook extends Application {
                 pieChart, exit, back, home, text, analyticChart);
         Scene scene1 = new Scene(group,1500,950);
 
-
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
+        barChart = buttonDesign.systemLine(barChart,410,230,30,35,26);
+        pieChart = buttonDesign.systemLine(pieChart,410,230,30,270,26);
+        analyticChart = buttonDesign.systemLine(analyticChart,410,230,30,505,26);
+         home = buttonDesign.systemLine(home,410,230,30,35,26);
+        back = buttonDesign.systemLine(back,410,230,30,270,26);
+        exit = buttonDesign.systemLine(exit,410,230,30,505,26);
+
     }
  }

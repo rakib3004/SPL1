@@ -14,3 +14,14 @@ InfoPieChart	Wed 07.10.2020 at 08:56:25 PM
 Processing	Wed 07.10.2020 at 08:56:25 PM
 DataParsing	Wed 07.10.2020 at 08:56:25 PM
 BookNumber	Wed 07.10.2020 at 08:56:25 PM
+BorrowCountOfBook	Wed 07.10.2020 at 11:48:17 PM
+InfoBarChart	Wed 07.10.2020 at 11:48:23 PM
+Processing	Wed 07.10.2020 at 11:48:23 PM
+DataParsing	Wed 07.10.2020 at 11:48:23 PM
+BookNumber	Wed 07.10.2020 at 11:48:23 PM
+BorrowCountOfBook	Wed 07.10.2020 at 11:48:26 PM
+InfoBarChart	Wed 07.10.2020 at 11:48:28 PM
+Processing	Wed 07.10.2020 at 11:48:28 PM
+DataParsing	Wed 07.10.2020 at 11:48:28 PM
+BookNumber	Wed 07.10.2020 at 11:48:28 PM
+BorrowCountOfBook	Wed 07.10.2020 at 11:48:45 PM
