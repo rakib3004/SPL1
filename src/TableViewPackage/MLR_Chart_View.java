@@ -401,23 +401,15 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         double getWeightAverage=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(priorityData[iterator].getAHPweight()<2.00){
-                getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
-            }
-            else{
-                getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+                getWeightAverage = getWeightAverage+  (priorityData[iterator].getMLRweight());
 
-            }
         }
         getWeightAverage = getWeightAverage/numberOfBooks;
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            if(priorityData[iterator].getAHPweight()<2.00){
-                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
-            }
-            else{
-                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
-            }
+
+                standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getMLRweight()-getWeightAverage,2);
+
         }
 
         standardDeviation/=numberOfBooks;
@@ -426,6 +418,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         Label labelDeviation = new Label("Standard Deviation : "+standardDeviation);
         labelMean = buttonDesign.systemLine(labelMean,750,380,25);
         labelDeviation = buttonDesign.systemLine(labelDeviation,750,410,25);
+        group.getChildren().addAll(labelMean,labelDeviation);
 
         Scene scene1 = new Scene(group, 1500, 950);
 

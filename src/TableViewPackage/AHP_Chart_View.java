@@ -382,9 +382,6 @@ public class AHP_Chart_View extends Application {
      group.getChildren().addAll(scatter_chart,
              line_chart,
              stacked_area_chart,exit,home,text,back);
-
-
-
      priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(
