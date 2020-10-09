@@ -244,7 +244,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("01")) {
                 //   uponnashTypeNO++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -255,7 +255,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("05")) {
                 //    rochonaBoliTypeNO++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -265,7 +265,7 @@ public class ShowStackedArea extends Application {
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("02")) {
             //    kobitaTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -275,14 +275,14 @@ public class ShowStackedArea extends Application {
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("13")) {
             //  bigganTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
         }
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("14")) {
             //   bigganTypeNO++;
 
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -292,7 +292,7 @@ public class ShowStackedArea extends Application {
         list.clear();
         for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("06")) {
             //   sciFicTypeNO++;
-           list.add(priorityData[iterator].getMLRweight());
+           list.add(priorityData[iterator].getRankValue());
         }
            int sizeB = list.size();
             if(sizeB>7){
@@ -305,7 +305,7 @@ public class ShowStackedArea extends Application {
 
         }  } for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("11")) {
             //  shisuSahittoTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -314,7 +314,7 @@ public class ShowStackedArea extends Application {
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("08")) {
             // onubadTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -323,7 +323,7 @@ public class ShowStackedArea extends Application {
         }
         list.clear();for (iterator = 0; iterator < numberOfBooks; iterator++) { if (priorityData[iterator].bookData.bookId.substring(0,2).equals("12")) {
             //  onubadTypeNO++;
-            list.add(priorityData[iterator].getMLRweight());
+            list.add(priorityData[iterator].getRankValue());
         }
             int sizeB = list.size();
             if(sizeB>7){
@@ -334,7 +334,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(0,2).equals("04")) {
                 //     religionTypeNO++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -663,7 +663,7 @@ public class ShowStackedArea extends Application {
         for(iterator=0;iterator<numberOfBooks;iterator++){
             if(priorityData[iterator].bookData.bookId.contains("17")){
                 //year2017Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -673,7 +673,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("16")){
                 //year2016Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -683,7 +683,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("15")){
                 //year2015Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -693,7 +693,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("14")){
                 //year2014Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -703,7 +703,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("13")){
                 //year2013Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -713,7 +713,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0812")){
                 //year2012Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -723,7 +723,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0212")){
                 //year2012Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -733,7 +733,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1211")){
                 //year2011Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -743,7 +743,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0311")){
                 //year2011Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -753,7 +753,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1210")){
                 //year2010Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -763,7 +763,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0810")){
                 //year2010Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -773,7 +773,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0410")){
                 //year2010Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -783,7 +783,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1009")){
                 //year2009Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -793,7 +793,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0409")){
                 //year2009Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -803,7 +803,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("1208")){
                 //year2008Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -813,7 +813,7 @@ public class ShowStackedArea extends Application {
         list.clear(); for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].bookData.bookId.contains("0608")){
                 //year2008Books++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1146,7 +1146,7 @@ public class ShowStackedArea extends Application {
         for(iterator=0;iterator<numberOfBooks;iterator++){
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=30.0){
                 //over30Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1158,7 +1158,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=25.0){
                 //over25Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1170,7 +1170,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=20.0){
                 //over20Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1182,7 +1182,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=15.0){
                 //over15Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1193,7 +1193,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=10.0){
                 //over10Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1205,7 +1205,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=7.0){
                 //over7Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1216,7 +1216,7 @@ public class ShowStackedArea extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))>=4.0){
                 //over4Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1227,7 +1227,7 @@ public class ShowStackedArea extends Application {
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(Double.parseDouble(String.valueOf(priorityData[iterator].borrowPriority))<4.0){
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1540,7 +1540,7 @@ public class ShowStackedArea extends Application {
 
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=500.00){
                 //over500Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1552,7 +1552,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=400.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<500.00){
                 //over400Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1564,7 +1564,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=350.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<400.00){
                 //over350Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1576,7 +1576,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=300.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over300Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
 
             }
             int sizeB = list.size();
@@ -1591,7 +1591,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=250.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<350.00){
                 //over250Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
 
             }
             int sizeB = list.size();
@@ -1606,7 +1606,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=210.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<250.00){
                 //over210Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
 
             }
             int sizeB = list.size();
@@ -1621,7 +1621,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=180.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<210.00){
                 //over180Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
 
             }
             int sizeB = list.size();
@@ -1635,7 +1635,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=160.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<180.00){
                 //over160Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
             }
             int sizeB = list.size();
             if(sizeB>7){
@@ -1648,7 +1648,7 @@ public class ShowStackedArea extends Application {
             if(Double.parseDouble(priorityData[iterator].bookData.bookPrice)>=140.00&&
                     Double.parseDouble(priorityData[iterator].bookData.bookPrice)<160.00){
                 //over140Count++;
-                list.add(priorityData[iterator].getMLRweight());
+                list.add(priorityData[iterator].getRankValue());
 
             }
             int sizeB = list.size();
