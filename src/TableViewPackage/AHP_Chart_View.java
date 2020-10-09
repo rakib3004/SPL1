@@ -405,14 +405,14 @@ public class AHP_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            if(priorityData[iterator].getAHPweight()<2.00){
+            if(priorityData[iterator].getRankValue()<2.00){
 
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                        (35.00*priorityData[iterator].getAHPweight())));
+                        (35.00*priorityData[iterator].getRankValue())));
             }
             else{
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                        priorityData[iterator].getAHPweight()));
+                        priorityData[iterator].getRankValue()));
             }
 
         }
@@ -422,22 +422,22 @@ public class AHP_Chart_View extends Application {
 
      double getWeightAverage=0.0;
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
-         if(priorityData[iterator].getAHPweight()<2.00){
-             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+         if(priorityData[iterator].getRankValue()<2.00){
+             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getRankValue());
          }
          else{
-             getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+             getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getRankValue());
 
          }
      }
      getWeightAverage = getWeightAverage/numberOfBooks;
      double standardDeviation=0.0;
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
-         if(priorityData[iterator].getAHPweight()<2.00){
-             standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+         if(priorityData[iterator].getRankValue()<2.00){
+             standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
          }
          else{
-             standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+             standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
          }
      }
 
@@ -638,13 +638,13 @@ public class AHP_Chart_View extends Application {
 
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
          positionIndicator++;
-         if(priorityData[iterator].getAHPweight()<2.00){
+         if(priorityData[iterator].getRankValue()<2.00){
              series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                     (35.00*priorityData[iterator].getAHPweight())));
+                     (35.00*priorityData[iterator].getRankValue())));
          }
          else{
              series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                     18.00*priorityData[iterator].getAHPweight()));
+                     18.00*priorityData[iterator].getRankValue()));
          }
 
      }
@@ -655,22 +655,22 @@ public class AHP_Chart_View extends Application {
 
      double getWeightAverage=0.0;
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
-         if(priorityData[iterator].getAHPweight()<2.00){
-             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+         if(priorityData[iterator].getRankValue()<2.00){
+             getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getRankValue());
          }
          else{
-             getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+             getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getRankValue());
 
          }
      }
      getWeightAverage = getWeightAverage/numberOfBooks;
      double standardDeviation=0.0;
      for (iterator = 0; iterator < numberOfBooks; iterator++) {
-         if(priorityData[iterator].getAHPweight()<2.00){
-             standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+         if(priorityData[iterator].getRankValue()<2.00){
+             standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
          }
          else{
-             standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+             standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
          }
      }
 
@@ -871,13 +871,13 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
     int positionIndicator = 0;
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
         positionIndicator++;
-        if(priorityData[iterator].getAHPweight()<2.00){
+        if(priorityData[iterator].getRankValue()<2.00){
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                    (35.00*priorityData[iterator].getAHPweight())));
+                    (35.00*priorityData[iterator].getRankValue())));
         }
         else{
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4),
-                    18.00*priorityData[iterator].getAHPweight()));
+                    18.00*priorityData[iterator].getRankValue()));
         }
     }
 
@@ -889,22 +889,22 @@ public void startStackedAreaChart(Stage primaryStage) throws IOException {
 
     double getWeightAverage=0.0;
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-        if(priorityData[iterator].getAHPweight()<2.00){
-            getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getAHPweight());
+        if(priorityData[iterator].getRankValue()<2.00){
+            getWeightAverage = getWeightAverage+  (35.00*priorityData[iterator].getRankValue());
         }
         else{
-            getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getAHPweight());
+            getWeightAverage = getWeightAverage+  (18.00*priorityData[iterator].getRankValue());
 
         }
     }
     getWeightAverage = getWeightAverage/numberOfBooks;
     double standardDeviation=0.0;
     for (iterator = 0; iterator < numberOfBooks; iterator++) {
-        if(priorityData[iterator].getAHPweight()<2.00){
-            standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+        if(priorityData[iterator].getRankValue()<2.00){
+            standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
         }
         else{
-            standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getAHPweight()-getWeightAverage,2);
+            standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
         }
     }
 
