@@ -73,9 +73,10 @@ public class DataParsing {
             MLRweight[iterator] = 0.0;
             AHPweight[iterator] = 0.0;
             PRAweight[iterator] = 0.0;
+            rankValue[iterator] = 0.0;
             priorityData[iterator] = new PriorityData(bookPriority[iterator],
                     timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
-                    index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator]);
+                    index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator],rankValue[iterator]);
         }
 
         y_value = bookPriority;
@@ -85,6 +86,4 @@ public class DataParsing {
 
         return  priorityData;
         }
-
-
 }

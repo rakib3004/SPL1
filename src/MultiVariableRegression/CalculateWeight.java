@@ -18,6 +18,7 @@ public class CalculateWeight {
             optimizeValue = ((betaOne * priorityData[iterator].borrowPriority)+
                     (betaTwo * priorityData[iterator].timePriority)+(betaThree * priorityData[iterator].pricePriority));
                 priorityData[iterator].setMLRweight(optimizeValue);
+                priorityData[iterator].setRankValue(optimizeValue);
             }
 return  priorityData;
     }

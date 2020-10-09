@@ -152,4 +152,13 @@ public int getIndex(){
     public void setPRAweight(double PRAweight) {
         this.PRAweight = PRAweight;
     }
+
+    public double getRankValue() {
+        return rankValue;
+    }
+
+    public void setRankValue(double rankValue) {
+        this.rankValue = rankValue;
+    }
+
 }
