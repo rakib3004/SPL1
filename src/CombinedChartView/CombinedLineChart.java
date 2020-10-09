@@ -38,8 +38,7 @@ public class CombinedLineChart extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 
-    @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage,int index) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -153,7 +152,7 @@ public class CombinedLineChart extends Application {
             @Override public void handle(ActionEvent e) {
                 CombinedLineChart combinedLineChart = new CombinedLineChart();
                 try {
-                    combinedLineChart.start(primaryStage);
+                    combinedLineChart.start(primaryStage,0);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -201,5 +200,10 @@ public class CombinedLineChart extends Application {
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
         return button;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        start(primaryStage,0);
     }
 }

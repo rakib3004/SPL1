@@ -153,7 +153,7 @@ public class CombinedScatterChart extends Application {
             @Override public void handle(ActionEvent e) {
                 CombinedLineChart combinedLineChart = new CombinedLineChart();
                 try {
-                    combinedLineChart.start(primaryStage);
+                    combinedLineChart.start(primaryStage,0);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
