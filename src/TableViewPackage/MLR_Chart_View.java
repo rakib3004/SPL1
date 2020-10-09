@@ -394,6 +394,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
        for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 positionIndicator++;
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+           System.out.println(priorityData[iterator].getMLRweight());
         }
         scatterChart.getData().add(series1);
         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
