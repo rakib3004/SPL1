@@ -122,6 +122,7 @@ public class AHPprocessImplementation {
             // set AHP priority weight
 
             priorityData[iterator1].setAHPweight(newPriorityValue);
+            priorityData[iterator1].setRankValue(newPriorityValue);
             //System.out.println(priorityData[iterator1].bookData.bookName+"\t"+newPriorityValue);
         }
         //print all books AHP methods books value

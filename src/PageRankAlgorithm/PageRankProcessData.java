@@ -17,6 +17,7 @@ stringArray[iterator]="";
         pageRankArray = pageRankDataFromText(pageRankArray);
 for(iterator=0;iterator<numberOfBooks;iterator++){
     priorityData[iterator].setPRAweight(pageRankArray[iterator]);
+    priorityData[iterator].setRankValue(pageRankArray[iterator]);
 }
         return  priorityData;
     }
