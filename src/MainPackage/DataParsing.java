@@ -64,7 +64,7 @@ public class DataParsing {
             bookPrice[iterator] = Integer.parseInt(string);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            bookPriority[iterator] = (100 - typeValue[iterator]);
+            bookPriority[iterator] = Math.sqrt(Math.pow((50 - typeValue[iterator]),2)+bookCount[iterator]);
             timePriority[iterator] = 16 - (timeCount[iterator] / 12);
             borrowPriority[iterator] = bookCount[iterator];
             pricePriority[iterator] = bookPrice[iterator];
