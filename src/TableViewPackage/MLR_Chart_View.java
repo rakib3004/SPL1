@@ -393,8 +393,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
        for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
-           System.out.println(priorityData[iterator].getMLRweight());
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
+           System.out.println(priorityData[iterator].getRankValue());
         }
         scatterChart.getData().add(series1);
         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
@@ -402,14 +402,14 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
 
         double getWeightAverage=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                getWeightAverage = getWeightAverage+  (priorityData[iterator].getMLRweight());
+                getWeightAverage = getWeightAverage+  (priorityData[iterator].getRankValue());
 
         }
         getWeightAverage = getWeightAverage/numberOfBooks;
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getMLRweight()-getWeightAverage,2);
+                standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getRankValue()-getWeightAverage,2);
 
         }
 
@@ -608,7 +608,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
         }
 
         lineChart.getData().add(series1);
@@ -628,10 +628,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].getAHPweight()<2.00){
-                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
             }
             else{
-                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
             }
         }
 
@@ -829,7 +829,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
         }
 
         stackedAreaChart.getData().add(series1);
@@ -849,10 +849,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if(priorityData[iterator].getAHPweight()<2.00){
-                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+                standardDeviation = standardDeviation+ Math.pow(35.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
             }
             else{
-                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getMLRweight()-getWeightAverage,2);
+                standardDeviation = standardDeviation+ Math.pow(18.00*priorityData[iterator].getRankValue()-getWeightAverage,2);
             }
         }
 
