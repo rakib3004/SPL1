@@ -188,7 +188,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getAHPweight())));
+                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getRankValue())));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
