@@ -396,9 +396,23 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                 series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
            System.out.println(priorityData[iterator].getRankValue());
         }
+
+       // line chart
+    //   LineChart lineChart = new LineChart(categoryAxis, numberAxis);
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Book Weight Line");
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            positionIndicator++;
+            double yGet = iterator*.9+5.6;
+            series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator),yGet));
+        }
         scatterChart.getData().add(series1);
+
+       // lineChart.getData().add(series2);
+        //lineChart.setOpacity(0.35);
         scatterChart = buttonDesign.systemLine(scatterChart,850,350,470,35);
-        group.getChildren().add(scatterChart);
+     //   lineChart = buttonDesign.systemLine(lineChart,850,350,470,530);
+        group.getChildren().addAll(scatterChart/*,lineChart*/);
 
         double getWeightAverage=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {

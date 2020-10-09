@@ -90,8 +90,19 @@ public class RegressionLineAnalysis extends Application {
         Image image3 = new Image(fileInputStream3);
         pageRankAlgorithm.setGraphic(new ImageView(image3));
 
-
         multiVariableRegression.setOnAction(actionEvent -> {
+
+            try {
+                priorityData = processing.fileReaderMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         });
         analyticHierarchyProcess1.setOnAction(actionEvent -> {
             try {

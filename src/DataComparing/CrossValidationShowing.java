@@ -100,7 +100,7 @@ int iterator;
             double accuracyOfCV = calculateCVResults(crossValidationData, priorityData);
             System.out.println(accuracyOfCV);
             /*JOptionPane.showMessageDialog(null, accuracyOfCV + "%");*/
-            outputLabel.setText("Accuracy : "+accuracyOfCV+" %");
+            outputLabel.setText("RMS  : "+accuracyOfCV/100+"");
         });
         Label label = new Label("Cross Validation Results");
         label.setTextFill(DARKBLUE);
@@ -203,7 +203,7 @@ int iterator;
             }
         }
         rmsValue = Math.sqrt(rmsSquareDifference/jterator);
-double accuracyOfCV = 100.00-rmsValue;
+double accuracyOfCV = rmsValue;
 return accuracyOfCV;
     }
     public Button setStyle( Button button)
