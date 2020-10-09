@@ -403,17 +403,17 @@ public class PRA_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
         }
 
       double getWeightAverage=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
-          getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+          getWeightAverage = getWeightAverage+ priorityData[iterator].getRankValue();
       }
       getWeightAverage = getWeightAverage/numberOfBooks;
       double standardDeviation=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
-          standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+          standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getRankValue()-getWeightAverage,2);
       }
       standardDeviation/=numberOfBooks;
       standardDeviation=Math.sqrt(standardDeviation);
@@ -614,7 +614,7 @@ public class PRA_Chart_View extends Application {
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
+            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getRankValue()));
         }
 
 
@@ -624,12 +624,12 @@ public class PRA_Chart_View extends Application {
 
         double getWeightAverage=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+            getWeightAverage = getWeightAverage+ priorityData[iterator].getRankValue();
         }
         getWeightAverage = getWeightAverage/numberOfBooks;
         double standardDeviation=0.0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+            standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getRankValue()-getWeightAverage,2);
         }
         standardDeviation/=numberOfBooks;
         standardDeviation=Math.sqrt(standardDeviation);
@@ -831,7 +831,7 @@ public class PRA_Chart_View extends Application {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
             series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator),
-                    priorityData[iterator].getPRAweight()));
+                    priorityData[iterator].getRankValue()));
        }
 
 
@@ -842,12 +842,12 @@ public class PRA_Chart_View extends Application {
       group.getChildren().add(stackedAreaChart);
       double getWeightAverage=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
-          getWeightAverage = getWeightAverage+ priorityData[iterator].getPRAweight();
+          getWeightAverage = getWeightAverage+ priorityData[iterator].getRankValue();
       }
       getWeightAverage = getWeightAverage/numberOfBooks;
       double standardDeviation=0.0;
       for (iterator = 0; iterator < numberOfBooks; iterator++) {
-          standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getPRAweight()-getWeightAverage,2);
+          standardDeviation = standardDeviation+ Math.pow(priorityData[iterator].getRankValue()-getWeightAverage,2);
       }
       standardDeviation/=numberOfBooks;
       standardDeviation=Math.sqrt(standardDeviation);
