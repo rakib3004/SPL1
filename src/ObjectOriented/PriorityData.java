@@ -1,7 +1,7 @@
 package ObjectOriented;
 
 public class PriorityData {
-   public double bookPriority ;
+    public double bookPriority ;
     public  double timePriority;
     public   double borrowPriority ;
     public  double pricePriority;
@@ -10,8 +10,25 @@ public class PriorityData {
     public double MLRweight;
     public double AHPweight;
     public double PRAweight;
-    public double bookPriorityOne ;
+    public  double rankValue;
 
+    public PriorityData(double bookPriority, double timePriority,
+                        double borrowPriority, double pricePriority,
+                        int index, BookData bookData, double MLRweight,
+                        double AHPweight, double PRAweight, double rankValue) {
+        this.bookPriority = bookPriority;
+        this.timePriority = timePriority;
+        this.borrowPriority = borrowPriority;
+        this.pricePriority = pricePriority;
+        this.index = index;
+        this.bookData = bookData;
+        this.MLRweight = MLRweight;
+        this.AHPweight = AHPweight;
+        this.PRAweight = PRAweight;
+        this.rankValue = rankValue;
+    }
+
+    public double bookPriorityOne ;
 
     public PriorityData(double bookPriority, double timePriority, double borrowPriority,
                         double pricePriority, int index, BookData bookData, double MLRweight,

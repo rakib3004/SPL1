@@ -19,6 +19,7 @@ public class DataParsing {
     double[] MLRweight = new double[1050];
     double[] AHPweight = new double[1050];
     double[] PRAweight = new double[1050];
+    double[] rankValue = new double[1050];
 
     String string, string1, string2;
     int length;
