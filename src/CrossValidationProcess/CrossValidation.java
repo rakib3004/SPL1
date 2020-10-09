@@ -99,7 +99,7 @@ public class CrossValidation extends Application {
         crossValidationDescription.setOnAction(actionEvent -> {
             try {
                 ProjectDescription projectDescription = new ProjectDescription();
-                projectDescription.startCrossValidation(primaryStage);
+                projectDescription.start(primaryStage,2);
             }
             catch (Exception exception) {
                 exception.printStackTrace();

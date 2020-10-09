@@ -22,8 +22,8 @@ public class ProjectDescription extends Application {
         launch(args);
     }
 
-    @Override
-    public void start(Stage primaryStage) {
+   @Override
+    public void start(Stage primaryStage,int index) {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -51,8 +51,17 @@ public class ProjectDescription extends Application {
         exit.setFont(font3);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
         Image image = new Image("Images"+ File.separator +"v2.png");
+
+        if(index==1){
+
+    }
+else if(index==2){
+
+}
+else  if(index==3){
+
+}
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back);
@@ -65,7 +74,7 @@ public class ProjectDescription extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
- public void startCrossValidation(Stage primaryStage) {
+ public void startCrossValidation(Stage primaryStage,int index) {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -108,7 +117,7 @@ public class ProjectDescription extends Application {
         primaryStage.show();
     }
 
-public void startUserRules(Stage primaryStage) {
+public void startUserRules(Stage primaryStage,int index) {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
