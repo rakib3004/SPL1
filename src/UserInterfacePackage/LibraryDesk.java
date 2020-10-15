@@ -53,9 +53,9 @@ public class LibraryDesk extends Application {
         bookInformation.setPrefSize(410,230);
         bookRemovingRecommendation.setPrefSize(410,230);
 
-        bookChoosingRecommendation.setFont(font2);
+        bookChoosingRecommendation.setFont(font);
         bookInformation.setFont(font2);
-        bookRemovingRecommendation.setFont(font2);
+        bookRemovingRecommendation.setFont(font);
         bookChoosingRecommendation.setTranslateX(30);
         bookChoosingRecommendation.setTranslateY(35);
         bookInformation.setTranslateX(30);
