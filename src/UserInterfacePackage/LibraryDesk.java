@@ -45,31 +45,31 @@ public class LibraryDesk extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-        Button addBook = new Button("Add Book");
+        Button bookChoosingRecommendation = new Button("Book Choosing Recommendation");
         Button bookInformation = new Button("Book Information");
-        Button removeBook = new Button("Remove Book");
+        Button bookRemovingRecommendation = new Button("Book Removing Recommendation");
 
-        addBook.setPrefSize(410,230);
+        bookChoosingRecommendation.setPrefSize(410,230);
         bookInformation.setPrefSize(410,230);
-        removeBook.setPrefSize(410,230);
+        bookRemovingRecommendation.setPrefSize(410,230);
 
-        addBook.setFont(font2);
+        bookChoosingRecommendation.setFont(font2);
         bookInformation.setFont(font2);
-        removeBook.setFont(font2);
-        addBook.setTranslateX(30);
-        addBook.setTranslateY(35);
+        bookRemovingRecommendation.setFont(font2);
+        bookChoosingRecommendation.setTranslateX(30);
+        bookChoosingRecommendation.setTranslateY(35);
         bookInformation.setTranslateX(30);
         bookInformation.setTranslateY(270);
-        removeBook.setTranslateX(30);
-        removeBook.setTranslateY(505);
+        bookRemovingRecommendation.setTranslateX(30);
+        bookRemovingRecommendation.setTranslateY(505);
 
-        addBook.setContentDisplay(ContentDisplay.TOP);
+        bookChoosingRecommendation.setContentDisplay(ContentDisplay.TOP);
         bookInformation.setContentDisplay(ContentDisplay.TOP);
-        removeBook.setContentDisplay(ContentDisplay.TOP);
+        bookRemovingRecommendation.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"add.png");
         Image image1 = new Image(fileInputStream1);
-        addBook.setGraphic(new ImageView(image1));
+        bookChoosingRecommendation.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"info.png");
@@ -79,9 +79,9 @@ public class LibraryDesk extends Application {
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"remove.png");
         Image image3 = new Image(fileInputStream3);
-        removeBook.setGraphic(new ImageView(image3));
+        bookRemovingRecommendation.setGraphic(new ImageView(image3));
 
-        addBook.setOnAction(actionEvent -> {
+        bookChoosingRecommendation.setOnAction(actionEvent -> {
             try {
                 AddBook addBookFX = new AddBook();
                 addBookFX.start(primaryStage);
@@ -98,7 +98,7 @@ public class LibraryDesk extends Application {
                 exception.printStackTrace();
             }
         });
-        removeBook.setOnAction(actionEvent -> {
+        bookRemovingRecommendation.setOnAction(actionEvent -> {
             try {
                 RemoveBook removeBookFX = new RemoveBook();
                 removeBookFX.start(primaryStage);
@@ -175,8 +175,8 @@ public class LibraryDesk extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,addBook,exit,
-                back,removeBook,bookInformation);
+        group.getChildren().addAll(canvas,bookChoosingRecommendation,exit,
+                back,bookRemovingRecommendation,bookInformation);
         group.getChildren().addAll(text,home);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
