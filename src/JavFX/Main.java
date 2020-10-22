@@ -256,9 +256,9 @@ public class Main extends Application {
         });
 
 
-        MenuItem menuItem2a = new MenuItem("Add book");
-        MenuItem menuItem2b = new MenuItem("Book Info");
-        MenuItem menuItem2c = new MenuItem("Remove Book");
+        MenuItem menuItem2a = new MenuItem("Book Choosing Recommendation");
+        MenuItem menuItem2b = new MenuItem("Book Information");
+        MenuItem menuItem2c = new MenuItem("Book Removing Recommendation");
         menuItem2a.setOnAction(actionEvent -> {
             try {
                 addBook.start(stage);
