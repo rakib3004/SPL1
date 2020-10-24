@@ -67,7 +67,6 @@ public class ButtonDesign extends Application {
         scatterChart.setTranslateY(y);
         return  scatterChart;
     }
-
     public StackedAreaChart systemLine(StackedAreaChart stackedAreaChart, int w, int h, int x, int y){
         stackedAreaChart.setPrefSize(w,h);
         stackedAreaChart.setTranslateX(x);
