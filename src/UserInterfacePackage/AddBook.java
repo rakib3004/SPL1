@@ -50,6 +50,7 @@ int positionLocator=145;
     double writerWeight=0;
     double priceWeight=0;
     double typeWeight=0;
+    ButtonDesign buttonDesign = new ButtonDesign();
 
     @Override
     public void start(Stage primaryStage){
@@ -132,10 +133,10 @@ int positionLocator=145;
         bookPriceText.setTranslateY(500-positionLocator);
         bookInformationText.setTranslateY(700-positionLocator);
         TextField bookNameTextField = new TextField("");
-        TextField writerNameTextField = new TextField();
-        TextField typeNameTextField = new TextField();
-        TextField bookPriceTextField = new TextField();
-        TextField bookInformationTextField = new TextField();
+        TextField writerNameTextField = new TextField("");
+        TextField typeNameTextField = new TextField("");
+        TextField bookPriceTextField = new TextField("");
+        TextField bookInformationTextField = new TextField("");
 
         setStyle(bookNameTextField);
         setStyle(writerNameTextField);
@@ -454,28 +455,47 @@ writerNameTextField.setText(humayonAhmed.getText());
         addItem.setTranslateY(400);
 addItem.setFont(font1);
         addItem.setOnAction(actionEvent -> {
-if(bookNameTextField.getText()==""||writerNameTextField.getText()==""||
-        typeNameTextField.getText()==""||bookPriceTextField.getText()==""){
+            if (bookNameTextField.getText() == "" || writerNameTextField.getText() == "" ||
+                    typeNameTextField.getText() == "" || bookPriceTextField.getText() == "") {
+                Stage infoStage = new Stage();
+                // gridPane.add(analysis,3,6,1,1);
+                //   setStyle2(analysis);
+                Label label = new Label();
+                Label label2 = new Label();
+                label = buttonDesign.systemLine(label, 350, 50, 40, 40, 17);
+                label2 = buttonDesign.systemLine(label2, 350, 50, 40, 70, 17);
 
+                Canvas canvas = new Canvas(1500, 950);
+                Image image = new Image("Images" + File.separator + "warning.jpg");
+                GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+                graphicsContext.drawImage(image, 0, 0);
+                Group group = new Group();
+                group.getChildren().addAll(canvas, label, label2);
+                Scene resultScene = new Scene(group, 290, 165);
+                infoStage.setTitle("Add Book");
+                infoStage.setScene(resultScene);
+                infoStage.show();
 
-}
-                bookInformationTextField.setText(bookNameTextField.getText()+"-"+
-                        writerNameTextField.getText()+"-"+typeNameTextField.getText()+
-                        "-"+bookPriceTextField.getText());
-                double newBookPrice = Double.parseDouble(bookPriceTextField.getText());
+            }
+else{
+            bookInformationTextField.setText(bookNameTextField.getText() + "-" +
+                    writerNameTextField.getText() + "-" + typeNameTextField.getText() +
+                    "-" + bookPriceTextField.getText());
 
-                int writerCounter=0;
-                int priceCounter=0;
-                int typeCounter=0;
+            double newBookPrice = Double.parseDouble(bookPriceTextField.getText());
 
-                String upperBookPrice,lowerBookPrice;
-                double upperBookPriceRange;
-                double lowerBookPriceRange;
-                double newBookPriceValue;
-                newBookPriceValue =newBookPrice;
-                boolean isGetAnyWriter = false;
-                boolean isGetAnyType = false;
-                boolean isGetSimilarPrice = false;
+            int writerCounter = 0;
+            int priceCounter = 0;
+            int typeCounter = 0;
+
+            String upperBookPrice, lowerBookPrice;
+            double upperBookPriceRange;
+            double lowerBookPriceRange;
+            double newBookPriceValue;
+            newBookPriceValue = newBookPrice;
+            boolean isGetAnyWriter = false;
+            boolean isGetAnyType = false;
+            boolean isGetSimilarPrice = false;
             try {
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
             } catch (IOException e) {
@@ -486,105 +506,101 @@ if(bookNameTextField.getText()==""||writerNameTextField.getText()==""||
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-                newBookPriceValue = Double.parseDouble(bookPriceTextField.getText());
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+            newBookPriceValue = Double.parseDouble(bookPriceTextField.getText());
 
-                                for(iterator=0;iterator<numberOfBooks;iterator++){
+            for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 upperBookPrice = priorityData[iterator].bookData.bookPrice;
                 lowerBookPrice = priorityData[iterator].bookData.bookPrice;
 
-                upperBookPriceRange = Double.parseDouble(upperBookPrice)+30.00;
-                lowerBookPriceRange = Double.parseDouble(lowerBookPrice)-30.00;
-                if(newBookPriceValue<=upperBookPriceRange&&newBookPriceValue>=lowerBookPriceRange){
+                upperBookPriceRange = Double.parseDouble(upperBookPrice) + 30.00;
+                lowerBookPriceRange = Double.parseDouble(lowerBookPrice) - 30.00;
+                if (newBookPriceValue <= upperBookPriceRange && newBookPriceValue >= lowerBookPriceRange) {
                     priceWeight = priceWeight + priorityData[iterator].getMLRweight();
                     priceCounter++;
                     isGetSimilarPrice = true;
                 }
-                }
-                for(iterator=0;iterator<numberOfBooks;iterator++){
+            }
+            for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if(priorityData[iterator].bookData.writerName.equals(writerNameTextField.getText())){
-                        writerWeight = writerWeight+priorityData[iterator].getMLRweight();
-                        writerCounter++;
-                        isGetAnyWriter = true;
-                    }
+                if (priorityData[iterator].bookData.writerName.equals(writerNameTextField.getText())) {
+                    writerWeight = writerWeight + priorityData[iterator].getMLRweight();
+                    writerCounter++;
+                    isGetAnyWriter = true;
                 }
-               for(iterator=0;iterator<numberOfBooks;iterator++){
+            }
+            for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if(priorityData[iterator].bookData.getTypeName().equals(typeNameTextField.getText())){
-                        typeWeight = typeWeight+priorityData[iterator].getMLRweight();
-                        typeCounter++;
-                        isGetAnyType = true;
-                    }
+                if (priorityData[iterator].bookData.getTypeName().equals(typeNameTextField.getText())) {
+                    typeWeight = typeWeight + priorityData[iterator].getMLRweight();
+                    typeCounter++;
+                    isGetAnyType = true;
                 }
-                if(isGetAnyType==true){
-                    typeWeight = typeWeight/typeCounter;
-                }
-                if(isGetAnyWriter==true){
-                    writerWeight = writerWeight/writerCounter;
-                }
-                if(isGetSimilarPrice==true){
-                    priceWeight = priceWeight/priceCounter;
-                }
-                int maxPriorityDataIndex=0;
+            }
+            if (isGetAnyType == true) {
+                typeWeight = typeWeight / typeCounter;
+            }
+            if (isGetAnyWriter == true) {
+                writerWeight = writerWeight / writerCounter;
+            }
+            if (isGetSimilarPrice == true) {
+                priceWeight = priceWeight / priceCounter;
+            }
+            int maxPriorityDataIndex = 0;
 
-                PrioritySort prioritySort = new PrioritySort();
-                priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
-                double comparingDataValue = priorityData[maxPriorityDataIndex].getMLRweight();
+            PrioritySort prioritySort = new PrioritySort();
+            priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
+            double comparingDataValue = priorityData[maxPriorityDataIndex].getMLRweight();
 
-                double writerPrediction,typePrediction,pricePrediction;
-                writerPrediction =(writerWeight/comparingDataValue)*100;
-                typePrediction = (typeWeight/comparingDataValue)*100;
-                pricePrediction = (priceWeight/comparingDataValue)*100;
-                //double terminalPrediction = (.37*writerPrediction) + (.43*typePrediction) + (.2 *pricePrediction);
-            double terminalPrediction = ((.370*writerPrediction)+(.430*typePrediction)+(.200*pricePrediction));
-            terminalPrediction = Math.round(terminalPrediction*100.00)/100.00;
-            typeWeight = Math.round(typeWeight*100.00)/100.00;
-            writerWeight = Math.round(writerWeight*100.00)/100.00;
-            priceWeight = Math.round(priceWeight*100.00)/100.00;
+            double writerPrediction, typePrediction, pricePrediction;
+            writerPrediction = (writerWeight / comparingDataValue) * 100;
+            typePrediction = (typeWeight / comparingDataValue) * 100;
+            pricePrediction = (priceWeight / comparingDataValue) * 100;
+            //double terminalPrediction = (.37*writerPrediction) + (.43*typePrediction) + (.2 *pricePrediction);
+            double terminalPrediction = ((.370 * writerPrediction) + (.430 * typePrediction) + (.200 * pricePrediction));
+            terminalPrediction = Math.round(terminalPrediction * 100.00) / 100.00;
+            typeWeight = Math.round(typeWeight * 100.00) / 100.00;
+            writerWeight = Math.round(writerWeight * 100.00) / 100.00;
+            priceWeight = Math.round(priceWeight * 100.00) / 100.00;
 
-                Label label4= new Label("Type Predicted  : "+typeWeight+"%\n" +
-                        "Writer Predicted : "+writerWeight+"%\n" +
-                        "Price Predicted : "+priceWeight+"%\n");
+            Label label4 = new Label("Type Predicted  : " + typeWeight + "%\n" +
+                    "Writer Predicted : " + writerWeight + "%\n" +
+                    "Price Predicted : " + priceWeight + "%\n");
             Label label3 = new Label();
             /*"Tool recommended "+terminalPrediction+"%\n"+
                     "to add this book \n"+"in the Library"*/
-               String string ="Low Quality's Book";
-               String string1 ="Medium Quality's Book";
-               String string2 ="High Quality's Book";
-               String string3 ="New Type's Book";
-            if(terminalPrediction<10.00){
+            String string = "Low Quality's Book";
+            String string1 = "Medium Quality's Book";
+            String string2 = "High Quality's Book";
+            String string3 = "New Type's Book";
+            if (terminalPrediction < 10.00) {
                 label3.setText(string3);
+            } else if (terminalPrediction < 35.00) {
+                label3.setText(string);
+            } else if (terminalPrediction < 75.00) {
+                label3.setText(string1);
+            } else {
+                label3.setText(string2);
             }
-            else   if(terminalPrediction<35.00){
-                   label3.setText(string);
-               }
-               else  if(terminalPrediction<75.00){
-                   label3.setText(string1);
-               }
- else {
-     label3.setText(string2);
-               }
-            ButtonDesign buttonDesign = new ButtonDesign();
- label3 = buttonDesign.systemLine(label3,350,50,50,60,25);
-                // TextField Ve = new TextField();
+            label3 = buttonDesign.systemLine(label3, 350, 50, 50, 60, 25);
+            // TextField Ve = new TextField();
           /*
             Button analysis = new Button("Analysis");
             analysis.setPrefSize(160,40);*/
             Stage infoStage = new Stage();
-                   // gridPane.add(analysis,3,6,1,1);
-             //   setStyle2(analysis);
+            // gridPane.add(analysis,3,6,1,1);
+            //   setStyle2(analysis);
 
-            Canvas canvas = new Canvas(1500,950);
-            Image image = new Image("Images"+ File.separator +"a20.jpg");
+            Canvas canvas = new Canvas(1500, 950);
+            Image image = new Image("Images" + File.separator + "a20.jpg");
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-            graphicsContext.drawImage(image,0,0);
+            graphicsContext.drawImage(image, 0, 0);
             Group group = new Group();
-            group.getChildren().addAll(canvas,label3);
+            group.getChildren().addAll(canvas, label3);
             Scene resultScene = new Scene(group, 290, 165);
-                infoStage.setTitle("Add Book");
-                infoStage.setScene(resultScene);
-                infoStage.show();
+            infoStage.setTitle("Add Book");
+            infoStage.setScene(resultScene);
+            infoStage.show();
       /*      analysis.setOnAction(actionEvent1 -> {
             setStyle2(label4);
 
@@ -631,11 +647,13 @@ if(bookNameTextField.getText()==""||writerNameTextField.getText()==""||
                 analysisStage.setScene(scene2);
                 analysisStage.show();
             });*/
+
+        }
         });
 
         addItem.setPrefSize(220, 65);
 
-        Image image = new Image("Images"+ File.separator +"Form6.jpg");
+        Image image = new Image("Images"+ File.separator +"Form.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,bookNameText,writerNameText,
