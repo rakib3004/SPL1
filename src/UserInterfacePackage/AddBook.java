@@ -564,19 +564,20 @@ addItem.setFont(font1);
                 setStyle(label3);
 
                 // TextField Ve = new TextField();
+          /*
             Button analysis = new Button("Analysis");
-            analysis.setPrefSize(160,40);
+            analysis.setPrefSize(160,40);*/
             Stage infoStage = new Stage();
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
                 gridPane.add(label3,1,1,5,5);
-                gridPane.add(analysis,3,6,1,1);
-                setStyle2(analysis);
+               // gridPane.add(analysis,3,6,1,1);
+             //   setStyle2(analysis);
                 Scene S = new Scene(gridPane, 290, 165);
                 infoStage.setTitle("Add Book");
                 infoStage.setScene(S);
                 infoStage.show();
-            analysis.setOnAction(actionEvent1 -> {
+      /*      analysis.setOnAction(actionEvent1 -> {
             setStyle2(label4);
 
                 Label label1a = new Label("Type Priority :");
@@ -621,7 +622,7 @@ addItem.setFont(font1);
                 analysisStage.setTitle("Add Book");
                 analysisStage.setScene(scene2);
                 analysisStage.show();
-            });
+            });*/
         });
 
         addItem.setPrefSize(220, 65);
