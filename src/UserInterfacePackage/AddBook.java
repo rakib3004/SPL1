@@ -51,6 +51,7 @@ int positionLocator=145;
     double priceWeight=0;
     double typeWeight=0;
     ButtonDesign buttonDesign = new ButtonDesign();
+    ButtonDesign textFill = new ButtonDesign();
 
     @Override
     public void start(Stage primaryStage){
@@ -116,22 +117,11 @@ int positionLocator=145;
         setStyle(bookPriceText);
         setStyle(bookInformationText);
 
-        bookNameText.setFill(Color.GREENYELLOW);
-        writerNameText.setFill(Color.GREENYELLOW);
-        typeNameText.setFill(Color.GREENYELLOW);
-        bookPriceText.setFill(Color.GREENYELLOW);
-        bookInformationText.setFill(Color.GREENYELLOW);
-        bookNameText.setTranslateX(200);
-        writerNameText.setTranslateX(200);
-        typeNameText.setTranslateX(200);
-        bookPriceText.setTranslateX(200);
-        bookInformationText.setTranslateX(200);
-
-        bookNameText.setTranslateY(200-positionLocator);
-        writerNameText.setTranslateY(300-positionLocator);
-        typeNameText.setTranslateY(400-positionLocator);
-        bookPriceText.setTranslateY(500-positionLocator);
-        bookInformationText.setTranslateY(700-positionLocator);
+        bookNameText = textFill.setPosition(bookNameText,200,200-positionLocator);
+        writerNameText = textFill.setPosition(writerNameText,200,300-positionLocator);
+        typeNameText = textFill.setPosition(typeNameText,200,400-positionLocator);
+        bookPriceText = textFill.setPosition(bookPriceText,200,500-positionLocator);
+        bookInformationText = textFill.setPosition(bookInformationText,200,700-positionLocator);
         TextField bookNameTextField = new TextField();
         TextField writerNameTextField = new TextField();
         TextField typeNameTextField = new TextField();

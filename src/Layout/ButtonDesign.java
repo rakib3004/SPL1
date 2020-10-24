@@ -83,6 +83,7 @@ public class ButtonDesign extends Application {
     public Text setPosition(Text text, int x, int y){
         text.setTranslateX(x);
         text.setTranslateY(y);
+        text.setFill(Color.GREENYELLOW);
         return  text;
     }
   public TextField setPosition(TextField textField, int x, int y){
