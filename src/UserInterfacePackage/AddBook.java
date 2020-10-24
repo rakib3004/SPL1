@@ -132,11 +132,11 @@ int positionLocator=145;
         typeNameText.setTranslateY(400-positionLocator);
         bookPriceText.setTranslateY(500-positionLocator);
         bookInformationText.setTranslateY(700-positionLocator);
-        TextField bookNameTextField = new TextField("");
-        TextField writerNameTextField = new TextField("");
-        TextField typeNameTextField = new TextField("");
-        TextField bookPriceTextField = new TextField("");
-        TextField bookInformationTextField = new TextField("");
+        TextField bookNameTextField = new TextField();
+        TextField writerNameTextField = new TextField();
+        TextField typeNameTextField = new TextField();
+        TextField bookPriceTextField = new TextField();
+        TextField bookInformationTextField = new TextField();
 
         setStyle(bookNameTextField);
         setStyle(writerNameTextField);
@@ -455,15 +455,16 @@ writerNameTextField.setText(humayonAhmed.getText());
         addItem.setTranslateY(400);
 addItem.setFont(font1);
         addItem.setOnAction(actionEvent -> {
-            if (bookNameTextField.getText() == "" || writerNameTextField.getText() == "" ||
-                    typeNameTextField.getText() == "" || bookPriceTextField.getText() == "") {
+            if (bookNameTextField.getText().equals("")|| writerNameTextField.getText().equals("") ||
+                    typeNameTextField.getText().equals("") || bookPriceTextField.getText().equals("")) {
+                System.out.println("Yes it's working");
                 Stage infoStage = new Stage();
                 // gridPane.add(analysis,3,6,1,1);
                 //   setStyle2(analysis);
-                Label label = new Label();
-                Label label2 = new Label();
-                label = buttonDesign.systemLine(label, 350, 50, 40, 40, 17);
-                label2 = buttonDesign.systemLine(label2, 350, 50, 40, 70, 17);
+                Label label = new Label("WARNING!!!!");
+                Label label2 = new Label("Please enter all information!!");
+                label = buttonDesign.systemLine(label, 350, 50, 105, 40, 17);
+                label2 = buttonDesign.systemLine(label2, 350, 50, 55, 70, 17);
 
                 Canvas canvas = new Canvas(1500, 950);
                 Image image = new Image("Images" + File.separator + "warning.jpg");
@@ -472,7 +473,7 @@ addItem.setFont(font1);
                 Group group = new Group();
                 group.getChildren().addAll(canvas, label, label2);
                 Scene resultScene = new Scene(group, 290, 165);
-                infoStage.setTitle("Add Book");
+                infoStage.setTitle("Book Info Warning");
                 infoStage.setScene(resultScene);
                 infoStage.show();
 
