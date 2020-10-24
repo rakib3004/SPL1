@@ -562,7 +562,7 @@ addItem.setFont(font1);
      label3.setText(string2);
                }
             ButtonDesign buttonDesign = new ButtonDesign();
- label3 = buttonDesign.systemLine(label3,350,50,50,60);
+ label3 = buttonDesign.systemLine(label3,350,50,50,60,25);
                 // TextField Ve = new TextField();
           /*
             Button analysis = new Button("Analysis");
@@ -572,7 +572,7 @@ addItem.setFont(font1);
              //   setStyle2(analysis);
 
             Canvas canvas = new Canvas(1500,950);
-            Image image = new Image("Images"+ File.separator +"a19.png");
+            Image image = new Image("Images"+ File.separator +"a20.jpg");
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
             graphicsContext.drawImage(image,0,0);
             Group group = new Group();

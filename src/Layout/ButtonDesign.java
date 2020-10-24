@@ -6,6 +6,7 @@ import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -40,6 +41,15 @@ public class ButtonDesign extends Application {
       label.setPrefSize(w,h);
       label.setTranslateX(x);
       label.setTranslateY(y);
+        return  label;
+    } public Label systemLine(Label label,int w, int h, int x, int y, double fontSize){
+      label.setPrefSize(w,h);
+      label.setTranslateX(x);
+      label.setTranslateY(y);
+        Font font = Font.font(Font.getFontNames().get(0),
+                FontWeight.BOLD,fontSize);
+        label.setFont(font);
+        label.setTextFill(Color.WHITE);
         return  label;
     }
     public LineChart systemLine(LineChart lineChart,int w, int h, int x, int y){
