@@ -138,10 +138,10 @@ int positionLocator=145;
         TextField bookPriceTextField = new TextField();
         TextField bookInformationTextField = new TextField();
 
-        setStyle(bookNameTextField);
+       /* setStyle(bookNameTextField);
         setStyle(writerNameTextField);
         setStyle(typeNameTextField);
-        setStyle(bookPriceTextField);
+        setStyle(bookPriceTextField);*/
         setStyle(bookInformationTextField);
         bookNameTextField.setTranslateX(450);
         writerNameTextField.setTranslateX(450);

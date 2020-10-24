@@ -6,9 +6,11 @@ import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -79,4 +81,15 @@ public class ButtonDesign extends Application {
                 FontWeight.BOLD,fontSize);
         return  label;
     }
+    public Text setPosition(Text text, int x, int y){
+        text.setTranslateX(x);
+        text.setTranslateY(y);
+        return  text;
+    }
+  public TextField setPosition(TextField textField, int x, int y){
+      textField.setTranslateX(x);
+      textField.setTranslateY(y);
+      return  textField;
+  }
+
     }
