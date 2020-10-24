@@ -122,6 +122,7 @@ int positionLocator=145;
         typeNameText = textFill.setPosition(typeNameText,200,400-positionLocator);
         bookPriceText = textFill.setPosition(bookPriceText,200,500-positionLocator);
         bookInformationText = textFill.setPosition(bookInformationText,200,700-positionLocator);
+
         TextField bookNameTextField = new TextField();
         TextField writerNameTextField = new TextField();
         TextField typeNameTextField = new TextField();
@@ -133,28 +134,14 @@ int positionLocator=145;
         setStyle(typeNameTextField);
         setStyle(bookPriceTextField);
         setStyle(bookInformationTextField);
-        bookNameTextField.setTranslateX(450);
-        writerNameTextField.setTranslateX(450);
-        typeNameTextField.setTranslateX(450);
-        bookPriceTextField.setTranslateX(450);
-        bookInformationTextField.setTranslateX(450);
 
-        bookNameTextField.setTranslateY(155-positionLocator);
-        writerNameTextField.setTranslateY(255-positionLocator);
-        typeNameTextField.setTranslateY(355-positionLocator);
-        bookPriceTextField.setTranslateY(455-positionLocator);
-        bookInformationTextField.setTranslateY(655-positionLocator);
 
-        bookNameText = textFill.setPosition(bookNameText,200,200-positionLocator);
-        writerNameText = textFill.setPosition(writerNameText,200,300-positionLocator);
-        typeNameText = textFill.setPosition(typeNameText,200,400-positionLocator);
-        bookPriceText = textFill.setPosition(bookPriceText,200,500-positionLocator);
-        bookInformationText = textFill.setPosition(bookInformationText,200,700-positionLocator);
-        bookNameTextField.setPrefSize(400,60);
-        writerNameTextField.setPrefSize(400,60);
-        typeNameTextField.setPrefSize(400,60);
-        bookPriceTextField.setPrefSize(400,60);
-        bookInformationTextField.setPrefSize(850,60);
+        bookNameTextField = textFill.setPosition(bookNameTextField,450,155-positionLocator,400,60);
+        writerNameTextField = textFill.setPosition(writerNameTextField,450,255-positionLocator,400,60);
+        typeNameTextField = textFill.setPosition(typeNameTextField,450,355-positionLocator,400,60);
+        bookPriceTextField = textFill.setPosition(bookPriceTextField,450,455-positionLocator,400,60);
+        bookInformationTextField = textFill.setPosition(bookInformationTextField,450,655-positionLocator,400,60);
+
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
