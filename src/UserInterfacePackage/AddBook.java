@@ -454,7 +454,11 @@ writerNameTextField.setText(humayonAhmed.getText());
         addItem.setTranslateY(400);
 addItem.setFont(font1);
         addItem.setOnAction(actionEvent -> {
+if(bookNameTextField.getText()==""||writerNameTextField.getText()==""||
+        typeNameTextField.getText()==""||bookPriceTextField.getText()==""){
 
+
+}
                 bookInformationTextField.setText(bookNameTextField.getText()+"-"+
                         writerNameTextField.getText()+"-"+typeNameTextField.getText()+
                         "-"+bookPriceTextField.getText());
@@ -631,7 +635,7 @@ addItem.setFont(font1);
 
         addItem.setPrefSize(220, 65);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
+        Image image = new Image("Images"+ File.separator +"Form6.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,bookNameText,writerNameText,

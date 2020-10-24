@@ -114,3 +114,5 @@ MultipleLinearRegression	Sat 24.10.2020 at 10:36:30 PM
 Matrix	Sat 24.10.2020 at 10:36:30 PM
 CalculateWeight	Sat 24.10.2020 at 10:36:30 PM
 PrioritySort	Sat 24.10.2020 at 10:36:30 PM
+AddBook	Sat 24.10.2020 at 10:42:34 PM
+AddBook	Sat 24.10.2020 at 10:49:47 PM
