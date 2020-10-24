@@ -36,6 +36,12 @@ public class ButtonDesign extends Application {
       button.setTranslateY(y);
         return  button;
     }
+    public Label systemLine(Label label,int w, int h, int x, int y){
+      label.setPrefSize(w,h);
+      label.setTranslateX(x);
+      label.setTranslateY(y);
+        return  label;
+    }
     public LineChart systemLine(LineChart lineChart,int w, int h, int x, int y){
         lineChart.setPrefSize(w,h);
         lineChart.setTranslateX(x);

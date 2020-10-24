@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import BookDataBaseFX.TypesOfBook;
 import FilePackage.DateTimeWriter;
+import Layout.ButtonDesign;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -560,22 +561,25 @@ addItem.setFont(font1);
  else {
      label3.setText(string2);
                }
-
-                setStyle(label3);
-
+            ButtonDesign buttonDesign = new ButtonDesign();
+ label3 = buttonDesign.systemLine(label3,350,50,50,60);
                 // TextField Ve = new TextField();
           /*
             Button analysis = new Button("Analysis");
             analysis.setPrefSize(160,40);*/
             Stage infoStage = new Stage();
-            GridPane gridPane = new GridPane();
-            gridPane.setAlignment(Pos.CENTER);
-                gridPane.add(label3,1,1,5,5);
-               // gridPane.add(analysis,3,6,1,1);
+                   // gridPane.add(analysis,3,6,1,1);
              //   setStyle2(analysis);
-                Scene S = new Scene(gridPane, 290, 165);
+
+            Canvas canvas = new Canvas(1500,950);
+            Image image = new Image("Images"+ File.separator +"a19.png");
+            GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+            graphicsContext.drawImage(image,0,0);
+            Group group = new Group();
+            group.getChildren().addAll(canvas,label3);
+            Scene resultScene = new Scene(group, 290, 165);
                 infoStage.setTitle("Add Book");
-                infoStage.setScene(S);
+                infoStage.setScene(resultScene);
                 infoStage.show();
       /*      analysis.setOnAction(actionEvent1 -> {
             setStyle2(label4);
