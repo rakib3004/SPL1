@@ -696,7 +696,7 @@ else{
 
         addItem.setPrefSize(220, 65);
 
-        Image image = new Image("Images"+ File.separator +"Form.jpg");
+        Image image = new Image("Images"+ File.separator +"Form1.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,bookNameText,writerNameText,

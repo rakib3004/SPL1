@@ -134,7 +134,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 data = FXCollections.observableList(list);
         }
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground5.jpg");
+        Image image = new Image("Images"+ File.separator +"Form2.jpg");
         Canvas canvas = new Canvas(1500,950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit,back,show);
