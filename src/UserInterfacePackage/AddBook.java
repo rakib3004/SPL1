@@ -60,7 +60,8 @@ int positionLocator=85;
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,21);
-        Font font2 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,36);
+        Font font2 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font3 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -124,20 +125,26 @@ int positionLocator=85;
 
         Text chooseBook = new Text("Choosing Book Recommendation");
         chooseBook.setFill(Color.WHITE);
-        chooseBook = textFill.setPosition(chooseBook,390,50);
-        chooseBook.setFont(font2);
-        setStyle(bookNameText);
+        chooseBook = textFill.setPosition(chooseBook,400,50);
+        chooseBook.setFont(font3);
+      /*  setStyle(bookNameText);
         setStyle(writerNameText);
         setStyle(typeNameText);
         setStyle(bookPriceText);
         setStyle(bookInformationText);
+*/
 
+        bookNameText.setFill(Color.WHITE);
+        writerNameText.setFill(Color.WHITE);
+        typeNameText.setFill(Color.WHITE);
+        bookPriceText.setFill(Color.WHITE);
+        bookInformationText.setFill(Color.WHITE);
 
-        bookNameText.setFill(Color.GREENYELLOW);
-        writerNameText.setFill(Color.GREENYELLOW);
-        typeNameText.setFill(Color.GREENYELLOW);
-        bookPriceText.setFill(Color.GREENYELLOW);
-        bookInformationText.setFill(Color.GREENYELLOW);
+       bookNameText.setFont(font2);
+        writerNameText.setFont(font2);
+        typeNameText.setFont(font2);
+        bookPriceText.setFont(font2);
+        bookInformationText.setFont(font2);
 
         bookNameText.setTranslateX(160);
         writerNameText.setTranslateX(160);
@@ -605,10 +612,10 @@ else{
             Label label3 = new Label();
             /*"Tool recommended "+terminalPrediction+"%\n"+
                     "to add this book \n"+"in the Library"*/
-            String string = "Low Quality's Book";
-            String string1 = "Medium Quality's Book";
-            String string2 = "High Quality's Book";
-            String string3 = "New Type's Book";
+            String string = "Book's Quality : Low";
+            String string1 = "Book's Quality : Medium";
+            String string2 = "Book's Quality : Good";
+            String string3 = "New Type's of Book";
             if (terminalPrediction < 10.00) {
                 label3.setText(string3);
             } else if (terminalPrediction < 35.00) {
