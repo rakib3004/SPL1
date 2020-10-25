@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
-public class RemoveBook extends Application {
+public class RemoveBookRecommendation extends Application {
 
     private TableView table;
     private ObservableList data;
@@ -254,7 +254,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
-                new RemoveBook.RowSelectChangeListener());
+                new RemoveBookRecommendation.RowSelectChangeListener());
 
 
 

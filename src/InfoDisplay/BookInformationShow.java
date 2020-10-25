@@ -15,7 +15,7 @@ import RecommendationAlgorithm.ProcessImplementation;
 import LinearRegression.FourVariableRegression;
 import UserInterfacePackage.SelectBookRecommendation;
 import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBook;
+import UserInterfacePackage.RemoveBookRecommendation;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -248,7 +248,7 @@ public class BookInformationShow extends Application {
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
         SelectBookRecommendation selectBookRecommendation = new SelectBookRecommendation();
-        RemoveBook removeBook = new RemoveBook();
+        RemoveBookRecommendation removeBookRecommendation = new RemoveBookRecommendation();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -295,7 +295,7 @@ public class BookInformationShow extends Application {
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBook.start(primaryStage);
+                removeBookRecommendation.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -100,8 +100,8 @@ public class LibraryDesk extends Application {
         });
         bookRemovingRecommendation.setOnAction(actionEvent -> {
             try {
-                RemoveBook removeBookFX = new RemoveBook();
-                removeBookFX.start(primaryStage);
+                RemoveBookRecommendation removeBookRecommendationFX = new RemoveBookRecommendation();
+                removeBookRecommendationFX.start(primaryStage);
             }
             catch (Exception exception) {
                 exception.printStackTrace();
@@ -187,7 +187,7 @@ public class LibraryDesk extends Application {
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
         SelectBookRecommendation selectBookRecommendationFX = new SelectBookRecommendation();
-        RemoveBook removeBookFX = new RemoveBook();
+        RemoveBookRecommendation removeBookRecommendationFX = new RemoveBookRecommendation();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
         Menu menu1 = new Menu("User");
@@ -234,7 +234,7 @@ public class LibraryDesk extends Application {
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookFX.start(primaryStage);
+                removeBookRecommendationFX.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
