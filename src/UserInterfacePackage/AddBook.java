@@ -39,7 +39,7 @@ public class
 AddBook extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
-int positionLocator=145;
+int positionLocator=85;
     int numberOfBooks;
     int iterator;
     Processing processing = new Processing();
@@ -59,13 +59,14 @@ int positionLocator=145;
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,25);
+        Font font1 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,21);
+        Font font2 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,36);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(75);
+        back.setTranslateX(50);
         back.setTranslateY(650);
-        exit.setTranslateX(1100);
+        exit.setTranslateX(1200);
         exit.setTranslateY(650);        back.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
             try {
@@ -83,7 +84,7 @@ int positionLocator=145;
         FileInputStream fileInputStream6 = null;
         try {
             fileInputStream6 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "back.png");
+                    "src" + File.separator + "Images" + File.separator + "undo.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -98,8 +99,8 @@ int positionLocator=145;
         }
         Image image4 = new Image(fileInputStream4);
         exit.setGraphic(new ImageView(image4));
-        back.setPrefSize(275, 80);
-        exit.setPrefSize(275, 80);
+        back.setPrefSize(150, 60);
+        exit.setPrefSize(150, 60);
 
         Text bookNameText = new Text();
         Text writerNameText = new Text();
@@ -118,6 +119,13 @@ int positionLocator=145;
         typeNameText.setText("Type Name : ");
         bookPriceText.setText("Book price : ");
         bookInformationText.setText("Book Details : ");
+
+        // headings for Choosing Book Recommendation
+
+        Text chooseBook = new Text("Choosing Book Recommendation");
+        chooseBook.setFill(Color.WHITE);
+        chooseBook = textFill.setPosition(chooseBook,390,50);
+        chooseBook.setFont(font2);
         setStyle(bookNameText);
         setStyle(writerNameText);
         setStyle(typeNameText);
@@ -167,11 +175,11 @@ int positionLocator=145;
 
 
 
-        bookNameTextField.setTranslateX(450);
-        writerNameTextField.setTranslateX(450);
-        typeNameTextField.setTranslateX(450);
-        bookPriceTextField.setTranslateX(450);
-        bookInformationTextField.setTranslateX(450);
+        bookNameTextField.setTranslateX(410);
+        writerNameTextField.setTranslateX(410);
+        typeNameTextField.setTranslateX(410);
+        bookPriceTextField.setTranslateX(410);
+        bookInformationTextField.setTranslateX(410);
 
         bookNameTextField.setTranslateY(155-positionLocator);
         writerNameTextField.setTranslateY(255-positionLocator);
@@ -479,7 +487,7 @@ writerNameTextField.setText(humayonAhmed.getText());
         priceMenu.setPrefSize(200, 55);
         Button addItem = new Button("Add Item");
         addItem.setTranslateX(570);
-        addItem.setTranslateY(400);
+        addItem.setTranslateY(555-positionLocator);
 addItem.setFont(font1);
         addItem.setOnAction(actionEvent -> {
             if (bookNameTextField.getText().equals("")|| writerNameTextField.getText().equals("") ||
@@ -688,7 +696,7 @@ else{
                 typeNameText,bookPriceText,bookInformationText,bookNameTextField,
                 writerNameTextField,typeNameTextField,
                 bookPriceTextField,bookInformationTextField,
-                addItem,bookType,writerMenu,priceMenu);
+                addItem,bookType,writerMenu,priceMenu,chooseBook);
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
         Scene scene1 = new Scene(group,1500,950);
