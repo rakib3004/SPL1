@@ -1,24 +1,8 @@
 package JavFX;
 
-import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidation;
-import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.BookInformationShow;
-import InfoDisplay.SevenValueStatistics;
-import LibraryFunctionality.ReadingRoom;
-import LinearRegression.FourVariableRegression;
-import ProjectDescription.About;
-import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
-import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
-import UserInterfacePackage.AddBook;
-import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -35,7 +19,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class AuthorSystem extends Application {
     @Override

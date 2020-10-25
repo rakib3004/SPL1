@@ -2,31 +2,17 @@ package RecommendationAlgorithm;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
-import Collection.WriterCollection;
-import CrossValidationProcess.CrossValidation;
-import CrossValidationProcess.TestingSet;
-import CrossValidationProcess.TrainingSet;
 import FilePackage.DateTimeWriter;
-import InfoDisplay.SevenValueStatistics;
-import InfoDisplay.BookInformationShow;
 import JavFX.Main;
-import JavFX.ProcessAnalysis;
-import LibraryFunctionality.ReadingRoom;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankCalculation;
 import PageRankAlgorithm.PageRankProcessData;
-import LinearRegression.FourVariableRegression;
 import TableViewPackage.PRA_Chart_View;
 import TableViewPackage.PRA_TableView;
-import UserInterfacePackage.AddBook;
-import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -42,7 +28,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class PageRankAlgorithm extends Application {

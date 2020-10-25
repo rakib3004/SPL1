@@ -20,7 +20,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
-import UserInterfacePackage.AddBook;
+import UserInterfacePackage.SelectBookRecommendation;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
@@ -200,7 +200,7 @@ public class FourVariableRegression extends Application {
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBook addBook = new AddBook();
+        SelectBookRecommendation selectBookRecommendation = new SelectBookRecommendation();
         RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
@@ -234,7 +234,7 @@ public class FourVariableRegression extends Application {
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBook.start(primaryStage);
+                selectBookRecommendation.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

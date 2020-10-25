@@ -36,7 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class
-AddBook extends Application {
+SelectBookRecommendation extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
 int positionLocator=85;

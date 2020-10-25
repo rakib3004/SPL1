@@ -13,11 +13,10 @@ import RecommendationAlgorithm.PageRankAlgorithm;
 import RecommendationAlgorithm.ProcessImplementation;
 import LinearRegression.FourVariableRegression;
 import SimpleRegression.DoublyLinearRegression;
-import JavFX.AuthorSystem;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.PriorityData;
-import UserInterfacePackage.AddBook;
+import UserInterfacePackage.SelectBookRecommendation;
 import UserInterfacePackage.LibraryDesk;
 import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
@@ -249,7 +248,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBook addBook = new AddBook();
+        SelectBookRecommendation selectBookRecommendation = new SelectBookRecommendation();
         RemoveBook removeBook = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
@@ -283,7 +282,7 @@ SevenNumberImplementation sevenNumberImplementation = new SevenNumberImplementat
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBook.start(primaryStage);
+                selectBookRecommendation.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

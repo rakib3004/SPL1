@@ -83,8 +83,8 @@ public class LibraryDesk extends Application {
 
         bookChoosingRecommendation.setOnAction(actionEvent -> {
             try {
-                AddBook addBookFX = new AddBook();
-                addBookFX.start(primaryStage);
+                SelectBookRecommendation selectBookRecommendationFX = new SelectBookRecommendation();
+                selectBookRecommendationFX.start(primaryStage);
             }
             catch (Exception exception) {
                 exception.printStackTrace();
@@ -186,7 +186,7 @@ public class LibraryDesk extends Application {
         FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
         AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm1 = new AnalyticHierarchyAlgorithm();
         PageRankAlgorithm pageRankAlgorithm1 = new PageRankAlgorithm();
-        AddBook addBookFX = new AddBook();
+        SelectBookRecommendation selectBookRecommendationFX = new SelectBookRecommendation();
         RemoveBook removeBookFX = new RemoveBook();
         BookInformationShow bookInformationShow = new BookInformationShow();
 
@@ -220,7 +220,7 @@ public class LibraryDesk extends Application {
         MenuItem menuItem2c = new MenuItem("Remove Book");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                addBookFX.start(primaryStage);
+                selectBookRecommendationFX.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

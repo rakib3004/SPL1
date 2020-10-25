@@ -1,21 +1,10 @@
 package JavFX;
 
-import Collection.WriterCollection;
 import CrossValidationProcess.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenValueStatistics;
-import InfoDisplay.BookInformationShow;
 import LibraryFunctionality.ReadingRoom;
-import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
-import RecommendationAlgorithm.PageRankAlgorithm;
-import RecommendationAlgorithm.ProcessImplementation;
-import LinearRegression.FourVariableRegression;
-import UserInterfacePackage.AddBook;
-import UserInterfacePackage.LibraryDesk;
-import UserInterfacePackage.RemoveBook;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -32,7 +21,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class ProcessAnalysis extends Application {
         @Override
