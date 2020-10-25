@@ -106,6 +106,13 @@ int positionLocator=145;
         Text typeNameText = new Text();
         Text bookPriceText = new Text();
         Text bookInformationText = new Text();
+
+        TextField bookNameTextField = new TextField();
+        TextField writerNameTextField = new TextField();
+        TextField typeNameTextField = new TextField();
+        TextField bookPriceTextField = new TextField();
+        TextField bookInformationTextField = new TextField();
+
         bookNameText.setText("Book Name : ");
         writerNameText.setText("Writer Name : ");
         typeNameText.setText("Type Name : ");
@@ -117,17 +124,33 @@ int positionLocator=145;
         setStyle(bookPriceText);
         setStyle(bookInformationText);
 
+
+        bookNameText.setFill(Color.GREENYELLOW);
+        writerNameText.setFill(Color.GREENYELLOW);
+        typeNameText.setFill(Color.GREENYELLOW);
+        bookPriceText.setFill(Color.GREENYELLOW);
+        bookInformationText.setFill(Color.GREENYELLOW);
+
+        bookNameText.setTranslateX(160);
+        writerNameText.setTranslateX(160);
+        typeNameText.setTranslateX(160);
+        bookPriceText.setTranslateX(160);
+        bookInformationText.setTranslateX(160);
+
+        bookNameText.setTranslateY(200-positionLocator);
+        writerNameText.setTranslateY(300-positionLocator);
+        typeNameText.setTranslateY(400-positionLocator);
+        bookPriceText.setTranslateY(500-positionLocator);
+        bookInformationText.setTranslateY(700-positionLocator);
+/*
+
         bookNameText = textFill.setPosition(bookNameText,200,200-positionLocator);
         writerNameText = textFill.setPosition(writerNameText,200,300-positionLocator);
         typeNameText = textFill.setPosition(typeNameText,200,400-positionLocator);
         bookPriceText = textFill.setPosition(bookPriceText,200,500-positionLocator);
         bookInformationText = textFill.setPosition(bookInformationText,200,700-positionLocator);
+*/
 
-        TextField bookNameTextField = new TextField();
-        TextField writerNameTextField = new TextField();
-        TextField typeNameTextField = new TextField();
-        TextField bookPriceTextField = new TextField();
-        TextField bookInformationTextField = new TextField();
 
         setStyle(bookNameTextField);
         setStyle(writerNameTextField);
@@ -135,13 +158,34 @@ int positionLocator=145;
         setStyle(bookPriceTextField);
         setStyle(bookInformationTextField);
 
-
+/*
         bookNameTextField = textFill.setPosition(bookNameTextField,450,155-positionLocator,400,60);
         writerNameTextField = textFill.setPosition(writerNameTextField,450,255-positionLocator,400,60);
         typeNameTextField = textFill.setPosition(typeNameTextField,450,355-positionLocator,400,60);
         bookPriceTextField = textFill.setPosition(bookPriceTextField,450,455-positionLocator,400,60);
-        bookInformationTextField = textFill.setPosition(bookInformationTextField,450,655-positionLocator,400,60);
+        bookInformationTextField = textFill.setPosition(bookInformationTextField,450,655-positionLocator,400,60);*/
 
+
+
+        bookNameTextField.setTranslateX(450);
+        writerNameTextField.setTranslateX(450);
+        typeNameTextField.setTranslateX(450);
+        bookPriceTextField.setTranslateX(450);
+        bookInformationTextField.setTranslateX(450);
+
+        bookNameTextField.setTranslateY(155-positionLocator);
+        writerNameTextField.setTranslateY(255-positionLocator);
+        typeNameTextField.setTranslateY(355-positionLocator);
+        bookPriceTextField.setTranslateY(455-positionLocator);
+        bookInformationTextField.setTranslateY(655-positionLocator);
+
+
+
+        bookNameTextField.setPrefSize(400,60);
+        writerNameTextField.setPrefSize(400,60);
+        typeNameTextField.setPrefSize(400,60);
+        bookPriceTextField.setPrefSize(400,60);
+        bookInformationTextField.setPrefSize(850,60);
 
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
