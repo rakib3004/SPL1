@@ -158,8 +158,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Label label = new Label();
-        label.setPrefSize(800,45);
-        label.setTranslateX(150);
+        label.setPrefSize(700,45);
+        label.setTranslateX(400);
         label.setTranslateY(0);
         label.setText(labelName);
         setStyle(label);
@@ -173,9 +173,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
         back.setTranslateY(650);
         exit.setTranslateX(1100);
         exit.setTranslateY(650);
-
-
-
         back.setOnAction(actionEvent -> {
             list.clear();
 
@@ -247,10 +244,9 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId);
-        table.setPrefWidth(1240);
-        table.setPrefHeight(560);
-        table.setTranslateX(60);
+        table.setTranslateX(40);
         table.setTranslateY(70);
+        table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
