@@ -45,3 +45,12 @@ Matrix	Mon 26.10.2020 at 11:05:01 AM
 CalculateWeight	Mon 26.10.2020 at 11:05:01 AM
 ReverseSorting	Mon 26.10.2020 at 11:05:01 AM
 RemoveBookRecommendation	Mon 26.10.2020 at 11:05:03 AM
+RemoveBookRecommendation	Mon 26.10.2020 at 11:36:34 AM
+Processing	Mon 26.10.2020 at 11:36:34 AM
+DataParsing	Mon 26.10.2020 at 11:36:34 AM
+BookNumber	Mon 26.10.2020 at 11:36:34 AM
+MultipleLinearRegression	Mon 26.10.2020 at 11:36:34 AM
+Matrix	Mon 26.10.2020 at 11:36:34 AM
+CalculateWeight	Mon 26.10.2020 at 11:36:34 AM
+ReverseSorting	Mon 26.10.2020 at 11:36:34 AM
+RemoveBookRecommendation	Mon 26.10.2020 at 11:36:36 AM

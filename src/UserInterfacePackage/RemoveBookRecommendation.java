@@ -23,6 +23,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -199,7 +200,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         TextField textField1 = new TextField();
-        setStyle(textField1);
         textField1.setTranslateX(580);
         textField1.setTranslateY(650);
         textField1.setPrefSize(120,80);
@@ -220,7 +220,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         TextField textField2 = new TextField("No of Books, You want to remove :");
-        setStylePro(textField2);
         textField2.setTranslateX(360);
         textField2.setTranslateY(650);
         textField2.setPrefSize(215,80);
@@ -251,13 +250,14 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RemoveBookRecommendation.RowSelectChangeListener());
-
-
-
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
+        ContextMenu contextMenu = new ContextMenu();
+        HBox hBox = new HBox();
+
+       // contextMenu.getItems().addAll(hBox);
 
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
@@ -268,8 +268,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,textField1,
-                textField2,label,table);
+        group.getChildren().addAll(canvas,exit, back,label,table);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
