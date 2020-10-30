@@ -66,7 +66,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    String labelName="Top Books";
+    String labelName="";
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
@@ -126,7 +126,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         show.setFont(font3);
 
         show.setPrefSize(200, 80);
-        labelName="Top Books of "+this.getClass().getSimpleName();
+        labelName=this.getClass().getSimpleName();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 list.add(new Book(priorityData[iterator].bookData.bookName,
                         priorityData[iterator].bookData.writerName,
@@ -163,7 +163,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
         label.setTranslateX(400);
         label.setTranslateY(0);
         label.setText(labelName);
-        setStyle(label);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        label.setFont(font4);
 
 
         Button back = new Button("Back");
