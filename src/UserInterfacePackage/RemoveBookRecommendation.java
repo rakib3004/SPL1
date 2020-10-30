@@ -205,7 +205,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
         textField1.setTranslateY(650);
         textField1.setPrefSize(120,80);
 
-
+        textField1.setText(Integer.toString(numberOfBooks));
+        textField1.setFont(font3);
         textField1.setOnAction(actionEvent -> {
             list.clear();
             setNumberOfBooks(Integer.parseInt(textField1.getText()));
@@ -220,10 +221,11 @@ ReverseSorting reverseSorting = new ReverseSorting();
         });
 
 
-        TextField textField2 = new TextField("632:");
-        textField2.setTranslateX(360);
-        textField2.setTranslateY(650);
-        textField2.setPrefSize(215,80);
+        Label field = new Label("Total Books : ");
+        field.setTranslateX(390);
+        field.setTranslateY(650);
+        field.setPrefSize(215,80);
+        field.setFont(font3);
 
         table = new TableView();
 
@@ -271,7 +273,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         Image image = new Image("Images"+ File.separator +"table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table);
+        group.getChildren().addAll(canvas,exit, back,label,table,textField1,field);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
