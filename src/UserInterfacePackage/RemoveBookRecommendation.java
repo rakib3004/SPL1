@@ -268,7 +268,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
 
-        Image image = new Image("Images"+ File.separator +"table1.jpg");
+        Image image = new Image("Images"+ File.separator +"table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
