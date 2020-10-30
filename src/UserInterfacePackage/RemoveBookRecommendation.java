@@ -249,6 +249,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
         table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
+
+
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RemoveBookRecommendation.RowSelectChangeListener());
         // Status message text
@@ -266,7 +268,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground16.jpg");
+        Image image = new Image("Images"+ File.separator +"table1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
