@@ -160,7 +160,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
         Label label = new Label();
         label.setPrefSize(700,45);
-        label.setTranslateX(400);
+        label.setTranslateX(444);
         label.setTranslateY(0);
         label.setText(labelName);
         Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
@@ -220,7 +220,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         });
 
 
-        TextField textField2 = new TextField("No of Books, You want to remove :");
+        TextField textField2 = new TextField("632:");
         textField2.setTranslateX(360);
         textField2.setTranslateY(650);
         textField2.setPrefSize(215,80);
