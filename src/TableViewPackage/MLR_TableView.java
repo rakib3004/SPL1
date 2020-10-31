@@ -119,7 +119,7 @@ public class MLR_TableView extends Application {
          table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
          // set new label for table
-         String labelName = "Analytical Hierarchy Results";
+         String labelName = "Multi Variable Results";
          Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
          Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
          Label label2 = new Label();
@@ -143,9 +143,9 @@ public class MLR_TableView extends Application {
          GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
          graphicsContext.drawImage(image, 0, 0);
 
+
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RowSelectChangeListener());
-
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
@@ -184,7 +184,6 @@ public class MLR_TableView extends Application {
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
             public void handle(ContextMenuEvent event) {
-
                 contextMenu.show(table, event.getScreenX(), event.getScreenY());
             }
         });
