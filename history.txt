@@ -1,3 +1,11 @@
-Main	Sat 31.10.2020 at 09:33:27 PM
-ProcessImplementation	Sat 31.10.2020 at 09:33:29 PM
-FourVariableRegression	Sat 31.10.2020 at 09:33:31 PM
+Main	Sat 31.10.2020 at 10:05:47 PM
+LibraryDesk	Sat 31.10.2020 at 10:05:59 PM
+RemoveBookRecommendation	Sat 31.10.2020 at 10:06:01 PM
+Processing	Sat 31.10.2020 at 10:06:01 PM
+DataParsing	Sat 31.10.2020 at 10:06:01 PM
+BookNumber	Sat 31.10.2020 at 10:06:01 PM
+MultipleLinearRegression	Sat 31.10.2020 at 10:06:01 PM
+Matrix	Sat 31.10.2020 at 10:06:01 PM
+CalculateWeight	Sat 31.10.2020 at 10:06:01 PM
+ReverseSorting	Sat 31.10.2020 at 10:06:01 PM
+RemoveBookRecommendation	Sat 31.10.2020 at 10:06:02 PM

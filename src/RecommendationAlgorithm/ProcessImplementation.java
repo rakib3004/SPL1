@@ -57,7 +57,7 @@ public class ProcessImplementation extends Application {
         analyticHierarchyProcess1.setContentDisplay(ContentDisplay.TOP);
         pageRankAlgorithm.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"mlr.png");
+                "src"+ File.separator +"Images"+ File.separator +"4var.png");
         Image image1 = new Image(fileInputStream1);
         multiVariableRegression.setGraphic(new ImageView(image1));
 
