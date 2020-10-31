@@ -171,12 +171,14 @@ public class FourVariableRegression extends Application {
             }
         });
         back.setOnAction(actionEvent -> {
-            MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
             try {
-                multiVariableRegression.start(primaryStage);
-            } catch (Exception exception) {
+                ProcessImplementation processImplementation1 = new ProcessImplementation();
+                processImplementation1.start(primaryStage);
+            }
+            catch (Exception exception) {
                 exception.printStackTrace();
             }
+
         });
         FileInputStream fileInputStream6 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"back.png");

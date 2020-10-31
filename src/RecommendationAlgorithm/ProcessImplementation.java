@@ -3,6 +3,7 @@ package RecommendationAlgorithm;
 import FilePackage.DateTimeWriter;
 import JavFX.AuthorSystem;
 import JavFX.Main;
+import LinearRegression.FourVariableRegression;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -70,9 +71,15 @@ public class ProcessImplementation extends Application {
         Image image3 = new Image(fileInputStream3);
         pageRankAlgorithm.setGraphic(new ImageView(image3));
         multiVariableRegression.setOnAction(actionEvent -> {
-            MultiVariableRegression multiVaribleRegression = new MultiVariableRegression();
+         /*   MultiVariableRegression multiVaribleRegression = new MultiVariableRegression();
             try {
                 multiVaribleRegression.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }*/
+            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+            try {
+                fourVariableRegression1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

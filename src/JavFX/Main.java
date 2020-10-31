@@ -44,7 +44,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
 
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -77,7 +77,7 @@ public class Main extends Application {
         welcome.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
-                main.start(stage);
+                main.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -90,25 +90,25 @@ public class Main extends Application {
 
         Button user = new Button("User");
         Button librarian = new Button("Librarian");
-        Button system = new Button("System");
+        Button methods = new Button("Methods");
 
         user.setPrefSize(410,230);
         librarian.setPrefSize(410,230);
-        system.setPrefSize(410,230);
+        methods.setPrefSize(410,230);
 
         user.setFont(font);
         librarian.setFont(font);
-        system.setFont(font);
+        methods.setFont(font);
         user.setTranslateX(30);
         user.setTranslateY(35);
         librarian.setTranslateX(30);
         librarian.setTranslateY(270);
-        system.setTranslateX(30);
-        system.setTranslateY(505);
+        methods.setTranslateX(30);
+        methods.setTranslateY(505);
 
         user.setContentDisplay(ContentDisplay.TOP);
         librarian.setContentDisplay(ContentDisplay.TOP);
-        system.setContentDisplay(ContentDisplay.TOP);
+        methods.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"user.png");
         Image image1 = new Image(fileInputStream1);
@@ -122,12 +122,12 @@ public class Main extends Application {
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"automation.png");
         Image image3 = new Image(fileInputStream3);
-        system.setGraphic(new ImageView(image3));
+        methods.setGraphic(new ImageView(image3));
 
         user.setOnAction(actionEvent -> {
             ReadingRoom readingRoom = new ReadingRoom();
             try {
-                readingRoom.start(stage);
+                readingRoom.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -135,18 +135,18 @@ public class Main extends Application {
         librarian.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                    libraryDesk.start(stage);
+                    libraryDesk.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
             }
         });
-        system.setOnAction(actionEvent -> {
+        methods.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
             try {
-                authorSystem.start(stage);
-            }
-            catch (Exception exception){
+                ProcessImplementation processImplementation1 = new ProcessImplementation();
+                processImplementation1.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -161,7 +161,7 @@ public class Main extends Application {
         more.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
             try {
-                authorSystem.start(stage);
+                authorSystem.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -185,7 +185,7 @@ public class Main extends Application {
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
-                about1.start(stage);
+                about1.start(primaryStage);
             }
             catch (Exception exception){
                 exception.printStackTrace();
@@ -223,7 +223,7 @@ public class Main extends Application {
         Group root = new Group();
         root.getChildren().addAll(canvas/*,welcome*/
                 ,exit,more,about,
-                text,user,librarian,system);
+                text,user,librarian,methods);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
        gc.drawImage(background,0,0);
@@ -251,14 +251,14 @@ public class Main extends Application {
         menu1.getItems().addAll(menuItem1a,menuItem1b);
         menuItem1a.setOnAction(actionEvent -> {
             try {
-                readingRoom2.automaticSystem(stage);
+                readingRoom2.automaticSystem(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem1b.setOnAction(actionEvent -> {
             try {
-                readingRoom2.manualSystem(stage);
+                readingRoom2.manualSystem(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -270,21 +270,21 @@ public class Main extends Application {
         MenuItem menuItem2c = new MenuItem("Book Removing Recommendation");
         menuItem2a.setOnAction(actionEvent -> {
             try {
-                selectBookRecommendation.start(stage);
+                selectBookRecommendation.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem2b.setOnAction(actionEvent -> {
             try {
-                bookInformationShow.start(stage);
+                bookInformationShow.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem2c.setOnAction(actionEvent -> {
             try {
-                removeBookRecommendation.start(stage);
+                removeBookRecommendation.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -297,14 +297,14 @@ public class Main extends Application {
         MenuItem menuItem3c = new MenuItem("Data Optimization");
         menuItem3a.setOnAction(actionEvent -> {
             try {
-                crossValidation2.start(stage);
+                crossValidation2.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem3b.setOnAction(actionEvent -> {
             try {
-                sevenValueStatistics1.start(stage);
+                sevenValueStatistics1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -321,21 +321,21 @@ public class Main extends Application {
         menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
         menuItem4a.setOnAction(actionEvent -> {
             try {
-                fourVariableRegression1.start(stage);
+                fourVariableRegression1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4b.setOnAction(actionEvent -> {
             try {
-                analyticHierarchyAlgorithm1.start(stage);
+                analyticHierarchyAlgorithm1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         menuItem4c.setOnAction(actionEvent -> {
             try {
-                pageRankAlgorithm1.start(stage);
+                pageRankAlgorithm1.start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -347,7 +347,7 @@ public class Main extends Application {
                 ReadingRoom readingRoom = new ReadingRoom();
                 try {
                     {
-                        readingRoom.start(stage);
+                        readingRoom.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -360,7 +360,7 @@ public class Main extends Application {
                 LibraryDesk libraryDesk = new LibraryDesk();
                 try {
                     {
-                        libraryDesk.start(stage);
+                        libraryDesk.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -374,7 +374,7 @@ public class Main extends Application {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
                     try {
-                        processImplementation.start(stage);
+                        processImplementation.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }
@@ -387,7 +387,7 @@ public class Main extends Application {
                 FourVariableRegression fourVariableRegression = new FourVariableRegression();
                 try {
                     {
-                        fourVariableRegression.start(stage);
+                        fourVariableRegression.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -400,7 +400,7 @@ public class Main extends Application {
                 AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     {
-                        analyticHierarchyAlgorithm.start(stage);
+                        analyticHierarchyAlgorithm.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -413,7 +413,7 @@ public class Main extends Application {
                 PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                 try {
                     {
-                        pageRankAlgorithm.start(stage);
+                        pageRankAlgorithm.start(primaryStage);
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -426,7 +426,7 @@ public class Main extends Application {
                 CrossValidation crossValidation = new CrossValidation();
                 {
                     try {
-                        crossValidation.start(stage);
+                        crossValidation.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }
@@ -438,7 +438,7 @@ public class Main extends Application {
             @Override public void handle(ActionEvent e) {
                 TrainingSet trainingSet = new TrainingSet();
                 {
-                    trainingSet.start(stage);
+                    trainingSet.start(primaryStage);
                 }
             }
         });
@@ -448,7 +448,7 @@ public class Main extends Application {
             @Override public void handle(ActionEvent e) {
                 TestingSet testingSet = new TestingSet();
                 {
-                    testingSet.start(stage);
+                    testingSet.start(primaryStage);
                 }
             }
         });
@@ -460,7 +460,7 @@ public class Main extends Application {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
                     try {
-                        bookInformationShow.start(stage);
+                        bookInformationShow.start(primaryStage);
                     } catch (FileNotFoundException fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }
@@ -474,7 +474,7 @@ public class Main extends Application {
                 ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
-                        processAnalysis.start(stage);
+                        processAnalysis.start(primaryStage);
                     } catch (Exception fileNotFoundException) {
                         fileNotFoundException.printStackTrace();
                     }
@@ -497,9 +497,9 @@ public class Main extends Application {
         menuBar.prefHeight(32);
         menuBar.prefWidthProperty().bind(scene.widthProperty());
         root.getChildren().add(menuBar);
-        stage.setScene(scene);
-       stage.setFullScreen(true);
-        stage.show();
+        primaryStage.setScene(scene);
+       primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
     public Button setStyle( Button button) {
