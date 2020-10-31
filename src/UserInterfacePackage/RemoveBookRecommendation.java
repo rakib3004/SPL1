@@ -171,7 +171,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
         Button back = new Button("Back");
         Button exit = new Button("Exit");
 
-
+        back.setFont(font3);
+        exit.setFont(font3);
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
         back.setTranslateX(35);
         back.setTranslateY(650);
         exit.setTranslateX(1135);
@@ -193,10 +196,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         });
 
 
-        back.setFont(font3);
-        exit.setFont(font3);
-        back.setPrefSize(200, 80);
-        exit.setPrefSize(200, 80);
+
 
 
 
