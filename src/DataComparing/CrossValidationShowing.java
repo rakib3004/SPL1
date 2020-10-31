@@ -1,5 +1,7 @@
 package DataComparing;
 
+import AHPalgorithm.AHPcalculation;
+import AHPalgorithm.AHPprocessImplementation;
 import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
@@ -7,6 +9,7 @@ import MainPackage.Processing;
 import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
+import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
@@ -19,17 +22,19 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,13 +47,17 @@ public class CrossValidationShowing extends Application {
     private Text actionStatus;
     PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
-int iterator;
+    AHPcriteriaWeight ahPcriteriaWeight;
+    int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+    AHPcalculation ahPcalculation = new AHPcalculation();
+    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     ReverseSorting soring = new ReverseSorting();
     PrioritySort prioritySort = new PrioritySort();
+    int methodIndex = 1;
     @Override
     public void start(Stage primaryStage) throws IOException {
         String className = this.getClass().getSimpleName();
@@ -79,13 +88,14 @@ int iterator;
         exit.setTranslateY(685);
         Label outputLabel = new Label();
         outputLabel.setTranslateX(540);
-        outputLabel.setTranslateY(725);
+        outputLabel.setTranslateY(715);
+        outputLabel.setTextFill(Color.WHITE);
         Button CV_Output = new Button("Result");
         Font font = Font.font(Font.getFontNames().get(0),FontWeight.BOLD,20);
         CV_Output.setFont(font);
         outputLabel.setFont(font);
         CV_Output.setTranslateX(540);
-        CV_Output.setTranslateY(670);
+        CV_Output.setTranslateY(650);
         CV_Output.setPrefSize(200, 50);
         CV_Output.setOnAction(actionEvent -> {
             TrainingSector trainingSector = new TrainingSector();
@@ -109,7 +119,7 @@ int iterator;
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
         table = new TableView();
-        data = getInitialTableData();
+        data = getMLR_data();
         table.setItems(data);
 
         TableColumn bookName = new TableColumn("Book Name");
@@ -128,21 +138,48 @@ int iterator;
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
 
         table.getColumns().setAll(bookName, writerName, typeName, bookWeight/*,bookWeightCV*/);
-        table.setPrefWidth(1400);
-        table.setPrefHeight(600);
+
+
+        // REFORM _TABLE _STRUCTURE
+        table.setTranslateX(65);
+        table.setTranslateY(70);
+        table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        // set new label for table
+        String labelName = "Multi Variable Results";
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Label label2 = new Label();
+        label2.setPrefSize(700,45);
+        label2.setTranslateX(454);
+        label2.setTranslateY(0);
+        label2.setText(labelName);
+        label2.setFont(font4);
+
+        // reset buttons position
+        back.setTranslateX(35);
+        back.setTranslateY(650);
+        exit.setTranslateX(1135);
+        exit.setTranslateY(650);
+        back.setFont(font3);
+        exit.setFont(font3);
+
+// add image as a backgroun in this table showing
+        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new CrossValidationShowing.RowSelectChangeListener());
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
 
-        HBox hBox = new HBox();
-        hBox.getChildren().add(table);
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(hb, hBox);
         Group group = new Group();
-        group.getChildren().addAll(vBox, exit, back, CV_Output,outputLabel);
+        group.getChildren().addAll( canvas,table,label2,exit, back, CV_Output,outputLabel);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -159,7 +196,7 @@ int iterator;
         }
     }
 
-    private ObservableList getInitialTableData( ) throws IOException {
+    private ObservableList getMLR_data( ) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -189,6 +226,71 @@ int iterator;
 
         return data;
     }
+
+    private ObservableList getAHP_data( ) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        List list = new ArrayList();
+        TrainingSector trainingSector = new TrainingSector();
+        priorityDataCV = processing.fileReaderMethods();
+        CrossValidationData[] crossValidationData;
+        crossValidationData= trainingSector.trainingSectorMethods();
+ //       calculateCVResults(crossValidationData,priorityData);
+        int jterator=0;
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = processing.fileReaderMethods();
+        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+        jterator=0;
+        for(iterator=0;iterator<numberOfBooks;iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                String string = Double.toString(crossValidationData[jterator].estimatedData);
+            list.add(new TableData(priorityData[iterator].bookData.bookName,
+                    priorityData[iterator].bookData.writerName,
+                    Double.toString(crossValidationData[jterator].calculatedValue),
+                    Double.toString(crossValidationData[jterator].estimatedData)));
+             jterator++;
+        }
+        }
+        ObservableList data = FXCollections.observableList(list);
+
+        return data;
+    }
+
+    private ObservableList getPRA_data( ) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        List list = new ArrayList();
+        TrainingSector trainingSector = new TrainingSector();
+        priorityDataCV = processing.fileReaderMethods();
+        CrossValidationData[] crossValidationData;
+        crossValidationData= trainingSector.trainingSectorMethods();
+ //       calculateCVResults(crossValidationData,priorityData);
+        int jterator=0;
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = processing.fileReaderMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+ jterator=0;
+        for(iterator=0;iterator<numberOfBooks;iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
+                String string = Double.toString(crossValidationData[jterator].estimatedData);
+            list.add(new TableData(priorityData[iterator].bookData.bookName,
+                    priorityData[iterator].bookData.writerName,
+                    Double.toString(crossValidationData[jterator].calculatedValue),
+                    Double.toString(crossValidationData[jterator].estimatedData)));
+             jterator++;
+        }
+        }
+        ObservableList data = FXCollections.observableList(list);
+
+        return data;
+    }
+
+
     public double calculateCVResults(CrossValidationData[] crossValidationData,PriorityData [] priorityData){
         int jterator=0;
         double rmsValue=0.0;
