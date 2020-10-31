@@ -70,22 +70,13 @@ public class MLR_TableView extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         back.setTranslateX(0);
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
-
-        // Books label
-        Label label = new Label("Multiple Linear Regression Results");
-        label.setTextFill(DARKBLUE);
-        label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
-        HBox hb = new HBox();
-        hb.setAlignment(Pos.CENTER);
-        hb.getChildren().add(label);
 
         // Table view, data, columns and properties
         table = new TableView();
@@ -189,7 +180,7 @@ public class MLR_TableView extends Application {
         });
 
         Group group = new Group();
-        group.getChildren().addAll(table,canvas,label2,exit,back);
+        group.getChildren().addAll(canvas,table,label2,exit,back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);

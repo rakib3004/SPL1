@@ -71,8 +71,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         back.setTranslateX(0);
@@ -184,7 +182,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
 
 
         Group group = new Group();
-        group.getChildren().addAll(table,canvas,label2,exit,back);
+        group.getChildren().addAll(canvas,table,label2,exit,back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
