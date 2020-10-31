@@ -11,6 +11,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
+import PageRankAlgorithm.PageRankProcessData;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.TableView;
@@ -61,7 +62,26 @@ public class TrainingSector {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        if(processIndex==1){
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+
+        }
+        else  if(processIndex==2){
+            AHPcriteriaWeight ahPcriteriaWeight;
+            AHPcalculation ahPcalculation = new AHPcalculation();
+            AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+            ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+            priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+
+        } else  if(processIndex==3){
+
+            PageRankProcessData pageRankProcessData = new PageRankProcessData();
+            try {
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {

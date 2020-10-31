@@ -48,14 +48,12 @@ public class CrossValidationShowing extends Application {
     private Text actionStatus;
     PriorityData[] priorityData,priorityDataCV;
     GenericAlgo[] genericAlgo;
-    AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
-    AHPcalculation ahPcalculation = new AHPcalculation();
-    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+
     ReverseSorting soring = new ReverseSorting();
     PrioritySort prioritySort = new PrioritySort();
     int processIndex =1;
@@ -265,6 +263,9 @@ setProcessIndex(1);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
+        AHPcriteriaWeight ahPcriteriaWeight;
+        AHPcalculation ahPcalculation = new AHPcalculation();
+        AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
         priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
         jterator=0;
