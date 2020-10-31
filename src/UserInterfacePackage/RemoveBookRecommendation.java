@@ -268,16 +268,13 @@ ReverseSorting reverseSorting = new ReverseSorting();
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-
-
         Image image = new Image("Images"+ File.separator +"table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
-        Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table,textField1,field);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back,label,table,textField1,field);
         Scene scene1 = new Scene(group, 1500, 950);
 
         secondaryStage.setScene(scene1);

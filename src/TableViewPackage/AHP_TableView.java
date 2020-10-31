@@ -19,8 +19,11 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -30,6 +33,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,10 +109,18 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
         table.getColumns().setAll(bookName,writerName,bookId,typeName,borrowCount,price, bookWeight);
-        table.setPrefWidth(1440);
-        table.setPrefHeight(540);
 
+       // REFORM _TABLE _STRUCTURE
+        table.setTranslateX(65);
+        table.setTranslateY(70);
+        table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new AHP_TableView.RowSelectChangeListener());
         actionStatus = new Text();
@@ -152,12 +164,8 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
             }
         });
 
-        HBox hBox = new HBox();
-        hBox.getChildren().add(table);
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(hb,hBox);
         Group group = new Group();
-        group.getChildren().addAll(vBox,exit,back);
+        group.getChildren().addAll(canvas,table,exit,back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
