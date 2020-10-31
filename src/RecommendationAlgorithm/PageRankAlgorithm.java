@@ -2,6 +2,7 @@ package RecommendationAlgorithm;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
 import MainPackage.BookNumber;
@@ -109,13 +110,19 @@ public class PageRankAlgorithm extends Application {
             }
         });
         crossValidation.setOnAction(actionEvent -> {
-            PRA_Chart_View pra_chart_view = new PRA_Chart_View();
+          /*  PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
 
                 pra_chart_view.start(primaryStage);
             }
 
             catch (Exception exception) {
+                exception.printStackTrace();
+            }*/
+            CrossValidationShowing crossValidationShowing = new CrossValidationShowing();
+            try {
+                crossValidationShowing.start(primaryStage,3);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
 

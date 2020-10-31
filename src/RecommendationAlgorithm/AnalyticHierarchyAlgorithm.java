@@ -2,6 +2,7 @@ package RecommendationAlgorithm;
 
 import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
+import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
 import MainPackage.BookNumber;
@@ -101,11 +102,17 @@ AHPcalculation ahPcalculation = new AHPcalculation();
             }
         });
         crossValidation.setOnAction(actionEvent -> {
-            AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
+           /* AHP_Chart_View ahp_chart_view = new AHP_Chart_View();
             try {
                 ahp_chart_view.start(primaryStage);
             }
             catch (Exception exception) {
+                exception.printStackTrace();
+            }*/
+            CrossValidationShowing crossValidationShowing = new CrossValidationShowing();
+            try {
+                crossValidationShowing.start(primaryStage,2);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });

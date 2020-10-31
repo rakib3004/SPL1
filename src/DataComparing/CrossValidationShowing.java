@@ -65,14 +65,14 @@ public class CrossValidationShowing extends Application {
     public void setProcessIndex(int processIndex) {
         this.processIndex = processIndex;
     }
+    public void start(Stage primaryStage){
 
-    @Override
-    public void start(Stage primaryStage) throws IOException {
+    }
+    public void start(Stage primaryStage,  int methodIndex) throws IOException {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        int methodIndex = 1;
         primaryStage.setTitle("Cross Validation Data");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -130,7 +130,7 @@ public class CrossValidationShowing extends Application {
         hb.getChildren().add(label);
         table = new TableView();
         if(methodIndex==1){
-setProcessIndex(1);
+            setProcessIndex(1);
             data = getMLR_data();
             table.setItems(data);
         }

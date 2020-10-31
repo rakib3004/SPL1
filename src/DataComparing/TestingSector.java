@@ -1,5 +1,6 @@
 package DataComparing;
 
+import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
@@ -9,6 +10,7 @@ import MultiVariableRegression.MultipleLinearRegression;
 import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
+import PageRankAlgorithm.PageRankProcessData;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,9 +40,33 @@ public class TestingSector {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        priorityData2 = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
+
+        if(processIndex==1){
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+            priorityData2 = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+
+        }
+        else  if(processIndex==2){
+            AHPcriteriaWeight ahPcriteriaWeight1;
+            AHPcriteriaWeight ahPcriteriaWeight2;
+            AHPcalculation ahPcalculation = new AHPcalculation();
+            AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+            ahPcriteriaWeight1 =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+            ahPcriteriaWeight2 =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+            priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight1,priorityData,numberOfBooks);
+            priorityData2=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight2,priorityData,numberOfBooks);
+
+        } else  if(processIndex==3){
+
+            PageRankProcessData pageRankProcessData = new PageRankProcessData();
+            try {
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+                priorityData2 = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {

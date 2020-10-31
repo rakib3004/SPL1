@@ -4,6 +4,7 @@ import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
 import CrossValidationProcess.TrainingSet;
+import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.BookInformationShow;
 import InfoDisplay.SevenValueStatistics;
@@ -143,11 +144,17 @@ public class FourVariableRegression extends Application {
         back.setFont(font2);
         back.setContentDisplay(ContentDisplay.LEFT);
         crossValidation.setOnAction(actionEvent -> {
-            MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
+           /* MLR_Chart_View mlr_chart_view = new MLR_Chart_View();
             try {
                 mlr_chart_view.start(primaryStage);
             }
             catch (Exception exception) {
+                exception.printStackTrace();
+            }*/
+            CrossValidationShowing crossValidationShowing = new CrossValidationShowing();
+            try {
+                crossValidationShowing.start(primaryStage,1);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
