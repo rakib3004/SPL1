@@ -152,16 +152,25 @@ public class Main extends Application {
         });
 
 
-        Button search = new Button("Search Book");
-        search.setTranslateX(470);
-        search.setTranslateY(520);
-        search.setPrefSize(375,30);
-        search.setFont(font2);
-        search.setContentDisplay(ContentDisplay.LEFT);
+        Button more = new Button("More");
+        more.setTranslateX(470);
+        more.setTranslateY(520);
+        more.setPrefSize(375,30);
+        more.setFont(font2);
+        more.setContentDisplay(ContentDisplay.LEFT);
+        more.setOnAction(actionEvent -> {
+            AuthorSystem authorSystem = new AuthorSystem();
+            try {
+                authorSystem.start(stage);
+            }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
         FileInputStream fileInputStream5 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"search.png");
         Image image5 = new Image(fileInputStream5);
-        search.setGraphic(new ImageView(image5));
+        more.setGraphic(new ImageView(image5));
 
         Button about = new Button("About");
         about.setTranslateX(950);
@@ -213,7 +222,7 @@ public class Main extends Application {
         canvas.setTranslateY(35);
         Group root = new Group();
         root.getChildren().addAll(canvas/*,welcome*/
-                ,exit,search,about,
+                ,exit,more,about,
                 text,user,librarian,system);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
