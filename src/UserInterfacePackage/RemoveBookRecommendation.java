@@ -158,12 +158,13 @@ ReverseSorting reverseSorting = new ReverseSorting();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
         Label label = new Label();
         label.setPrefSize(700,45);
         label.setTranslateX(444);
         label.setTranslateY(0);
         label.setText(labelName);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
         label.setFont(font4);
 
 
@@ -192,7 +193,6 @@ ReverseSorting reverseSorting = new ReverseSorting();
         });
 
 
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
         back.setFont(font3);
         exit.setFont(font3);
         back.setPrefSize(200, 80);

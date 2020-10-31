@@ -73,8 +73,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         back.setTranslateX(0);
@@ -115,6 +114,17 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         table.setTranslateY(70);
         table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        String labelName = "Analytical Hierarchy Results";
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Label label2 = new Label();
+        label2.setPrefSize(700,45);
+        label2.setTranslateX(444);
+        label2.setTranslateY(0);
+        label2.setText(labelName);
+        label2.setFont(font4);
+
 
         Image image = new Image("Images"+ File.separator +"table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
