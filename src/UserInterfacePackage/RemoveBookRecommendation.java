@@ -171,9 +171,9 @@ ReverseSorting reverseSorting = new ReverseSorting();
         Button exit = new Button("Exit");
 
 
-        back.setTranslateX(0);
+        back.setTranslateX(35);
         back.setTranslateY(650);
-        exit.setTranslateX(1100);
+        exit.setTranslateX(1135);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             list.clear();
@@ -201,7 +201,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         TextField textField1 = new TextField();
-        textField1.setTranslateX(580);
+        textField1.setTranslateX(635);
         textField1.setTranslateY(650);
         textField1.setPrefSize(120,80);
 
@@ -222,7 +222,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         Label field = new Label("Total Books : ");
-        field.setTranslateX(390);
+        field.setTranslateX(445);
         field.setTranslateY(650);
         field.setPrefSize(215,80);
         field.setFont(font3);
@@ -246,7 +246,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId);
-        table.setTranslateX(40);
+        table.setTranslateX(65);
         table.setTranslateY(70);
         table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
