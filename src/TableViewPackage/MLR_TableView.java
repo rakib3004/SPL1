@@ -10,7 +10,10 @@ import LinearRegression.FourVariableRegression;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -25,6 +28,7 @@ import javafx.geometry.Pos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
@@ -107,9 +111,38 @@ public class MLR_TableView extends Application {
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
         table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
-        table.setPrefWidth(1440);
-        table.setPrefHeight(540);
-        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+         // REFORM _TABLE _STRUCTURE
+         table.setTranslateX(65);
+         table.setTranslateY(70);
+         table.setPrefSize(1250,560);
+         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+         // set new label for table
+         String labelName = "Analytical Hierarchy Results";
+         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+         Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+         Label label2 = new Label();
+         label2.setPrefSize(700,45);
+         label2.setTranslateX(454);
+         label2.setTranslateY(0);
+         label2.setText(labelName);
+         label2.setFont(font4);
+
+         // reset buttons position
+         back.setTranslateX(35);
+         back.setTranslateY(650);
+         exit.setTranslateX(1135);
+         exit.setTranslateY(650);
+         back.setFont(font3);
+         exit.setFont(font3);
+
+// add image as a backgroun in this table showing
+         Image image = new Image("Images"+ File.separator +"table2.jpg");
+         Canvas canvas = new Canvas(1500, 950);
+         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+         graphicsContext.drawImage(image, 0, 0);
+
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RowSelectChangeListener());
 
@@ -155,13 +188,9 @@ public class MLR_TableView extends Application {
                 contextMenu.show(table, event.getScreenX(), event.getScreenY());
             }
         });
-        // Hbox
-        HBox hBox = new HBox();
-        hBox.getChildren().add(table);
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(hb,hBox);
+
         Group group = new Group();
-        group.getChildren().addAll(vBox,exit,back);
+        group.getChildren().addAll(table,canvas,label2,exit,back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);

@@ -134,8 +134,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         back.setFont(font3);
         exit.setFont(font3);
 
-
-
+// add image as a backgroun in this table showing
         Image image = new Image("Images"+ File.separator +"table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
