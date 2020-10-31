@@ -13,6 +13,7 @@ import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
+import PageRankAlgorithm.PageRankProcessData;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
@@ -57,13 +58,24 @@ public class CrossValidationShowing extends Application {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     ReverseSorting soring = new ReverseSorting();
     PrioritySort prioritySort = new PrioritySort();
-    int methodIndex = 1;
+    int processIndex =1;
+
+    public int getProcessIndex() {
+        return processIndex;
+    }
+
+    public void setProcessIndex(int processIndex) {
+        this.processIndex = processIndex;
+    }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        primaryStage.setTitle("Table View Example 1");
+
+        int methodIndex = 1;
+        primaryStage.setTitle("Cross Validation Data");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
@@ -105,7 +117,7 @@ public class CrossValidationShowing extends Application {
                 e.printStackTrace();
             }
             CrossValidationData[] crossValidationData;
-            crossValidationData = trainingSector.trainingSectorMethods();
+            crossValidationData = trainingSector.trainingSectorMethods(processIndex);
             System.out.println("Thank You");
             double accuracyOfCV = calculateCVResults(crossValidationData, priorityData);
             System.out.println(accuracyOfCV);
@@ -119,8 +131,21 @@ public class CrossValidationShowing extends Application {
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
         table = new TableView();
-        data = getMLR_data();
-        table.setItems(data);
+        if(methodIndex==1){
+setProcessIndex(1);
+            data = getMLR_data();
+            table.setItems(data);
+        }
+        else if(methodIndex==2){
+            setProcessIndex(2);
+            data = getAHP_data();
+            table.setItems(data);
+        }
+        else if(methodIndex==3){
+            setProcessIndex(3);
+            data = getPRA_data();
+            table.setItems(data);
+        }
 
         TableColumn bookName = new TableColumn("Book Name");
         bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
@@ -204,7 +229,7 @@ public class CrossValidationShowing extends Application {
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods();
+        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
  //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -235,7 +260,7 @@ public class CrossValidationShowing extends Application {
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods();
+        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
  //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -267,12 +292,13 @@ public class CrossValidationShowing extends Application {
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods();
+        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
  //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        PageRankProcessData pageRankProcessData = new PageRankProcessData();
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
  jterator=0;
         for(iterator=0;iterator<numberOfBooks;iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||

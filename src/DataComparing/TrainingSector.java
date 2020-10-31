@@ -34,7 +34,7 @@ public class TrainingSector {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
-    public  CrossValidationData []  trainingSectorMethods() {
+    public  CrossValidationData []  trainingSectorMethods(int processIndex) {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
