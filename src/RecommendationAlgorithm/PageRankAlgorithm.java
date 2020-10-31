@@ -49,42 +49,43 @@ public class PageRankAlgorithm extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font( 26);
-        Button tableView = new Button("Table View");
-        Button graphView = new Button("Graph View");
-        Button consoleView = new Button("Console View");
+        Button results = new Button("Results");
+        Button crossValidation = new Button("Cross Validation");
+        Button description = new Button("Description");
 
-        tableView.setPrefSize(410,230);
-        graphView.setPrefSize(410,230);
-        consoleView.setPrefSize(410,230);
 
-        tableView.setFont(font2);
-        graphView.setFont(font2);
-        consoleView.setFont(font2);
-        tableView.setTranslateX(30);
-        tableView.setTranslateY(35);
-        graphView.setTranslateX(30);
-        graphView.setTranslateY(270);
-        consoleView.setTranslateX(30);
-        consoleView.setTranslateY(505);
+        results.setPrefSize(410,230);
+        crossValidation.setPrefSize(410,230);
+        description.setPrefSize(410,230);
 
-        tableView.setContentDisplay(ContentDisplay.TOP);
-        graphView.setContentDisplay(ContentDisplay.TOP);
-        consoleView.setContentDisplay(ContentDisplay.TOP);
+        results.setFont(font2);
+        crossValidation.setFont(font2);
+        description.setFont(font2);
+        description.setTranslateX(30);
+        description.setTranslateY(35);
+        results.setTranslateX(30);
+        results.setTranslateY(270);
+        crossValidation.setTranslateX(30);
+        crossValidation.setTranslateY(505);
+
+        results.setContentDisplay(ContentDisplay.TOP);
+        crossValidation.setContentDisplay(ContentDisplay.TOP);
+        description.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"table.png");
         Image image1 = new Image(fileInputStream1);
-        tableView.setGraphic(new ImageView(image1));
+        results.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"graph.png");
         Image image2 = new Image(fileInputStream2);
-        graphView.setGraphic(new ImageView(image2));
+        crossValidation.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
                 "src"+ File.separator +"Images"+ File.separator +"console.png");
         Image image3 = new Image(fileInputStream3);
-        consoleView.setGraphic(new ImageView(image3));
-        tableView.setOnAction(actionEvent -> {
+        description.setGraphic(new ImageView(image3));
+        results.setOnAction(actionEvent -> {
             PRA_TableView pra_tableView = new PRA_TableView();
             try {
                 pra_tableView.start(primaryStage);
@@ -93,7 +94,7 @@ public class PageRankAlgorithm extends Application {
                 exception.printStackTrace();
             }
         });
-        consoleView.setOnAction(actionEvent -> {
+        description.setOnAction(actionEvent -> {
             PageRankCalculation pageRankCalculation = new PageRankCalculation();
             try {
                 priorityData = processing.fileReaderMethods();
@@ -107,7 +108,7 @@ public class PageRankAlgorithm extends Application {
                 exception.printStackTrace();
             }
         });
-        graphView.setOnAction(actionEvent -> {
+        crossValidation.setOnAction(actionEvent -> {
             PRA_Chart_View pra_chart_view = new PRA_Chart_View();
             try {
 
@@ -186,8 +187,8 @@ public class PageRankAlgorithm extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(background,0,0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,tableView,
-                graphView,exit,back,home,text,consoleView);
+        group.getChildren().addAll(canvas,results,
+                crossValidation,exit,back,home,text,description);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
