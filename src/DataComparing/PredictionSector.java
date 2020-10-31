@@ -8,7 +8,7 @@ public class PredictionSector {
     TestingSector testingSector  = new TestingSector();
     AHPcriteriaWeight ahPcriteriaWeight;
     public PriorityData [] predictionSectorMethods(double [] priceGroupWeight,double [] timeGroupWeight,
-                                        double [] countGroupWeight,double [] typeGroupWeight){
+                                        double [] countGroupWeight,double [] typeGroupWeight,int processIndex){
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -18,7 +18,7 @@ public class PredictionSector {
                 countGroupWeight[2],countGroupWeight[3],timeGroupWeight[0],timeGroupWeight[1],
                 timeGroupWeight[2],timeGroupWeight[3],timeGroupWeight[4],typeGroupWeight[0],
                 typeGroupWeight[1],typeGroupWeight[2],typeGroupWeight[3],typeGroupWeight[4],typeGroupWeight[5]);
-priorityDataCV = testingSector.testingSectorMethods(ahPcriteriaWeight);
+priorityDataCV = testingSector.testingSectorMethods(ahPcriteriaWeight,processIndex);
         return priorityDataCV;
     }
 }

@@ -218,7 +218,10 @@ public class TrainingSector {
 
             typeGroupWeight[iterator] = typeGroupWeight[iterator] / typeCounter[iterator];
         }
-        priorityDataCV = predictionSector.predictionSectorMethods(priceGroupWeight, timeGroupWeight, countGroupWeight, typeGroupWeight);
+
+        // training set class -----> prediction sector class
+
+        priorityDataCV = predictionSector.predictionSectorMethods(priceGroupWeight, timeGroupWeight, countGroupWeight, typeGroupWeight,processIndex);
         double[] codeValidationList = new double[1000];
         CrossValidationData[] crossValidationData = new CrossValidationData[1000];
         int jterator = 0;
@@ -235,8 +238,26 @@ public class TrainingSector {
             e.printStackTrace();
         }
         jterator = 0;
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        if(processIndex==1){
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+
+        }
+        else  if(processIndex==2){
+            AHPcriteriaWeight ahPcriteriaWeight;
+            AHPcalculation ahPcalculation = new AHPcalculation();
+            AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+            ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
+            priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+
+        } else  if(processIndex==3){
+
+            PageRankProcessData pageRankProcessData = new PageRankProcessData();
+            try {
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 crossValidationData[jterator] = new CrossValidationData(priorityData[iterator].getRankValue(), codeValidationList[jterator]);

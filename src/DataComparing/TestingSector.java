@@ -26,7 +26,7 @@ public class TestingSector {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
-    public PriorityData [] testingSectorMethods(AHPcriteriaWeight ahPcriteriaWeight) {
+    public PriorityData [] testingSectorMethods(AHPcriteriaWeight ahPcriteriaWeight,int processIndex) {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -151,7 +151,7 @@ public class TestingSector {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
 
-                priorityData[iterator].setMLRweight(.25 * (priorityData[iterator].pricePriority +
+                priorityData[iterator].setRankValue(.25 * (priorityData[iterator].pricePriority +
                         priorityData[iterator].timePriority + priorityData[iterator].borrowPriority +
                         priorityData[iterator].timePriority));
 
