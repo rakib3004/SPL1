@@ -20,8 +20,60 @@ public class Library {
         this.userClass = userClass;
     }
 
-    public Library(String userID, String userName, String userInstitute, String userEducationLevel, Class<? extends LibraryUser> aClass) {
+    public Library(String userID1, String userName1, String userInstitute1, String userEducationLevel1, String userClass1) {
+        this.userID1 = userID1;
+        this.userName1 = userName1;
+        this.userInstitute1 = userInstitute1;
+        this.userEducationLevel1 = userEducationLevel1;
+        this.userClass1 = userClass1;
+    }
 
+
+
+    private String userID1;
+    private String userName1;
+    private String userInstitute1;
+    private String userEducationLevel1;
+    private String userClass1;
+
+    public String getUserID1() {
+        return userID1;
+    }
+
+    public void setUserID1(String userID1) {
+        this.userID1 = userID1;
+    }
+
+    public String getUserName1() {
+        return userName1;
+    }
+
+    public void setUserName1(String userName1) {
+        this.userName1 = userName1;
+    }
+
+    public String getUserInstitute1() {
+        return userInstitute1;
+    }
+
+    public void setUserInstitute1(String userInstitute1) {
+        this.userInstitute1 = userInstitute1;
+    }
+
+    public String getUserEducationLevel1() {
+        return userEducationLevel1;
+    }
+
+    public void setUserEducationLevel1(String userEducationLevel1) {
+        this.userEducationLevel1 = userEducationLevel1;
+    }
+
+    public String getUserClass1() {
+        return userClass1;
+    }
+
+    public void setUserClass1(String userClass1) {
+        this.userClass1 = userClass1;
     }
 
     public String getUserID() {

@@ -21,7 +21,7 @@ char [] userInfoData = new char[5000];
 
     LibraryUser [] libraryUser = new LibraryUser[1000];
     public  LibraryUser [] parseUser()throws IOException {
-        File file =new File("UserTable.txt");
+        File file =new File("src"+File.separator+"LibraryFunctionality" +File.separator+"UserTable.txt");
         FileReader fileReader = new FileReader(file);
         fileReader.read(userInfoData);
         fileReader.close();
