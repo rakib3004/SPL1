@@ -8,6 +8,7 @@ public class AccountManagement {
     String textUserID;
     String  stringMembers="";
     char [] libraryMembers = new char[10];
+    UserList userList = new UserList();
     public String accountManagementSignUpMethods(String [] infoDataArray ,
                                                  String userChoiceList) throws IOException {
 
@@ -42,6 +43,7 @@ public class AccountManagement {
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
+                   userList.addUser(textUserID,infoDataArray);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -85,6 +87,7 @@ public class AccountManagement {
                 try {
                     FileWriter fileWriter=new FileWriter(FILENAME);
                     fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
+                    userList.addUser(textUserID,infoDataArray);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -128,6 +131,7 @@ File fileA = new File(FILENAME_COUNT);
             try {
                 FileWriter fileWriter=new FileWriter(file1);
                 fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
+                userList.addUser(textUserID,infoDataArray);
                 fileWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
