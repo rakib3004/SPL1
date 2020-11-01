@@ -222,7 +222,16 @@ public class ReadingRoom extends Application {
         Font font2 = new Font( 15);
         Font font4 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,33);
 
-        //login to system
+     /*
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+       ################################LOG IN###################################
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+*/
         logInRadioButton.setOnAction(actionEvent -> {
             TextField getUserName = new TextField();
             TextField getUserID = new TextField();
@@ -339,6 +348,16 @@ public class ReadingRoom extends Application {
     });
         });
 
+     /*
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+       ################################SIGN UP###################################
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+       ##########################################################################
+*/
        signUpRadioButton.setOnAction(actionEvent -> {
 
        TextField readerTextField = new TextField();
@@ -693,6 +712,9 @@ else{
                userWriterChoiceList = userWriterChoiceList.substring(0,userChoiceListLength2-1);
                userBookTypeChoiceList = userBookTypeChoiceList +"\n"+ userWriterChoiceList;
                String textUserID = "0000";
+       /*  #####################################################
+              GO TO USER SIGN UP MANAGEMENT SYSTEM
+          #####################################################*/
                AccountManagement accountManagement = new AccountManagement();
                try {
                    textUserID=  accountManagement.accountManagementSignUpMethods(infoDataArray, userBookTypeChoiceList);

@@ -413,8 +413,8 @@ public PriorityList accountManagementGetRecommendedBookList(String userName, Str
  char [] getUserInfoArray = new char[500];
  FileReader fileReader = new FileReader(getUserDetailsInFile[1]);
  fileReader.read(getUserInfoArray);
-    String [] favouriteBookTypeList = new String[12];
-    String [] favouriteWriterList = new String[12];
+    String [] favouriteBookTypeList = new String[50];
+    String [] favouriteWriterList = new String[50];
 int typeIterator =0;
 String getFavouriteType="";
 String getFavouriteWriter="";
@@ -422,18 +422,23 @@ int typeCounter=0;
 int writerCounter=0;
 boolean isWriter=false;
 for (typeIterator=0;getUserInfoArray[typeIterator]!='\0';typeIterator++){
+    if(writerCounter==49){
+        break;
+    }
     if(!isWriter){
         if(getUserInfoArray[typeIterator]!='\t'){
             favouriteBookTypeList[typeCounter]=getFavouriteType;
             favouriteBookTypeList[typeCounter]=  favouriteBookTypeList[typeCounter].trim();
             getFavouriteType="";
             typeCounter++;
+
         }
         else if(getUserInfoArray[typeIterator]!='\n'){
             isWriter = true;
             favouriteBookTypeList[typeCounter]=getFavouriteType;
             favouriteBookTypeList[typeCounter]=  favouriteBookTypeList[typeCounter].trim();
             getFavouriteType="";
+
         }
         else{
             getFavouriteType=getFavouriteType+getUserInfoArray[typeIterator];
