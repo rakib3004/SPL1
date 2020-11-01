@@ -46,7 +46,6 @@ char [] userInfoData = new char[5000];
             else if(userInfoData[dataIterator]=='\n'){
                 dataCollector = dataCollector.trim();
                 dataArray[arrayIterator]=dataCollector;
-                arrayIterator=0;
                 dataCollector="";
                 userID = dataArray[0];
                 userName = dataArray[1];
@@ -60,6 +59,7 @@ char [] userInfoData = new char[5000];
                 dataArray[2]="";
                 dataArray[3]="";
                 dataArray[4]="";
+                arrayIterator=0;
 
             }
             else {

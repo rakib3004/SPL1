@@ -1,2 +1,2 @@
 1001	Rakib 	University of Dhaka	Higher	Software Engineering
-1004	Adnan	UUMB	Secondary	Class IX
+1002	Adnan	UUMB	Secondary	Class IX

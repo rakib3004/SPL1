@@ -164,12 +164,10 @@ public class LibraryUserShowing extends Application {
         list.clear();
         int iterator;
         System.out.println(intMembers);
-        System.out.println();
-        System.out.println();
-        System.out.println();
 
-        for(iterator=0;iterator<intMembers;iterator++){
-            System.out.println(intMembers);
+
+        for(iterator=0;iterator<=libraryUsers.length;iterator++){
+
             list.add(new Library(libraryUsers[iterator].getUserID(),libraryUsers[iterator].getUserName(),libraryUsers[iterator].getUserInstitute(),libraryUsers[iterator].getUserEducationLevel(),libraryUsers[iterator].getUserClass()));
             System.out.println(libraryUsers[iterator].getUserID()+"\t"+libraryUsers[iterator].getUserName()+"\t"+libraryUsers[iterator].getUserInstitute()+"\n"+libraryUsers[iterator].getUserEducationLevel()+"\t"+libraryUsers[iterator].getUserClass());
         }
