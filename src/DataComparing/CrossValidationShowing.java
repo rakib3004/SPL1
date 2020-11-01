@@ -4,6 +4,7 @@ import AHPalgorithm.AHPcalculation;
 import AHPalgorithm.AHPprocessImplementation;
 import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
+import LinearRegression.FourVariableRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import Methods.PrioritySort;
@@ -14,12 +15,18 @@ import ObjectOriented.CrossValidationData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import PageRankAlgorithm.PageRankProcessData;
+import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
+import RecommendationAlgorithm.PageRankAlgorithm;
+import TableViewPackage.AHP_TableView;
+import TableViewPackage.MLR_TableView;
+import TableViewPackage.PRA_TableView;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -28,6 +35,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -77,12 +85,46 @@ public class CrossValidationShowing extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-            CrossValidation crossValidation = new CrossValidation();
+           /* CrossValidation crossValidation = new CrossValidation();
             try {
                 crossValidation.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
+            }*/
+
+
+         /*   MultiVariableRegression multiVaribleRegression = new MultiVariableRegression();
+            try {
+                multiVaribleRegression.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }*/
+            if(methodIndex==1){
+                FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+                try {
+                    fourVariableRegression1.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
+               else if(methodIndex==2){
+                AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
+                try {
+                    analyticHierarchyAlgorithm.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+                else if(methodIndex==3){
+                PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
+                try {
+                    pageRankAlgorithmFx.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+
+
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
@@ -169,8 +211,56 @@ public class CrossValidationShowing extends Application {
         table.setPrefSize(1250,560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem mlrCrossValidation = new MenuItem("MLR Cross Validation");
+        MenuItem ahpCrossValidation = new MenuItem("AHP Cross Validation");
+        MenuItem praCrossValidation = new MenuItem("PRA Cross Validation");
+
+        mlrCrossValidation.setOnAction((event) -> {
+            try {
+                start(primaryStage,1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        ahpCrossValidation.setOnAction((event) -> {
+            try {
+                start(primaryStage,2);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        praCrossValidation.setOnAction((event) -> {
+            try {
+                start(primaryStage,3);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        contextMenu.getItems().addAll(mlrCrossValidation,ahpCrossValidation,praCrossValidation);
+
+        table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+            @Override
+            public void handle(ContextMenuEvent event) {
+                contextMenu.show(table, event.getScreenX(), event.getScreenY());
+            }
+        });
+
         // set new label for table
         String labelName = "Multi Variable Results";
+
+        if(methodIndex==1){
+            labelName = "Multi Variable Regression Results";
+        }
+        else if(methodIndex==2){
+            labelName = "Analytical Hierarchy Process Results";
+        }
+        else if(methodIndex==3){
+            labelName = "Page Rank Algorithm Results";
+        }
         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
         Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
         Label label2 = new Label();

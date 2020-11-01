@@ -86,7 +86,7 @@ public class CrossValidation extends Application {
         crossValidationImplementation.setOnAction(actionEvent -> {
             CrossValidationShowing crossValidationShowing = new CrossValidationShowing();
             try {
-                crossValidationShowing.start(primaryStage,1);
+                crossValidationShowing.start(primaryStage,2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

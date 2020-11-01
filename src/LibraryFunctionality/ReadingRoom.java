@@ -109,7 +109,7 @@ public class ReadingRoom extends Application {
         rules.setOnAction(actionEvent -> {
             ProjectDescription projectDescription = new ProjectDescription();
             try {
-                projectDescription.start(primaryStage,1);
+                projectDescription.start(primaryStage,3);
             }
             catch (Exception exception){
                 exception.printStackTrace();
