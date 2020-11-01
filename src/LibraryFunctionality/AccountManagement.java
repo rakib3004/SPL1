@@ -17,14 +17,14 @@ public class AccountManagement {
         String userNameTemplate = infoDataArray[0];
         String FILENAME = userNameTemplate;
 
-        File file = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
-        if(file.exists()){
+        File file1 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+        if(file1.exists()){
             FILENAME = userNameTemplate +"2";
-            File file1 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
-            if(file1.exists()){
+            File file2 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+            if(file2.exists()){
                 FILENAME = userNameTemplate+"3";
-                File file2 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
-                file2.createNewFile();
+                File file3 = new File("src"+File.separator+"UserProfile" +File.separator+(FILENAME+".txt"));
+                file3.createNewFile();
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
@@ -66,7 +66,7 @@ public class AccountManagement {
                 }
             }
             else{
-                file1.createNewFile();
+                file2.createNewFile();
                 String FILENAME_COUNT = "LibraryMemberCount.txt";
                 File fileA = new File(FILENAME_COUNT);
                 FileReader fileReader = new FileReader(fileA);
@@ -110,7 +110,7 @@ public class AccountManagement {
             }
         }
         else {
-            file.createNewFile();
+            file1.createNewFile();
 String FILENAME_COUNT ="LibraryMemberCount.txt";
 File fileA = new File(FILENAME_COUNT);
             FileReader fileReader = new FileReader(fileA);
@@ -126,7 +126,7 @@ File fileA = new File(FILENAME_COUNT);
             int userID = 1000+intMembers;
             textUserID = Integer.toString(userID);
             try {
-                FileWriter fileWriter=new FileWriter(file);
+                FileWriter fileWriter=new FileWriter(file1);
                 fileWriter.write(infoDataArray[0]+"\t"+textUserID+"\t"+infoDataArray[1]+"\t"+infoDataArray[2]+"\t"+infoDataArray[3]);
                 fileWriter.close();
             } catch (IOException e) {
