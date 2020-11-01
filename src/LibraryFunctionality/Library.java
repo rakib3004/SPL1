@@ -20,17 +20,21 @@ public class Library {
         this.userClass = userClass;
     }
 
-    public Library(String userID1, String userName1, String userInstitute1, String userEducationLevel1, String userClass1) {
+/*
+    public Library(String userID1, String userName1,
+                   String userInstitute1, String userEducationLevel1,
+                   String userClass1) {
         this.userID1 = userID1;
         this.userName1 = userName1;
         this.userInstitute1 = userInstitute1;
         this.userEducationLevel1 = userEducationLevel1;
         this.userClass1 = userClass1;
     }
+*/
 
 
 
-    private String userID1;
+   /* private String userID1;
     private String userName1;
     private String userInstitute1;
     private String userEducationLevel1;
@@ -74,6 +78,16 @@ public class Library {
 
     public void setUserClass1(String userClass1) {
         this.userClass1 = userClass1;
+    }
+*/
+    public Library(String s1, String s2, String s3, String s4, String s5) {
+
+        userID = new SimpleStringProperty(s1);
+        userName = new SimpleStringProperty(s2);
+        userInstitute = new SimpleStringProperty(s3);
+        userEducationLevel = new SimpleStringProperty(s4);
+        userClass = new SimpleStringProperty(s5);
+
     }
 
     public String getUserID() {
@@ -135,4 +149,7 @@ public class Library {
     public void setUserClass(String userClass) {
         this.userClass.set(userClass);
     }
+
+
+
 }

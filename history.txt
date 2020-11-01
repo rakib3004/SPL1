@@ -15,3 +15,10 @@ CalculateWeight	Mon 02.11.2020 at 01:39:40 AM
 PrioritySort	Mon 02.11.2020 at 01:39:40 AM
 ReadingRoom	Mon 02.11.2020 at 01:39:42 AM
 LibraryUserShowing	Mon 02.11.2020 at 01:40:05 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:45:42 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:45:59 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:46:38 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:47:32 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:58:14 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:58:21 AM
+LibraryUserShowing	Mon 02.11.2020 at 01:59:19 AM

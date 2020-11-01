@@ -161,11 +161,11 @@ public class LibraryUserShowing extends Application {
         stringMembers = stringMembers.trim();
         int intMembers = Integer.parseInt(stringMembers);
 
-
+        list.clear();
         int iterator;
         for(iterator=0;iterator<intMembers;iterator++){
 
-            list.add(new Library(libraryUsers[iterator].getUserID(),libraryUsers[iterator].getUserName(),libraryUsers[iterator].getUserInstitute(),libraryUsers[iterator].getUserEducationLevel(),libraryUsers[iterator].getClass()));
+            list.add(new Library(libraryUsers[iterator].getUserID(),libraryUsers[iterator].getUserName(),libraryUsers[iterator].getUserInstitute(),libraryUsers[iterator].getUserEducationLevel(),libraryUsers[iterator].getUserClass()));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
