@@ -9,7 +9,7 @@ public class UserList {
 
     public void addUser(String textUserID,String [] infoDataArray) throws IOException {
 
-File file =new File("UserTable.txt");
+File file =new File("src"+File.separator+"LibraryFunctionality" +File.separator+"UserTable.txt");
         FileWriter fileWriter = new FileWriter(file);
         //user id------user name------user institute -------  higher/secondary---- class no/dept name
         fileWriter.write(textUserID+"\t"+infoDataArray[0]+"\t"+infoDataArray[1]+"\t"+infoDataArray[3]+"\t"+infoDataArray[2]+"\n");
@@ -54,6 +54,7 @@ char [] userInfoData = new char[5000];
                 userEducationLevel = dataArray[3];
                 userClass = dataArray[4];
                 libraryUser[userIterator] = new LibraryUser(userID,userName,userInstitute,userEducationLevel,userClass);
+                System.out.println(userID+"\t"+userName+"\t"+userInstitute+"\t"+userEducationLevel+"\t"+userClass);
                 dataArray[0]="";
                 dataArray[1]="";
                 dataArray[2]="";
