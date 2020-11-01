@@ -1,6 +1,7 @@
 package LibraryFunctionality;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -15,8 +16,56 @@ File file =new File("UserTable.txt");
    fileWriter.close();
     }
 
-    public void parseUser(){
 
+char [] userInfoData = new char[5000];
+
+    LibraryUser [] libraryUser = new LibraryUser[1000];
+    public  LibraryUser [] parseUser()throws IOException {
+        File file =new File("UserTable.txt");
+        FileReader fileReader = new FileReader(file);
+        fileReader.read(userInfoData);
+        fileReader.close();
+        int userIterator=0;
+         String userID;
+         String userName;
+         String userInstitute;
+         String userEducationLevel;
+         String userClass;
+        String [] dataArray = new String[5];
+        String dataCollector="";
+        int dataIterator=0;
+        int arrayIterator=0;
+        for(dataIterator=0;userInfoData[dataIterator]!='\0';dataIterator++){
+
+            if(userInfoData[dataIterator]=='\t'){
+                dataCollector = dataCollector.trim();
+                dataArray[arrayIterator]=dataCollector;
+                arrayIterator++;
+                dataCollector="";
+            }
+            else if(userInfoData[dataIterator]=='\n'){
+                dataCollector = dataCollector.trim();
+                dataArray[arrayIterator]=dataCollector;
+                arrayIterator=0;
+                dataCollector="";
+                userID = dataArray[0];
+                userName = dataArray[1];
+                userInstitute = dataArray[2];
+                userEducationLevel = dataArray[3];
+                userClass = dataArray[4];
+                libraryUser[userIterator] = new LibraryUser(userID,userName,userInstitute,userEducationLevel,userClass);
+                dataArray[0]="";
+                dataArray[1]="";
+                dataArray[2]="";
+                dataArray[3]="";
+                dataArray[4]="";
+
+            }
+            else {
+               dataCollector = dataCollector+userInfoData[dataIterator];
+            }
+        }
+return  libraryUser;
     }
 
 

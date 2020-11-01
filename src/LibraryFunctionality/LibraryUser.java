@@ -7,6 +7,9 @@ public class LibraryUser {
     private String userEducationLevel;
     private String userClass;
 
+    public LibraryUser() {
+    }
+
     public LibraryUser(String userID, String userName, String userInstitute, String userEducationLevel, String userClass) {
         this.userID = userID;
         this.userName = userName;
