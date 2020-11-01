@@ -42,7 +42,7 @@ public class LibraryUserShowing extends Application {
     private Text actionStatus;
     PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
-
+    LibraryUser [] libraryUsers;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -71,10 +71,6 @@ public class LibraryUserShowing extends Application {
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-        back.setTranslateX(0);
-        back.setTranslateY(685);
-        exit.setTranslateX(1100);
-        exit.setTranslateY(685);
 
         // Table view, data, columns and properties
         table = new TableView();
@@ -86,21 +82,21 @@ public class LibraryUserShowing extends Application {
     private SimpleStringProperty userEducationLevel;
     private SimpleStringProperty userClass;*/
 
-        TableColumn bookName = new TableColumn("User Id");
-        bookName.setCellValueFactory(new PropertyValueFactory("userID"));
+        TableColumn userId = new TableColumn("User Id");
+        userId.setCellValueFactory(new PropertyValueFactory("userID"));
 
-        TableColumn writerName = new TableColumn("User Name");
-        writerName.setCellValueFactory(new PropertyValueFactory("userName"));
-        TableColumn bookId = new TableColumn("User Institute");
-        bookId.setCellValueFactory(new PropertyValueFactory("userInstitute"));
+        TableColumn userName = new TableColumn("User Name");
+        userName.setCellValueFactory(new PropertyValueFactory("userName"));
+        TableColumn userInstitute = new TableColumn("User Institute");
+        userInstitute.setCellValueFactory(new PropertyValueFactory("userInstitute"));
 
-        TableColumn borrowCount = new TableColumn("User Education Level");
-        borrowCount.setCellValueFactory(new PropertyValueFactory("userEducationLevel"));
-        TableColumn price = new TableColumn("User Class");
-        price.setCellValueFactory(new PropertyValueFactory("userClass"));
+        TableColumn userEducationLevel = new TableColumn("User Education Level");
+        userEducationLevel.setCellValueFactory(new PropertyValueFactory("userEducationLevel"));
+        TableColumn userClass = new TableColumn("User Class");
+        userClass.setCellValueFactory(new PropertyValueFactory("userClass"));
 
 
-        table.getColumns().setAll(bookName,writerName,bookId,borrowCount,price);
+        table.getColumns().setAll(userId,userName,userInstitute,userEducationLevel,userClass);
 
         // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
@@ -133,51 +129,6 @@ public class LibraryUserShowing extends Application {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
-
-
-
-        // Status message text
-        actionStatus = new Text();
-        actionStatus.setFill(Color.FIREBRICK);
-        ContextMenu contextMenu = new ContextMenu();
-        MenuItem mlr_table_view = new MenuItem("MLR Table View");
-        MenuItem ahp_table_view = new MenuItem("AHP Table View");
-        MenuItem pra_table_view = new MenuItem("PRA Table View");
-
-        ahp_table_view.setOnAction((event) -> {
-            AHP_TableView ahpTableViewFX = new AHP_TableView();
-            try {
-                ahpTableViewFX.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        pra_table_view.setOnAction((event) -> {
-            PRA_TableView praTableViewFX = new PRA_TableView();
-            try {
-                praTableViewFX.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        mlr_table_view.setOnAction((event) -> {
-            MLR_TableView mlrTableViewFX = new MLR_TableView();
-            try {
-                mlrTableViewFX.start(primaryStage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
-
-        table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(table, event.getScreenX(), event.getScreenY());
-            }
-        });
-
         Group group = new Group();
         group.getChildren().addAll(canvas,table,label2,exit,back);
 
@@ -185,13 +136,17 @@ public class LibraryUserShowing extends Application {
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
+
         // Select the first row
         table.getSelectionModel().select(0);
-        Book book = (Book) table.getSelectionModel().getSelectedItem();
-        actionStatus.setText(book.toString());
+        Library library = (Library) table.getSelectionModel().getSelectedItem();
+        actionStatus.setText(library.toString());
     }
     private ObservableList getInitialTableData() throws IOException {
         List list = new ArrayList();
+        UserList userList = new UserList();
+        libraryUsers = userList.parseUser();
+
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
