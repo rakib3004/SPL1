@@ -20,6 +20,10 @@ public class Library {
         this.userClass = userClass;
     }
 
+    public Library(String userID, String userName, String userInstitute, String userEducationLevel, Class<? extends LibraryUser> aClass) {
+
+    }
+
     public String getUserID() {
         return userID.get();
     }

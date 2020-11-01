@@ -31,6 +31,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -146,19 +147,25 @@ public class LibraryUserShowing extends Application {
         List list = new ArrayList();
         UserList userList = new UserList();
         libraryUsers = userList.parseUser();
+        String  stringMembers="";
+        char [] libraryMembers = new char[10];
+        String FILENAME_COUNT = "LibraryMemberCount.txt";
+        File fileA = new File(FILENAME_COUNT);
+        FileReader fileReader = new FileReader(fileA);
 
-        priorityData = processing.fileReaderMethods();
-        numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        genericAlgo =soring.sortingMLRmethods(priorityData,numberOfBooks);
+        fileReader.read(libraryMembers);
+        int countIterator=0;
+        for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
+            stringMembers = stringMembers+libraryMembers[countIterator];
+        }
+        stringMembers = stringMembers.trim();
+        int intMembers = Integer.parseInt(stringMembers);
+
+
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for(iterator=0;iterator<intMembers;iterator++){
 
-            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getRankValue())));
+            list.add(new Library(libraryUsers[iterator].getUserID(),libraryUsers[iterator].getUserName(),libraryUsers[iterator].getUserInstitute(),libraryUsers[iterator].getUserEducationLevel(),libraryUsers[iterator].getClass()));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
