@@ -63,6 +63,7 @@ public class LibraryUserShowing extends Application {
             } catch (Exception exception) {
                 exception.printStackTrace();
             }*/
+
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
@@ -79,26 +80,27 @@ public class LibraryUserShowing extends Application {
         table = new TableView();
         data = getInitialTableData();
         table.setItems(data);
+        /*    private SimpleStringProperty userID;
+    private SimpleStringProperty userName;
+    private SimpleStringProperty userInstitute;
+    private SimpleStringProperty userEducationLevel;
+    private SimpleStringProperty userClass;*/
 
-        TableColumn bookName = new TableColumn("Book Name");
-        bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
+        TableColumn bookName = new TableColumn("User Id");
+        bookName.setCellValueFactory(new PropertyValueFactory("userID"));
 
-        TableColumn writerName = new TableColumn("Writer Name");
-        writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
-        TableColumn bookId = new TableColumn("Book ID");
-        bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
+        TableColumn writerName = new TableColumn("User Name");
+        writerName.setCellValueFactory(new PropertyValueFactory("userName"));
+        TableColumn bookId = new TableColumn("User Institute");
+        bookId.setCellValueFactory(new PropertyValueFactory("userInstitute"));
 
-        TableColumn borrowCount = new TableColumn("Borrow Count");
-        borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
-        TableColumn price = new TableColumn("Price");
-        price.setCellValueFactory(new PropertyValueFactory("price"));
-        TableColumn bookWeight = new TableColumn("Book Weight");
-        bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
+        TableColumn borrowCount = new TableColumn("User Education Level");
+        borrowCount.setCellValueFactory(new PropertyValueFactory("userEducationLevel"));
+        TableColumn price = new TableColumn("User Class");
+        price.setCellValueFactory(new PropertyValueFactory("userClass"));
 
-        TableColumn typeName = new TableColumn("Type Name");
-        typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
+        table.getColumns().setAll(bookName,writerName,bookId,borrowCount,price);
 
         // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
