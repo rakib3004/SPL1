@@ -35,25 +35,25 @@ public class ProcessAnalysis extends Application {
             Font font2 = new Font( 26);
             Button crossValidationAnalysis = new Button("Cross Validation Analysis");
             Button sevenValueStatistics = new Button("Seven Value Statistics");
-            Button dataOptimization = new Button("Data Optimization");
+            Button methodsComparison = new Button("Methods Comparison");
 
             crossValidationAnalysis.setPrefSize(410,230);
             sevenValueStatistics.setPrefSize(410,230);
-            dataOptimization.setPrefSize(410,230);
+            methodsComparison.setPrefSize(410,230);
 
             crossValidationAnalysis.setFont(font);
             sevenValueStatistics.setFont(font);
-            dataOptimization.setFont(font2);
+            methodsComparison.setFont(font2);
             crossValidationAnalysis.setTranslateX(30);
             crossValidationAnalysis.setTranslateY(35);
             sevenValueStatistics.setTranslateX(30);
             sevenValueStatistics.setTranslateY(270);
-            dataOptimization.setTranslateX(30);
-            dataOptimization.setTranslateY(505);
+            methodsComparison.setTranslateX(30);
+            methodsComparison.setTranslateY(505);
 
             crossValidationAnalysis.setContentDisplay(ContentDisplay.TOP);
             sevenValueStatistics.setContentDisplay(ContentDisplay.TOP);
-            dataOptimization.setContentDisplay(ContentDisplay.TOP);
+            methodsComparison.setContentDisplay(ContentDisplay.TOP);
             FileInputStream fileInputStream1 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"cross.png");
             Image image1 = new Image(fileInputStream1);
@@ -67,7 +67,7 @@ public class ProcessAnalysis extends Application {
             FileInputStream fileInputStream3 = new FileInputStream(
                     "src"+ File.separator +"Images"+ File.separator +"algorithm.png");
             Image image3 = new Image(fileInputStream3);
-            dataOptimization.setGraphic(new ImageView(image3));
+            methodsComparison.setGraphic(new ImageView(image3));
 
             crossValidationAnalysis.setOnAction(actionEvent -> {
                 try {
@@ -86,7 +86,7 @@ SevenValueStatistics bookApplication = new SevenValueStatistics();
                     exception.printStackTrace();
                 }
             });
-            dataOptimization.setOnAction(actionEvent -> {
+            methodsComparison.setOnAction(actionEvent -> {
               ReadingRoom readingRoom = new ReadingRoom();
                 try {
                     readingRoom.start(primaryStage);
@@ -163,7 +163,7 @@ SevenValueStatistics bookApplication = new SevenValueStatistics();
             Group group = new Group();
         group.getChildren().addAll(canvas,crossValidationAnalysis,
                 sevenValueStatistics,
-                dataOptimization,exit,home,text,back);
+                methodsComparison,exit,home,text,back);
         Scene scene1 = new Scene(group,1500,950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
