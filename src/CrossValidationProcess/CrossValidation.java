@@ -69,17 +69,17 @@ public class  CrossValidation extends Application {
         crossValidationVisualization.setContentDisplay(ContentDisplay.TOP);
         crossValidationDescription.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"implement.png");
+                "src"+ File.separator +"Images"+ File.separator +"implement1.png");
         Image image1 = new Image(fileInputStream1);
         crossValidationImplementation.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"analysis.png");
+                "src"+ File.separator +"Images"+ File.separator +"analysis1.png");
         Image image2 = new Image(fileInputStream2);
         crossValidationVisualization.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"description.png");
+                "src"+ File.separator +"Images"+ File.separator +"description1.png");
         Image image3 = new Image(fileInputStream3);
         crossValidationDescription.setGraphic(new ImageView(image3));
 

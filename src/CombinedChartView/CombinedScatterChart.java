@@ -179,7 +179,8 @@ public class CombinedScatterChart extends Application {
         selectOtherChart.setTranslateX(650);
         selectOtherChart.setTranslateY(320);
         selectOtherChart.setPrefSize(150, 35);
-
+        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
+        selectOtherChart.setFont(font5);
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, scatterChart, scatterChart1, scatterChart2, exit, back,selectOtherChart);
