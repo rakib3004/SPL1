@@ -5,6 +5,7 @@ import AHPalgorithm.AHPprocessImplementation;
 import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
+import JavFX.ProjectDescription;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -96,16 +97,11 @@ public class PageRankAlgorithm extends Application {
             }
         });
         description.setOnAction(actionEvent -> {
-            PageRankCalculation pageRankCalculation = new PageRankCalculation();
+            ProjectDescription projectDescription = new ProjectDescription();
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
-                PageRankProcessData pageRankProcessData = new PageRankProcessData();
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);                System.exit(0);
+                projectDescription.start(primaryStage,6);
             }
-            catch (Exception exception) {
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });
