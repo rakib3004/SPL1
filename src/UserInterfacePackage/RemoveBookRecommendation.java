@@ -216,14 +216,16 @@ ReverseSorting reverseSorting = new ReverseSorting();
         textField1.setText(Integer.toString(numberOfBooks));
         textField1.setFont(font3);
         textField1.setOnAction(actionEvent -> {
-            list.clear();
+
 
             if(Integer.parseInt(textField1.getText())>finalBookNumber){
 
                               Stage accountInfoStage = new Stage();
                 Label accountInfoLabel= new Label();
                 Group accountInfoGroup = new Group();
-                 Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
+                accountInfoLabel.setText("Limit out of bound!!!!!");
+
+                Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
                 Canvas canvas20 = new Canvas(400,180);
                 GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();
                 graphicsContext1.drawImage(image20,0,0);
@@ -248,14 +250,19 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
 
             }
-            setNumberOfBooks(Integer.parseInt(textField1.getText()));
-            setBookPoint(1);
 
-            try {
-                this.start(secondaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
+            else{
+                list.clear();
+                setNumberOfBooks(Integer.parseInt(textField1.getText()));
+                setBookPoint(1);
+
+                try {
+                    this.start(secondaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
+
 
         });
 
