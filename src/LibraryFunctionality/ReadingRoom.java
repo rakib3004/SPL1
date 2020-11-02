@@ -344,6 +344,8 @@ public class ReadingRoom extends Application {
                 okButton.setOnAction(actionEvent2 ->{
                     accountInfoStage.close();
                 });
+
+
                 accountInfoGroup.getChildren().addAll(canvas20,accountInfoLabel,okButton);
                 Font font3= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
                 accountInfoLabel.setFont(font3);
