@@ -51,10 +51,10 @@ public class ProjectDescription extends Application {
         exit.setFont(font3);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-        String imageString = "v2.png";
+        String imageString = "v1.png";
 
         if (index == 1) {
-            imageString = "v2.png";
+            imageString = "v1.png";
             back.setOnAction(actionEvent -> {
                 AuthorSystem authorSystem = new AuthorSystem();
                 try {
@@ -64,7 +64,7 @@ public class ProjectDescription extends Application {
                 }
             });
         } else if (index == 2) {
-            imageString = "v3.png";
+            imageString = "v2.png";
             back.setOnAction(actionEvent -> {
                 CrossValidation crossValidation = new CrossValidation();
                 try {
@@ -74,7 +74,7 @@ public class ProjectDescription extends Application {
                 }
             });
         } else if (index == 3) {
-            imageString = "v4.png";
+            imageString = "v3.png";
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
