@@ -37,7 +37,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class CrossValidation extends Application {
+public class  CrossValidation extends Application {
 
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
