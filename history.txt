@@ -1,5 +1,11 @@
-Main	Mon 02.11.2020 at 02:56:42 PM
-ProcessImplementation	Mon 02.11.2020 at 02:56:43 PM
-FourVariableRegression	Mon 02.11.2020 at 02:56:44 PM
-ProjectDescription	Mon 02.11.2020 at 02:56:45 PM
-FourVariableRegression	Mon 02.11.2020 at 02:56:46 PM
+Main	Mon 02.11.2020 at 02:59:34 PM
+LibraryDesk	Mon 02.11.2020 at 02:59:35 PM
+RemoveBookRecommendation	Mon 02.11.2020 at 02:59:36 PM
+BookNumber	Mon 02.11.2020 at 02:59:36 PM
+Processing	Mon 02.11.2020 at 02:59:36 PM
+DataParsing	Mon 02.11.2020 at 02:59:36 PM
+BookNumber	Mon 02.11.2020 at 02:59:36 PM
+MultipleLinearRegression	Mon 02.11.2020 at 02:59:36 PM
+Matrix	Mon 02.11.2020 at 02:59:36 PM
+CalculateWeight	Mon 02.11.2020 at 02:59:36 PM
+ReverseSorting	Mon 02.11.2020 at 02:59:36 PM

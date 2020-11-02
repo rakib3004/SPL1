@@ -23,6 +23,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -78,8 +80,6 @@ PriorityList priorityList1= new PriorityList();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        setStyle(exit);
-        setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
                 labelName="  "+userName+"'s Choice List";
@@ -104,15 +104,20 @@ PriorityList priorityList1= new PriorityList();
                     }
 
                 }
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        exit.setFont(font3);
+        Button show = new Button("Show");
+        show.setTranslateX(550);
+        show.setTranslateY(350);
+        show.setPrefSize(200,100);
+        show.setFont(font3);
 
-Button show = new Button("Show");
-show.setOnAction(actionEvent -> {
+        show.setOnAction(actionEvent -> {
     showInfo(primaryStage,labelName,data);
 });
-setStyle(show);
-show.setPrefSize(200,100);
-show.setTranslateX(500);
-show.setTranslateY(250);
+
+
 
         Image image = new Image("Images"+ File.separator +"libraryBackground6.jpg");
         Canvas canvas = new Canvas(1500,950);
