@@ -3,6 +3,9 @@ package JavFX;
 import CrossValidationProcess.CrossValidation;
 import FilePackage.DateTimeWriter;
 import LibraryFunctionality.ReadingRoom;
+import LinearRegression.FourVariableRegression;
+import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
+import RecommendationAlgorithm.PageRankAlgorithm;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -109,6 +112,31 @@ public class ProjectDescription extends Application {
                 exception.printStackTrace();
             }
 
+        }
+
+        if(methodIndex==1){
+            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+            try {
+                fourVariableRegression1.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if(methodIndex==2){
+            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
+            try {
+                analyticHierarchyAlgorithm.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if(methodIndex==3){
+            PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
+            try {
+                pageRankAlgorithmFx.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
         }
         Image image = new Image("Images" + File.separator + imageString);
 
