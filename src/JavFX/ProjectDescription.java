@@ -90,7 +90,7 @@ public class ProjectDescription extends Application {
             });
 
 
-        }else if (index == 4) {
+        } else if (index == 4) {
             imageString = "v4.png";
 
             back.setOnAction(actionEvent -> {
@@ -102,7 +102,7 @@ public class ProjectDescription extends Application {
                 }
             });
 
-        }else if (index == 5) {
+        } else if (index == 5) {
             imageString = "v5.png";
 
             back.setOnAction(actionEvent -> {
@@ -114,7 +114,7 @@ public class ProjectDescription extends Application {
                 }
             });
 
-        }else if (index == 6) {
+        } else if (index == 6) {
             imageString = "v6.png";
 
             back.setOnAction(actionEvent -> {
@@ -125,8 +125,6 @@ public class ProjectDescription extends Application {
                     exception.printStackTrace();
                 }
             });
-
-        }
 
         }
         Image image = new Image("Images" + File.separator + imageString);
