@@ -82,6 +82,33 @@ public class ProjectDescription extends Application {
                 exception.printStackTrace();
             }
 
+        }else if (index == 4) {
+            imageString = "v5.png";
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        }else if (index == 5) {
+            imageString = "v6.png";
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
+        }else if (index == 6) {
+            imageString = "v7.png";
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+
         }
         Image image = new Image("Images" + File.separator + imageString);
 

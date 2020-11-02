@@ -10,6 +10,7 @@ import InfoDisplay.BookInformationShow;
 import InfoDisplay.SevenValueStatistics;
 import JavFX.Main;
 import JavFX.ProcessAnalysis;
+import JavFX.ProjectDescription;
 import LibraryFunctionality.ReadingRoom;
 import RecommendationAlgorithm.AnalyticHierarchyAlgorithm;
 import RecommendationAlgorithm.MultiVariableRegression;
@@ -167,13 +168,11 @@ public class FourVariableRegression extends Application {
             }
         });
         description.setOnAction(actionEvent -> {
+            ProjectDescription projectDescription = new ProjectDescription();
             try {
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                priorityData =     multipleLinearRegression.
-                        multipleLinearRegressionMethods(priorityData, numberOfBooks);
-                System.exit(0);
-            } catch (Exception exception) {
+                projectDescription.start(primaryStage,4);
+            }
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });
