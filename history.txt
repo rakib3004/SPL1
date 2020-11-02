@@ -1,1 +1,5 @@
-Main	Mon 02.11.2020 at 01:59:45 PM
+Main	Mon 02.11.2020 at 02:46:46 PM
+ProcessImplementation	Mon 02.11.2020 at 02:46:48 PM
+FourVariableRegression	Mon 02.11.2020 at 02:46:48 PM
+ProjectDescription	Mon 02.11.2020 at 02:46:49 PM
+ReadingRoom	Mon 02.11.2020 at 02:46:49 PM

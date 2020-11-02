@@ -83,7 +83,7 @@ public class ProjectDescription extends Application {
             }
 
         }else if (index == 4) {
-            imageString = "v5.png";
+            imageString = "v4.png";
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
@@ -92,7 +92,7 @@ public class ProjectDescription extends Application {
             }
 
         }else if (index == 5) {
-            imageString = "v6.png";
+            imageString = "v5.png";
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
@@ -101,7 +101,7 @@ public class ProjectDescription extends Application {
             }
 
         }else if (index == 6) {
-            imageString = "v7.png";
+            imageString = "v6.png";
             ReadingRoom readingRoom = new ReadingRoom();
             try {
                 readingRoom.start(primaryStage);
