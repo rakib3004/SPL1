@@ -78,65 +78,56 @@ public class ProjectDescription extends Application {
             });
         } else if (index == 3) {
             imageString = "v3.png";
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+
+
+            back.setOnAction(actionEvent -> {
+                ReadingRoom readingRoom = new ReadingRoom();
+                try {
+                    readingRoom.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
+
 
         }else if (index == 4) {
             imageString = "v4.png";
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+
+            back.setOnAction(actionEvent -> {
+                FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
+                try {
+                    fourVariableRegression1.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
 
         }else if (index == 5) {
             imageString = "v5.png";
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+
+            back.setOnAction(actionEvent -> {
+                AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
+                try {
+                    analyticHierarchyAlgorithm.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
 
         }else if (index == 6) {
             imageString = "v6.png";
-            ReadingRoom readingRoom = new ReadingRoom();
-            try {
-                readingRoom.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
+
+            back.setOnAction(actionEvent -> {
+                PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
+                try {
+                    pageRankAlgorithmFx.start(primaryStage);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            });
 
         }
 
-        if(methodIndex==1){
-            FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
-            try {
-                fourVariableRegression1.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
-        else if(methodIndex==2){
-            AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
-            try {
-                analyticHierarchyAlgorithm.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
-        else if(methodIndex==3){
-            PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
-            try {
-                pageRankAlgorithmFx.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
         }
         Image image = new Image("Images" + File.separator + imageString);
 
