@@ -140,7 +140,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
         exit.setFont(font3);
         show.setFont(font3);
         show.setPrefSize(200, 80);
-        labelName=this.getClass().getSimpleName();
+        labelName="Remove Book Recommendation";
+        // pathok chahida jei boi gular kom sei boi gula baad deyar jonno ei recommendation
+
+        // Reader Demand
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
                 list.add(new Book(priorityData[iterator].bookData.bookName,
                         priorityData[iterator].bookData.writerName,

@@ -36,6 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class
+
 SelectBookRecommendation extends Application {
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
@@ -68,7 +69,9 @@ int positionLocator=85;
         back.setTranslateX(50);
         back.setTranslateY(650);
         exit.setTranslateX(1200);
-        exit.setTranslateY(650);        back.setOnAction(actionEvent -> {
+        exit.setTranslateY(650);
+
+        back.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
             try {
                 libraryDesk.start(primaryStage);
@@ -612,9 +615,9 @@ else{
             Label label3 = new Label();
             /*"Tool recommended "+terminalPrediction+"%\n"+
                     "to add this book \n"+"in the Library"*/
-            String string = "Book's Quality : Low";
-            String string1 = "Book's Quality : Medium";
-            String string2 = "Book's Quality : Good";
+            String string = "Assuming Readers' Demand : Low";
+            String string1 = "Assuming Readers' Demand : Medium";
+            String string2 = "Assuming Readers' Demand : Good";
             String string3 = "New Type's of Book";
             if (terminalPrediction < 10.00) {
                 label3.setText(string3);
