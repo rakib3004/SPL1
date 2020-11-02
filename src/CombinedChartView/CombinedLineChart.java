@@ -192,11 +192,10 @@ public class CombinedLineChart extends Application {
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-        Image image = new Image("Images"+ File.separator +"analytation1.jpg");
+        Image image = new Image("Images"+ File.separator +"statisticalAnalysis.jpg");
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image,0,0);
     }
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
