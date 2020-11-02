@@ -5,6 +5,7 @@ import AHPalgorithm.AHPprocessImplementation;
 import DataComparing.CrossValidationShowing;
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
+import JavFX.ProjectDescription;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
 import ObjectOriented.AHPcriteriaWeight;
@@ -86,18 +87,11 @@ AHPcalculation ahPcalculation = new AHPcalculation();
         Image image3 = new Image(fileInputStream3);
         description.setGraphic(new ImageView(image3));
         description.setOnAction(actionEvent -> {
+            ProjectDescription projectDescription = new ProjectDescription();
             try {
-
-                priorityData = processing.fileReaderMethods();
-                numberOfBooks = bookNumber.bookNumberFindingMethods();
-                ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-                ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,
-                        priorityData,numberOfBooks);
-
-                System.exit(0);
+                projectDescription.start(primaryStage,5);
             }
-
-            catch (Exception exception) {
+            catch (Exception exception){
                 exception.printStackTrace();
             }
         });
