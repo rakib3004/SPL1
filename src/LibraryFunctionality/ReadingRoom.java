@@ -56,7 +56,7 @@ public class ReadingRoom extends Application {
 
         Button defaultType = new Button("Default Book Recommendation");
         Button userBased = new Button("User Based Book Recommendation");
-        Button rules = new Button("Users Rules & Regulations");
+        Button rules = new Button("Users List");
 
         defaultType.setPrefSize(410,230);
         userBased.setPrefSize(410,230);
@@ -86,7 +86,7 @@ public class ReadingRoom extends Application {
         userBased.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"document.png");
+                "src"+ File.separator +"Images"+ File.separator +"list.png");
         Image image3 = new Image(fileInputStream3);
         rules.setGraphic(new ImageView(image3));
 

@@ -1,9 +1,2 @@
-Main	Mon 02.11.2020 at 11:52:35 AM
-ReadingRoom	Mon 02.11.2020 at 11:52:38 AM
-ReadingRoom	Mon 02.11.2020 at 11:52:38 AM
-AccountManagement	Mon 02.11.2020 at 11:53:03 AM
-LibraryUserShowing	Mon 02.11.2020 at 11:53:23 AM
-LibraryUserShowing	Mon 02.11.2020 at 11:53:51 AM
-LibraryUserShowing	Mon 02.11.2020 at 11:54:05 AM
-LibraryUserShowing	Mon 02.11.2020 at 11:54:19 AM
-LibraryUserShowing	Mon 02.11.2020 at 11:56:41 AM
+Main	Mon 02.11.2020 at 12:10:26 PM
+ProcessImplementation	Mon 02.11.2020 at 12:10:27 PM
