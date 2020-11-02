@@ -66,6 +66,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
+    int numberOfBooks2=0;
     String labelName="";
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
@@ -80,6 +81,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
+                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -87,12 +90,14 @@ ReverseSorting reverseSorting = new ReverseSorting();
         else{
             try {
                 priorityData = processing.fileReaderMethods();
+                numberOfBooks2 = bookNumber.bookNumberFindingMethods();
+                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks2);
+                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks2);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
+
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);

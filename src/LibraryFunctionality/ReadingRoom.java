@@ -107,13 +107,21 @@ public class ReadingRoom extends Application {
             }
         });
         rules.setOnAction(actionEvent -> {
-            ProjectDescription projectDescription = new ProjectDescription();
+           /* ProjectDescription projectDescription = new ProjectDescription();
             try {
                 projectDescription.start(primaryStage,3);
             }
             catch (Exception exception){
                 exception.printStackTrace();
+            }*/
+            LibraryUserShowing libraryUserShowing = new LibraryUserShowing();
+            try {
+                libraryUserShowing.start(primaryStage);
             }
+            catch (Exception exception){
+                exception.printStackTrace();
+            }
+
         });
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
