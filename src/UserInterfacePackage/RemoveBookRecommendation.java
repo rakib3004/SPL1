@@ -125,9 +125,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        back.setFont(font3);
-        exit.setFont(font3);
+
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
@@ -137,8 +135,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
         show.setOnAction(actionEvent -> {
             showInfo(primaryStage,labelName,data);
         });
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        exit.setFont(font3);
         show.setFont(font3);
-
         show.setPrefSize(200, 80);
         labelName=this.getClass().getSimpleName();
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
