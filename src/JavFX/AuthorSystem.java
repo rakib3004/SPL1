@@ -104,7 +104,7 @@ public class AuthorSystem extends Application {
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font);
         Text text = new Text("More Data Analysis");
-        text.setTranslateX(600);
+        text.setTranslateX(680);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);

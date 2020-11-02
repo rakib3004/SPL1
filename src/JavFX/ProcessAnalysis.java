@@ -1,5 +1,6 @@
 package JavFX;
 
+import CombinedChartView.CombinedLineChart;
 import CrossValidationProcess.*;
 import FilePackage.DateTimeWriter;
 import InfoDisplay.SevenValueStatistics;
@@ -79,7 +80,7 @@ public class ProcessAnalysis extends Application {
                 }
             });
             sevenValueStatistics.setOnAction(actionEvent -> {
-SevenValueStatistics bookApplication = new SevenValueStatistics();
+        SevenValueStatistics bookApplication = new SevenValueStatistics();
                 try {
                     bookApplication.start(primaryStage);
                 } catch (Exception exception) {
@@ -87,9 +88,9 @@ SevenValueStatistics bookApplication = new SevenValueStatistics();
                 }
             });
             methodsComparison.setOnAction(actionEvent -> {
-              ReadingRoom readingRoom = new ReadingRoom();
+                CombinedLineChart combinedLineChart = new CombinedLineChart();
                 try {
-                    readingRoom.start(primaryStage);
+                    combinedLineChart.start(primaryStage,0);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

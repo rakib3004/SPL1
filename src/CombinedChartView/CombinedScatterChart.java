@@ -21,6 +21,8 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -45,9 +47,9 @@ public class CombinedScatterChart extends Application {
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
-        back.setTranslateX(0);
+        back.setTranslateX(55);
         back.setTranslateY(650);
-        exit.setTranslateX(1100);
+        exit.setTranslateX(1120);
         exit.setTranslateY(650);
         back.setOnAction(actionEvent -> {
             ProcessAnalysis processAnalysis = new ProcessAnalysis();
@@ -64,6 +66,9 @@ public class CombinedScatterChart extends Application {
 
         back.setPrefSize(160, 50);
         exit.setPrefSize(160, 50);
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        back.setFont(font3);
+        exit.setFont(font3);
 
        priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
