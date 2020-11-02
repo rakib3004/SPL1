@@ -51,39 +51,6 @@ public class Main extends Application {
         dateTimeWriter.dateTimeWriterInitialMethods(className);
 
 
-         Button welcome = new Button("Start");
-        welcome.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
-
-        welcome.setStyle("-fx-base: #000000;");
-        welcome.setContentDisplay(ContentDisplay.TOP);
-        welcome.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
-
-                welcome.setStyle("-fx-base: #00ffff;");
-            }
-        });
-
-      //  Button welcome = new Button("Welcome to RTML");
-        welcome.setTranslateX(620);
-        welcome.setTranslateY(370);
- //       setStyle(welcome);
-        FileInputStream fileInputStream = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"power.png");
-        Image image = new Image(fileInputStream);
-      //  welcome.setGraphic(new ImageView(image));
-
-        welcome.setPrefSize(125, 55);
-
-        welcome.setOnAction(actionEvent -> {
-            Main main = new Main();
-            try {
-                main.start(primaryStage);
-            }
-            catch (Exception exception){
-                exception.printStackTrace();
-            }
-        });
-
         Font font = new Font(36);
         Font font1 = new Font(47);
         Font font2 = new Font( 25);
@@ -168,7 +135,7 @@ public class Main extends Application {
             }
         });
         FileInputStream fileInputStream5 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"search.png");
+                "src"+ File.separator +"Images"+ File.separator +"option.png");
         Image image5 = new Image(fileInputStream5);
         more.setGraphic(new ImageView(image5));
 
