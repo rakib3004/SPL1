@@ -1,19 +1,35 @@
 package LibraryFunctionality;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class UserList {
 
     public void addUser(String textUserID,String [] infoDataArray) throws IOException {
 
 File file =new File("src"+File.separator+"LibraryFunctionality" +File.separator+"UserTable.txt");
-        FileWriter fileWriter = new FileWriter(file);
+
+
+  /*      FileWriter fileWriter = new FileWriter(file);
         //user id------user name------user institute -------  higher/secondary---- class no/dept name
         fileWriter.write(textUserID+"\t"+infoDataArray[0]+"\t"+infoDataArray[1]+"\t"+infoDataArray[3]+"\t"+infoDataArray[2]+"\n");
-   fileWriter.close();
+        fileWriter.close();
+        */
+
+        BufferedWriter out = null;
+          try {
+                out = new BufferedWriter(
+                        new FileWriter("src"+File.separator+"LibraryFunctionality" +File.separator+"UserTable.txt", true));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                out.write(textUserID+"\t"+infoDataArray[0]+"\t"+infoDataArray[1]+"\t"+infoDataArray[3]+"\t"+infoDataArray[2]+"\n");
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
     }
 
 

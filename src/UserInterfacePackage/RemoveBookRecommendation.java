@@ -30,6 +30,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -224,7 +225,8 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 Label accountInfoLabel= new Label();
                 Group accountInfoGroup = new Group();
                 accountInfoLabel.setText("Limit out of bound!!!!!");
-
+                //JOptionPane.showMessageDialog(null,"Limit out of bound!!!!!");
+                System.out.println("Limit out of bound!!!!!");
                 Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
                 Canvas canvas20 = new Canvas(400,180);
                 GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();

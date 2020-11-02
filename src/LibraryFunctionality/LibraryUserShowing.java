@@ -168,9 +168,13 @@ public class LibraryUserShowing extends Application {
 */
 
 
-        for(iterator=0;iterator<intMembers;iterator++){
-            list.add(new Library(libraryUsers[iterator].getUserID(),libraryUsers[iterator].getUserName(),libraryUsers[iterator].getUserInstitute(),libraryUsers[iterator].getUserEducationLevel(),libraryUsers[iterator].getUserClass()));
-
+        for(iterator=0;iterator<intMembers-1;iterator++){
+            list.add(new Library(libraryUsers[iterator].getUserID(),
+                    libraryUsers[iterator].getUserName(),
+                    libraryUsers[iterator].getUserInstitute(),
+                    libraryUsers[iterator].getUserEducationLevel(),
+                    libraryUsers[iterator].getUserClass()));
+            System.out.println("okk");
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
