@@ -486,12 +486,6 @@ bookType.setPrefSize(200, 50);
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Label label = new Label();
-        label.setPrefSize(500,45);
-        label.setTranslateX(450);
-        label.setTranslateY(0);
-        label.setText(labelName);
-        setStyle(label);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setTranslateX(0);
@@ -509,9 +503,23 @@ bookType.setPrefSize(200, 50);
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
+        //label top of the table
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Label label = new Label();
+        label.setPrefSize(700,45);
+        label.setTranslateX(454);
+        label.setTranslateY(0);
+        label.setText(labelName);
+        label.setFont(font4);
+        // reset buttons position
+        back.setTranslateX(35);
+        back.setTranslateY(650);
+        exit.setTranslateX(1135);
+        exit.setTranslateY(650);
+        back.setFont(font3);
+        exit.setFont(font3);
 
-        setStyle(exit);
-        setStyle(back);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
