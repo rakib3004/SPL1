@@ -43,7 +43,7 @@ import java.io.IOException;
 public class BookNumberDisplay extends Application {
 
     int numberOfBooks;
-    int typeCounter = 6, writerCounter = 350, yearCounter = 12;
+    int typeCounter = 6, writerCounter = 334, yearCounter = 12;
     @Override
     public void start(Stage primaryStage) {
 

@@ -489,7 +489,7 @@ public class WriterWise extends Application {
         writerMenu.setTranslateX(700);
         writerMenu.setTranslateY(285);
         writerMenu.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground11.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
 
         group.getChildren().addAll(writerMenu);
         graphicsContext.drawImage(image,0,0);
@@ -557,7 +557,7 @@ public class WriterWise extends Application {
        table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
 //        actionStatus.setText(book.toString());
-        Image image = new Image("Images"+ File.separator +"libraryBackground15.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);

@@ -436,7 +436,7 @@ public class TimeWise extends Application {
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
+        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas,exit, back,label,table);
