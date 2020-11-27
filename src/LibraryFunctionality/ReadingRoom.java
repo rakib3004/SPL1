@@ -896,7 +896,7 @@ textHeading.setTranslateX(250);
         FileInputStream fileInputStream7 = null;
         try {
             fileInputStream7 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "demand.png");
+                    "src" + File.separator + "Images" + File.separator + "writer.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
