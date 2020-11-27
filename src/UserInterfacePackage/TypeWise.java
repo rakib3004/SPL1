@@ -81,30 +81,30 @@ int iterator;
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
-        Button selfWise = new Button("Shelf Wise");
+        Button shelfWise = new Button("Shelf Wise");
         Button timeWise = new Button("Time Wise");
 
         typeWise1.setPrefSize(400, 170);
-        selfWise.setPrefSize(400, 170);
+        shelfWise.setPrefSize(400, 170);
         timeWise.setPrefSize(400, 170);
         writerWise.setPrefSize(400, 170);
 
         typeWise1.setFont(font2);
-        selfWise.setFont(font2);
+        shelfWise.setFont(font2);
         timeWise.setFont(font2);
         writerWise.setFont(font2);
 
         typeWise1.setTranslateX(30);
         typeWise1.setTranslateY(35);
-        selfWise.setTranslateX(30);
-        selfWise.setTranslateY(210);
+        shelfWise.setTranslateX(30);
+        shelfWise.setTranslateY(210);
         timeWise.setTranslateX(30);
         timeWise.setTranslateY(385);
         writerWise.setTranslateX(30);
         writerWise.setTranslateY(560);
 
         typeWise1.setContentDisplay(ContentDisplay.LEFT);
-        selfWise.setContentDisplay(ContentDisplay.LEFT);
+        shelfWise.setContentDisplay(ContentDisplay.LEFT);
         timeWise.setContentDisplay(ContentDisplay.LEFT);
         writerWise.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = null;
@@ -125,7 +125,7 @@ int iterator;
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        selfWise.setGraphic(new ImageView(image2));
+        shelfWise.setGraphic(new ImageView(image2));
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
@@ -162,7 +162,7 @@ int iterator;
                 exception.printStackTrace();
             }
         });
-        selfWise.setOnAction(actionEvent -> {
+        shelfWise.setOnAction(actionEvent -> {
 
             try {
                 ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
@@ -258,7 +258,7 @@ int iterator;
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
         group.getChildren().addAll(canvas, typeWise1,
-                selfWise, writerWise,
+                shelfWise, writerWise,
                 timeWise, exit, home, text, back);
         MenuItem uponnash = new MenuItem("Uponnash");
         uponnash.setOnAction(new EventHandler<ActionEvent>() {
