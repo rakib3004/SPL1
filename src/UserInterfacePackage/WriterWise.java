@@ -537,7 +537,7 @@ public class WriterWise extends Application {
         exit.setTranslateY(650);
         back.setFont(font3);
         exit.setFont(font3);
-        ;
+
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
         table = new TableView();
