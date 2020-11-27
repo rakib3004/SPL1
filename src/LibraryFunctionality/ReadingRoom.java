@@ -243,6 +243,10 @@ public class ReadingRoom extends Application {
         logInRadioButton.setOnAction(actionEvent -> {
             TextField getUserName = new TextField();
             TextField getUserID = new TextField();
+            signUpLabel.setText("LOG IN");
+            signUpLabel.setTranslateX(230);
+            signUpLabel.setTranslateY(5);
+            signUpLabel.setPrefSize(250,65);
 
             Label userNameTextField = new Label("_Name:");
             Label userIdTextField = new Label("_User ID:");
@@ -250,11 +254,13 @@ public class ReadingRoom extends Application {
             userIdTextField.setFont(font2);
             getUserName.setFont(font5);
             getUserID.setFont(font5);
+            signUpLabel.setFont(font1);
             userNameTextField.setLabelFor(getUserName);
             userNameTextField.setMnemonicParsing(true);
             userIdTextField.setLabelFor(getUserID);
             userIdTextField.setMnemonicParsing(true);
-            Button enterButton1 = new Button("----Enter----");
+            Button enterButton1 = new Button("Enter");
+            enterButton1.setFont(font1);
 
             userNameTextField.setFont(font1);
             userIdTextField.setFont(font1);
@@ -264,12 +270,8 @@ public class ReadingRoom extends Application {
             GridPane gridPane = new GridPane();
             gridPane.setAlignment(Pos.CENTER);
 
-            signUpLabel.setText("LOG IN");
-            signUpLabel.setTranslateX(230);
-            signUpLabel.setTranslateY(5);
-            signUpLabel.setPrefSize(250,65);
-            Label label2 = new Label();
 
+            Label label2 = new Label();
             Label spaceLabel = new Label(" ");
             Label emptyLabelOne = new Label("");
             Label emptyLabelTwo = new Label("");
@@ -288,6 +290,11 @@ public class ReadingRoom extends Application {
             Group group19 = new Group();
             group19.getChildren().addAll(canvas19);
             group19.getChildren().addAll(gridPane);
+
+            userNameTextField.setTextFill(Color.WHITE);
+            userIdTextField.setTextFill(Color.WHITE);
+            insertNameID.setTextFill(Color.WHITE);
+            signUpLabel.setTextFill(Color.WHITE);
 
 
             GraphicsContext graphicsContext = canvas19.getGraphicsContext2D();
