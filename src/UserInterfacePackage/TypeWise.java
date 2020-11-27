@@ -110,7 +110,7 @@ int iterator;
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "types.png");
+                    "src" + File.separator + "Images" + File.separator + "choose.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -120,7 +120,7 @@ int iterator;
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "time.png");
+                    "src" + File.separator + "Images" + File.separator + "shelf.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -129,7 +129,7 @@ int iterator;
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+                    "src" + File.separator + "Images" + File.separator + "calender.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -139,7 +139,7 @@ int iterator;
         FileInputStream fileInputStream7 = null;
         try {
             fileInputStream7 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "demand.png");
+                    "src" + File.separator + "Images" + File.separator + "writer.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
