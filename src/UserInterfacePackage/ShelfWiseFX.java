@@ -84,36 +84,36 @@ public class ShelfWiseFX extends Application {
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
-        Button ShelfWise = new Button("Shelf Wise");
+        Button shelfWise = new Button("Shelf Wise");
         Button timeWise = new Button("Time Wise");
 
         typeWise1.setPrefSize(400, 170);
-        ShelfWise.setPrefSize(400, 170);
+        shelfWise.setPrefSize(400, 170);
         timeWise.setPrefSize(400, 170);
         writerWise.setPrefSize(400, 170);
 
         typeWise1.setFont(font2);
-        ShelfWise.setFont(font2);
+        shelfWise.setFont(font2);
         timeWise.setFont(font2);
         writerWise.setFont(font2);
 
         typeWise1.setTranslateX(30);
         typeWise1.setTranslateY(35);
-        ShelfWise.setTranslateX(30);
-        ShelfWise.setTranslateY(210);
+        shelfWise.setTranslateX(30);
+        shelfWise.setTranslateY(210);
         timeWise.setTranslateX(30);
         timeWise.setTranslateY(385);
         writerWise.setTranslateX(30);
         writerWise.setTranslateY(560);
 
         typeWise1.setContentDisplay(ContentDisplay.LEFT);
-        ShelfWise.setContentDisplay(ContentDisplay.LEFT);
+        shelfWise.setContentDisplay(ContentDisplay.LEFT);
         timeWise.setContentDisplay(ContentDisplay.LEFT);
         writerWise.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "types.png");
+                    "src" + File.separator + "Images" + File.separator + "choose.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -123,16 +123,16 @@ public class ShelfWiseFX extends Application {
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "time.png");
+                    "src" + File.separator + "Images" + File.separator + "shelf.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         Image image2 = new Image(fileInputStream2);
-        ShelfWise.setGraphic(new ImageView(image2));
+        shelfWise.setGraphic(new ImageView(image2));
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+                    "src" + File.separator + "Images" + File.separator + "calender.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -142,7 +142,7 @@ public class ShelfWiseFX extends Application {
         FileInputStream fileInputStream7 = null;
         try {
             fileInputStream7 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "demand.png");
+                    "src" + File.separator + "Images" + File.separator + "writer.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -165,7 +165,7 @@ public class ShelfWiseFX extends Application {
                 exception.printStackTrace();
             }
         });
-        ShelfWise.setOnAction(actionEvent -> {
+        shelfWise.setOnAction(actionEvent -> {
 
             try {
                 ShelfWiseFX shelfWiseFX = new ShelfWiseFX();
@@ -261,7 +261,7 @@ public class ShelfWiseFX extends Application {
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
         group.getChildren().addAll(canvas, typeWise1,
-                ShelfWise, writerWise,
+                shelfWise, writerWise,
                 timeWise, exit, home, text, back);
         MenuItem Shelf1 = new MenuItem("Shelf No : 1");
         Shelf1.setOnAction(new EventHandler<ActionEvent>() {
