@@ -81,7 +81,7 @@ int iterator;
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
-        Button selfWise = new Button("Self Wise");
+        Button selfWise = new Button("Shelf Wise");
         Button timeWise = new Button("Time Wise");
 
         typeWise1.setPrefSize(400, 170);
