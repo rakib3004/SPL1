@@ -59,7 +59,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        primaryStage.setTitle("Table View Example 1");
+        primaryStage.setTitle("Analytic Hierarchy Process Table");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {

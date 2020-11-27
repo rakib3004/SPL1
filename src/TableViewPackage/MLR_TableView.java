@@ -56,7 +56,7 @@ public class MLR_TableView extends Application {
          DateTimeWriter dateTimeWriter =  new DateTimeWriter();
          dateTimeWriter.dateTimeWriterMethods(className);
 
-        primaryStage.setTitle("Table View Example 1");
+        primaryStage.setTitle("Multi-variable Linear Regression Table");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {

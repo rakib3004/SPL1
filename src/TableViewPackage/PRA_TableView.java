@@ -56,7 +56,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-        primaryStage.setTitle("Table View Example 1");
+        primaryStage.setTitle("Page Rank Algorithm Table");
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
