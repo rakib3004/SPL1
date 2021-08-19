@@ -2,3 +2,5 @@
 1006	Ashraf	SGPHS	Secondary	Class X
 1007	Rahim	CUET	Higher	ME
 1004	Fahim	DU	Higher	IIT
+1005	Muktar	IITDU	Higher	SoftwareEngineering
+1006	Doramon	IITDU	Higher	EEE
