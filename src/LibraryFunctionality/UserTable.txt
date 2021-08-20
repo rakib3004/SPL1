@@ -5,3 +5,4 @@
 1005	Muktar	IITDU	Higher	SoftwareEngineering
 1006	Doramon	IITDU	Higher	EEE
 1007	Rahim	DU	Higher	SE
+1008	Asikh	KHSC	Secondary	9

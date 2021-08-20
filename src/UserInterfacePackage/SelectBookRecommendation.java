@@ -609,15 +609,19 @@ else{
             writerWeight = Math.round(writerWeight * 100.00) / 100.00;
             priceWeight = Math.round(priceWeight * 100.00) / 100.00;
 
-            Label label4 = new Label("Type Predicted  : " + typeWeight + "%\n" +
+                Label label3 = new Label();
+
+                Label label31 = new Label("Type Predicted  : " + typeWeight + "%\n" +
                     "Writer Predicted : " + writerWeight + "%\n" +
                     "Price Predicted : " + priceWeight + "%\n");
-            Label label3 = new Label();
+                
             /*"Tool recommended "+terminalPrediction+"%\n"+
                     "to add this book \n"+"in the Library"*/
-            String string = "Assuming Readers' Demand : Low";
-            String string1 = "Assuming Readers' Demand : Medium";
-            String string2 = "Assuming Readers' Demand : Good";
+                
+                Label label4 = new Label("Assuming Readers' Demand:");
+            String string = " Low";
+            String string1 = " Medium";
+            String string2 = " Good";
             String string3 = "New Type's of Book";
             if (terminalPrediction < 10.00) {
                 label3.setText(string3);
@@ -628,7 +632,8 @@ else{
             } else {
                 label3.setText(string2);
             }
-            label3 = buttonDesign.systemLine(label3, 350, 50, 50, 60, 25);
+            label4 = buttonDesign.systemLine(label4, 350, 50, 50, 25, 20);
+            label3 = buttonDesign.systemLine(label3, 350, 50, 75, 60, 50);
             // TextField Ve = new TextField();
           /*
             Button analysis = new Button("Analysis");
@@ -642,7 +647,7 @@ else{
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
             graphicsContext.drawImage(image, 0, 0);
             Group group = new Group();
-            group.getChildren().addAll(canvas, label3);
+            group.getChildren().addAll(canvas, label4,label3);
             Scene resultScene = new Scene(group, 290, 165);
             infoStage.setTitle("Add Book");
             infoStage.setScene(resultScene);
