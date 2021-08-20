@@ -59,9 +59,9 @@ public class LibraryDesk extends Application {
         bookChoosingRecommendation.setTranslateX(30);
         bookChoosingRecommendation.setTranslateY(35);
         bookInformation.setTranslateX(30);
-        bookInformation.setTranslateY(270);
+        bookInformation.setTranslateY(505);
         bookRemovingRecommendation.setTranslateX(30);
-        bookRemovingRecommendation.setTranslateY(505);
+        bookRemovingRecommendation.setTranslateY(270);
 
         bookChoosingRecommendation.setContentDisplay(ContentDisplay.TOP);
         bookInformation.setContentDisplay(ContentDisplay.TOP);

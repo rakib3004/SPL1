@@ -116,7 +116,7 @@ public class TrainingSet extends Application {
          FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "types.png");
+                    "src" + File.separator + "Images" + File.separator + "1.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -126,7 +126,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "time.png");
+                    "src" + File.separator + "Images" + File.separator + "2.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -136,7 +136,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+                    "src" + File.separator + "Images" + File.separator + "3.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -146,7 +146,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream4 = null;
         try {
             fileInputStream4 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "demand.png");
+                    "src" + File.separator + "Images" + File.separator + "4.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -309,7 +309,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "types.png");
+                    "src" + File.separator + "Images" + File.separator + "1.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -319,7 +319,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream2 = null;
         try {
             fileInputStream2 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "time.png");
+                    "src" + File.separator + "Images" + File.separator + "2.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -329,7 +329,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream3 = null;
         try {
             fileInputStream3 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "borrow.png");
+                    "src" + File.separator + "Images" + File.separator + "3.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -339,7 +339,7 @@ public class TrainingSet extends Application {
         FileInputStream fileInputStream4 = null;
         try {
             fileInputStream4 = new FileInputStream(
-                    "src" + File.separator + "Images" + File.separator + "demand.png");
+                    "src" + File.separator + "Images" + File.separator + "4.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
