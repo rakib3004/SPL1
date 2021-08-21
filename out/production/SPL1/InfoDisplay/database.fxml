@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="523.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InfoDisplay.BookAnalysis">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <TableView layoutX="12.0" layoutY="13.0" prefHeight="477.0" prefWidth="720.0">
+        <columns>
+          <TableColumn id="bookNo" prefWidth="66.0" text="Book No." />
+          <TableColumn id="bookName" prefWidth="124.0" text="Book Name" />
+            <TableColumn id="writerName" prefWidth="138.0" text="Writer Name" />
+            <TableColumn id="BookID" prefWidth="133.0" text="Book ID" />
+            <TableColumn id="purchaseNo" prefWidth="75.0" text="Purchase No" />
+            <TableColumn id="price" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

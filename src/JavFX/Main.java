@@ -55,7 +55,7 @@ public class Main extends Application {
         Font font1 = new Font(47);
         Font font2 = new Font( 25);
 
-        Button user = new Button("User");
+        Button user = new Button("Reader");
         Button librarian = new Button("Librarian");
         Button methods = new Button("Methods");
 
@@ -173,8 +173,8 @@ public class Main extends Application {
         exit.setPrefSize(120, 20);
         exit.setContentDisplay(ContentDisplay.LEFT);
         exit.setFont(font2);
-        Text text = new Text("Library Recommendation Tool ");
-        text.setTranslateX(530);
+        Text text = new Text("Library Assistant Tool ");
+        text.setTranslateX(670);
         text.setTranslateY(500);
         text.setFont(font1);
         text.setFill(Color.BLACK);
