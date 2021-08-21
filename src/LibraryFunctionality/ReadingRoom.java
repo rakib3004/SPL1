@@ -56,7 +56,7 @@ public class ReadingRoom extends Application {
 
         Button defaultType = new Button("Default Book Recommendation");
         Button userBased = new Button("User Based Book Recommendation");
-        Button rules = new Button("Users List");
+        Button rules = new Button("Another Library's Book Recommendation");
 
         defaultType.setPrefSize(410,230);
         userBased.setPrefSize(410,230);

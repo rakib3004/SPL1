@@ -57,7 +57,7 @@ public class Main extends Application {
 
         Button user = new Button("Reader");
         Button librarian = new Button("Librarian");
-        Button methods = new Button("Methods");
+        Button methods = new Button("System");
 
         user.setPrefSize(410,230);
         librarian.setPrefSize(410,230);
