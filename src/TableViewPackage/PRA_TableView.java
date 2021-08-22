@@ -34,6 +34,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -205,7 +206,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
     private ObservableList getInitialTableData() throws IOException {
 
         List list = new ArrayList();
-
+        DecimalFormat df = new DecimalFormat("###.##");
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
      //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
@@ -218,7 +219,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getRankValue())));
+                    Double.toString(Double.parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;

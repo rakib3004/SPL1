@@ -35,6 +35,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +81,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         back.setTranslateY(685);
         exit.setTranslateX(1100);
         exit.setTranslateY(685);
-        Label label = new Label("Analytic Heirarchy Process Results");
+        Label label = new Label("Analytic Hierarchy Process Results");
         label.setTextFill(Color.DARKBLUE);
         label.setFont(Font.font("Calibri", FontWeight.BOLD, 36));
         HBox hb = new HBox();
@@ -200,10 +201,12 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         }
     }
     private ObservableList getInitialTableData() throws IOException {
+
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
+        DecimalFormat df = new DecimalFormat("###.##");
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
@@ -215,7 +218,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(priorityData[genericAlgo[iterator].getIndex()].getRankValue())));
+                    Double.toString(Double.parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;

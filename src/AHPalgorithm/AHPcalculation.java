@@ -84,7 +84,7 @@ weightMatrix[i] = weightMatrix[i] + AHPMatrix[j][i];
             }
             weightMatrix[i] = weightMatrix[i]/4;
         }
-//put the value into another class to make an object for use them for all other operatio
+//put the value into another class to make an object for use them for all other operation
 
         ahPcriteriaWeight4 =    typeCriteriaAHP.typeCriteriaAHPMethods(weightMatrix[0],priorityData,numberOfBooks);
         ahPcriteriaWeight2=    countCriteriaAHP.countCriteriaAHPMethods(weightMatrix[1],priorityData,numberOfBooks);
