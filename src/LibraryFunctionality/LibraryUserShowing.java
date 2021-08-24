@@ -24,10 +24,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -49,8 +51,7 @@ public class LibraryUserShowing extends Application {
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
-    @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void startstartInUp(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -58,12 +59,6 @@ public class LibraryUserShowing extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-           /* FourVariableRegression fourVariableRegression = new FourVariableRegression();
-            try {
-                fourVariableRegression.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }*/
 
         });
         exit.setOnAction(actionEvent -> {
@@ -72,16 +67,9 @@ public class LibraryUserShowing extends Application {
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
-        // Table view, data, columns and properties
         table = new TableView();
         data = getInitialTableData();
-        table.setItems(data);
-        /*    private SimpleStringProperty userID;
-    private SimpleStringProperty userName;
-    private SimpleStringProperty userInstitute;
-    private SimpleStringProperty userEducationLevel;
-    private SimpleStringProperty userClass;*/
+
 
         TableColumn userId = new TableColumn("User Id");
         userId.setCellValueFactory(new PropertyValueFactory("userID"));
@@ -143,6 +131,68 @@ public class LibraryUserShowing extends Application {
         Library library = (Library) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(library.toString());
     }
+    public void start(Stage primaryStage) throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setOnAction(actionEvent -> {
+
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+
+
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+
+
+        // reset buttons position
+        back.setTranslateX(35);
+        back.setTranslateY(650);
+        exit.setTranslateX(1135);
+        exit.setTranslateY(650);
+        back.setFont(font3);
+        exit.setFont(font3);
+        primaryStage.setTitle("JavaFX App");
+
+        FileChooser fileChooser = new FileChooser();
+
+        Button button = new Button("Select File");
+        button.setOnAction(e -> {
+            File selectedFile = fileChooser.showOpenDialog(primaryStage);
+        });
+
+
+
+
+
+
+// add image as a backgroun in this table showing
+        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Group group = new Group();
+        group.getChildren().addAll(canvas,button,exit,back);
+
+        Scene scene = new Scene(group, 1400, 775);
+        primaryStage.setScene(scene);
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
+
+    }
+
+
+
+
     private ObservableList getInitialTableData() throws IOException {
         List list = new ArrayList();
         UserList userList = new UserList();
