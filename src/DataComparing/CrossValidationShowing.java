@@ -45,6 +45,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -324,7 +325,9 @@ public class CrossValidationShowing extends Application {
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods(processIndex);
- //       calculateCVResults(crossValidationData,priorityData);
+        DecimalFormat df = new DecimalFormat("###.##");
+
+        //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -336,8 +339,8 @@ public class CrossValidationShowing extends Application {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
             list.add(new TableData(priorityData[iterator].bookData.bookName,
                     priorityData[iterator].bookData.writerName,
-                    Double.toString(crossValidationData[jterator].calculatedValue),
-                    Double.toString(crossValidationData[jterator].estimatedData)));
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
              jterator++;
         }
         }
@@ -355,7 +358,9 @@ public class CrossValidationShowing extends Application {
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods(processIndex);
- //       calculateCVResults(crossValidationData,priorityData);
+        DecimalFormat df = new DecimalFormat("###.##");
+
+        //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -371,8 +376,8 @@ public class CrossValidationShowing extends Application {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
             list.add(new TableData(priorityData[iterator].bookData.bookName,
                     priorityData[iterator].bookData.writerName,
-                    Double.toString(crossValidationData[jterator].calculatedValue),
-                    Double.toString(crossValidationData[jterator].estimatedData)));
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
              jterator++;
         }
         }
@@ -390,7 +395,9 @@ public class CrossValidationShowing extends Application {
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
         crossValidationData= trainingSector.trainingSectorMethods(processIndex);
- //       calculateCVResults(crossValidationData,priorityData);
+        DecimalFormat df = new DecimalFormat("###.##");
+
+        //       calculateCVResults(crossValidationData,priorityData);
         int jterator=0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
@@ -403,8 +410,8 @@ public class CrossValidationShowing extends Application {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
             list.add(new TableData(priorityData[iterator].bookData.bookName,
                     priorityData[iterator].bookData.writerName,
-                    Double.toString(crossValidationData[jterator].calculatedValue),
-                    Double.toString(crossValidationData[jterator].estimatedData)));
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
              jterator++;
         }
         }
