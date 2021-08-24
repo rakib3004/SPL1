@@ -1,6 +1,7 @@
 package LibraryFunctionality;
 
 import FilePackage.DateTimeWriter;
+import Layout.ButtonDesign;
 import LinearRegression.FourVariableRegression;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -135,6 +136,9 @@ public class LibraryUserShowing extends Application {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
+            // add button desing
+        ButtonDesign buttonDesign = new ButtonDesign();
+
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -153,6 +157,7 @@ public class LibraryUserShowing extends Application {
         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
 
 
+
         // reset buttons position
         back.setTranslateX(35);
         back.setTranslateY(650);
@@ -164,11 +169,12 @@ public class LibraryUserShowing extends Application {
 
         FileChooser fileChooser = new FileChooser();
 
-        Button button = new Button("Select File");
-        button.setOnAction(e -> {
+        Button newLibraryData = new Button("Select File");
+        newLibraryData.setOnAction(e -> {
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
         });
 
+        buttonDesign.systemLine(newLibraryData,150,60,666,333,25);
 
 
 
@@ -181,7 +187,7 @@ public class LibraryUserShowing extends Application {
         graphicsContext.drawImage(image, 0, 0);
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,button,exit,back);
+        group.getChildren().addAll(canvas,newLibraryData,exit,back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
