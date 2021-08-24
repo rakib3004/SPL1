@@ -4,9 +4,12 @@ import FilePackage.DateTimeWriter;
 import Layout.ButtonDesign;
 import LinearRegression.FourVariableRegression;
 import MainPackage.BookNumber;
+import MainPackage.DataParsing;
 import MainPackage.Processing;
+import Methods.PrintInfo;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
+import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
 import TableViewPackage.AHP_TableView;
@@ -47,6 +50,10 @@ public class LibraryUserShowing extends Application {
     PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
     LibraryUser [] libraryUsers;
+    int numOfBook;
+    BookData[] bookData = new BookData[1050];
+
+    DataParsing dataParsing = new DataParsing();
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -172,9 +179,21 @@ public class LibraryUserShowing extends Application {
         Button newLibraryData = new Button("Select File");
         newLibraryData.setOnAction(e -> {
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
+            Processing processing = new Processing();
+            try {
+                priorityData = processing.fileChooserMethods(selectedFile);
+
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+
+
         });
 
-        buttonDesign.systemLine(newLibraryData,150,60,666,333,25);
+     newLibraryData=   buttonDesign.systemLine(newLibraryData,150,60,666,333,25);
+
+     Button enterButton = new Button("MLR");
+        enterButton=   buttonDesign.systemLine(enterButton,150,60,666,433,25);
 
 
 
