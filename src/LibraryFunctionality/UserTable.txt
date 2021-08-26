@@ -7,3 +7,4 @@
 1007	Rahim	DU	Higher	SE
 1008	Asikh	KHSC	Secondary	9
 1009	Shakib	University Of Dhaka	Higher	English
+1010	Umar	SUST	Higher	EEE

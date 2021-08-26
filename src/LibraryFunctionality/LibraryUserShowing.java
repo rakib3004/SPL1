@@ -196,10 +196,26 @@ public class LibraryUserShowing extends Application {
             Processing processing = new Processing();
             try {
                 priorityData = processing.fileChooserMethods(selectedFile);
+                numberOfBooks = bookNumber.bookNumberFindingMethods();
+
 
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
+
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+            priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+
+            labelName="Library's Book Recommendation";
+            for (iterator = 0; iterator < numberOfBooks; iterator++) {
+                    list.add(new Book(priorityData[iterator].bookData.bookName,
+                            priorityData[iterator].bookData.writerName,
+                            priorityData[iterator].bookData.bookId,
+                            priorityData[iterator].bookData.typeName));
+                    data = FXCollections.observableList(list);
+
+            }
+            showInfo(primaryStage,labelName,data);
 
 
         });
