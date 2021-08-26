@@ -1,5 +1,7 @@
 package LibraryFunctionality;
 
+import AHPalgorithm.AHPcalculation;
+import AHPalgorithm.AHPprocessImplementation;
 import FilePackage.DateTimeWriter;
 import Layout.ButtonDesign;
 import LinearRegression.FourVariableRegression;
@@ -7,8 +9,10 @@ import MainPackage.BookNumber;
 import MainPackage.DataParsing;
 import MainPackage.Processing;
 import Methods.PrintInfo;
+import Methods.PrioritySort;
 import Methods.ReverseSorting;
 import MultiVariableRegression.MultipleLinearRegression;
+import ObjectOriented.AHPcriteriaWeight;
 import ObjectOriented.BookData;
 import ObjectOriented.GenericAlgo;
 import ObjectOriented.PriorityData;
@@ -16,7 +20,10 @@ import TableViewPackage.AHP_TableView;
 import TableViewPackage.Book;
 import TableViewPackage.MLR_TableView;
 import TableViewPackage.PRA_TableView;
+import UserInterfacePackage.TypeWise;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -44,6 +51,7 @@ import java.util.List;
 
 public class LibraryUserShowing extends Application {
 
+
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
@@ -59,6 +67,15 @@ public class LibraryUserShowing extends Application {
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
+
+
+    PrioritySort prioritySort = new PrioritySort();
+    List list = new ArrayList();
+    AHPcriteriaWeight ahPcriteriaWeight;
+    int iterator;
+
+    String labelName="Top Books";
+
     public void startstartInUp(Stage primaryStage) throws IOException {
         String  className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
@@ -160,10 +177,7 @@ public class LibraryUserShowing extends Application {
         exit.setPrefSize(200, 80);
 
 
-
         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-
-
 
         // reset buttons position
         back.setTranslateX(35);
@@ -217,7 +231,7 @@ public class LibraryUserShowing extends Application {
 
 
 
-
+/*
     private ObservableList getInitialTableData() throws IOException {
         List list = new ArrayList();
         UserList userList = new UserList();
@@ -238,9 +252,9 @@ public class LibraryUserShowing extends Application {
 
         list.clear();
         int iterator;
-/*
+*//*
         System.out.println("Sizes : "+libraryUsers.length);
-*/
+*//*
 
 
         for(iterator=0;iterator<intMembers-1;iterator++){
@@ -250,6 +264,117 @@ public class LibraryUserShowing extends Application {
                     libraryUsers[iterator].getUserEducationLevel(),
                     libraryUsers[iterator].getUserClass()));
             System.out.println("okk");
+        }
+        ObservableList data = FXCollections.observableList(list);
+        return data;
+    }*/
+
+    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+
+        Button back = new Button("Back");
+        Button exit = new Button("Exit");
+        back.setTranslateX(0);
+        back.setTranslateY(650);
+        exit.setTranslateX(1100);
+        exit.setTranslateY(650);
+        back.setOnAction(actionEvent -> {
+            list.clear();
+            try {
+                this.start(secondaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+        exit.setOnAction(actionEvent -> {
+            System.exit(0);
+        });
+        //label top of the table
+        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Label label = new Label();
+        label.setPrefSize(700,45);
+        label.setTranslateX(454);
+        label.setTranslateY(0);
+        label.setText(labelName);
+        label.setFont(font4);
+        // reset buttons position
+        back.setTranslateX(35);
+        back.setTranslateY(650);
+        exit.setTranslateX(1135);
+        exit.setTranslateY(650);
+        back.setFont(font3);
+        exit.setFont(font3);
+
+        back.setPrefSize(200, 80);
+        exit.setPrefSize(200, 80);
+
+        table = new TableView();
+        table.setItems(data);
+
+        TableColumn bookName = new TableColumn("Book Name");
+        bookName.setCellValueFactory(new PropertyValueFactory("bookName"));
+
+        TableColumn writerName = new TableColumn("Writer Name");
+        writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
+        TableColumn bookId = new TableColumn("Book ID");
+        bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
+        TableColumn typeName = new TableColumn("Type Name");
+        typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
+
+        table.getColumns().setAll(bookName,writerName,typeName,bookId);
+        table.setPrefWidth(1240);
+        table.setPrefHeight(560);
+        table.setTranslateX(60);
+        table.setTranslateY(70);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        table.getSelectionModel().selectedIndexProperty().addListener(
+                new LibraryUserShowing.RowSelectChangeListener());
+
+        // Status message text
+        actionStatus = new Text();
+        actionStatus.setFill(Color.FIREBRICK);
+        table.getSelectionModel().select(0);
+        Book book = (Book) table.getSelectionModel().getSelectedItem();
+        actionStatus.setText(book.toString());
+
+        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        Group group = new Group();
+        group.getChildren().addAll(canvas,exit, back,label,table);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+
+        Scene scene1 = new Scene(group, 1500, 950);
+        secondaryStage.setScene(scene1);
+        secondaryStage.setTitle("Books Statistics");
+        secondaryStage.setFullScreen(true);
+        secondaryStage.show();
+    }
+    private class RowSelectChangeListener implements ChangeListener {
+        @Override
+        public void changed(ObservableValue observableValue, Object o, Object t1) {
+
+        }
+    }
+    private ObservableList getInitialTableData() throws IOException {
+        String  className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        List list = new ArrayList();
+
+        priorityData = processing.fileReaderMethods();
+        numberOfBooks = bookNumber.bookNumberFindingMethods();
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        int iterator;
+        for(iterator=0;iterator<numberOfBooks;iterator++){
+
+            list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
