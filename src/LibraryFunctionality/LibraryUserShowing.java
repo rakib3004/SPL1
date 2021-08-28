@@ -175,7 +175,14 @@ public class LibraryUserShowing extends Application {
 
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-
+        back.setOnAction(actionEvent -> {
+            ReadingRoom readingRoom = new ReadingRoom();
+            try {
+                readingRoom.start(primaryStage);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
 
         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
 
