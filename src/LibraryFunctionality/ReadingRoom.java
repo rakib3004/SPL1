@@ -52,7 +52,7 @@ public class ReadingRoom extends Application {
 
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 26);
+        Font font2 = new Font( 19);
 
         Button defaultType = new Button("Default Book Recommendation");
         Button userBased = new Button("User Based Book Recommendation");
