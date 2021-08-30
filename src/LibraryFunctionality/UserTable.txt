@@ -10,3 +10,4 @@
 1010	Umar	SUST	Higher	EEE
 1011	Amin	DU	Higher	IIT
 1012	Arman	DU	Higher	EEE
+1013	Rahat	DU	Higher	IIT

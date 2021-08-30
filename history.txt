@@ -1,14 +1,1 @@
-Main	Sun 29.08.2021 at 09:29:37 AM
-ReadingRoom	Sun 29.08.2021 at 09:29:38 AM
-ReadingRoom	Sun 29.08.2021 at 09:29:38 AM
-AccountManagement	Sun 29.08.2021 at 09:29:48 AM
-AccountManagement	Sun 29.08.2021 at 09:29:48 AM
-AccountManagement	Sun 29.08.2021 at 09:29:48 AM
-UserChoiceTableData	Sun 29.08.2021 at 09:29:48 AM
-Processing	Sun 29.08.2021 at 09:29:48 AM
-DataParsing	Sun 29.08.2021 at 09:29:48 AM
-BookNumber	Sun 29.08.2021 at 09:29:48 AM
-MultipleLinearRegression	Sun 29.08.2021 at 09:29:48 AM
-Matrix	Sun 29.08.2021 at 09:29:48 AM
-CalculateWeight	Sun 29.08.2021 at 09:29:48 AM
-PrioritySort	Sun 29.08.2021 at 09:29:48 AM
+Main	Sun 29.08.2021 at 12:14:14 PM
