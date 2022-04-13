@@ -51,7 +51,7 @@ public class TrainingSet extends Application {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
@@ -65,28 +65,28 @@ public class TrainingSet extends Application {
         Button trainingSet4 = new Button("Training Set 4");
         trainingSet11.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,1);
+                trainingSet1(primaryStage, 1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet2.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,2);
+                trainingSet1(primaryStage, 2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet3.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,3);
+                trainingSet1(primaryStage, 3);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet4.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,4);
+                trainingSet1(primaryStage, 4);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -110,10 +110,10 @@ public class TrainingSet extends Application {
         trainingSet4.setTranslateX(30);
         trainingSet4.setTranslateY(560);
         trainingSet11.setContentDisplay(ContentDisplay.LEFT);
-         trainingSet2.setContentDisplay(ContentDisplay.LEFT);
-         trainingSet3.setContentDisplay(ContentDisplay.LEFT);
-         trainingSet4.setContentDisplay(ContentDisplay.LEFT);
-         FileInputStream fileInputStream1 = null;
+        trainingSet2.setContentDisplay(ContentDisplay.LEFT);
+        trainingSet3.setContentDisplay(ContentDisplay.LEFT);
+        trainingSet4.setContentDisplay(ContentDisplay.LEFT);
+        FileInputStream fileInputStream1 = null;
         try {
             fileInputStream1 = new FileInputStream(
                     "src" + File.separator + "Images" + File.separator + "1.png");
@@ -232,22 +232,23 @@ public class TrainingSet extends Application {
         graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
         group.getChildren().addAll(canvas, trainingSet11,
-                trainingSet2, trainingSet3, trainingSet4,exit, back, home, text);
-        Scene scene1 = new Scene(group,1500,950);
+                trainingSet2, trainingSet3, trainingSet4, exit, back, home, text);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void trainingSet1(Stage primaryStage,int a) throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void trainingSet1(Stage primaryStage, int a) throws IOException {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        int b=a+5;
-        String aString=Integer.toString(a);
-        String bString=Integer.toString(b);
+        int b = a + 5;
+        String aString = Integer.toString(a);
+        String bString = Integer.toString(b);
 
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -258,28 +259,28 @@ public class TrainingSet extends Application {
         Button trainingSet4 = new Button("Training Set 4");
         trainingSet11.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,1);
+                trainingSet1(primaryStage, 1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet2.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,2);
+                trainingSet1(primaryStage, 2);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet3.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,3);
+                trainingSet1(primaryStage, 3);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         trainingSet4.setOnAction(actionEvent -> {
             try {
-                trainingSet1(primaryStage,4);
+                trainingSet1(primaryStage, 4);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -420,36 +421,36 @@ public class TrainingSet extends Application {
         });
 
         Group group = new Group();
-        group.getChildren().addAll( trainingSet11,
-                trainingSet2, trainingSet3, trainingSet4,exit, back, home, text);
-
+        group.getChildren().addAll(trainingSet11,
+                trainingSet2, trainingSet3, trainingSet4, exit, back, home, text);
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Class Category");
 
         NumberAxis numberAxis = new NumberAxis();
         numberAxis.setLabel("Numbers of Book");
-        ScatterChart ScatterChart  = new ScatterChart (categoryAxis,numberAxis);
+        ScatterChart ScatterChart = new ScatterChart(categoryAxis, numberAxis);
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Training Set 1 ");
-        for (iterator=0;iterator<numberOfBooks;iterator++){
-            if (priorityData[iterator].bookData.bookId.substring(13,14).contains(aString)||
-                    priorityData[iterator].bookData.bookId.substring(13,14).contains(bString)) {
-                series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,priorityData[iterator].getMLRweight()));
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+            if (priorityData[iterator].bookData.bookId.substring(13, 14).contains(aString) ||
+                    priorityData[iterator].bookData.bookId.substring(13, 14).contains(bString)) {
+                series1.getData().add(new XYChart.Data(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].getMLRweight()));
             }
         }
-        ScatterChart .getData().add(series1);
-        ScatterChart .setTranslateX(470);
-        ScatterChart .setTranslateY(35);
-        ScatterChart .setPrefSize(850,425);
+        ScatterChart.getData().add(series1);
+        ScatterChart.setTranslateX(470);
+        ScatterChart.setTranslateY(35);
+        ScatterChart.setPrefSize(850, 425);
 
         group.getChildren().addAll(ScatterChart);
 
-        Scene scene1 = new Scene(group,1500,950);
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -459,8 +460,8 @@ public class TrainingSet extends Application {
 
     public void trainingSetAll(Stage primaryStage) throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -511,22 +512,26 @@ public class TrainingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
 
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series1.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series3.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
 
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -551,8 +556,8 @@ public class TrainingSet extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -564,6 +569,6 @@ public class TrainingSet extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
