@@ -193,8 +193,7 @@ public class ClassesOfBook extends Application {
         Group group = new Group();
         group.getChildren().addAll(canvas, bar_chart,
                 pie_chart, exit, back, home, text, analyticChart);
-        Scene scene1 = new Scene(group,1500,950);
-
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -202,9 +201,7 @@ public class ClassesOfBook extends Application {
         primaryStage.show();
     }
 
-
-    public Button setStyle( Button button)
-    {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-background-color: \n" +
                 "        #090a0c,\n" +
                 "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
@@ -218,7 +215,7 @@ public class ClassesOfBook extends Application {
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
-        return  button;
+        return button;
     }
 
 }
