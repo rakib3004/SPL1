@@ -40,7 +40,7 @@ public class TrainingSetCombined extends Application {
     int iterator;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+    MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override
     public void start(Stage primaryStage) {
@@ -64,7 +64,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -72,7 +72,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -212,9 +212,10 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
     public void startScatterChart(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -232,7 +233,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -240,7 +241,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -358,19 +359,19 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
             try {
-               start(primaryStage);
+                start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
         Group group = new Group();
-        group.getChildren().addAll( scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -394,7 +395,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -402,7 +404,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -411,7 +414,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series3.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -420,7 +424,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         ScatterChart.getData().add(series1);
@@ -431,9 +436,9 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         ScatterChart.setTranslateX(470);
         ScatterChart.setTranslateY(35);
         ScatterChart.setPrefSize(850, 425);
-        
-        group.getChildren().addAll( ScatterChart);
-        
+
+        group.getChildren().addAll(ScatterChart);
+
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -443,8 +448,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
     }
 
     public void startStackedArea(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -462,7 +467,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         stackedArea_chart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -470,7 +475,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         lineChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -595,12 +600,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
 
         Group group = new Group();
-        group.getChildren().addAll( scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedArea_chart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -623,7 +628,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -633,7 +639,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -643,7 +650,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series3.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -653,7 +661,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -665,10 +674,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         stackedAreaChart.setTranslateY(35);
         stackedAreaChart.setPrefSize(850, 425);
 
-
-
-        group.getChildren().addAll( stackedAreaChart);
-
+        group.getChildren().addAll(stackedAreaChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
@@ -678,10 +684,11 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         primaryStage.show();
 
     }
-    public void  startLineChart(Stage primaryStage) throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void startLineChart(Stage primaryStage) throws IOException {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -699,7 +706,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         stackedAreaChart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startStackedArea(primaryStage);
             } catch (Exception exception) {
@@ -707,7 +714,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             }
         });
         line_chart.setOnAction(actionEvent -> {
-            TrainingSetCombined trainingSetCombined =  new TrainingSetCombined();
+            TrainingSetCombined trainingSetCombined = new TrainingSetCombined();
             try {
                 trainingSetCombined.startLineChart(primaryStage);
             } catch (Exception exception) {
@@ -832,12 +839,12 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         });
 
         Group group = new Group();
-        group.getChildren().addAll( scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedAreaChart, exit, back, home, text, line_chart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -863,7 +870,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -873,7 +881,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -883,7 +892,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series3.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -893,7 +903,8 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
         lineChart.getData().add(series1);
@@ -912,6 +923,7 @@ MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
