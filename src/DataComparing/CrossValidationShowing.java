@@ -55,7 +55,7 @@ public class CrossValidationShowing extends Application {
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
-    PriorityData[] priorityData,priorityDataCV;
+    PriorityData[] priorityData, priorityDataCV;
     GenericAlgo[] genericAlgo;
     int iterator;
     int numberOfBooks;
@@ -65,7 +65,7 @@ public class CrossValidationShowing extends Application {
 
     ReverseSorting soring = new ReverseSorting();
     PrioritySort prioritySort = new PrioritySort();
-    int processIndex =1;
+    int processIndex = 1;
 
     public int getProcessIndex() {
         return processIndex;
@@ -74,10 +74,12 @@ public class CrossValidationShowing extends Application {
     public void setProcessIndex(int processIndex) {
         this.processIndex = processIndex;
     }
-    public void start(Stage primaryStage){
+
+    public void start(Stage primaryStage) {
 
     }
-    public void start(Stage primaryStage,  int methodIndex) throws IOException {
+
+    public void start(Stage primaryStage, int methodIndex) throws IOException {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -86,37 +88,39 @@ public class CrossValidationShowing extends Application {
         Button back = new Button("Back");
         Button exit = new Button("Exit");
         back.setOnAction(actionEvent -> {
-           /* CrossValidation crossValidation = new CrossValidation();
-            try {
-                crossValidation.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }*/
+            /*
+             * CrossValidation crossValidation = new CrossValidation();
+             * try {
+             * crossValidation.start(primaryStage);
+             * } catch (Exception exception) {
+             * exception.printStackTrace();
+             * }
+             */
 
-
-         /*   MultiVariableRegression multiVaribleRegression = new MultiVariableRegression();
-            try {
-                multiVaribleRegression.start(primaryStage);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }*/
-            if(methodIndex==1){
+            /*
+             * MultiVariableRegression multiVaribleRegression = new
+             * MultiVariableRegression();
+             * try {
+             * multiVaribleRegression.start(primaryStage);
+             * } catch (Exception exception) {
+             * exception.printStackTrace();
+             * }
+             */
+            if (methodIndex == 1) {
                 FourVariableRegression fourVariableRegression1 = new FourVariableRegression();
                 try {
                     fourVariableRegression1.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-            }
-               else if(methodIndex==2){
+            } else if (methodIndex == 2) {
                 AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     analyticHierarchyAlgorithm.start(primaryStage);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-            }
-                else if(methodIndex==3){
+            } else if (methodIndex == 3) {
                 PageRankAlgorithm pageRankAlgorithmFx = new PageRankAlgorithm();
                 try {
                     pageRankAlgorithmFx.start(primaryStage);
@@ -125,12 +129,11 @@ public class CrossValidationShowing extends Application {
                 }
             }
 
-
         });
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        Font font10= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
+        Font font10 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 26);
         back.setFont(font10);
         exit.setFont(font10);
         back.setPrefSize(200, 80);
@@ -144,7 +147,7 @@ public class CrossValidationShowing extends Application {
         outputLabel.setTranslateY(715);
         outputLabel.setTextFill(Color.WHITE);
         Button CV_Output = new Button("Result");
-        Font font = Font.font(Font.getFontNames().get(0),FontWeight.BOLD,20);
+        Font font = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 20);
         CV_Output.setFont(font);
         outputLabel.setFont(font);
         CV_Output.setTranslateX(540);
@@ -160,14 +163,14 @@ public class CrossValidationShowing extends Application {
             CrossValidationData[] crossValidationData;
             crossValidationData = trainingSector.trainingSectorMethods(processIndex);
             double accuracyOfCV = calculateCVResults(crossValidationData, priorityData);
-        //    System.out.println(accuracyOfCV);
-            /*JOptionPane.showMessageDialog(null, accuracyOfCV + "%");*/
-            outputLabel.setText("RMS  : "+accuracyOfCV/100+"");
-            if(methodIndex==1){
-                outputLabel.setText("RMS  : "+accuracyOfCV/100+"");
+            // System.out.println(accuracyOfCV);
+            /* JOptionPane.showMessageDialog(null, accuracyOfCV + "%"); */
+            outputLabel.setText("RMS  : " + accuracyOfCV / 100 + "");
+            if (methodIndex == 1) {
+                outputLabel.setText("RMS  : " + accuracyOfCV / 100 + "");
 
-            }else{
-                outputLabel.setText("RMS  : "+8*accuracyOfCV/100+"");
+            } else {
+                outputLabel.setText("RMS  : " + 8 * accuracyOfCV / 100 + "");
 
             }
         });
@@ -178,17 +181,15 @@ public class CrossValidationShowing extends Application {
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().add(label);
         table = new TableView();
-        if(methodIndex==1){
+        if (methodIndex == 1) {
             setProcessIndex(1);
             data = getMLR_data();
             table.setItems(data);
-        }
-        else if(methodIndex==2){
+        } else if (methodIndex == 2) {
             setProcessIndex(2);
             data = getAHP_data();
             table.setItems(data);
-        }
-        else if(methodIndex==3){
+        } else if (methodIndex == 3) {
             setProcessIndex(3);
             data = getPRA_data();
             table.setItems(data);
@@ -209,15 +210,13 @@ public class CrossValidationShowing extends Application {
         TableColumn bookWeight = new TableColumn("Estimated Value");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
 
-        table.getColumns().setAll(bookName, writerName, typeName, bookWeight/*,bookWeightCV*/);
-
+        table.getColumns().setAll(bookName, writerName, typeName, bookWeight/* ,bookWeightCV */);
 
         // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
         table.setTranslateY(70);
-        table.setPrefSize(1250,560);
+        table.setPrefSize(1250, 560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
 
         ContextMenu contextMenu = new ContextMenu();
         MenuItem mlrCrossValidation = new MenuItem("MLR Cross Validation");
@@ -226,28 +225,27 @@ public class CrossValidationShowing extends Application {
 
         mlrCrossValidation.setOnAction((event) -> {
             try {
-                start(primaryStage,1);
+                start(primaryStage, 1);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         ahpCrossValidation.setOnAction((event) -> {
             try {
-                start(primaryStage,2);
+                start(primaryStage, 2);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         praCrossValidation.setOnAction((event) -> {
             try {
-                start(primaryStage,3);
+                start(primaryStage, 3);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
-
-        contextMenu.getItems().addAll(mlrCrossValidation,ahpCrossValidation,praCrossValidation);
+        contextMenu.getItems().addAll(mlrCrossValidation, ahpCrossValidation, praCrossValidation);
 
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
@@ -259,19 +257,17 @@ public class CrossValidationShowing extends Application {
         // set new label for table
         String labelName = "Multi Variable Results";
 
-        if(methodIndex==1){
+        if (methodIndex == 1) {
             labelName = "Multi Variable Regression Results";
-        }
-        else if(methodIndex==2){
+        } else if (methodIndex == 2) {
             labelName = "Analytical Hierarchy Process Results";
-        }
-        else if(methodIndex==3){
+        } else if (methodIndex == 3) {
             labelName = "Page Rank Algorithm Results";
         }
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label2 = new Label();
-        label2.setPrefSize(700,45);
+        label2.setPrefSize(700, 45);
         label2.setTranslateX(454);
         label2.setTranslateY(0);
         label2.setText(labelName);
@@ -285,13 +281,11 @@ public class CrossValidationShowing extends Application {
         back.setFont(font3);
         exit.setFont(font3);
 
-// add image as a backgroun in this table showing
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
-
-
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new CrossValidationShowing.RowSelectChangeListener());
@@ -299,7 +293,7 @@ public class CrossValidationShowing extends Application {
         actionStatus.setFill(Color.FIREBRICK);
 
         Group group = new Group();
-        group.getChildren().addAll( canvas,table,label2,exit, back, CV_Output,outputLabel);
+        group.getChildren().addAll(canvas, table, label2, exit, back, CV_Output, outputLabel);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -316,130 +310,131 @@ public class CrossValidationShowing extends Application {
         }
     }
 
-    private ObservableList getMLR_data( ) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    private ObservableList getMLR_data() throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
+        crossValidationData = trainingSector.trainingSectorMethods(processIndex);
         DecimalFormat df = new DecimalFormat("###.##");
 
-        //       calculateCVResults(crossValidationData,priorityData);
-        int jterator=0;
+        // calculateCVResults(crossValidationData,priorityData);
+        int jterator = 0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
- jterator=0;
-        for(iterator=0;iterator<numberOfBooks;iterator++) {
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        jterator = 0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
-            list.add(new TableData(priorityData[iterator].bookData.bookName,
-                    priorityData[iterator].bookData.writerName,
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
-             jterator++;
-        }
+                list.add(new TableData(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].bookData.writerName,
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
+                jterator++;
+            }
         }
         ObservableList data = FXCollections.observableList(list);
 
         return data;
     }
 
-    private ObservableList getAHP_data( ) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    private ObservableList getAHP_data() throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
+        crossValidationData = trainingSector.trainingSectorMethods(processIndex);
         DecimalFormat df = new DecimalFormat("###.##");
 
-        //       calculateCVResults(crossValidationData,priorityData);
-        int jterator=0;
+        // calculateCVResults(crossValidationData,priorityData);
+        int jterator = 0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
         AHPcriteriaWeight ahPcriteriaWeight;
         AHPcalculation ahPcalculation = new AHPcalculation();
         AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-        jterator=0;
-        for(iterator=0;iterator<numberOfBooks;iterator++) {
+        ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+        priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData,
+                numberOfBooks);
+        jterator = 0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
-            list.add(new TableData(priorityData[iterator].bookData.bookName,
-                    priorityData[iterator].bookData.writerName,
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
-             jterator++;
-        }
+                list.add(new TableData(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].bookData.writerName,
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
+                jterator++;
+            }
         }
         ObservableList data = FXCollections.observableList(list);
 
         return data;
     }
 
-    private ObservableList getPRA_data( ) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    private ObservableList getPRA_data() throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         TrainingSector trainingSector = new TrainingSector();
         priorityDataCV = processing.fileReaderMethods();
         CrossValidationData[] crossValidationData;
-        crossValidationData= trainingSector.trainingSectorMethods(processIndex);
+        crossValidationData = trainingSector.trainingSectorMethods(processIndex);
         DecimalFormat df = new DecimalFormat("###.##");
 
-        //       calculateCVResults(crossValidationData,priorityData);
-        int jterator=0;
+        // calculateCVResults(crossValidationData,priorityData);
+        int jterator = 0;
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = processing.fileReaderMethods();
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
-        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
- jterator=0;
-        for(iterator=0;iterator<numberOfBooks;iterator++) {
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData, numberOfBooks);
+        jterator = 0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 String string = Double.toString(crossValidationData[jterator].estimatedData);
-            list.add(new TableData(priorityData[iterator].bookData.bookName,
-                    priorityData[iterator].bookData.writerName,
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
-                    Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
-             jterator++;
-        }
+                list.add(new TableData(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].bookData.writerName,
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].calculatedValue))),
+                        Double.toString(Double.parseDouble(df.format(crossValidationData[jterator].estimatedData)))));
+                jterator++;
+            }
         }
         ObservableList data = FXCollections.observableList(list);
 
         return data;
     }
 
-
-    public double calculateCVResults(CrossValidationData[] crossValidationData,PriorityData [] priorityData){
-        int jterator=0;
-        double rmsValue=0.0;
-        double rmsSquareDifference=0.0;
-        double rmsSquareValue=0.0;
-        for(iterator=0;iterator<numberOfBooks;iterator++) {
+    public double calculateCVResults(CrossValidationData[] crossValidationData, PriorityData[] priorityData) {
+        int jterator = 0;
+        double rmsValue = 0.0;
+        double rmsSquareDifference = 0.0;
+        double rmsSquareValue = 0.0;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-             rmsSquareValue= (crossValidationData[jterator].calculatedValue-crossValidationData[jterator].estimatedData);
-                rmsSquareDifference = rmsSquareDifference+(rmsSquareValue*rmsSquareValue);
+                rmsSquareValue = (crossValidationData[jterator].calculatedValue
+                        - crossValidationData[jterator].estimatedData);
+                rmsSquareDifference = rmsSquareDifference + (rmsSquareValue * rmsSquareValue);
                 jterator++;
             }
         }
-        rmsValue = Math.sqrt(rmsSquareDifference/jterator);
-double accuracyOfCV = rmsValue;
-return accuracyOfCV;
+        rmsValue = Math.sqrt(rmsSquareDifference / jterator);
+        double accuracyOfCV = rmsValue;
+        return accuracyOfCV;
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -451,33 +446,36 @@ return accuracyOfCV;
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
-    public  class TableData {
+
+    public class TableData {
         public SimpleStringProperty bookName;
         public SimpleStringProperty writerName;
         public SimpleStringProperty typeName;
         public SimpleStringProperty bookWeight;
         public SimpleStringProperty estimate;
-        public TableData(String s1, String s2, String s4, String  s5/*, String s6*/) {
+
+        public TableData(String s1, String s2, String s4, String s5/* , String s6 */) {
 
             bookName = new SimpleStringProperty(s1);
             writerName = new SimpleStringProperty(s2);
             typeName = new SimpleStringProperty(s4);
             bookWeight = new SimpleStringProperty(s5);
         }
+
         public TableData(SimpleStringProperty bookName,
-                    SimpleStringProperty writerName,
-                    SimpleStringProperty typeName,
-                    SimpleStringProperty bookWeight,
-                    SimpleStringProperty estimate) {
+                SimpleStringProperty writerName,
+                SimpleStringProperty typeName,
+                SimpleStringProperty bookWeight,
+                SimpleStringProperty estimate) {
             this.bookName = bookName;
             this.writerName = writerName;
             this.typeName = typeName;
             this.bookWeight = bookWeight;
         }
 
-       public String getEstimate() {
+        public String getEstimate() {
             return estimate.get();
         }
 
@@ -517,6 +515,7 @@ return accuracyOfCV;
 
             return bookName.get();
         }
+
         public void setBookName(String s) {
 
             bookName.set(s);
@@ -526,6 +525,7 @@ return accuracyOfCV;
 
             return writerName.get();
         }
+
         public void setWriterName(String s) {
 
             writerName.set(s);
