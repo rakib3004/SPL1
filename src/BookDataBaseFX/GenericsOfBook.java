@@ -28,7 +28,6 @@ import java.io.FileNotFoundException;
 
 public class GenericsOfBook extends Application {
 
-
     @Override
     public void start(Stage primaryStage) {
 
@@ -194,16 +193,15 @@ public class GenericsOfBook extends Application {
         Group group = new Group();
         group.getChildren().addAll(canvas, bar_chart,
                 pie_chart, exit, back, home, text, analyticChart);
-        Scene scene1 = new Scene(group,1500,950);
-
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-background-color: \n" +
                 "        #090a0c,\n" +
                 "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
@@ -217,10 +215,10 @@ public class GenericsOfBook extends Application {
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
-        return  button;
+        return button;
     }
-    public Label setStyle1(Label label)
-    {
+
+    public Label setStyle1(Label label) {
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -232,11 +230,10 @@ public class GenericsOfBook extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.6em;");
-        return  label;
+        return label;
     }
 
-    public Label setStyle2(Label label)
-    {
+    public Label setStyle2(Label label) {
         label.setStyle("-fx-background-color: \n" +
                 "        #090a0c,\n" +
                 "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
@@ -250,7 +247,7 @@ public class GenericsOfBook extends Application {
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
-        return  label;
+        return label;
     }
 
 }
