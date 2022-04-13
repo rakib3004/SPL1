@@ -27,7 +27,6 @@ import java.io.FileNotFoundException;
 
 public class TypesOfBook extends Application {
 
-
     @Override
     public void start(Stage primaryStage) {
         String className = this.getClass().getSimpleName();
@@ -61,7 +60,7 @@ public class TypesOfBook extends Application {
         });
         analyticChart.setOnAction(actionEvent -> {
             try {
-analyticChart1Object.startTypeBook(primaryStage);
+                analyticChart1Object.startTypeBook(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -194,8 +193,7 @@ analyticChart1Object.startTypeBook(primaryStage);
         Group group = new Group();
         group.getChildren().addAll(canvas, barChart,
                 pieChart, exit, back, home, text, analyticChart);
-        Scene scene1 = new Scene(group,1500,950);
-
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -204,9 +202,7 @@ analyticChart1Object.startTypeBook(primaryStage);
 
     }
 
-
-    public Button setStyle( Button button)
-    {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-background-color: \n" +
                 "        #090a0c,\n" +
                 "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
@@ -220,8 +216,7 @@ analyticChart1Object.startTypeBook(primaryStage);
                 "        -fx-text-fill: linear-gradient(white, #d0d0d0);\n" +
                 "        -fx-font-size: 1.5em;\n" +
                 "        -fx-padding: 10 20 10 20;");
-        return  button;
+        return button;
     }
-
 
 }
