@@ -43,9 +43,9 @@ public class CombinedLineChart extends Application {
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
 
-    public void start(Stage primaryStage,int index) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void start(Stage primaryStage, int index) throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
@@ -69,7 +69,7 @@ public class CombinedLineChart extends Application {
 
         back.setPrefSize(160, 50);
         exit.setPrefSize(160, 50);
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
         back.setFont(font3);
         exit.setFont(font3);
 
@@ -84,7 +84,8 @@ public class CombinedLineChart extends Application {
         numberAxis.setLabel("Numbers of Book");
 
         LineChart lineChart = new LineChart(categoryAxis, numberAxis);
-        Tooltip tooltip = new Tooltip("Multiple Linear Regression results shows in Line Chart.\nAll data are books weight");
+        Tooltip tooltip = new Tooltip(
+                "Multiple Linear Regression results shows in Line Chart.\nAll data are books weight");
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Multi-variable Linear Regression ");
@@ -92,7 +93,8 @@ public class CombinedLineChart extends Application {
         int positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+            series1.getData()
+                    .add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
         }
 
         lineChart.getData().add(series1);
@@ -100,8 +102,9 @@ public class CombinedLineChart extends Application {
         lineChart.setTranslateY(25);
         lineChart.setPrefSize(1250, 300);
 
-        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+        ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+        priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData,
+                numberOfBooks);
         CategoryAxis categoryAxis1 = new CategoryAxis();
         categoryAxis1.setLabel("Book Class Category");
 
@@ -113,15 +116,16 @@ public class CombinedLineChart extends Application {
         series2.setName("Analytic Hierarchy Process");
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
+            series2.getData()
+                    .add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getAHPweight()));
         }
 
-       lineChart1.getData().add(series2);
+        lineChart1.getData().add(series2);
         lineChart1.setTranslateX(10);
         lineChart1.setTranslateY(350);
         lineChart1.setPrefSize(650, 300);
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
-        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData, numberOfBooks);
         CategoryAxis categoryAxis2 = new CategoryAxis();
         categoryAxis2.setLabel("Book Class Category");
 
@@ -134,7 +138,8 @@ public class CombinedLineChart extends Application {
 
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             positionIndicator++;
-            series3.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
+            series3.getData()
+                    .add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getPRAweight()));
         }
         lineChart2.getData().add(series3);
 
@@ -151,14 +156,16 @@ public class CombinedLineChart extends Application {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-            } });
+            }
+        });
         MenuItem lineChart3 = new MenuItem("Line Chart");
 
         lineChart3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 CombinedLineChart combinedLineChart = new CombinedLineChart();
                 try {
-                    combinedLineChart.start(primaryStage,0);
+                    combinedLineChart.start(primaryStage, 0);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -166,7 +173,8 @@ public class CombinedLineChart extends Application {
         });
         MenuItem stackedAreaChart3 = new MenuItem("StackedArea Chart");
         stackedAreaChart3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 CombinedStackedAreaChart combinedStackedAreaChart = new CombinedStackedAreaChart();
                 try {
                     combinedStackedAreaChart.start(primaryStage);
@@ -176,29 +184,29 @@ public class CombinedLineChart extends Application {
             }
         });
         MenuButton selectOtherChart = new MenuButton("Select OtherChart");
-        selectOtherChart.getItems().addAll( scatterChart3, lineChart3, stackedAreaChart3);
+        selectOtherChart.getItems().addAll(scatterChart3, lineChart3, stackedAreaChart3);
         selectOtherChart.setTranslateX(650);
         selectOtherChart.setTranslateY(320);
         selectOtherChart.setPrefSize(150, 35);
-        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
+        Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 15);
         selectOtherChart.setFont(font5);
 
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas, lineChart,lineChart1,lineChart2,exit,back,selectOtherChart);
+        group.getChildren().addAll(canvas, lineChart, lineChart1, lineChart2, exit, back, selectOtherChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
-                primaryStage.setScene(scene1);
+        primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
-        Image image = new Image("Images"+ File.separator +"statisticalAnalysis.jpg");
+        Image image = new Image("Images" + File.separator + "statisticalAnalysis.jpg");
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+        graphicsContext.drawImage(image, 0, 0);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        start(primaryStage,0);
+        start(primaryStage, 0);
     }
 }
