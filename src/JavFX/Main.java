@@ -1,4 +1,5 @@
 package JavFX;
+
 import Collection.WriterCollection;
 import CrossValidationProcess.CrossValidation;
 import CrossValidationProcess.TestingSet;
@@ -46,22 +47,21 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterInitialMethods(className);
-
 
         Font font = new Font(36);
         Font font1 = new Font(47);
-        Font font2 = new Font( 25);
+        Font font2 = new Font(25);
 
         Button user = new Button("Reader");
         Button librarian = new Button("Librarian");
         Button methods = new Button("System");
 
-        user.setPrefSize(410,230);
-        librarian.setPrefSize(410,230);
-        methods.setPrefSize(410,230);
+        user.setPrefSize(410, 230);
+        librarian.setPrefSize(410, 230);
+        methods.setPrefSize(410, 230);
 
         user.setFont(font);
         librarian.setFont(font);
@@ -77,17 +77,17 @@ public class Main extends Application {
         librarian.setContentDisplay(ContentDisplay.TOP);
         methods.setContentDisplay(ContentDisplay.TOP);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"user.png");
+                "src" + File.separator + "Images" + File.separator + "user.png");
         Image image1 = new Image(fileInputStream1);
         user.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"admin.png");
+                "src" + File.separator + "Images" + File.separator + "admin.png");
         Image image2 = new Image(fileInputStream2);
-          librarian.setGraphic(new ImageView(image2));
+        librarian.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"automation.png");
+                "src" + File.separator + "Images" + File.separator + "automation.png");
         Image image3 = new Image(fileInputStream3);
         methods.setGraphic(new ImageView(image3));
 
@@ -102,9 +102,8 @@ public class Main extends Application {
         librarian.setOnAction(actionEvent -> {
             LibraryDesk libraryDesk = new LibraryDesk();
             try {
-                    libraryDesk.start(primaryStage);
-            }
-            catch (Exception exception){
+                libraryDesk.start(primaryStage);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -118,48 +117,45 @@ public class Main extends Application {
             }
         });
 
-
         Button more = new Button("More");
         more.setTranslateX(470);
         more.setTranslateY(520);
-        more.setPrefSize(375,30);
+        more.setPrefSize(375, 30);
         more.setFont(font2);
         more.setContentDisplay(ContentDisplay.LEFT);
         more.setOnAction(actionEvent -> {
             AuthorSystem authorSystem = new AuthorSystem();
             try {
                 authorSystem.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         FileInputStream fileInputStream5 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"option.png");
+                "src" + File.separator + "Images" + File.separator + "option.png");
         Image image5 = new Image(fileInputStream5);
         more.setGraphic(new ImageView(image5));
 
         Button about = new Button("About");
         about.setTranslateX(950);
         about.setTranslateY(520);
-        about.setPrefSize(375,30);
+        about.setPrefSize(375, 30);
         about.setFont(font2);
         about.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream6 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"about.png");
+                "src" + File.separator + "Images" + File.separator + "about.png");
         Image image6 = new Image(fileInputStream6);
         about.setGraphic(new ImageView(image6));
         about.setOnAction(actionEvent -> {
             About about1 = new About();
             try {
                 about1.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        //  setStyle(exit);
+        // setStyle(exit);
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
         exit.setTranslateY(700);
@@ -167,7 +163,7 @@ public class Main extends Application {
             System.exit(0);
         });
         FileInputStream fileInputStream4 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+                "src" + File.separator + "Images" + File.separator + "exit.png");
         Image image4 = new Image(fileInputStream4);
         exit.setGraphic(new ImageView(image4));
         exit.setPrefSize(120, 20);
@@ -180,21 +176,22 @@ public class Main extends Application {
         text.setFill(Color.BLACK);
         text.setTextAlignment(TextAlignment.LEFT);
         text.setStyle("-fx-font-weight: bold;");
-    /*    setStyle1(welcome);
-        setStyle1(exit);
-*/
-       Image background = new Image("Images"+ File.separator +"framework.jpg");
+        /*
+         * setStyle1(welcome);
+         * setStyle1(exit);
+         */
+        Image background = new Image("Images" + File.separator + "framework.jpg");
         Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         Group root = new Group();
-        root.getChildren().addAll(canvas/*,welcome*/
-                ,exit,more,about,
-                text,user,librarian,methods);
+        root.getChildren().addAll(canvas/* ,welcome */
+                , exit, more, about,
+                text, user, librarian, methods);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-       gc.drawImage(background,0,0);
-        Scene scene = new Scene(root,1400,770);
+        gc.drawImage(background, 0, 0);
+        Scene scene = new Scene(root, 1400, 770);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
@@ -215,7 +212,7 @@ public class Main extends Application {
 
         MenuItem menuItem1a = new MenuItem("Default Recommendation");
         MenuItem menuItem1b = new MenuItem("User Based Recommendation");
-        menu1.getItems().addAll(menuItem1a,menuItem1b);
+        menu1.getItems().addAll(menuItem1a, menuItem1b);
         menuItem1a.setOnAction(actionEvent -> {
             try {
                 readingRoom2.automaticSystem(primaryStage);
@@ -230,7 +227,6 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         });
-
 
         MenuItem menuItem2a = new MenuItem("Book Choosing Recommendation");
         MenuItem menuItem2b = new MenuItem("Book Information");
@@ -257,7 +253,7 @@ public class Main extends Application {
             }
         });
 
-        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
+        menu2.getItems().addAll(menuItem2a, menuItem2b, menuItem2c);
 
         MenuItem menuItem3a = new MenuItem("Cross Validation");
         MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
@@ -277,15 +273,15 @@ public class Main extends Application {
             }
         });
         menuItem3c.setOnAction(actionEvent -> {
-            //     writerCollection.writerCollectionMLRMethods();
+            // writerCollection.writerCollectionMLRMethods();
         });
 
-        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+        menu3.getItems().addAll(menuItem3a, menuItem3b, menuItem3c);
 
         MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
         MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
         MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
-        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
+        menu4.getItems().addAll(menuItem4a, menuItem4b, menuItem4c);
         menuItem4a.setOnAction(actionEvent -> {
             try {
                 fourVariableRegression1.start(primaryStage);
@@ -310,7 +306,8 @@ public class Main extends Application {
 
         MenuItem readingRoom1 = new MenuItem("Reading Room");
         readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ReadingRoom readingRoom = new ReadingRoom();
                 try {
                     {
@@ -323,7 +320,8 @@ public class Main extends Application {
         });
         MenuItem libraryDesk1 = new MenuItem("Library Desk");
         libraryDesk1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 LibraryDesk libraryDesk = new LibraryDesk();
                 try {
                     {
@@ -337,7 +335,8 @@ public class Main extends Application {
         MenuItem processVisualization = new MenuItem("Process Visualization");
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
                     try {
@@ -350,7 +349,8 @@ public class Main extends Application {
         });
         MenuItem multivariableLinearRegression = new MenuItem("Multi-variable Linear Regression");
         multivariableLinearRegression.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 FourVariableRegression fourVariableRegression = new FourVariableRegression();
                 try {
                     {
@@ -363,7 +363,8 @@ public class Main extends Application {
         });
         MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
         analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     {
@@ -376,7 +377,8 @@ public class Main extends Application {
         });
         MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
         pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                 try {
                     {
@@ -389,7 +391,8 @@ public class Main extends Application {
         });
         MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
         crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 CrossValidation crossValidation = new CrossValidation();
                 {
                     try {
@@ -402,7 +405,8 @@ public class Main extends Application {
         });
         MenuItem trainingSetView = new MenuItem("Training Set View");
         trainingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 TrainingSet trainingSet = new TrainingSet();
                 {
                     trainingSet.start(primaryStage);
@@ -412,7 +416,8 @@ public class Main extends Application {
 
         MenuItem testingSetView = new MenuItem("Testing Set View");
         testingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 TestingSet testingSet = new TestingSet();
                 {
                     testingSet.start(primaryStage);
@@ -423,7 +428,8 @@ public class Main extends Application {
         MenuItem bookInformationView = new MenuItem("Book Information");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
                     try {
@@ -437,7 +443,8 @@ public class Main extends Application {
 
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
@@ -449,14 +456,14 @@ public class Main extends Application {
             }
         });
 
-        menu5.getItems().addAll(readingRoom1,libraryDesk1,
-                processVisualization,multivariableLinearRegression,
-                analyticHierarchyProcess,pageRankAlgorithm,
-                crossValidationProcess,trainingSetView,
-                testingSetView,bookInformationView,systemAnalysis);
+        menu5.getItems().addAll(readingRoom1, libraryDesk1,
+                processVisualization, multivariableLinearRegression,
+                analyticHierarchyProcess, pageRankAlgorithm,
+                crossValidationProcess, trainingSetView,
+                testingSetView, bookInformationView, systemAnalysis);
 
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
+        menuBar.getMenus().addAll(menu1, menu2, menu3, menu4, menu5);
         menuBar.setStyle("-fx-text-fill: #000000;");
         menuBar.setStyle("-fx-background-color: #ffffff;");
         menuBar.setStyle("-fx-padding: 1 5 1 5;");
@@ -465,11 +472,11 @@ public class Main extends Application {
         menuBar.prefWidthProperty().bind(scene.widthProperty());
         root.getChildren().add(menuBar);
         primaryStage.setScene(scene);
-       primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 
-    public Button setStyle( Button button) {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-background-color: \n" +
                 "        #090a0c,\n" +
                 "                linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),\n" +
@@ -485,7 +492,8 @@ public class Main extends Application {
                 "        -fx-padding: 10 20 10 20;");
         return button;
     }
-    public Button setStyle1( Button button) {
+
+    public Button setStyle1(Button button) {
         button.setStyle("-fx-background-color:\n" +
                 "        linear-gradient(#ee2100, #ff3400),\n" +
                 "        radial-gradient(center 50% -40%, radius 200%, #ee0000 45%, #ff000 50%);\n" +
@@ -496,16 +504,19 @@ public class Main extends Application {
                 "    -fx-text-fill: #000000;");
         return button;
     }
-    public  ToggleButton setTheme(ToggleButton toggleButton){
-        toggleButton.setStyle("-fx-background-color: #A9A9A9 \n"+
+
+    public ToggleButton setTheme(ToggleButton toggleButton) {
+        toggleButton.setStyle("-fx-background-color: #A9A9A9 \n" +
                 "-fx-");
         return toggleButton;
     }
-    public  ToggleButton setHoverTheme(ToggleButton toggleButton){
-        toggleButton.setStyle("-fx-background-color: #00FFFF \n"+
+
+    public ToggleButton setHoverTheme(ToggleButton toggleButton) {
+        toggleButton.setStyle("-fx-background-color: #00FFFF \n" +
                 "-fx-");
         return toggleButton;
     }
+
     public static void main(String[] args) {
         Application.launch(args);
     }
