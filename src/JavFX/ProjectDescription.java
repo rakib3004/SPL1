@@ -25,7 +25,6 @@ public class ProjectDescription extends Application {
         launch(args);
     }
 
-
     public void start(Stage primaryStage, int index) {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
@@ -79,7 +78,6 @@ public class ProjectDescription extends Application {
         } else if (index == 3) {
             imageString = "v3.png";
 
-
             back.setOnAction(actionEvent -> {
                 ReadingRoom readingRoom = new ReadingRoom();
                 try {
@@ -88,7 +86,6 @@ public class ProjectDescription extends Application {
                     exception.printStackTrace();
                 }
             });
-
 
         } else if (index == 4) {
             imageString = "v4.png";
@@ -148,12 +145,12 @@ public class ProjectDescription extends Application {
     }
 }
 
- /*
-
-   Class tree/ Diagram ache naki kono
-        Coding difficulties ki ki
-        Function name readable
-        Comment ache naki kono ( important jaygay comment rakhte hobe)
-        Library r use ache naki
-
-        */
+/*
+ * 
+ * Class tree/ Diagram ache naki kono
+ * Coding difficulties ki ki
+ * Function name readable
+ * Comment ache naki kono ( important jaygay comment rakhte hobe)
+ * Library r use ache naki
+ * 
+ */
