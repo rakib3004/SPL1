@@ -48,13 +48,13 @@ public class BookInformationShow extends Application {
 
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Font font = new Font(23);
         Font font1 = new Font(47);
-        Font font2 = new Font( 23);
+        Font font2 = new Font(23);
         Button typesOfBook = new Button("Types Of Book");
         Button demandsOfBook = new Button("Demands Of Book");
         Button genericsOfBook = new Button("Generics Of Book");
@@ -62,12 +62,12 @@ public class BookInformationShow extends Application {
         Button borrowCountOfBook = new Button("Borrow Count Of Book");
         Button numberDisplay = new Button("Number Display");
 
-        typesOfBook.setPrefSize(370,110);
-        demandsOfBook.setPrefSize(370,110);
-        genericsOfBook.setPrefSize(370,110);
-        classesOfBooks.setPrefSize(370,110);
-        borrowCountOfBook.setPrefSize(370,110);
-        numberDisplay.setPrefSize(370,110);
+        typesOfBook.setPrefSize(370, 110);
+        demandsOfBook.setPrefSize(370, 110);
+        genericsOfBook.setPrefSize(370, 110);
+        classesOfBooks.setPrefSize(370, 110);
+        borrowCountOfBook.setPrefSize(370, 110);
+        numberDisplay.setPrefSize(370, 110);
         typesOfBook.setFont(font2);
         demandsOfBook.setFont(font2);
         genericsOfBook.setFont(font2);
@@ -94,32 +94,32 @@ public class BookInformationShow extends Application {
         borrowCountOfBook.setContentDisplay(ContentDisplay.LEFT);
         numberDisplay.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream1 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"types.png");
+                "src" + File.separator + "Images" + File.separator + "types.png");
         Image image1 = new Image(fileInputStream1);
         typesOfBook.setGraphic(new ImageView(image1));
 
         FileInputStream fileInputStream2 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"demand.png");
+                "src" + File.separator + "Images" + File.separator + "demand.png");
         Image image2 = new Image(fileInputStream2);
         demandsOfBook.setGraphic(new ImageView(image2));
 
         FileInputStream fileInputStream3 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"time.png");
+                "src" + File.separator + "Images" + File.separator + "time.png");
         Image image3 = new Image(fileInputStream3);
-      genericsOfBook.setGraphic(new ImageView(image3));
+        genericsOfBook.setGraphic(new ImageView(image3));
 
         FileInputStream fileInputStream4 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"classification.png");
+                "src" + File.separator + "Images" + File.separator + "classification.png");
         Image image4 = new Image(fileInputStream4);
         classesOfBooks.setGraphic(new ImageView(image4));
 
         FileInputStream fileInputStream5 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"borrow.png");
+                "src" + File.separator + "Images" + File.separator + "borrow.png");
         Image image5 = new Image(fileInputStream5);
         borrowCountOfBook.setGraphic(new ImageView(image5));
 
         FileInputStream fileInputStream6 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"display.png");
+                "src" + File.separator + "Images" + File.separator + "display.png");
         Image image6 = new Image(fileInputStream6);
         numberDisplay.setGraphic(new ImageView(image6));
 
@@ -178,7 +178,7 @@ public class BookInformationShow extends Application {
             System.exit(0);
         });
         FileInputStream fileInputStream7 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"exit.png");
+                "src" + File.separator + "Images" + File.separator + "exit.png");
         Image image7 = new Image(fileInputStream7);
         exit.setGraphic(new ImageView(image7));
         exit.setPrefSize(120, 20);
@@ -195,30 +195,29 @@ public class BookInformationShow extends Application {
         Button home = new Button("Home");
         home.setTranslateX(470);
         home.setTranslateY(520);
-        home.setPrefSize(375,30);
+        home.setPrefSize(375, 30);
         home.setFont(font2);
         home.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream8 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"home.png");
+                "src" + File.separator + "Images" + File.separator + "home.png");
         Image image8 = new Image(fileInputStream8);
         home.setGraphic(new ImageView(image8));
         home.setOnAction(actionEvent -> {
             Main main = new Main();
             try {
                 main.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         Button back = new Button("Back");
         back.setTranslateX(950);
         back.setTranslateY(520);
-        back.setPrefSize(375,30);
+        back.setPrefSize(375, 30);
         back.setFont(font2);
         back.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream9 = new FileInputStream(
-                "src"+ File.separator +"Images"+ File.separator +"back.png");
+                "src" + File.separator + "Images" + File.separator + "back.png");
         Image image9 = new Image(fileInputStream9);
         back.setGraphic(new ImageView(image9));
         back.setOnAction(actionEvent -> {
@@ -230,15 +229,16 @@ public class BookInformationShow extends Application {
                 exception.printStackTrace();
             }
         });
-        Image background = new Image("Images"+ File.separator +"framework.jpg");
+        Image background = new Image("Images" + File.separator + "framework.jpg");
         Canvas canvas = new Canvas(850, 425);
         canvas.setTranslateX(470);
         canvas.setTranslateY(35);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(background,0,0);
+        graphicsContext.drawImage(background, 0, 0);
         Group group = new Group();
-        group.getChildren().addAll(canvas,typesOfBook,
-                demandsOfBook,exit,back,home,text,genericsOfBook,classesOfBooks,borrowCountOfBook,numberDisplay);
+        group.getChildren().addAll(canvas, typesOfBook,
+                demandsOfBook, exit, back, home, text, genericsOfBook, classesOfBooks, borrowCountOfBook,
+                numberDisplay);
         ReadingRoom readingRoom2 = new ReadingRoom();
         LibraryDesk libraryDesk2 = new LibraryDesk();
         CrossValidation crossValidation2 = new CrossValidation();
@@ -259,7 +259,7 @@ public class BookInformationShow extends Application {
 
         MenuItem menuItem1a = new MenuItem("Default Recommendation");
         MenuItem menuItem1b = new MenuItem("User Based Recommendation");
-        menu1.getItems().addAll(menuItem1a,menuItem1b);
+        menu1.getItems().addAll(menuItem1a, menuItem1b);
         menuItem1a.setOnAction(actionEvent -> {
             try {
                 readingRoom2.automaticSystem(primaryStage);
@@ -274,7 +274,6 @@ public class BookInformationShow extends Application {
                 e.printStackTrace();
             }
         });
-
 
         MenuItem menuItem2a = new MenuItem("Add book");
         MenuItem menuItem2b = new MenuItem("Book Info");
@@ -301,7 +300,7 @@ public class BookInformationShow extends Application {
             }
         });
 
-        menu2.getItems().addAll(menuItem2a,menuItem2b,menuItem2c);
+        menu2.getItems().addAll(menuItem2a, menuItem2b, menuItem2c);
 
         MenuItem menuItem3a = new MenuItem("Cross Validation");
         MenuItem menuItem3b = new MenuItem("Seven Number Analysis");
@@ -321,15 +320,15 @@ public class BookInformationShow extends Application {
             }
         });
         menuItem3c.setOnAction(actionEvent -> {
-            //     writerCollection.writerCollectionMLRMethods();
+            // writerCollection.writerCollectionMLRMethods();
         });
 
-        menu3.getItems().addAll(menuItem3a,menuItem3b,menuItem3c);
+        menu3.getItems().addAll(menuItem3a, menuItem3b, menuItem3c);
 
         MenuItem menuItem4a = new MenuItem("Multi-variable Regression");
         MenuItem menuItem4b = new MenuItem("Analytic Hierarchy Process");
         MenuItem menuItem4c = new MenuItem("Page Rank Algorithm");
-        menu4.getItems().addAll(menuItem4a,menuItem4b,menuItem4c);
+        menu4.getItems().addAll(menuItem4a, menuItem4b, menuItem4c);
         menuItem4a.setOnAction(actionEvent -> {
             try {
                 fourVariableRegression1.start(primaryStage);
@@ -354,7 +353,8 @@ public class BookInformationShow extends Application {
 
         MenuItem readingRoom1 = new MenuItem("Reading Room");
         readingRoom1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ReadingRoom readingRoom = new ReadingRoom();
                 try {
                     {
@@ -367,7 +367,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem libraryDesk1 = new MenuItem("Library Desk");
         libraryDesk1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 LibraryDesk libraryDesk = new LibraryDesk();
                 try {
                     {
@@ -381,7 +382,8 @@ public class BookInformationShow extends Application {
         MenuItem processVisualization = new MenuItem("Process Visualization");
 
         processVisualization.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ProcessImplementation processImplementation = new ProcessImplementation();
                 {
                     try {
@@ -394,7 +396,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem multivariableLinearRegression = new MenuItem("Multi-variable Linear Regression");
         multivariableLinearRegression.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 FourVariableRegression fourVariableRegression = new FourVariableRegression();
                 try {
                     {
@@ -407,7 +410,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem analyticHierarchyProcess = new MenuItem("AnalyticHierarchy Process");
         analyticHierarchyProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 AnalyticHierarchyAlgorithm analyticHierarchyAlgorithm = new AnalyticHierarchyAlgorithm();
                 try {
                     {
@@ -420,7 +424,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem pageRankAlgorithm = new MenuItem("PageRank Algorithm");
         pageRankAlgorithm.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 PageRankAlgorithm pageRankAlgorithm = new PageRankAlgorithm();
                 try {
                     {
@@ -433,7 +438,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem crossValidationProcess = new MenuItem("Cross ValidationProcess");
         crossValidationProcess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 CrossValidation crossValidation = new CrossValidation();
                 {
                     try {
@@ -446,7 +452,8 @@ public class BookInformationShow extends Application {
         });
         MenuItem trainingSetView = new MenuItem("Training Set View");
         trainingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 TrainingSet trainingSet = new TrainingSet();
                 {
                     trainingSet.start(primaryStage);
@@ -456,7 +463,8 @@ public class BookInformationShow extends Application {
 
         MenuItem testingSetView = new MenuItem("Testing Set View");
         testingSetView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 TestingSet testingSet = new TestingSet();
                 {
                     testingSet.start(primaryStage);
@@ -467,7 +475,8 @@ public class BookInformationShow extends Application {
         MenuItem bookInformationView = new MenuItem("Book Information");
 
         bookInformationView.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 BookInformationShow bookInformationShow = new BookInformationShow();
                 {
                     try {
@@ -482,7 +491,8 @@ public class BookInformationShow extends Application {
 
         MenuItem systemAnalysis = new MenuItem("System Analysis");
         systemAnalysis.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
                 ProcessAnalysis processAnalysis = new ProcessAnalysis();
                 {
                     try {
@@ -494,14 +504,14 @@ public class BookInformationShow extends Application {
             }
         });
 
-        menu5.getItems().addAll(readingRoom1,libraryDesk1,
-                processVisualization,multivariableLinearRegression,
-                analyticHierarchyProcess,pageRankAlgorithm,
-                crossValidationProcess,trainingSetView,
-                testingSetView,bookInformationView,systemAnalysis);
+        menu5.getItems().addAll(readingRoom1, libraryDesk1,
+                processVisualization, multivariableLinearRegression,
+                analyticHierarchyProcess, pageRankAlgorithm,
+                crossValidationProcess, trainingSetView,
+                testingSetView, bookInformationView, systemAnalysis);
 
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(menu1,menu2,menu3,menu4,menu5);
+        menuBar.getMenus().addAll(menu1, menu2, menu3, menu4, menu5);
         menuBar.setStyle("-fx-text-fill: #000000;");
         menuBar.setStyle("-fx-background-color: #ffffff;");
         menuBar.setStyle("-fx-padding: 1 5 1 5;");
@@ -509,15 +519,15 @@ public class BookInformationShow extends Application {
         menuBar.prefHeight(32);
         group.getChildren().add(menuBar);
 
-        Scene scene1 = new Scene(group,1500,950);
+        Scene scene1 = new Scene(group, 1500, 950);
         menuBar.prefWidthProperty().bind(scene1.widthProperty());
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -529,11 +539,10 @@ public class BookInformationShow extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 
-    public Label setStyle1(Label label)
-    {
+    public Label setStyle1(Label label) {
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -545,6 +554,6 @@ public class BookInformationShow extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.6em;");
-        return  label;
+        return label;
     }
 }
