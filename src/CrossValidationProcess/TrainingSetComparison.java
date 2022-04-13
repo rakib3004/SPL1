@@ -211,9 +211,10 @@ public class TrainingSetComparison extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
     public void startScatterChart(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -367,7 +368,7 @@ public class TrainingSetComparison extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -389,22 +390,26 @@ public class TrainingSetComparison extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
 
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series1.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series3.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
 
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -417,8 +422,7 @@ public class TrainingSetComparison extends Application {
         ScatterChart.setTranslateY(35);
         ScatterChart.setPrefSize(850, 425);
 
-        group.getChildren().addAll( ScatterChart);
-
+        group.getChildren().addAll(ScatterChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
@@ -430,8 +434,8 @@ public class TrainingSetComparison extends Application {
     }
 
     public void startStackedArea(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -585,7 +589,7 @@ public class TrainingSetComparison extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -603,26 +607,30 @@ public class TrainingSetComparison extends Application {
         series2.setName("Training Set 2 ");
         series3.setName("Training Set 3 ");
         series4.setName("Training Set 4 ");
-           for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
 
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series1.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series3.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
 
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -644,10 +652,11 @@ public class TrainingSetComparison extends Application {
         primaryStage.show();
 
     }
-    public void  startLineChart(Stage primaryStage) throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void startLineChart(Stage primaryStage) throws IOException {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -800,7 +809,7 @@ public class TrainingSetComparison extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -823,22 +832,26 @@ public class TrainingSetComparison extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
 
-                series1.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series1.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
 
-                series2.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series2.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
-                series3.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series3.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
 
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
 
-                series4.getData().add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
+                series4.getData()
+                        .add(new XYChart.Data(String.valueOf(iterator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -858,14 +871,14 @@ public class TrainingSetComparison extends Application {
 
         scatterView.setOnAction((event) -> {
             try {
-                
+
                 startScatterChart(primaryStage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         lineChartView.setOnAction((event) -> {
-            
+
             try {
                 startLineChart(primaryStage);
             } catch (IOException e) {
@@ -873,7 +886,7 @@ public class TrainingSetComparison extends Application {
             }
         });
         stackedAreaView.setOnAction((event) -> {
-            
+
             try {
                 startStackedArea(primaryStage);
             } catch (IOException e) {
@@ -889,6 +902,7 @@ public class TrainingSetComparison extends Application {
         primaryStage.show();
 
     }
+
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
