@@ -1,4 +1,5 @@
 package LibraryFunctionality;
+
 import javafx.beans.property.SimpleStringProperty;
 
 public class Library {
@@ -9,10 +10,10 @@ public class Library {
     private SimpleStringProperty userClass;
 
     public Library(SimpleStringProperty userID,
-                   SimpleStringProperty userName,
-                   SimpleStringProperty userInstitute,
-                   SimpleStringProperty userEducationLevel,
-                   SimpleStringProperty userClass) {
+            SimpleStringProperty userName,
+            SimpleStringProperty userInstitute,
+            SimpleStringProperty userEducationLevel,
+            SimpleStringProperty userClass) {
         this.userID = userID;
         this.userName = userName;
         this.userInstitute = userInstitute;
@@ -20,66 +21,65 @@ public class Library {
         this.userClass = userClass;
     }
 
-/*
-    public Library(String userID1, String userName1,
-                   String userInstitute1, String userEducationLevel1,
-                   String userClass1) {
-        this.userID1 = userID1;
-        this.userName1 = userName1;
-        this.userInstitute1 = userInstitute1;
-        this.userEducationLevel1 = userEducationLevel1;
-        this.userClass1 = userClass1;
-    }
-*/
+    /*
+     * public Library(String userID1, String userName1,
+     * String userInstitute1, String userEducationLevel1,
+     * String userClass1) {
+     * this.userID1 = userID1;
+     * this.userName1 = userName1;
+     * this.userInstitute1 = userInstitute1;
+     * this.userEducationLevel1 = userEducationLevel1;
+     * this.userClass1 = userClass1;
+     * }
+     */
 
-
-
-   /* private String userID1;
-    private String userName1;
-    private String userInstitute1;
-    private String userEducationLevel1;
-    private String userClass1;
-
-    public String getUserID1() {
-        return userID1;
-    }
-
-    public void setUserID1(String userID1) {
-        this.userID1 = userID1;
-    }
-
-    public String getUserName1() {
-        return userName1;
-    }
-
-    public void setUserName1(String userName1) {
-        this.userName1 = userName1;
-    }
-
-    public String getUserInstitute1() {
-        return userInstitute1;
-    }
-
-    public void setUserInstitute1(String userInstitute1) {
-        this.userInstitute1 = userInstitute1;
-    }
-
-    public String getUserEducationLevel1() {
-        return userEducationLevel1;
-    }
-
-    public void setUserEducationLevel1(String userEducationLevel1) {
-        this.userEducationLevel1 = userEducationLevel1;
-    }
-
-    public String getUserClass1() {
-        return userClass1;
-    }
-
-    public void setUserClass1(String userClass1) {
-        this.userClass1 = userClass1;
-    }
-*/
+    /*
+     * private String userID1;
+     * private String userName1;
+     * private String userInstitute1;
+     * private String userEducationLevel1;
+     * private String userClass1;
+     * 
+     * public String getUserID1() {
+     * return userID1;
+     * }
+     * 
+     * public void setUserID1(String userID1) {
+     * this.userID1 = userID1;
+     * }
+     * 
+     * public String getUserName1() {
+     * return userName1;
+     * }
+     * 
+     * public void setUserName1(String userName1) {
+     * this.userName1 = userName1;
+     * }
+     * 
+     * public String getUserInstitute1() {
+     * return userInstitute1;
+     * }
+     * 
+     * public void setUserInstitute1(String userInstitute1) {
+     * this.userInstitute1 = userInstitute1;
+     * }
+     * 
+     * public String getUserEducationLevel1() {
+     * return userEducationLevel1;
+     * }
+     * 
+     * public void setUserEducationLevel1(String userEducationLevel1) {
+     * this.userEducationLevel1 = userEducationLevel1;
+     * }
+     * 
+     * public String getUserClass1() {
+     * return userClass1;
+     * }
+     * 
+     * public void setUserClass1(String userClass1) {
+     * this.userClass1 = userClass1;
+     * }
+     */
 
     public String getUserID() {
         return userID.get();
@@ -116,6 +116,7 @@ public class Library {
     public void setUserInstitute(String userInstitute) {
         this.userInstitute.set(userInstitute);
     }
+
     public Library(String s1, String s2, String s3, String s4, String s5) {
 
         userID = new SimpleStringProperty(s1);
@@ -125,7 +126,6 @@ public class Library {
         userClass = new SimpleStringProperty(s5);
 
     }
-
 
     public String getUserEducationLevel() {
         return userEducationLevel.get();
@@ -150,7 +150,5 @@ public class Library {
     public void setUserClass(String userClass) {
         this.userClass.set(userClass);
     }
-
-
 
 }
