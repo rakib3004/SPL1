@@ -84,7 +84,7 @@ public class AuthorSystem extends Application {
         processDescription.setOnAction(actionEvent -> {
             try {
                 ProjectDescription projectDescription = new ProjectDescription();
-                projectDescription.start(primaryStage,1);
+                projectDescription.start(primaryStage, 1);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
