@@ -213,9 +213,10 @@ public class TestingSet extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
+
     public void startScatterChart(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -363,7 +364,7 @@ public class TestingSet extends Application {
             }
         });
         Group group = new Group();
-        group.getChildren().addAll( scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -390,33 +391,38 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series4.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series4.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
         }
-         positionIndicator = 0;
+        positionIndicator = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -440,8 +446,8 @@ public class TestingSet extends Application {
     }
 
     public void startStackedArea(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -589,7 +595,7 @@ public class TestingSet extends Application {
             }
         });
         Group group = new Group();
-        group.getChildren().addAll( scatterChart,
+        group.getChildren().addAll(scatterChart,
                 stackedAreaChart, exit, back, home, text, lineChart);
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
@@ -618,25 +624,29 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -644,10 +654,10 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
-
 
         stackedAreaChart2.getData().add(series1);
         stackedAreaChart2.getData().add(series2);
@@ -658,7 +668,7 @@ public class TestingSet extends Application {
         stackedAreaChart2.setTranslateX(470);
         stackedAreaChart2.setTranslateY(35);
         stackedAreaChart2.setPrefSize(850, 425);
-        group.getChildren().addAll( stackedAreaChart2);
+        group.getChildren().addAll(stackedAreaChart2);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -666,10 +676,11 @@ public class TestingSet extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void  startLineChart(Stage primaryStage) throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void startLineChart(Stage primaryStage) throws IOException {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -843,25 +854,29 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("1") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("6")) {
                 positionIndicator++;
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("2") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("7")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("3") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("8")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("4") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("9")) {
                 positionIndicator++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicator/4), priorityData[iterator].getMLRweight()));
+                series2.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator / 4), priorityData[iterator].getMLRweight()));
             }
         }
         positionIndicator = 0;
@@ -869,7 +884,8 @@ public class TestingSet extends Application {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicator++;
-                series1.getData().add(new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
+                series1.getData().add(
+                        new XYChart.Data(String.valueOf(positionIndicator), priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -885,7 +901,6 @@ public class TestingSet extends Application {
 
         group.getChildren().addAll(lineChart2);
 
-
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -893,6 +908,7 @@ public class TestingSet extends Application {
         primaryStage.show();
 
     }
+
     public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
