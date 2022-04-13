@@ -31,7 +31,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TrainingTestingComparison extends Application {
-        PriorityData[] priorityData;
+    PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int numberOfBooks;
     int iterator;
@@ -45,14 +45,14 @@ public class TrainingTestingComparison extends Application {
     int positionIndicatorSet3 = 0;
     int positionIndicatorSet4 = 0;
     int minimumRange;
-    double [] averageTrainingData = new double[200];
-    double [] TrainingData1 = new double[200];
-    double [] TrainingData2 = new double[200];
-    double [] TrainingData3 = new double[200];
-    double [] TrainingData4 = new double[200];
+    double[] averageTrainingData = new double[200];
+    double[] TrainingData1 = new double[200];
+    double[] TrainingData2 = new double[200];
+    double[] TrainingData3 = new double[200];
+    double[] TrainingData4 = new double[200];
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
@@ -227,8 +227,8 @@ public class TrainingTestingComparison extends Application {
     }
 
     public void startScatterChart(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -387,7 +387,7 @@ public class TrainingTestingComparison extends Application {
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
-     Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -430,22 +430,23 @@ public class TrainingTestingComparison extends Application {
                 positionIndicatorSet4++;
             }
         }
-        minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet3);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet4);
-        for(iterator=0;iterator<minimumRange;iterator++){
+        minimumRange = Math.min(positionIndicatorSet1, positionIndicatorSet2);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet3);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet4);
+        for (iterator = 0; iterator < minimumRange; iterator++) {
 
-            averageTrainingData[iterator]  = .25 * (TrainingData1[iterator]+TrainingData2[iterator]+
-                    TrainingData3[iterator]+TrainingData4[iterator]);
-            series1.getData().add(new XYChart.Data(String.valueOf(iterator),averageTrainingData[iterator]));
+            averageTrainingData[iterator] = .25 * (TrainingData1[iterator] + TrainingData2[iterator] +
+                    TrainingData3[iterator] + TrainingData4[iterator]);
+            series1.getData().add(new XYChart.Data(String.valueOf(iterator), averageTrainingData[iterator]));
         }
 
-        int positionIndicatorSetPro=0;
+        int positionIndicatorSetPro = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicatorSetPro++;
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro),
+                        priorityData[iterator].getMLRweight()));
             }
         }
         ScatterChart.getData().add(series1);
@@ -453,9 +454,9 @@ public class TrainingTestingComparison extends Application {
 
         ScatterChart.setTranslateX(470);
         ScatterChart.setTranslateY(35);
-        ScatterChart.setPrefSize(850,425);
+        ScatterChart.setPrefSize(850, 425);
 
-        group.getChildren().addAll( ScatterChart);
+        group.getChildren().addAll(ScatterChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
@@ -464,10 +465,10 @@ public class TrainingTestingComparison extends Application {
         primaryStage.show();
     }
 
-    public void startLineChart(Stage primaryStage) throws Exception{
+    public void startLineChart(Stage primaryStage) throws Exception {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -627,7 +628,7 @@ public class TrainingTestingComparison extends Application {
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -671,22 +672,23 @@ public class TrainingTestingComparison extends Application {
 
             }
         }
-        minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet3);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet4);
-        for(iterator=0;iterator<minimumRange;iterator++){
+        minimumRange = Math.min(positionIndicatorSet1, positionIndicatorSet2);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet3);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet4);
+        for (iterator = 0; iterator < minimumRange; iterator++) {
 
-            averageTrainingData[iterator]  = .25 * (TrainingData1[iterator]+TrainingData2[iterator]+
-                    TrainingData3[iterator]+TrainingData4[iterator]);
-            series1.getData().add(new XYChart.Data(String.valueOf(iterator),averageTrainingData[iterator]));
+            averageTrainingData[iterator] = .25 * (TrainingData1[iterator] + TrainingData2[iterator] +
+                    TrainingData3[iterator] + TrainingData4[iterator]);
+            series1.getData().add(new XYChart.Data(String.valueOf(iterator), averageTrainingData[iterator]));
 
         }
-        int positionIndicatorSetPro=0;
+        int positionIndicatorSetPro = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicatorSetPro++;
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro),
+                        priorityData[iterator].getMLRweight()));
             }
         }
         lineChart.getData().add(series1);
@@ -694,10 +696,9 @@ public class TrainingTestingComparison extends Application {
 
         lineChart.setTranslateX(470);
         lineChart.setTranslateY(35);
-        lineChart.setPrefSize(850,425);
+        lineChart.setPrefSize(850, 425);
 
-
-        group.getChildren().addAll( lineChart);
+        group.getChildren().addAll(lineChart);
         Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -705,10 +706,10 @@ public class TrainingTestingComparison extends Application {
         primaryStage.show();
     }
 
-    public void startStackedAreaChart(Stage primaryStage) throws Exception{
+    public void startStackedAreaChart(Stage primaryStage) throws Exception {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Font font = new Font(14);
         Font font1 = new Font(47);
@@ -868,7 +869,7 @@ public class TrainingTestingComparison extends Application {
         numberOfBooks = bookNumber.bookNumberFindingMethods();
         priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
-        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD,10);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 10);
         CategoryAxis categoryAxis = new CategoryAxis();
         categoryAxis.setLabel("Book Index");
         NumberAxis numberAxis = new NumberAxis();
@@ -913,22 +914,23 @@ public class TrainingTestingComparison extends Application {
 
             }
         }
-        minimumRange = Math.min(positionIndicatorSet1,positionIndicatorSet2);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet3);
-        minimumRange = Math.min(minimumRange,positionIndicatorSet4);
-        for(iterator=0;iterator<minimumRange;iterator++){
-            averageTrainingData[iterator]  = .25 * (TrainingData1[iterator]+TrainingData2[iterator]+
-                    TrainingData3[iterator]+TrainingData4[iterator]);
-            series1.getData().add(new XYChart.Data(String.valueOf(iterator),averageTrainingData[iterator]));
+        minimumRange = Math.min(positionIndicatorSet1, positionIndicatorSet2);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet3);
+        minimumRange = Math.min(minimumRange, positionIndicatorSet4);
+        for (iterator = 0; iterator < minimumRange; iterator++) {
+            averageTrainingData[iterator] = .25 * (TrainingData1[iterator] + TrainingData2[iterator] +
+                    TrainingData3[iterator] + TrainingData4[iterator]);
+            series1.getData().add(new XYChart.Data(String.valueOf(iterator), averageTrainingData[iterator]));
 
         }
-        int positionIndicatorSetPro=0;
+        int positionIndicatorSetPro = 0;
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
                 positionIndicatorSetPro++;
 
-                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro), priorityData[iterator].getMLRweight()));
+                series2.getData().add(new XYChart.Data(String.valueOf(positionIndicatorSetPro),
+                        priorityData[iterator].getMLRweight()));
             }
         }
 
@@ -937,10 +939,9 @@ public class TrainingTestingComparison extends Application {
 
         stackedAreaChart.setTranslateX(470);
         stackedAreaChart.setTranslateY(35);
-        stackedAreaChart.setPrefSize(850,425);
+        stackedAreaChart.setPrefSize(850, 425);
 
-
-        group.getChildren().addAll( stackedAreaChart);
+        group.getChildren().addAll(stackedAreaChart);
 
         Scene scene1 = new Scene(group, 1500, 950);
 
@@ -949,8 +950,8 @@ public class TrainingTestingComparison extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -962,6 +963,6 @@ public class TrainingTestingComparison extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
