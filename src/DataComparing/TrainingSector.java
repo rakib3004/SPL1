@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class TrainingSector {
-    PriorityData[] priorityData,priorityDataCV;
+    PriorityData[] priorityData, priorityDataCV;
     GenericAlgo[] genericAlgo;
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
@@ -35,7 +35,7 @@ public class TrainingSector {
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
-    public  CrossValidationData []  trainingSectorMethods(int processIndex) {
+    public CrossValidationData[] trainingSectorMethods(int processIndex) {
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
@@ -55,29 +55,30 @@ public class TrainingSector {
         int[] typeCounter = new int[6];
         double[] typeGroupWeight;
         typeGroupWeight = new double[6];
-        //double [] priceGroupWeight,double [] timeGroupWeight, double [] countGroupWeight,double [] typeGroupWeight;
+        // double [] priceGroupWeight,double [] timeGroupWeight, double []
+        // countGroupWeight,double [] typeGroupWeight;
         try {
             priorityData = processing.fileReaderMethods();
             numberOfBooks = bookNumber.bookNumberFindingMethods();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(processIndex==1){
+        if (processIndex == 1) {
             priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
-        }
-        else  if(processIndex==2){
+        } else if (processIndex == 2) {
             AHPcriteriaWeight ahPcriteriaWeight;
             AHPcalculation ahPcalculation = new AHPcalculation();
             AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-            ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-            priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+            ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+            priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData,
+                    numberOfBooks);
 
-        } else  if(processIndex==3){
+        } else if (processIndex == 3) {
 
             PageRankProcessData pageRankProcessData = new PageRankProcessData();
             try {
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData, numberOfBooks);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -112,7 +113,6 @@ public class TrainingSector {
                 if (priorityData[iterator].timePriority <= 5.60) {
                     timeCounter[4]++;
                     timeGroupWeight[4] = timeGroupWeight[4] + priorityData[iterator].getRankValue();
-
 
                 } else if (priorityData[iterator].timePriority <= 7.20) {
                     timeCounter[3]++;
@@ -221,7 +221,8 @@ public class TrainingSector {
 
         // training set class -----> prediction sector class
 
-        priorityDataCV = predictionSector.predictionSectorMethods(priceGroupWeight, timeGroupWeight, countGroupWeight, typeGroupWeight,processIndex);
+        priorityDataCV = predictionSector.predictionSectorMethods(priceGroupWeight, timeGroupWeight, countGroupWeight,
+                typeGroupWeight, processIndex);
         double[] codeValidationList = new double[1000];
         CrossValidationData[] crossValidationData = new CrossValidationData[1000];
         int jterator = 0;
@@ -238,29 +239,31 @@ public class TrainingSector {
             e.printStackTrace();
         }
         jterator = 0;
-        if(processIndex==1){
+        if (processIndex == 1) {
             priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
 
-        }
-        else  if(processIndex==2){
+        } else if (processIndex == 2) {
             AHPcriteriaWeight ahPcriteriaWeight;
             AHPcalculation ahPcalculation = new AHPcalculation();
             AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
-            ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-            priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
+            ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+            priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData,
+                    numberOfBooks);
 
-        } else  if(processIndex==3){
+        } else if (processIndex == 3) {
 
             PageRankProcessData pageRankProcessData = new PageRankProcessData();
             try {
-                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
+                priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData, numberOfBooks);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }        for (iterator = 0; iterator < numberOfBooks; iterator++) {
+        }
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             if (priorityData[iterator].bookData.bookId.substring(13, 14).contains("5") ||
                     priorityData[iterator].bookData.bookId.substring(13, 14).contains("0")) {
-                crossValidationData[jterator] = new CrossValidationData(priorityData[iterator].getRankValue(), codeValidationList[jterator]);
+                crossValidationData[jterator] = new CrossValidationData(priorityData[iterator].getRankValue(),
+                        codeValidationList[jterator]);
                 jterator++;
             }
         }
