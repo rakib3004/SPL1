@@ -44,6 +44,7 @@ public class BookNumberDisplay extends Application {
 
     int numberOfBooks;
     int typeCounter = 6, writerCounter = 334, yearCounter = 12;
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -58,7 +59,7 @@ public class BookNumberDisplay extends Application {
         }
         Font font = new Font(19);
         Font font1 = new Font(47);
-        Font font2 = new Font( 40);
+        Font font2 = new Font(40);
         Font times_new_roman = Font.font("Times New Roman", FontPosture.REGULAR, 5);
         Button exit = new Button("Exit");
         exit.setTranslateX(1200);
@@ -69,7 +70,7 @@ public class BookNumberDisplay extends Application {
         FileInputStream fileInputStream4 = null;
         try {
             fileInputStream4 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"exit.png");
+                    "src" + File.separator + "Images" + File.separator + "exit.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -89,13 +90,13 @@ public class BookNumberDisplay extends Application {
         Button home = new Button("Home");
         home.setTranslateX(300);
         home.setTranslateY(520);
-        home.setPrefSize(375,30);
+        home.setPrefSize(375, 30);
         home.setFont(font2);
         home.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream5 = null;
         try {
             fileInputStream5 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"home.png");
+                    "src" + File.separator + "Images" + File.separator + "home.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -105,37 +106,35 @@ public class BookNumberDisplay extends Application {
             Main main = new Main();
             try {
                 main.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         Button back = new Button("Back");
         back.setTranslateX(780);
         back.setTranslateY(520);
-        back.setPrefSize(375,30);
+        back.setPrefSize(375, 30);
         back.setFont(font2);
         back.setContentDisplay(ContentDisplay.LEFT);
         FileInputStream fileInputStream6 = null;
         try {
             fileInputStream6 = new FileInputStream(
-                    "src"+ File.separator +"Images"+ File.separator +"back.png");
+                    "src" + File.separator + "Images" + File.separator + "back.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         Image image6 = new Image(fileInputStream6);
         back.setGraphic(new ImageView(image6));
         back.setOnAction(actionEvent -> {
-           BookInformationShow bookInformationShow = new BookInformationShow();
+            BookInformationShow bookInformationShow = new BookInformationShow();
             try {
                 bookInformationShow.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        Label BookNumbers = new Label("No. of Books : "+(numberOfBooks));
+        Label BookNumbers = new Label("No. of Books : " + (numberOfBooks));
         BookNumbers.setAlignment(Pos.CENTER);
         BookNumbers.setFont(times_new_roman);
         BookNumbers.setPrefSize(110, 80);
@@ -146,7 +145,7 @@ public class BookNumberDisplay extends Application {
         BookNumbers.setScaleX(10);
         BookNumbers.setScaleY(5);
 
-        Label WriterNumbers = new Label("No. of Writers : "+(writerCounter));
+        Label WriterNumbers = new Label("No. of Writers : " + (writerCounter));
         WriterNumbers.setAlignment(Pos.CENTER);
         WriterNumbers.setPrefSize(110, 80);
         WriterNumbers.setTextAlignment(TextAlignment.CENTER);
@@ -157,7 +156,7 @@ public class BookNumberDisplay extends Application {
         WriterNumbers.setScaleX(10);
         WriterNumbers.setScaleY(5);
 
-        Label YearsNumbers = new Label("Total "+(yearCounter) + " Years ");
+        Label YearsNumbers = new Label("Total " + (yearCounter) + " Years ");
         YearsNumbers.setAlignment(Pos.CENTER);
         YearsNumbers.setPrefSize(110, 80);
         YearsNumbers.setTextAlignment(TextAlignment.CENTER);
@@ -167,7 +166,7 @@ public class BookNumberDisplay extends Application {
         YearsNumbers.setTextFill(Color.WHITE);
         YearsNumbers.setScaleX(10);
         YearsNumbers.setScaleY(5);
-        Label TypeNumbers = new Label(""+(typeCounter) + " different types Books");
+        Label TypeNumbers = new Label("" + (typeCounter) + " different types Books");
         TypeNumbers.setAlignment(Pos.CENTER);
         TypeNumbers.setFont(times_new_roman);
         TypeNumbers.setTextAlignment(TextAlignment.CENTER);
@@ -180,14 +179,14 @@ public class BookNumberDisplay extends Application {
         Group semiGroup = new Group();
 
         semiGroup.getChildren().addAll(BookNumbers, WriterNumbers, YearsNumbers, TypeNumbers);
-        Image image = new Image("Images"+ File.separator +"numberDisplay.JPG");
-        Canvas canvas = new Canvas(1500,950);
+        Image image = new Image("Images" + File.separator + "numberDisplay.JPG");
+        Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back, semiGroup,text,home);
+        group.getChildren().addAll(canvas, exit, back, semiGroup, text, home);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,250,100);
-        Scene scene1 = new Scene(group,1500,950);
+        graphicsContext.drawImage(image, 250, 100);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
