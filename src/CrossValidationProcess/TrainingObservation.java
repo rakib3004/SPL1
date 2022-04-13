@@ -1,4 +1,5 @@
 package CrossValidationProcess;
+
 import FilePackage.DateTimeWriter;
 import JavFX.Main;
 import javafx.application.Application;
@@ -18,9 +19,10 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
 public class TrainingObservation extends Application {
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         String className = this.getClass().getSimpleName();
         DateTimeWriter dateTimeWriter = new DateTimeWriter();
@@ -45,7 +47,8 @@ public class TrainingObservation extends Application {
                 trainingSetComparison1.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
-            }        });
+            }
+        });
         trainingSetCombined.setOnAction(actionEvent -> {
             TrainingSetCombined trainingSetCombined1 = new TrainingSetCombined();
             try {
@@ -180,14 +183,14 @@ public class TrainingObservation extends Application {
         Group group = new Group();
         group.getChildren().addAll(canvas, trainingSets,
                 trainingSetComparison, exit, back, home, text, trainingSetCombined);
-        Scene scene1 = new Scene(group,1500,950);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -199,7 +202,7 @@ public class TrainingObservation extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 
 }
