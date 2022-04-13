@@ -13,11 +13,11 @@ import java.io.IOException;
 public class BookAnalysis extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Parent parent = FXMLLoader.load(getClass().getResource("database.fxml"));
-primaryStage.setScene(new Scene(parent,1000,500));
-primaryStage.show();
+        primaryStage.setScene(new Scene(parent, 1000, 500));
+        primaryStage.show();
     }
 }
