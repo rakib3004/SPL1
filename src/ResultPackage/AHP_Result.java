@@ -10,7 +10,6 @@ import ObjectOriented.PriorityData;
 import javax.swing.*;
 import java.util.Scanner;
 
-
 public class AHP_Result {
     Searching searching = new Searching();
     WriterCollection writerCollection = new WriterCollection();
@@ -23,8 +22,8 @@ public class AHP_Result {
     int iterator;
 
     public void AHP_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         int enterChoice;
@@ -39,29 +38,24 @@ public class AHP_Result {
         System.out.println("7. borrow Based Analysis");
 
         enterChoice = scanner.nextInt();
-        if(enterChoice==1){
-            printInfo.showAHPProcessResult(priorityData,numberOfBooks);
-        }
-        else if(enterChoice==2){
-            reverseSorting.sortingAHPmethods(priorityData,numberOfBooks);
-        }
-        else if(enterChoice==3){
-            timeCollection.timeCollectionAHPMethods(priorityData,numberOfBooks);
-        }
-        else if(enterChoice==4){
-            writerCollection.writerCollectionAHPMethods(priorityData,numberOfBooks);
-        }
-        else if (enterChoice==5){
-            priceCollection.priceCollectionAHPMethods(priorityData,numberOfBooks);
-        }
-        else if (enterChoice==6){
-            timeCollection.timeCollectionAHPMethods(priorityData,numberOfBooks);
-        }
-        else if (enterChoice==7){
-            borrowCollection.borrowCollectionAHPMethods(priorityData,numberOfBooks);
+        if (enterChoice == 1) {
+            printInfo.showAHPProcessResult(priorityData, numberOfBooks);
+        } else if (enterChoice == 2) {
+            reverseSorting.sortingAHPmethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 3) {
+            timeCollection.timeCollectionAHPMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 4) {
+            writerCollection.writerCollectionAHPMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 5) {
+            priceCollection.priceCollectionAHPMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 6) {
+            timeCollection.timeCollectionAHPMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 7) {
+            borrowCollection.borrowCollectionAHPMethods(priorityData, numberOfBooks);
         }
     }
-    public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
+
+    public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks) {
         double temporary;
         int temp;
         PriorityData tempData;
