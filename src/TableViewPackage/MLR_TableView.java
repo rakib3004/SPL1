@@ -1,4 +1,5 @@
 package TableViewPackage;
+
 import FilePackage.DateTimeWriter;
 import MainPackage.BookNumber;
 import MainPackage.Processing;
@@ -44,18 +45,19 @@ public class MLR_TableView extends Application {
     private ObservableList data;
     private Text actionStatus;
     PriorityData[] priorityData;
-    GenericAlgo [] genericAlgo;
+    GenericAlgo[] genericAlgo;
 
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
-     @Override
+
+    @Override
     public void start(Stage primaryStage) throws IOException {
-         String  className = this.getClass().getSimpleName();
-         DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-         dateTimeWriter.dateTimeWriterMethods(className);
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Multi-variable Linear Regression Table");
         Button back = new Button("Back");
@@ -102,39 +104,38 @@ public class MLR_TableView extends Application {
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId, borrowCount, price, bookWeight);
 
-         // REFORM _TABLE _STRUCTURE
-         table.setTranslateX(65);
-         table.setTranslateY(70);
-         table.setPrefSize(1250,560);
-         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        // REFORM _TABLE _STRUCTURE
+        table.setTranslateX(65);
+        table.setTranslateY(70);
+        table.setPrefSize(1250, 560);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-         // set new label for table
-         String labelName = "Multi Variable Results";
-         Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-         Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
-         Label label2 = new Label();
-         label2.setPrefSize(700,45);
-         label2.setTranslateX(454);
-         label2.setTranslateY(0);
-         label2.setText(labelName);
-         label2.setFont(font4);
+        // set new label for table
+        String labelName = "Multi Variable Results";
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
+        Label label2 = new Label();
+        label2.setPrefSize(700, 45);
+        label2.setTranslateX(454);
+        label2.setTranslateY(0);
+        label2.setText(labelName);
+        label2.setFont(font4);
 
-         // reset buttons position
-         back.setTranslateX(35);
-         back.setTranslateY(650);
-         exit.setTranslateX(1135);
-         exit.setTranslateY(650);
-         back.setFont(font3);
-         exit.setFont(font3);
+        // reset buttons position
+        back.setTranslateX(35);
+        back.setTranslateY(650);
+        exit.setTranslateX(1135);
+        exit.setTranslateY(650);
+        back.setFont(font3);
+        exit.setFont(font3);
 
-// add image as a backgroun in this table showing
-         Image image = new Image("Images"+ File.separator +"table2.jpg");
-         Canvas canvas = new Canvas(1500, 950);
-         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-         graphicsContext.drawImage(image, 0, 0);
-
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
+        Canvas canvas = new Canvas(1500, 950);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RowSelectChangeListener());
@@ -171,7 +172,7 @@ public class MLR_TableView extends Application {
             }
         });
 
-        contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
+        contextMenu.getItems().addAll(mlr_table_view, ahp_table_view, pra_table_view);
 
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
@@ -181,7 +182,7 @@ public class MLR_TableView extends Application {
         });
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,table,label2,exit,back);
+        group.getChildren().addAll(canvas, table, label2, exit, back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -198,8 +199,8 @@ public class MLR_TableView extends Application {
 
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-            String  className = this.getClass().getSimpleName();
-            DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+            String className = this.getClass().getSimpleName();
+            DateTimeWriter dateTimeWriter = new DateTimeWriter();
             dateTimeWriter.dateTimeWriterMethods(className);
         }
     }
@@ -209,23 +210,25 @@ public class MLR_TableView extends Application {
         DecimalFormat df = new DecimalFormat("###.##");
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        genericAlgo =soring.sortingMLRmethods(priorityData,numberOfBooks);
-int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        genericAlgo = soring.sortingMLRmethods(priorityData, numberOfBooks);
+        int iterator;
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(Double.parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
+                    Double.toString(Double
+                            .parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
 
-    public Button setStyle( Button button)
-    {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -237,6 +240,6 @@ int iterator;
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
