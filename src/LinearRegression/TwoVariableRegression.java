@@ -19,15 +19,16 @@ import java.io.File;
 
 public class TwoVariableRegression extends Application {
 
-    PriorityData [] priorityData;
+    PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-TypeCountRegression typeCountRegression = new TypeCountRegression();
+    TypeCountRegression typeCountRegression = new TypeCountRegression();
+
     @Override
-    public void start(Stage primaryStage)  {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void start(Stage primaryStage) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Button Start = new Button("Start");
         Button back = new Button("Back");
@@ -42,17 +43,18 @@ TypeCountRegression typeCountRegression = new TypeCountRegression();
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-                typeCountRegression.typeCountRegressionMethods(priorityData,numberOfBooks);
+                typeCountRegression.typeCountRegressionMethods(priorityData, numberOfBooks);
 
-                System.exit(0);            }
+                System.exit(0);
+            }
 
             catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         back.setOnAction(actionEvent -> {
-MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
-                try {
+            MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
+            try {
                 multiVariableRegression.start(primaryStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -68,13 +70,13 @@ MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground7.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Image image = new Image("Images" + File.separator + "libraryBackground7.jpg");
+        Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
+        group.getChildren().addAll(canvas, Start, exit, back);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+        graphicsContext.drawImage(image, 0, 0);
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -82,8 +84,7 @@ MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
         primaryStage.show();
     }
 
-    public Button setStyle( Button button)
-    {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -95,6 +96,6 @@ MultiVariableRegression multiVariableRegression = new MultiVariableRegression();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
