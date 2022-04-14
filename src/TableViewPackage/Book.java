@@ -10,10 +10,11 @@ public class Book {
     private SimpleStringProperty price;
     private SimpleStringProperty bookWeight;
     private SimpleStringProperty typeName;
+
     public Book(SimpleStringProperty bookName,
-                SimpleStringProperty writerName,
-                SimpleStringProperty bookId,
-                SimpleStringProperty typeName) {
+            SimpleStringProperty writerName,
+            SimpleStringProperty bookId,
+            SimpleStringProperty typeName) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
@@ -33,12 +34,12 @@ public class Book {
     }
 
     public Book(SimpleStringProperty bookName,
-                SimpleStringProperty writerName,
-                SimpleStringProperty bookId,
-                SimpleStringProperty typeName,
-                SimpleStringProperty borrowCount,
-                SimpleStringProperty price,
-                SimpleStringProperty bookWeight) {
+            SimpleStringProperty writerName,
+            SimpleStringProperty bookId,
+            SimpleStringProperty typeName,
+            SimpleStringProperty borrowCount,
+            SimpleStringProperty price,
+            SimpleStringProperty bookWeight) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
@@ -47,12 +48,14 @@ public class Book {
         this.price = price;
         this.bookWeight = bookWeight;
     }
+
     public Book(SimpleStringProperty bookName, SimpleStringProperty writerName,
-                SimpleStringProperty bookId) {
+            SimpleStringProperty bookId) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
     }
+
     public String getBookId() {
         return bookId.get();
     }
@@ -78,16 +81,17 @@ public class Book {
     }
 
     public Book(SimpleStringProperty bookName,
-                SimpleStringProperty writerName,
-                SimpleStringProperty bookId,
-                SimpleStringProperty borrowCount,
-                SimpleStringProperty price) {
+            SimpleStringProperty writerName,
+            SimpleStringProperty bookId,
+            SimpleStringProperty borrowCount,
+            SimpleStringProperty price) {
         this.bookName = bookName;
         this.writerName = writerName;
         this.bookId = bookId;
         this.borrowCount = borrowCount;
         this.price = price;
     }
+
     public SimpleStringProperty borrowCountProperty() {
         return borrowCount;
     }
@@ -108,15 +112,17 @@ public class Book {
         this.price.set(price);
     }
 
-    public Book(String bookName, String writerName, String bookId, String borrowCount
-            , String bookPrice, double mlRweight) {
+    public Book(String bookName, String writerName, String bookId, String borrowCount, String bookPrice,
+            double mlRweight) {
     }
+
     public Book(String s1, String s2) {
 
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
     }
-public Book(String s1, String s2, String s3, String s4, String s5, String s6, String s7) {
+
+    public Book(String s1, String s2, String s3, String s4, String s5, String s6, String s7) {
 
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
@@ -126,30 +132,37 @@ public Book(String s1, String s2, String s3, String s4, String s5, String s6, St
         price = new SimpleStringProperty(s6);
         bookWeight = new SimpleStringProperty(s7);
     }
-public Book(String s1, String s2, String s3) {
+
+    public Book(String s1, String s2, String s3) {
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
         bookId = new SimpleStringProperty(s3);
     }
-public Book(String s1, String s2, String s3, String s4) {
+
+    public Book(String s1, String s2, String s3, String s4) {
 
         bookName = new SimpleStringProperty(s1);
         writerName = new SimpleStringProperty(s2);
         bookId = new SimpleStringProperty(s3);
         typeName = new SimpleStringProperty(s4);
     }
+
     public String getBookName() {
         return bookName.get();
     }
+
     public void setBookName(String s) {
         bookName.set(s);
     }
+
     public String getWriterName() {
         return writerName.get();
     }
+
     public void setWriterName(String s) {
         writerName.set(s);
     }
+
     @Override
     public String toString() {
         return (bookName.get() + ", by " + writerName.get());

@@ -53,11 +53,12 @@ public class AHP_TableView extends Application {
     ReverseSorting reverseSorting = new ReverseSorting();
     AHPcriteriaWeight ahPcriteriaWeight;
     AHPcalculation ahPcalculation = new AHPcalculation();
-AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementation();
+    AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         primaryStage.setTitle("Analytic Hierarchy Process Table");
@@ -101,27 +102,26 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         TableColumn borrowCount = new TableColumn("Borrow Count");
         borrowCount.setCellValueFactory(new PropertyValueFactory("borrowCount"));
 
-
         TableColumn price = new TableColumn("Price");
         price.setCellValueFactory(new PropertyValueFactory("price"));
         TableColumn bookWeight = new TableColumn("Book Weight");
         bookWeight.setCellValueFactory(new PropertyValueFactory("bookWeight"));
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
-        table.getColumns().setAll(bookName,writerName,bookId,typeName,borrowCount,price, bookWeight);
+        table.getColumns().setAll(bookName, writerName, bookId, typeName, borrowCount, price, bookWeight);
 
-       // REFORM _TABLE _STRUCTURE
+        // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
         table.setTranslateY(70);
-        table.setPrefSize(1250,560);
+        table.setPrefSize(1250, 560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // set new label for table
         String labelName = "Analytical Hierarchy Results";
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label2 = new Label();
-        label2.setPrefSize(700,45);
+        label2.setPrefSize(700, 45);
         label2.setTranslateX(454);
         label2.setTranslateY(0);
         label2.setText(labelName);
@@ -135,8 +135,8 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         back.setFont(font3);
         exit.setFont(font3);
 
-// add image as a backgroun in this table showing
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -175,7 +175,7 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
+        contextMenu.getItems().addAll(mlr_table_view, ahp_table_view, pra_table_view);
 
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
             @Override
@@ -185,46 +185,52 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
         });
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,table,label2,exit,back);
+        group.getChildren().addAll(canvas, table, label2, exit, back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
-       primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
     }
+
     private class RowSelectChangeListener implements ChangeListener {
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
         }
     }
+
     private ObservableList getInitialTableData() throws IOException {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         DecimalFormat df = new DecimalFormat("###.##");
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        ahPcriteriaWeight =  ahPcalculation.AHPcalculationMethods(priorityData,numberOfBooks);
-        priorityData=     ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight,priorityData,numberOfBooks);
-        genericAlgo = reverseSorting.sortingAHPmethods(priorityData,numberOfBooks);
+        ahPcriteriaWeight = ahPcalculation.AHPcalculationMethods(priorityData, numberOfBooks);
+        priorityData = ahPprocessImplementation.ahpProcessImplementationMethods(ahPcriteriaWeight, priorityData,
+                numberOfBooks);
+        genericAlgo = reverseSorting.sortingAHPmethods(priorityData, numberOfBooks);
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(Double.parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
+                    Double.toString(Double
+                            .parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -236,6 +242,6 @@ AHPprocessImplementation  ahPprocessImplementation = new AHPprocessImplementatio
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
