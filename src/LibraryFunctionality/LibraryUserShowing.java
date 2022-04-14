@@ -51,13 +51,12 @@ import java.util.List;
 
 public class LibraryUserShowing extends Application {
 
-
     private TableView table;
     private ObservableList data;
     private Text actionStatus;
     PriorityData[] priorityData;
     GenericAlgo[] genericAlgo;
-    LibraryUser [] libraryUsers;
+    LibraryUser[] libraryUsers;
     int numOfBook;
     BookData[] bookData = new BookData[1050];
 
@@ -68,17 +67,16 @@ public class LibraryUserShowing extends Application {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
     ReverseSorting soring = new ReverseSorting();
 
-
     PrioritySort prioritySort = new PrioritySort();
     List list = new ArrayList();
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
 
-    String labelName="Top Books";
+    String labelName = "Top Books";
 
     public void startstartInUp(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
@@ -95,7 +93,6 @@ public class LibraryUserShowing extends Application {
         table = new TableView();
         data = getInitialTableData();
 
-
         TableColumn userId = new TableColumn("User Id");
         userId.setCellValueFactory(new PropertyValueFactory("userID"));
 
@@ -109,21 +106,20 @@ public class LibraryUserShowing extends Application {
         TableColumn userClass = new TableColumn("User Class");
         userClass.setCellValueFactory(new PropertyValueFactory("userClass"));
 
-
-        table.getColumns().setAll(userId,userName,userInstitute,userEducationLevel,userClass);
+        table.getColumns().setAll(userId, userName, userInstitute, userEducationLevel, userClass);
 
         // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
         table.setTranslateY(70);
-        table.setPrefSize(1250,560);
+        table.setPrefSize(1250, 560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // set new label for table
         String labelName = "Multi Variable Results";
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label2 = new Label();
-        label2.setPrefSize(700,45);
+        label2.setPrefSize(700, 45);
         label2.setTranslateX(454);
         label2.setTranslateY(0);
         label2.setText(labelName);
@@ -137,14 +133,14 @@ public class LibraryUserShowing extends Application {
         back.setFont(font3);
         exit.setFont(font3);
 
-// add image as a backgroun in this table showing
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,table,label2,exit,back);
+        group.getChildren().addAll(canvas, table, label2, exit, back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -156,13 +152,13 @@ public class LibraryUserShowing extends Application {
         Library library = (Library) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(library.toString());
     }
-    public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
-        dateTimeWriter.dateTimeWriterMethods(className);
-            // add button desing
-        ButtonDesign buttonDesign = new ButtonDesign();
 
+    public void start(Stage primaryStage) throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
+        dateTimeWriter.dateTimeWriterMethods(className);
+        // add button desing
+        ButtonDesign buttonDesign = new ButtonDesign();
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -184,7 +180,7 @@ public class LibraryUserShowing extends Application {
             }
         });
 
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
 
         // reset buttons position
         back.setTranslateX(35);
@@ -205,45 +201,39 @@ public class LibraryUserShowing extends Application {
                 priorityData = processing.fileChooserMethods(selectedFile);
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
 
-
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
 
-            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-            priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+            priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+            priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
 
-            labelName="Library's Book Recommendation";
+            labelName = "Library's Book Recommendation";
             for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    list.add(new Book(priorityData[iterator].bookData.bookName,
-                            priorityData[iterator].bookData.writerName,
-                            priorityData[iterator].bookData.bookId,
-                            priorityData[iterator].bookData.typeName));
-                    data = FXCollections.observableList(list);
+                list.add(new Book(priorityData[iterator].bookData.bookName,
+                        priorityData[iterator].bookData.writerName,
+                        priorityData[iterator].bookData.bookId,
+                        priorityData[iterator].bookData.typeName));
+                data = FXCollections.observableList(list);
 
             }
-            showInfo(primaryStage,labelName,data);
-
+            showInfo(primaryStage, labelName, data);
 
         });
 
-     newLibraryData=   buttonDesign.systemLine(newLibraryData,150,60,666,333,25);
+        newLibraryData = buttonDesign.systemLine(newLibraryData, 150, 60, 666, 333, 25);
 
-     Button enterButton = new Button("MLR");
-        enterButton=   buttonDesign.systemLine(enterButton,150,60,666,433,25);
+        Button enterButton = new Button("MLR");
+        enterButton = buttonDesign.systemLine(enterButton, 150, 60, 666, 433, 25);
 
-
-
-
-
-// add image as a backgroun in this table showing
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,newLibraryData,exit,back);
+        group.getChildren().addAll(canvas, newLibraryData, exit, back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -252,49 +242,48 @@ public class LibraryUserShowing extends Application {
 
     }
 
+    /*
+     * private ObservableList getInitialTableData() throws IOException {
+     * List list = new ArrayList();
+     * UserList userList = new UserList();
+     * libraryUsers = userList.parseUser();
+     * String stringMembers="";
+     * char [] libraryMembers = new char[10];
+     * String FILENAME_COUNT = "LibraryMemberCount.txt";
+     * File fileA = new File(FILENAME_COUNT);
+     * FileReader fileReader = new FileReader(fileA);
+     * 
+     * fileReader.read(libraryMembers);
+     * int countIterator=0;
+     * for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
+     * stringMembers = stringMembers+libraryMembers[countIterator];
+     * }
+     * stringMembers = stringMembers.trim();
+     * int intMembers = Integer.parseInt(stringMembers);
+     * 
+     * list.clear();
+     * int iterator;
+     *//*
+        * System.out.println("Sizes : "+libraryUsers.length);
+        *//*
+           * 
+           * 
+           * for(iterator=0;iterator<intMembers-1;iterator++){
+           * list.add(new Library(libraryUsers[iterator].getUserID(),
+           * libraryUsers[iterator].getUserName(),
+           * libraryUsers[iterator].getUserInstitute(),
+           * libraryUsers[iterator].getUserEducationLevel(),
+           * libraryUsers[iterator].getUserClass()));
+           * System.out.println("okk");
+           * }
+           * ObservableList data = FXCollections.observableList(list);
+           * return data;
+           * }
+           */
 
-
-/*
-    private ObservableList getInitialTableData() throws IOException {
-        List list = new ArrayList();
-        UserList userList = new UserList();
-        libraryUsers = userList.parseUser();
-        String  stringMembers="";
-        char [] libraryMembers = new char[10];
-        String FILENAME_COUNT = "LibraryMemberCount.txt";
-        File fileA = new File(FILENAME_COUNT);
-        FileReader fileReader = new FileReader(fileA);
-
-        fileReader.read(libraryMembers);
-        int countIterator=0;
-        for(countIterator=0;libraryMembers[countIterator]!='\0';countIterator++){
-            stringMembers = stringMembers+libraryMembers[countIterator];
-        }
-        stringMembers = stringMembers.trim();
-        int intMembers = Integer.parseInt(stringMembers);
-
-        list.clear();
-        int iterator;
-*//*
-        System.out.println("Sizes : "+libraryUsers.length);
-*//*
-
-
-        for(iterator=0;iterator<intMembers-1;iterator++){
-            list.add(new Library(libraryUsers[iterator].getUserID(),
-                    libraryUsers[iterator].getUserName(),
-                    libraryUsers[iterator].getUserInstitute(),
-                    libraryUsers[iterator].getUserEducationLevel(),
-                    libraryUsers[iterator].getUserClass()));
-            System.out.println("okk");
-        }
-        ObservableList data = FXCollections.observableList(list);
-        return data;
-    }*/
-
-    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void showInfo(Stage secondaryStage, String labelName, ObservableList data) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
@@ -314,11 +303,11 @@ public class LibraryUserShowing extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        //label top of the table
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        // label top of the table
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label = new Label();
-        label.setPrefSize(700,45);
+        label.setPrefSize(700, 45);
         label.setTranslateX(454);
         label.setTranslateY(0);
         label.setText(labelName);
@@ -347,7 +336,7 @@ public class LibraryUserShowing extends Application {
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,typeName,bookId);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId);
         table.setPrefWidth(1240);
         table.setPrefHeight(560);
         table.setTranslateX(60);
@@ -363,10 +352,10 @@ public class LibraryUserShowing extends Application {
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
+        Image image = new Image("Images" + File.separator + "libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table);
+        group.getChildren().addAll(canvas, exit, back, label, table);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
@@ -376,24 +365,26 @@ public class LibraryUserShowing extends Application {
         secondaryStage.setFullScreen(true);
         secondaryStage.show();
     }
+
     private class RowSelectChangeListener implements ChangeListener {
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
 
         }
     }
+
     private ObservableList getInitialTableData() throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
 
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
