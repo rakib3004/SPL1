@@ -20,11 +20,12 @@ public class MLR_Result {
     ReverseSorting reverseSorting = new ReverseSorting();
     PrintInfo printInfo = new PrintInfo();
     int iterator;
+
     public void MLR_ResultMethods(PriorityData[] priorityData, int numberOfBooks) {
-int enterChoice;
-Scanner scanner = new Scanner(System.in);
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        int enterChoice;
+        Scanner scanner = new Scanner(System.in);
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         System.out.println("Enter Your Choice : ");
         System.out.println("1. Show Result");
@@ -34,43 +35,38 @@ Scanner scanner = new Scanner(System.in);
         System.out.println("5. Price Based Analysis");
         System.out.println("6. Time Based Analysis");
         System.out.println("7. borrow Based Analysis");
-enterChoice = scanner.nextInt();
-if(enterChoice==1){
-    printInfo.showMLRProcessResult(priorityData,numberOfBooks);
-}
-else if(enterChoice==2){
-reverseSorting.sortingMLRmethods(priorityData,numberOfBooks);
-}
-else if(enterChoice==3){
-    timeCollection.timeCollectionMLRMethods(priorityData,numberOfBooks);
-}
-else if(enterChoice==4){
-    writerCollection.writerCollectionMLRMethods(priorityData,numberOfBooks);
-}
-else if (enterChoice==5){
-priceCollection.priceCollectionMLRMethods(priorityData,numberOfBooks);
-}
-else if (enterChoice==6){
-timeCollection.timeCollectionMLRMethods(priorityData,numberOfBooks);
-}
-else if (enterChoice==7){
-        borrowCollection.borrowCollectionMLRMethods(priorityData,numberOfBooks);
-}
+        enterChoice = scanner.nextInt();
+        if (enterChoice == 1) {
+            printInfo.showMLRProcessResult(priorityData, numberOfBooks);
+        } else if (enterChoice == 2) {
+            reverseSorting.sortingMLRmethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 3) {
+            timeCollection.timeCollectionMLRMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 4) {
+            writerCollection.writerCollectionMLRMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 5) {
+            priceCollection.priceCollectionMLRMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 6) {
+            timeCollection.timeCollectionMLRMethods(priorityData, numberOfBooks);
+        } else if (enterChoice == 7) {
+            borrowCollection.borrowCollectionMLRMethods(priorityData, numberOfBooks);
+        }
     }
-        public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks){
+
+    public void printOptionMethods(PriorityData[] priorityData, int numberOfBooks) {
 
         double temporary;
         int temp;
         PriorityData tempData;
-         try {
-           String aString = JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
+        try {
+            String aString = JOptionPane.showInputDialog("Chose OPtion :\n1.Type Base Statitics " +
                     "\n2.Writer Based Statistics \n3.Issue Date Base Statitics " +
                     "\n4.Borrow Based Statistics" + "\n5.Searching by Alphabets");
             int anInt = Integer.parseInt(aString);
             JOptionPane.showMessageDialog(null, "You Pressed " + anInt);
             if (anInt == 1) {
                 typeCollection.typeCollectionMLRMethods(priorityData, numberOfBooks);
-           } else if (anInt == 2) {
+            } else if (anInt == 2) {
                 writerCollection.writerCollectionMLRMethods(priorityData, numberOfBooks);
             } else if (anInt == 3) {
                 timeCollection.timeCollectionMLRMethods(priorityData, numberOfBooks);
