@@ -43,14 +43,15 @@ public class RemoveBookRecommendation extends Application {
     private ObservableList data;
     private Text actionStatus;
     GenericAlgo[] genericAlgo;
-ReverseSorting reverseSorting = new ReverseSorting();
+    ReverseSorting reverseSorting = new ReverseSorting();
     List list = new ArrayList();
     PriorityData[] priorityData;
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
     int bookPoint;
-    int finalBookNumber=0;
+    int finalBookNumber = 0;
+
     public int getNumberOfBooks() {
         return numberOfBooks;
     }
@@ -58,6 +59,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
     public void setNumberOfBooks(int numberOfBooks) {
         this.numberOfBooks = numberOfBooks;
     }
+
     public int getBookPoint() {
         return bookPoint;
     }
@@ -68,16 +70,17 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    int numberOfBooks2=0;
-    String labelName="";
+    int numberOfBooks2 = 0;
+    String labelName = "";
     TreeMap<Object, Object> map = new TreeMap<>();
     AHPcalculation ahPcalculation = new AHPcalculation();
     AHPprocessImplementation ahPprocessImplementation = new AHPprocessImplementation();
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
+
     @Override
-    public void start(Stage primaryStage){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void start(Stage primaryStage) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         try {
@@ -86,22 +89,21 @@ ReverseSorting reverseSorting = new ReverseSorting();
             e.printStackTrace();
         }
 
-        if(bookPoint==0){
+        if (bookPoint == 0) {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
+                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData, numberOfBooks);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else{
+        } else {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks2 = bookNumber.bookNumberFindingMethods();
-                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks2);
-                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks2);
+                priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks2);
+                priorityData = reverseSorting.reverseSortingMLRmethods(priorityData, numberOfBooks2);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -126,42 +128,40 @@ ReverseSorting reverseSorting = new ReverseSorting();
             System.exit(0);
         });
 
-
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
-         Button show = new Button("Show");
+        Button show = new Button("Show");
         show.setTranslateX(550);
         show.setTranslateY(350);
         show.setOnAction(actionEvent -> {
-            showInfo(primaryStage,labelName,data);
+            showInfo(primaryStage, labelName, data);
         });
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
         back.setFont(font3);
         exit.setFont(font3);
         show.setFont(font3);
         show.setPrefSize(200, 80);
-        labelName="Remove Book Recommendation";
-        // pathok chahida jei boi gular kom sei boi gula baad deyar jonno ei recommendation
+        labelName = "Remove Book Recommendation";
+        // pathok chahida jei boi gular kom sei boi gula baad deyar jonno ei
+        // recommendation
 
         // Reader Demand
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                list.add(new Book(priorityData[iterator].bookData.bookName,
-                        priorityData[iterator].bookData.writerName,
-                        priorityData[iterator].bookData.bookId,
-                        priorityData[iterator].bookData.typeName));
-                data = FXCollections.observableList(list);
+            list.add(new Book(priorityData[iterator].bookData.bookName,
+                    priorityData[iterator].bookData.writerName,
+                    priorityData[iterator].bookData.bookId,
+                    priorityData[iterator].bookData.typeName));
+            data = FXCollections.observableList(list);
         }
 
-        Image image = new Image("Images"+ File.separator +"Form2.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Image image = new Image("Images" + File.separator + "Form2.jpg");
+        Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,show);
-              GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+        group.getChildren().addAll(canvas, exit, back, show);
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
 
-
-        Scene scene1 = new Scene(group,1500,950);
-
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
@@ -170,20 +170,19 @@ ReverseSorting reverseSorting = new ReverseSorting();
 
     }
 
-    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void showInfo(Stage secondaryStage, String labelName, ObservableList data) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label = new Label();
-        label.setPrefSize(700,45);
+        label.setPrefSize(700, 45);
         label.setTranslateX(444);
         label.setTranslateY(0);
         label.setText(labelName);
         label.setFont(font4);
-
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -215,48 +214,46 @@ ReverseSorting reverseSorting = new ReverseSorting();
         TextField textField1 = new TextField();
         textField1.setTranslateX(635);
         textField1.setTranslateY(650);
-        textField1.setPrefSize(120,80);
+        textField1.setPrefSize(120, 80);
 
         textField1.setText(Integer.toString(numberOfBooks));
         textField1.setFont(font3);
         textField1.setOnAction(actionEvent -> {
 
+            if (Integer.parseInt(textField1.getText()) > finalBookNumber) {
 
-            if(Integer.parseInt(textField1.getText())>finalBookNumber){
-
-                              Stage accountInfoStage = new Stage();
-                Label accountInfoLabel= new Label();
+                Stage accountInfoStage = new Stage();
+                Label accountInfoLabel = new Label();
                 Group accountInfoGroup = new Group();
                 accountInfoLabel.setText("Limit out of bound!!!!!");
-                //JOptionPane.showMessageDialog(null,"Limit out of bound!!!!!");
+                // JOptionPane.showMessageDialog(null,"Limit out of bound!!!!!");
                 System.out.println("Limit out of bound!!!!!");
-                Image image20 = new Image("Images"+ File.separator +"iconic1.jpg");
-                Canvas canvas20 = new Canvas(400,180);
+                Image image20 = new Image("Images" + File.separator + "iconic1.jpg");
+                Canvas canvas20 = new Canvas(400, 180);
                 GraphicsContext graphicsContext1 = canvas20.getGraphicsContext2D();
-                graphicsContext1.drawImage(image20,0,0);
-                Font font7= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,16);
+                graphicsContext1.drawImage(image20, 0, 0);
+                Font font7 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 16);
                 Button okButton = new Button("OK");
                 okButton.setFont(font7);
                 okButton.setTranslateX(180);
                 okButton.setTranslateY(125);
-                okButton.setPrefSize(75,25);
-                okButton.setOnAction(actionEvent2 ->{
+                okButton.setPrefSize(75, 25);
+                okButton.setOnAction(actionEvent2 -> {
                     accountInfoStage.close();
-                        accountInfoGroup.getChildren().addAll(canvas20,accountInfoLabel,okButton);
-                Font font5= Font.font(Font.getFontNames().get(0),FontWeight.BOLD,26);
-                accountInfoLabel.setFont(font5);
-                accountInfoLabel.setTextFill(Color.WHITE);
-                accountInfoLabel.setTranslateX(25);
-                accountInfoLabel.setTranslateY(50);
-                Scene notExitsAccountScene = new Scene(accountInfoGroup,400,180);
-                accountInfoStage.setScene(notExitsAccountScene);
-                accountInfoStage.show();
+                    accountInfoGroup.getChildren().addAll(canvas20, accountInfoLabel, okButton);
+                    Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 26);
+                    accountInfoLabel.setFont(font5);
+                    accountInfoLabel.setTextFill(Color.WHITE);
+                    accountInfoLabel.setTranslateX(25);
+                    accountInfoLabel.setTranslateY(50);
+                    Scene notExitsAccountScene = new Scene(accountInfoGroup, 400, 180);
+                    accountInfoStage.setScene(notExitsAccountScene);
+                    accountInfoStage.show();
                 });
-
 
             }
 
-            else{
+            else {
                 list.clear();
                 setNumberOfBooks(Integer.parseInt(textField1.getText()));
                 setBookPoint(1);
@@ -268,14 +265,12 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 }
             }
 
-
         });
-
 
         Label field = new Label("Total Books : ");
         field.setTranslateX(445);
         field.setTranslateY(650);
-        field.setPrefSize(215,80);
+        field.setPrefSize(215, 80);
         field.setFont(font3);
 
         table = new TableView();
@@ -288,21 +283,17 @@ ReverseSorting reverseSorting = new ReverseSorting();
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
 
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
 
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-
-        table.getColumns().setAll(bookName,writerName,typeName,bookId);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId);
         table.setTranslateX(65);
         table.setTranslateY(70);
-        table.setPrefSize(1250,560);
+        table.setPrefSize(1250, 560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
-
 
         table.getSelectionModel().selectedIndexProperty().addListener(
                 new RemoveBookRecommendation.RowSelectChangeListener());
@@ -313,26 +304,25 @@ ReverseSorting reverseSorting = new ReverseSorting();
         ContextMenu contextMenu = new ContextMenu();
         HBox hBox = new HBox();
 
-       // contextMenu.getItems().addAll(hBox);
+        // contextMenu.getItems().addAll(hBox);
 
         table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table,textField1,field);
+        group.getChildren().addAll(canvas, exit, back, label, table, textField1, field);
         Scene scene1 = new Scene(group, 1500, 950);
 
         secondaryStage.setScene(scene1);
         secondaryStage.setTitle("Books Statistics");
         secondaryStage.setFullScreen(true);
         secondaryStage.show();
-
 
     }
 
@@ -344,18 +334,18 @@ ReverseSorting reverseSorting = new ReverseSorting();
         }
     }
 
-    private ObservableList getInitialTableData() throws IOException { String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    private ObservableList getInitialTableData() throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = reverseSorting.reverseSortingMLRmethods(priorityData,numberOfBooks);
-
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = reverseSorting.reverseSortingMLRmethods(priorityData, numberOfBooks);
 
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
@@ -365,12 +355,7 @@ ReverseSorting reverseSorting = new ReverseSorting();
         return data;
     }
 
-
-
-
-
-    public Button setStyle( Button button)
-    {
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -382,10 +367,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
-    public Label setStyle(Label label)
-    {
+
+    public Label setStyle(Label label) {
         label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -397,11 +382,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return   label;
+        return label;
     }
 
-    public Text setStyle(Text text)
-    {
+    public Text setStyle(Text text) {
         text.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -413,11 +397,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  text;
+        return text;
     }
 
-    public TextField setStyle(TextField textField)
-    {
+    public TextField setStyle(TextField textField) {
         textField.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -429,10 +412,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  textField;
+        return textField;
     }
-    public TextField setStylePro(TextField textField)
-    {
+
+    public TextField setStylePro(TextField textField) {
         textField.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -444,10 +427,10 @@ ReverseSorting reverseSorting = new ReverseSorting();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 0.7em;");
-        return  textField;
+        return textField;
     }
 
-    public Button setButton(Button button, int x, int y, int a, int b){
+    public Button setButton(Button button, int x, int y, int a, int b) {
         button.setTranslateX(x);
         return button;
     }
