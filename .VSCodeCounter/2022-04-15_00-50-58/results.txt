@@ -1,0 +1,180 @@
+Date : 2022-04-15 00:50:58
+Directory : e:\IdeaProjects\SPL1\src
+Total : 127 files,  38267 codes, 711 comments, 3768 blanks, all 42746 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |        124 |     33,430 |        710 |      3,753 |     37,893 |
+| XML      |          2 |      4,803 |          1 |          5 |      4,809 |
+| CSS      |          1 |         34 |          0 |         10 |         44 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                |        127 |     38,267 |        711 |      3,768 |     42,746 |
+| AHPalgorithm                                                                     |          7 |        552 |         60 |        141 |        753 |
+| BookDataBaseFX                                                                   |          6 |      1,119 |          0 |        117 |      1,236 |
+| Collection                                                                       |          5 |        863 |          4 |        233 |      1,100 |
+| CombinedChartView                                                                |          4 |        736 |          0 |        105 |        841 |
+| CrossValidationProcess                                                           |          7 |      4,798 |          0 |        396 |      5,194 |
+| DataComparing                                                                    |          4 |        836 |         52 |        141 |      1,029 |
+| FilePackage                                                                      |          2 |        108 |         25 |         23 |        156 |
+| Images                                                                           |          1 |      4,782 |          1 |          2 |      4,785 |
+| InfoDisplay                                                                      |          6 |      1,957 |          2 |        176 |      2,135 |
+| JavFX                                                                            |          5 |        974 |         15 |         95 |      1,084 |
+| JavaSwing                                                                        |          1 |         57 |          0 |          8 |         65 |
+| Layout                                                                           |          1 |         89 |          0 |         18 |        107 |
+| LibraryFunctionality                                                             |          7 |      2,078 |        163 |        277 |      2,518 |
+| LinearRegression                                                                 |          3 |        381 |          9 |         41 |        431 |
+| MainPackage                                                                      |          4 |        453 |          3 |         83 |        539 |
+| Methods                                                                          |          5 |        288 |          0 |         36 |        324 |
+| MultiVariableRegression                                                          |          4 |        247 |         11 |         50 |        308 |
+| ObjectOriented                                                                   |          5 |        451 |          0 |        120 |        571 |
+| PageRankAlgorithm                                                                |          5 |        321 |          4 |         81 |        406 |
+| ProjectDescription                                                               |          4 |        515 |          0 |         74 |        589 |
+| RecommendationAlgorithm                                                          |          4 |        713 |         29 |         64 |        806 |
+| Regression                                                                       |          6 |        270 |          1 |         62 |        333 |
+| ResultPackage                                                                    |          3 |        234 |          0 |         20 |        254 |
+| SimpleRegression                                                                 |          5 |        285 |          5 |         43 |        333 |
+| TableViewPackage                                                                 |          8 |      3,287 |         31 |        376 |      3,694 |
+| UserInterfacePackage                                                             |          8 |      3,756 |        142 |        318 |      4,216 |
+| VisualRepresentation                                                             |          7 |      8,117 |        154 |        668 |      8,939 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\AHPSubCriteriaProcess.java                 | Java     |        100 |          7 |         28 |        135 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\AHPcalculation.java                        | Java     |         84 |          7 |         21 |        112 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\AHPprocessImplementation.java              | Java     |         89 |         30 |         19 |        138 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\CountCriteriaAHP.java                      | Java     |         66 |          4 |         16 |         86 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\MonthCriteriaAHP.java                      | Java     |         73 |          4 |         19 |         96 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\PriceCriteriaAHP.java                      | Java     |         62 |          4 |         21 |         87 |
+| e:\IdeaProjects\SPL1\src\AHPalgorithm\TypeCriteriaAHP.java                       | Java     |         78 |          4 |         17 |         99 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\BorrowCountOfBook.java                   | Java     |        185 |          0 |         15 |        200 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\ClassesOfBook.java                       | Java     |        205 |          0 |         17 |        222 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\DemandsOfBook.java                       | Java     |        205 |          0 |         18 |        223 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\GenericsOfBook.java                      | Java     |        236 |          0 |         18 |        254 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\SevenValueCalculation.java               | Java     |         83 |          0 |         31 |        114 |
+| e:\IdeaProjects\SPL1\src\BookDataBaseFX\TypesOfBook.java                         | Java     |        205 |          0 |         18 |        223 |
+| e:\IdeaProjects\SPL1\src\Collection\BorrowCollection.java                        | Java     |        170 |          3 |         62 |        235 |
+| e:\IdeaProjects\SPL1\src\Collection\PriceCollection.java                         | Java     |        170 |          0 |         38 |        208 |
+| e:\IdeaProjects\SPL1\src\Collection\TimeCollection.java                          | Java     |        161 |          0 |         44 |        205 |
+| e:\IdeaProjects\SPL1\src\Collection\TypeCollection.java                          | Java     |        152 |          0 |         50 |        202 |
+| e:\IdeaProjects\SPL1\src\Collection\WriterCollection.java                        | Java     |        210 |          1 |         39 |        250 |
+| e:\IdeaProjects\SPL1\src\CombinedChartView\CombinedLineChart.java                | Java     |        186 |          0 |         27 |        213 |
+| e:\IdeaProjects\SPL1\src\CombinedChartView\CombinedScatterChart.java             | Java     |        180 |          0 |         29 |        209 |
+| e:\IdeaProjects\SPL1\src\CombinedChartView\CombinedStackedAreaChart.java         | Java     |        197 |          0 |         28 |        225 |
+| e:\IdeaProjects\SPL1\src\CombinedChartView\RegressionLineAnalysis.java           | Java     |        173 |          0 |         21 |        194 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\CrossValidation.java             | Java     |        607 |          0 |         44 |        651 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TestingSet.java                  | Java     |        862 |          0 |         65 |        927 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TrainingObservation.java         | Java     |        199 |          0 |         10 |        209 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TrainingSet.java                 | Java     |        523 |          0 |         52 |        575 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TrainingSetCombined.java         | Java     |        872 |          0 |         70 |        942 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TrainingSetComparison.java       | Java     |        845 |          0 |         76 |        921 |
+| e:\IdeaProjects\SPL1\src\CrossValidationProcess\TrainingTestingComparison.java   | Java     |        890 |          0 |         79 |        969 |
+| e:\IdeaProjects\SPL1\src\DataComparing\CrossValidationShowing.java               | Java     |        446 |         26 |         68 |        540 |
+| e:\IdeaProjects\SPL1\src\DataComparing\PredictionSector.java                     | Java     |         22 |          0 |          5 |         27 |
+| e:\IdeaProjects\SPL1\src\DataComparing\TestingSector.java                        | Java     |        140 |         23 |         26 |        189 |
+| e:\IdeaProjects\SPL1\src\DataComparing\TrainingSector.java                       | Java     |        228 |          3 |         42 |        273 |
+| e:\IdeaProjects\SPL1\src\FilePackage\DateTimeWriter.java                         | Java     |         67 |         24 |         15 |        106 |
+| e:\IdeaProjects\SPL1\src\FilePackage\OutputWriter.java                           | Java     |         41 |          1 |          8 |         50 |
+| e:\IdeaProjects\SPL1\src\Images\a4.svg                                           | XML      |      4,782 |          1 |          2 |      4,785 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\BookAnalysis.java                           | Java     |         19 |          0 |          4 |         23 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\BookInformationShow.java                    | Java     |        517 |          1 |         42 |        560 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\BookNumberDisplay.java                      | Java     |        183 |          0 |         15 |        198 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\SevenNumberImplementation.java              | Java     |        698 |          0 |         75 |        773 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\SevenValueStatistics.java                   | Java     |        519 |          1 |         37 |        557 |
+| e:\IdeaProjects\SPL1\src\InfoDisplay\database.fxml                               | XML      |         21 |          0 |          3 |         24 |
+| e:\IdeaProjects\SPL1\src\JavFX\AuthorSystem.java                                 | Java     |        170 |          0 |         15 |        185 |
+| e:\IdeaProjects\SPL1\src\JavFX\FxDatabase.java                                   | Java     |         26 |          0 |          6 |         32 |
+| e:\IdeaProjects\SPL1\src\JavFX\Main.java                                         | Java     |        478 |          6 |         39 |        523 |
+| e:\IdeaProjects\SPL1\src\JavFX\ProcessAnalysis.java                              | Java     |        174 |          0 |         14 |        188 |
+| e:\IdeaProjects\SPL1\src\JavFX\ProjectDescription.java                           | Java     |        126 |          9 |         21 |        156 |
+| e:\IdeaProjects\SPL1\src\JavaSwing\SwingMainClass.java                           | Java     |         57 |          0 |          8 |         65 |
+| e:\IdeaProjects\SPL1\src\Layout\ButtonDesign.java                                | Java     |         89 |          0 |         18 |        107 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\AccountManagement.java             | Java     |        430 |          8 |         56 |        494 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\Library.java                       | Java     |         72 |         58 |         25 |        155 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\LibraryUser.java                   | Java     |         48 |          0 |         14 |         62 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\LibraryUserShowing.java            | Java     |        292 |         47 |         59 |        398 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\ReadingRoom.java                   | Java     |        950 |         41 |         83 |      1,074 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\UserChoiceTableData.java           | Java     |        216 |          1 |         26 |        243 |
+| e:\IdeaProjects\SPL1\src\LibraryFunctionality\UserList.java                      | Java     |         70 |          8 |         14 |         92 |
+| e:\IdeaProjects\SPL1\src\LinearRegression\FourVariableRegression.java            | Java     |        199 |          9 |         20 |        228 |
+| e:\IdeaProjects\SPL1\src\LinearRegression\ThreeVariableRegression.java           | Java     |         91 |          0 |         10 |        101 |
+| e:\IdeaProjects\SPL1\src\LinearRegression\TwoVariableRegression.java             | Java     |         91 |          0 |         11 |        102 |
+| e:\IdeaProjects\SPL1\src\MainPackage\BookNumber.java                             | Java     |         67 |          0 |         16 |         83 |
+| e:\IdeaProjects\SPL1\src\MainPackage\DataParsing.java                            | Java     |         81 |          0 |         11 |         92 |
+| e:\IdeaProjects\SPL1\src\MainPackage\MainClass.java                              | Java     |         71 |          0 |         13 |         84 |
+| e:\IdeaProjects\SPL1\src\MainPackage\Processing.java                             | Java     |        234 |          3 |         43 |        280 |
+| e:\IdeaProjects\SPL1\src\Methods\PrintInfo.java                                  | Java     |         58 |          0 |         10 |         68 |
+| e:\IdeaProjects\SPL1\src\Methods\PrioritySort.java                               | Java     |         23 |          0 |          5 |         28 |
+| e:\IdeaProjects\SPL1\src\Methods\RankShow.java                                   | Java     |         19 |          0 |          2 |         21 |
+| e:\IdeaProjects\SPL1\src\Methods\ReverseSorting.java                             | Java     |        113 |          0 |          8 |        121 |
+| e:\IdeaProjects\SPL1\src\Methods\Searching.java                                  | Java     |         75 |          0 |         11 |         86 |
+| e:\IdeaProjects\SPL1\src\MultiVariableRegression\CalculateWeight.java            | Java     |         26 |          0 |          8 |         34 |
+| e:\IdeaProjects\SPL1\src\MultiVariableRegression\Matrix.java                     | Java     |         67 |          5 |         13 |         85 |
+| e:\IdeaProjects\SPL1\src\MultiVariableRegression\MedianCalculation.java          | Java     |         79 |          0 |         18 |         97 |
+| e:\IdeaProjects\SPL1\src\MultiVariableRegression\MultipleLinearRegression.java   | Java     |         75 |          6 |         11 |         92 |
+| e:\IdeaProjects\SPL1\src\ObjectOriented\AHPcriteriaWeight.java                   | Java     |        184 |          0 |         49 |        233 |
+| e:\IdeaProjects\SPL1\src\ObjectOriented\BookData.java                            | Java     |         93 |          0 |         24 |        117 |
+| e:\IdeaProjects\SPL1\src\ObjectOriented\CrossValidationData.java                 | Java     |         21 |          0 |          8 |         29 |
+| e:\IdeaProjects\SPL1\src\ObjectOriented\GenericAlgo.java                         | Java     |         21 |          0 |          8 |         29 |
+| e:\IdeaProjects\SPL1\src\ObjectOriented\PriorityData.java                        | Java     |        132 |          0 |         31 |        163 |
+| e:\IdeaProjects\SPL1\src\PageRankAlgorithm\CheckPageLink.java                    | Java     |         61 |          0 |         20 |         81 |
+| e:\IdeaProjects\SPL1\src\PageRankAlgorithm\PageRankCalculation.java              | Java     |         91 |          3 |         33 |        127 |
+| e:\IdeaProjects\SPL1\src\PageRankAlgorithm\PageRankLink.java                     | Java     |         95 |          0 |         13 |        108 |
+| e:\IdeaProjects\SPL1\src\PageRankAlgorithm\PageRankMatrixCalculation.java        | Java     |         22 |          0 |          7 |         29 |
+| e:\IdeaProjects\SPL1\src\PageRankAlgorithm\PageRankProcessData.java              | Java     |         52 |          1 |          8 |         61 |
+| e:\IdeaProjects\SPL1\src\ProjectDescription\About.java                           | Java     |        109 |          0 |         12 |        121 |
+| e:\IdeaProjects\SPL1\src\ProjectDescription\DynamicStage.java                    | Java     |        135 |          0 |         26 |        161 |
+| e:\IdeaProjects\SPL1\src\ProjectDescription\Phase1.java                          | Java     |        160 |          0 |         20 |        180 |
+| e:\IdeaProjects\SPL1\src\ProjectDescription\StaticStage.java                     | Java     |        111 |          0 |         16 |        127 |
+| e:\IdeaProjects\SPL1\src\RecommendationAlgorithm\AnalyticHierarchyAlgorithm.java | Java     |        185 |          9 |         19 |        213 |
+| e:\IdeaProjects\SPL1\src\RecommendationAlgorithm\MultiVariableRegression.java    | Java     |        171 |          0 |         13 |        184 |
+| e:\IdeaProjects\SPL1\src\RecommendationAlgorithm\PageRankAlgorithm.java          | Java     |        187 |         11 |         17 |        215 |
+| e:\IdeaProjects\SPL1\src\RecommendationAlgorithm\ProcessImplementation.java      | Java     |        170 |          9 |         15 |        194 |
+| e:\IdeaProjects\SPL1\src\Regression\CountMonthRegression.java                    | Java     |         41 |          0 |          7 |         48 |
+| e:\IdeaProjects\SPL1\src\Regression\CountPriceRegression.java                    | Java     |         46 |          0 |         14 |         60 |
+| e:\IdeaProjects\SPL1\src\Regression\MonthPriceRegression.java                    | Java     |         45 |          0 |         14 |         59 |
+| e:\IdeaProjects\SPL1\src\Regression\TypeCountRegression.java                     | Java     |         48 |          1 |         10 |         59 |
+| e:\IdeaProjects\SPL1\src\Regression\TypeMonthRegression.java                     | Java     |         44 |          0 |         11 |         55 |
+| e:\IdeaProjects\SPL1\src\Regression\TypePriceRegression.java                     | Java     |         46 |          0 |          6 |         52 |
+| e:\IdeaProjects\SPL1\src\ResultPackage\AHP_Result.java                           | Java     |         78 |          0 |          8 |         86 |
+| e:\IdeaProjects\SPL1\src\ResultPackage\MLR_Result.java                           | Java     |         78 |          0 |          7 |         85 |
+| e:\IdeaProjects\SPL1\src\ResultPackage\PRA_Result.java                           | Java     |         78 |          0 |          5 |         83 |
+| e:\IdeaProjects\SPL1\src\SimpleRegression\CalculateDoublyRegression.java         | Java     |         20 |          0 |          5 |         25 |
+| e:\IdeaProjects\SPL1\src\SimpleRegression\DoublyLinearRegression.java            | Java     |         48 |          2 |          8 |         58 |
+| e:\IdeaProjects\SPL1\src\SimpleRegression\LinearRegression.java                  | Java     |         36 |          2 |          5 |         43 |
+| e:\IdeaProjects\SPL1\src\SimpleRegression\OptimizeRegression.java                | Java     |         82 |          1 |         13 |         96 |
+| e:\IdeaProjects\SPL1\src\SimpleRegression\TotalRegression.java                   | Java     |         99 |          0 |         12 |        111 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\AHP_Chart_View.java                    | Java     |        845 |          0 |         86 |        931 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\AHP_TableView.java                     | Java     |        218 |          4 |         26 |        248 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\Book.java                              | Java     |        137 |          0 |         34 |        171 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\LineChart.css                          | CSS      |         34 |          0 |         10 |         44 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\MLR_Chart_View.java                    | Java     |        832 |          5 |         86 |        923 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\MLR_TableView.java                     | Java     |        207 |          7 |         31 |        245 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\PRA_Chart_View.java                    | Java     |        800 |          6 |         79 |        885 |
+| e:\IdeaProjects\SPL1\src\TableViewPackage\PRA_TableView.java                     | Java     |        214 |          9 |         24 |        247 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\LibraryDesk.java                   | Java     |        447 |          1 |         32 |        480 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\PriorityClass.java                 | Java     |         29 |          0 |         10 |         39 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\RemoveBookRecommendation.java      | Java     |        367 |          6 |         65 |        438 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\SelectBookRecommendation.java      | Java     |        734 |         98 |         62 |        894 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\ShelfWiseFX.java                   | Java     |        509 |          3 |         40 |        552 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\TimeWise.java                      | Java     |        477 |          6 |         39 |        522 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\TypeWise.java                      | Java     |        593 |          7 |         39 |        639 |
+| e:\IdeaProjects\SPL1\src\UserInterfacePackage\WriterWise.java                    | Java     |        600 |         21 |         31 |        652 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\AnalyticChart.java                 | Java     |        135 |          0 |         22 |        157 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\InfoBarChart.java                  | Java     |      1,340 |          0 |         97 |      1,437 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\InfoPieChart.java                  | Java     |      1,226 |          0 |         88 |      1,314 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\SevenValueString.java              | Java     |          4 |          0 |          2 |          6 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\ShowLineChart.java                 | Java     |      1,673 |         45 |        146 |      1,864 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\ShowScatterChart.java              | Java     |      2,073 |         64 |        162 |      2,299 |
+| e:\IdeaProjects\SPL1\src\VisualRepresentation\ShowStackedArea.java               | Java     |      1,666 |         45 |        151 |      1,862 |
+| Total                                                                            |          |     38,267 |        711 |      3,768 |     42,746 |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
