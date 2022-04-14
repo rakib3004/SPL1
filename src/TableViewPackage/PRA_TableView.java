@@ -49,13 +49,13 @@ public class PRA_TableView extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-PageRankCalculation pageRankCalculation = new PageRankCalculation();
+    PageRankCalculation pageRankCalculation = new PageRankCalculation();
     ReverseSorting soring = new ReverseSorting();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         primaryStage.setTitle("Page Rank Algorithm Table");
         Button back = new Button("Back");
@@ -106,19 +106,19 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,typeName,bookId,borrowCount,price, bookWeight);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId, borrowCount, price, bookWeight);
         // REFORM _TABLE _STRUCTURE
         table.setTranslateX(65);
         table.setTranslateY(70);
-        table.setPrefSize(1250,560);
+        table.setPrefSize(1250, 560);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // set new label for table
         String labelName = "Page Rank Results";
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label2 = new Label();
-        label2.setPrefSize(700,45);
+        label2.setPrefSize(700, 45);
         label2.setTranslateX(454);
         label2.setTranslateY(0);
         label2.setText(labelName);
@@ -132,8 +132,8 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         back.setFont(font3);
         exit.setFont(font3);
 
-// add image as a backgroun in this table showing
-        Image image = new Image("Images"+ File.separator +"table2.jpg");
+        // add image as a backgroun in this table showing
+        Image image = new Image("Images" + File.separator + "table2.jpg");
         Canvas canvas = new Canvas(1500, 950);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -172,7 +172,7 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
                 e.printStackTrace();
             }
         });
-        contextMenu.getItems().addAll(mlr_table_view,ahp_table_view,pra_table_view);
+        contextMenu.getItems().addAll(mlr_table_view, ahp_table_view, pra_table_view);
         table.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
 
             @Override
@@ -181,9 +181,8 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
             }
         });
 
-
         Group group = new Group();
-        group.getChildren().addAll(canvas,table,label2,exit,back);
+        group.getChildren().addAll(canvas, table, label2, exit, back);
 
         Scene scene = new Scene(group, 1400, 775);
         primaryStage.setScene(scene);
@@ -194,11 +193,12 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
     } // start()
+
     private class RowSelectChangeListener implements ChangeListener {
-                @Override
+        @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
-            String  className = this.getClass().getSimpleName();
-            DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+            String className = this.getClass().getSimpleName();
+            DateTimeWriter dateTimeWriter = new DateTimeWriter();
             dateTimeWriter.dateTimeWriterMethods(className);
         }
     }
@@ -209,23 +209,27 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
         DecimalFormat df = new DecimalFormat("###.##");
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-     //   priorityData = pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
+        // priorityData =
+        // pageRankCalculation.pageRankCalculationMethods(priorityData,numberOfBooks);
         PageRankProcessData pageRankProcessData = new PageRankProcessData();
-        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData,numberOfBooks);
-        genericAlgo =soring.sortingPRAmethods(priorityData,numberOfBooks);
+        priorityData = pageRankProcessData.PageRankProcessDataMethods(priorityData, numberOfBooks);
+        genericAlgo = soring.sortingPRAmethods(priorityData, numberOfBooks);
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookId,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.typeName,
-                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
-                    Double.toString(Double.parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.borrowCount,
+                    priorityData[genericAlgo[iterator].getIndex()].bookData.bookPrice,
+                    Double.toString(Double
+                            .parseDouble(df.format(priorityData[genericAlgo[iterator].getIndex()].getRankValue())))));
         }
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -237,6 +241,6 @@ PageRankCalculation pageRankCalculation = new PageRankCalculation();
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
