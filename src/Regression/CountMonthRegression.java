@@ -11,10 +11,11 @@ public class CountMonthRegression {
 
     double timeValue[] = new double[1050];
     double timeValue1[] = new double[1050];
-    public double countMonthRegressionMethods(PriorityData [] priorityData, int numberOfBooks) {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public double countMonthRegressionMethods(PriorityData[] priorityData, int numberOfBooks) {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             timeValue[iterator] = priorityData[iterator].timePriority;
@@ -42,6 +43,6 @@ public class CountMonthRegression {
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             timeValue1[iterator] = betaValue + metaValue * bookCount[iterator];
         }
-return  metaValue;
+        return metaValue;
     }
 }
