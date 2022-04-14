@@ -1,5 +1,5 @@
 package VisualRepresentation;
 
 public interface SevenValueString {
-  public  String   getSeries(String [] sevenValueArray);
+  public String getSeries(String[] sevenValueArray);
 }
