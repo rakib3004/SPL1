@@ -10,7 +10,8 @@ public class LibraryUser {
     public LibraryUser() {
     }
 
-    public LibraryUser(String userID, String userName, String userInstitute, String userEducationLevel, String userClass) {
+    public LibraryUser(String userID, String userName, String userInstitute, String userEducationLevel,
+            String userClass) {
         this.userID = userID;
         this.userName = userName;
         this.userInstitute = userInstitute;
