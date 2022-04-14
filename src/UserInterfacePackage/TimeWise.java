@@ -52,13 +52,13 @@ public class TimeWise extends Application {
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
-    String labelName="Top Books";
+    String labelName = "Top Books";
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override
-    public void start(Stage primaryStage){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void start(Stage primaryStage) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         try {
             priorityData = processing.fileReaderMethods();
@@ -66,13 +66,13 @@ public class TimeWise extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
 
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
-        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
+        Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -258,16 +258,16 @@ public class TimeWise extends Application {
 
         MenuItem year1 = new MenuItem("2008-2010");
         year1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override 
+            @Override
             public void handle(ActionEvent e) {
-                labelName="Top Books of "+year1.getText();
+                labelName = "Top Books of " + year1.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("0618")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1208")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1009")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0410")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0810")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1210")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3, 7).contains("0618") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("1208") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("1009") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("0410") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("0810") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("1210")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
@@ -275,19 +275,20 @@ public class TimeWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
-            } });
-
+                showInfo(primaryStage, labelName, data);
+            }
+        });
 
         MenuItem year2 = new MenuItem("2011-2012");
         year2.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+year2.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + year2.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("0311")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("1211")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0212")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("0812")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3, 7).contains("0311") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("1211") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("0212") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("0812")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
@@ -295,16 +296,17 @@ public class TimeWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem year3 = new MenuItem("2013-2014");
         year3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+year3.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + year3.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("13")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("14")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3, 7).contains("13") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("14")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
@@ -312,17 +314,18 @@ public class TimeWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem year4 = new MenuItem("2015-2016");
         year4.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+year4.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + year4.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
-                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("15")||
-                            priorityData[iterator].bookData.bookId.substring(3,7).contains("16")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3, 7).contains("15") ||
+                            priorityData[iterator].bookData.bookId.substring(3, 7).contains("16")) {
 
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -331,50 +334,53 @@ public class TimeWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem year5 = new MenuItem("2017-2018");
         year5.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+year5.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + year5.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(3,7).contains("17")) {
+                    if (priorityData[iterator].bookData.bookId.substring(3, 7).contains("17")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
-                               priorityData[iterator].bookData.typeName));
+                                priorityData[iterator].bookData.typeName));
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
-            } });
+                showInfo(primaryStage, labelName, data);
+            }
+        });
 
         MenuButton yearSection = new MenuButton("Select Year : ");
-        yearSection.getItems().addAll( year1, year2, year3, year4,
+        yearSection.getItems().addAll(year1, year2, year3, year4,
                 year5);
         yearSection.setFont(font5);
 
         yearSection.setTranslateX(700);
         yearSection.setTranslateY(285);
         yearSection.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground14.jpg");
-      //  Canvas canvas = new Canvas(1500,950);
-      //  Group group = new Group();
+        Image image = new Image("Images" + File.separator + "libraryBackground14.jpg");
+        // Canvas canvas = new Canvas(1500,950);
+        // Group group = new Group();
 
         group.getChildren().addAll(yearSection);
-       // GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+        // GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.drawImage(image, 0, 0);
+        Scene scene1 = new Scene(group, 1500, 950);
 
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+
+    public void showInfo(Stage secondaryStage, String labelName, ObservableList data) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
@@ -395,11 +401,11 @@ public class TimeWise extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        //label top of the table
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        // label top of the table
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label = new Label();
-        label.setPrefSize(700,45);
+        label.setPrefSize(700, 45);
         label.setTranslateX(454);
         label.setTranslateY(0);
         label.setText(labelName);
@@ -422,13 +428,12 @@ public class TimeWise extends Application {
         TableColumn writerName = new TableColumn("Writer Name");
         writerName.setCellValueFactory(new PropertyValueFactory("writerName"));
 
-
         TableColumn bookId = new TableColumn("Book ID");
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
 
-        table.getColumns().setAll(bookName,writerName,typeName,bookId);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId);
         table.setPrefWidth(1240);
         table.setPrefHeight(560);
         table.setTranslateX(60);
@@ -445,10 +450,10 @@ public class TimeWise extends Application {
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
+        Image image = new Image("Images" + File.separator + "libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table);
+        group.getChildren().addAll(canvas, exit, back, label, table);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
@@ -466,17 +471,17 @@ public class TimeWise extends Application {
     }
 
     private ObservableList getInitialTableData() throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         List list = new ArrayList();
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
@@ -484,8 +489,8 @@ public class TimeWise extends Application {
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -497,10 +502,10 @@ public class TimeWise extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
-    public Label setStyle(Label Label)
-    {
+
+    public Label setStyle(Label Label) {
         Label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -512,6 +517,6 @@ public class TimeWise extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  Label;
+        return Label;
     }
 }
