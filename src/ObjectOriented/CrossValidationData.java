@@ -4,6 +4,7 @@ public class CrossValidationData {
 
     public double calculatedValue;
     public double estimatedData;
+
     public CrossValidationData(double calculatedValue, double estimatedData) {
         this.calculatedValue = calculatedValue;
         this.estimatedData = estimatedData;
