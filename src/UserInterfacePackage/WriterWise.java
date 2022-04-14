@@ -54,7 +54,7 @@ public class WriterWise extends Application {
     AHPcriteriaWeight ahPcriteriaWeight;
     int iterator;
     int numberOfBooks;
-    String labelName="Top Books";
+    String labelName = "Top Books";
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
     AHPcalculation ahPcalculation = new AHPcalculation();
@@ -62,9 +62,9 @@ public class WriterWise extends Application {
     MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression();
 
     @Override
-    public void start(Stage primaryStage){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public void start(Stage primaryStage) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         try {
             priorityData = processing.fileReaderMethods();
@@ -72,13 +72,13 @@ public class WriterWise extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
 
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
-        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
+        Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -261,34 +261,34 @@ public class WriterWise extends Application {
         group.getChildren().addAll(canvas, typeWise1,
                 shelfWise, writerWise,
                 timeWise, exit, home, text, back);
-    /*
-                                Humayon Ahmed
-                                Muhammad Jafar Iqbal
-                                Rokib Hasan
-                                Emdadul Haque Milon
-                                Kazi Nazrul Islam
-                                Kazi Anwar Hossain
-                                Sharat Chandra Chattropadhay
-                                Sharatchandra Chottopaddhday
-                                Rabindranath Tagore
-                                Rabindranath Tagore
-                                Sunil gangopadhyay
-                                Sunil Gango Paddahay
-                                Samaresh majumdar
-                                Emdadiya Pustokaloy
-                                others
-       */
+        /*
+         * Humayon Ahmed
+         * Muhammad Jafar Iqbal
+         * Rokib Hasan
+         * Emdadul Haque Milon
+         * Kazi Nazrul Islam
+         * Kazi Anwar Hossain
+         * Sharat Chandra Chattropadhay
+         * Sharatchandra Chottopaddhday
+         * Rabindranath Tagore
+         * Rabindranath Tagore
+         * Sunil gangopadhyay
+         * Sunil Gango Paddahay
+         * Samaresh majumdar
+         * Emdadiya Pustokaloy
+         * others
+         */
         TreeMap<Object, Object> map = new TreeMap<>();
         MenuItem humayonAhmed = new MenuItem("Humayon Ahmed");
         humayonAhmed.setOnAction(new EventHandler<ActionEvent>() {
-            @Override 
+            @Override
             public void handle(ActionEvent e) {
-            int as=0;
-                labelName="Top Books of "+humayonAhmed.getText();
+                int as = 0;
+                labelName = "Top Books of " + humayonAhmed.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Humayon Ahmed")) {
                         as++;
-                        System.out.println("Yes"+as);
+                        System.out.println("Yes" + as);
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
                                 priorityData[iterator].bookData.bookId,
@@ -296,12 +296,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
-            } });
+                showInfo(primaryStage, labelName, data);
+            }
+        });
         MenuItem muhammadJafarIqbal = new MenuItem("Muhammad Jafar Iqbal");
         muhammadJafarIqbal.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+muhammadJafarIqbal.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + muhammadJafarIqbal.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Muhammad Jafar Iqbal")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -311,13 +313,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem rokibHasan = new MenuItem("Rokib Hasan");
         rokibHasan.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+rokibHasan.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + rokibHasan.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Rokib Hasan")) {
 
@@ -328,13 +331,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem emdadulHaqueMilon = new MenuItem("Emdadul Haque Milon");
         emdadulHaqueMilon.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+emdadulHaqueMilon.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + emdadulHaqueMilon.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Emdadul Haque Milon")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -344,13 +348,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem kaziNazrulIslam = new MenuItem("Kazi Nazrul Islam");
         kaziNazrulIslam.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+kaziNazrulIslam.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + kaziNazrulIslam.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Nazrul Islam")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -360,13 +365,15 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
-            } });
+                showInfo(primaryStage, labelName, data);
+            }
+        });
 
         MenuItem kaziAnwarHossain = new MenuItem("Kazi Anwar Hossain");
         kaziAnwarHossain.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+kaziAnwarHossain.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + kaziAnwarHossain.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Kazi Anwar Hossain")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -376,15 +383,16 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem sharatChandraChattropadhay = new MenuItem("Sharat Chandra Chattropadhay");
         sharatChandraChattropadhay.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+sharatChandraChattropadhay.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + sharatChandraChattropadhay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.writerName.contains("Sharat Chandra Chattropadhay")||
+                    if (priorityData[iterator].bookData.writerName.contains("Sharat Chandra Chattropadhay") ||
                             priorityData[iterator].bookData.writerName.contains("Sharatchandra Chottopaddhday")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -393,13 +401,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem rabindranathTagore = new MenuItem("Rabindranath Tagore");
         rabindranathTagore.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+rabindranathTagore.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + rabindranathTagore.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Rabindranath Tagore")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -409,14 +418,16 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
-            } });
+                showInfo(primaryStage, labelName, data);
+            }
+        });
         MenuItem sunilGangoPaddahay = new MenuItem("Sunil Gango Paddahay");
         sunilGangoPaddahay.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+sunilGangoPaddahay.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + sunilGangoPaddahay.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                   if (priorityData[iterator].bookData.writerName.contains("Sunil Gango Paddahay")||
+                    if (priorityData[iterator].bookData.writerName.contains("Sunil Gango Paddahay") ||
                             priorityData[iterator].bookData.writerName.contains("Sunil gangopadhyay")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -425,13 +436,14 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem samareshMajumdar = new MenuItem("Samaresh majumdar");
         samareshMajumdar.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+samareshMajumdar.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + samareshMajumdar.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
                     if (priorityData[iterator].bookData.writerName.contains("Samaresh majumdar")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
@@ -441,14 +453,15 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem emdadiyaPustokaloy = new MenuItem("Emdadiya Pustokaloy");
         emdadiyaPustokaloy.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+            @Override
+            public void handle(ActionEvent e) {
 
-                labelName="Top Books of "+emdadiyaPustokaloy.getText();
+                labelName = "Top Books of " + emdadiyaPustokaloy.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
 
                     if (priorityData[iterator].bookData.writerName.contains("Emdadiya Pustokaloy")) {
@@ -461,15 +474,16 @@ public class WriterWise extends Application {
 
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuItem others = new MenuItem("Others");
         others.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                labelName="Top Books of "+others.getText();
+            @Override
+            public void handle(ActionEvent e) {
+                labelName = "Top Books of " + others.getText();
                 for (iterator = 0; iterator < numberOfBooks; iterator++) {
-                    if (priorityData[iterator].bookData.bookId.substring(0, 2).contains("07")||
+                    if (priorityData[iterator].bookData.bookId.substring(0, 2).contains("07") ||
                             priorityData[iterator].bookData.bookId.substring(0, 2).contains("22")) {
                         list.add(new Book(priorityData[iterator].bookData.bookName,
                                 priorityData[iterator].bookData.writerName,
@@ -478,30 +492,31 @@ public class WriterWise extends Application {
                         data = FXCollections.observableList(list);
                     }
                 }
-                showInfo(primaryStage,labelName,data);
+                showInfo(primaryStage, labelName, data);
             }
         });
         MenuButton writerMenu = new MenuButton("Select Your Fav Writer : ");
-        writerMenu.getItems().addAll( humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
+        writerMenu.getItems().addAll(humayonAhmed, muhammadJafarIqbal, rokibHasan, emdadulHaqueMilon,
                 kaziNazrulIslam, kaziAnwarHossain, sharatChandraChattropadhay, rabindranathTagore, sunilGangoPaddahay,
-                samareshMajumdar, emdadiyaPustokaloy,others);
+                samareshMajumdar, emdadiyaPustokaloy, others);
         writerMenu.setFont(font5);
         writerMenu.setTranslateX(700);
         writerMenu.setTranslateY(285);
         writerMenu.setPrefSize(200, 50);
-        Image image = new Image("Images"+ File.separator +"libraryBackground22.jpg");
+        Image image = new Image("Images" + File.separator + "libraryBackground22.jpg");
 
         group.getChildren().addAll(writerMenu);
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+        graphicsContext.drawImage(image, 0, 0);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public void showInfo(Stage secondaryStage,String labelName,ObservableList data){
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+
+    public void showInfo(Stage secondaryStage, String labelName, ObservableList data) {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
 
         Button back = new Button("Back");
@@ -521,11 +536,11 @@ public class WriterWise extends Application {
         exit.setOnAction(actionEvent -> {
             System.exit(0);
         });
-        //label top of the table
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        // label top of the table
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label = new Label();
-        label.setPrefSize(700,45);
+        label.setPrefSize(700, 45);
         label.setTranslateX(454);
         label.setTranslateY(0);
         label.setText(labelName);
@@ -551,7 +566,7 @@ public class WriterWise extends Application {
         bookId.setCellValueFactory(new PropertyValueFactory("bookId"));
         TableColumn typeName = new TableColumn("Type Name");
         typeName.setCellValueFactory(new PropertyValueFactory("typeName"));
-        table.getColumns().setAll(bookName,writerName,typeName,bookId);
+        table.getColumns().setAll(bookName, writerName, typeName, bookId);
         table.setPrefWidth(1240);
         table.setPrefHeight(560);
         table.setTranslateX(60);
@@ -563,13 +578,13 @@ public class WriterWise extends Application {
         // Status message text
         actionStatus = new Text();
         actionStatus.setFill(Color.FIREBRICK);
-       table.getSelectionModel().select(0);
+        table.getSelectionModel().select(0);
         Book book = (Book) table.getSelectionModel().getSelectedItem();
-//        actionStatus.setText(book.toString());
-        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
+        // actionStatus.setText(book.toString());
+        Image image = new Image("Images" + File.separator + "libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit, back,label,table);
+        group.getChildren().addAll(canvas, exit, back, label, table);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.drawImage(image, 0, 0);
 
@@ -579,21 +594,24 @@ public class WriterWise extends Application {
         secondaryStage.setFullScreen(true);
         secondaryStage.show();
     }
+
     private class RowSelectChangeListener implements ChangeListener {
         @Override
         public void changed(ObservableValue observableValue, Object o, Object t1) {
         }
-    }    private ObservableList getInitialTableData() throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    }
+
+    private ObservableList getInitialTableData() throws IOException {
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         List list = new ArrayList();
         priorityData = processing.fileReaderMethods();
         numberOfBooks = bookNumber.bookNumberFindingMethods();
-        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData,numberOfBooks);
-        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData,numberOfBooks);
+        priorityData = multipleLinearRegression.multipleLinearRegressionMethods(priorityData, numberOfBooks);
+        priorityData = prioritySort.PrioritySortingMLRmethods(priorityData, numberOfBooks);
         int iterator;
-        for(iterator=0;iterator<numberOfBooks;iterator++){
+        for (iterator = 0; iterator < numberOfBooks; iterator++) {
             list.add(new Book(priorityData[genericAlgo[iterator].getIndex()].bookData.bookName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.writerName,
                     priorityData[genericAlgo[iterator].getIndex()].bookData.bookId));
@@ -601,8 +619,8 @@ public class WriterWise extends Application {
         ObservableList data = FXCollections.observableList(list);
         return data;
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -614,10 +632,10 @@ public class WriterWise extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
-    public Label setStyle( Label Label)
-    {
+
+    public Label setStyle(Label Label) {
         Label.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -629,6 +647,6 @@ public class WriterWise extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  Label;
+        return Label;
     }
 }
