@@ -20,7 +20,7 @@ import java.io.IOException;
 
 public class ThreeVariableRegression extends Application {
 
-    PriorityData [] priorityData;
+    PriorityData[] priorityData;
     int numberOfBooks;
     Processing processing = new Processing();
     BookNumber bookNumber = new BookNumber();
@@ -28,8 +28,8 @@ public class ThreeVariableRegression extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         Button Start = new Button("Start");
         Button back = new Button("Back");
@@ -44,9 +44,9 @@ public class ThreeVariableRegression extends Application {
             try {
                 priorityData = processing.fileReaderMethods();
                 numberOfBooks = bookNumber.bookNumberFindingMethods();
-                doublyLinearRegression.doublyLinearRegressionMethods(priorityData,numberOfBooks);
-                System.exit(0);    }
-            catch (Exception exception) {
+                doublyLinearRegression.doublyLinearRegressionMethods(priorityData, numberOfBooks);
+                System.exit(0);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
 
@@ -69,22 +69,22 @@ public class ThreeVariableRegression extends Application {
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground19.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Image image = new Image("Images" + File.separator + "libraryBackground19.jpg");
+        Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,Start,exit,back);
+        group.getChildren().addAll(canvas, Start, exit, back);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
+        graphicsContext.drawImage(image, 0, 0);
 
-        Scene scene1 = new Scene(group,1500,950);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }
-    public Button setStyle( Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -96,6 +96,6 @@ public class ThreeVariableRegression extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
