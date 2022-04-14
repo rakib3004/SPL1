@@ -1,21 +1,21 @@
 package ObjectOriented;
 
 public class PriorityData {
-    public double bookPriority ;
-    public  double timePriority;
-    public   double borrowPriority ;
-    public  double pricePriority;
+    public double bookPriority;
+    public double timePriority;
+    public double borrowPriority;
+    public double pricePriority;
     public int index;
-    public   BookData bookData;
+    public BookData bookData;
     public double MLRweight;
     public double AHPweight;
     public double PRAweight;
-    public  double rankValue;
+    public double rankValue;
 
     public PriorityData(double bookPriority, double timePriority,
-                        double borrowPriority, double pricePriority,
-                        int index, BookData bookData, double MLRweight,
-                        double AHPweight, double PRAweight, double rankValue) {
+            double borrowPriority, double pricePriority,
+            int index, BookData bookData, double MLRweight,
+            double AHPweight, double PRAweight, double rankValue) {
         this.bookPriority = bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;
@@ -28,11 +28,11 @@ public class PriorityData {
         this.rankValue = rankValue;
     }
 
-    public double bookPriorityOne ;
+    public double bookPriorityOne;
 
     public PriorityData(double bookPriority, double timePriority, double borrowPriority,
-                        double pricePriority, int index, BookData bookData, double MLRweight,
-                        double AHPweight, double PRAweight) {
+            double pricePriority, int index, BookData bookData, double MLRweight,
+            double AHPweight, double PRAweight) {
         this.bookPriority = bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;
@@ -44,12 +44,9 @@ public class PriorityData {
         this.PRAweight = PRAweight;
     }
 
-
-
     public PriorityData(double bookPriority,
-                        double timePriority, double borrowPriority,
-                        double pricePriority,int index , BookData
-                                bookData,double MLRweight) {
+            double timePriority, double borrowPriority,
+            double pricePriority, int index, BookData bookData, double MLRweight) {
         this.bookPriority = bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;
@@ -107,11 +104,10 @@ public class PriorityData {
         this.MLRweight = MLRweight;
     }
 
-
-    public PriorityData(double bookPriority , double timePriority,
-                        double borrowPriority ,  double pricePriority,
-                        int index,BookData bookData){
-        this.bookPriority =bookPriority;
+    public PriorityData(double bookPriority, double timePriority,
+            double borrowPriority, double pricePriority,
+            int index, BookData bookData) {
+        this.bookPriority = bookPriority;
         this.timePriority = timePriority;
         this.borrowPriority = borrowPriority;
         this.pricePriority = pricePriority;
@@ -119,23 +115,25 @@ public class PriorityData {
         this.bookData = bookData;
     }
 
-    public PriorityData(double bookPriorityOne){
-        this.bookPriorityOne =bookPriorityOne;
+    public PriorityData(double bookPriorityOne) {
+        this.bookPriorityOne = bookPriorityOne;
     }
-public void setBookPriority(double bookPriority)
-{
-        this.bookPriority = bookPriority;
-}
-public double getBookPriority(){
-        return  this.bookPriority;
-}
 
-public void setIndex(int index){
+    public void setBookPriority(double bookPriority) {
+        this.bookPriority = bookPriority;
+    }
+
+    public double getBookPriority() {
+        return this.bookPriority;
+    }
+
+    public void setIndex(int index) {
         this.index = index;
-}
-public int getIndex(){
-    return  this.index;
-}
+    }
+
+    public int getIndex() {
+        return this.index;
+    }
 
     public double getAHPweight() {
         return AHPweight;
