@@ -80,7 +80,7 @@ public class ShelfWiseFX extends Application {
         Font font = new Font(19);
         Font font1 = new Font(47);
         Font font2 = new Font(23);
-        Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,15);
+        Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 15);
 
         Button writerWise = new Button("Writer Wise");
         Button typeWise1 = new Button("Type Wise");
@@ -431,11 +431,11 @@ public class ShelfWiseFX extends Application {
             System.exit(0);
         });
 
-        //label top of the table
-        Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-        Font font4= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,40);
+        // label top of the table
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        Font font4 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 40);
         Label label = new Label();
-        label.setPrefSize(700,45);
+        label.setPrefSize(700, 45);
         label.setTranslateX(454);
         label.setTranslateY(0);
         label.setText(labelName);
@@ -479,7 +479,7 @@ public class ShelfWiseFX extends Application {
         Book book = (Book) table.getSelectionModel().getSelectedItem();
         actionStatus.setText(book.toString());
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground1.jpg");
+        Image image = new Image("Images" + File.separator + "libraryBackground1.jpg");
         Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
         group.getChildren().addAll(canvas, exit, back, label, table);
