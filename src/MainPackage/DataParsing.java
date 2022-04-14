@@ -15,7 +15,7 @@ public class DataParsing {
     int[] typeValue = new int[1050];
     double[] timeCount = new double[1050];
     int[] bookCount = new int[1050];
-    double [] bookPrice = new double [1050];
+    double[] bookPrice = new double[1050];
     double[] MLRweight = new double[1050];
     double[] AHPweight = new double[1050];
     double[] PRAweight = new double[1050];
@@ -25,16 +25,17 @@ public class DataParsing {
     int length;
     int integer1, integer2;
     int newYear, oldYear;
-    int  index;
+    int index;
     int iterator;
 
     public static PriorityData priorityData[] = new PriorityData[1050];
     DoublyLinearRegression doublyLinearRegression = new DoublyLinearRegression();
-    public PriorityData [] dataParsingMethods(BookData[] bookData, String[] writerName,
-                                   String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
 
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+    public PriorityData[] dataParsingMethods(BookData[] bookData, String[] writerName,
+            String[] borrowCount1, String[] bookPrice1, String[] bookId, int numberOfBooks) {
+
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookId[iterator].length();
@@ -60,12 +61,12 @@ public class DataParsing {
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
             length = bookPrice1[iterator].length();
-           string = bookPrice1[iterator].substring(1, length);
+            string = bookPrice1[iterator].substring(1, length);
             string = string.replaceAll("[\\t\\n\\r]+", "");
             bookPrice[iterator] = Integer.parseInt(string);
         }
         for (iterator = 0; iterator < numberOfBooks; iterator++) {
-            bookPriority[iterator] = Math.sqrt(Math.pow((50 - typeValue[iterator]),2)+bookCount[iterator]);
+            bookPriority[iterator] = Math.sqrt(Math.pow((50 - typeValue[iterator]), 2) + bookCount[iterator]);
             timePriority[iterator] = 16 - (timeCount[iterator] / 12);
             borrowPriority[iterator] = bookCount[iterator];
             pricePriority[iterator] = bookPrice[iterator];
@@ -76,7 +77,8 @@ public class DataParsing {
             rankValue[iterator] = 0.0;
             priorityData[iterator] = new PriorityData(bookPriority[iterator],
                     timePriority[iterator], borrowPriority[iterator], pricePriority[iterator],
-                    index, bookData[iterator], MLRweight[iterator],AHPweight[iterator],PRAweight[iterator],rankValue[iterator]);
+                    index, bookData[iterator], MLRweight[iterator], AHPweight[iterator], PRAweight[iterator],
+                    rankValue[iterator]);
         }
 
         y_value = bookPriority;
@@ -84,6 +86,6 @@ public class DataParsing {
         x_value[1] = borrowPriority;
         x_value[2] = pricePriority;
 
-        return  priorityData;
-        }
+        return priorityData;
+    }
 }
