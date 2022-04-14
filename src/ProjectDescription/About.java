@@ -16,12 +16,12 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class About extends Application {
-        @Override
+    @Override
     public void start(Stage primaryStage) {
-        String  className = this.getClass().getSimpleName();
-        DateTimeWriter dateTimeWriter =  new DateTimeWriter();
+        String className = this.getClass().getSimpleName();
+        DateTimeWriter dateTimeWriter = new DateTimeWriter();
         dateTimeWriter.dateTimeWriterMethods(className);
-            Font font5 =Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
+        Font font5 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
 
         Button back = new Button("Back");
         Button exit = new Button("Exit");
@@ -33,8 +33,7 @@ public class About extends Application {
             Main main = new Main();
             try {
                 main.start(primaryStage);
-            }
-            catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -43,9 +42,9 @@ public class About extends Application {
             System.exit(0);
         });
 
-            Font font3= Font.font(Font.getFontNames().get(0), FontWeight.BOLD,30);
-            back.setFont(font3);
-            exit.setFont(font3);
+        Font font3 = Font.font(Font.getFontNames().get(0), FontWeight.BOLD, 30);
+        back.setFont(font3);
+        exit.setFont(font3);
         back.setPrefSize(200, 80);
         exit.setPrefSize(200, 80);
 
@@ -83,7 +82,6 @@ public class About extends Application {
             }
         });
 
-
         staticShowing.setPrefSize(350, 80);
         dynamicShowing.setPrefSize(350, 80);
         projectDesign.setPrefSize(350, 80);
@@ -91,21 +89,21 @@ public class About extends Application {
         dynamicShowing.setFont(font5);
         projectDesign.setFont(font5);
 
-        Image image = new Image("Images"+ File.separator +"libraryBackground.jpg");
-        Canvas canvas = new Canvas(1500,950);
+        Image image = new Image("Images" + File.separator + "libraryBackground.jpg");
+        Canvas canvas = new Canvas(1500, 950);
         Group group = new Group();
-        group.getChildren().addAll(canvas,exit,back,staticShowing,dynamicShowing,projectDesign);
+        group.getChildren().addAll(canvas, exit, back, staticShowing, dynamicShowing, projectDesign);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.drawImage(image,0,0);
-        Scene scene1 = new Scene(group,1500,950);
+        graphicsContext.drawImage(image, 0, 0);
+        Scene scene1 = new Scene(group, 1500, 950);
         primaryStage.setScene(scene1);
         primaryStage.setTitle("Recommendation Tool");
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-    public Button setStyle(Button button)
-    {
+
+    public Button setStyle(Button button) {
         button.setStyle("-fx-padding: 8 15 15 15;\n" +
                 "    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;\n" +
                 "    -fx-background-radius: 8;\n" +
@@ -117,6 +115,6 @@ public class About extends Application {
                 "    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );\n" +
                 "    -fx-font-weight: bold;\n" +
                 "    -fx-font-size: 2.1em;");
-        return  button;
+        return button;
     }
 }
