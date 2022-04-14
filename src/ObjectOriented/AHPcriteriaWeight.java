@@ -2,7 +2,6 @@ package ObjectOriented;
 
 public class AHPcriteriaWeight {
 
-
     public double lowPrice;
     public double mediumPrice;
     public double highPrice;
@@ -25,13 +24,12 @@ public class AHPcriteriaWeight {
     public double religionType;
     public double othersType;
 
-
     public AHPcriteriaWeight() {
     }
 
     public AHPcriteriaWeight(double uponnashType, double kobitaType,
-                             double scienceFictionType, double kisorUponnashType,
-                             double religionType, double othersType) {
+            double scienceFictionType, double kisorUponnashType,
+            double religionType, double othersType) {
         this.uponnashType = uponnashType;
         this.kobitaType = kobitaType;
         this.scienceFictionType = scienceFictionType;
@@ -39,29 +37,34 @@ public class AHPcriteriaWeight {
         this.religionType = religionType;
         this.othersType = othersType;
     }
+
     public AHPcriteriaWeight(double lowPrice, double mediumPrice, double highPrice) {
         this.lowPrice = lowPrice;
         this.mediumPrice = mediumPrice;
         this.highPrice = highPrice;
     }
-    public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook, double oldestBook) {
+
+    public AHPcriteriaWeight(double latestBook, double newlyBook, double recentlyOldBook, double oldBook,
+            double oldestBook) {
         this.latestBook = latestBook;
         this.newlyBook = newlyBook;
         this.recentlyOldBook = recentlyOldBook;
         this.oldBook = oldBook;
         this.oldestBook = oldestBook;
     }
+
     public AHPcriteriaWeight(double lowlyDemand, double lowMediumDemand, double highMediumDemand, double highlyDemand) {
         this.lowlyDemand = lowlyDemand;
         this.lowMediumDemand = lowMediumDemand;
         this.highMediumDemand = highMediumDemand;
         this.highlyDemand = highlyDemand;
     }
+
     public AHPcriteriaWeight(double highPrice, double mediumPrice, double lowPrice, double highlyDemand,
-                             double highMediumDemand, double lowMediumDemand , double lowlyDemand,
-                             double latestBook, double newlyBook, double recentlyOldBook, double oldBook,
-                             double oldestBook, double uponnashType, double kobitaType, double scienceFictionType,
-                             double religionType, double kisorUponnashType, double othersType) {
+            double highMediumDemand, double lowMediumDemand, double lowlyDemand,
+            double latestBook, double newlyBook, double recentlyOldBook, double oldBook,
+            double oldestBook, double uponnashType, double kobitaType, double scienceFictionType,
+            double religionType, double kisorUponnashType, double othersType) {
         this.highPrice = highPrice;
         this.lowPrice = lowPrice;
         this.mediumPrice = mediumPrice;
